@@ -1,0 +1,136 @@
+====== Differential Calculus ======
+The study of the definition, properties, and applications of the derivative of a function.
+
+=== Terminology ===
+Derive is the geometry term.\\
+Differentiate is the calculus term.\\
+They mean the same thing.
+
+to derive (geometry) == to differentiate (calculus) == to find the derivative\\
+Derivation (geometry) == Differentiation (calculus) == the process of finding the derivative\\
+Derivative (geometry) == differential equation (calculus).\\
+Differential equations are equations involving derivatives.\\
+
+=== Tangency ===
+The derivative is, in geometry, the slope of the tangent line of the function at the point of tangency.\\
+
+Here is an animation of the tangent line along a curved line.
+![animated tangent along a curved line](https://upload.wikimedia.org/wikipedia/commons/2/2d/Tangent//function//animation.gif)
+
+Here is a similar animation on youtube.  https://www.youtube.com/watch?v=jGJdd0kzZDM
+
+=== Notation ===
+
+$$ \textup{when }y = f(x)\newline\newline\textup{slope } = \frac{\textup{change in x}} {\textup{change in y}} = \frac{dx}{dy} = \frac{\Delta x}{\Delta y} = f\prime(x) $$
+
+The "dx over dy" notation was invented by Gottfried Leibniz around 1700.  The "f prime" notation was by Lagrange.
+
+=== Definition ===
+
+y is a function of x.  **y = ƒ(x)**\\
+Therefore, an (x,y) point on a graph can also be written as (x,ƒ(x)).\\
+The graph below shows two points (x,ƒ(x)) and ((x+h),ƒ(x+h)).\\
+
+{{derivative//definition.png|derivative//definition}}
+
+Given the two points **(x,ƒ(x))** and **((x+h),ƒ(x+h))**, the slope of the secant line between the two points is
+
+$$ \frac{\Delta f(x)}{\Delta x} = \frac{f(x+h)-f(x)}{(x+h)-(x)} = \frac{f(x+h)-f(x)}{h}$$.
+
+Then the slope at point **(x,ƒ(x))** is given by the equation above where **h** approaches zero, or\\
+
+$$ \frac{\Delta f(x)}{\Delta x} = \frac{f(x+h)-f(x)}{(x+h)-(x)} = \frac{f(x+h)-f(x)}{h}$$.
+
+Many popular equations and their differentials can be found in the [[Gallery of Derivatives]].
+
+=== How to Calculate the Derivative ===
+
+== By Definition ==
+
+$$ \frac{\Delta f(x)}{\Delta x} = \frac{f(x+h)-f(x)}{(x+h)-(x)} = \frac{f(x+h)-f(x)}{h}$$.
+
+https://www.wyzant.com/resources/lessons/math/calculus/differentiation
+
+== Power Rule ==
+$$ \textup{if }f(x) = x^r \hspace{45pt}  \textup{ then }f\prime (x) = rx^{r-1}$$
+
+So for example
+if **ƒ(x) = x²** then **ƒ′(x) = 2x¹**\\
+and if **ƒ(x) = x³** then **ƒ′(x) = 3x²**\\
+and if **ƒ(x) = 2x⁴** then **ƒ′(x) = 8x³**\\
+
+
+The linear function is the slope.  f(x) = ax + b, then f'(x) = a.
+
+
+f is the original function, and f-prime is its derivative.
+if f(x) = x2 is the squaring function,
+then f′(x) = 2x is its derivative, the doubling function.
+
+Differential equation is derived from the original function.
+The original function is input to the differential function.
+
+== Chain Rule ==
+http://tutorial.math.lamar.edu/Classes/CalcI/ChainRule.aspx
+
+===== How to Derive a Derivative =====
+==== Rules ====
+
+=== Power Rule ===
+=== Sum Rule ===
+=== Difference Rule ===
+=== Product Rule ===
+=== Quotient Rule ===
+=== Chain Rule ===
+[[Chain Rule]]
+
+==== Examples ====
+=== Example 1. The Bell Curve ===
+== Equation ==
+{{ :bell_curve_with_first_and_second_derivative.png|}}
+{{ ::bell_curve.png|}}
+The normal distribution is given by the equation
+$$e^{\frac{-x^2}{2}}$$
+
+== First Derivative ==
+{{ ::bell_curve_first_derivative.png|}}
+The first derivative is
+$$f\prime(x) = xe^{\frac{-x^2}{2}} $$
+The first derivative is odd.  Asymmetric around the y axis.
+
+== Second Derivative ==
+{{ ::bell_curve_second_derivative.png|}}
+The second derivative is
+$$f\prime\prime(x) = (x^2-1)e^{\frac{-x^2}{2}} $$
+
+
+
+=== Applications ===
+Distance and speed\\
+Height and slope\\
+Df/dx\\
+Dy/dx\\
+The straight line distance is 40 miles per hour 80 Mi after 2 hours.\\
+Height of a person overtime the rate of growth over time the rate of change.\\
+Wealth net worth vs saving or spending.
+Compounding interest is an example of exponential growth
+
+The derivative allows you to find the minimum and the maximum points of the speed.
+
+The second derivative tells you the bend of the first line weather it's concave or convex. At points where the bend changes the second derivative crosses the Y origin and this point is called the inflection point.
+
+At a maximum the slope is 0 and the curve is bending down Words which means convex and the second derivative will be positive and at a minimum the slope again is zero and the band is upwards and the second derivative is negative or Versa or vice versa I'm not sure
+
+===== Notation =====
+The Liebniz notation for derivative is dy over dx.  Sometimes df over dx.
+
+Nowadays, the notation for partial derivative is
+
+===== Partial Derivative =====
+For a function with multiple variables, we do the derivative for only one variable, holding the others constant.
+
+Notation.  dy over dx is replaced with squiggle over squiggle x.  Or y or z, whichever variable we're allowing to move.
+
+"Partial derivative of blah with respect to x."
+
+

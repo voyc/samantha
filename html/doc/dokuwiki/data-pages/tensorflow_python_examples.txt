@@ -1,0 +1,100 @@
+====== Tensorflow Python Examples ======
+
+==== hello world ====
+
+<code>
+from __future__ import print_function
+
+import tensorflow as tf
+
+# Simple hello world using TensorFlow
+
+# Create a Constant op
+# The op is added as a node to the default graph.
+#
+# The value returned by the constructor represents the output
+# of the Constant op.
+hello = tf.constant('Hello, TensorFlow!')
+
+# Start tf session
+sess = tf.Session()
+
+# Run the op
+print(sess.run(hello))
+</code> 
+
+==== add two numbers ====
+
+<code>
+# import tensorflow
+import tensorflow as tf
+
+# build computational graph
+a = tf.placeholder(tf.int16)
+b = tf.placeholder(tf.int16)
+
+addition = tf.add(a, b)
+
+# initialize variables
+init = tf.initialize_all_variables()
+
+# create session and run the graph
+with tf.Session() as sess:
+    sess.run(init)
+    print "Addition: %i" % sess.run(addition, feed_dict={a: 2, b: 3})
+
+# close session
+sess.close()
+</code>
+
+==== Perceptron Neuron AND Gate ====
+
+<code>
+
+T, F = 1., -1.
+bias = 1.
+train_in = [
+    [T, T, bias],
+    [T, F, bias],
+    [F, T, bias],
+    [F, F, bias],
+]
+train_out = [
+    [T],
+    [F],
+    [F],
+    [F],
+]
+w = tf.Variable(tf.random_normal([3, 1]))
+
+# step(x) = { 1 if x > 0; -1 otherwise }
+def step(x):
+    is_greater = tf.greater(x, 0)
+    as_float = tf.to_float(is_greater)
+    doubled = tf.mul(as_float, 2)
+    return tf.sub(doubled, 1)
+
+output = step(tf.matmul(train_in, w))   # return 1 or -1
+error = tf.sub(train_out, output)       # diff
+mse = tf.reduce_mean(tf.square(error))  # mean squared error
+
+delta = tf.matmul(train_in, error, transpose_a=True)
+train = tf.assign(w, tf.add(w, delta))
+
+sess = tf.Session()
+sess.run(tf.initialize_all_variables())
+
+err, target = 1, 0
+epoch, max_epochs = 0, 10
+while err > target and epoch < max_epochs:
+    epoch += 1
+    err, _ = sess.run([mse, train])
+    print('epoch:', epoch, 'mse:', err)
+</code>
+
+==== References ====
+
+  * https://matplotlib.org/users/pyplot_tutorial.html  
+  * https://matplotlib.org/mpl_toolkits/mplot3d/tutorial.html  
+  * https://www.analyticsvidhya.com/blog/2016/01/complete-tutorial-learn-data-science-python-scratch-2/  
+  * https://www.tensorflow.org/get_started/get_started  

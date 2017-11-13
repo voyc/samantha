@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv=Content-Type content='text/html; charset=UTF-8'>
+		<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
+		<title>Math Symbols</title>
+		<style>[hidden] {display:none ! important;}</style>
+		<style>
+			table, textarea {
+				font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+				font-size:1.5rem;
+			}
+			textarea {
+				width:100%;
+			}
+			k {
+				border:outset;
+				width:1em;
+				height:1em;
+				display:inline-block;
+				text-align:center;	
+				padding-bottom:.3rem;
+				margin-right:.1rem;
+				cursor:pointer;
+			}
+			type {
+				width:100%;
+			}
+		</style>
+		<script>
+			window.addEventListener('load', function() {
+				var ka = document.querySelectorAll('k');
+				for (var i=0; i<ka.length; i++) {
+					var k = ka[i];
+					k.addEventListener('click', function(evt) {
+						window.takeKey(evt.target.innerHTML);
+					}, false);
+				}
+				document.getElementById('typewriter').focus();
+			}, false);
+			
+			window.takeKey = function(key) {
+				// insert the character at the caret position in textarea
+				var type = document.getElementById('typewriter');
+				var selStart = type.selectionStart;
+				var selEnd = type.selectionEnd;
+				var out = selEnd - selStart;
+				var b = type.value.split('');
+				b.splice(selStart, out, key);
+				type.value = b.join('');
+				type.selectionStart = type.selectionEnd = (selStart + 1);
+				type.focus();
+			};
+		</script>
+	</head>
+	<body>
+		<textarea id='typewriter'></textarea>
+
+		<br/>
+		<k>⁰</k><k>¹</k><k>²</k><k>³</k><k>⁴</k><k>⁵</k><k>⁶</k><k>⁷</k><k>⁸</k><k>⁹</k><k>⁺</k><k>⁻</k><k>⁼</k><k>⁽</k><k>⁾</k><k>ⁿ</k><k>ⁱ</k>
+
+		<br/>
+		<k>₀</k><k>₁</k><k>₂</k><k>₃</k><k>₄</k><k>₅</k><k>₆</k><k>₇</k><k>₈</k><k>₉</k><k>₊</k><k>₋</k><k>₌</k><k>₍</k><k>₎</k><k>ₐ</k><k>ₑ</k><k>ₕ</k><k>ᵢ</k><k>ⱼ</k><k>ₖ</k><k>ₗ</k><k>ₘ</k><k>ₙ</k><k>ₒ</k><k>ₚ</k><k>ᵣ</k><k>ₛ</k><k>ₜ</k><k>ᵤ</k><k>ᵥ</k><k>ₓ</k><k>ₔ</k>
+
+		<br/>
+		<k>+</k><k>−</k><k>∕</k><k>∗</k><k>∘</k><k>∙</k><k>⋅</k><k>⋆</k>
+		<k>∑</k><k>ƒ</k><k>∫</k><k>∂</k><k>′</k><k>″</k><k>‴</k><k>∆</k>
+
+		<br/>
+		<table>
+			<tr>
+				<td><k title='alpha'  >Α</k></td>
+				<td><k title='beta'   >Β</k></td>
+				<td><k title='gamma'  >Γ</k></td>
+				<td><k title='delta'  >Δ</k></td>
+				<td><k title='epsilon'>Ε</k></td>
+				<td><k title='zeta'   >Ζ</k></td>
+				<td><k title='eta'    >Η</k></td>
+				<td><k title='theta'  >Θ</k></td>
+				<td><k title='iota'   >Ι</k></td>
+				<td><k title='kappa'  >Κ</k></td>
+				<td><k title='lambda' >Λ</k></td>
+				<td><k title='mu'     >Μ</k></td>
+			</tr>
+			<tr>
+				<td><k title='alpha'  >α</k></td>
+				<td><k title='beta'   >β</k></td>
+				<td><k title='gamma'  >γ</k></td>
+				<td><k title='delta'  >δ</k></td>
+				<td><k title='epsilon'>ε</k></td>
+				<td><k title='zeta'   >ζ</k></td>
+				<td><k title='eta'    >η</k></td>
+				<td><k title='theta'  >θ</k></td>
+				<td><k title='iota'   >ι</k></td>
+				<td><k title='kappa'  >κ</k></td>
+				<td><k title='lambda' >λ</k></td>
+				<td><k title='mu'     >μ</k></td>
+			</tr>
+			<tr>
+				<td><k title='nu'     >Ν</k></td>
+				<td><k title='xi'        >Ξ</k></td>
+				<td><k title='omicron'   >Ο</k></td>
+				<td><k title='pi'        >Π</k></td>
+				<td><k title='rho'       >Ρ</k></td>
+				<td><k title='sigma'     >Σ</k></td>
+				<td><k title='final sigma>&nbsp;</k></td>
+				<td><k title='tau'       >Τ</k></td>
+				<td><k title='upsilon'   >Υ</k></td>
+				<td><k title='phi'       >Φ</k></td>
+				<td><k title='chi'       >Χ</k></td>
+				<td><k title='psi'       >Ψ</k></td>
+				<td><k title='omega'     >Ω</k></td>
+			</tr>
+
+			<tr>
+				<td><k title='nu'     >ν</k></td>
+				<td><k title='xi'        >ξ</k></td>
+				<td><k title='omicron'   >ο</k></td>
+				<td><k title='pi'        >π</k></td>
+				<td><k title='rho'       >ρ</k></td>
+				<td><k title='sigma'     >σ</k></td>
+				<td><k title='final sigma>ς</k></td>
+				<td><k title='tau'       >τ</k></td>
+				<td><k title='upsilon'   >υ</k></td>
+				<td><k title='phi'       >φ</k></td>
+				<td><k title='chi'       >χ</k></td>
+				<td><k title='psi'       >ψ</k></td>
+				<td><k title='omega'     >ω</k></td>
+			</tr>
+		</table>
+		
+		<br/>
+		<a href='http://xahlee.info/comp/unicode_math_operators.html'>http://xahlee.info/comp/unicode_math_operators.html</a>
+		<br/>
+		<a href='https://lingojam.com/SuperscriptGenerator'>https://lingojam.com/SuperscriptGenerator</a>
+	</body>
+</html>

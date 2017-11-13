@@ -1,0 +1,12 @@
+====== Integral Calculus  ======
+
+Limit -
+
+Infinitesimal - an infinitely small number, often represented by dx and dy. dx/dy is their ratio.
+
+Limits - small numbers represented by epsilon, delta.  Describe the value of a function at certain input in terms of its values at a nearby input.
+
+Liebniz\\
+Introduced elongated s symbol, from the word sum, now the integral symbol, realizing  that the area under the curve us a summation, whereas the tangent of the curve is a difference.\\
+
+

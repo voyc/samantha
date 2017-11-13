@@ -1,0 +1,36 @@
+====== Gallery of Derivatives ======
+
+Calculus involves pairs of functions:
+  - the integral gives the total change, and
+  - the derivative gives the rate of change.
+
+==== Constant Rate of Change ====
+When 
+{{ constant_rate_of_change.png|Constant Rate of Change}}
+the rate of change is constant, the derivative is a horizontal line, and the integral is a straight line angled up and to the right.  For example, a car driving at a constant speed of 30 kph covers distance uniformly over time - 30 km in 1 hr, 60 km in 2 hrs, etc.
+
+==== Constant Acceleration ====
+{{ constant_acceleration.png|Constant Acceleration}}
+When the rate of change is increasing at a constant rate, the derivative is a straight line angled up, and the integral is a parabola.  For example, an object falling at at 32 feet-per-second squared, drops 32 feet in the first second, another 64 feet in the second second, and so on.
+
+==== Sine ====
+{{ sine_derivative_and_second_derivative.png|Sine, Derivative, and Second Derivative}}
+The derivative of the sine is the cosine, and the derivative of the cosine is the negative sine.
+
+==== Exponent ====
+{{ exponent_equals_its_own_derivative.png|Exponent Equals its own Derivative}}\\
+The derivative of the exponential function is itself.  An example of exponential growth is compound interest of a savings account.\\
+
+==== Polynomial ====
+The derivative shows us the local optima, and the second derivative gives us the bend.
+
+For a cubic equation, the derivative is quadratic, the second derivative is linear, the third derivative is constant, and all higher-order derivatives are zero.
+
+{{ polynomial.png|Polynomial}}
+The polynomial has two local optima - a local minimum and a local maximum.
+
+{{ polynomial_derivative.png|Polynomial Derivative}}
+The derivative shows us where to find the optima - at the points where the derivative line crosses the x-axis (y=0).
+
+{{ polynomial_second_derivative.png|Polynomial Second Derivative}}
+The second derivative tells us the bend of the polynomial line - and whether an optimum point is a minimum or maximum.  Where the second derivative is negative (y<0), the polynomial line is convex, and an optimum point in that section must be a maximum.  Where the second derivative is positive (y>0), the polynomial line is concave, and an optimum point in that section must be a minimum.  The point where the second derivative crosses the x axis (y=0), the polynomial line is changing direction from _concave_ to _convex_ and is called the _inflection point_.

@@ -1,0 +1,29 @@
+====== Chatbot ======
+
+==== Timeline ====
+Touring Test, 1950\\
+ELIZA, published in 1966,\\
+
+==== Form, Algorithms ====
+{{chatbot_ui_1.png|Chatbot UI 1}}
+{{chatbot_ui_2.png|Chatbot UI 2}}
+
+graphic of two GUI's\\
+Natural Language Processing NLP (not to be confused with Neuro Linguistic Programming)\\
+Speech Synthesis
+Speech Recognition\\
+facial expression recognition and synthesis\\
+living within an Instant Messaging, of Live Chat platform
+pattern matching of keywords
+
+==== Applications ====
+Search\\
+Customer Service\\
+Toys\\
+Expert Systems  (Diagnositics, for example)
+Personal Assistant\\
+
+==== Tools ====
+There are APIs.\\
+There are javascript front-end source-code libraries.\\
+BOTUI  https://botui.org/

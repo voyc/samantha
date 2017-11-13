@@ -1,0 +1,62 @@
+====== Calculus ======
+Calculus is the mathematical study of continuous change.  The word //calculus// comes from Latin meaning //small pebble// used for counting and calculations, like on an abacus.
+
+== Timeline ==
+1665-1685 in Europe.  Calculus was invented by Isaac Newton and Gottfried Leibniz.  Newton was working at Cambridge.  Leibniz was German and worked for periods in Paris, London, and Hanover.
+
+==== Two Branches ====
+
+There are two branches of calculus:
+  - [[Differential Calculus]] - rates of change and slopes of curves
+  - [[Integral Calculus]] - accumulation of quantities and the areas under and between curves
+
+^ verb           ^ adjective      ^ synonym    ^ graph              ^ measure        ^ symbol ^
+| Differentiate  | Differential  | Difference | slope of the curve | rate of change | $$\frac{dx}{dy}$$ |
+| Integrate      | Integral      | Summation  | area under a curve | total change   | $$\int $$     |
+
+"Both branches make use of the fundamental notions of convergence of infinite sequences and infinite series to a well-defined limit."\\
+
+Visit the [[Gallery of Derivatives]] to see pairs of Integral and Derivative equations together.
+
+==== Fundamental Theorem of Calculus ====
+These two branches are related to each other by the fundamental theorem of calculus, which states:
+
+//Differentiation is the reverse of integration//.
+
+Therefore, if an integral function is known, it's differential equation can be derived.\\
+And vice-versa.
+
+== Limit ==
+{{ ::bell_curve_limit.png|}}
+A //limit// is something that can be approached but never reached, like "the perfect omelet".  
+Or like the way the line of the [[Statistics#Bell Curve]] stretches to the right and left into infinity, approaching but never reaching the //limit// of zero.
+
+
+==== Applications ====
+
+Movement\\
+Growth\\
+Acceleration\\
+
+Calculus is an optimizer.
+
+Calculus is used wherever a problem can be mathematically modeled and an optimal solution is desired.
+
+Newton's second law of motion, Maxwell's theory of electromagnetism, and Einstein's theory of general relativity are expressed in the language of differential calculus.
+
+It allows one to go from (non-constant) rates of change to the total change or vice versa, and many times in studying a problem we know one and are trying to find the other.
+
+Calculus is used with linear algebra to find the "best fit" linear approximation for a set of points in a domain.
+
+It can be used in probability theory to determine the probability of a continuous random variable from an assumed density function.
+
+In analytic geometry, the study of graphs of functions, calculus is used to find high points and low points (maxima and minima), slope, concavity and inflection points.
+
+Discrete Green's Theorem, which gives the relationship between a double integral of a function around a simple closed rectangular curve C and a linear combination of the antiderivative's values at corner points along the edge of the curve, allows fast calculation of sums of values in rectangular domains. For example, it can be used to efficiently calculate sums of rectangular domains in images, in order to rapidly extract features and detect object; another algorithm that could be used is the summed area table.
+
+In economics, calculus allows for the determination of maximal profit by providing a way to easily calculate both marginal cost and marginal revenue.
+
+==== References ====
+  * Khan Academy on How to calculate partial derivatives.  https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/partial-derivatives/v/partial-derivatives-introduction
+  * Gilbert Strang: playlist of 18 lectures at MIT, //Highlights of Calculus//.  http://www.youtube.com/playlist?list=PLBE9407EA64E2C318
+  * Horizontal Asymptote, functions with limits. https://www.ck12.org/book/CK-12-Precalculus-Concepts/section/2.10/

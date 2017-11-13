@@ -1,0 +1,9 @@
+/* 
+This file lives in dokuwiki/lib/styles
+To clear the css cache  http://samantha.voyc.com/wiki/lib/exe/css.php?purge=true
+Also clear the browser cache.
+*/
+
+.dokumedia img.mediaright { /* not working? */
+	margin-top: 0;  
+}

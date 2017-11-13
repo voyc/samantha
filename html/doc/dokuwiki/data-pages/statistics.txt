@@ -1,0 +1,26 @@
+====== Statistics ======
+aka **Probability**
+
+===== Normal Distribution =====
+
+
+==== Bell Curve ====
+{{ ::bell_curve.png|}}
+
+The _normal distribution_ is given by the equation
+$$e^{\frac{-x^2}{2}}$$
+
+When we actually have input data, we will use this equation.
+$$y = \frac{1}{\sigma \sqrt[]{2\pi }}e^{\frac{(x-\mu )^2}{2\sigma ^2}}$$
+
+Characteristics:
+  * The curve is symmetric about the y axis.
+  * The center portion is a convex parabola and has one maximum point.
+  * To either side lies an inflection point where the line becomes a concave parabola.
+  * The line stretches to the left and right, approaching the limit of zero.
+  * The area under the curve totals 1.0, the total probability of any prediction.
+
+
+==== Median ====
+==== Standard Deviation ====
+

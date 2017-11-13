@@ -1,0 +1,38 @@
+====== Logistic Regression ======
+
+Similar to linear regression, except y is always either 1 or 0.
+
+Why the word "logistic"?
+
+The most widely used AI algorithm.
+
+==== Timeline ====
+1958 USA, David Cox invents logistic regression.
+
+==== Applications ====
+Logistic regression is a classification algorithm.\\
+More specifically, it is a binary classification algorithm.  It can determine yes or no.  1 or 0.  Malignant or benign.  Fraud or legitimate.\\
+
+A classification function is actually a type of prediction.\\
+
+|Binary Classification | Prediction |
+|---|---|
+|Malignant or benign | What is the probability the tumor is malignant |
+|Spam or legitimate | What is the probability an email is spam |
+|Fraud or legitimate | What is the probability a financial transaction is an attempted fraud |
+|Pass or fail | What is the probability a given student will graduate |
+|Jail or freedom | What is the probability a psychology patient will commit a crime |
+
+To solve a multi-class classification problem, it would have to be broken into separate binary classification problems.  For example, if you are predicting tomorrow's weather as sunny, cloudy, rain or snow, you must treat this as four different logistic regression problems: 1) sunny or not, 2) cloudy or not, 3) rain or not, 4) snow or not.
+
+
+==== Sigmoid ====
+
+σ(z) ≡ 1/1+e−z or σ(z) ≡ 1/1+exp(−∑jwjxj−b)
+
+
+
+
+==== References ====
+  * Ng week 3
+

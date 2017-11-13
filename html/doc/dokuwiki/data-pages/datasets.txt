@@ -1,0 +1,27 @@
+====== Datasets ======
+
+Datasets publicly and freely available for training pattern-recognition algorithms.
+
+==== Images ====
+
+ImageNet - 10 million images, hand-classified\\
+
+CIFAR-10 - 10000 small images, classified, by Alex Krizhevsky at Google\\
+
+Chest X-Rays - https://www.nih.gov/news-events/news-releases/nih-clinical-center-provides-one-largest-publicly-available-chest-x-ray-datasets-scientific-community
+
+ShapeNet - 3D models of realworld objects, https://www.shapenet.org/model-querier
+
+==== Handwriting ====
+NHIST - digits, 0-9.  60,000 images of hand-written digits.\\
+
+==== Language Syntax ====
+WordNet - a lexical database for the English language, http://wordnet.princeton.edu/\\
+
+==== Language Audio ====
+AISHELL-1 - Mandarin, 400 speakers
+
+==== Lists ====
+[[Institutions#kaggle]] hosts hundreds of downloadable datasets\\
+https://www.kaggle.com/datasets\\
+

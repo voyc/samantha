@@ -1,0 +1,58 @@
+====== Recent Developments ======
+Most of these items are gathered from [Jack Clark](Personalities#jack-clark)'s [//Import AI//](https://jack-clark.net/about/) newsletter.
+
+2017 Nov 6:  A paper from DeepMind on [[neural architecture search (NAS)]] techniques using fractal math.
+https://arxiv.org/abs/1711.00436
+
+2017 Nov 6: An article from Google Brain on automated design of neural nets. [[meta learning]]\\
+https://research.googleblog.com/2017/11/automl-for-large-scale-image.html?utm//source=feedburner&utm_medium=feed&utm//campaign=Feed:+blogspot/gJZg+(Official+Google+Research+Blog)
+
+2017 Nov 6: A paper from DeepMind on biases in semantic learning.  "The agent learns words more quickly if the range of words to which it is exposed is limited at first and expanded gradually as its vocabulary develops."
+https://arxiv.org/abs/1710.09867
+
+2017 Nov 6: Uber AI releases a programming language Pyro to open source.
+https://eng.uber.com/pyro/
+
+2017 Oct 30: [[Meta Learning Shared Hierarchies]], an algorithm is able to efficiently learn to navigate mazes by switching between various sub-components, while traditional methods would typically struggle due to the lengthy timesteps required to learn to solve the environment.  [[meta learning]]
+https://arxiv.org/abs/1710.09767
+
+2017 Oct 30: The [[House3D]] [[dataset]] will be announced at ICLR 2018.  It consists of 45,622 human-designed scenes of houses, with an average of 8.9 rooms and 1.3 floors per scene.  Can be used to train household robots, or room-navigating [[agents]].
+https://openreview.net/forum?id=rkaT3zWCZ&noteId=rkaT3zWCZ
+
+2017 Oct 30:  "Deep learning-based [[memory systems]] are currently hard to train and of dubious utility.  One candidate memory system is the [[Neural Turing Machine]] ([[NTM]]), which was introduced by DeepMind in a research paper in 2014. NTMs can let networks - in certain, quite limited tasks - perform tasks with less training and higher accuracy than other systems. Successors, like the [[Neural GPU]], extended the capabilities of the NTM to work on harder tasks, like being able to multiply numbers. Then it was further extended with the [[Evolvable Neural Turing Machine]].  Now, researchers in Denmark have proposed the [[HyperENTM]], which uses evolution techniques to figure out how to wire together the memory interface, and connect to an [[external memory]] component."
+https://arxiv.org/abs/1710.04748
+
+2017 Oct 30: [[Pretrained.ml]] is a website that pulls together a bunch of [[pretrained models]], including [[OpenAI]]'s [[unsupervised sentiment neuron classifier]], along with reference information.
+http://pretrained.ml/
+
+2017 Oct 30: Geoffrey Hinton released a paper revealing new ideas in his "Capsules" theory, which he has been working on with collaborators at [[Google Brain]] in Toronto.\\
+Video from 2014: https://www.youtube.com/watch?v=rTawFwUvnLE\\
+Recently released paper: https://arxiv.org/abs/1710.09829\\
+
+2017 Oct 23:  Google releases [[Atomic Video Actions]] [[AVA]] video [[dataset]] for action recognition, ie, tagging videos.  Contains 57,000 distinct video clips, tagged with 80 labels including "hitting", "martial arts", "shovel", "digging", "lift a person", "play with kids", "hug", and "kiss".  Compares favorably to other benchmarking [[datasets]], e.g., [[UCF101]], [[ActivityNet]], [[DeepMind]]’s [[Kinetics]], [Joint-annotated Human Motion Database (JHMDB)](http://jhmdb.is.tue.mpg.de/).
+https://research.googleblog.com/2017/10/announcing-ava-finely-labeled-video.html
+
+2017 Oct 23:  New version of AlphaGo, named AlphaGo Zero, way better than previous versions, learns via self-play only.  https://deepmind.com/blog/alphago-zero-learning-scratch/
+
+2017 Oct 16: [[DeepMind]] invents [[Rainbow]], a composite system developed by DeepMind that\\
+"cobbles together several recent RL techniques", like [[A3C]], [[Prioritized Experience Replay]], [[Dueling Networks]], [[Distributional RL]], and so on.  ...[good results] on the [[benchmark]] suite of 57 Atari 2600 games from the Arcade Learning Environment (Bellemare et al. 2013), both in terms of data efficiency and of final performance...  [[Atari 2600 benchmark]], [[Meta Learning]]
+https://arxiv.org/abs/1710.02298
+
+2017 Oct 16: "One of the more popular tropes within AI research is that of the [[paperclip maximizer]] - the worry that if we build a super-intelligent AI and give it overly simple objectives (eg, make paper clips), it will seek to achieve those objectives to the detriment of everything else."  Here is webgame to do just that.
+http://www.decisionproblem.com/paperclips/\\
+
+2017 Oct 16: "Kudos to [[Ilya Kostrikov]] at NYU for being so inspired by [[OpenAI Baselines]] to re-write the [[PPO]], [[A3C]], and [[ACKTR]] algorithms into [[PyTorch]]."
+https://github.com/ikostrikov/pytorch-a2c-ppo-acktr
+
+2017 Oct 16: [[Quasi Recurrent Neural Network]] ([[QRNN]]), from [[Salesforce]] on [[PyTorch]]
+https://github.com/salesforce/pytorch-qrnn
+
+2017 Oct 16: "AI is basically made of [[matrix multiplication]]."  Speed up using 16-bit floating point numbers instead of or along with 32-bit.
+https://arxiv.org/abs/1710.03740\\
+
+2017 Oct 16: "While most people are focusing on different [[evolutionary optimization]] algorithms when using [[deep learning]] (eg, [[REINFORCE]], [[HYPERNEAT]], [[NEAT]], and so on), [[Ant Colony Optimization]] ([[ACO]]) is an interesting side-channel: you get a bunch of [[agents]] - //ants_ - to go and explore the problem space and, much like their real world insect counterparts, lay down synthetic pheromones for their other ant chums to follow when they find something that approximates to _food//".
+https://arxiv.org/abs/1710.03753\\
+
+2017 Oct 16: "a new multi-agent competitive environment, [[RoboSumo]]", [[simulated environment]]
+https://arxiv.org/abs/1710.03641\\
+

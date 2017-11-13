@@ -1,0 +1,44 @@
+====== Notes on Ian Goodfellow ======
+html version here http://www.deeplearningbook.org/\\
+\\
+\\
+  - In the early days of artiﬁcial intelligence, the ﬁeld rapidly tackled and solved problems that are intellectually difficult for human beings but relatively straight-forward for computers — problems that can be described by a list of formal, mathematical rules. \\
+like playing chess\\
+\\
+2. The true challenge to artiﬁcial intelligence proved to be solving the tasks that are easy for people to perform but hard for people to describe formally — problems that we solve intuitively, that feel automatic, \\
+like recognizing spoken words or faces in images.	\\
+	\\
+	\\
+This solution is to allow computers to learn from experience\\
+By gathering knowledge from experience, this approach avoids the need for human operators to formally specify all the knowledge that the computer needs.\\
+\\
+and understand the world in terms of a hierarchy of concepts, with each concept deﬁned through its relation to simpler concepts. \\
+The hierarchy of concepts enables the computer to learn complicated concepts by building them out of simpler ones. If we draw a graph showing how these concepts are built on top of each other, the graph is deep, with many layers. For this reason, we call this approach to AI "deep learning".\\
+\\
+\\
+\\
+==== Probability   ====
+Probability can be seen as the extension of logic to deal with uncertainty.\\
+\\
+Stochastic = random\\
+\\
+Frequentist probability = statistical probability = drawing colored balls out of a bag\\
+\\
+Confidence level = Bayesian probability = doctor’s diagnosis “patient has 40% chance of having the flu” = qualitative level of certainty\\
+\\
+random variable: x \\
+one of its values: x\\
+\\
+Probability distribution of x : P(x)\\
+\\
+Probability that x = x  : P(x) or P(x = x)\\
+\\
+Probability Mass Function PMF, capital italic P\\
+Probability Density Function PDF, small italic p\\
+\\
+==== Real Numbers   ====
+In mathematics, a real number is a value that represents a quantity along a line. The adjective real in this context was introduced in the 17th century by René Descartes, who distinguished between real and imaginary roots of polynomials.\\
+The real numbers include all the rational numbers, such as the integer −5 and the fraction 4/3, and all the irrational numbers, such as √2 (1.41421356..., the square root of 2, an irrational algebraic number). Included within the irrationals are the transcendental numbers, such as π (3.14159265...). Real numbers can be thought of as points on an infinitely long line called the number line or real line, where the points corresponding to integers are equally spaced. Any real number can be determined by a possibly infinite decimal representation, such as that of 8.632, where each consecutive digit is measured in units one tenth the size of the previous one. The real line can be thought of as a part of the complex plane, and complex numbers include real numbers.\\
+\\
+Irrational number: the square root of 2\\
+Transcendental number: pi, π\\

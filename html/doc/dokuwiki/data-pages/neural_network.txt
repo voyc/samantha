@@ -1,0 +1,29 @@
+====== Neural Network ======
+
+Neural Network (NN)
+NN can be expressed as matrix math, or as circles and arrows
+NN combination of yes/no decisions
+Neuron reduces multiple stimulae to fire/no-fire output
+Recurrent nn, output feeds back in, feedback
+Feed-forward - not recurrent, no memory, no feedback
+
+
+U Toronto
+Geof Hinton
+60 million parameters
+1000 categories
+Imagenet
+2012, Geoffrey Hinton: "Imagenet Classification with deep convolutional neural networks"
+First useful application of neural nets.
+
+https://www.youtube.com/watch?v=uXt8qF2Zzfo&t=1017s
+a nn is a function of inputs, weights, and threshholds
+z = f(x,w,t)
+a function approximator
+hill climbing, contour map
+partial derivative
+follow the gradient
+
+
+
+

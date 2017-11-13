@@ -1,0 +1,18 @@
+====== Detail Design ======
+
+
+
+
+Lists of tags\\
+Emotions\\
+Needs\\
+Numeric value range per tag\\
+
+
+Human modeling vs machine modeling\\
+Db of perception, thought, action\\
+Db of memory emotion\\
+Memory of perception feeling thought action\\
+
+
+

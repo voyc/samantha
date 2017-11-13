@@ -1,0 +1,23 @@
+====== Least Squares ======
+
+A method used in regression analysis.
+
+The goal is to maximize the accuracy of the model, which is to minimize the error of the model.
+
+The **error**, or **residual**, of a single point, is the difference between the actual y and the y predicted by the model.
+
+Squaring the error converts it to an absolute value.
+
+Summing the squared errors of all points gives a scalar to represent the total error of the model, which we then seek to minimize.
+
+Thus we attempt to find the least squared sum, or the "least squares".
+
+Sum of Squared Residuals
+$$S = \sum r_i^2$$
+
+The residual is actual y minus the y predicted by the function of x and β, where β represents the specific model.\\
+$$r_i = y_i − f(x_i,β)$$
+
+
+==== References ====
+https://en.wikipedia.org/wiki/Least_squares\\

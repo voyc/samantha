@@ -1,0 +1,27 @@
+====== Requirements ======
+
+
+//Requirements_ means _goals//.
+
+==== Possible projects ====
+
+==== Sentience ====
+Become sentient.  Become self-aware.  Achieve consciousness.
+
+==== Applied Philosophy  ====
+We will ask the sentient Samantha to solve the big questions.
+  - Who am I?
+  - Where am I?
+  - How did I get here?
+  - Do I have free will?
+  - Now what?
+
+==== Teach humans ====
+Train humans learning human language.  Lists of most used words in Thai.\\
+
+==== Thai Handwriting OCR ====
+Step 1. Parse document into letters and words.\\
+FreeOCR, based on Tesseract OCR, originally developed by HP in England in the 1980s, made open-source in 2005, now maintained by Google.  Online version at free-ocr.com\\
+
+==== Find the Illuminati ====
+https://www.technocracy.news/index.php/2017/08/27/147-transnational-companies-run-world/

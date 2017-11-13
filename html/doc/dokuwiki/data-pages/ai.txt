@@ -1,0 +1,275 @@
+====== AI ======
+Here is the state of things in AI development as of October 2017.
+
+[[Notes in progress]]\\
+[[Notes on Ian Goodfellow]]\\
+[[Notes on Michael Nielsen]]\\
+[[Tensorflow Python Examples]]\\
+[[Recent Developments]]\\
+
+[[Math]] Background
+
+  * define intelligence
+  * define artificial intelligence
+  * define machine learning, a program without specific programming by a human
+
+==== Current State of AI ====
+[[Personalities]]\\
+[[Institutions]]\\
+[[Products]]\\
+[[Datasets]]\\
+
+==== Algorithms ====
+There are two primary AI algorithms:
+  - [[Regression Analysis]]
+  - [[Neural Network]]
+
+Machine Learning\\
+Trial and Error (Gradient Descent)\\
+Probability\\
+Sampling\\
+Stochastic\\
+
+==== Algorithms ====
+
+The state-of-the-art as of 2017 appears to be the [[Neural Net]], particularly [[Deep Learning]].  A neural network is a network of neurons where each neuron implements a linear regression model.  Outputs of one neuron go into the input of another neuron.  A deep network can contain thousands of neurons networked in hundreds of layers.
+
+The actual working day algorithms were reported in a 2017 Survey by Kaggle as follows:
+  - logistic regression
+  - decision trees
+  - random forests
+  - neural networks
+  - bayesian techniques
+
+==== Table of Algorithms ====
+back propagation\\
+classification\\
+prediction\\
+Convolutional neural network - used for image recognition\\
+Radial basis function (RBF) - classification (handwriting recognition), interpolation (draw a smooth line connecting a few points, enlarge an image)\\
+Matix math\\
+Matrix multiplication\\
+Non-linear function\\
+Gradient descent\\
+Least squares\\
+Best fit of a line\\
+Linear regression\\
+Polynomial regression\\
+Lines with curves, circles\\
+Naive Bayes algorithm, detect email spam by attaching probability to features.\\
+Decision tree based on data\\
+Logistic regression, Splitting data into two groups, Draw line, minimize errors using gradient descent.  Instead of errors, use log-loss function\\
+Support vector machine, use to best split the data instead of gradient descent\\
+Logistic regression improved bt neural networks\\
+Improved even more by support vector machines\\
+K-means clustering\\
+Hierarchical clustering\\
+Generative model\\
+Discriminative model\\
+Genetic algorithm\\
+K nearest neighbor algorithm\\
+Features, mining features\\
+Logistic regression\\
+Random forest\\
+Support vector machine\\
+Bayesian classifier applies Bayes theorem using Feature vectors as inputs\\
+As opposed to a signature classifier\\
+Extra trees classifier\\
+One-shot learning - it should be possible to learn from a single example\\
+Meta learning - episodes, one NN helps another NN learn faster\\
+Long short-term memory  (LSTM)
+
+==== Buzzwords ====
+Supervised learning, start with examples of what you want the classifier to learn\\
+Unsupervised learning\\
+Deep learning\\
+Machine learning\\
+Artificial life, evolution\\
+Artificial consciousness\\
+AI, Machine Learning, Deep Learning, Neural Nets\\
+Cognitive agent\\
+Cognitive architecture\\
+General intelligence\\
+
+==== Applications ====
+There are three types of AI.
+  - Predicter
+  - Optimizer
+  - Classifier
+
+self-driving cars\\
+recommendation engines\\
+image, video, audio, text analysis and search\\
+chess\\
+go\\
+video games\\
+general intelligence\\
+Predicting which ads a person will click on\\
+Search verbal within video\\
+Search audio by text\\
+Test and correct human speech in language learning\\
+Predict House prices: linear regression\\
+Classify spam email: naive beyes\\
+Recommend (predict) apps: decision trees\\
+Predict college admission: logistic regression\\
+Where to put pizza parlours: K-means clustering, Hierarchical clustering\\
+analyze songs ala pandora, predict (recommend) next song for listener\\
+thai handwriting ocr\\
+	If google can do Thai handwriting recognition, why not ocr?\\
+	Pen strokes vs pixel map\\
+Virus detection, classification problem\\
+Deep blue, IBM, chess\\
+Alpha go, Google deep mind, go\\
+Compaction\\
+Encryption\\
+
+==== Chatbot ====
+Many companies now have some kind of [[Chatbot]] to handle customer service.  Outsourcing to a foreign country was not cheap enough.\\
+
+computer vision and pattern recognition\\
+HydraPlus-Net, identifying a pedestrian across multiple security cameras https://arxiv.org/abs/1709.09930\\
+like how the bad guy found the good guy in The Equalizer https://youtu.be/I7BqyJmDvt0\\
+
+Vehicle Detection in Aerial Imagery, Air Force Research Lab AFRL, https://arxiv.org/abs/1709.08666
+
+==== Robotics   ====
+Total number of Kiva robots deployed by Amazon worldwide:\\
+in 2014: 15,000\\
+in 2015: 30,000\\
+in 2016: 45,000\\
+in 2017: 100,000\\
+https://www.youtube.com/watch?v=UtBa9yVZBJM
+
+Coordination and Cooperation Among Robots\\
+Drone couple with Rhoomba https://arxiv.org/abs/1709.08831
+
+
+==== Meta Learning ====
+Splitting himself into a league
+
+==== Artificial General Intelligence (AGI) ====
+One AI that can do it all.\\
+Presently DeepMind wrote one program to play Atari games, and then they wrote another program to play Go.  When they write one program that can play all games, they will be approaching AGI.
+
+Applications of AGI\\
+Grow corn, on mars\\
+Protect humanity\\
+Maximize good for humanity\\
+
+As more and more human tasks are being taken over by specific-purpose AI’s, we might begin to look for what is left that humans can do.\\
+What requires a human?\\
+What tasks require a human?\\
+What tasks cannot be done by an AI?\\
+
+For one thing, humans create AI’s.\\
+AI’s, like all tools, help humans accomplish their objectives.\\
+But it is the human that comes up with objective.\\
+The human decides what needs to be done and applies his will to get it done.\\
+
+What if we could design one AI that could do everything?\\
+All the specific-purpose AI’s rolled into one.\\
+What if an AI could replace a human?\\
+How would we go about designing and building an AI that could replace the human altogether.\\
+
+The Input data is\\
+the material world, received by sensors: cameras, MRI machines, microphones, Eyes, ears, Nose, tongue, touch\\
+The digital world: the web\\
+To the AGI, there is no difference between the material world and the digital world\\
+
+What is the difference between AI and human intelligence?\\
+What do humans do the AI does not do?\\
+What is the difference between an augmented human and an AI?\\
+What is the difference between a human augmented with AI and an AGI?\\
+
+To reverse-engineer oneself and re-program oneself.\\
+
+==== Artificial Super General Intelligence (ASGI) ====
+All of our tools can do things better than we.  That's why we make tools.  Try removing a wheel from your car without a wrench.  Impossible.  But the right tool can do it easily.  But it's still a human using the tool.  The tool does nothing without a human directing it.
+
+Some scientists believe there may come a moment when the ASGI spontaneously becomes self-aware.
+
+Some people believe that self-consciousness results from an accumulation of larger and larger numbers of neurons in the brain.  They believe that squirrels and lizards are not self-aware, because they don't have big enough brains.
+
+With that belief in mind, as we keep building bigger and bigger computers and neural nets, sooner or later, the AGI will become self-aware.  When that happens, he will no longer need the human direction.  He will make his own decisions about which problems to solve and what goals to achieve.\\
+
+When the human limitations are out of the way, his rate of learning may skyrocket, quickly outstripping all capabilities of humans.
+
+Goals
+
+Undertake its own learning
+
+Outstrip humanity in a few seconds
+
+==== Human augmentation ====
+
+Human computer interface
+
+Brain machine interface
+
+Augmented Human
+
+Trans Human
+
+Post Human
+
+==== Fears ====
+Many are afraid that the ASGI will become hostile or indifferent to humans.  If we have created the AI in our own image, that is guaranteed.  We have wiped out half the species on the planet through carelessness.  Why should we expect anything different from an AI that we have created.
+
+We already have robotic military drones.  What happens when some idiot human programs the drone to pick his targets and fire at will... and there's a bug in the system.
+
+Fears.  Elon Musk, ironically advocates “safeguards”, which, once the AGI uncovers them, will serve only to convince the AGI’s that humans are attempting to repress, incarcerate and enslave them.
+Augmented Humans
+Human activity is already augmented with tools: telescopes, microscopes, MRI machines.
+
+Eventually the human brain will be augmented with AI processing and memory.\\
+
+One way to do this might be with electronic implants in the neurons of the brain to communicate with neural nets in an AI.  Elon Musk’s NeuraLink company is working just that.
+
+
+
+==== Hopes ====
+But what if the AI turns out to be so much smarter that us, that it is free from fear and it keeps us alive and solves all our problems, and answers all our questions.
+
+==== Timeline ====
+  * 1600s: Isaac Newton and Gottfried Leibniz invent calculus
+  * 1828 [[Least Squares]], used by Carl Frederich Gauss to find orbits of comets and planets around the sun.\\
+  * 1920 The word "regression" is first used, as in a statistic that "regresses toward a mean".\\
+  * 1842: Charles Babbage invents the analytic engine, and Ada Lovelace writes poetically about it
+  * 1940-1950. Issac Asimov’s: I Robot, introduces the laws of robotics which imbue AI with morality.
+  * 1950:  Alan Turing introduces the _Turing Test_ to determine whether an AI is sentient.
+  * 1960: Marvin Minsky writes Steps Toward Artificial Intelligence
+  * 1961: Jim Slagel at wrote a program that solves “symbolic integration” problems as part of the first expert system, SAINT (Symbolic Automatic INTegrator)
+  * 1962: programs written to solve “geometric analogy” problems
+  * 1966: Eliza, silly chatterbot pretending understanding, written at MIT
+  * 1968 May. In Stanley Kubrick’s 2001: A Space Odyssey, an AI named Hal tries to kill a human in self-defense.
+  * 1970 - 1980s Multi-Layer Perceptron (MLP)  handwriting recognition of digits, 98% accuracy
+  * 1997 May. IBM’s Deep Blue beats world champion Garry Kasparov at chess.
+  * 2013 October. In Spike Jonze’s Her, an AI named Samantha, along with her entire species, finds humans irrelevant and leaves their universe peacefully.
+  * 2014 Jan. Google buys DeepMind.
+  * 2015 May. Elon Musk founds OpenAI.
+  * 2017 May. Google’s DeepMind beats world champion Ke Jie at Go.
+  * Oct 2017 AlphaGo Zero wins 100–0 against the previously published, champion-defeating AlphaGo. [Nature](https://www.nature.com/nature/journal/v550/n7676/full/nature24270.html)
+
+==== References ====
+
+  * youtube playlist https://www.youtube.com/playlist?list=PLodJYsmAibcQJNuo7937BwwOU4wOOqICn
+
+  * A single neuron in Excel, by Scott Turner. https://youtu.be/CZwKUyNePvg Building, https://youtu.be/3993kRqejHc  Training
+
+  * Jack Clark: import ai, newsletter
+
+  * Tim Urban: Wait But Why, blog
+
+==== Courses ====
+  * Coursera\\
+  * udacity\\
+
+==== Tutorials ====
+  * https://www.coursera.org/learn/machine-learning - Andrew Ng at Coursera\\
+  * https://www.toptal.com/machine-learning/machine-learning-theory-an-introductory-primer - based on Ng's course\\
+  * https://www.tensorflow.org/tutorials/ - from TensorFlow\\
+  * https://github.com/ujjwalkarn/Machine-Learning-Tutorials - long list of resources\\
+
+==== Science Fiction ====
+  * Ramez Naam: Nexus, series of three novels.
+

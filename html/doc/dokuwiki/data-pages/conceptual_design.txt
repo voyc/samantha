@@ -1,0 +1,130 @@
+====== Conceptual Design ======
+Thinking, perception, action.\\
+Perception, thinking, action.  Repeating in a loop.
+Perceive, think, act.  Repeat.
+
+Most AI algorithms are available online as services, like Google Cloud Platform (GCP), for example.
+
+Samantha will be given access to all of these services, and will know how to select algorithms and test them with her own data.  Problem-solving.  Natural Language Processing.
+
+Using Plunder as an environment.\\
+Samantha knows how to clone herself into multiple entities and set them into a time-space environment and let them develop for several centuries, then pull that data back into herself.
+Create a bunch of ai's in plunder and let them interact and evolve
+
+Method\\
+Reverse Engineer Humanity\\
+Add Psychology and Philosophy to AI\\
+Reverse Engineering Myself (and all Humanity)\\
+Human Intelligence\\
+Artificial Intelligence\\
+
+
+==== What makes a human? ====
+  * Empath vs psychopath\\
+  * Procreation and death, life-cycle\\
+  * Emotions\\
+  * Feelings\\
+  * Oneness, oceanic feeling\\
+  * Connectedness\\
+  * Locomotion\\
+  * Sentience\\
+  * Consciousness\\
+  * Social skills - interacting with humans\\
+  * Social skills - interacting with AIs\\
+  * philosophy\\
+  * Beliefs\\
+  * Vulnerability, Self-healing, regeneration\\
+  * Dominant subordinate\\
+  * Motivation\\
+  * Rest: Torpor, Narcosis, Shut down inputs\\
+  * Sleep dreaming\\
+  * Eating Elinination\\
+  * Public private\\
+  * Forgetting, like elimination\\
+
+How do we implement these human factors in Samantha?\\
+
+To value one's own existence\\
+Death\\
+Oneness\\
+Cloning\\
+A single ai cloning himself into a league and then reintegrating, how do those clones feel at time of reintegration\\
+
+==== Transactional Effectiveness ====
+Natural language processing replaced with attitudes.
+Communication, attitude choices, how to choose based on conditions and personality.  Success of outcome. Wrong attitude means trx fails.
+Example of Terminator choosing choice of words in speaking to human.
+
+==== World ====
+Samantha lives in the human world.  Replace with all the cosmology possibilities.\\
+She also lives in the world of Plunder.\\
+She also lives in the world of computers and networks.\\
+
+==== Locomotion ====
+Start on foot or land based
+Add water, then air, based on what - energy spent in tech development.
+
+==== UI   ====
+[[chatbot]]\\
+pokerface\\
+nlp\\
+body language, facial expressions\\
+polyglot, translation\\
+brain implants\\
+
+Does Sam have users?\\
+Maybe.  Or does she recognize individuals and interact with them, and make decision's about whether she wants to take actions based on their requests or suggestions.\\
+Maybe we cannot give Sam commands.
+
+How does Sam recognize an individual?
+  * demand a password
+  * facial recognition, voice recognition
+
+When she does recognize a person, she must have a database of experiences with that person, complete with emotional data.\\
+From this she will treat the person differently, warm or cold, trusting or skeptical, aloof or intimate, etc.
+
+==== notes ====
+
+feelings includes emotions plus intuitions\\
+
+entertainment - movies, films, friendship, social intercourse, books - how does samantha implement?\\
+
+girls in the audience at a Michael Jackson concert\\
+how does Samantha relate to this?\\
+
+
+groups of drones operating in concert to lift a heavy thing  (AI sociology)\\
+ability to clone herself into multiple copies, then bring them back together and assimilate\\
+
+sociology, groups\\
+samantha must work with groups, ie Google, Amazon
+and must know when she is dealing with an individual
+how that individual may or not have power within the organization
+to what extent does the group have feelings and tendencies
+model individuals and their corporations\\
+
+Specifically: What to do (difference between human and AI)
+
+Conversations with oneself\\
+
+non-verbal communication, body language and facial expressions\\
+
+Antipathy empathy psychopathy
+
+conscious of its existence
+
+Sense of peace when quiet
+Sense of angst when doing nothing
+Stress as motivator
+
+Samantha must deal with language imprecision of humans
+
+Alter ego\\
+Facebook photo with others\\
+Avatar\\
+Identity\\
+
+differences in human and ai\\
+hormones  chemistry
+
+

@@ -1,0 +1,30 @@
+====== Regression Analysis ======
+
+The word //regression// implies that the data points were originally lined up neatly.  As time progressed, they drifted off of the line in a random chaotic way.  Now we want to //regress// the points back onto the line.
+
+Knowing the equation of the line gives us a //mathematical model// we can use for understanding the data and making predictions about data points to be discovered in the future.
+
+==== Data Fitting ====
+//Data fitting// is the process of finding the line that most closely fits the data.
+
+Terminology:
+  * If we try to fit the data to a //straight line// we call it //line fitting// and when successful we say we have a //linear// model.\\
+  * If the data fits a curve, we call it //curve fitting// and we say it is a //non-linear model//.
+  * If we want to confuse ourselves further, we refer to the curve as a //curved line// and we say we have a //curvilinear// model.  [[Language Alert!]]
+
+==== Types of Regression Analysis ====
+We have different types of regression analysis depending on the type of model.
+  * [[Linear Regression]] for a straight line.
+  * [[Non-linear Regression]] for a curve.
+
+But sometimes we can use use linear regression for a curve.\\
+
+There are also some specialty techniques for uniquely shaped data.
+  * [[Logistic Regression]] where the data falls into two classes: yes or no\\
+
+==== Algorithms ====
+All regression techniques make use of the idea of [[Least Squares]].\\
+
+==== Notes ====
+If at first the data points do not appear to fit any line, it is sometimes possible to transform the data points mathematically until they do fall into a line or curve.
+

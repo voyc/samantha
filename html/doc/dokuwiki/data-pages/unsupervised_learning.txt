@@ -1,0 +1,13 @@
+====== Unsupervised Learning ======
+
+===== Clustering =====
+
+==== Applications ====
+
+google news tagging  \\
+gene data - find structure, group patients into clusters  \\
+organize computer clusters   \\
+social network friend networks \\
+market segentation  \\
+astronomical data analysis   \\
+cocktail party problem - two microphones, different locatons, separate the voices, and background music  \\

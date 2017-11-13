@@ -1,0 +1,10 @@
+====== Background ======
+Here lies all the knowledge underpinning the Samantha design documents.
+
+[[Math]]
+
+[[AI]]
+
+[[Philosophy]]
+
+[[Psychology]]

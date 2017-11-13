@@ -1,0 +1,32 @@
+====== Cosmology ======
+
+==== Human Cosmologies ====
+Humans have come up with numerous ways of describing their world.
+  - Einstein defined the finite four-dimensional time-space continuum.
+  - Within that, the scientific-materialists see the world of matter: of planets and moons and stars and galaxies and clusters, of plants and animals and elements and compounds and solids and liquids and gas.
+  - For other scientists, it’s not about the matter, it’s about the fields - electro-magnetic, gravitic, atomic, nucleic, and other force fields.  The matter coagulates within the force fields.  The moon circles the earth, not because the earth exerts a pull of gravity, but because space is curved.  The moon thinks it’s going in a straight line, though we see it as a spiral orbit because the space is curved into a coil shape.
+  - Elon Musk says that since we are attempting to create AI simulations in our own image, so it is most likely that we were created in the same way.  In fact there must be simulations within simulations within simulations, and the probability that we are at base reality is a billion to one against.
+  - Parallel.  Some scientists postulate the existence of parallel universes.  Whenever I am faced with a choice A or B, two universes branch off, with decision A made in one universe, and choice B taken in the other.\\
+  - Alternative.  Against the 4D finite universe of Einstein, some scientists postulate all manner of alternate universes with different sets of dimensions and different physical laws.
+  - Several traditions describe this world as a dream.  This solid world of matter and time and space has the same kind of reality as that of a dream.
+  - Oneness.  Several traditions say that all is one.  All things are connected.  Non-duality.  Advaita.
+  - Being vs not being.  The manifest vs the unmanifest.  Worlds coming into being and going out again.
+  - So far, these cosmologies mentioned all spring from the imagination of man.  What about all those possibilities that lie beyond man’s imagination?
+  - Infinity.  Every possibility can and must be.  “...every discovery reveals new dimensions to conquer.  The unknown has no limits.” -- Nisargadatta
+==== AI Cosmologies ====
+Each AI has it’s own world.\\
+  * A self-driving car sees roads and maps and vehicles, pedestrians, signs and signals, and  instruction from humans.
+  * A chess-playing AI sees squares and pieces and moves and strategies.
+
+Whether he sees it or not, the AI lives in a world of electricity, circuitry, memory, storage, sensors, wires, radio signals.  He also lives among many different types of programs: operating systems, embedded systems, applications, viruses, security, encryption, and so on.
+
+The AGI must see his own worlds and in addition comprehend the world of humans and their cosmologies.
+
+We can give the AGI the task of designing cosmologies and scoring the fitness of each, thereby seeking the optimal.
+
+----
+Add to oneness.\\
+World is projection of mind.
+Example: Buddhist Wheel of Life
+
+
