@@ -1,13 +1,91 @@
 ====== Gallery of Curves ======
 
-https://en.wikipedia.org/wiki/Gallery_of_curves
+==== Straight Line ====
+{{ straight_line.png|Straight Line}}
+$$y = ax + b$$
+where 
+$a$ is the slope, and\\
+$b$ is the y-intercept.
+~CLEAR~
 
+==== Parabola ====
+{{ parabola.png|Parabola}}
+$$y = x²$$
+A function with a second order nomial x² will have a parabolic shape,\\
+concave if positive, convex if negative
+
+Axis of symmetry.
+
+~CLEAR~
+==== Hyperbola ====
+{{ hyperbola.png|Hyperbola}}
+
+$$y = \frac{1}{x}$$
+
+Not to be confused with [[hyperbole]], an exaggeration used as a figure of speech, like "it weighs a ton".
+
+Applications from wikipedia.\\
+Path of sundial shadow.\\
+Orbit of asteroid.\\
+
+~CLEAR~
+==== Circle ====
+== Unit Circle ==
+{{ unit_circle.png|Unit Circle}}
+$$x^2 + y^2 = 1$$
+
+~CLEAR~
+== Ellipse ==
+{{ ellipse.png|Ellipse}}
+$$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$$
+
+~CLEAR~
+==== Sigmoid ====
+
+{{ sigmoid.png|Sigmoid}}
+
+$$ y = \frac{1}{1+e^{x}}$$
+
+y is always between 0 and 1.\\  
+s-shaped curve as in "sigmoid".\\  
+asymptotes to 0 to the left and 1 to the right.\\  
+
+
+~CLEAR~
+==== Polynomials ====
+{{ polynomial_0_degree.png|Polynomial 0 Degree}}
+$$y = x² + 2ax + b$$
+
+{{ polynomial_1_degree.png|Polynomial 1 Degree}}
+{{ polynomial_2_degree.png|Polynomial 2 Degree}}
+{{ polynomial_3_degree.png|Polynomial 3 Degree}}
+{{ polynomial_4_degree.png|Polynomial 4 Degree}}
+{{ polynomial_x.png|Polynomial x}}
+{{ polynomial_xx.png|Polynomial xx}} |
+{{ polynomial_xxx.png|Polynomial xxx}}
+{{ polynomial_xxxx.png|Polynomial xxxx}}
+
+~CLEAR~
+==== Quadratic ====
+{{ quadratic.png|Quadratic}}
+{{ quadratic_1.png|Quadratic 1}}
+{{ quadratic_2.png|Quadratic 2}}
+{{ quadratic_3.png|Quadratic 3}}
+
+~CLEAR~
+==== References ====
+
+For more, see https://en.wikipedia.org/wiki/Gallery_of_curves.
+
+
+==== Notes ====
 Movement\\
 Growth\\
 Acceleration\\
 
-Plot a circle, elipse, cone \\
-
+cone \\
+cone sliced by planes \\
+conic section: circle, ellipse, parabola, hyperbola
 
 equation of a plane\\
 https://www.maplesoft.com/support/help/maple/view.aspx?path=MathApps%2FEquationofaPlane3Points
@@ -20,54 +98,5 @@ https://en.wikipedia.org/wiki/Linear_algebra\\
 parametric equations\\
 http://mathworld.wolfram.com/ParametricEquations.html
 
-
-$$S = ∑rᵢ²$$
-
-$$rᵢ = yᵢ − ƒ(xᵢ,β)$$
-
-$$y = ax + b$$
-
-$$y = ƒ(x)$$
-
-$$y = ƒ(ax + y)$$
-
-straight line  \\
-$$y = ax + b$$
-
-parabola\\
-$$y = x²$$
-
-polynomial\\
-$$y = x² + 2ax + b$$
-
-quadratic\\
-
 linear regression, multiple parameters\\
 $$y = x₁w₁ + x₂w₂ + x₃w₃ + b$$
-
-Straight Line\\
-$$y = ax + b$$
-where a is the slope\\
-and b is the y-intercept
-{{straight_line.png|Straight Line}}
-
-
-Parabola\\
-a function with a second order nomial x² will have a parabolic shape,\\
-concave if positive, convex if negative
-{{parabola.png|Parabola}}
-
-{{polynomial_0_degree.png|Polynomial 0 Degree}}
-{{polynomial_1_degree_2.png|Polynomial 1 Degree 2}}
-{{polynomial_1_degree.png|Polynomial 1 Degree}}
-{{polynomial_2_degree.png|Polynomial 2 Degree}}
-{{polynomial_3_degree.png|Polynomial 3 Degree}}
-{{polynomial_4_degree.png|Polynomial 4 Degree}}
-{{polynomial_x.png|Polynomial x}}
-{{polynomial_xx.png|Polynomial xx}} |
-{{polynomial_xxx.png|Polynomial xxx}}
-{{polynomial_xxxx.png|Polynomial xxxx}}
-{{quadratic.png|Quadratic}}
-{{quadratic_1.png|Quadratic 1}}
-{{quadratic_2.png|Quadratic 2}}
-{{quadratic_3.png|Quadratic 3}}

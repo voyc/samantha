@@ -1,0 +1,73 @@
+====== Gradient ======
+
+The //gradient// of a multi-variable function gives a vector pointing in the direction of steepest slope from any point.
+The elements of the vector are the [[partial derivative]]s of the function at that point.  
+The //gradient// is often represented by the nabla symbol $\nabla$.
+
+For a two-variable function $f(x,y)$, the gradient is the 2D vector given by:
+$$\nabla f(x,y) = \begin{bmatrix}
+\frac{\partial }{\partial x}f(x,y) & 
+\frac{\partial }{\partial y}f(x,y)
+\end{bmatrix}$$
+
+==== Example 1. ====
+{{ ::gradient_example1.png|Gradient Example 1}}
+For the function
+
+$$f(x,y) = 8-(x^2 + y^2)$$
+
+the gradient is
+
+$$\nabla f(x,y) = \begin{bmatrix}
+\frac{\partial }{\partial x}f(x,y) & 
+\frac{\partial }{\partial y}f(x,y)
+\end{bmatrix} \\
+= \begin{bmatrix} -2x & -2y \end{bmatrix}$$
+
+The graph of the function is a 3D surface shaped as a convex parabola, an upside-down bowl.  
+A contour map lies underneath the graph at $z=0$.
+
+For the random point $x=.75, y=-1.5, z=5.18750$,
+
+the gradient is given as
+$$ \nabla f(.75,-1.5) = \begin{bmatrix}-1.5 & 3.0\end{bmatrix} $$
+
+shown as the red line segment lying across the contour map, perpendicular to the contour lines.
+
+==== Example 2.====
+
+{{ ::gradient_example2.png|Gradient Example 2}}
+For the function
+
+$$f(x,y) = (x^2 + y^2)$$
+
+the gradient is
+
+$$\nabla f(x,y) = \begin{bmatrix}
+\frac{\partial }{\partial x}f(x,y) & 
+\frac{\partial }{\partial y}f(x,y)
+\end{bmatrix} \\
+= \begin{bmatrix} 2x & 2y \end{bmatrix}$$
+
+The graph of the function is a bowl-shaped concave parabola.
+
+For the random point at $x=.75, y=-1.5, z=2.8125$,
+
+the gradient is given as
+$$ \nabla f(.75,-1.5) = \begin{bmatrix}1.5 & -3.0\end{bmatrix} $$
+
+shown as the red line segment on the contour map, pointing away from center.
+
+==== Example 3. ====
+
+{{ ::gradient_example3.png|Gradient Example 3}}
+This example is not working yet.
+
+~CLEAR~
+
+==== See Also ====
+
+[[Partial Derivative]]
+==== References ====
+
+The octave scripts for these examples are located here: http://samantha.voyc.com/doc/script/octave/

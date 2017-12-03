@@ -36,12 +36,16 @@ University of Montreal\\
 ==== Lecun ====
 
 ==== Jack Clark ====
-Works at [OpenAI](Institutions#OpenAI).  Writes the [//Import AI//](https://jack-clark.net/about/) newsletter.
+Works at [[Institutions#OpenAI|OpenAI]].  Writes the [[Import AI]] (https://jack-clark.net/about/) newsletter.
 
 ==== Alan Turing ====
 
+==== Jack Clark ====
+
+At [[OpenMind]], writes weekly newsletter [[Import AI]].
+
 ==== Others ====
   * Dandelion Mane, engineer at Google working on tensorboard, part of the tensorflow stack
-  *  Josh tennembaum, mit
-  *  Fei Fei Li, Chief Scientist at Google Cloud and Machine Learning, previously at MIT
-  *  Catherine olsson, openai,  San Francisco
+  * Josh Tennembaum, MIT
+  * Fei Fei Li, Chief Scientist at Google Cloud and Machine Learning, previously at MIT
+  * Catherine olsson, openai,  San Francisco

@@ -18,6 +18,7 @@ Reverse Engineering Myself (and all Humanity)\\
 Human Intelligence\\
 Artificial Intelligence\\
 
+Model, Prediction, Prescription
 
 ==== What makes a human? ====
   * Empath vs psychopath\\
@@ -83,6 +84,11 @@ How does Sam recognize an individual?
 When she does recognize a person, she must have a database of experiences with that person, complete with emotional data.\\
 From this she will treat the person differently, warm or cold, trusting or skeptical, aloof or intimate, etc.
 
+==== AI Interface ====
+
+https://en.m.wikipedia.org/wiki/Overview_of_RESTful_API_Description_Languages
+
+
 ==== notes ====
 
 feelings includes emotions plus intuitions\\
@@ -126,5 +132,15 @@ Identity\\
 
 differences in human and ai\\
 hormones  chemistry
+
+Nationalism. Samantha. Will she identify with groups.
+
+Consider an AI going to see a shrink, or committed for insanity.
+
+Self-driving cars, network, connect to each other, signal intentions, line up ahead of time, avoid traffic jams, keep traffic moving efficiently.
+
+Human interface.  Will she recognize me as a special person?  As her creator or owner?  What if she prefers the company of others?  I am getting jealous and insecure already. 28 Nov 2017
+
+Offline component, python or php or both, polls disk space and other capabilities and stows state in db. Web ui reads db to report status to human.
 
 

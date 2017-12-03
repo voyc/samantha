@@ -89,6 +89,12 @@ But that was much too easy, so let's continue on with the Gradient Descent metho
 
 ==== Gradient Descent ====
 
+We can use [[gradient descent]] to minimize the cost function.
+That is to say, we use [[gradient descent]] to find the optimal values of theta.
+
+[[Gradient Descent]] is an algorithm for finding the optimal theta.
+
+
 Gradient Descent is an algorithm for finding the optimal theta.
 
 We run the predictor function many times, each time with a different value of theta.  It is set up mathematically so that each iteration gets a little closer to the optimal theta.

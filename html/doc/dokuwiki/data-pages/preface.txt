@@ -1,0 +1,14 @@
+====== Preface ======
+
+I now see myself as a programmed device.  
+All the decisions I appear to make are the result of models and numeric values of parameters.
+Therefore, I can create a duplicate of myself in software.
+
+The Background section is my set of notes I kept as I was learning about AI and bringing myself up to speed.
+My first step in starting this project was to learn about AI, and also to assemble and codify everything I have learned about philsophy and psychology.
+When I started studying AI I constantly ran into the language of mathematics and so I was forced to go back and study calculus and linear regression and other math concepts.
+I kept notes as I studied and put them all into the Background section of this document.
+
+John Hagstrand\\
+28 Nov 2017\\
+Chiang Mai, Thailand

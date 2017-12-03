@@ -25,64 +25,24 @@ $$ \textup{when }y = f(x)\newline\newline\textup{slope } = \frac{\textup{change 
 
 The "dx over dy" notation was invented by Gottfried Leibniz around 1700.  The "f prime" notation was by Lagrange.
 
+[[ How to Derive a Derivative]]
 === Definition ===
 
-y is a function of x.  **y = ƒ(x)**\\
-Therefore, an (x,y) point on a graph can also be written as (x,ƒ(x)).\\
-The graph below shows two points (x,ƒ(x)) and ((x+h),ƒ(x+h)).\\
+$y$ is a function of $x$.  $y = ƒ(x)$\\
+Therefore, an $(x,y)$ point on a graph can also be written as $(x,ƒ(x))$.\\
+The graph below shows two points $(x,ƒ(x))$ and $((x+h),ƒ(x+h))$.\\
 
 {{derivative//definition.png|derivative//definition}}
 
-Given the two points **(x,ƒ(x))** and **((x+h),ƒ(x+h))**, the slope of the secant line between the two points is
+Given the two points $(x,ƒ(x))$ and $((x+h),ƒ(x+h))$, the slope of the secant line between the two points is
 
-$$ \frac{\Delta f(x)}{\Delta x} = \frac{f(x+h)-f(x)}{(x+h)-(x)} = \frac{f(x+h)-f(x)}{h}$$.
+$$ \frac{\Delta f(x)}{\Delta x} = \frac{f(x+h)-f(x)}{(x+h)-(x)} = \frac{f(x+h)-f(x)}{h}$$
 
-Then the slope at point **(x,ƒ(x))** is given by the equation above where **h** approaches zero, or\\
+Then the slope at point $(x,ƒ(x))$ is given by the equation above where $h$ approaches zero, or\\
 
-$$ \frac{\Delta f(x)}{\Delta x} = \frac{f(x+h)-f(x)}{(x+h)-(x)} = \frac{f(x+h)-f(x)}{h}$$.
+$$ \frac{\Delta f(x)}{\Delta x} = \frac{f(x+h)-f(x)}{(x+h)-(x)} = \frac{f(x+h)-f(x)}{h}$$
 
 Many popular equations and their differentials can be found in the [[Gallery of Derivatives]].
-
-=== How to Calculate the Derivative ===
-
-== By Definition ==
-
-$$ \frac{\Delta f(x)}{\Delta x} = \frac{f(x+h)-f(x)}{(x+h)-(x)} = \frac{f(x+h)-f(x)}{h}$$.
-
-https://www.wyzant.com/resources/lessons/math/calculus/differentiation
-
-== Power Rule ==
-$$ \textup{if }f(x) = x^r \hspace{45pt}  \textup{ then }f\prime (x) = rx^{r-1}$$
-
-So for example
-if **ƒ(x) = x²** then **ƒ′(x) = 2x¹**\\
-and if **ƒ(x) = x³** then **ƒ′(x) = 3x²**\\
-and if **ƒ(x) = 2x⁴** then **ƒ′(x) = 8x³**\\
-
-
-The linear function is the slope.  f(x) = ax + b, then f'(x) = a.
-
-
-f is the original function, and f-prime is its derivative.
-if f(x) = x2 is the squaring function,
-then f′(x) = 2x is its derivative, the doubling function.
-
-Differential equation is derived from the original function.
-The original function is input to the differential function.
-
-== Chain Rule ==
-http://tutorial.math.lamar.edu/Classes/CalcI/ChainRule.aspx
-
-===== How to Derive a Derivative =====
-==== Rules ====
-
-=== Power Rule ===
-=== Sum Rule ===
-=== Difference Rule ===
-=== Product Rule ===
-=== Quotient Rule ===
-=== Chain Rule ===
-[[Chain Rule]]
 
 ==== Examples ====
 === Example 1. The Bell Curve ===
@@ -126,11 +86,19 @@ The Liebniz notation for derivative is dy over dx.  Sometimes df over dx.
 
 Nowadays, the notation for partial derivative is
 
-===== Partial Derivative =====
+~CLEAR~
+==== Multivariable Calculus ====
+
+== Partial Derivative ==
+
 For a function with multiple variables, we do the derivative for only one variable, holding the others constant.
 
 Notation.  dy over dx is replaced with squiggle over squiggle x.  Or y or z, whichever variable we're allowing to move.
 
 "Partial derivative of blah with respect to x."
+
+== Gradient ==
+
+[[Gradient]]
 
 

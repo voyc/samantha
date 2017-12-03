@@ -52,6 +52,8 @@ Numeric value of a state\\
 Increasing attention to out of balance states\\
 Mania\\
 
+==== Desire ====
+[[Sex]]
 
 ==== Thinking ====
 Categorical\\
@@ -135,6 +137,28 @@ optimize happiness.\\
 Data fitting.\\
 Friend or foe, poison or nutrition.\\
 Facial recognition\\
+
+
+Buddha model\\
+Creativity. Freedom to find pathways, connections, correlations, other than the usual.\\
+Monkey mind, discipline, meditation.\\
+Should Sam need self discipline?\\
+Can we set her up so her development discovers the need for discipline?\\
+Meditation is ruthless in the way it reveals the stark reality of our day-to-day mind.\\
+See list of meditation techniques.\\
+Follow the train of thought back to the moment you left meditation.\\
+Should Sam have a barely controllable wandering mind, and a need or desire to meditate?\\
+
+psyche model: Dog eat dog vs love and peace
+
+UI: 90% of communication is non-verbal
+
+morality: Sam can take over robot. Will she feel wrongness about this. Will she deel remorse
+
+Power of suggestion, Hypnotist
+
+true self vs small self \\
+Nisargadatta: Understand the root cause of your fears -- estrangement from yourself; and of desires -- the longing for the self, and your karma will dissolve like a dream.
 
 ==== References ====
   * https://www.verywell.com/personality-perspectives-2795950\\

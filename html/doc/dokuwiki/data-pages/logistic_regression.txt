@@ -1,38 +1,257 @@
 ====== Logistic Regression ======
 
+The mechanics of logistic regression are similar to those of linear regression, 
+but the applications and the equations are different.
+
+The term \\logistic regression\\is strange.
+A better term might be \\binary classification\\.
+The value of y is always either 
+
+Differences differences for a logistic regression compared to linear and non-linear regressions.
+  * the hypothesis is a classifier instead of predictor, and the output is either 1 or 0
+  * a line or curve can be visualized as a decision boundary, but data fitting does not try to get points on the line, but to one side of it
+  * data fitting may be a line, a circle, ellipse, polynomial or any equation, and this is a function of the cost function, not the hypothesis and not the data
+  * the decision boundary function is substituted into the sigmoid function
+  * the cost function is based on the log of the hypothesis - y, and has two conditional components: y=1 or 0
+
+
+    * the cost function is always non-negative for logistic regression - isn't that also true for linear regression?
+    * the cost function is convex, so it will converge
+    * gradient looks the same except the embedded hypothesis is the sigmoid function
+    * gradient is the same for every p because x1  = 1
+
+
 Similar to linear regression, except y is always either 1 or 0.
 
 Why the word "logistic"?
 
+Why the word "regression", when it's actually a "classification" problem.
+
 The most widely used AI algorithm.
+
+summary of differences between linear regression and logistic regression
+
+^ ^linear regression^logistic regression^
+|Application|Predictor|Classifier|
+|Data Fitting | on the line | to one side of the line|
+|Hypothesis|linear function|decision boundary function substituted into sigmoid function|
+|Cost function | squared error | log of error |
 
 ==== Timeline ====
 1958 USA, David Cox invents logistic regression.
 
 ==== Applications ====
 Logistic regression is a classification algorithm.\\
-More specifically, it is a binary classification algorithm.  It can determine yes or no.  1 or 0.  Malignant or benign.  Fraud or legitimate.\\
+More specifically, it is a binary classification algorithm.  It can determine yes or no.  1 or 0.
 
 A classification function is actually a type of prediction.\\
 
-|Binary Classification | Prediction |
-|---|---|
+^Binary Classification ^ Prediction ^
 |Malignant or benign | What is the probability the tumor is malignant |
 |Spam or legitimate | What is the probability an email is spam |
 |Fraud or legitimate | What is the probability a financial transaction is an attempted fraud |
 |Pass or fail | What is the probability a given student will graduate |
 |Jail or freedom | What is the probability a psychology patient will commit a crime |
 
-To solve a multi-class classification problem, it would have to be broken into separate binary classification problems.  For example, if you are predicting tomorrow's weather as sunny, cloudy, rain or snow, you must treat this as four different logistic regression problems: 1) sunny or not, 2) cloudy or not, 3) rain or not, 4) snow or not.
+
+==== Data Fitting ====
+data fitting = finding the decision boundary
 
 
-==== Sigmoid ====
+==== Hypothesis Function ====
 
-σ(z) ≡ 1/1+e−z or σ(z) ≡ 1/1+exp(−∑jwjxj−b)
+1. formulate the decision boundary function
 
+2. substitute the decision boundary function into the sigmoid function
+h_theta(x) = 1 / 1+e^-(theta transpose x)
+
+
+We say: //$y$ must be $0$ or $1$//. \\
+And then we say: //the hypothesis $h_{\theta}(x)$ must be between $0$ and $1$//. \\
+[[Language Alert!]]
+
+The hypothesis $h_{\theta}(x) = $ the probability that $y = 1$.\\
+If $h_{\theta}(x) \ge .5$, then $y = 1$. \\
+If $h_{\theta}(x) \lt .5$, then $y = 0$. \\
+
+The hypotheses function is named the //logistic function// or the //sigmoid function//.
+
+The predictor function is normally the [[gallery of curves#sigmoid|Sigmoid]] function.
+
+== Logistic Function ==
+The word //logistic// is similar to the word //logic// which is sometimes used to mean //binary//.
+So for practical purposes we can think of the word //logistic// as synonymous with //binary// in this context.
+[[Language Alert!]]
+
+== Sigmoid Function ==
+
+A sigmoid function produces a [[sigmoid]] curve.
+The word //sigmoid// refers to an s-shaped curve - a curve that looks like the letter s.
+It comes from the word sigma which is a greek letter that looks something like the latin letter s.  
+
+Step function.  Sigmoid function.
+
+== Probability ==
+
+The function $h_\theta(x)$ gives the probability that $y==1$.  
+
+$$σ(z) ≡ \frac{1}{1+e−z} or 
+
+σ(z) ≡ 1/1+exp(−∑jwjxj−b)$$
+
+$$h_\theta (x) = g(\theta^T x)\\
+z = \theta^T x\\
+g(z) = \frac{1}{1+e^{-z}}$$
+
+Total probability must equal 1.  y must be either 1 or 0.  
+
+==== Cost Function ====
+
+The cost function is based on the logged error, not the squared error.
+$$J(\theta) = \frac{1}{m} \sum_{i=1}^m Cost(h_\theta(x),y)$$
+
+Where the error or //cost// of each datapoint is:
+
+\begin{align}
+Cost(h_\theta(x),y) &= -\log(h_\theta(x))   &\text{if y=0)}\\
+Cost(h_\theta(x),y) &= -\log(1-h_\theta(x)) &\text{if y=1)}
+\end{align}
+
+These two conditional cases can be combined as follows.
+
+$$Cost(h_\theta(x),y) = -y \log(h_\theta(x)) - (1-y) \log(1-h_\theta(x))$$
+
+$$J(\theta) = \frac{1}{m} \sum_{i=1}^m y_i \log(h_\theta(x_i)) + (1-y_i) \log(1-h_\theta(x_i))$$
+
+This logarithm-based cost function comes from the [[Maximum Likelihood Estimation]] method from the field of Statistics.
+
+Vectorized, like this:
+
+$$h = g(X\theta)$$
+$$J(\theta) = \frac{1}{m} \cdot \left ( -y^T \log(h) - (1-y)^T \log(1-h) \right )$$
+
+==== Gradient ====
+
+The gradient is a vector of two partial derivatives, $\theta_1$ and $\theta_2$:
+
+\begin{align*}
+\frac{\partial}{\partial \theta_1} &= \frac{1}{m} \sum(f(X,\theta) - Y)\\
+\frac{\partial}{\partial \theta_2} &= \frac{1}{m} \sum(f(X,\theta) - Y) X)\\
+\nabla f  &= \begin{bmatrix} \frac{\partial}{\partial \theta_1} \frac{\partial}{\partial \theta_2} \end{bmatrix}
+\end{align*}
+
+
+==== Gradient Descent ====
+
+$$Repeat {\\
+\theta := \theta - \alpha * \nabla J(\theta)\\
+}$$
+
+where $\alpha = $ learning rate
+
+==== Example 1. ====
+
+{{ :logistic_regression_example1.png|Logistic Regression Example 1.}}
+
+The data has one independent variable.
+
+Tumor is malignant, yes or no.
+
+Our $X,Y$ training data set is:
+$$X = \begin{bmatrix}1&1\\1&2\\1&4\\1&6\\1&8\end{bmatrix} \enspace Y = \begin{bmatrix}0\\ 0\\ 0\\ 1\\ 1\end{bmatrix}$$
+
+where\\
+X = the size of the tumor, and\\
+Y = the probability the tumor is malignant.
+
+This data is shown by the red dots in the graph.
+
+The decision boundary function is the linear function $\theta^T X$,
+
+with the starting parameters:
+$$\theta = \begin{bmatrix} 3\\5\end{bmatrix}$$
+
+With these parameters, the decision boundary function is the blue line on the graph
+and the predictor function is the red line.
+
+After gradient descent the optimal parameter values are:
+$$\theta = \begin{bmatrix} 3\\5\end{bmatrix}$$
+
+For a new datapoint X = 9, the classifier function gives: 
+\begin{align*}
+h_\theta(9) &= \frac{1}{1-e^{-\theta^T \dot [1 9]}}\\
+h_\theta(9) &= .98  \rightarrow y = 1  \therefore \text{The tumor is malignant.}
+\end{align*}
+
+~CLEAR~
+==== Example 2. ====
+
+Two independent variables $X_1$ and $X_2$.\\
+Decision boundary is a rough circle.\\
+
+
+~CLEAR~
+
+==== Example 3. ====
+
+Three independent variables $X_1$ and $X_2$ and $X_3$.\\
+Plotted in a cube.\\
+Decision boundary is a sphere or other surface.\\
+
+
+~CLEAR~
+==== Advanced Techniques ====
+
+Alternatives to [[gradient descent]].
+
+[[Conjugate Gradient]]
+
+[[BFGS]]
+
+[[L-BFGS]]
+
+These three algorithms are implemented in Octave and other libraries.  
+They are more complex than gradient descent, but are often faster.  
+Furthermore, you do not have to choose a learning rate, because these algorithms choose an appropriate learning rate for each iteration automatically.
+
+Also, feature scaling (normalization) can make logistic regression run faster.
+
+
+==== Multiclass Classification ====
+
+== Applications ==
+
+^Dataset ^ Classes ^
+|Emails | friends, family, work, newsletters |
+|Tomorrow's weather | sunny, cloudy, rain or snow |
+
+== One-vs-all ==
+To solve a multi-class classification problem, it would have to be broken into separate binary classification problems.
+
+For example, if you are predicting tomorrow's weather as sunny, cloudy, rain or snow, you must treat this as four different logistic regression problems: 1) sunny or not, 2) cloudy or not, 3) rain or not, 4) snow or not.
 
 
 
 ==== References ====
   * Ng week 3
+
+==== Notes ====
+
+optimization
+classification
+prediction 
+
+prediction and classification are calculated in terms of probability
+every fact is a prediction
+
+"I'd like to give you an intuition about logistic regression."  language alert! intuition
+
+why do we make theta a column vector and transpose it whenever we use it?
+why not make it a row vector to start with?
+
+gradient is a vector, row or column?
+
+logistic regression classifier h_p(x) = g(p1x1 + p2x2 + p3x3)
+
+[[converge]] convergence : add to Gradient Descent section
 

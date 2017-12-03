@@ -1,0 +1,9 @@
+Use AI techniques to find the optimal parameters for flash.
+
+Let Samantha get data from flash via api and give it to user via chatbot.
+
+Let Samantha set flash parameters via api.
+
+Let Samantha respond to the current emotional state of the user to adjust the flash parameters.
+
+Where are the ai algorithms located: Sam or flash.

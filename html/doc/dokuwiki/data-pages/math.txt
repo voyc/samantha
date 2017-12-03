@@ -2,38 +2,49 @@
 
   * [[Gallery of Curves]]
 
-  * algebra: the study of generalizations of arithmetic operations  
-  * geometry: the study of shape  
-  * trigonometry:  
+
+  * [[Algebra]]: the study of generalizations of arithmetic operations  
+    * [[Polynomial]]
+    * [[Factoring]]
+    * [[Equations and Functions]]
+    * [[Exponent]]
+    * [[Logarithm]]
+  * [[Geometry]]: the study of shape  
+  * [[Trigonometry]]:  
   * [[Calculus]]: the mathematical study of continuous change  
-  * differential calculus: rates of change and slopes of curves  
-    * integral calculus: accumulation of quantities and the areas under and between curves  
-  * nonlinear programming
+    * [[Differential Calculus]]: rates of change and slopes of curves  
+    * [[Integral Calculus]]: accumulation of quantities and the areas under and between curves  
+  * [[Nonlinear Programming]]
   * [[Linear Algebra]]  
     * [[Matrix Math]]
     * [[Matrix Multiplication]]
-    * eigen values
-    * determinants
   * [[Regression Analysis]]
     * [[Linear Regression]]
-        * simple  
-        * multiple  
-        * multi-variate
+        * Simple Linear Regression 
+        * Multiple Linear Regression  
+        * Multi-Variate Linear Regression
+    * [[Non-Linear Regression]]
     * [[Logistic Regression]]
-  * Logic, set theory, number systems
-  * Statistics
-    * Probability
+  * [[Logic]] - set theory, number systems
+  * [[Statistics]]
+    * [[Probability]]
   * Analysis, modeling
 
 ==== Timeline ====
+  * 2000 BC, Babylon, algebra in use
   * 10th century BCE, in China, ancient texts describe the use of _arrays_ to solve simultaneous equations, including the concept of determinants.  
   * 6th century BCE, in Greece, Pythagoras...
   * 4th century BCE, in India, the Hindu numerals 1-9 and 0 are in use.
   * 3rd century BCE, in Greece, Euclid and Archimedes...
+  * 300 BC, School of Athens, classical Greece, Euclid, Geometry, shapes, circles, triangles
+  * 300 BC, Greece, diaphantus 
   * 5th century CE, in India, first use of decimal places.
+  * 600 AD, India, Brahmagupta
   * 780-850 CE, in Bahgdad, the Hindu numerals spread to the Islamic world thanks to Persian mathematician al-Khwarizmi, who also coins the word _al-jabr_, or in english, _algebra_.
   * 1250 CE, in Europe, the Hindu numerals and decimal system arrived in the works of al-Khwarizmi, brought back from the holy lands by the crusaders, replacing the Greek and Roman numeral systems.
   * 1545-1850 CE, in Europe and Japan, _array_ methods arrive from China, and the word _matrix_ is coined to replace the word _array_.
+  * 1600 Decartes, 32 youngers than Galileo , Cartesian Coordinate System  connection between algebra and geometry
+  * 1600 galileo
   * 1700 Isaac Newton, Gottfried Leibnez, Euler, another guy, in Europe, invented calculus among other things.
   * Niels bohr, goes beyond Newton in subparticle and interplanetary physics.  
   * Hermann Minkowski 4d space time 1908
@@ -75,4 +86,4 @@ https://www.gnu.org/software/octave/doc/v4.0.1/Ordinary-Differential-Equations.h
   * http://sites.psu.edu/symbolcodes/accents/math/mathchart/  
   * http://www.fileformat.info/info/unicode/category/Sm/list.htm  
   * http://azuliadesigns.com/html-character-codes-ascii-entity-unicode-symbols/  
-  * file:///C:/Users/John/webapps/samantha/scripts/mathsymbols.html  
+  * http://samantha.voyc.com/doc/script/python/mathsymbols.html  

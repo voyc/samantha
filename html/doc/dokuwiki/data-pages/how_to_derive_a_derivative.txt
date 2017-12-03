@@ -1,0 +1,78 @@
+====== How to Derive a Derivative ======
+
+The derivative is derived from the original function.\\
+The original function is input to the derivative function.\\
+$f(x)$ is the original function, and $f\prime(x)$ is its derivative.
+
+==== By Definition ====
+
+$$ \frac{\Delta f(x)}{\Delta x} = \frac{f(x+h)-f(x)}{(x+h)-(x)} = \frac{f(x+h)-f(x)}{h}$$.
+
+
+==== Power Rule ====
+$$ \text{if }f(x) = x^r \hspace{45pt}  \text{ then }f\prime (x) = rx^{r-1}$$
+
+So for example\\
+if $f(x) = x^2$ then $f′(x^2) = 2x$, and\\
+if $f(x) = x^3$ then $f\prime(x^3) = 3x^2$, and\\
+if $f(x) = 2x^4$ then $f\prime(2x^4) = 8x^3$\\
+
+For the linear function:
+$$f(x) = ax + b$$
+
+Rewrite it as:
+$$f(x) = ax^1 + bx^0$$
+
+Then apply the Power Rule.
+$$f\prime(x) = a*1 + b*0 = a$$
+
+==== Sum Rule ====
+When two or more functions are summed together, take the derivative of each function separately, then add those two derivatives together.
+$$f(x) = h(x) + g(x)$$
+$$f\prime(x) = h\prime(x) + g\prime(x)$$
+
+For example, in a polynomial function, treat each term as a separate function.  Derive each term separately using the Power Rule, then sum them together.
+$$f(x) = 3x2 + 4x - 12$$
+$$f\prime(x) = 6x + 4$$
+
+==== Difference Rule ====
+Same as the Sum Rule.
+
+==== Product Rule ====
+
+When two functions are multiplied together, take the derivative of each function separately, then multiply each times its opposite, and sum the pairs together.
+$$f(x) = h(x) * g(x)$$
+
+$$(h(x) * g\prime(x)) + ( h\prime(x) * g(x))$$
+
+
+==== Quotient Rule ====
+According to Salman Khan, the Quotient Rule is not needed,\\
+because with algebra you can rewrite $\frac{1}{n^2}$ as $n^{-2}$ and use the Product Rule.
+
+==== Chain Rule ====
+
+When two functions are nested one inside the other, take the derivative of the inside function and the outside function separately and then multiply them together.
+$$f(x) = g(h(x))$$
+$$f\prime(x) = (h\prime(x)) * g\prime(h(x))$$
+
+For example, consider this function.
+$$f(x) = (2x+3)^5$$
+
+The inside function is $h(x) = 2x+3$ \\
+The outside function is $f(x) = g(h(x))^5$ \\
+
+Calculate the derivatives separately.\\
+inside: $h\prime (x) = 2$ \\
+outside: $g\prime (x) = 5(h(x))^4 = 5(2x + 3)^4$
+
+Multiply these two derivatives together, inside times outside. 
+$$f\prime(x) = 2 * 5(2x + 3)^4 = 10(2x + 3)^4$$
+
+
+==== References ====
+  * http://tutorial.math.lamar.edu/Classes/CalcI/ChainRule.aspx
+  * https://www.wyzant.com/resources/lessons/math/calculus/differentiation
+  * Salman Khan youtubes https://youtu.be/h78GdGiRmpM
+
+

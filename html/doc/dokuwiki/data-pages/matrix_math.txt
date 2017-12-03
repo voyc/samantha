@@ -154,6 +154,12 @@ In May 2016, Google announced the tensor processing unit (TPU) a chip specially 
 
 In May 2017, Google announced availability of clusters of TPUs in the Google Compute Engine, making this power available as a service.
 
+==== ASIC ====
+
+AI-Specific Integrated Circut (ASIC) - chips designed specifically for AI processing.  
+Some companies in this space are using reduced precision for faster performance, copying Google's TPU approach.
+
+Nvidia has adapted their GPU architecture to the Tesla P100, a chip specifically designed for AI.
 ==== References   ====
   * Compare MATLAB and numpy https://docs.scipy.org/doc/numpy-dev/user/numpy-for-matlab-users.html
   * Matrix Math on wikipedia.  https://en.wikipedia.org/wiki/Matrix_(mathematics)

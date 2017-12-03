@@ -1,6 +1,12 @@
 ====== Linear Algebra ======
 
+== Linear Transformation ==
+
+== Eigen Values ==
+
+== Determinants ==
+
 
 ==== References ====
-  * //Essence of Linear Algebra_, playlist of 15 videos by 3blue1brown: http://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE//ab
+  * //Essence of Linear Algebra//, playlist of 15 videos by 3blue1brown: http://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE//ab
 

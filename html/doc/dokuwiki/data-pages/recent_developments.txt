@@ -1,5 +1,21 @@
 ====== Recent Developments ======
-Most of these items are gathered from [Jack Clark](Personalities#jack-clark)'s [//Import AI//](https://jack-clark.net/about/) newsletter.
+Most of these items are gathered from [[(personalities#jack-clark|Jack Clark]]'s [[Import AI]](https://jack-clark.net/about/) newsletter.
+
+Many of these items reference articles on Cornell's arVix: https://arxiv.org/
+
+2017 Nov 28: Multi-Level [[Residual Network (ResNet)]] with Stacked [[Simple Recurrent Unit (SRU)]]s for Action Recognition: 
+https://arxiv.org/abs/1711.08238
+
+2017 Nov 20: Self-Supervised Intrinsic Image Decomposition [[Rendered Intrinsics Network (RIN)]] https://arxiv.org/abs/1711.03678
+
+2017 Nov 16: Jumping and back-flipping robot from Boston Dynamics. https://www.youtube.com/watch?v=fRj34o4hN4I
+
+2017 Nov 13: There is a growing sense that neural networks need to be interpretable to humans. The ﬁeld of [[neural network interpretability]] has formed in response to these concerns. As it matures, two major threads of research have begun to coalesce: [[feature visualization]] and [[attribution]].
+https://distill.pub/2017/feature-visualization/
+
+2017 Nov 12: Extremely Large Minibatch SGD: Training ResNet-50 on ImageNet in 15 Minutes, using 1000 Tesla P100's. https://arxiv.org/abs/1711.04325
+
+2017 10 Nov: Poverty Prediction with Public Landsat 7 Satellite Imagery and Machine Learning: https://arxiv.org/abs/1711.03654
 
 2017 Nov 6:  A paper from DeepMind on [[neural architecture search (NAS)]] techniques using fractal math.
 https://arxiv.org/abs/1711.00436
@@ -55,4 +71,7 @@ https://arxiv.org/abs/1710.03753\\
 
 2017 Oct 16: "a new multi-agent competitive environment, [[RoboSumo]]", [[simulated environment]]
 https://arxiv.org/abs/1710.03641\\
+
+2017 Apr 25: [[Biomimicry]], Snake-bot, Butterfly, Woman, Sophia from Hanson Robotics, 
+Jimmy Fallon Tonight Show: http://www.hansonrobotics.com/robot/sophia/
 

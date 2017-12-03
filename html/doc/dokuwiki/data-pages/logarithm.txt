@@ -1,0 +1,28 @@
+====== Logarithm ======
+
+The inverse of an exponent.
+
+\begin{align*}
+\log_2(8) &= 3\\
+      2^3 &= 8
+\end{align*}
+
+== Common Logarithm ==
+
+Base 10.
+$$\log(100) = 2$$
+
+The LOG button on a calculator returns a common logarithm.\\
+The Octave log10() function returns a common logarithm.
+
+== Natural Logarithm ==
+
+Base $e = 2.7183$, Euler's number.
+$$\log(e^3) = 3$$
+
+The LN button on a calculator returns a natural logarithm.\\
+The Octave log() function returns a natural logarithm.
+
+
+==== References ====
+* https://www.mathsisfun.com/algebra/logarithms.html

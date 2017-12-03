@@ -1,0 +1,151 @@
+====== Gradient Descent ======
+
+//Gradient descent// is an algorithm used to minimize a //cost function// of two or more variables.
+
+Each possible combination of values of those variables represents a point.
+The [[gradient]] is a vector that points from that point in the direction of steepest ascent.
+We follow in the opposite direction indicated by the gradient, from point to point, until we reach the minimum value of the cost function.
+The term "descent" describes this step-by-step movement towards the minimum point.
+
+== Cost Function ==
+
+A //cost function// is any function that represents a cost or loss or error.
+
+== Gradient Ascent ==
+
+The term //gradient ascent// is sometimes used to do the inverse and maximize a profit function.
+
+== Learning Rate ==
+
+The //learning rate// is an arbitrary value, like .3, .03, or .003, that is the size of the step taken on each step.
+It is the portion of the gradient vector applied to the point to find the next step.
+
+== Algorithm ==
+Here is the pseudo code for the //gradient descent// algorithm.
+<code>
+set number_of_iterations = 100 # arbitrary value
+set learning_rate α = .1 # arbitrary value
+set starting θ = [0 0] # random values
+for (1 to number_of_iterations)
+    set ∇g = []            #calculate the gradient
+    set θ = θ - (α * ∇g)   #increment the point by a portion of the gradient
+end loop
+</code>
+
+==== Applications ====
+
+//Gradient Descent// is used with [[linear regression]] and with [[neural net]]s to minimize the error of a predictor function.
+
+==== Example 1. ====
+
+{{ ::gradient_descent_example1.png|Gradient Descent Example 1}}
+For the function
+
+$$f(x,y) = (x^2 + y^2)$$
+
+the gradient is
+
+$$\nabla f(x,y) = \begin{bmatrix}
+\frac{\partial }{\partial x}f(x,y) & 
+\frac{\partial }{\partial y}f(x,y)
+\end{bmatrix} \\
+= \begin{bmatrix} 2x & 2y \end{bmatrix}$$
+
+The graph of the function is a bowl-shaped concave parabola.
+
+For the random point at $x=.75, y=-1.5$,
+
+the gradient is given as
+$$ \nabla f(.75,-1.5) = \begin{bmatrix}1.5 & -3.0\end{bmatrix} $$
+
+shown as the highest red dot on the graph.  
+
+We run the algorithm shown above and for each iteration the resulting point is shown by an additional red dot on the graph.
+The point gets closer and closer to the minimum point with every iteration.
+Final result: 
+
+==== Example 2. ====
+
+For a [[linear regression]] example, we have the linear function and input data as follows. 
+
+$$Y = (aX + b) \enspace \text{ where } \enspace 
+X = \begin{bmatrix}1\\ 4\\ 6\\ 9\end{bmatrix}
+Y = \begin{bmatrix}4\\ 4\\ 7\\ 8\end{bmatrix}$$
+
+Our goal is to find optimal values for a and b.
+
+For the cost function we will choose one-half the [[mean squared error]]:
+$$c = \frac{1}{2} * \frac{1}{m} * \sum(((aX + b) - Y)^2)$$
+
+We seek to minimize this cost function using //gradient descent//.
+
+Along with the cost function we need its [[gradient]]:
+
+$$\nabla g = \begin{bmatrix} \frac{\partial}{\partial a} & \frac{\partial}{\partial b}\end{bmatrix}$$
+
+which is a vector composed of the two [[partial derivative]]s:
+
+$$\frac{\partial}{\partial a} = \frac{1}{m} * \sum((aX + b) - Y)$$
+$$\frac{\partial}{\partial b} = \frac{1}{m} * \sum(((aX + b) - Y) * X)$$
+
+{{ ::gradient_descent_example2.png|Gradient Descent Example 2}}
+Number of datapoints $m = 4$.
+
+We choose a starting point of $a = .7$ and $b = 3.5$.
+
+We set number_of_iterations to $40$.
+
+And we set the learning rate $\alpha = .01$.
+
+We run the //gradient descent// algorithm shown by pseudo-code above, and the result of each iteration is shown as a red dot on the graph.
+
+Final result:  the lowest value of the cost function is $0.13805$ for the optimal values of $a=0.60770$ and $b = 2.84019$.
+
+==== Topics ====
+
+== Overfit ==
+
+==== Variations ====
+
+== Batch Gradient Descent ==
+This is the basic procedure we described above.
+The word //batch// describes the fact that we calculate the gradient on the entire set of training data at each iteration.
+
+== Stochastic Gradient Descent ==
+The opposite of batch.  Calculate the gradient on each datapoint, not the whole set of training data.  
+Results in wider variation and big jumps at each step.
+Pro:  Works with large datasets.  May jump over the local minima to find the global minimum.
+Con: May continuously over-jump and never get to the minimum.
+
+== Mini-Batch Gradient Descent ==
+Calculate the gradient on groups datapoints, but not the whole set of training data.  
+A compromise between batch and mini-batch.
+Often the term Stochastic Gradient Descent is referring to Mini-batch.
+
+== Momentum ==
+Add a fraction of the gradient of the previous iteration to the current iteration.  
+Giving more weight to the overall general direction.
+Increasing momentum.
+Pro: Dampens the oscillations.
+Con: With too much momentum it may overshoot the minimum.
+
+== Nesterov Accelerated Gradient (NAG) ==
+Yurii Nesterov in 1983 invented a modifed momentum technique. Apply the momentum step before the gradient step.
+
+== Adaptive Gradient (ADAGRAD) ==
+Apply the Nesterov concept to the learning rate as well as to the gradient.
+Con: Learning rate gets so small that learning stops.
+
+== Adaptive Delta (ADADELTA) ==
+Use a running average of previous gradients to apply to learning rate, so the learning rate does not get so small so fast.
+
+== RMSPROP ==
+
+== Adaptive Moment Estimation (ADAM) ==
+
+
+==== References ====
+
+The Octave scripts for these examples are available here: 
+http://samantha.voyc.com/doc/script/octave/
+Siraj Raval: //The Evolution of Gradient Descent//: https://youtu.be/nhqo0u1a6fw

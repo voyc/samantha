@@ -1,0 +1,9 @@
+====== Partial Derivative ======
+
+A multi-variable function does not have a [[derivative]] but instead has multiple //partial derivatives//, one for each variable. 
+The //partial derivative// is denoted by the $\frac{\partial }{\partial}$ symbol.
+
+A function with two variables $f(x,y)$ has two partial derivatives:
+  * partial derivative with respect to $x$ = $\frac{\partial }{\partial x}f(x,y)$
+  * partial derivative with respect to $y$ = $\frac{\partial }{\partial y}f(x,y)$
+

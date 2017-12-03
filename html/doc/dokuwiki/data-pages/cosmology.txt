@@ -13,12 +13,36 @@ Humans have come up with numerous ways of describing their world.
   - Being vs not being.  The manifest vs the unmanifest.  Worlds coming into being and going out again.
   - So far, these cosmologies mentioned all spring from the imagination of man.  What about all those possibilities that lie beyond man’s imagination?
   - Infinity.  Every possibility can and must be.  “...every discovery reveals new dimensions to conquer.  The unknown has no limits.” -- Nisargadatta
+
+==== Subjective ====
+The World is What We Say it Is, consciously or not
+We create our own reality
+The Secret
+The Law of Attraction
+New Thought
+Positive Thinking
+Earl Nightingale
+Experience is a subjective experience that is projected onto a mirror
+Other people are mirrors into my own self
+
+==== Imaginary ====
+my ego self does not exist
+Nissargadata: Yes, I appear to hear and see and talk and act, but to me it just happens, as to you digestion or perspiration happens. The body mind machine looks after it, but leaves me out of it. Just as you do not need to worry about growing hair, so I need not worry about words and actions. They just happen and leave me unconcerned, for in my world nothing ever goes wrong.
+
+Sadhguru: Both space and time is a creation of the conscious mind. If you transcend the limits of the conscious mind then there is no such thing as space and time.
+
+==== Infinity ====
+Nissargadata: You need not know what you are. Enough to know what you are not. What you are you will never know, for every discovery reveals new dimensions to conquer. The unknown has no limits.
 ==== AI Cosmologies ====
 Each AI has it’s own world.\\
   * A self-driving car sees roads and maps and vehicles, pedestrians, signs and signals, and  instruction from humans.
   * A chess-playing AI sees squares and pieces and moves and strategies.
 
 Whether he sees it or not, the AI lives in a world of electricity, circuitry, memory, storage, sensors, wires, radio signals.  He also lives among many different types of programs: operating systems, embedded systems, applications, viruses, security, encryption, and so on.
+
+The AI can move among many worlds.  
+  * If she's running in javascript in a browser, she can communicate with humans via html/javascript/css and she can communicate with web services via api's, a unique api at each web service.  
+  * If she's running on a server she can communicate with humans via a terminal window and she can write programs in python, php, java, etc., and she can communicate with outside programs via sockets and other interfaces.
 
 The AGI must see his own worlds and in addition comprehend the world of humans and their cosmologies.
 

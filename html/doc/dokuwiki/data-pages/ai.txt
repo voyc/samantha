@@ -1,6 +1,11 @@
 ====== AI ======
 Here is the state of things in AI development as of October 2017.
 
+Openai starter code using tensorflow 
+  * https://youtu.be/mGYU5t8MO7s
+  * Import gym
+  * Import universe
+
 [[Notes in progress]]\\
 [[Notes on Ian Goodfellow]]\\
 [[Notes on Michael Nielsen]]\\
@@ -143,7 +148,9 @@ https://www.youtube.com/watch?v=UtBa9yVZBJM
 Coordination and Cooperation Among Robots\\
 Drone couple with Rhoomba https://arxiv.org/abs/1709.08831
 
+[[Hanson Robotics]] - robot named [[Sophia]] can do facial expressions
 
+[[Boston Dynamics]] - robot named [[Atlas]]
 ==== Meta Learning ====
 Splitting himself into a league
 
