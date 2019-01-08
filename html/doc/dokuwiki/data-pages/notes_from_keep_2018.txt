@@ -1,0 +1,143 @@
+====Robert Sapolsky====
+Frontal neocortex: inhibitions, delayed gratification, long-range planning.  Destroy it and you get crass, selfish, abusive behavior.
+No free will. Behavioral neurology. Justice system is medieval.
+
+====Jordon Peterson: Maps of Meaning====
+View the world through a narrative lens.
+The fundamental problem is to figure out how to act in the world.  For survival.
+After Age 4 the child's socialization is done by his peers. Correcting antisocial Behavior after age for is impossible.40:19
+Social behavior is playing games. There are many games. There are commonalities among all the games. Therefore there's a common basis for Morality. Within each game there is a hierarchy with a goal at the top. Choosing a goal and working towards it is What Gives Life Meaning. 58:25
+
+====Text Summarization====
+Extractive. Extract words and phrases and compose a summary.
+Abstractive. Learn an internal language representation and paraphrase the intent of the text.
+Sequence to sequence model equals recurrent-neural-network.
+Sequence to sequence model can be used for text summarization, language translation, chatbot,
+Encoder decoder
+Memory: lstm, gru.
+Feature engineering, before deep learning, like in classification problem to classify picture as dog choose Eyes Ears Nose fur as features.
+
+====Khan====
+Gradient gives direction of steepest ascent.
+Mit
+Directional derivative is gradient dot unit vector.
+Cross product used only in r3 space. Take two vectors, create a third vector.
+Dot product is used inany number of dimensions, r ^ n.
+
+====Gil Strang====
+A differential equations contains both the original  and the derivative function, tying them together
+Y = e ^ x
+Six function s, six rules, six theorems
+Exponential series, has fractions
+1 to the power of infinity is e
+
+====Calculus====
+Dx is a differential. Dy is a differential.
+We want the limit as x approaches zero, in dy over dx. The limit is a real number. When dx = 0, then dy over dx is undefined. So we take the limit as it approaches zero.
+Use octave to plot x-1/x-1
+
+====Multivariate differential calculus====
+dx/dy z = x^2 + xy + y^2
+Mesh x -1 to 1 && y -1 to 1
+Gradient is the sum of the partial derivatives.
+Represented by upside down Delta.
+Gives vector pointing to maximum z.
+
+====Precalculus====
+1/x
+1/x squared
+Graph polynomial terms independently
+Squeeze theroem
+Series
+Arithmetic
+Geometric
+
+====Linear Algebra====
+Dot product = mat mul
+Bad,sick,etc. If you want to talk to a human, you have to be able to deal with these contradictions. See also contradictions like judgement is bad.
+Determinate of a square matrix, a scalar. https://en.m.wikipedia.org/wiki/Determinant
+Inverse is one over the determinant times the adjoint.
+Gauss- Jordan Elimination - solve two equations
+Equation with three variables but no powers represents y
+Linear combination = weighted sum
+The span of two vectors covers the entire plane R3. A third vector is linearly dependent
+It adds no additional information to the model.
+ ‎
+====Mark Epstein====
+Under Rolland’s influence, Freud described the “oceanic feeling” as the prototypical mystical experience: a sense of limitless and unbounded oneness with the universe that seeks the “restoration of limitless narcissism” and the “resurrection of infantile helplessness.
+The extent of inner feelings of emptiness and unworthiness in the Western psyche has seemed all but unbelievable to teachers raised in the East,
+His Four Noble Truths are the key to understanding the Buddhist psychology of mind.
+People always come to therapy seeking their “true selves,”
+When asked the ultimate narcissistic question by another follower—“What is the nature of the self?”—the Buddha responded that there is neither self nor no-self. The question, itself, was flawed, the Buddha implied, for it was being asked from a place that already assumed that the self was an entity.
+teachings: the suffering of the false self derives from attachment to the two extremes of self-sufficiency and emptiness. By bringing awareness to those very attachments, they can be released. Dorothy was left, in fact, with much less of a clear idea of who she was, but she began to feel more alive.
+For it appears that, though we in the West have just discovered the tendency of the psyche to list from one extreme to the other, the Buddha was articulating it long ago.
+Four Noble truths
+1 there is suffering. Dukkha humilation. decay, old age, and death, to disappointment, loss, and disease. Unpleasantness.
+2 the cause of suffering is craving or thirst.
+3 
+4 how-to: 8-fold path
+Selflessness is confused here with Wilhelm Reich’s organismic potency, and the ego is identified as anything that tenses the body, obscures the capacity for pleasurable discharge, or gets in the way of expressing emotion. Popularized in the sixties, this view remains deeply embedded in the popular imagination. It sees the route to enlightenment as a process of unlearning, of casting off the shackles of civilization and returning to a childlike forthrightness. It also tends to romanticize regression, psychosis, and any uninhibited expression of emotion.
+Dalai Lama on this point: “Selflessness is not a case of something that existed in the past becoming nonexistent. Rather, this sort of “self” is something that never did exist. What is needed is to identify as nonexistent something that always was nonexistent.”4
+In particular, it means that the emotions that we take to be so real and are so worried about do not exist in the way we imagine them. They do exist, but we can know them in a way that is different from either expressing or repressing them. The Buddhist meditations on emptiness are not meant as a withdrawal from the falsely conceived emotions but as a means of recognizing the misconceptions that surround them, thereby changing the way that we experience them altogether. The Central Way of the Buddha has particular relevance in our emotional life.
+Meditation is ruthless in the way it reveals the stark reality of our day-to-day mind.
+Much of our interior life is characterized by this kind of primary process, almost infantile, way of thinking: “I like this. I don’t like that. She hurt me. How can I get that? More of this, no more of that.” These emotionally tinged thoughts are our attempts to keep the pleasure principle operative. Much of our inner dialogue, rather than the “rational” secondary process that is usually associated with the thinking mind, is this constant reaction to experience by a selfish, childish protagonist. None of us has moved very far from the seven-year-old who vigilantly watches to see who got more.
+Common to all schools of thought, from Sri Lanka to Tibet, the unifying theme of the Buddhist approach is this remarkable imperative: “Pay precise attention, moment by moment, to exactly what you are experiencing, right now, separating out your reactions from the raw sensory events.” This is what is meant by bare attention: just the bare facts, an exact registering, allowing things to speak for themselves as if seen for the first time, distinguishing any reactions from the core event.
+
+====Questions====
+How to distribute intelligence.
+Flash. Coach algorithm.
+Tensorflow service.
+Sam. Ui to user. Api to flash. Api to tensorflow. Detect user states and set flash params. Gather data to send to tensorflow service
+Detect time to respond, accuracy level. Ask questions to confirm feeling state assumptions.
+Is anyone working on philosopher or psychology and ai. 
+Who is working on agi? Besides open mind.
+
+
+====Ian M. Banks====
+"Non-sentient computer", as if this were quite a remarkable thing
+
+====Language====
+  * part of UI
+  * verbal, logic, poetry, music, drama, storytelling, dance, art, architecture, sport, literature, facial expressions
+  * Generate a Q&A conversation from a fact. From likes and dislikes.
+  * Alter conversation and behavior based on traits.
+  * Place with scale. Provinces in Thailand. Cities in Thailand.
+  * Time with scale.
+  * IQ test to login.  Targeted message depending on. Vocabulary, reading level.
+
+====story telling====
+How many stories are there? Madame Butterfly, Romeo and Juliet, True Romance, Casablanca, self-sacrifice, Romance myth.
+
+Christopher Booker's contention, in his book Seven Basic Plots
+  * Overcoming the Monster. This type of story goes back through Beowulf to David and Goliath and surely a lot further than that.
+  * Rebirth. A story of renewal.
+  * Quest.
+  * Journey and Return.
+  * Rags to Riches.
+
+Classifications
+  * Tragedy
+  * Comedy
+  * Acts, scenes
+  * Arcs
+  * Types, archetypes
+  * Stages of life
+  * Shakespeare
+  * Hindu
+  * William Foster-Harris' The Basic Patterns of Plot. sets out a theory of three basic patterns of plot.[4]
+  * Ronald B. Tobias set out a twenty-plot theory in his 20 Master Plots.[4]
+  * Georges Polti's The Thirty-Six Dramatic Situations.[4]
+  * Several of these plots can also be seen as reworkings of Joseph Campbell's, work on the quest and return in The Hero with a Thousand Faces.
+
+====Sociology====
+corporate override of frontal cortex
+
+====Patterns====
+Cellular automata, Conway's game of Life
+  
+Falling in love, or the myth of same, is like protein lock and key.
+
+==non-western patterns==
+  * Normally, one should outgrow body-based desires early in life.— Nisargadatta Maharaj, I Am That
+  * Ultimately, all you do is based on your conviction that the world is real and independent of yourself. Were you convinced of the contrary, your behavior would have been quite different.
+  * The feeling of limitation is the work of the mind. What is mind? Find it. If you search for it, it will vanish by itself. For it has no real existence. It is comprised of thoughts. It disappears with the cessation of thoughts. — Ramana Maharshi, Talks with Ramana

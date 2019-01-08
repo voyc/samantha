@@ -1,5 +1,47 @@
 ====== Polynomial ======
 
+Each nomial has a coefficient, a variable, and an exponent.
+
+When the exponent is 0 the coefficient is a constant.
+
+
+== Standard Form ==
+
+
+
+== Coefficient ==
+
+== Term ==
+
+== Constant ==
+
+== Degree ==
+
+== Simplify ==
+
+== Leading Coefficient ==
+
+== Multiply and Divide ==
+
+== Factor ==
+
+== Roots ==
+
+A root is a point where y = 0.\\
+Solve for the roots.\\
+
+== Number of Nomials ==
+
+monomial, binomial, trinomial.
+
+== Number of Variables ==
+
+One variable.
+
+Two variables: $3x^2 - 4xy^6 + x^2y^2 + y^3$
+
+
+== More ==
 
   * Graphing Polynomials and Hyperbolae: http://www.youtube.com/playlist?list=PLJ0RnXkLrsTRevqzUzTRTj7v6NRKoJeen
   * How to get the Leading Coefficient: https://youtu.be/RFDLvVpAT8Q

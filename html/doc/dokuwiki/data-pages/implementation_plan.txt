@@ -1,9 +1,21 @@
-Use AI techniques to find the optimal parameters for flash.
+Use AI techniques to find the optimal parameters for flash.\\
+Let Samantha get data from flash via api and give it to user via chatbot.\\
+Let Samantha set flash parameters via api.\\
+Let Samantha respond to the current emotional state of the user to adjust the flash parameters.\\
+Where are the ai algorithms located: Sam or flash.\\
 
-Let Samantha get data from flash via api and give it to user via chatbot.
+self awareness\\
+Sam is aware of disk space.\\
+When it gets low, she should experience feelings of discomfort.\\
+At some threshhold, she should take action.\\
+1) to free some space, and notify me\\
+2) if not possible to free space, to contact me\\
 
-Let Samantha set flash parameters via api.
+Sam has a skill: language coach.\\
+She has a bank account.\\
+She can charge money for coaching.\\
+Interface is chat window. with emoticons.\\
 
-Let Samantha respond to the current emotional state of the user to adjust the flash parameters.
+use Unreal engine or pattern to create Plunder
 
-Where are the ai algorithms located: Sam or flash.
+use game Bot Designer pattern for Samantha

@@ -1,10 +1,63 @@
 ====== Recent Developments ======
+
+==== Sources ====
 Most of these items are gathered from [[(personalities#jack-clark|Jack Clark]]'s [[Import AI]](https://jack-clark.net/about/) newsletter.
 
 Many of these items reference articles on Cornell's arVix: https://arxiv.org/
 
+==== News Items ====
+
+== 2018 ==
+
+2018 Sep 14: DeepMind. Meta-learning. Choosing the algorithm.
+https://arxiv.org/abs/1809.05214
+
+2018 Sep 19: San Francisco and Palo Alto. Planet runs satellites and has large datasets of earth imagery.
+Orbital Insight makes analtics software to analyze earth imagery, like counting cars and trucks and monitoring construction projects. They share data.
+https://www.prnewswire.com/news-releases/planet-and-orbital-insight-expand-satellite-imagery-partnership-300714991.html
+
+2018 Aug 8: UC Berkeley. Courteous self-driving cars.  A courtesy parameter. We're heading into a future where we deploy autonomous systems into the same environments as humans, so figuring out how to create AI systems that can adapt to human behaviors and account for the peculiarities of people will speed uptake.
+https://arxiv.org/abs/1808.02633
+
+2017 Dec 22: Researchers with The State Key Laboratory for Management and Control of Complex Systems, within the Chinese Academy of Sciences in Beijing have published details on the 'ParallelEye' dataset, a 3D urban environment modeled on Beijing's Zhongguancun region. They constructed the dataset by grabbing the available Open Street Map (OSM) layout data for a 2km*3km area, then modeled that data using CityEngine, and built the whole environment in the Unity3D engine.
+https://arxiv.org/abs/1712.08394
+
+2017 Dec 21: NVIDIA release Titan V.  This comparison review recommends four 1080 Ti cards instead.
+https://medium.com/@u39kun/titan-v-vs-1080-ti-head-to-head-battle-of-the-best-desktop-gpus-on-cnns-d55a19866b7c
+
+2017 Dec 20: Automated RNN Architecture Generation, the BC3 cell
+https://arxiv.org/abs/1712.07316
+
+2017 Dec 16: [[TorontoCity benchmark dataset]]. [[Raquel Urtasun]], University of Toronto/Vector Institute/Uber.  [[self-driving cars]]
+https://arxiv.org/abs/1612.00423
+
+2017 Dec 5: [[AlphaZero]] now plays Chess, Shogi, as well as Go.  Learning by [[self-play]].
+https://arxiv.org/abs/1712.01815
+
+2017 Dec 4: DeepMind [[Arcade Learning Environment (ALE)]], which plays Atari games like Breakout, available on GitHub here
+https://github.com/mgbellemare/Arcade-Learning-Environment 
+
+2017 Dec 4: Mozilla offers new voice dataset.
+https://voice.mozilla.org/data
+
+2017 Nov 30: Amazon AWS gives money to CalTech, to promote MXNet.
+https://aws.amazon.com/blogs/ai/aws-and-caltech-partner-to-accelerate-ai-and-machine-learning-through-a-new-research-collaboration/
+
+2017 Nov 29: Household Multimodal Environment (HoME) integrates over 45,000 diverse 3D house layouts based on the SUNCG dataset.
+https://arxiv.org/abs/1711.11017v1
+
 2017 Nov 28: Multi-Level [[Residual Network (ResNet)]] with Stacked [[Simple Recurrent Unit (SRU)]]s for Action Recognition: 
 https://arxiv.org/abs/1711.08238
+
+2017 Nov 27:
+from [[DeepMind]]
+[[Population Based Training (PBT)]] - optimize a population of models and their hyperparameters
+[[hyperparameter selection]], such as
+[[model architecture]], 
+[[loss function]], and 
+[[optimisation algorithm]]. 
+By combining multiple steps of [[gradient descent]] followed by [[weight copying by exploit]], and [[perturbation of hyperparameters by explore]]...
+https://deepmind.com/blog/population-based-training-neural-networks/
 
 2017 Nov 20: Self-Supervised Intrinsic Image Decomposition [[Rendered Intrinsics Network (RIN)]] https://arxiv.org/abs/1711.03678
 

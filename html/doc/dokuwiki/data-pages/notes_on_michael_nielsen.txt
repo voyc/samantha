@@ -65,3 +65,19 @@ or
 Sigmoid means resembling the greek letter sigma ς or the latin letter S.\\
 Note: the greek letter sigma, uppercase Σ, lowercase σ or ς.
 
+==== References ====
+
+Michael A. Nielsen, //Neural Networks and Deep Learning//, Determination Press, 2015, http://neuralnetworksanddeeplearning.com/
+
+Contents
+  * What this book is about
+  * On the exercises and problems
+  * Using neural nets to recognize handwritten digits
+  * How the backpropagation algorithm works
+  * Improving the way neural networks learn
+  * A visual proof that neural nets can compute any function
+  * Why are deep neural networks hard to train?
+  * Deep learning
+  * Appendix: Is there a simple algorithm for intelligence?
+  * Acknowledgements
+  * Frequently Asked Questions

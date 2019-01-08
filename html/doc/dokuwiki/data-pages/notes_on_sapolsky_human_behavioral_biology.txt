@@ -1,0 +1,245 @@
+====== Notes on Sapolsky: Human Behavioral Biology ======
+
+Robert Sapolsky, Stanford, 2010
+
+Playlist of 25 YouTube lectures
+https://www.youtube.com/watch?v=NNnIGh9g6fA&list=PL150326949691B199
+
+Reading list
+https://www.robertsapolskyrocks.com/reading-materials.html
+==== Contents ====
+
+1. Introduction \\
+2. Behavioral Evolution I\\
+3. Behavioral Evolution II\\
+
+Genetics [[Notes on Sapolsky Molecular Genetics|Notes]]\\
+4. Molecular Genetics I\\
+5. Molecular Genetics II\\
+6. Behavioral Genetics I\\
+7. Behavioral Genetics II\\
+8. Recognizing Relatives\\
+9. Ethology\\
+
+Neuroscience and Endocrinology [[Notes on Sapolsky Neuroscience|Notes]]\\
+10. Introduction to Neuroscience I\\
+11. Introduction to Neuroscience II\\
+12. Endrocrinology\\
+13. Advanced Neurology and Endocrinology\\
+14. Limbic System\\
+
+Sex and aggression [[Notes on Sapolsky Sex|Notes]]\\
+15. Human Sexual Behavior I\\
+16. Human Sexual Behavior II\\
+17. Human Sexual Behavior III and Aggression I\\
+18. Aggression II\\
+19. Aggression III\\
+20. Aggression IV\\
+
+Etc [[Notes]]\\
+21. Chaos and Reductionism\\
+22. Emergence and Complexity\\
+23. Language\\
+24. Schizophrenia\\
+25. Individual Differences\\
+
+==== 1. Introduction to Human Behavioral Biology ====
+
+Dangers of Categorical Thinking
+
+==== 2. Behavioral Evolution I ====
+
+evolution, Darwin, natural selection
+
+1. heritable traits
+2. variability in the traits
+3. some of those traits are more adaptive than others, more fitness, make it more likely that that organism passes on copies of its genes (not survival but reproduction, pass copies of genes to next generation)
+you get evolution in populations
+
+add 4. random occasional mutations introduce new variability
+you get large changes in what a population looks like
+
+building blocks
+1. individual selection, reproducing oneself
+  natural selection - fitness, fast runner for example
+  sexual selection - developing traits which have no fitness except that they are attractive to the opposite sex.
+2. kin selection - selection for organisms cooperating with their relatives, because we share genes, 100% shared with identical twin, 50% sharing with a sibling, 25% with a half-sibling 1/8 with a cousin.  two brothers or eight cousins is equivalent to me.  Animals are fully aware of kinship, how closely related.
+
+3. reciprocal altruism - cooperation, like hunting in a group.  There is also cheating or defection, and the ability to detect cheating.  Game Theory = the science of knowing when to cooperate and when to defect.  Culminating in The Prisoner's Dilemma.
+
+Game Theory
+
+The Prisoner's Dilemma
+optimal strategy: tit for tat (TfT)
+drives other strategies into extinction
+1. starts by cooperating
+2. retaliatory
+3. forgiving
+4. clear on the rules
+
+Robert Axelrod - discovered TfT strategy in Prisoners Dilemma
+
+vulnerability in TfT in the presence of signal errors.  If one party cooperates but the other party thinks he cheated, then an infinite see-saw results with both parties flipping between forgiveness and retaliation.
+
+Dr Strangelove - example of signal error
+
+forgiving Tit for Tat (fTfT) - if you see-saw n times in a row, cooperate one time to break see-saw pattern.  Vulnerability to exploitation from players who never forgive.
+
+Start with TfT.  If you go n rounds without being cheated, switch to fTfT.  Has developed trust.
+
+Pavlov.  Goes with TfT until the opponent switches to fTfT and then exploits.
+
+Daniel Ellsberg: The Optimal Benefit of Madness
+
+Animal Behavior vis a vis Game Theory
+
+Vampire Bats
+Mothers drink blood, store in throat, return to nest and feed to all babies.  Reciprocal Altruism.  Communal feeding.  Researchers made it look like one of the mothers was cheating (signal error).  The next round, the other mothers did not feed that bat's kids.  TfT
+
+Stickleback fish.
+
+Fish species that change sex.  A pair of fish that flip back and forth.  Price of reproduction is greater for the male.  If one fish cheats by being male too often, its partner stops cooperating.
+
+real-world complexity
+
+Lions hear a scary sound in a bush. They approach.  One scaredy-cat lion always hangs back and is not punished.  Why not?
+- maybe he's not paying attention or not very smart
+- maybe there are other games going on where this lion is exhibiting reciprocal behavior, like eating less of the meat
+
+Naked Mole Rat.  Live in big colonies like insects in Africa.  There would be two individuals not doing any work, just sitting around eating.  Not punished.  During the rainy season, these two rats go up top, turn around, and plug the hole.  This is their reciprocating behavior.  Role Diversification.
+
+Holland: mutation in optimization strategy
+
+reciprocal altruism in natural selection
+cooperative hunting
+
+reciprocal altruism in sexual selection
+
+Next topic: you can predict a lot of behavior from simple facts
+
+in one population males are bigger than females, in another they are equal
+in pop one, the males are more aggressive, because their bodies are built for it, and obviously the females are selecting for it
+pop one has more differential reproductive access.  the five biggest guys do 95% of the reproducing.  If they're fighting, there's got to be something they're fighting for.
+pop one has less male parental behavior
+in pop one female choice is for big muscles, in pop two female choice is for competent parenting
+in pop one, dimorphism in lifespan.  big aggressive guys die earlier.
+in pop one, females never has twins.  In pop two, some species, the females always twin.
+in pop two, we often see females abandon children because the male is there to raise the kids.
+
+tournament species - males will fight for right to breed, peacocks, pecking orders, flashy colored males
+pair-bonding monogamous species
+
+==== 3. Behavioral Evolution II ====
+
+NOT TRUE:
+
+Darwin invented evolution
+
+natural selection = survival of the fittest 
+
+behavior for the good of the species, group selection
+
+TRUE:
+
+leave maximum copies of your genes in the next generation
+
+this logic explains size of hearts, brains, etc
+
+apply the same sort of logic to behavior.  you can optimize behavioral strategies.
+
+three building blocks:
+self selection
+kin selection
+reciprocal altruism
+
+some features of sex-related behaviors in two types of species
+
+|feature|tournament|pair-bonding|
+|size|males bigger|males and females similar|
+|secondary sex characteristics|many|few|
+|male choosiness|low|high|
+|male variability|high (5% get all the sex)|low|
+|female choice|for DNA|for parenting skills|
+|female abandonment|none|frequent|
+|multiple births|never|sometimes|
+|aggression|higher in males|same in male vs female|
+|parenting|lower in males|same in male vs female|
+|lifespan|females live longer|females and males have same lifespan|
+
+False sound-bites contradicted by field work in the 1970s
+
+humans are the only species that kill for pleasure.  No.  Some species murder.
+
+everyone loves infants.  No. some species murder infants.  Languar monkeys, vervet monkeys, padis monkeys, lions, mountain gorrilas.
+
+Infantacide patterns
+Adult males.
+Victims likely to be offspring of other males.  Competitive strategy to reduce some other guy's chances for reproductive success.
+Happens in species where average interbirth interval in females is longer than the average tenure of a high-ranking male.  The new alpha male kills the infants to force the females to resume ovulating, so that he can mate while he is the alpha.  (Females do not ovulate while nursing.)  In these species, a male takes over a breeding group and goes about systematically killing the infants.
+
+Variations.
+In some species, the new alpha male will NOT kill the infants if the previous alpha male was a relative.  Kin selection.
+
+The pregnant females may miscarry on account of being harrassed by the new alpha male.
+
+In some species, the smell of a new alpha male causes pregnant females to miscarry.  Scientists have worked out the pathways for this from the olfactory system through to the uterus.  The logic is, why carry this baby to term only to have it killed by the new alpha male.  Better to abort now and begin ovulating again.
+
+In languar monkeys, the female parents will defend their offspring from the new alpha male.  Older females defend more vigorously.  The maternal grandmother most of all.
+
+In some species, pregnant females can fake estrus, mate with the new alpha male.  Then when the female delivers the new alpha male does NOT kill the infant, assuming he is the father.
+
+Savannah baboons.  When aggressive alpha males comes by, a subordinate male will grab a child and hold it.  Turns out, that child is likely to be offspring of the alpha, so the alpha refrains from violence that might hurt his own offspring.  Kidnapping.  The kidnapping strategy is less used when the new alpha has been present for only a short time, because he probably doesn't have any offspring yet.  
+
+Do they smell their own kids or are they thinking about it?  Sapolsky, in his field work, saw a subordinate baboon grab his own kid by mistake.  When this gambit failed to stop the aggressive alpha, the subordinate baboon suddenly discovered his mistake and tossed the kid away.  Therefore, they are thinking about it.  It's cognitive.
+
+Different kind of example.
+Female dominance rankings are built on nepotism.  Alpha female has daughter.  Daughter is number 2.  Alpha female has second daughter, she is number 3.  First daughter has a daughter, she becomes number 3 and the sister is pushed down to number 4.
+
+Sex-ratio fluctuation.  In the tournament species, males are more expensive to produce.  Do you choose to have a male or a female?  [In what way, behaviourly, do the parents have a choice?]  A male child is the risky choice; the female child is the conservative choice.
+
+Adelphic polyandry.  One female with multiple males.  Two brother lions will sometimes share a pride.  In traditional Tibet, a woman will marry a man and all his brothers.  [Has China wiped this out as well?]  To keep a small farm plot from being broken up.
+
+Intersexual competition.  (male vs female)  
+Imprinted genes.  Genes which operate differently depending on which parent they came from.  
+1. father, greater fetal development; mother, slow down fetal development
+2. Another pair of genes affect the brain after delivery.  The male donated gene makes for infants that suckle more.
+3. The father donated gene makes the fetus pull more sugar from the mothers blood stream.
+
+Only see this in tournament species.  Not in pair-bonding.
+
+More Intersexual competition.
+sperm competition.
+sperm competing with the sperm of other males.
+sperm use toxins to kill other sperm.  These sperms are not good for the females.
+
+In some species, the females leave at puberty.  In other species, the males leave at puberty.
+Female exogamy in Chimps.
+Male exogamy in baboons.
+In Chimps, all the males in the group are relatives.  So they developed warfare and even genocide against other groups.
+In baboons, the males are not related, so you have higher levels of male-male aggression within the group.
+
+Group selection, idea reintroduced in specific circumstances. 
+
+One, the Founder effect.  Take a small group and separate them from the main group.  Because this group is smaller, it tends toward inbreeding, all are related to each other, cooperation increases.  Then the small group is reintroduced into the main population.  Because they are cooperating among themselves, they are outcompeting the others.  For the others to compete, they must adapt and become cooperative themselves.  What started as kin selection now becomes reciprocal altruism.  This is touted as a way to introduce cooperation in a world where there is none.
+
+Two, a trait that is successful on an individual level, fails on a group level.  Example chicken A is aggressive and lays lots of eggs, chicken B is less aggressive and lays fewer eggs.  A dominates B.  But, the group of all aggressive chickens are harming and stressing each other so their fertility rate drops.  Now BB dominates AA.  This is a form of group selection.
+
+How do Humans fit in to this?
+
+We're somewhere in-between tournament and pair-bonding.
+
+Criticisms of the idea that evolutionary principles of traits can be applied to behavior.
+
+Heritability: Where are the genes?  We can assume and project, but we cannot point to any physical mechanism that makes behaviors heritable.
+
+Adaptiveness: Gould says many behaviors are spandrels.  They arose as a byproduct of some other behavior, and are not adaptive.  Some people say the chin is a spandrel.  Humans are the only species with a chin.  As the muzzle foreshortens, the chin appears.
+
+Gradualness
+
+
+Social Political Implications
+
+Male dominated hierarchy.  The first evolutionary biologists were white southern males.
+
+Cooperation, not competition.  Gould and the other criticizers of evolutionary biology were NorthEast marxists.
+

@@ -1,0 +1,154 @@
+14. Limbic System
+
+Robert Sapolsky
+
+https://www.youtube.com/watch?v=CAOnSbDSaOw&t=229s
+
+The olfactory bulb makes up 40% of a rat brain.
+
+Rhinencephalon = nose brain = olfactory bulb.
+
+Limbic System = emotional center.
+
+In a rat, Rhinencephalon = Limbic System.  A rat's emotional life is all olfactory.
+
+The limbic system receives information from the parts of the brain that receive sensory information.  In a rat, its primarily olfactory, in a bird its auditory, in an electric eel its electrical.
+
+James McClean, 1950s, the triune brain.
+
+1. Most centrally located and present in all vertebrates: The reptilian brain.  Ancient, automatic, purely regulatory.
+Hypothalamus talking to the pituitary, brain stem, midbrain.
+
+Temperature regulation: hypothalamus, pituitary, thyroid, thyroid hormone
+Blood glucose, pancreas
+Blood pressure.
+Heart rate.
+Breathing.
+
+2. Limbic system.  Mammalian invention, not found in birds, etc.
+
+3. Cortex.  Analytical, cognitive machine.  Greatly expanded in vertebrates, primates, humans.
+
+
+James Papez, 1930s. Controversy over the pronunciation.  Circuitry.  Association with emotion.  The Papez Circuit.
+
+projection - signal starts in nucleus in one area and goes down the axon to project to a different area.
+
+Influence the hypothalamic function.  Connections and projections are very complicated, but everything in the limbic system is trying to tell the hypothalamus what to do.
+
+Neuro endecrine system.  The hypothalamus talks to the pituitary.  This is the bridge between the brain and the endocrine system.  The hypothalamus also sends signals down the spine to the autonomic system.
+
+Every region in the limbic system has a way of stimulating some part of the hypothalamus and inhibiting the ability of other limbic regions to do so.  Most limbic regions have a number of ways to reach the hypothalamus and they differ in the number of synapses, from 1 to 14.  1 is best.  It's faster and has fewer possible interruption points.  In humans, olfactory circuits have a single synapse.  The other sensory regions have 3 or 4.  Our olfactory system takes up less that 5% of our brain.
+
+olfactory connected directly to amygdala
+
+
+Amygdala, clusters of nerve cell bodies.
+amygdala = almond
+
+Hippocampus
+hippocampus = seahore, but looks like a jelly roll
+
+Septum
+a midline structure, nose, heart, midline of the brain.
+
+Mammillary bodies
+
+Thalamus
+
+Ventral tegmental area
+
+Nucleus accubriance
+
+Anterior Singulet, a subregion of the frontal cortex (frontal cortex = prefrontal cortex)
+Emotional regulation
+impulse control
+long-term planning
+gratification postponement
+Many non-cortex like functions.  Makes us human.
+Larger in humans than any other species. Most recently evolved. Last part of the brain to fully mature, not fully myelinated until mid-twenties.
+
+Size of the frontal cortex correlates directly to the size of the social group of each species.
+This implies that the frontal cortex evolved for gossip.
+social relations
+appropriate behavior
+social intelligence
+
+Nauda, Dutch neurologist predicted the existence of an  area of the cortex like this.
+
+Pathways
+
+Amygdala Fuegal pathway - back an forth between amygdala and hippocampus
+amygdala: fear, anxiety, learning to be afraid of particular stimuli
+hippocampus: storing memory 
+
+Thymbria Fornix - Hippocampus to septum, bi-directional
+
+Medial forebrain bundle - septum, hypothalamus, mammillary bodies, very large pathway
+
+striaterminalis - amygdala to hypothalamus.  Roundabout, inefficient route.  Clue to embryonic development.
+
+Clues to embryonic life, and clues to evolution.
+Each new structure is laid on the ones before.
+Example, fingers.  Originally they all moved together as a claw.  To make finger 2 move individually, the old system sends a message to all 5 fingers, and then a newer system sends a message to make fingers 1,3,4,5 ignore that signal.
+
+mammilo-thalamic tract - mammillary bodies - thalamus
+
+thalamus - frontal cortex
+
+olfactory is simple, one synapse
+visual has layers: dots, lines, etc, before getting to amygdala
+ditto for auditory, tactile, 
+
+Techniques for studying brain part function.
+1. lesions - war, accident, lobotomy, animals - destroy a brain part. 
+2. stimulus - stick an electrode in the brain, rarely done on humans except for epilepsy patients
+3. recording electrode - (there are people who can stimulate and record on a single neuron)
+4. look at the circuitry - 
+5. measure levels of chemicals: neurotransmitters, gene expression, etc
+6. imaging - CAT, CT, MRI. Example, in PTSD patients amygdala gets bigger and more metabolically active.  In patients with depression, hippocampus gets smaller.
+
+Qualifiers, constraints
+1. Mistakes made because when you destroy a center, you may also inadvertantly destroy a nerve pathway, and you don't know which caused the funtional disruption.
+2. Complex emotional experience involves sensory, motor, memory and the assertion that one limbic center is responsible for one emotion is a flimsy concept.
+3. You must be an ethologist - viewing behavior as an evolutionarily adaptive trait.  
+Know your species.  Maternal behavior, irritation, look different in different species.  For awhile people thought the hippocampus was for aggression; no it was hunger.
+Know the individuals.  Dominate vs submissive for example.  Submissive will not manifest a reaction to a stimulus targeting aggression.
+ 
+amygdala - fear and anxiety, mediates aggression, male sexual motivation
+septum - inhibits aggression
+(amygdala and septum attempt to inhibit one another)
+hippocampus - learning, memory.  Measures the level of glucocorticoids in the blood, turns off the stress response.  Memory + stress. Memory storage: If you get out of this dangerous situation, remember what you did to get out of it.  Memory retrieval: stressful circumstance coming up, what did I do last time to get out of this.
+Mammillary bodies - maternal behavior.  (Mammillary bodies are shaped like mammary glands.  Name is for the shape, not the function.  Like seahorse for hippocampus.)
+prefrontal cortex - maturation, learning appropriate sexual behavior, learning when to be aggressive, 
+anterior singulet - problem in it in people with depression.  Poke your finger with a needle, anterior singulet activates, along with pituitary, brainstem, etc.  Poke a loved one's finger with a needle, anterior singulate still lights up, thought the pituitary and brainstem do not.  Empathy, Feeling someone else's pain.  Depression = hyper-sensitivity to the pains of life and the world.
+ventral tegmental area (VTA), ventral tementum - has all the neurons that release dopamine, having to do with pleasure.  Cocaine works on this.  All addictive drugs indirectly work on this part.  Apetitive behavior, behavior driven by an appetite for something.  Anticipating a reward and powering the behavior necessary to get the reward.
+
+hypothalmus - a gazillion subsections, all having to do with automatic processes, all profoundly affected by other limbic areas.
+
+ventral medial hypothalamus - pertinent to sexual behavior
+medial pre-optic area - pertinent to sexual behavior
+
+suprachaismatic nucleus - circadian rythyms
+paraventricular nucleus (PVN) - make corticotropin-releasing hormone CRH, initiates the backbone of the stress response, receives projections from ALL other brain part: burned your toe, very hungry, smelled a territorial rival, thought only 4 days to midterm, 
+arcuate nuleus - bottom of the hypothalamic funnel, where all the hypothalamic hormones come out into the blood stream
+lateral hypothalamus - hunger (people for years thought they were studying aggression, but it is in fact predation)
+aggression NOT EQUAL TO predation.  measures blood glucose levels, insulin levels.  Also has to do with other hungers, like hunger for information.
+
+all of the limbic system goes to the hypothalamus which influences the endocrine system and/or the autonomic nervous system.  Unidirectional picture: start in brain, to limbic, to hypothalamus, to endocrine or ANS.
+It also goes in reverse.  Information from the body, influences limbic function.  ANS going in reverse direction.
+
+James-Lange (William James and whoever Lange) theory of emotion.  classic theory since 1900s.  Ridiculous, discredited theory.  But there is some truth in it in these feedback loops:
+
+1. Epinephrine - does not cause any emotion, but modulates or jacks up the emotion already happening.
+
+2. Valium is used as a muscle relaxant and an anti-anxiety drug.
+
+3. meditation with bio-feedback can lower blood pressure
+
+4. significant other gets angry.  you apologize and she calms down.  then she thinks of something you did years ago and gets angry about that.  Because it takes only a moment to apologize and cognitively resolve the issue, but it takes several minutes for the hormones to return to baseline.  So the anger lingers and a cause it dredged up and applied from memory.  Pronounced gender difference.  Female takes longer to return to baseline after anger and after orgasm.
+
+5. Depressed person is told to smile mechanically.  Feels better.
+
+
+

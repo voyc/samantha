@@ -1,44 +1,318 @@
 ====== Notes on Ian Goodfellow ======
 html version here http://www.deeplearningbook.org/\\
-\\
-\\
-  - In the early days of artiﬁcial intelligence, the ﬁeld rapidly tackled and solved problems that are intellectually difficult for human beings but relatively straight-forward for computers — problems that can be described by a list of formal, mathematical rules. \\
+
+==== 1. Introduction ====
+
+In the early days of artiﬁcial intelligence, the ﬁeld rapidly tackled and solved problems that are intellectually difficult for human beings but relatively straight-forward for computers — problems that can be described by a list of formal, mathematical rules. \\
 like playing chess\\
-\\
+
 2. The true challenge to artiﬁcial intelligence proved to be solving the tasks that are easy for people to perform but hard for people to describe formally — problems that we solve intuitively, that feel automatic, \\
 like recognizing spoken words or faces in images.	\\
-	\\
-	\\
+
 This solution is to allow computers to learn from experience\\
 By gathering knowledge from experience, this approach avoids the need for human operators to formally specify all the knowledge that the computer needs.\\
-\\
 and understand the world in terms of a hierarchy of concepts, with each concept deﬁned through its relation to simpler concepts. \\
 The hierarchy of concepts enables the computer to learn complicated concepts by building them out of simpler ones. If we draw a graph showing how these concepts are built on top of each other, the graph is deep, with many layers. For this reason, we call this approach to AI "deep learning".\\
-\\
-\\
-\\
-==== Probability   ====
+
+Terms
+  * AI
+    * Machine Learning (ML)
+      * Representation Learning (RL)
+        * Deep Learning (DL)
+
+== Knowledge Base ==
+
+1989, 1992 Cyc is an inference engine and a database of statements in a language called CycL. These statements are entered by a staﬀ of human supervisors. It is anunwieldy process. People struggle to devise formal rules with enough complexity to accurately describe the world.
+
+== Machine Learning ==
+
+AI systems need the ability to acquire their own knowledge, by extracting patterns from raw data.
+
+Logistic Regression.
+
+Naive Bayes.
+
+== Representation Learning ==
+
+The //representation// of the data is key.  Like for example humans can do math on arabic numerals much faster than with roman numerals.
+
+One solution to this problem is to use machine learning to discover not only the mapping from representation to output but also the representation itself.
+This approach is known as //representation learning//. 
+Learned representations often result in much better performance than can be obtained with hand-designed representations. 
+They also enable AI systems to rapidly adapt to new tasks, with minimal human intervention. 
+A representation learning algorithm can discover a good set of features for a simple task in minutes, or for a complex task in hours to months. 
+Manually designing features for a complex task requires a great deal of human time and eﬀort; it can take decades for an entire community of researchers.
+
+== Deep Learning ==
+
+Multiple layers of features and learning.  
+
+Theoretically, simple features are built into more complex features in successive layers.
+
+The feed-forward multi-layer perceptron.
+
+== History ==
+
+History, Section 1.2. page 12 - 18
+
+Three waves:
+
+1940 - 1960 //cybernetics//, \\
+biological learning (McCulloch and Pitts, 1943; Hebb, 1949), \\
+the perceptron (Rosenblatt, 1958), enabling the training of a single neuron. \\
+
+1980–1995  //connectionism// or //neural networks//,
+back-propagation (Rumelhart et al., 1986a) to train a neural network with one or two hidden layers
+
+2006-present //deep learning//, (Hinton et al.,2006; Bengio et al., 2007; Ranzato et al., 2007a)
+
+1969 (Minsky and Papert,1969). criticized the perceptron
+
+
+[[computational neuroscience]] - study of algorithmic models of how the brain actually works.
+
+
+==== 2. Linear Algebra   ====
+
+Cheat sheet - //The Matrix Cookbook// (Petersen and Pedersen, 2006).
+https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf
+
+products:
+  * matrix product
+  * element-wise product aka Hadamard product
+  * dot product
+
+The size of a vector: squared L2 norm, which can be calculated simply as $x'x$
+
+Size of a matrix: Frobenius norm.
+
+2.7 Eigen decomposition
+
+2.8 Singular value decomposition
+
+2.9 Moore-Penrose Pseudo-Inverse
+
+2.10 The Trace Operator
+
+2.11 Determinate
+
+2.12 Principal Components Analysis
+
+
+==== 3. Probability   ====
 Probability can be seen as the extension of logic to deal with uncertainty.\\
-\\
+
 Stochastic = random\\
-\\
+
 Frequentist probability = statistical probability = drawing colored balls out of a bag\\
-\\
+
 Confidence level = Bayesian probability = doctor’s diagnosis “patient has 40% chance of having the flu” = qualitative level of certainty\\
-\\
+
+3.2 Random Variables
 random variable: x \\
 one of its values: x\\
-\\
+
+3.3 Probability Distributions
 Probability distribution of x : P(x)\\
 \\
 Probability that x = x  : P(x) or P(x = x)\\
 \\
 Probability Mass Function PMF, capital italic P\\
 Probability Density Function PDF, small italic p\\
-\\
+
+3.4 Marginal Probability
+
+3.5 Conditional Probability
+
+3.6 The Chain Rule of Conditional Probabilities
+
+3.7 Independence and Conditional Independence
+
+3.8 Expectation, Variance, and Co-variance
+
+3.9 Common Probability Distributions
+
+3.9.1 Bernoulli Distribution
+
+3.9.2 Multinoulli Distribution, or categorical
+
+3.9.3 Gaussian Distribution
+
+3.9.4 Exponential and LaPlace Distributions
+
+3.9.5 Dirac Distribution and Empirical Distribution
+
+3.9.6 Mixtures of Distributions
+
+3.10 Useful Properties of Common Functions
+
+sigmoid
+
+softplus, aka logit
+
+3.11 Bayes' Rule
+If we know the probability of $y$ given $x$, we can compute the probabilty of $x$ given $y$ as:
+
+$$P(x|y) = \frac{P(x)P(y|x)}{P(y)}$$
+
+3.12 Technical Details of Continuous Variables
+
+3.13 Information Therory
+Information theory is a branch of applied mathematics that revolves around quantifying how much information is present in a signal. 
+It was originally invented to study sending messages from discrete alphabets over a noisy channel, such as communication via radio transmission. 
+In the context of machine learning, we mostly use a few key ideas from information theory to characterize probability distributions or to quantify similarity between probability distributions.
+
+3.14 Structured Probabalistic Models
+
+==== 4. Numerical Computation ====
+
+Precision. Rounding error.
+
+Most readers of this book can simply rely on low-level libraries that provide stable implementations.
+
+4.1 Overflow and Underflow
+
+4.2 Poor Conditioning
+
+4.3 Gradient-Based Optimization
+
+maximize or minimize\\
+objective function\\
+criterion
+
+When we are minimizing it, we may also call it the\\
+cost function,\\
+loss function, or\\
+error function. \\
+
+4.3.1  Beyond the Gradient: Jacobian and Hessian Matrices
+
+4.4 Constrained Optimization
+
+4.5 Example: Linear Least Squares
+
+==== 5. Machine Learning Basics ====
+
+5.1. Learning Algorithm
+
+"A computer program is said to learn from experience $E$ with respect to some class of tasks $T$ and performance measure $P$, 
+if its performance at tasks in $T$, as measured by $P$, improves with experience $E$.”
+
+5.1.1.  Task
+
+5.1.2. Performance Measure
+
+5.1.3. Experience
+
+Some machine learning algorithms do not just experience a ﬁxed dataset. 
+For example, [[reinforcement learning]] algorithms interact with an environment, 
+so there is a feedback loop between the learning system and its experiences. 
+Such algorithms are beyond the scope of this book. 
+Please see Sutton and Barto (1998) or Bertsekas and Tsitsiklis (1996) for information about reinforcement learning, 
+and Mnih et al. (2013) for the deep learning approach to reinforcement learning.
+
+5.1.4. Example: Linear Regression
+
+5.2.  Capacity, Underfitting and Overfitting
+
+5.2.1. The No Free Lunch Theorem
+
+5.2.2.  Regularization
+
+5.3.  Hyperparameters and Validation Sets
+
+Most machine learning algorithms have hyperparameters, 
+settings that we can use to control the algorithm’s behavior. 
+The values of hyperparameters are not adapted by the learning algorithm itself 
+(though we can design a nested learning procedure in which one learning algorithm learns the best hyperparameters for another learning algorithm).
+
+5.3.1.  Cross-Validation
+
+5.4.  Estimators, Bias and Variance
+
+5.4.1.  Point Estimtion
+
+5.4.2.  Bias
+
+5.4.3.  Variance and Standard Error
+
+5.4.4.  Trading off Bias and Variance to Minimize Mean Squared Error
+
+5.4.5.  Consistency
+
+5.5.  Maximum Likelihood Estimation
+
+5.5.1.  Conditional Log-Likelihood and Mean Squared Error
+
+5.5.2.  Properties of Maximum Likelihood
+
+5.6.  Bayesian Statistics
+
+5.6.1.  Maximum a Posteriori (MAP) Estimation
+
+5.7.  Supervised Learning Algorithms
+
+5.7.1.  Probabilistic Supervised Learning
+
+5.7.2.  Support Vector Machines
+
+5.7.3.  Other Simple Supervised Learning Algorithms
+
+5.8.  Unsupervised Learning Algorithms
+
+5.8.1.  Principle Components Analysis
+
+5.8.2.  k-means Clustering
+
+5.9.  Stochastic Gradient Descent
+
+5.10.  Building a Machine Learning Algorithm
+
+5.11.  Challenges Motivating Deep Learning
+
+5.11.1.  The Curse of Dimensionality
+
+5.11.2.  Local Constancy and Smoothness Regularization
+
+5.11.3.  Manifold Learning
+
+
 ==== Real Numbers   ====
 In mathematics, a real number is a value that represents a quantity along a line. The adjective real in this context was introduced in the 17th century by René Descartes, who distinguished between real and imaginary roots of polynomials.\\
 The real numbers include all the rational numbers, such as the integer −5 and the fraction 4/3, and all the irrational numbers, such as √2 (1.41421356..., the square root of 2, an irrational algebraic number). Included within the irrationals are the transcendental numbers, such as π (3.14159265...). Real numbers can be thought of as points on an infinitely long line called the number line or real line, where the points corresponding to integers are equally spaced. Any real number can be determined by a possibly infinite decimal representation, such as that of 8.632, where each consecutive digit is measured in units one tenth the size of the previous one. The real line can be thought of as a part of the complex plane, and complex numbers include real numbers.\\
 \\
 Irrational number: the square root of 2\\
 Transcendental number: pi, π\\
+
+==== References ====
+
+Ian Goodfellow and Yoshua Bengio and Aaron Courville: //Deep Learning//, MIT Press, 2016, http://www.deeplearningbook.org/
+
+Contents
+  * Acknowledgements
+  * Notation
+  * 1 Introduction
+  * Part I: Applied Math and Machine Learning Basics
+    * 2 Linear Algebra
+    * 3 Probability and Information Theory
+    * 4 Numerical Computation
+    * 5 Machine Learning Basics
+  * Part II: Modern Practical Deep Networks
+    * 6 Deep Feedforward Networks
+    * 7 Regularization for Deep Learning
+    * 8 Optimization for Training Deep Models
+    * 9 Convolutional Networks
+    * 10 Sequence Modeling: Recurrent and Recursive Nets
+    * 11 Practical Methodology
+    * 12 Applications
+  * Part III: Deep Learning Research
+    * 13 Linear Factor Models
+    * 14 Autoencoders
+    * 15 Representation Learning
+    * 16 Structured Probabilistic Models for Deep Learning
+    * 17 Monte Carlo Methods
+    * 18 Confronting the Partition Function
+    * 19 Approximate Inference
+    * 20 Deep Generative Models
+  * Bibliography
+  * Index

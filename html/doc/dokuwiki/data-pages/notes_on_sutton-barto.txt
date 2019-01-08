@@ -1,0 +1,465 @@
+====== Notes on Sutton-Barto ======
+
+http://ufal.mff.cuni.cz/~straka/courses/npfl114/2016/sutton-bookdraft2016sep.pdf
+
+https://drive.google.com/drive/folders/0ByidsAQcVcUUOHpFZzFsaThTazg
+
+Sutton, Barto: //Reinforcement Learning: An Introduction//, Draft, Second Edition, MIT Press, 2016
+
+==Richard S. Sutton==
+degree from Stanford\\
+professor at University of Alberta
+
+
+Andrew G. Barto
+
+1. The Reinforcement Learning Problem
+
+1.1.  Reinforcement Learning
+
+1.2. Examples
+chess player
+management of an oil refinery
+gazelle calf struggles to its feet after birth, 30 minutes later running 20 mph
+mobile robot: search for more trash or return to recharge
+Phil getting breakfast
+
+1.3 Elements of RL
+  * policy - mapping from state to action.  It corresponds to what in psychology would be called
+a set of stimulus–response rules or associations (provided that stimuli include those
+that can come from within the animal).
+
+  * reward signal - the goal. On each time
+step, the environment sends to the reinforcement learning agent a single number, a
+reward. The agent’s sole objective is to maximize the total reward it receives over
+the long run.  human psychology: pleasure/pain
+
+  * value function - Whereas rewards determine the immediate, intrinsic
+desirability of environmental states, values indicate the long-term desirability of
+states after taking into account the states that are likely to follow, and the rewards
+available in those states.  human psychology: refined and farsighted judgment of the current state
+Rewards are basically given directly by the environment,
+but values must be estimated and re-estimated from the sequences of observations an
+agent makes over its entire lifetime. In fact, the most important component of almost
+all reinforcement learning algorithms we consider is a method for efficiently estimating
+values. The central role of value estimation is arguably the most important thing
+we have learned about reinforcement learning over the last few decades.
+
+  * model.  optional.  Model-free: trial and error.  Model-based: planning.  Start with trial and error, build the model, then use planning.
+
+1.4  Limitations and scope.
+
+multiple reinforcement learning methods\\
+This book focuses on those methods structured around estimating value functions.
+
+other methods use Genetic Algorithms, genetic programming, simulated annealing.  No value functions.
+These methods evaluate the “lifetime” behavior of many nonlearning
+agents, each using a different policy for interacting with its environment,
+and select those that are able to obtain the most reward.
+
+policy gradient methods
+
+Learning vs Evolution.
+
+1.5.  An Extended Example: Tic Tac Toe
+
+Exercises:
+  * Self Play
+  * Symmetries
+  * Greedy Play
+  * Learning from Exploration
+  * Other Improvements
+
+1.6 Summary
+
+1.7 History of RL
+
+The history of reinforcement learning has two main threads, both long and rich, that
+were pursued independently before intertwining in modern reinforcement learning.
+One thread concerns learning by trial and error that started in the psychology of
+animal learning. This thread runs through some of the earliest work in artificial
+intelligence and led to the revival of reinforcement learning in the early 1980s. The
+other thread concerns the problem of optimal control and its solution using value
+functions and dynamic programming. For the most part, this thread did not involve
+learning. Although the two threads have been largely independent, the exceptions
+revolve around a third, less distinct thread concerning temporal-difference methods
+such as the one used in the tic-tac-toe example in this chapter. All three threads
+came together in the late 1980s to produce the modern field of reinforcement learning
+as we present it in this book.
+
+1938 B. F. Skinner
+
+1927 Pavlov: Conditioned Reflexes
+
+1948: In a 1948 report,
+Alan Turing described a design for a “pleasure-pain system” that worked along the
+lines of the Law of Effect:
+
+Electro-mechanical devices:\\
+1933: Thomas Ross, machine that can find and remember its way through a maze through setting of switches
+
+1954: Marvin Minsky: SNARCs
+
+1954 - 1962: confusion between reinforcement learning and supervised learning.  
+terms Trial and error, rewards and punishments, applied to learning from training examples.
+
+1960-1980 general neglect of trial-and-error learning.
+
+1960 first use of the term //reinforcement learning// for trial-and-error learning.
+
+Temporal-Difference (TD)
+1959 Arthur Samuel: Checkers
+
+1961 Marvin Minsky: //Steps to Artificial Intelligence//.  Talks about prediction, expectation, basic credit-assignment problem
+How do you distribute credit for success among the many decisions that may have been involved
+in producing it? All of the methods we discuss in this book are, in a sense, directed
+toward solving this problem. Minsky’s paper is well worth reading today.
+
+1980 three threads came together as revival of reinforcement learning
+1. [[trial and error]] that started in the psychology of animal learning. 
+2. [[optimal control]] and its solution using [[value functions]] and [[dynamic programming]]
+3. [[temporal-difference]] methods, see tic-tac-toe example in this chapter. 
+
+1981 At this time we developed a method
+for using temporal-difference learning in trial-and-error learning, known as the actor–
+critic architecture, and applied this method to Michie and Chambers’s pole-balancing
+problem (Barto, Sutton, and Anderson, 1983).
+
+1.8 Biographical Notes
+
+the theory of reinforcement learning as we treat it
+in this book is based on maximizing the expected value of the amount of reward an agent can accumulate over its future. This is in consistent with the classic principle
+of von Neumann and Morgenstern (1944) that rational decisions are those that maximize
+expected utility.
+
+risk - important in investment, optimal control, outside the scope
+
+utility theory - measuring people's desires, outside the scope
+
+Part 1.  Tabular Solution Methods
+
+Chapter 2. Multi-Arm Bandits
+
+2.1. A k-Armed Bandit Problem
+
+Choose one arm.  Probability distribution for each arm is unknown.\\  
+Explore to build knowledge of probability distribution for each arm.\\  
+Exploit to maximize value.  \\
+Apply to doctor prescribing one of multiple experimental treatments to multiple patients with disease symptoms.\\
+
+three fundamental classes of methods for solving finite Markov decision problems: 
+  * dynamic programming, 
+  * Monte Carlo methods, and
+  * temporal-difference learning.
+
+2.2. Action-Value Methods
+
+Greedy vs. E-greedy
+
+Greedy action selection always exploits current
+knowledge to maximize immediate reward; it spends no time at all sampling apparently
+inferior actions to see if they might really be better. A simple alternative is to
+behave greedily most of the time, but every once in a while, say with small probability
+", instead to select randomly from amongst all the actions with equal probability
+independently of the action-value estimates. We call methods using this near-greedy
+action selection rule "-greedy methods.
+
+2.3.  Incremental Implementation
+
+How to calculate the average reward at each timestep.
+
+2.4.  Tracking a Non-Stationary Problem
+
+Bandits changing over time.  The probability distribution of each bandit is changing over time.
+
+2.5. Optimistic Initial Values
+
+2.6. Upper-Confidence-Bound Action Selection
+
+2.7. Gradient Bandit Algorithms
+
+2.8. Associative Search (Contextual Bandits)
+
+2.9. Summary
+
+3. Finite Markov Decision Processes
+
+3.1. The Agent-Environment Interface
+
+3.2. Goals and Rewards
+
+3.3. Returns
+
+3.4. Unified Notation for Episodic and Continuing Tasks
+
+3.5. The Markov Property
+
+3.6. Markov Decision Processes
+
+3.7. Value Functions
+
+3.8. Optimal Value Functions
+
+3.9. Optimality and Approximation
+
+3.10. Summary
+
+4.  Dynamic Programming
+
+4.1. Policy Evaluation
+
+4.2. Policy Improvement
+
+4.3. Policy Iteration
+
+4.4. Value Iteration
+
+4.5. Asynchronous Dynamic Programming
+
+4.6. Generalized Policy Iteration 
+
+4.7. Efficiency of Dynamic Programming
+
+4.8. Summary
+
+5. Monte Carlo Methods
+
+5.1. Monte Carlo Prediction
+
+5.2. Monte Carlo Estimation of Action Values
+
+5.3. Monte Carlo Control
+
+5.4. Monte Carlo Control Without Exploring Starts
+
+5.5. Off-policy Prediction via Importance Sampling
+
+5.6. Incremental Implementation
+
+5.7. Off-policy Monte Carlo Control
+
+5.8. Return-Specific Importance Sampling
+
+5.9. Summary
+
+6. Temporal-Difference Learning
+
+6.1. TD Prediction
+
+6.2. Advantages of TD Prediction Methods
+
+6.3. Optimality of TD(0)
+
+6.4. Sarsa: On-Policy TD Control
+
+6.5. Q-Learning: Off-Policy TD Control
+
+6.6. Expected Sarsa
+
+6.7. Maximization Bias and Double Learning
+
+6.8. Games, Afterstates, and Other Special Cases
+
+6.9. Summary
+
+7. Multi-step Bootstrapping
+
+7.1. n-step TD Prediction
+
+7.2. n-step Sarsa
+
+7.3. n-step Off-policy Learning by Importance Sampling
+
+7.4. Off-policy Learning without Importance Sampling: The n-step Tree Backup Algorithm
+
+7.5. A Unifying Algorithm: n-step Q(σ)
+
+7.6. Summary
+
+8. Planning and Learning with Tabular Methods
+
+8.1. Models and Planning
+
+8.2. Dyna: Planning, Acting, and Learning
+
+8.3. When the Model is Wrong
+
+8.4. Prioritized Sweeping
+
+8.5. Planning as Part of Action Selection
+
+8.6. Heuristic Search
+
+8.7. Monte Carlo Tree Search
+
+8.8. Summary
+
+Part II. Approximate Solution Methods
+
+the number of possible camera images, for example, is much larger
+than the number of atoms in the universe.
+
+9. On-policy Prediction with Approximation
+
+9.1. Value Function Approximation
+
+9.2. The Prediction Objective (MSVE)
+
+9.3. Stochastic-Gradient and Semi-gradient Methods
+
+9.4. Linear Methods
+
+9.5. Feature Construction for Linear Methods
+
+9.5.1. Polynomials
+
+9.5.2. Fourier Basis
+
+9.5.3. Coarse Coding
+
+9.5.4. Tile Coding
+
+9.5.5. Radial Bias Functions
+
+9.6. Non-Linear Function Approximation: Artificial Neural Networks
+
+9.7. Least Squares TD
+
+9.8. Summary
+
+10. On-Policy Control with Approximation
+
+10.1 Episodic Semi-Gradient Control
+
+10.2 n-step Semi-Gradient Sarsa
+
+10.3 Average Reward: A New Problem Setting for Continuing Tasks
+
+10.4 Deprecating the Discounted Setting
+
+10.5 n-step Differential Semi-Gradient Sarsa
+
+10.6 Summary
+
+11. Off-Policy Methods with Approximation
+
+11.1. Semi-Gradient Methods
+
+11.2. Baird's Counterexample
+
+11.3. The Deadly Triad
+
+12. Eligibility Traces
+
+12.1. The λ-return
+
+12.2. TD(λ)
+
+12.3. An On-line Forward View
+
+12.4. True Online TD(λ)
+
+13. Policy Gradient Methods
+
+13.1. Policy Approximation and its Advantages
+
+13.2. The Policy Gradient Theorem
+
+13.3. REINFORCE: Monte Carlo Policy Gradient
+
+13.4. REINFORCE with Baseline
+
+13.5. Actor-Critic Methods
+
+13.6. Policy Gradient for Continuing Problems (Average Reward Rate)
+
+13.7. Policy Parameterization for Continuous Actions
+
+Part III. Looking Deeper
+
+14. Psychology
+
+14.1. Terminology
+
+14.2. Prediction and Control
+
+14.3. Classical Conditioning
+
+14.3.1. The Rescorla-Wagner Model
+
+14.3.2. The TD Model
+
+14.4. Instrumental Conditioning
+
+14.5. Delayed Reinforcement
+
+14.6. Cognitive Maps
+
+14.7. Habitual and Goal-Directed Behavior
+
+14.8. Summary
+
+14.9. Conclusions
+
+15. Neuroscience
+
+15.1. Neuroscience Basics
+
+15.2. Reward Signals, Reinforcement Signals, Values, and Prediction Errors
+
+15.3. The Reward Prediction Error Hypothesis
+
+15.4. Dopamine
+
+15.5. Experimental Support for the Reward Prediction Error Hypothesis
+
+15.6. TD/Error Dopamine Correspondence
+
+15.7. Neural Actor-Critic
+
+15.8. Actor and Critic Learning Rules
+
+15.9. Hedonistic Neurons
+
+15.10. Collective Reinforcement Learning
+
+15.11. Model-Based Methods in the Brain
+
+15.12. Addiction
+
+15.13. Summary
+
+15.14. Conclusion
+
+16. Applications and Case Studies
+
+16.1. TD-Gammon
+
+16.2. Samuel's Checkers Player
+
+16.3. The Acrobot
+
+16.4. Watson's Daily-Double Wagering
+
+16.5. Optimizing Memory Control
+
+16.6. Human-Level Video Game Play
+
+16.7. Mastering the Game of Go
+
+16.8. Personalized Web Services
+
+16.9. Thermal Soaring
+
+17. Frontiers
+
+17.1. The Unified View
+
+chapter incomplete
+
+
+
+
+
+
+

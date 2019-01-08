@@ -1,0 +1,32 @@
+====== Quadratic ======
+
+Quadratic = 2nd Degree [[Polynomial]].
+
+{{ quadratic_1.png|Quadratic 1}}
+
+$$y = x^2$$
+$$y = ax^2 + bx + c$$
+$$y = ax^2 + 2ax + a^2$$
+
+To visualize:
+  * Solve for x to find the roots (where y = 0).
+  * The constant is the y-intercept.
+
+==== Complete the Square ====
+Make the left-size into some expression squared, taking advantage of the fact that:
+$$(a+x)^2 = ax^2 + 2ax + a^2$$
+
+Like this:
+\begin{align*}
+x^2 + 16x - 57 &= 0\\
+x^2 + 16x + 64 &= 57+64\\
+(x+8)^2 &= 121\\
+\end{align*}
+
+==== Quadratic Formula ====
+
+\begin{align*}
+ax^2 + bx + c &= 0\\
+x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{align*}
+

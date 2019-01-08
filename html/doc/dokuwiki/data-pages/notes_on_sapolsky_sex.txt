@@ -1,0 +1,1191 @@
+====== Notes on Sapolsky: Sex and Aggression ======
+
+[[Notes on Sapolsky Human Behavioral Biology|Back to top]]
+
+==== 15. Human Sexual Behavior I ====
+
+https://www.youtube.com/watch?v=LOY3QH_jOtE
+
+Strategy.
+(Read this list from bottom up.) Start with a behavior. Look backwards in time to find the antcedents to that behavior.
+
+Evolution of species\\
+Genetics of population\\
+Genetics of the individual\\
+Perinatal biology\\
+Perinatal effects\\
+Chronic Hormonal \\
+Culture\\
+Acute Hormones\\
+Releasing Stimuli in the environment\\
+Neurobiology\\
+Behavior\\
+
+Why were they in such a rush at the end?
+Proximal explanation: it feels good
+Distal explanation: hormones, nerve endings, stimuli, feedback loop, etc
+
+close vs far
+
+Proximal mechanisms: Releasing Stiumli and Neurobio
+Distal mechanisms: evolution, perinatal bio, etc
+
+highly conserved fixed action patterns across many species
+most vertebrate species using
+pelvic thrusting, 
+orgasms,
+ejaculation,
+lordotic reflex (lordosis, presenting, bending backward)
+
+selectivity within species
+
+chaining of behavior and releasing stimuli
+male behavior stimulates female behavior which stimulates male behavior which stimulates...
+
+Outdated terms:
+libido, arousal, motivation
+
+Current scientific terms:
+attractivity, proceptivity, receptivity
+
+Current terms in clinical medicine:
+motivation vs performance
+
+female orgasm:\\
+shared by other primates\\
+not necessary for conception but may increase likelihood\\
+facilitates fertilization \\
+1. increased vaginal fluids increases motility of sperm\\
+2. exhausts the female leaving her horizontal \\
+3. feels good so more likely to do it again\\
+But, no correlation between fertility of a woman and her propensity for orgasm.\\
+Is heritable\\
+
+spandrel - a feature arising a byproduct rather than an adaptation, with no clear benefit for fitness and survival
+
+orgasm is a spandrel in women\\
+nipples are a spandrel in men
+
+human specializations\\
+are these things unique to humans:\\
+non-reproductive sex: humans, bonobos, dolphins\\
+foreplay\\
+homosexuality\\
+egalitarian sex (in many species, only one male and one female are chosen for reproduction)\\
+private - in no other species is the majority of sexual behavior done in private\\
+confusing sex with aggression or violence\\
+masturbation\\
+fantasizing - we have no way to know whether other species fantasize\\
+marriage - universal across human cultures. some other species have monogamous pair-bonding. Humans have social monogamy but not sexual monogamy. between 10 and 40% of children are fathered by someone other than the sperm donor.\\
+cheating\\
+romance - new, 3 or 4 centures
+that romance should persist throughout a marriage - novel concept, 30 or 40 years old\\
+divorce - average marriage across all cultures: 2 to 4 years, 2 to 4 years is the period of children being dependent on a high degree of parenting, and is the interbirth interval\\
+serial monogamy - with the lag time between relationships equal to the interbirth interval\\
+
+non-human specializations\\
+hermaphrodite
+an individual changes sex opportunistically\\
+parthenogenic - an individual reproduces without the benefit of anyone else's genetic input\\
+
+Gender Differences
+1. brain regions preferentially involved differs between genders
+
+females hotspots:\\
+ventral medial hypothalbamus - has receptors for estrogen, progesterone\\ 
+midbrain\\
+spinal column - the lordotic reflex is exclusive to females\\
+
+male hotspots:\\
+medial preoptic area (of the hypothalamus) - has receptors for testosterone, androgen. sexual performance.\\
+amygdala - sexual motivation (how are sexual motivation and aggression related?)\\
+autonomic nervous system\\
+parasympathetic nervous system establishes the erection, \\
+sympathetic nervous system needed for ejaculation\\
+same for female clitoral erection\\
+vascular erection (human, longer)\\
+muscular erection (rat, faster)\\
+
+slower recovery time in females than males\\
+
+2. brain regions differ in size per gender\\
+sexual dimorphism \\
+INAH Cluster of Nucleii in the Hypothalamus, twice the size in men, statistically significant\\
+
+Same in both genders
+
+Male and female orgasm
+
+problems in males, too rapid transition from parasympathetic to sympathetic (premature ejaculation)
+
+problems in females, failure of transition from parasympathetic to sympathetic (no orgasm).  Is this a pathology, or a normal human variability?
+
+Neurobiology of Pleasure, Anticipation, Reward
+
+Dopamine - identical role in both sexes, huge role
+
+Dopamine path: from Ventral Tegmental area to nucleus sucumbens to many places in the brain
+
+If this path is depleted, no interest in sexual behavior.  Loss of libido proceptivity.  Like in clinical depression.  One of the defining symptoms of clinical depression: loss of libido proceptivity.
+
+meso-limbic dopamine system, central to the reinforcing aspects of sexual behavior
+
+dopamine system not so much about reward as about anticipation
+driving goal-directed behavior
+
+show a man a picture of attractive woman making eye contact, dopamine system activates\\
+show a man a picture of unattractive woman looking away, dopamine system activates\\
+
+Famous Experiment.\\
+monkey gets a reward after 10 lever presses.\\
+dopamine level goes up in monkey when he presses the button, not when he gets the reward.\\
+
+Variation.\\
+monkey gets a reward after 10 lever presses only 50% of the time, randomly, thus introducing the concept "maybe".\\
+dopamine level goes thru the roof\\
+"intermittent reinforcement"\\
+At 25% or 75% you get some smaller increase in dopamine.\\
+50% gets maximum dopamine, therefore maximum goal-directed bahavior.\\
+Like in vegas, social engineers make it seem like 50% probability to get maximum goal-directed behavior.
+
+"a relationship is the price you pay for the anticipation of it"
+
+== pair-bonding via d1, d2 receptors in rodents ==
+
+dopamine receptor subtypes:\\
+Dopamine 1 (d1)\\
+Dopamine 2 (d2)\\
+
+In monogamous species, right after mating, when a pair-bond is first formed, d2 goes down, d1 goes up.
+
+If you drive down the d2 levels before mating, they don't form a pair-bond.
+
+If you prevent the drop in d2, or prevent the rise in d1, they will pair-bond and 8 minutes later go pair-bond with somebody else.
+
+D2 seems to reward the anticipation of pair-bonding.\\
+d1 seems to mediate the pleasure of the monogamous features of the pair-bond.
+
+Said again.\\
+You need D2 to form a pair-bond after sex.\\
+
+Then, immediately, you need D2 to go down, and d1 to go up to be faithful.\\
+
+
+Experiment.\\
+You have a beloved.\\
+Put you in a brain scanner.\\
+Show photos of people you know, with subliminal photos of your beloved.\\
+
+Knowing your beloved for 2.5 weeks, the photos stimulate the dopamine system.\\
+
+After 5 years, the photos stimulate anterior singulate, the empathy comfort system.\\
+
+54:27
+
+== Frontal cortex ==
+
+How to be appropriate in sexual behavior.  Usually reining in inappropriate behavior. But sometimes encouraging proceptive behavior.
+
+== Hormonal responses to sexual behavior ==
+
+[mediate = bring about a result]
+
+Having sex, in females, increases secretion of:\\ 
+progesterone-derived hormones. Reinforcing the pleasure.\\
+Androgens. A testosterone-related hormone, found in females at 5% of the levels found in males, secreted by the adrenals, important in inducing sexual motivation in females.\\
+Oxytocin. Works as a neurotransmitter in the brain, plays a role in forming attachments.
+
+Experiments:\\
+Spritz some aerosol oxytocin up the nose, and the person becomes more trusting. He tends to believe arguments presented to him.   Also, he becomes more cooperative in prisoner's dilemma and other games.\\
+
+Oxytocin has multiple uses on the body. The majority of it is coming out of the posterior pituitary where it has to do withilk letdown, with nursing. Now suddenly it also plays a role in sexual pair bonding. The argument is made that the attachment between sex partners is an evolutionary descendant of the mother-offspring attachment.
+
+Having sex, in males, increases secretion of Testosterone and vasopresin.
+
+Notice: testosterone does NOT increase sex behavior in males. In fact, sex increases testosterone.
+Vasopresin.
+
+== Vasopresin ==
+
+Vasopressin in males stimulates attachment. As does oxytocin in females.
+
+In monogamous species, you get expression of vasopresin receptor gene on neurons that release dopamine. This means that after sex when the male releases vasopressin the pleasure is increased because of the extra dopamine. And the extra pleasure causes the male to want to stay with this female and therefore he becomes monogamous.
+
+In vole experiments, put vasopresin receptors into dopamine receptors of polygamous males, they become pair-bonding males.
+
+Individuals with more dopamine receptors pair bond more quickly.
+
+Primate experiments. Marmoset monkey (monogamous) has the vasopresin gene. The rhesus monkey (polygamous) does not.
+
+In chimpanzees you get the polygamists variant of the gene.
+
+In bonobos, you get the monogamous variant of the gene. This throws a wrench into the works because bonobos are polygamous. Evidently the situation is more complex than what we understand.
+
+Humans. Genes are halfway between monogamous and polygamous, with variations in individuals. Two Studies have shown that individuals with the monogamous gene are more likely to get married and are more likely to break the marriage as successful.
+
+Not related to sex but related to social attachments, multiple Studies have shown mutations in the vasopressin gene in families with histories of autism.
+
+== Sexual orientation ==
+
+INAH nucleus of the hypothalamus is half the size in females and gay men as compared to straight men. #drama Levay.
+
+== Stimuli ==
+Environmental sensory triggers: visual, tactile, olfactory.
+
+Visual.
+
+Turkeys attracted to styrofoam female turkeys.
+
+Rheseus monkey will lever-press to get some juice, to see a high-ranking male. He will not lever-press to see a low-ranking male. He will press the most to see pictures of females who are in heat. The bigger the estrus swelling, the more lever-pressing he will do.
+
+Humans. Males more responsive than females. Brain scans show activation of dopamine and the amygdala in response to visual stimulation.
+
+Tactile.
+
+Tactile receptors in humans activate dopamine. Some parts of the skin are more receptive than others, ie erogenous zones. Males require testosterone for the tactile stimulation to function. Castrated males do not show Tactile receptivity. Females are more tactile receptive during ovulation.
+
+Olfactory: pheromones.
+Olfactory cues.
+Pheromonal communication.
+
+== Pheromones ==
+
+Both males and females require sex hormones to produce pheromones. Individuals who have had genitals removed do not produce pheromones.
+
+Chemical makeup of pheromones.
+Fatty acids. Breakdown products of androgens in males, estrogen in females.
+
+Perfume made of sweat of animals, typically male animals. Musk. Chanel #5 made from sweat of the whipped Abyssinian civet cat.
+
+Synthetic perfumes. Made of synthetic versions of androgens. Why? It is believed that this is because it is females who are purchasing the perfumes, and they are choosing something that smells good to them.
+
+Olfactory communication. Will tell you the species of the individual, the gender, the health, the gonadal integrity, whether terrified or not, relatedness.
+
+If terrified the individuals sweat will contain breakdown products of gluta corticoids.
+
+Gonadal integrity.
+Required to secrete and to distinguish the sweat of women and men.
+Enhanced during ovulation.
+==== 16. Human Sexual Behavior II ====
+https://youtu.be/95OP9rSjxzw
+
+Pheromones continued.
+
+Armpit smelling experiments. Men sniffing armpit swabs of females at various points during the estrous cycle. Men find the odor Least unpleasant during ovulation.
+
+== Pheromones within sex ==
+
+The Wellesley effect. Groups of females living together will synchronize their menstrual cycle.
+
+Smell of an adult female will delay the onset of puberty in younger females. In rodents. Gene competition.
+
+Males. In rodents. In some species, When a male smells a dominant male his testosterone level is driven down. In other species his sperm production rises. A co-evolutionary arms-race.
+
+== Pheromones between sexes ==
+
+In rodents, the presence of male pheromones accelerates the onset of puberty in females.
+
+In many species the presence of female pheromones increases the testosterone and sperm count in the males.
+
+In some species, ovulation is not part of a regular cycle but is induced by the presence of male pheromones. Inducible ovulation.
+
+In a famous paper, an anonymous researcher spent large amounts of time alone in a research facility. Occasionally he would go into the city to spend time with his girlfriend. He began to measure his testosterone level indirectly by shaving regularly and weighing his beard stubble. He found a correlation with his geographic location. This is an example of inducible physiologic changes.
+
+Estrogen receptors reside on olfactory neurons.
+
+== More stimuli ==
+
+When a male moose gives his mating call the sound induces ovulation in females. This is an example of auditory stimulation.
+
+Some species will Sniff and lick the genitalia to learn more details about that individual.
+
+Humans are not particularly oriented to olfactory or auditory stimuli. In humans, thought is a major stimuli.
+
+Fear tends to suppress sexual behavior. Likewise, rage.
+
+In humans, chronic stress suppresses arousal. Short term stress shows individual variability. In some individuals it will suppress arousal and in other individuals it will stimulate arousal.
+
+there are many anecdotal accounts of soldiers under the extreme stress of War time becoming aroused and committing sexual violence.
+
+Variety is a major stimulus in most species. Take a sexually sated male, introduce a new female, and the male's arousal begins all over again. This is known as the Coolidge effect, named for US President Calvin Coolidge.
+
+== Women's menstrual cycle ==
+
+Proceptivity spikes at day 14. A second modest rise at day 28. We speculate this second Rise is due to a relaxed fear of pregnancy during the menstrual cycle.
+
+During ovulation, women wear more provocative clothing, lap dancers get bigger tips.
+
+During ovulation, The increased estrogen: \\
+increases the expression of receptors of progesterone in the brain (Increased sensitivity to Progesterone is one of the rewards of sex.),\\
+increases the production of oxytocin,\\
+Lowers the threshold of tactile sensors throughout the body,\\
+Lowers the threshold in olfactory sensors for detecting the scent of males.
+
+28:08
+== Males ==
+
+Testosterone's effect on sexual behavior.
+
+Correlations. \\
+Time of year for rutting is also time of elevated testosterone levels.\\
+Testosterone levels jump up at puberty and from age 30 on, gradually decline. And sexual behavior shows a similar pattern.\\
+More sexually active men tend to have higher testosterone levels. \\
+A significant drop in testosterone in men who have just become fathers. also an increase in vasopressin levels at this time.\\
+
+Causality.
+
+Sexual behavior in males increases testosterone levels.
+
+Testosterone also increases the likelihood of sexual behavior. How do we know?
+
+When a male is castrated sexual behavior drops dramatically. Administer artificial testosterone to the castrated male and sexual behavior patterns return to normal.
+
+Though sexual behavior drops dramatically in the castrated male it does not drop to zero. There is still some residual sexual behavior. The more sexual experience the male had before castration the more residual sexual behavior after castration. This indicates that testosterone causes a percentage of sexual behavior, and that social experience also causes a percentage of sexual behavior.
+
+Modify the experiment. Vary the amount of artificial testosterone administered. You do not get a corresponding variance in the amount of restored sexual behavior. you get the normal amount of sexual behavior regardless of the amount of artificial testosterone.
+
+Exception. Men who abuse anabolic steroids for bodybuilding increase their artificial testosterone levels to 1000 times the normal amount, and in this case they do experience increased sexual arousal and behavior.
+
+in the next sections we will see the same pattern in the relationship between testosterone and aggression.
+
+So testosterone is not playing a strictly causative role. but a modulatory role. Testosterone sensitizes the male to stimuli that is evocative of sexual arousal. It lowers the threshold.
+
+Modulate = facilitate
+
+Melatonin. Has something to do with telling the body what time of year it is, by measuring the amount of light. This triggers The Mating Season in species which have a mating season.
+
+== Perinatal factors ==
+Early Childhood experience is not about learning sexual behavior. Those patterns are fixed. Early Childhood experience is about learning appropriate times and contexts to do the sexual behavior.
+
+In studies where rhesus monkeys for example are raised in some degree of social isolation, as adults they demonstrate normal sexual behaviors but in inappropriate social contexts.
+
+Children raised together in a kibbutz become pseudo siblings and later as adults do not see each other as potential mates.
+
+Sexual orientation. in the first half of the 20th century it was believed that early childhood experience could cause a boy to be gay in two models. 1 a missing father figure, 2 a neurotic mother. Not true. No evidence.
+
+== Perinatal hormonal environment ==
+
+Organizational effect versus activational effect. In the perinatal environment the hormones present provide and organizational effect on the type of brain that is developing. After birth hormones take on an activational effect.
+
+45:51
+
+Testosterone present in female or male fetus.
+
+Sexual orientation.
+
+Sexual identity.
+
+== Genetics in the individual ==
+
+1:05:55
+
+What do genes have to do with sexual behavior? 
+
+What gonads you make as a fetus.
+
+Sexual orientation.
+
+== Evolutionary biology ==
+
+Sexual behavior is about reproduction, maximizing the number of copies of your genes.
+
+Why then are there so many species, humans and bonobos included, that practice non-reproductive sex?
+
+== Bonobo ==
+Coolest species.
+  * Originally called pygmy chimps. 
+  * Isolated west of the Congo from the Jane Goodall chimps. 
+  * No sexual dimorphism. (Sexual dimorphism is the condition where the two sexes of the same species exhibit different characteristics beyond the differences in their sexual organs.)
+  * Low degree of aggression. None.
+  * Female dominance 
+  * Astonishing amounts of sex. 
+  * Not pair-bonding, not tournament.
+
+Have sex to reproduce, to reduce tension, non-reproductive, same sex, strange positions.
+
+Among primatologists, bonobos are the coolest.
+
+T-shirts: Chimps Are from Mars, bonobos Are from Venus.
+
+The exception to the evolutionary concept of sexual behavior to maximize copies of genes. In fact many species exhibit non-reproductive sexual behavior.
+
+Perhaps it's about social cohesion. And other primates it's social grooming. After a predator scare the entire troop will gather and groom each other for 30 minutes.
+
+Social cohesion, decreasing individual tensions, reconciliation.
+
+Sauli zuckerman said sex is Purely about social cohesion, for decreasing violence.  He is denounced because most people sense that unrequited sex is the cause of most violence.
+
+== Cost ==
+Tournament species:\\
+Sperm is cheap.\\
+Eggs, pregnancy, and child-rearing are expensive.\\
+Therefore females are more selective than males.\\
+
+Pair bonding species:\\
+After the birth the male's child-rearing Behavior increases until he has incurred a greater cost than the female, at which point the female will cuckold the male and abandon the family.
+
+== Male control female reProductive behavior ==
+
+Male-male competition. In many species. Limiting the ability of the female to reproduce with someone else.
+
+In primates, mate guarding. Keeping other males away.
+
+In humans, clitorectomy and chastity belt. seen especially in populations where the males' work takes them far away for long periods of time.
+
+Linear access model. A theory. Mating tied to hierarchy. When one female is in estrus she mates with the alpha male. When two females are in estrus males 1 and to get to mate. And so on.
+
+Copulatory plugs.
+
+In some dogs the semen leaves behind a plug preventing further mating.
+
+In some flies the male penis is barbed and breaks off within the vagina, becoming a plug. (The male can grow another penis.)
+
+Sperm competition. In some flies species the sperm of one male contains a toxin which kills the sperm of other males.
+
+In some species the sperm causes a chemical event in the female which decreases her attractiveness. Or decreases her pheromone production.
+Or decreases proceptivity in the female.
+
+== Female counter-strategies ==
+
+Hidden ovulation. Decrease paternity certainty. Decrease infanticide. Decrease male attempts to control female Behavior.
+
+Non-reproductive sex.
+
+Fake estrus.
+
+== Male-Male competition ==
+
+Competition for Reproductive access.
+
+In all social species, the leading cause of aggression is male-male competition for Reproductive access.
+
+Sperm competition. Monogamous species have small testes and small amounts of sperm. Polygamous species have large testes and large amounts of sperm. Humans are somewhere in between.
+
+== Female competition ==
+
+No choice. Linear access model. Male-male competition.
+
+#drama In the 1980s the majority of primatologists were suddenly female and they discover the phenomenon of "female choice".
+
+Baboon. Females exhaust the male, lead him in front of his rivals to create a fight, then run into the bushes for a stolen copulation.
+
+What do female baboons want? Nice guys. Someone who plays with her kids and does not beat her up. Intersexual friendships. Shown by paternity studies.
+
+Orangutans rape by low-ranking males.
+
+In some fish, males can disguise themselves as females, until they get close enough for copulation.
+
+==== 17. Human Sexual Behavior III and Aggression I ====
+
+https://youtu.be/JPYmarGO5jM
+
+== Female-female competition ==
+
+In pair-bonding species, like new world monkeys and many birds species, the male who is a good provider and caretaker is subject to female-female competition. In these species the female is larger than the male and has more prominent secondary sex characteristics.
+
+Helper at the nest. Gay brother. Leads to reproductive success of brothers and sisters and therefore homosexuality is selected for.
+
+Facial symmetry. All species including humans are good at recognizing symmetry. It may be a marker of good health. Human females become more symmetrical during ovulation.
+
+Male baboons prefer females with larger swellings. The swelling is a marker for estrogen level, greater fertility, greater health, higher infant survival rate. Females with the largest swellings can have 25% more weight during estrus than normal.
+
+In human females, the waist-hip ratio is a marker for fertility and therefore attractiveness.
+
+In human males, jutting jaw, High forehead, muscle mass, are markers for testosterone level. Secondary sex characteristics.
+
+Female humans, when looking at pictures of round-faced males, describe them as more likeable, more honest, more trustworthy, and less desirable. Separable traits. Differences of 5%. When ovulating females prefer high-testosterone males.
+
+== Confounds ==
+
+Self-fulfilling prophecy. When the female mates with an attractive male she spends more calories in caring for that offspring. Because of this extra care this offspring has a high success rate. This highest success rate is attributed to the high testosterone of the attractive male that we started with.
+
+This is seen in bird species where the female lays a larger egg. But egg size has nothing to do with the testosterone of the father. It is due to the extra calories expended by the female in producing the egg.
+
+Bandwagon. Female goes for a popular male. In experiments with ospreys, wait for a female to reject a male, take that male and make him look popular, the original female changes her mind and initiates courtship with him.
+
+== Parenting skills ==
+
+In a pair bonding species attractiveness is based on markers for competence in parenting. 
+
+male birds will bring worms to the nest to prove their parenting competence.
+
+A female with multiple Offspring is more attractive than a female with no offspring because she has a proven parenting competence.
+
+== Homogamy ==
+Being attracted to someone who is just like me.
+
+In the US, in 90% of couples, the partners share religion, race, etnicity, age, socioeconomic status, political views. Markers for homoganous preference.
+
+40% for having similar IQs and education.
+
+20% for having similar height, weight, hair color, nostril size, lung capacity.
+
+Remember in an earlier section we learned that reproductive success is highest in 3rd and 4th cousins. Some degree of relatedness is indicated by homogamy.
+
+Recent studies in Iceland showing optimal coupling at third and fourth cousins. Iceland has 300,000 people and excellent records for marriage and births.
+
+In the US, homogamy is least evident in younger couples.
+
+In one important study of multiple human cultures, in every culture studied, men prefer younger women with large secondary sex characteristics, and women prefer older men with greater caretaking abilities.
+
+== End sex ==
+== Begin Aggression ==
+
+Aggression, violence, competition\\
+Cooperation, empathy
+
+Personal story.
+
+It's all about social context. Everyone loves violence. No one needs to learn how to do violence. We need to learn when it is appropriate to do violence.
+
+The biology of social context.
+
+== Violence unique to humans ==
+
+Competitive infanticide. First seen in langur monkeys. Now seen in 25 species to date.
+
+Jane Goodall has shown multiple incidents of murder between chimps. Also weapon use; branches trimmed and shaped as clubs.
+
+Also organized violence.
+Chimps are female exominous. It's the female Offspring who leave home. So the males in a group have a high degree of relatedness. Rival groups are sometimes antagonistic. Border patrols will kill a male from the other group.
+
+Also genocide. the males from one group will systematically kill all the males in another group.
+
+Sadomasochism. Confusing sex with aggression. So far this does appear unique to humans.
+
+== Cooperation unique to humans ==
+
+Reconciliation. Two dozen different species have shown this Behavior. 
+
+Franz du Valle, rhesus monkeys. Dolphins, whales, gorillas. Grooming after a fight.
+
+Marina Cords, in McCaque monkeys, odds of reconciliation increase when it's a more important valuable relationship. Experiments that require two individuals to get the food tray close to the cage.
+
+In baboons, females reconcile, males do not.
+
+In bonobos, reconciliation is demonstrated via sex where in other species it's usually grooming.
+
+Empathy. In a study of chimps, observe two incidents of violence between males. In the first, a low-ranking male instigates a fight against a high-ranking male and gets clobbered. In the second, a high-ranking male pummels an innocent bystander. In the aftermath the females are more likely to groom the innocent bystander.
+
+
+1:08:42
+
+Empathy. In a study of rats, one rat is restrained, giving ultrasonic alarm calls. A second rat is given a pain threshold test. His pain threshold is lower in the presence of the first rat suggesting empathy. This only works when the two rats are cage mates.
+
+Ikea lamp commercial. Human empathy for a piece of hardware.
+
+Justice. Chimps. It was takes two to pull the food tray, but only one can finally get at the food. In the case of an established working relationship the champ will be more likely to share with the partner.
+
+Dominance Hierarchy.
+
+Top down. Despotic. A single individual at the top. Unequal distribution of resouces, enforced by violence. Baboons, chimps, rhesus monkeys. 
+
+Bottom up. Egalitarian. Vervet monkeys. The individual at the top is there only with the cooperation of the others.
+
+Padis monkeys. So violent the social structure is designed to keep males apart. Put two males in a cage and they will fight to the death, because there are no signals to end the aggression.
+
+Aggression vs predation. Sometimes difficult to distinguish.
+
+Rough tumble play. A real manifestation of aggression. The last thing to disappear from youngsters who are starving to death.
+
+Humans.
+Subleties
+Passive aggressive
+Remote control drones
+
+Forgiveness. Truth and Reconciliation commissions in South Africa, the Balkans, Rwanda. People face the victimizer. go through a process resulting in reconciliation and forgiveness.
+
+I will let no man spoil my soul by causing me to hate him.
+
+Catherine prashan, Dead Men Walking. Nun working on death row. The less forgivable the ACT, the more it must be forgiven. The less lovable the person, the more they must be loved.
+
+== Biology ==
+Amygdala
+
+Destroy the amygdala, no Aggression. Both animals and humans.
+
+Court-ordered amygdalectamy. 1000s of cases, similar to lobotomy.
+
+Lesioning evidence. No aggression in persons with amygdaloid lesioning.
+
+Stimulation evidence. Electrodes in the amygdala result in aggressive expression.
+
+Tumor in the amygdala. Two very violent criminals in history proven in post mortem to have tumors 
+
+Scanning evidence. Show pictures of violence, the amygdala lights up on a brain scanner.
+
+Size evidence. Gets bigger in people with PTSD.
+
+People with lesioning are less able to detect aggression. They do not look at eyes.
+
+
+
+==== 18. Aggression II ====
+https://youtu.be/wLE71i4JJiM
+
+Aggression, competition, cooperation, empathy
+
+== Amygdala ==
+When most people look at a face they look primarily at the eyes. Persons with amygdaloud damage look elsewhere. They are not looking for fear and aggression and other danger signals in the face. They are described as more trusting. therefore the amygdala not only responds with aggression but it looks for and seeks out potential danger.
+
+See biocore 1, re cortical processing between eyes and amygdala. There is a shortcut that goes straight to the amygdala, fast but less accurate. Startled false alarms. Lower threshold in PTSD.
+
+Williams syndrome. Genetic disorder. Kids, hyper-facile with language and emotional expressivity. Famously affectionate. Cognitively retarded. IQ 70. Proves modularity of cortex. Trusting, gregarious, therefore vulnerable. Cannot evoke amygdaloidal activation with scary faces.
+
+Social phobia. Show him any face and the amygdala activates.
+
+Clinical depression. Amygdala does not activate when you show them something frightening; it activates when you show them something sad. maybe sadness is the thing that is most frightening to a person with clinical depression.
+
+Us vs them dichotomy. The amygdala categorises in-group out-group and reacts to out-group stimuli.
+
+== Frontal cortex ==
+
+Regulating appropriate behavior.
+
+when there is a hard thing and an easy thing to do, and the hard thing is the right thing, it is the frontal cortex that makes you do it.
+
+Wiring. Modulating. Frontal projections, diffuse and weak, biasing towards excitation rather than causing it.
+
+Simultaneously it inhibits the easier path.
+
+16:56
+
+Dopamine. Goal-directed Behavior.
+
+Experiment (test). Remember a shopping list. Repeat multiple times. In the third or fourth round, you begin to categorize the items and remember them in groups.
+
+Repeat something until it becomes habitual. Now it's automatic and the frontal cortex is NOT active. This is called 
+
+Executive function. Executive organizing. Categorizing as a memory aid. A cognitive strategy. Detecting a pattern and recognize that exploiting that pattern can help reach the goal.
+
+Persons with frontal damage will not do this categorizing.
+
+Clock face experiment. Where do you draw the hands for 11:12?
+
+Name months backwards from December. It's easier to go forward than backwards. A person with frontal damage will go backwards for a few months and then slip back into forward again.
+ 
+Intrusion. When giving these tests to a frontally damaged person he will slip back into a previous task.
+
+Frontal cortex remembers the rules.
+Experiment with rats. One tone signals the beginning of the test. A light flashes and the rat will press a lever every time it flashes. The visual cortex lights up on each flash. The frontal cortex lights up at the beginning of the test and stays lit throughout.
+
+The frontal cortex is used in learning new tasks. Once an activity becomes habitual it is stored in the cerebellum and other parts of the brain. The frontal cortex no longer lights up. Toilet training, moral development in children.
+
+== Phineas Gage==
+Coal miner in the 1840s. An explosion blew a metal rod through his brain destroying the frontal cortex. The wounds were instantly cauterized. He not only lived but walked away. He never worked a day again. He became a brawling, sexual predator.
+
+Another way to experience frontal damage is in elderly people with Strokes. In one example an 80 year old man raped an 80 year old woman with Alzheimer's.
+
+The McNaughton rule.
+Can an individual tell the difference between right and wrong? The insanity defense.
+
+McNaughton was a severe schizophrenic who tried to assassinate the British prime minister. a severe schizophrenic clearly cannot tell the difference between right and wrong. He makes no attempt to cover his tracks.
+
+Problem. A adult with frontal damage can tell the difference between right and wrong but nevertheless he cannot control his behavior.
+
+When they frontal damage occurs before Age 5 the person never incorporates the rules. He suffers from what is called acquired sociopathy.
+
+Hinckley attempted to assassinate Ronald Reagan. He was judged Not Guilty by reason of insanity. All of the state McNaughton legislation was then repealed.
+
+25% of the men on Death Row have suffered damage to the frontal cortex.
+
+In one example a man kidnapped a woman, brutalized her for months, took her home, gave her his phone number, and said he had a nice time and hoped to see her again.
+
+45:30
+
+Frontally disinhibited. Calipers used at birth. Not subject to the laws of society.
+
+In the 1800's if you had an epileptic fit you are burned as a witch. Legal test: we read the crucifixion story and if you do not cry you are a witch.
+
+REM sleep. Frontal cortex is shut down. That's why dreams are so nutty.
+
+Development. The frontal cortex is the last part of the brain to fully develop. Age 25. Least affected by genes. Most affected by experience and environment. 
+
+52:00
+
+Under age 5. See above.
+
+Teenagers. Experiment. Give tasks and rewards. Measure dopamine. If reward exceeds expectation, dopamine increases. And vice-versa. The fluctuations are more extreme in teenagers than adults.
+
+Underage 18. No capital punishment.
+
+Aging. Disintegration of brain parts. #1 a motor area, which leads to shaking in the elderly. #2 the hippocampus, which leads to memory deterioration. #3 the frontal cortex, which leads to caustic verbal abuse from elderly. Disinhibited.
+
+Metabolism. Resting metabolism in the frontal cortex. Higher-than-average -> Repressive personality. No smoke, no drink, homework finished early, perfect person. Lower than average -> psychopath.
+
+Other species. Smaller frontal cortex. Delayed gratification tests. 1 m&m vs 5 m&M's. Chimps fail this test. With wood chips, can pass.
+
+Kids. Marshmallow test. Put a marshmallow on the table, leave the room. Tell the child if the marshmallow is still there when I come back you get two marshmallows. Measuring the length of time that child can hold out is a measure of frontal cortical development, ie, a count of synapses. Predictive of future SAT scores.
+
+Hide and seek test. Count to ten and say where are you? Child calls out here I am. Not enough frontal development to inhibit calling out. Also cannot stop counting at ten.
+
+by age 5 there are already socioeconomic disparities in the size and activity of the frontal cortex. 
+
+1:04:27 ??? The frontal cortex has a large number of receptors for glucocorticoids. Glucocorticoids atrophy the neurons.
+
+the frontal cortex inhibits all types of inappropriate behavior. But it is the aggression of the amygdala that increases in the case of frontal damage. Why? Unknown.
+
+Bi-directional. Frontal cortex inhibits the amygdala. The amygdala inhibits the frontal cortex. The two are in constant opposition. An inverse correlation in the resting metabolic rates.
+
+In a normal brain the amygdala can learn to stop being afraid of a stimulus that is no longer dangerous. It can become habituated to a change in a conditioned response. With a damaged frontal cortex this learning cannot take place.
+
+remember that all of these brain regions are competing to influence the hypothalamus.
+
+== Septum ==
+The septum also inhibits aggression.
+
+== Lateral hypothalamus ==
+Food acquisition. Foraging. Mistakenly associated with aggression during the 60s.
+
+==Anterior cingulate==
+Empathy. Feeling the pain of another.
+
+Test. 30 people hiding from the Nazis. A baby is noisy. Is it okay to kill the baby? With damaged cingulate, more likely to say yes it's okay.
+
+==Thought versus emotion==
+Thought and emotion are inseparable. Descartes was wrong.
+
+Nevertheless here are two cases where thought and emotion are indeed separable. Doing brain Imaging looking for Activation of the frontal cortex versus the limbic system.
+
+Runaway trolley problem. A runaway trolley is heading down The Track Destined to kill five people.\\
+Scenario 1. You can pull a lever to switch the trolley to another track where only one person will be killed. 75% of people say yes. When contemplating the problem, the frontal cortex is activated.\\
+Scenario 2. You can push a large person onto the track to stop the trolley. Only 25% of people say yes. When contemplating the problem the limbic system is activated.
+
+Judge's instruction to a jury in a mock trial.\\
+1. Your job is to determine whether the law was broken. Frontal cortex.\\
+2. Your job is to protect the weak from the powerful. Limbic system.
+
+==How the brain does metaphor==
+Abstract symbolic.
+Murder. Ruin a reputation. Plagiarism.
+
+The brain treat an Abstract problem as if it were real.
+
+Experiment. Woman gets into an elevator, needs help, asks you to hold her cup of tea. Later subject is asked to describe the woman's personality. Hot tea, warm personality. Iced tea, cold personality. #language
+
+== Insular cortex==
+Disgust.\\
+The insular cortex processes disgusting stimuli.\\
+Rotten food.\\
+a story about someone being mistreated and exploited by someone more powerful.\\
+in a prisoner's dilemma game one person cheats and stabs the other in the back.\\
+Tell me a story about a time when you did something awful to someone else.\\
+
+The insular cortex lights up in a brain scan in response to disgusting food and moral transgressions.
+
+#language We use terms of gustatory repellence to describe moral transgressions. Disgusting, smells rotten, makes me nauseous.
+
+After describing a personal moral failure a person is likely to wash his hands. #language
+
+Affective decision vs cognitive decision.
+
+Moral decisions are often affective, not cognitive.
+
+John Hait experiments.\\
+Siblings post-reproductive want to have sex.\\
+Grandmother says it's okay to slap her.\\
+You're hungry. Your pet just died.\\
+Is it okay? Everyone says no immediately and the limbic system lights up in a brain scan.\\
+What is wrong with it? Now the frontal cortex lights up but no one can effectively articulate the reasons for the decision.
+
+Brain imaging is not simple.\\
+Murder orgasm the neurons are doing very similar things.
+
+Non specificity to arousal.
+
+Famous quote from Holocaust Survivor: the opposite of love is not hate, it is indifference.
+
+Love vs hate. Similar neurobiology.
+
+== Hormones ==
+Testosterone.\\
+What does testosterone have to do with aggression?
+
+1:32:16
+
+All the same stuff as with sexual behavior.
+
+Testosterone is required for the full expression of aggressive behavior in males of most species. How do you tell? Subtract it out. Castration. Does aggression drop to zero? No. The more aggressive behavior before the castration, the smaller the drop. Put back some testosterone, 10% 100% or 200%, and the aggressive behavior returns to 100% of its previous normal. While testosterone is necessary for aggressive behavior, the brain cannot tell the difference between low, moderate, and high levels.
+
+5 rhesus monkeys form a dominance hierarchy 1 2 3 4 5. Pump number 3 full of testosterone. He is now involved in more fights, all of them with number four and five. He does not challenge one and two. The testosterone did not change the social structure. It Amplified what was already there.
+
+raise testosterone levels and the amygdala gets at a lower threshold for deciding which faces look threatening.
+
+Each neuron has an action potential followed by a refractive (quiet) period. Testosterone shortens the refractive period, making it possible for the neuron to fire more often.
+
+==Spotted Hyenas==
+
+Females are dominant, bigger, more muscular, more aggressive, have higher testosterone levels. Clitoris and labia are enlarged to the point of being indistinguishable from male genetalia. Sex reversal androgenization.
+
+In Lions, males eat first then females then Cubs. Most Cubs starve to death in their first year.
+
+In hyenas the order is reversed. Cubs eat first, then females, then males. The Cubs tend to survive, does selecting for this mutation.
+
+Signaling purpose reversed. In most mammals, displaying an erection signifies dominance.
+
+In hyenas, displaying an erection is a subordination gesture. Hyenas get erect when terrified. Usually by a higher ranking female.
+
+Army story.
+==== 19. Aggression III ====
+
+https://youtu.be/EtVfoIkVSu8
+
+==Review==
+Mirror neurons. First identified in motor neurons. Activated when one individual and another are making the same movement.
+
+scientists assume this must have something to do with empathy, and therefore there must be mirror neurons in the anterior cingulate. Great idea, not yet demonstrated.
+
+Processing symbolic data with parts of the brain that were developed for handling more literal situations.
+
+John Hait: moral decisions are affect, triggered by disgust mechanism in the insular cortex. Moral reasoning comes after the fact as a justification.
+
+[ “Affect” as a noun means an emotional state as contrasted to a cognition. “Affect” is a dimension of behavior rather than a separate segment of it.  “Affect” is thus experienced at the same time that perception, performance and thought are going on.\\
+http://web.ku.edu/~edit/affect.html ]
+
+==Dopamine==
+Dopaminergic system. Anticipation of reward. Gives the frontal cortex the energy to try to suppress the amygdala.
+
+Dopaminergic projections into the frontal cortex are encouraging it to tell the limbic system not to do it because it will be amazing if you can hold out.
+
+==Seratonin==
+
+Serotonin in some areas of the frontal cortex seems to have something to do with aggression and impulse control.
+
+we cannot measure serotonin so we measure the serotonin breakdown products the waste products in the urine and blood and other fluids. This is inconclusive evidence.
+
+the literature shows that the lower the serotonin levels the more aggressive the behavior, in humans and animals.
+
+Rate-limiting step. When there are multiple steps in a process. One is iffy, one is guaranteed. The iffy one is the rate-limiting step. If we can't measure serotonin, maybe we can measure the rate-limiting enzyme in its manufacture. 
+
+Gene-environment interactions. A gene mutation by itself does nothing. A gene mutation combined with a bad early home environment leads to increased violence in an individual.
+
+Alcohol. Non-specific effects.  Increases aggression? Not true. 
+Alcohol magnifies preexisting social tendencies. Aggressive people become aggressive. Non-aggressive people become more inhibited. 
+
+People who are given saline and told it was alcohol, become more aggressive.
+
+16:38 Studies look at societies and how they learn to be drunk. Polynesian Islands that did not have alcohol before WW2. In British-colonized Islands, they become aggressive. in French-colonized Islands, they make love.
+
+18:00 Acute Environmental releasers.
+Releasing Stimuli for aggression. Smells, sounds, sights. Ants that respond to vibration. Symbiotic relationship with acacia tree. When giraffes eat the branches, the ants run out and bite the giraffes lips.
+
+19:45 releasing Stimuli in humans. very little in sound and smell except subliminal. In all species. Pain. frustration. Displacement aggression. Bite someone else, and stress abates.
+
+Frustration aggression displacement. Very rarely seen in baboons. on the day after the alpha male gets dumped from his number one position, he will get aggressive and sometimes rape.
+
+Why, when the economy gets bad violence goes up? Why does poverty breed violence? Pain, frustration, and stress are reliable predictors of aggression. Modulating, not causing.
+
+24:00 Crowding. In rats. Aggression increases, but only in already aggressive rats. Passive rats become even more withdrawn.
+
+26:12 Back to hormones. Testosterone.
+
+28:30 Endocrine modulators (testosterone).  Hyenas (sex reversal) raised in captivity without mothers.  Dominance took longer to manifest. Years. Therefore it must require a combination of endocrine modulators and social factors.
+
+30:40 Testosterone in females. Required for sexual proceptivity. Modulatory of aggression, same as in males.
+
+31:50 estrogen, progesterone. In terms of aggression. A disproportionate share of violence by women occurs during the Perimenstrual period. Possible interpretations. culture. Personality. Psychodynamics: depressed that pregnancy failed. Same statistics for Perimenstrual violence in humans and baboons. That rules out cultural influences. It must be biological.
+
+perimenstrual mood swing includes depression and Social withdrawal in addition to aggression. In baboons the aggression is witnessed only and high-ranking females. The low-ranking females withdraw from the group but do not have the opportunity to be aggressive.
+
+Levels and ratios of hormones. Too much of a drop in Progesterone. Drop in opioids. Glucocorticoids, endorphins.
+
+42:15 Sociopaths have higher pain thresholds.
+
+42:50 longer-term environmental ideas about aggression. 
+
+Social modulation.  Older sister gives 16 year old non-alcoholic beer with the labels switched, and the girls act drink.
+
+45:10 broad theories about environmental triggers for aggression.
+
+Environment is irrelevant. Conrad Lorenz, Nazi swine. Book: On Aggression. Aggression is universal. Metaphorical water closet that fills with aggression. Self depleting. After aggression display, refactory period.
+
+Frustration displacement model. 
+
+Behaviorism. Aggression can be conditioned away.
+
+59:40 early experience. Development. 
+
+In the first few days of life.  Distinguish between animate and inanimate objects. Fusiform formix, distinguish faces.
+
+At one year. Distinguish self from mother and environment.
+
+Age 3 to 5. Theory of mind. Distinguish self from others. Is theory of Mind a prerequisite for empathy?
+
+1:07:05 Moral Development. 
+
+==Laurence Kohlberg==
+
+Harvard psychologist. In the tradition of Piaget, developmental stages. Applied to moral development.
+
+Three phases, distinguished by motivation.
+
+Pre-conventional, because you might get caught and punished.
+
+Conventional reasoning, shared group values, social norms, rules, a belief in Law and Order.
+
+Post-conventional, transcendent. There are things that are more important than what Society thinks is important. Civil disobedience.
+
+Not all adults make it all the way. How far along in the Kohlbergian
+ladder of moral development are you? 
+
+Criticism. Gender critique. Kohlberg's studies were all done with males.
+
+Cultural critique. This sequence doesn't happen in all cultures.
+
+People who Value ability over effort are less likely to make it to the Transcendent phase.
+
+How do kids learn when it is okay and even required to lie?
+
+How do kids learn the difference between rules and principles?
+
+When do kids learn that some laws are bad laws?
+
+When do kids learn the similarity between intended harm and successful harm?
+
+== Peer groups, community ==
+1:16:40
+Growing up in a violent setting. Witnessing violence. Being a victim of violence. 
+
+Studies show increased violence in adulthood because the setting rationalizes the violence and desensitizes the child to it.
+
+Watching violent TV shows does not cause violence; it amplifies it in kids who are already violent.
+
+1:19:00 Chicago, Toronto, London. Looking at violence as a function of age, with age standing in as an indicator of Testosterone level. Highest violence at age 18 to 24.
+
+Murders per year: Toronto 30, London 50, Chicago 600.
+
+The society he grew up in is a bigger factor than his age or Testosterone 
+level. Heritability.
+
+12:22:07 socialization, teaching of context.
+
+Classic study, Harry Harlowe, raising captive rhesus monkeys in a variety of situations: without mothers, in peer groups, in social isolation. Monkeys raised in isolation, when later placed within Society, made all the aggressive moves - threat yawn, subordination gestures - but to the wrong monkeys, ie, threatening a high-ranking monkey and subordinating to a low-ranking infant.
+ 
+Context = ranking. Normally, a mother teaches the child his rank and appropriate Behavior.
+
+1:26:04 how important are parents? how important is peer group? 
+
+Judith Rich Harris: The Nurture Assumption. Attacked the literature on parent influence. Claims peer groups are far more important.
+
+Peer socialization. Example: Children of immigrants. Language spoken at home is different from the language of the dominant culture. By Age 4 or 5 the child is developing the accent of the community. Becoming embarrassed by her parents' accent. Preferring the outside language at home.
+
+what parents are good for is determining what peer groups the child has access to.
+
+Conformity, conventionalized behavior by groups. Putting kids in groups by age. Zimbardo studies: put people into a group or role and they begin to over-identify with that group.
+
+Planet of the Apes movies, on the set, species ate together.
+
+Old fact: boys growing up without father are more violent. Judith's reinterpretation: single mother familyore likely to live in poor neighborhood.
+
+1:31:35 levit and Donahue: crime dropping since 1980. Roe vs Wade accounts for 50% decrease in crime. State by state. Increasing each generation.
+
+1:34:16 is there a correlation between moral reasoning and moral behavior? None.  Is it the people in the advanced Kolberg stage who commit moral acts? No. The Kohlbergian stage is an abstract acedemic measure, not a predictor of who will do a brave act.
+
+Explicit declarative learning (memory). This goes down the tubes in Alzheimer's.
+
+Implicit procedural learning (memory). Skills with hands. Not stored in the hippocampus and cortex, but in the cerebellum.
+
+Carnegie Foundation gives awards for bravery (moral acts), and studies the recipients. 1. Has grown up with moral imperative to act bravely. 2. Afterward he says, "I did not think; I found myself in the burning building before I had a chance to think about it."
+
+Josh Green experiment, game that allows players to cheat or not. Those who cheat at least once show high frontal cortex activity. Those who never cheat show none.
+
+The assumption is, then, that moral reasoning is explicit learning in the frontal cortex. And moral behavior is a result of implicit learning in the cerebellum and limbic system.
+==== 20. Aggression IV ====
+https://youtu.be/BqP4_4kr7-0
+
+==Perinatal hormonal exposure==
+Finished early environment. Now looking at Early hormonal exposure. Perinatal (before, during, after birth) hormones. What do they have to do with adult aggressive behavior?
+
+Organizational vs activational hormonal effects. Organizational setting up the nervous system to respond later on to activational effects.
+
+Animal studies. Prenatal androgenization of females leads to masculinization and more aggression. Same as sex studies. In rodents.
+
+Humans. Lots of study. Nothing conclusive or interpretable.
+
+10:29 Simon Baron Cohen (cousin of Sacha)
+Hyper-male hypothesis for Autism.
+Autism occurs far more likely in males.
+
+Sex differences:
+  * Finger ratio
+  * Neuro anatomy, structural differences in the brain
+  * Functional spatial skills vd language skills
+  * Problem solving: analytical vs empathic
+
+Autistic person of either sex has an even more exaggerated Male typical profile: finger length, analytical skill at the expense of social empathy, strong spatial skills, Etc.
+
+== Genes ==
+13:15
+
+you would leave a three-year-old in the care of a Basset Hound but not a pitbull. Proof of breed-specific differences in Behavior.
+
+Be careful in experiments. Suppose you find a gene mutation that increases aggression. Maybe it actually increases impulsivity. Maybe it lowers pain threshold. Maybe it increases the level of arousal in all areas. Having an indirect effect on aggression.
+
+It makes no sense to say what a gene does. We can only say what a gene does within a range of environments.
+
+== Populations ==
+24:05 ecology, culture.
+
+How people make their living. Nomadic pastoralist people. Cows camels goats sheep. In contrast to agriculturalists or hunter-gatherer.
+
+Higher rates of violence, within group and between groups. More likely to have standing armies, Warrior classes, leadership derived from successful Warriors, religious myths connecting success in war with success in afterlife.
+
+It is possible to rustle a herd of animals therefore a nomadic pastoralists community always has a designated age group of boys protecting the herd all night long.
+
+In the US, the southeast was settled disproportionately by sheep people from the Northern end of the British Isles.
+
+Culture of Honor
+
+People are willing to kill over symbolic sleights.
+Vendettas.
+It is honorific to avenge a death.
+
+Clear rules about enforced hospitality.\\
+Clear rules about aggression in response to symbolic affronts.
+
+A clear Regional difference in the US.
+
+Richard Nesbitt, raised in the south, went to Harvard, discovered different culture.
+
+In the south the crime rate is higher, not Urban Crime, not 7-Eleven robberies, but honor killings at social gatherings, where the murderer and victim know each other.
+
+Nesbitt study: bump in hallway, measure heart rate, testosterone level. Men from the south show large stress response and it lasts for a long time. Men from North brush it off.
+
+Desert vs rAin forest.
+Desert dwellers, open Savannah, these are the nomadic pastoralist. As opposed to rain forest where you find Hunter-gatherer and small farm agriculturalists.
+
+Warrior caste, raiding of other tribes, found in desert dwellers. None in rain forest.
+
+Also, honor cultures invented monotheism. Rain forest dwellers tend to be polytheistic.
+
+33:21
+Mythos of victimization and Ethos of Retribution. Violent society, lousy neighbor.
+
+Game, can be generous, fair.  Forty countries, all students. Altruistic punishing. How much will you spend? All the same. Antisocial punishment. Punish someone for being overly generous. Big spread. Lowest rate: America, Britain, Scandinavia. Middle: Slavic, Korea, turkey. Highest rates: Greece, UAE. More willing to punish someone for being overly generous than to punish someone for cheating.
+
+Look atlevels of
+trust,
+Social capital,
+Social trust,
+Participation,
+Efficacy.
+
+Lower levelss of social capital -> higher rates of antisocial punishment.
+
+38:56 terrorism. Latest research.
+
+Dichotomy 1. Always sociopathic behavior vs extremes of ideology.
+
+Dichotomy 2. Profile: Young, male, socially isolated, uneducated, history of childhood abuse. Recently in middle East, new profile: educated, well-off people in 30s band 40s, middle or upper class background, male and female, no direct exposure to the suppression they are fighting against, not particularly religious.
+
+Why the new profile? Researchers are struggling to understand.
+
+Phil Zambardo. Under the right circumstances anybody could do anything that is appalling.
+
+International terrorism requires people who can acquire a passport, travel, negotiate customs and immigration, Etc.
+
+==Evolution  ==
+44:00 
+
+Two choices.
+
+1. Evolution selects for higher and higher levels of aggression, because that's what you need to succeed. 
+
+2. Evolution selects for no aggression because animals act for the good of the species.
+
+Now we look closely at these two ideas, broken out by different types of selection.
+Individual selection\\
+Kin selection\\
+Reciprocal altruism\\
+Group selection
+
+==First, how does evolution select for more aggression?==
+
+Individual selection.
+
+Number one cause of aggression:
+Male-male violence over reproductive access to females.
+
+Yanamamo. Hunter-gatherer in Venezuela Amazon. Insanely violent culture. Studied by Napoleon chagnon. The more people you have killed, the more reproductive success you have.
+
+Rape among orangutans and humans.
+
+Number two cause of aggression: Males attack females over denial of sexual access.
+
+Female-female violence. Infanticide.
+
+Kin selection
+
+Two brothers, eight cousins.
+High degree of cooperation among related males.
+
+Child abuse. child is more likely to be abused by a stepfather than a birth father. By a paternal grandfather than a maternal grandfather.
+
+Pseudo kinship. Military indoctrination. Band of Brothers. 
+
+Maasai. At age 15 a boy becomes a warrior, he protects the cattle for one decade. then at age 25 he becomes an elder and marries a 13 year old girl.
+
+In World War II among American soldiers a German American Soldier would have more in common genetically With the Enemy then with the people he was willing to die for.
+
+In Vietnam we had a failure of pseudo kinship. Soldiers were constantly shuffled in and out of units. Why? Because when units were stable the rate of officers being shot buy their own troops went up.
+
+Pseudo speciation. OK to kill others.
+
+First Gulf War, Kuwaiti ambassador's niece posed as nurse with phony story about babies left out of incubators. Influenced Congressional vote for war.
+
+1:02:05 
+
+==Second, how does evolution select for more cooperation?==
+
+Individual selection
+
+Alternative male reproductive strategies. Be a nice guy. Be a good parent.
+
+Kin selection.
+
+Pseudo kinship can be used to promote peace and Harmony amongst people.
+
+The amygdaloud activates when shown pictures of faces of people of a different race.
+
+Contact theory. Aggression is less in people who have grown up in diverse neighborhoods with contact with people of other cultures and races.
+
+Humans are not recognizing relatedness by smell that by cognition. Therefore pseudo kinship arises and people can be manipulated by others. These are abstract processes. Symbols and metaphors. The same parts of the brain originally developed for physical reactions are co-opted for use with symbols and metaphors.
+
+1:18:00 Robert Axelrod, economist. The importance of symbols in Peace-making.
+Dividing contested resources (rational). Respecting one another's symbols (irrational).
+
+Example. Sein fein sent an anniversary gift to Ian Paisley.
+
+Example. Mandela learning Afrikaans, using football to unite the nation, having meetings in his home.
+
+1:22:35 reciprocal altruism. 
+
+Founder population. Highly related. 
+
+Korean grocery stores in NYC.
+
+Repitition. The game must be played for multiple rounds. An unknown number.
+
+Tragedy of the commons.
+
+Open book. Reputation.
+
+Altruistic punishment. Punish a cheater.
+
+Secondary altruistic punishment. If the punisher fails to punish, that is zn Honor code violation which must be punished.
+
+1:30:40 Group selection.
+
+Founder population. The cooperative group succeeding, forcing the other groups to cooperate or go out of business.
+
+The downside. A group of Cooperative males is dangerous for The Neighbors.
+
+A decrease in homicide within a group is a prerequisite for inventing genocide between groups.
+
+World War 1 24-hour Christmas Truce.
+
+Tit for tat.
+
+1:37:00
+
+Idi Amin story.

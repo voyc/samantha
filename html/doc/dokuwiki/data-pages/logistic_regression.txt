@@ -3,9 +3,9 @@
 The mechanics of logistic regression are similar to those of linear regression, 
 but the applications and the equations are different.
 
-The term \\logistic regression\\is strange.
-A better term might be \\binary classification\\.
-The value of y is always either 
+The term //logistic regression// is strange.
+A better term might be //binary classification//.
+The value of y is always either 1 or 0.
 
 Differences differences for a logistic regression compared to linear and non-linear regressions.
   * the hypothesis is a classifier instead of predictor, and the output is either 1 or 0
@@ -51,7 +51,7 @@ A classification function is actually a type of prediction.\\
 |Spam or legitimate | What is the probability an email is spam |
 |Fraud or legitimate | What is the probability a financial transaction is an attempted fraud |
 |Pass or fail | What is the probability a given student will graduate |
-|Jail or freedom | What is the probability a psychology patient will commit a crime |
+|Jail or freedom | What is the probability a psychiatric patient will commit a crime |
 
 
 ==== Data Fitting ====
@@ -185,21 +185,16 @@ h_\theta(9) &= .98  \rightarrow y = 1  \therefore \text{The tumor is malignant.}
 
 ~CLEAR~
 ==== Example 2. ====
-
 Two independent variables $X_1$ and $X_2$.\\
-Decision boundary is a rough circle.\\
-
-
+Decision boundary is a line with positive slope.\\
 ~CLEAR~
 
 ==== Example 3. ====
-
-Three independent variables $X_1$ and $X_2$ and $X_3$.\\
-Plotted in a cube.\\
-Decision boundary is a sphere or other surface.\\
-
-
+Two independent variables $X_1$ and $X_2$.\\
+Decision boundary is an ellipse.\\
 ~CLEAR~
+
+
 ==== Advanced Techniques ====
 
 Alternatives to [[gradient descent]].

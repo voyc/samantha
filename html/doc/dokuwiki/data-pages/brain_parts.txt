@@ -1,0 +1,97 @@
+====== Brain Parts ======
+==== Brain Anatomy ====
+Neuroanatomy
+
+Hindbrain
+  * Medulla
+  * pons
+  * cerebellum
+
+Midbrain
+
+
+Forebrain
+
+Ventral, dorsal
+Anterior, posterior
+Front, back
+
+Superior, inferior
+Above, below
+
+
+==== The Diencephalon (“interbrain”) ====
+The diencephalon is the region of the embryonic vertebrate neural tube that gives rise to posterior forebrain structures. In adults, the diencephalon appears at the upper end of the brain stem, situated between the cerebrum and the brain stem. It is home to the limbic system, which is considered the seat of emotion in the human brain. The diencephalon is made up of four distinct components: the thalamus, the subthalamus, the hypothalamus, and the epithalamus.
+
+==== Thalamus ====
+Because nearly all sensory information passes through the thalamus it is considered the sensory “way station” of the brain, passing information on to the cerebral cortex (which is in the forebrain).
+
+
+==== Hypothalamus ====
+Lesions of the hypothalamus interfere with motivated behaviors like sexuality, combativeness, and hunger. The hypothalamus also plays a role in emotion: parts of the hypothalamus seem to be involved in pleasure and rage, while the central part is linked to aversion, displeasure, and a tendency towards uncontrollable and loud laughing. 
+
+
+==== Pons ====
+The pons connects the medulla oblongata with the midbrain region, and also relays signals from the forebrain to the cerebellum. It houses the control centers for respiration and inhibitory functions. The cerebellum is attached to the dorsal side of the pons.
+==== Medula Oblongata ====
+control center for respiratory, cardiovascular, and digestive functions
+==== Amygdala ====
+==== Hippocampus ====
+The brain component named the hippocampus helps with the assessment of salience and context by using past memories to filter new incoming stimuli, and placing those that are most important into long term memory. 
+https://en.m.wikipedia.org/wiki/Salience_(neuroscience)
+
+relational memory
+
+==== Cerebrum ====
+The cerebral cortex, the largest part of the brain, is the ultimate control and information-processing center in the brain.
+
+The cerebral cortex is responsible for many higher-order brain functions such as sensation, perception, memory, association, thought, and voluntary physical action.
+
+The cerebrum is the large, main part of the brain and serves as the thought and control center.
+
+cerebral cortex: The grey, folded, outermost layer of the cerebrum responsible for higher brain processes such as sensation, voluntary muscle movement, thought, reasoning, and memory.
+
+cerebrum: In humans, the part of the brain comprising the cerebral cortex and several subcortical structures, including the hippocampus, basal ganglia, and olfactory bulb.
+
+myelin: A white, fatty material composed of lipids and lipoproteins that surrounds the axons of nerves and facilitates swift neural communication.
+==== Cerebellum ====
+The cerebellum is a separate region of the brain located behind the medulla oblongata and pons. It is attached to the rest of the brain by three stalks (called pedunculi), and coordinates skeletal muscles to produce smooth, graceful motions. The cerebellum receives information from our eyes, ears, muscles, and joints about the body’s current positioning (referred to as proprioception). It also receives output from the cerebral cortex about where these body parts should be. After processing this information, the cerebellum sends motor impulses from the brain stem to the skeletal muscles so that they can move. The main function of the cerebellum is this muscle coordination. However, it is also responsible for balance and posture, and it assists us when we are learning a new motor skill, such as playing a sport or musical instrument.
+
+==== Cerebral Cortex ====
+
+==== Endocrine System ====
+==== Limbic System ====
+
+[[Limbic System]]
+==== Brain Stem ====
+==== Mid Brain ====
+The midbrain is located between the hindbrain and forebrain, but it is actually part of the brain stem. It displays the same basic functional composition found in the spinal cord and the hindbrain. Ventral areas control motor function and convey motor information from the cerebral cortex. Dorsal regions of the midbrain are involved in sensory information circuits. The substantia nigra, a part of the brain that plays a role in reward, addiction, and movement (due to its high levels of dopaminergic neurons) is located in the midbrain. In Parkinson’s disease, which is characterized by a deficit of dopamine, death of the substantia nigra is evident.
+==== Spinal Column ====
+
+The spinal cord is a tail-like structure embedded in the vertebral canal of the spine. The adult spinal cord is about 40 cm long and weighs approximately 30 g. The spinal cord is attached to the underside of the medulla oblongata
+
+==== Default Mode Network ====
+==== Dopamine ====
+
+which is synthesized in the brain and kidneys. Dopamine is also synthesized in plants and most animals. In the brain, dopamine functions as a neurotransmitter—a chemical released by neurons (nerve cells) to send signals to other nerve cells. The brain includes several distinct dopamine pathways, one of which plays a major role in the motivational component of reward-motivated behavior. The anticipation of most types of rewards increases the level of dopamine in the brain,[2] and many addictive drugs increase dopamine release or block its reuptake into neurons following release. Other brain dopamine pathways are involved in motor control and in controlling the release of various hormones. These pathways and cell groups form a dopamine system which is neuromodulatory.
+
+
+Major neuromodulators in the central nervous system include dopamine, serotonin, acetylcholine, histamine, and norepinephrine. Neuromodulators are known to have modulatory effects on target areas such as decorrelation of spiking, increase of firing rate, sharpening of spatial tuning curves,[1] maintenance of increased spiking during working memory.
+
+Neurotransmitters -> neuromodulator
+
+==== Grey Matter vs White Matter ====
+Grey Matter - mostly nerve cell bodies and capillaries.
+
+White Matter - mostly nerve axons covered with myelin. Myelin is white.
+
+https://en.wikipedia.org/wiki/Grey_matter
+
+==== Notes ====
+Four cardinal virtues vs anterior cingulate cortex.  Prudence, courage, temperance, justice.
+==== References ====
+
+Sapolsky: Human Behavioral Biology [[https://www.youtube.com/watch?v=NNnIGh9g6fA&list=PL150326949691B199|YouTube Playlist]] [[Notes on Sapolsky Human Behavioral Biology|Notes]]
+
+Jordon Peterson: Personality [[https://www.youtube.com/playlist?list=PL22J3VaeABQAhrMCQUa6sde_Y9DVbLYRv|YouTube Playlist]] [[Notes on Peterson Personality|Notes]]
+

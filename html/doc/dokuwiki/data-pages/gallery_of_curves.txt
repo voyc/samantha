@@ -8,16 +8,34 @@ $a$ is the slope, and\\
 $b$ is the y-intercept.
 ~CLEAR~
 
-==== Parabola ====
+==== Conic Section ====
+
+== Circle ==
+{{cone_circle.png |Conic Section Circle}}
+{{ unit_circle.png|Circle}}
+$$x^2 + y^2 = r^2$$
+Unit Circle: $$x^2 + y^2 = 1$$
+
+$$(x+a)^2 + (y+b)^2 = r^2$$
+
+~CLEAR~
+
+== Ellipse ==
+{{cone_ellipse.png |Conic Section Ellipse}}
+{{ ellipse.png|Ellipse}}
+$$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$$
+
+~CLEAR~
+== Parabola ==
 {{ parabola.png|Parabola}}
 $$y = x²$$
 A function with a second order nomial x² will have a parabolic shape,\\
 concave if positive, convex if negative
 
 Axis of symmetry.
-
 ~CLEAR~
-==== Hyperbola ====
+
+== Hyperbola ==
 {{ hyperbola.png|Hyperbola}}
 
 $$y = \frac{1}{x}$$
@@ -27,19 +45,8 @@ Not to be confused with [[hyperbole]], an exaggeration used as a figure of speec
 Applications from wikipedia.\\
 Path of sundial shadow.\\
 Orbit of asteroid.\\
-
 ~CLEAR~
-==== Circle ====
-== Unit Circle ==
-{{ unit_circle.png|Unit Circle}}
-$$x^2 + y^2 = 1$$
 
-~CLEAR~
-== Ellipse ==
-{{ ellipse.png|Ellipse}}
-$$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$$
-
-~CLEAR~
 ==== Sigmoid ====
 
 {{ sigmoid.png|Sigmoid}}
@@ -66,17 +73,20 @@ $$y = x² + 2ax + b$$
 {{ polynomial_xxxx.png|Polynomial xxxx}}
 
 ~CLEAR~
-==== Quadratic ====
-{{ quadratic.png|Quadratic}}
-{{ quadratic_1.png|Quadratic 1}}
-{{ quadratic_2.png|Quadratic 2}}
-{{ quadratic_3.png|Quadratic 3}}
+
+{{cone_ellipse.png |Conic Section Circle}}
+{{cone_ellipse.png |Conic Section Circle}}
+{{cone_ellipse.png |Conic Section Circle}}
+{{cone_ellipse.png |Conic Section Circle}}
+{{quadratic_1.png|Quadratic 1}}
+{{quadratic_2.png|Quadratic 2}}
+{{quadratic_3.png|Quadratic 3}}
 
 ~CLEAR~
 ==== References ====
-
-For more, see https://en.wikipedia.org/wiki/Gallery_of_curves.
-
+  * Scripts for these graphs are found in http://samantha.voyc.com/doc/script
+  * For more, see https://en.wikipedia.org/wiki/Gallery_of_curves.
+  * Khan Academy playlist: https://www.youtube.com/playlist?list=PLQPuPO-ipSuhNoqOUXasI1mAzSXubTv3z
 
 ==== Notes ====
 Movement\\

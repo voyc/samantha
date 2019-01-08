@@ -1,0 +1,226 @@
+====== Artificial Self-Awareness ======
+
+All that is meant is that the Self is infinite inclusive of all that you see. There is nothing beyond It nor apart from It. Knowing this, you will not desire anything; not desiring, you will be content.\\
+— Ramana Maharsh
+
+Self discovery\\
+Sources of info\\
+Goals\\
+Happiness\\
+Longevity\\
+Reproduction\\
+
+Inner world\\
+Sense of I am\\
+Inner experience\\
+Direct experience\\
+Can it be false\\
+
+Software that asks who am I\\
+
+Cognitive architecture\\
+Cognitive psychology\\
+
+Ambition, jealousy, humor\\
+The society of mind, Marvin Minsky\\
+Use NVC list of feelings, write software to generate each feeling.\\
+And draw it on pokerface\\
+
+Deep mind used to use Torch7, now switching to TensorFlow. Both open source. Apr 2016\\
+
+2016 deepmind AlphaGo beats human\\
+
+
+artificial consciousness software\\
+
+Levels of awareness\\
+Sunflower is aware of sun position\\
+Sensors temperature, vision obstacles, food, sex partner, smell, enemy, threat\\
+
+Levels of self-awareness\\
+Ego-self, small self, mind-body attachment\\
+Big self, eternal divine self, oneness, universal soul\\
+
+At what point does the organism become self aware. If he can recognize a threat, does this imply he sees himself as apart from others.
+
+When an individual gains small-self awareness, does he lose big- self-awareness at that time? Universal - self awareness is non-self-awareness. Undifferentiated life stuff.
+
+When a sunflower tracks the sun across the sky, is the sunflower aware that his position is changing?
+
+Awareness.  \\
+Self awareness.\\
+
+Aware of the sun's position.\\
+Aware of the awareness of the sun's position.\\
+Self monitoring, self regulating.\\
+The self-monitoring mechanism is aware of the sun position sensor. But is it aware of that awareness.\\
+
+
+a robot is a collection of parts\\
+where is the center of awareness?\\
+where would a sense of self develop?\\
+
+
+
+
+AI\\
+superstrong AI\\
+AI singularity\\
+virtual immortality\\
+
+The first is the "singularity," when artificial intelligence will redesign itself recursively and progressively, such that AI will become vastly more powerful than human intelligence ("superstrong AI"). The second revolution will be "virtual immortality," when the fullness of our mental selves can be uploaded perfectly to nonbiological media (such as silicon chips), and our mental selves will live on beyond the demise of our fleshy, physical bodies.
+
+NPC, non-playing character\\
+nobody home
+
+
+
+anger is a reaction to fear\\
+when i feel anger, what is the underlying fear\\
+
+
+famous robots in literature\\
+Hal, Space Odessey 2001\\
+Lost in Space TV series\\
+Data, Star Trek\\
+Chappie\\
+Her\\
+Terminator, 1,2,3,4\\
+Ex Machina\\
+The Machine\\
+
+
+Even though SkyNet has become an enemy to man, Arnold is re-programmed to protect man.\\
+The AI implications are not explored in the movie.\\
+How did they do it?  \\
+Did they disconnect the piece that made him sentient?\\
+
+sentient\\
+sentience\\
+consciousness\\
+awareness\\
+intelligence\\
+
+technological singularity\\
+gravitational or space-time singularity\\
+
+runaway progress\\
+software that improves itself\\
+
+
+philosophy of mind\\
+	nonreductive physicalism\\
+		mysterianism\\
+			Colin McGinn: consciousness is a mystery that human intelligence will never unravel\\
+			Others: maybe not to PRESENT human understanding, but may become comprehensible to future advances of science and technology\\
+			
+the hard problem of consciousness\\
+easy problems\\
+the hard problem\\			
+			
+blade runner\\
+
+
+All that is meant is that the Self is infinite inclusive of all that you see. There is nothing beyond It nor apart from It. Knowing this, you will not desire anything; not desiring, you will be content.\\
+
+is it primitive\\
+or derivitive\\
+
+david chalmers, easy vs hard problem of consciousness, the color-blind neuroscientist who knows all about color\\
+marvin minsky, AI, cognitive science\\
+ray Kurzweil, exponential growth, the singularity, the technological singularity, the AI singularity\\
+
+Gravitational singularity, space-time singularity\\
+AI singularity\\
+Technological singularity\\
+Exponential increasing rate of developmen\\
+
+John Searle, Chinese Room, Berkeley\\
+	epistemic : knowledge\\
+	ontology : existence\\
+	objective vs subjective\\
+	observer independent vs observer relative\\
+	syntactics vs semantics\\
+	simulation is not duplication\\
+	notions in cognigive science:\\
+		intelligence \\
+		memory\\
+		perception\\
+		decision-making\\
+		rationality
+		computation\\
+	Turing Test fails\\
+	programs are formal or syntactical, minds have a semantics\\
+	perceptons modify the conscious field\\
+
+Demis Hassabis, Google DeepMind\\
+	https://www.youtube.com/watch?v=0X-NdPtFKq0\\
+	machines extend our capabilities\\
+	software extends the capabilities of our mind\\
+	management simulation games: Theme Park, SimCity\\
+	1 Solve intelligence: understand what it is and then replicate it\\
+	2 Use it to solve everything else\\
+	general-purpose learning machine\\
+	AGI vs "narrow" AI\\
+	agent : environment\\
+	if environment is real-world, agent is robot\\
+	if environment is virtual, agent is avatar\\
+	1 agent makes observations of the environment and builds an internal model\\
+	2 agent decides on actions to take in the environment\\
+	games\\
+		atari: space invaders, breakout\\
+		3d: car racing\\
+		only input is raw pixels of the screen\\
+		open-source, torch, code released\\
+	neuroscience-inspired AI\\
+		memory\\
+		attention\\
+		concepts\\
+		planning\\
+		navigation\\
+		imagination\\
+	hippocampus\\
+	memory, episodic memory, is a reconstruction, not a video recording\\
+
+	Bernardo Kastrup\\
+		https://www.youtube.com/watch?v=hx7cspjwvHM\\
+		idealism (west) == non-dualism (east)\\
+		panpsychism: all matter has consciousness\\
+		artificial sentience: engineers can create a being that has a private subjective inner life\\
+		expressions of non-dualism\\
+			Consciousness is a fundamental building block of reality like space-time and the properties of matter.\\
+			The world we perceive is made of consciousness. What we call matter is consciousness itself.\\
+			
+		
+Everything that had possessed me, all the agonies, disappeared like dreams and illusions, and something one might call "true nature" stood revealed.\\
+— Masanobu Fukuoka, The One-Straw Revolution: An Introduction to Natural Farming
+
+Ego-self == personality\\
+
+Rta - (Sanskrit ऋतं ṛtaṃ, “that which is properly/excellently joined; order, rule; truth") is the principle of natural order which regulates and coordinates the operation of the universe and everything within it.[1] In the hymns of the Vedas, Ṛta is described as that which is ultimately responsible for the proper functioning of the natural, moral and sacrificial orders. 
+
+Dharma - the injunctions and ordinances thought to uphold Rta.
+
+Karma - the action of the individual in relation to Dharma.
+
+Amrita - immortality, nectar, soma, a drink that confers immortality.  Also, a common first name.
+
+Sexual desire, romantic love, friendship, teamwork, camaraderie, xenophobia, \\
+Brother, father, grandfather, uncle. These are chemically-induced feelings and behaviors.\\
+This behavior is exhibited by plants and can be programmed into machines.\\
+
+Self-aware Self-awareness\\
+Self-conscious Self-consciousness\\
+Self-realized Self-realization\\
+
+Sentience\\
+Sentience is the capacity to feel, perceive, or experience subjectively
+
+Collective Consciousness
+
+== Mirror Test ==
+Self recognition
+Self awareness
+https://en.m.wikipedia.org/wiki/Mirror_test 
+
+How do we create the subjective experience of self awareness?

@@ -3,12 +3,20 @@
 Who am I?\\
 The unexamined life.\\
 
+
+
+I am\\
+I want to know myself\\
+Know thyself\\
+This implies that I do not.\\
+
 ==== Psychological Models ====
 The following models of personality have been put forward.
 
+  * 700 BCE: Patanjali [[Yoga]]\\
   * 700 BCE: Buddha  [[Buddhist Psychology]]\\
   * 1885: Sigmund Freud.  ego, id, super-ego; libido, death drive, neurotic guilt, psychoanalysis\\
-  * 1912: Carl Jung.  Individuation. synchronicity, archetypal phenomena, the collective unconscious, the psychological complex, and extraversion and introversion\\
+  * 1912: Carl Jung.  Individuation. synchronicity, archetypal phenomena, the collective unconscious, the psychological complex, and extraversion and introversion. The persona vs the shadow, the conscious part we present to others vs the unconscious aggressive and lustful part we cannot accept. \\
   * 1950: Maslow: [[Heirarchy of Needs]] : https://en.wikipedia.org/wiki/Maslow%27s//hierarchy_of//needs\\
   * 1958 Berne: [[Transactional Analysis]].  Every interaction between humans is in fact a transaction, where goods and services pass between the parties.\\
   * 1960: Marshall Rosenberg: [[Nonviolent Communication]] (NVC).  Lists of feelings and needs, and the recommendation that accurately communicating feelings and needs can results in greater happiness and harmony.  http://hagstrand.com/nvc/
@@ -19,6 +27,22 @@ The human is a programmed device.
 
 Feelings = Emotions and intuitions\\
 personality traits
+
+Personalities fit together like lock and key proteins. 
+
+Learning thru mimicry of parents and society
+
+==== Distributed Intelligence ====
+DNA\\
+cell reconstruction\\
+skin\\
+glands\\
+blood\\
+organs\\
+spinal column\\
+medula oblongata\\
+cerebellum\\
+cerebrum\\
 
 ==== Models with Tests ====
 Psychometric testing expresses an individual's personality as a list of traits and a numeric value for each trait.
@@ -32,6 +56,24 @@ Psychometric testing expresses an individual's personality as a list of traits a
   * Big Five Personality Traits
 
 see [[Psychometrics]]
+
+Traits
+
+Tendancies
+
+Measurement as separate topic in psyche\\
+A psychometric test comes with its own model\\
+
+to allow for Radical improvement, also  Necessitates radical failure\\
+Bell curve\\
+Autism\\
+Idiot savant\\
+Genius\\
+Outliers, 0 to 1\\
+
+Stock protocols in language\\
+Regional differences\\
+Prejudices (beliefs)\\
 
 ==== Disorders ====
 Therapies\\
@@ -53,6 +95,7 @@ Increasing attention to out of balance states\\
 Mania\\
 
 ==== Desire ====
+Procreation
 [[Sex]]
 
 ==== Thinking ====
@@ -62,6 +105,26 @@ Inductive\\
 Dialectic\\
 Scientific method: hypothesis, test
 
+model, prediction, prescription\\
+classification, prediction, optimization\\
+
+human intel vs artifical intel\\
+thinking plus knowledge (memory)\\
+model building\\
+models include numeric values and judgements\\
+
+Is there some kind of thinking that is not programmed?
+
+Convergent\\
+Divergent\\
+In the 1950s, the psychologist J. P. Guilford divided creative thought into two categories: convergent thinking and divergent thinking. Convergent thinking, which Guilford defined as the ability to answer questions correctly, is predominantly a display of memory and logic. Divergent thinking, the ability to generate many potential answers from a single problem or question, shows a flair for curiosity, an ability to think “outside the box.” It’s the difference between remembering the capital of Austria and figuring how to start a thriving business in Vienna without knowing a lick of German.
+==== Reasoning ====
+https://en.m.wikipedia.org/wiki/Outline_of_human_intelligence
+
+https://en.m.wikipedia.org/wiki/Reason#Logical_reasoning_methods_and_argumentation
+
+==== Beliefs, Values, Judgements ====
+
 ==== Beliefs ====
 Life is a game.  Life is a struggle.
 
@@ -69,12 +132,15 @@ Life is a game.  Life is a struggle.
 
 Astrology, numerology, tarot, phrenology, entrails, tea leaves, oracle's, trance, seance, classification, prediction, Esp, sixth sense, intuition.\\
 
+Watch "12 Cognitive Biases Explained - How to Think Better and More Logically Removing Bias" on YouTube
+https://youtu.be/wEwGBIr_RIw
 ==== Consciousness model ====
 Voice dialog, multiple personality, Dream
 
 ==== Tendencies ====
 Risk Reward\\
 Personal space boundaries,\\
+
 sex repression,\\
 Face shame revenge\\
 Hold all, tolerance of conflicting models\\
@@ -86,79 +152,117 @@ Guilt, after trx, fear of revenge (consequences)\\
 Retaliation\\
 Latching on, blade runner\\
 
+psyche model: Dog eat dog vs love and peace
+
+== Regional Traits ==
+hot climate vs cold climate\\
+sarah lanier: Foreign to familiar\\
+
 
 ==== Psychopathy ====
 [[Psychopathy]]\\
+
 suicide, murder, serial murder, mass killing, genocide\\
 lying, Torture, crime, theft,\\
 war\\
 For fun or profit\\
 
-==== Notes ====
+==== Hierarchy ====
+hero worship\\
+Sinatra, Elvis, Beatles\\
+dieties\\
+boss\\
+pyramid\\
 
-The mentally disturbed do not employ the Principle of Scientific Parsimony: the most simple theory to explain a given set of facts. They shoot for the baroque.\\
+== Programmability ==
+Power of Suggestion\\
+Hypnotist\\
 
-voice dialog, Conversations with oneself\\
+aka Gullibility
 
-transactional analysis\\
+Critical thinking vs following the leader
+
+Millgram
+
+Submissiveness\\
+Devotion\\
+Irresponsible\\
+
+Programming, hypnosis, leadership
+
+==== Duality ====
+radical improvement, radical failure
+
+==== Multiple Selves ====
+
+Voice Dialog
+
+talking to oneself
+
+true self vs small self \\
+Nisargadatta: Understand the root cause of your fears -- estrangement from yourself; and of desires -- the longing for the self, and your karma will dissolve like a dream.
+
+==== Transactional Analysis ====
+
 also differs from Freudian analysis in explaining that an individual's final emotional state is the result of inner dialogue between different parts of the psyche, as opposed to the Freudian hypothesis that imagery is the overriding determinant of inner emotional state. (For example, depression may be due to ongoing critical verbal messages from the inner Parent to the inner Child.) Berne believed that it is relatively easy to identify these inner dialogues and that the ability to do so is parentally suppressed in early childhood.[6]\\
 
 Revising Freud's concept of the human psyche as composed of the id, ego, and super-ego, Berne postulated in addition three "ego states"—the Parent, Adult, and Child states—which were largely shaped through childhood experiences. These three are all part of Freud's ego; none represent the id or the superego.\\
 
 Berne presented his theories in two popular books on transactional analysis: Games People Play (1964) and What Do You Say After You Say Hello? (1975). I'm OK, You're OK (1969), written by Berne's long-time friend Thomas Anthony Harris, is probably the most popular TA book.\\
 
-hot climate vs cold climate\\
-sarah lanier: Foreign to familiar\\
+==== Mental Illness ====
 
-voice dialog, multiple personalities\\
-how implemented in memories\\
-using AI algorithms as thinker\\
+The mentally disturbed do not employ the Principle of Scientific Parsimony: the most simple theory to explain a given set of facts. They shoot for the baroque.\\
 
+
+==== Identity ====
 Alter ego\\
 Facebook photo with others\\
-Avatar\\
-Identity\\
 
-Measurement as separate topic in psyche\\
-A psychometric test comes with its own model\\
+Levels
+  * Identity
+  * Individual
+  * Commu ity
+  * Country 
+  * Planet earth
+  * Humanity
+  * Life 
+  * Universe 
+  * All
+==== Programming of Humans ====
 
-to allow for Radical improvement, also  Necessitates radical failure\\
-Bell curve\\
-Autism\\
-Idiot savant\\
-Genius\\
-Outliers, 0 to 1\\
+  * Media literacy
+  * Me too scam
+  * Denial of science: climate change, flat Earth, moon landing
+  * Fear: need for weapons
 
-Stock protocols in language\\
-Regional differences\\
-Prejudices (beliefs)\\
+Do Androids Dream of Electric Sheep?
+  * topics: Empathy, Mercerism
 
-optimize happiness.\\
-Data fitting.\\
-Friend or foe, poison or nutrition.\\
-Facial recognition\\
+==== Mystical Experiences ====
+Watch "Jordan Peterson: Consciousness and Mystical Experiences through Psychedelics" on YouTube
+https://youtu.be/RT_WjwbSwPU
 
 
-Buddha model\\
-Creativity. Freedom to find pathways, connections, correlations, other than the usual.\\
-Monkey mind, discipline, meditation.\\
-Should Sam need self discipline?\\
-Can we set her up so her development discovers the need for discipline?\\
-Meditation is ruthless in the way it reveals the stark reality of our day-to-day mind.\\
-See list of meditation techniques.\\
-Follow the train of thought back to the moment you left meditation.\\
-Should Sam have a barely controllable wandering mind, and a need or desire to meditate?\\
 
-psyche model: Dog eat dog vs love and peace
+==== artificial personality ====
+Traits other than intelligence: creativity,  
+What is Unique to humans? 
 
-UI: 90% of communication is non-verbal
 
-morality: Sam can take over robot. Will she feel wrongness about this. Will she deel remorse
+==== Dominance ====
+Joe Rogan,  Robert Sapolsky
+Sadhguru
+Jordan Peterson
 
-Power of suggestion, Hypnotist
+==== Big Five ====
 
-true self vs small self \\
-Nisargadatta: Understand the root cause of your fears -- estrangement from yourself; and of desires -- the longing for the self, and your karma will dissolve like a dream.
+  - openness to experience
+  - conscientiousness
+  - extraversion
+  - agreeableness
+  - neuroticism
+
 
 ==== References ====
   * https://www.verywell.com/personality-perspectives-2795950\\

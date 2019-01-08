@@ -1,0 +1,10 @@
+====== Biomimicry ======
+
+Three types.
+
+1. Mimic the structure and locomotion of animals.  Robots.  Snake, bird, butterfly.  Biped, quadraped, six-legged insects, eight-legged spiders.
+
+2. Mimic the brain, as in the neural net.
+
+3. Mimic evolution: natural selection: breeding, random mutations, survival of the fittest.  As in genetic algorithms.
+

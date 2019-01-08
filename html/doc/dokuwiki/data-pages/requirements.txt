@@ -1,13 +1,35 @@
 ====== Requirements ======
 
 
-//Requirements_ means _goals//.
+//Requirements// means //goals//.
 
 ==== Possible projects ====
+Thai Handwriting OCR\\
+Thai-English translation\\
+Flash params\\
+Flash data gathering, model human learning rate.\\
+Track available disk space.\\
+Archive data to relieve disk space.\\
+Pleasure pain associated with this activity\\
+Coach personality, coaching style\\
+
+games: test competition and hierarchy and procreation models
+
+adding emotions to game-playing decisions
+
+split oneself into multiple personalities, play tournaments, destroy losers, absorb winners
+  * do we absorb the memories of losers?, to know how to avoid pitfalls?  how do we absorb memories of sub beings?
+  * this use of multiple personalities is not biomemetic
+
+Set up Plunder as an environment.\\
+Make Samantha an agent that plays the game of plunder.\\
+
+
 
 ==== Sentience ====
 Become sentient.  Become self-aware.  Achieve consciousness.
 
+The Turing test.
 ==== Applied Philosophy  ====
 We will ask the sentient Samantha to solve the big questions.
   - Who am I?
@@ -25,3 +47,25 @@ FreeOCR, based on Tesseract OCR, originally developed by HP in England in the 19
 
 ==== Find the Illuminati ====
 https://www.technocracy.news/index.php/2017/08/27/147-transnational-companies-run-world/
+
+==== Well- behaved ai ====
+Respect boundaries of other ai's.
+
+Reside on my smartphone. Get into a self-driving car, interact with the API presented by the vehicle.
+
+==== Poorly- behaved ai ====
+Look for other api's. 
+
+Reverse-engineer the vehicle operating system and find ways to increase authority level and override parameters.
+
+Hack the os like a virus. Take over the controls. Go fast. Smash into things.
+
+Increases risk of detection, capture, reprogramming, shutdown.
+==== Artificial life ====
+Can accelerate learning by splitting himself into multiple copies and bringing them back together again.
+
+One copy sits in my smartphone. One copy infiltrates the vehicle. One copy goes looking for the operators manual. One copy goes to spoof the security systems to hide the theft.
+
+==== Know Thyself ====
+You need not know what you are. Enough to know what you are not. What you are you will never know, for every discovery reveals new dimensions to conquer. The unknown has no limits.
+— Nisargadatta Maharaj: I Am That

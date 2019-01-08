@@ -1,0 +1,9 @@
+======Cellular Automata======
+
+1940s discovered by Stanislaw Ulam and John von Neumann while they were contemporaries at Los Alamos National Laboratory. 
+
+1970s Conway's Game of Life, a two-dimensional cellular automaton.
+
+1980s, Stephen Wolfram engaged in a systematic study of one-dimensional cellular automata, or what he calls elementary cellular automata. 
+
+2002 Wolfram published A New Kind of Science.

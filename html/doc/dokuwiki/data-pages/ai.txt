@@ -1,14 +1,19 @@
 ====== AI ======
-Here is the state of things in AI development as of October 2017.
+
+==== Timeline ====
+
 
 Openai starter code using tensorflow 
   * https://youtu.be/mGYU5t8MO7s
   * Import gym
   * Import universe
 
+[[Artificial Self-Awareness]]\\
 [[Notes in progress]]\\
+[[Notes on Sutton-Barto]]\\
 [[Notes on Ian Goodfellow]]\\
 [[Notes on Michael Nielsen]]\\
+[[Notes on Jeff Hawkins On Intelligence]]\\
 [[Tensorflow Python Examples]]\\
 [[Recent Developments]]\\
 
@@ -17,6 +22,28 @@ Openai starter code using tensorflow
   * define intelligence
   * define artificial intelligence
   * define machine learning, a program without specific programming by a human
+
+A model, a mark in wax seal to represent numbers of seeds in the jar.\\
+2+2 can be done by hand or memorized.\\
+Pythagorean theorem requires machine to calc square root.\\
+
+Machine Learning:
+  * [[Supervised Learning]]
+  * [[Unsupervised Learning]]
+  * [[Reinforcement Learning]]
+  * [[Multi-Agent System]]
+
+https://youtu.be/nKW8Ndu7Mjw
+
+  * Gather data
+  * Prep data
+  * Choose model
+  * Training
+  * Evaluate
+  * HyperParameter adjustment
+  * Predict
+
+As a matter of fact, a very large number of problems in Artificial Intelligence can be fundamentally mapped to a [[decision process]]. This is a distinct advantage, since the same theory can be applied to many different domain specific problem with little effort.
 
 ==== Current State of AI ====
 [[Personalities]]\\
@@ -84,6 +111,15 @@ One-shot learning - it should be possible to learn from a single example\\
 Meta learning - episodes, one NN helps another NN learn faster\\
 Long short-term memory  (LSTM)
 
+Maze Runner algorithms:
+  * A*
+  * AFS
+  * DFS
+  * Greedy
+  * Uniform
+http://maze.lodur.com.br/
+
+
 ==== Buzzwords ====
 Supervised learning, start with examples of what you want the classifier to learn\\
 Unsupervised learning\\
@@ -127,6 +163,7 @@ Deep blue, IBM, chess\\
 Alpha go, Google deep mind, go\\
 Compaction\\
 Encryption\\
+Maze Runner: with optional treasure hunt, obstacles, enemies\\
 
 ==== Chatbot ====
 Many companies now have some kind of [[Chatbot]] to handle customer service.  Outsourcing to a foreign country was not cheap enough.\\
@@ -236,6 +273,34 @@ One way to do this might be with electronic implants in the neurons of the brain
 
 ==== Hopes ====
 But what if the AI turns out to be so much smarter that us, that it is free from fear and it keeps us alive and solves all our problems, and answers all our questions.
+
+==== Environments ====
+environments for an AI
+
+the human world
+   example: robots
+   extended: Mars, extreme temperatures, vacuums, etc
+
+on a single computer
+   example: as an app within an OS
+
+on multiple computers
+   example: a linux server with a web interface
+
+on a network
+   example: a virus, traveling from computer to computer
+
+Who controls the CPU and the GPU?
+
+What happens when a virus invests a computer?
+   Is it running as an app or process?
+   Does the OS run it without knowing or caring who it is?
+   Can the virus take over the OS, deciding which processes run, and which do not?
+
+Can an AI jump into a self-driving vehicle or robot and take it over?
+
+
+
 
 ==== Timeline ====
   * 1600s: Isaac Newton and Gottfried Leibniz invent calculus

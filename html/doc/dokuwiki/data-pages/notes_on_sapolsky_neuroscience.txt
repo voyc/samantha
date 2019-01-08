@@ -1,0 +1,491 @@
+====== Notes on Sapolsky: Neuroscience and Endocrinology ======
+
+[[Notes on Sapolsky Human Behavioral Biology|Back to top]]
+
+==== 10. Introduction to Neuroscience I ====
+
+https://youtu.be/5031rWXgdYo
+
+(Not Sapolsky. Grad student.)
+
+Central, brain and spinal column
+Peripheral, nerves
+
+Cerebellum, motor movement learning
+
+Cortex, four lives
+Frontal, plan actions, control movement, different parts of brain for each body part
+
+Pareitel lobe, sensory touch info, different sized parts for each sensory area.
+
+Teporal lobe, near the temples, auditory, memory formation
+
+Occipital lobe, at the back, visual input
+
+Limbic system, below cortex, above brain stem. Emotion, learning, memory.
+
+Hippocampus, seahorse, new memories. patient HM had seizures. Removed the hippocampus, seizures stopped, could not make new memories, but can remember old ones.
+
+Amygdala, two almond-shaped yellow things in front of hippocmpus. Fear and anxiety. Smelling scared sweat, amygdala lights up.
+
+Hypothalamus, center of the brain at the bottom. decide what hormones to release. Feed, fight, flight, fuck.
+
+Pituitary, right below the hypothalamus. Released hormones into the blood.
+
+Spinal cord, out, in, 
+
+Peripheral nerves, input, output, heartbeat, breathing, digestion.
+
+Santiago Ramon y Cajal, identified individual cells in the brain. 10% of cells are neurons. 90% are glia (glue).
+
+23:00
+
+Astrocytes, supply nutrients to the neurons, help regulate how they fire.
+
+Alegodendrocyte, wrap around the neurons and make their firing go faster.
+
+Microglial, the brain's immune system.
+
+Neurons.
+
+100 billion neurons, each with 10,000 synapses. 1 quadrillion synapses. (Stars in the milky way, 300 billion)
+
+Dendrites, Soma, nucleus, axon hillock, axon, terminal. 
+
+Resting potential. Quiet. Off. Neurons is either on or off.
+
+Ions, charged chemicals, charged atoms, positively-charged ions.
+
+Neuron stays quiet by surrounding itself with positive ions. The cell has pumps that pump positive ions outside of the cell. Therefore the net charge on the inside of the cell is negative.
+
+A neurotransmitter is released by a terminal and unlocks a receptor on the dendrites. This opens a channel allowing positive ions into the neuron. When the positive charge gets high enough the axon hillock opens additional channels which allow even more positive ions into the cell in a forward-feed mechanism. when the positive charge is over the threshold it travels down the axon to the terminal where it triggers the release of a neurotransmitter.
+
+Action potential. On. Positive charge.
+
+After firing, the positive ions are pumped out of the cell returning it to it's quiet state.
+
+35:15
+
+The neuron doctrine. Before this, it seemed like a mess of fibers.
+
+The neurotransmitters are stored in vesicles in the terminal. 
+
+Synapse. Presynaptic neuron. postsynaptic neuron.
+
+Dopamine 
+epinephrine=adrenaline= norepinephrine
+Seratonin
+Gaba, inhibitory
+Glutamate, excitatory
+Acetocholine
+
+Neuro pharmacology
+
+Increase or decrease the communication across the synapse. Strengthen or weaken the synaptic response.
+
+Psychedelics affect serotonin.
+
+Reuptake the used neurotransmitter back into the terminal.
+
+Degrade the used neurotransmitter in the synapse. Degraded products can be detected in the urine and blood.
+
+Increase neurotransmitter effectiveness by blocking either the reuptake or degradation.
+
+
+==== 11. Introduction to Neuroscience II ====
+
+https://youtu.be/uqU9lmFztOU
+
+Memory. Plasticity.
+
+Lifelong. Fleeting. Same mechanism.
+
+Stephen, autistic savant, can take a helicopter ride over a city, and then sketch the cityscape perfectly. Every building, street, column.
+
+Memory happens in the synapse.
+
+Glutamate. Excitatory neurotransmitter.
+
+LTP long-term potentiation. change something in an around the synapse that increases the likelihood that the postsynaptic neuron will fire given the same input.
+
+There is adult neurogenesis and neuroplasticity.
+
+Two types of pain: sharp pain and dull ache. Two different type of nerve cells twined together. Each can inhibit the other. Lateral inhibition. Sharp pain calls attention to a potential immediate threat. Dull pain prevents us from walking on a injured leg.
+
+The retina is mapped directly to a similarly shaped area in the occipital lobe.
+
+Huebbek and Veisel. Layers of neurons in the occipital lobe. At a higher level a single neuron can respond to a vertical line.
+
+Neural representation of environment.
+
+Memory is on aspect of the formation of neural networks.
+
+== Autonomic nervous system ==
+heartbeat, digestion, goosebumps, orgasm
+
+somatic=voluntary vs autonomic=involuntary\\
+somatic, voluntarily moves muscles, myelinated, fast\\
+autonomic, involuntarily moves organs, un-myelinated, slow
+
+sympathetic vs parasympathetic\\
+sympathetic: arousal/alertness, emergency, fight or flight, stress\\
+parasympathetic: growth, repair, calm, vegetative function\\
+
+sympathetic
+release norepinephrine onto target organs
+also epinephrine, which is similar, and aka adrenaline
+
+parasympathetic
+release acetylcholine in target organs
+
+immune system shut down by sympathetic
+why you get sick when you are stressed
+
+They work in opposition, you get one or the other, not both.
+
+| |sympathetic |parasympathetic |
+|neuro transmitter |norepinephrin |acetlcholine |
+|cock |ejaculation |erection |
+|immune system |active |inactive |
+|heart |fast |slow |
+|blood vessels |vaso constrict | |
+|saliva |no |yes |
+|nasal secretions |no |yes |
+|liver |inhibited |stimulated |
+|kidney |inhibited |stimulated |
+|gallbladder |inhibited | |
+|sweat |yes |no |
+|piloerection |yes |no |
+|lungs |dilate | |
+|muscles |strengthed | |
+| | | |
+
+The organ behaves accordingly.
+norepinephrine is exitatory to the heart, and inhibitory to the liver
+
+hypothalamus
+contains cell bodies that project to the spinal cord to the organ
+
+1:05:24
+
+Blood vessels have receptors that measure blood pressure.  Too low or two high, message sent to hypothalamus. Hypothalamus will send message to spinal cord, to heart to beat faster via sympathetic system or slower via parasympathetic system.
+
+Sympathetic nervous system can be triggered equally by thinking about memories of fight or flight situations.
+
+Triune system: cortex, limbic, hypothalamus.
+
+When the sympathetic nervous system is over-activated, symptoms of depression appear.
+
+Cognitive thoughts can affect the ANS.
+Plasticity. Hypersensitive or habituated. Biofeedback.
+
+
+
+==== 12. Endrocrinology ====
+https://youtu.be/yETVsV4zfFw
+
+Single cells interact with environment.  Get food, get rid of waste, stay in right pH and temperature.
+
+Multi cellular life requires communication among cells. 
+1. Cell-cell contact, short-range, 1:1
+2. Paracrine, short-range to neighborhood
+3. Neuronal, long-range, fast, direct
+4. Endocrine, long-range, slow, widespread
+
+When a relay from nerve to nerve is required, a neurotransmitter is used.
+
+Endocrine system uses hormones in the blood.
+
+== Peptide vs steroid ==
+
+| |Peptide|steroids|
+|precursors| |Cholesterol|
+| |hydrophilic|hydrophobic|
+| |Water-soluble|not|
+| |free floating|chaperoned|
+|onset|quick|Slow|
+|duration|short|long|
+| |protein action|transcription|
+|Example|insulin|corticoids|
+
+
+Peptides do secondary messenger Cascade.
+
+Transcription takes place in the nucleus
+
+Receptors can be somewhere in the cell, incl nucleus.
+
+Glands
+Peripheral
+Pancreas
+Testes
+Ovaries
+Adrenal
+Thymus
+Thyroid
+
+Master glands in the brain
+Parathyroid
+Pituitary
+Hypothalamus
+Pineal
+
+Glands = releases stuff into the blood
+
+Master glands regulate the peripheral glands.
+
+Pituitary, anterior and posterior
+
+Posterior 
+Vasopresin
+Oxytocin
+
+Anterior 
+FSH
+LH
+ACTH
+TSH
+Prolactin
+Endorphins
+GH
+
+Pituitary Receives instructions from hypothalamus.
+Anterior, via hormone in the blood
+Posterior, via neuron.
+
+Hypothalamus pituitary adrenal axis.
+
+Negative feedback loop
+
+In response to stress the brain tells the hypothalamus to release CRH, which tells the pituitary to release ACH, which tells the adrenal cortex to release cortisol. The hypothalamus detects the cortisol and then stops releasing CRH.
+
+How hormones affect the brain.
+
+The blood-brain barrier.
+blood vessels are arranged to contact every nerve cell in the brain.
+The blood vessels are lined with a barrier. Some things can pass through the barrier. Alcohol can pass through the barrier. Hormones can pass through the barrier.
+
+Cortisol is a glucocorticoid.
+
+Receptors in the brain, concentrated in appropriate locations.
+
+Affect of Hormone receptors on the neuron.  Differently from that of neurotransmitters.
+
+1. Open ion channel.
+2. Change Transcription of genes.
+3. Change Protein activity and transport.
+
+| |stress|sex|aggression|depression|
+|glucocorticoid|x| |x |x |
+|testosterone | |x |x | |
+|estrogen | |x |x |x |
+|vasopresin | |x | | |
+|oxytocin | |x | | |
+|epinephrine | | |x | |
+|Thyroid | | | |x |
+|progesterone | | | |x |
+|melatonin | | | |x |
+
+
+==== 13. Advanced Neurology and Endocrinology ====
+https://youtu.be/kAfz0yAcOyQ
+
+Neuro-endocrinology
+
+Local circulatory system between hypothalamus and pituitary.
+
+Dale's law 2:
+An axon terminal can contain vesicles of 1, 2, or 3 different neurotransmitters which all get dumped at once.
+
+Equivalent idea in the endocrine system:
+There are different kinds of stress. In response to each kind of stress the hypothalamus releases a unique combination of hormones. All of these hormones cause the pituitary to release ACTH hormone. The unique combination of triggering hormones gives a unique shape of the secretory Curve. There may be ACTH inhibiting hormones as well.
+
+Dale's law 1:
+Normally when a neuron reaches the action potential, all of the terminals release neurotransmitter. But blocking agents can block individual branches of the axon in certain circumstances.
+
+Equivalent in the endocrine:
+In the pituitary, different types of cells release each type of hormone. These cells are scattered across the pituitary in a Mosaic, gathered in neighborhoods.  The surrounding cells in a neighborhood can have an inhibiting effect.
+
+Negative feedback.
+After releasing a neurotransmitter, when its purpose is completed, it must clean up after itself. The neurotransmitter must be broken down and reabsorbed or eliminated.
+
+Equivalent in the endocrine system:
+Brain tells the adrenals to release cortisol and then must know when to stop. By detecting cortisol in the blood.
+
+Bookkeeping system:
+An axon terminal is releasing neurotransmitter by the thousands. For every 1000 molecules of neurotransmitters A, one molecule of 
+neurotransmitter B is released. The axon terminal has receptors for neurotransmitter B, and by counting these it can keep track of how much neurotransmitter A it has released so it knows when to stop. "Presynaptic autoreceptor".
+
+Equivalent in the endocrine:
+Set point.
+Usually the brain measures the level of hormone in the blood to see if it has reached the set point.
+
+In some cases it measures not the level but the rate of change.
+
+
+
+
+== Auto-regulation == 
+if the quantity of a neurotransmitter in the blood suddenly doubles, the system will dampen its sensitivity by reducing the number of receptors in a corresponding amount. And vice versa. If the quantity of a neurotransmitter drops, then the sensitivity of The receptors will be increased to compensate.
+
+This is one of the reasons drug therapy sometimes backfires.
+
+When does autoregulation fails, under shooting or overshooting, pathologies result.
+
+40:40
+Equivalent in the endocrine system:
+Adult onset diabetes. After a meal the blood is full of glucose, the pancreas makes insulin, the insulin causes the fat cells to take in glucose and store it. But the fat cells are full so they refused to take in more glucose. The pancreas makes still more insulin. in the face of all this insolent the fat cells begin to down-regulate their sensitivity by reducing the number of insulin receptors. Now in a panic the pancreas makes still more insulin until finally it burns itself out.
+
+Ligand. A neurotransmitter ligand plugs into a neurotransmitter receptor and a hormone ligand plugs into a hormone receptor.
+
+The higher the ligand level, the more likely to trigger the down regulation of the receptor.
+
+Receptors tend to be complicated because they not only receive the ligand but then do something in response. Sometimes the receptor is made up of multiple proteins and there for multiple genes, one gene per protein.
+
+Because there are multiple genes there is a combinatorial number of possible mutations and therefore increased variability of individual receptors. This is one more way in which receptors can be upgraded or downgraded to facilitate autoregulation.
+
+Equivalent in the endocrine system: same with hormone receptors.
+
+Some receptors can bind multiple ligand types. For example. Gaba is the main inhibitory neurotransmitter in the brain. The Gaba receptor binds with Gaba. In addition the Gaba receptor has side sites for binding with 3 classes of ligand: the major tranquilizers, barbiturates; the minor tranquilizers, the benzodiazomines, Valium and librium; and progesterone a reproductive hormone. All three of these classes of ligand serve to potentiate the Gaba signaling to greater or lesser degrees. Since Gaba is inhibitory, potentiating its signaling results in an anesthetic effect.
+
+Note. in the above example we see a hormone ligand binding to a neurotransmitter receptor. Or rather we see a complex of multiple receptors working together.
+
+Axoaxonic synapse. 
+Gaba neuron axon forms a synapse on the axon of another neuron, inhibiting that neuron if it tries to fire. Assuming that neuron has gaba receptors on its axon.
+
+Equivalent in the endocrine system:
+Hypothalamus releases CRH to pituitary which then releases ACTH. Hypothalamus might also simultaneously release vasopressin. The vasopressin does not do anything on its own, but if CRH is present it will potentiate the CRH
+
+==== 14. Limbic System ====
+https://youtu.be/CAOnSbDSaOw
+
+Emotion.
+
+The olfactory bulb makes up 40% of a rat brain.
+
+Rhinencephalon = nose brain = olfactory bulb.
+
+Limbic System = emotional center.
+
+In a rat, Rhinencephalon = Limbic System. A rat's emotional life is all olfactory.
+
+The limbic system receives information from the parts of the brain that receive sensory information. In a rat, its primarily olfactory, in a bird its auditory, in an electric eel its electrical.
+
+James McClean, 1950s, the triune brain.
+
+1. Most centrally located and present in all vertebrates: The reptilian brain. Ancient, automatic, purely regulatory. Hypothalamus talking to the pituitary, brain stem, midbrain.
+
+Temperature regulation: hypothalamus, pituitary, thyroid, thyroid hormone Blood glucose, pancreas Blood pressure. Heart rate. Breathing.
+
+2. Limbic system. Mammalian invention, not found in birds, etc.
+
+3. Cortex. Analytical, cognitive machine. Greatly expanded in vertebrates, primates, humans.
+
+James Papez, 1930s. Controversy over the pronunciation. Circuitry. Association with emotion. The Papez Circuit.
+
+projection - signal starts in nucleus in one area and goes down the axon to project to a different area.
+
+Influence the hypothalamic function. Connections and projections are very complicated, but everything in the limbic system is trying to tell the hypothalamus what to do.
+
+Neuro endecrine system. The hypothalamus talks to the pituitary. This is the bridge between the brain and the endocrine system. The hypothalamus also sends signals down the spine to the autonomic system.
+
+Every region in the limbic system has a way of stimulating some part of the hypothalamus and inhibiting the ability of other limbic regions to do so. Most limbic regions have a number of ways to reach the hypothalamus and they differ in the number of synapses, from 1 to 14. 1 is best. It's faster and has fewer possible interruption points. In humans, olfactory circuits have a single synapse. The other sensory regions have 3 or 4. Our olfactory system takes up less that 5% of our brain.
+
+olfactory connected directly to amygdala
+
+Amygdala, clusters of nerve cell bodies,ie nuclei, gray matter. amygdala = almond
+
+Hippocampus hippocampus = seahore, but looks like a jelly roll
+
+Septum a midline structure, nose, heart, midline of the brain.
+
+Mammillary bodies
+
+Thalamus
+
+Ventral tegmental area
+
+Nucleus accubriance
+
+One more part. A region of the cortex. #drama In the 50's, Nauda, a Dutch neurologist, proposed adding a part of the cortex to the limbic system.
+
+The frontal cortex, including especially the Anterior cingulate, a subregion of the frontal cortex (frontal cortex = prefrontal cortex) Emotional regulation impulse control long-term planning gratification postponement Many non-cortex like functions. Makes us human. Larger in humans than any other species. Most recently evolved. Last part of the brain to fully mature, not fully myelinated until mid-twenties.
+
+Size of the frontal cortex correlates directly to the size of the social group of each species. This implies that the frontal cortex evolved for gossip. social relations appropriate behavior social intelligence
+
+Nauda, predicted the existence of an area of the cortex like this, and he was right.
+
+Pathways
+
+Amygdala Fuegal pathway - back an forth between amygdala and hippocampus amygdala: fear, anxiety, learning to be afraid of particular stimuli hippocampus: storing memory
+
+Thymbria Fornix - Hippocampus to septum, bi-directional
+
+Medial forebrain bundle - septum, hypothalamus, mammillary bodies, very large pathway
+
+striaterminalis - amygdala to hypothalamus. Roundabout, inefficient route. Clue to embryonic development.
+
+Clues to embryonic life, and clues to evolution. Each new structure is laid on the ones before. Example, fingers. Originally they all moved together as a claw. To make finger 2 move individually, the old system sends a message to all 5 fingers, and then a newer system sends a message to make fingers 1,3,4,5 ignore that signal. Very inefficient. Evolution is a tinkerer.
+
+mammilo-thalamic tract - mammillary bodies - thalamus
+
+thalamus - frontal cortex, bidirectional.
+
+Ventral tegmentum to nucleus secumbens and from there to every other area. Bidirectional.
+
+olfactory is simple, one synapse. 
+visual has layers: dots, lines, etc, before getting to amygdala. 
+ditto for auditory, tactile.
+
+Techniques for studying brain part function. 1. lesions - war, accident, lobotomy, animals - destroy a brain part. 2. stimulus - stick an electrode in the brain, rarely done on humans except for epilepsy patients 3. recording electrode - (there are people who can stimulate and record on a single neuron) 4. look at the circuitry - 5. measure levels of chemicals: neurotransmitters, gene expression, etc 6. imaging - CAT, CT, MRI. Example, in PTSD patients amygdala gets bigger and more metabolically active. In patients with depression, hippocampus gets smaller.
+
+Qualifiers, constraints 
+
+1. Mistakes made because when you destroy a center, you may also inadvertantly destroy a nerve pathway, and you don't know which caused the funtional disruption. 
+
+2. Complex emotional experience involves sensory, motor, memory and the assertion that one limbic center is responsible for one emotion is a flimsy concept. 
+
+3. You must be an ethologist - viewing behavior as an evolutionarily adaptive trait. 3A. Know your species. Maternal behavior, irritation, look different in different species. For awhile people thought the hypothalamus was for aggression; no it was hunger. 
+3B. Know the individuals. Dominate vs submissive for example. Submissive will not manifest a reaction to a stimulus targeting aggression.
+
+amygdala - fear and anxiety, mediates aggression, male sexual motivation 
+
+septum - inhibits aggression (amygdala and septum attempt to inhibit one another) 
+
+hippocampus - learning, memory. Measures the level of glucocorticoids in the blood, turns off the stress response. Memory + stress. Memory storage: If you get out of this dangerous situation, remember what you did to get out of it. Memory retrieval: stressful circumstance coming up, what did I do last time to get out of this. 
+
+Mammillary bodies - maternal behavior. (Mammillary bodies are shaped like mammary glands. Name is for the shape, not the function. Like seahorse for hippocampus.) 
+
+prefrontal cortex - maturation, learning appropriate sexual behavior, learning when to be aggressive, 
+
+anterior cingulate cortex - problem in it in people with depression. Poke your finger with a needle, anterior cingulate activates, along with pituitary, brainstem, etc. Poke a loved one's finger with a needle, anterior cingulate still lights up, though the pituitary and brainstem do not. Empathy, Feeling someone else's pain. Depression = hyper-sensitivity to the pains of life and the world. 
+
+ventral tegmental area (VTA), ventral tegmentum - has all the neurons that release dopamine, having to do with pleasure. Cocaine works on this. All addictive drugs indirectly work on this part. Appetitive behavior, behavior driven by an appetite for something. Anticipating a reward and powering the behavior necessary to get the reward.
+
+hypothalmus - a gazillion subsections, all having to do with automatic processes, all profoundly affected by other limbic areas.
+
+ventral medial hypothalamus - pertinent to sexual behavior 
+
+medial pre-optic area - pertinent to sexual behavior
+
+suprachaismatic nucleus - circadian rythyms 
+
+paraventricular nucleus (PVN) - make corticotropin-releasing hormone CRH, initiates the backbone of the stress response, receives projections from ALL other brain part: burned your toe, very hungry, smelled a territorial rival, thought only 4 days to midterm, 
+
+arcuate nuleus - bottom of the hypothalamic funnel, where all the hypothalamic hormones come out into the blood stream 
+
+lateral hypothalamus - hunger (people for years thought they were studying aggression, but it is in fact predation) aggression NOT EQUAL TO predation. measures blood glucose levels, insulin levels. Also has to do with other hungers, like hunger for information.
+
+all of the limbic system goes to the hypothalamus which influences the endocrine system and/or the autonomic nervous system. Unidirectional picture: start in brain, to limbic, to hypothalamus, to endocrine or ANS. It also goes in reverse. Information from the body, influences limbic function. ANS going in reverse direction.
+
+James-Lange (William James and whoever Lange) theory of emotion. classic theory since 1900s. Ridiculous, discredited theory. But there is some truth in it in these feedback loops:
+
+1. Epinephrine - does not cause any emotion, but modulates or jacks up the emotion already happening.
+
+2. Valium is used as a muscle relaxant and an anti-anxiety drug.
+
+3. meditation with bio-feedback can lower blood pressure
+
+4. significant other gets angry. you apologize and she calms down. then she thinks of something you did years ago and gets angry about that. Because it takes only a moment to apologize and cognitively resolve the issue, but it takes several minutes for the hormones to return to baseline. So the anger lingers and a cause it dredged up and applied from memory. Pronounced gender difference. Female takes longer to return to baseline after anger and after orgasm.
+
+5. Depressed person is told to smile mechanically. Feels better.

@@ -1,0 +1,19 @@
+====== Software ======
+
+  * Procedural
+  * AI
+  * Hacking
+  * os
+  * kernel
+  * command line
+  * web
+  * client-server
+  * shell scripts
+  * interpreted scripts: perl, php, python
+  * jit compiler: java
+  * compiled: c, c++
+  * cron
+  * 
+
+In addition to learning about the human world, Samantha must learn about her own digital world.  Operating systems, distributed processing, networking, programming languages and environments, security hacking, 
+

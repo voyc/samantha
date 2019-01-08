@@ -1,0 +1,139 @@
+executive systems of the brain:
+cognition
+attention and language
+sleep and consciousness
+memory
+emotion
+
+==== Cognition ====
+
+Piaget(1896-1980): development from child to adult
+children are actively constructing their understanding of the world as they grow
+0-2 years: sensorimotor, object permanence
+2-6 years: preoperational: remember, pretend play, symbols, speech, egocentric
+7-11 years: concrete operational: conservation: which glass holds more water, tall skinny, or short fat.  mathematics
+12+ years: formal operational: abstract reasoning, think about consequences of potential actions, sophisticated moral reasoning
+
+Hermann Ebbinghous (1850-1909): learning curve, forgetting curve
+William James (1842-1910): perception, memory, reasoning, attention
+
+
+Problem Solving
+Trial and error
+Algorithm
+Heuristic
+	Means-end analysis, big problem -> smaller problems
+	Working backwards, start with the goal
+	fixation - getting stuck on a wrong approach
+	Insight (aha!)
+
+Decision making
+Decision making heuristics
+	availability - which is more likely
+	representativeness - matching prototypes
+	conjunction fallacy
+Biases
+	overconfidence
+	belief perseverance - ignore/rationalize disconfirming facts
+	confirmation bias - seek out only confirming facts
+Framing Effects
+
+Semantic networks and spreading activation
+Semantic networks
+	nodes connected by links
+	hierarchy plus polymorphism
+Modified Semantic Network
+	unique to each individual
+
+Intelligence
+IQ
+learn from experience
+solve problems
+adapt to new situations
+one general intelligence
+multiple intelligences
+	analytic, creative, practical
+emotional intelligence
+fluid vs crystallized
+Binet: the first IQ test
+nature vs Nurture, heritability
+fixed vs growth
+
+Aging and cognitive abilities
+Stable
+implicit memory, riding a bike
+reognition memory, pick it out of a list
+Improve
+semantic memory improves until 60
+crystallized IQ
+reasoning in the face of personal and emotionally charged situations
+Decline
+recall
+episodic memory
+processing speed
+divided attention
+
+Attention
+limited resource
+divided attention
+selective attention
+	exogenous, external
+	endogenous, internal
+inattentional blindness
+change blindness
+
+Theories of Selective Attention
+shadowing task, hear and repeat, undistracted
+Broadbent: Early Selection theory, sensory register, selective filter, perceptual processes (meaning), other cognitive processes (how to respond)
+Deutsch & Deutsch: Late Selection theory. move selective filter to the end, after assigning meaning
+Treisman: attenuation theory, replace early selective filter with attenuator
+
+==== Theories of Language and Cognition ====
+
+cognition = thought
+
+Universalism: Thought determines language
+Piaget: Thought influences language
+Vygotsky: Language & Thought are independent, developed simultaneously
+Weak Linguistic Determinism: Language influences thought
+Whorf: Strong Linguistic Determinism: language determines thought
+
+Theories of Language Development
+Noam Chomsky: Nativist/Innatist, Language Acquistion Device (LAD), all languages share a universal grammar.  Critical period, birth to 8 or 9.  The LAD only operates during this critical period.
+Learning Theory: children not born with anything.  All learned through reinforcement. infant learns "mama" reinforced with hugs.
+Vygotsky: Interactionist: children desire to communicate, motivates them to learn language.
+
+Language and the brain
+language usually on the left
+Broca's area, helps us speak, in the frontal lobe.
+Wernicke's area, helps us understand. In the Temporal Lobe. 
+Arcuate Fasciculus, bundle of nerve fibers, connects Broca's area and Wernickes area.
+Aphasia - language deficiency
+Global aphasia - everything broken.
+Broca's aphasia - means broken or slurred speech.
+Wernicke's aphasia - speak words that make no sense.
+Conduction aphasia, related to Arcuate Fasciculus, inability to conduct information between Broca and Wernicke, cannot repeat things even though they understand what's being said.
+Many other types of aphasia. Inability to write, name things, reading, spelling, grammar, pronunciation, etc.
+
+Brain in general.  Big tasks split into small tasks and spread around the brain areas.
+Neural plasticity = the ability of the brain to move functions around in parts of the brain.  Helpful in recovery from stroke and other brain damage.
+
+Corpus Collosum = nerve fibers that connect right and left hemispheres.  Cutting the cord was once a treatment for epilepsy, resulting in a split-brain patient.  Difficulty naming things.  Perceptions in the right brain, cannot be named or dealt with by the language center on the left.
+
+Contra-lateral organization. Sensory and motor activity on the left of the body is processed by the right brain, and vice-versa.
+
+==== Sleep and Consciousness ====
+
+== States of Consciousness ==
+
+consciousness = awareness of our self and our environment (consciousness = awareness?)
+
+|Awake|Beta|12-30 Hz|
+|Daydreaming (light meditation)|Alpha|8-13 Hz|
+|Drowsy (deep meditation)|Theta|4-7 Hz|
+|Sleep|||
+
+|N1|theta|
+|N2|theta + K-Complex + Sleep Spindles|
+|N3|delta|.5-2 Hz|
+|REM|

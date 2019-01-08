@@ -1,0 +1,237 @@
+Khan Academy, high school biology
+
+life sciences = biology ?
+
+biology
+systems
+nervous
+motor
+sensory
+endocrine
+
+body: cells, tissues, organs, organ systems
+
+homeostatis = the tendancy to resist change in order to maintain a stable, relatively constant internal environment. Body temperature, blood glucose, various pH levels per organ, ion concentrations in each cell.
+
+homeostatic circuits 
+most homeostatic circuits are negative feedback loops
+some biological systems use positive feedback loops
+
+feedback loop
+	negative: conteract change, maintain the status quo, like keeping body temperature constant
+	positive: promote change, push a process to completion, like childbirth
+
+organ systems:
+skeletal
+muscular
+digestive
+excretory
+circulatory
+respiratory
+immune
+reproductive
+lymphatic
+urinary
+
+
+
+biology
+psychology
+
+archetypes: jung vs myss
+Jordon Peterson's sub-personalities
+
+myss "survival" archetypes
+child
+victim
+prostitute
+saboteur
+
+emotions - facial expressions
+traits - emotional memories, tendancy
+archetypes - response to stimulus
+
+nervous system
+	central
+		brain
+			organization
+				cerebrum
+				brain stem
+					midbrain
+					pons
+					medula oblongata
+				cerebellum
+			organization by fetal development
+				forebrain -> cerebrum
+				midbrain -> midbrain
+				hindbrain -> pons, medula, cerebellum
+			organization by hemisphere
+				right
+				left
+		spinal column
+			nerves.  nerves carry the axons of neurons
+			ganglion, ganglia.  lumps attached to nerves. contain the somas of neurons.
+			neuron: axon, ganglion, 
+	periphal
+		nerves
+			cranial 12 pairs (right and left)
+			spinal 31 pairs
+		neurons 
+			structural organization
+				afferant (Motor) - leading away from central, enter spinal column at roots in the back
+				efferant (sensory) - leading towards central, enter spinal column at roots in the front
+				interneuron - connecting neurons within brain and spinal column
+
+Most of the time, you'll want affect as a verb meaning to influence something and effect for the something that was influenced. The difference between affect and effect is so slippery that people have started using "impact" as a verb instead.
+
+		nerves branch out repeatedly
+		proximal - near the center of the body, big, visible
+		distal - distant from the center, microscopic
+		
+		functional
+			autonomic
+			somatic
+		
+		neuron
+			one cell
+			soma (body)
+			nucleus
+			dendrites - receive a signal
+			axon - transmits a signal
+			terminal - end of the axon (look like more dendrites)
+			axon hillock - where the axon leaves the soma
+		myelin sheath - collection of Schwann cells
+			Schwann cells - insulating cells around the axon
+			nodes of Ranvier - spaces between the Schwann cells in the myelin sheath
+		
+		signals on the dendrites, summed up at the hillock, if large enough a signal passes to the axon and at the terminal jumps across a synapse to another neuron or to a muscle
+		
+Endocrinology, the study of hormones
+hormone - greek meaning "arouse the activity"
+chemical messengers, made in one part of the body, go to another part of the body to arouse the activity, traveling in the blood
+endocrine hormones - work at a distance
+paracrine hormones - work regionally
+autocrine hormones - work locally, made in one cell, act on the same cell or the one next door
+
+pituitary gland, master gland, makes hormones that work on other organs
+	1. thyroid stimulating hormone (TSH) which travels to the thyroid and causes it to release thyroid hormones which regulate metabolism, appetite, thermogenesis, muscle function.
+	hyperthyroidism - rapid heart rate, weight loss
+	hypothyroidism
+	pituitary gland can detect the level of thyroid hormones, and in a positive feedback loop, turn the release of TSH on and off to keep the correct level of thyroid hormones in the body.
+	2. Adrenal Corticotrophic Hormone (ACTH), acts on the adrenal cortex.  Adrenal gland sits on top of the kidney (ad-renal, adjacent to renal. renal=related to the kidneys), has a large blood flow like the kidney, but not functionally related to the kidney. Stimulates adrenal glands to release adrenal hormones. 
+		adrenal hormones:
+		1) Cortisol, regulates glucose metabolism, maintains blood pressure and well-being.
+		2) Mineralocorticoids, like aldosterone, regulates salt and water balance.
+		3) Adrenal androgens
+	3. lutianizing hormone (LH)
+	4. follicle stimulating hormone (FSH)
+	testes to produce sperm
+	ovaries to produce oocytes (eggs)
+	gonadol steroids, testosterone and estradiol/estrogen/progesterone
+	5. human growth hormone (HGH), optimal growth of long bones
+	6. prolactin, female lactation, breast-feeding
+
+pancreas, regulates blood glucose by producing insulin and glucagon.  An organ about the size of the hand.  Contains islets of Langerhans, beta and alpha cells.  The beta cells produce insulin, the alpha cells produce glucagon.  Contains sensors which measure the blood glucose level.  Negative feedback loop: when blood glucose is too high, glycogen is released; when too low, insulin is released.
+	insulin, triggers muscle and fat cells to take up glucose from the blood, and triggers the liver to remove gluclose from the blood by converting it to glycogen and storing it in the liver.
+	glucagon, triggers liver to convert glycogen to glucose and release it into the blood.
+
+Distributed Intelligence.  Who tells the pancreas what to do?  No one.  It operates on its own.
+	
+glands, like pancreas and adrenals, have veinous drainage. hormones produced into the blood.
+
+hormone, chemical structure, various
+	amino acid derived
+	eicosanoid
+	steroid - derived from cholesterol
+
+
+Childbirth, positive feedback loop.  
+	Head of baby pushes against cervix.
+	Sensation of pressure sent to brain.
+	Brain tells pituitary to release Oxytocin.
+	Oxytocin tells uterus to contract.
+	Uterine contractions increase the pressure on the cervix.
+	loop
+
+hypothalamus 
+	gonadotropin releasing hormone (GNRH) - tells the pituitary to produce LH and FSH
+	
+limbic system
+	sits on top of the brain stem
+	scientists are divided on which components are included in the limbic system
+	hypothalamus
+	amygdala
+	thalamus
+	hippocampus
+
+Thalamus, sensory relay station.  Information from the five senses comes to the thalamus where it is redirected to the appropriate area in the cortex and other areas of the brain.
+
+Amygdala.
+When stimulated: Anger, violence.  Fear, anxiety.
+When destroyed: mellowing.  Kluver-Bucy syndrome. Hyperorality, hypersexuality, disinhibited behavior.
+
+Hippocampus.  Copy short-term memory (STM) to long-term memory (LTM).  When destroyed, patient has old memories but cannot form new ones.
+
+Hypothalamus.  Regulates Autonomic Nervous System (ANS).  Fight-flight vs rest-digest.
+Regulates Epinephrine, aka adrenaline, norepinephrin.
+Regulates basic drives: hunger, thirst, sleep, sex.
+
+Left brain: positive emotions, sociable
+Right brain: negative emotions, isolative
+
+prefrontal cortex: 
+higher order functions
+language
+information processing
+solve math problems
+think through philosophical issues
+
+develops after birth
+used to:
+solve problems
+make decisions
+manage behavior in social situations
+(When the amygdala feels anger, the cerebral cortex allows to you NOT react with violence.)
+
+Phineas Gage, 1848, had his prefrontal cortex damaged.  Before, hardworking, well-liked guy.  After, rough, gruff, swearing, inappropriate.
+
+What makes a human, human?  The prefrontal cortex.
+
+ANS
+	sympathetic nervous system
+		fight or flight
+		eye: pupils dilate
+		salivary gland: decrease in salivation
+		lungs: respiratory rate increases
+		heart: heart rate increases
+		liver: glucose released
+		adrenal glands: epinephrine released
+		gi tract: decrease in digestion
+	parasympathetic nervous system
+		rest and digest
+		eye: pupils constrict
+		salivary gland: increase in salivation
+		lungs: respiratory rate decreases
+		heart: heart rate decreases
+		liver: glucose storage
+		adrenal glands: epinephrine not released
+		gi tract: increase in digestion
+
+	
+Emotion is a subjective experience accompanied by physiological, 
+cognitive, and 
+behavioral 
+changes and reactions.
+
+Paul Ekman, six emotions, based on facial expressions, consistent across cultures
+happiness, sadness, fear, disgust, anger, surprise		
+	
+theories of emotion
+James-Lange: event -> physiologic response -> emotion
+Cannon-Bard: event -> physiologic, emotion
+Shachter-Singer: event -> physiologic -> label -> emotion
+Lazarus: event -> label -> physiologic, emotion
+one event can produce different emotions
+seeing a cat: fear or happiness
+skydiving: fear or happiness
+

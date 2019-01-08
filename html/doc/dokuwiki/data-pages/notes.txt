@@ -1,0 +1,364 @@
+======Notes on Sapolsky: Etc======
+
+[[Notes on Sapolsky Human Behavioral Biology|Back to top]]
+
+====21. Chaos and Reductionism====
+https://youtu.be/_njf8jwEGRo
+
+James Gleick: Chaos: Making a New Science
+
+Different ways of thinking
+
+Mention //Where the Wild Things Are//, 1963 children's picture book.
+
+Homework: cellular automata.
+
+400 AD, Rome falls, dark ages.  Words: audit, oral argument, hearing. Illiteracy. No words progress, ambition. Intellectual isolation. Social isolation. Small villages with unique non mutually intelligible dialects. Average person never went 12 miles away from birthplace. No information about causality.
+
+1085 AD, Toledo (Al hambra) Spain, Muslim city conquered by Christians. Had a library. More books than in all Europe. 
+
+Transitive thought. a > b && b > c therefore a > c. Syllogism. 
+
+Thomas Aquinas, god cannot: \\
+1 sin\\
+2 make a copy of himself\\
+3 make a triangle with more than 180°
+
+Modes of thought:
+
+If it's broke you can fix it.
+
+You can reconstruct an event by looking at overlapping parts. Solving a crime for example.
+
+Reductionism. Break a complex system down to its component parts. if you understand the parts you can understand the whole.
+
+Linearity. Additivity. Add the parts together and the complexity increases linearly.
+
+if you know the starting State You can predict the ending state and vice versa.
+
+Extrapolate.
+
+X + y = z
+X + 1 + y = z + 1
+
+Blueprint.
+
+Variability = Noise. Instrument error. Get rid of it. More reduction. As you look closer, the variability lessens.
+
+Body, organs, cells, molecules.
+
+20:02 reductionism has to fail when you are looking at biological systems.
+
+Hubel and Wiesel & the Neural Basis of Visual Perception. 50s and 60s
+
+How the visual cortex works.\\
+Retina to first layer.\\
+1st layer: dots.\\
+2nd layer: lines\\
+3rd layer: curves\\
+4th layer: 3D\\
+...\\
+Top layer: facial recognition (your grandmother's face). Grandmother neurons. Assumed but they don't exist. This point for point reductionism was replaced by the theory of...
+
+Neural networks. Patterns.
+
+Example.
+Bifurcation pattern. Nile Delta looks like dendrites on a neuron. Scale-free.
+
+Chance plays a role in systems. The way mitochondria are distributed in cell division.
+
+Experiment with 10 fish. Put them together in pairs and calculate the dominance hierarchy. then put all 10 together and note the actual dominance hierarchy of the group. The dyadic pairing method is way off. It has zero predictability.
+
+Summary. Reductionism does not work in biological systems, because 1 not enough genes, 2 no way to account for chance.
+
+==Chaos==
+43:44
+
+Non-linear non-additive systems.
+
+You know all the parts, but since they are non-additive you have no predictive capability of what the whole will look like.
+
+Three classifications:
+
+Deterministic Periodic. Aka, linear. The sequence of numbers 1 2 3 4 5 is periodic. You can predict the value at the 15th step.
+
+Deterministic Aperiodic. Non-linear. A sequence of numbers has rules defining each step, but there is not a constant period. So you cannot predict the value at the 15th step. Instead you have to calculate each step individually.
+
+Non-deterministic. Includes randomness. No rules. cannot predict.
+
+In Chaos Theory we are interested in deterministic nonlinear systems.
+
+Non-linear aperiodicity => chaotic systems.
+
+51:22 the water wheel example. Starts periodic. As you increase the input pressure, eventually it becomes Aperiodic; the pattern never repeats.
+
+Boiling water.
+
+Constant single period, doubled period, triple period (3 parts to the cycle), chaos. Three parts means chaos is eminent.
+
+1:00:52 All systems are chaos. Scientists ignore the chaos parts as noise, and analyze only the deterministic parts.
+
+Attractor. Spiral graph. At the center is the point of stability, of complete predictability. When you mess with the system you get data points in the shape of a spiral, gradually returning to the stable point.
+
+Strange attractor. Butterfly wing graph. Constantly oscillating, never reaching a stable point.
+
+Butterfly effect. A butterfly in Paris flapping his wings changes the weather in Indiana. Degree of precision. A difference at a very fine degree of precision can produce a significant change at a gross degree of precision. 
+
+It doesn't matter how closely you look, how good your reductive tools are, the variability is still there. The system is scale-free.
+
+1:16:12 fractal. scale-free.
+
+An infinitely long line in a finite space.
+
+A system of fractional dimensions. Neither one dimension nor two dimensions, but somewhere in between.
+
+Circulatory system, pulmonary system, dendritic system, a river, a tree. All are fractal.
+
+Fractal genes. Define a system independent of scale.
+
+Robert and a grad student did a big study. Calculated the coefficient of variability in the data of all scientific papers. Compared those at different scales: society, individual, organ, cell, molecule. The coefficient of variability does NOT decrease at finer scales.
+
+So what is reduction good for? Those times when an average is good enough.
+
+It's not because they are failing to be what they are supposed to be and match the norm.
+====22. Emergence and Complexity====
+https://youtu.be/o_ZuWbX-CyE
+
+Fractals. Scale-free. Chaos. Deterministic. Aperiodic. Tiny differences can have an amplified effect. Butterfly effect.
+
+==Cellular Automata==
+[[Cellular Automata]] from Wikipedia.
+
+1:55
+Very simple rules, out of which emerges a complex pattern.
+
+Features required for **emergent complexity**.
+
+  * Lots of building blocks.
+  * Simple building blocks.
+  * A starting condition 
+  * Simple rules on how to form the next generation.
+  * Each rule is based only on the state of neighboring building blocks.
+
+Out come structured patterns.
+In most cases, the patterns stop, go extinct.
+A large number of starting states produce a small number of similar patterns.
+
+Convergence. 
+
+The notion that you can start with different forms and they will convergence over time.
+
+You look at the mature for and you cannot know the starting state.
+
+The starting state gives you no predictive power to know the mature state.
+
+Cellular Automata encapsulate these features of evolution.
+
+  * Most go extinct.
+  * Only a relative few mature forms exist.
+  * Convergence.
+  * Butterfly Effects. Minor differences in the starting state can extend into very different consequences.
+
+5:55
+
+Starting state.
+One space between. Boring. Static.
+Two spaces between. Extinction.
+Three spaces between. Extinction.
+Four spaces between. Living. Dynamic.
+Five spaces between. Living. Dynamic.
+
+Asymmetric starting states produce more dynamic systems.
+
+9:32
+12:41
+Patterns in nature.
+Sea shells.
+
+13:33
+Robert in Kenya, equatorial glacial mountain. Friend in the Andes. Both photograph plants which look exactly the same, but have no taxonomic relationship.
+
+Desert plants. Small number of plants. There are only a few forms that can survive.
+
+Legs. Two, four, six, eight. Only a few ways to do legs.
+
+Steve Wolfram. Large ego. Grotesquely wealthy.
+
+Emergence. You can code for great complexity in the natural world with a small set of simple rules.
+
+19:10
+
+Another look at the ways reduction stops working after awhile.
+
+Not having enough numbers of things. Not enough neurons. Solution: neural networks.
+
+Not enough genes. To specify the bifurcated network of blood vessels, for example. We need fractal genes, with scale-free instructions. "Split when your length is five times your width."
+
+In your body, there is no cell that is more than 5 cells away from a blood vessel. Yet, the circulatory system is less than 5% of body mass.
+
+Start with a line. Remove the middle third, leaving two line segments. Remove the middle third of each of those, leaving four line segments. Repeat ad infinitum. The results is an infinitely large number of objects taking up no space.
+
+Do the same thing with a triangle. Remove an upside down triangle from the middle third, leaving three triangles. Repeat continuously on all resulting triangles. The result is an object with an infinite amount of perimeter surface area within a finite space. This is impossible of course.
+
+What would be a fractal mutation? Length 4.9 times width. Catastrophic.
+
+A small number of diseases having to do with spatial relationships within the body. For example, one disease has things wrong in the midline of the body: the septum in the nostrils, the septum in the heart, the hypothalamus, Etc. These are not three different mutations. It's one fractal mutation that messed up the symmetry in the embryo.
+
+Emergent complexity from biophysical properties.
+
+Example from Paul Green. A disk where the inside material is softer than the outside rim. Apply heat. The disc will warp into a double saddle shape. Like the Potato chip.
+
+In many plants, the branches come off the stem in a double saddle shape. This is the inevitable solution to the problem of packing things into a smaller shape.
+
+Examples of **the wisdom of the crowd**.
+
+At the State Fair there was a contest to guess the weight of an ox. 100 farmers guessed. No one got the right answer, but the average of all the guesses was correct within an ounce.
+
+Who Wants to Be a Millionaire, when stumped on a question, ask the audience. They get it right 91% of the time.
+
+The Pentagon asks questions like where will the next terrorist attack occur or where is the missing sub.
+
+A group of ants carry a dead Beetle to the ant colony. No single and knows the correct direction to go but as a group they end up going in the right direction.
+
+51:42
+
+
+Emergence in an ant colony.
+Bottom up organization.
+
+==Swarm intelligence==
+
+Traveling salesman problem.
+
+Virtual ants.
+
+Bee hive. How to find a new place for a hive.
+Dance. Length of dance proportional to quality of food source.
+Two generations. Random interactions.
+
+==Repulsion and attraction rules==
+Like magnets.
+
+
+Urban planner. Simulation with simple rules of attraction and repulsion. 
+
+Neurons in a petri dish. Looks exactly like an urban plan.
+
+Tokyo subway system, similar to ant colony. Ant colony more efficient.
+
+#pattern
+
+==Origin of life==
+1:08:38
+
+Experiment at U of Chicago by Urey and Miller 1952. 
+
+Primordial soup. Inorganic molecules of carbon, methane, water vapor, etc. Pass electricity through it repeatedly. Amino acids began to form.
+
+Many scientists now working on origin of life. Later experiments show you don't need the electricity. Put molecules with attraction and repulsion rules, they form rational structures.
+
+Another example. Child's toy, large number of small round magnets. They form patterns.
+
+==Power law distribution==
+
+[Curve sloping down into the right. 80/20 rule. long tail. popularity.]
+
+  * Size of earthquakes.
+  * Length of phone calls.
+  * Distance traveled by a marked dollar bill.
+  * Number of links that websites have two other websites.
+  * The number of proteins showing certain degrees of complexity.
+  * Number of emails sent by persons during one year.
+  * Degrees of Separation among actors by filmography.
+  * Length of neurons.
+
+This is a fractal because it exists at many different scales.
+
+1:16:26
+
+Traveling salesman problem in designing a telephone Network. Distance traveled by phone calls is a power law distribution. Most calls are a short distance, carried by Urban cell towers, but occasionally you make a long-distance call over a long trunk Network.
+
+Ditto for neurons in the cortex. Most connections are short but sometimes you can talk to another Point far away in the cortex. The length of the neural connection follows a power law distribution.
+
+1:19:00 In patients with autism, the tail of the distribution is shorter. That means relatively fewer long distance connections.
+
+Males have a steeper curve than females.
+
+The corpus callosum is thicker in females than males to accommodate the larger number of long-distance connections from one hemisphere of the brain to the other.
+
+==Bottom-up quality control==
+
+User reviews of books movies music Etc. Recommendation engines based on people who liked this also liked these.
+
+As opposed to top-down system of professional reviewers and editors and publishers.
+
+Wikipedia. Bottom-up, self-organizing, self-correcting.
+
+Rated comments.
+
+Recommendation engines. Biased to conformity.
+
+1:27:00
+Developing cortex does a swarm intelligence solution.
+
+Pioneer generation.
+Radial glial cells.
+Second random Wanderer generation: neurons. When they cross a glial cell, follow it.
+
+1:29:20
+How do we apply this stuff to humans?
+
+looking at a single neuron you can't tell whether it came from a fruit fly or a human or what?
+
+We have the same kind of neurotransmitters that a worm has.
+
+We have a hundred million neurons for each one neuron and a fly brain.
+
+From that large number of neurons comes emergent properties.
+
+Deep Blue vs Garry Kasparov. "With quantity you invent quality."
+
+What is the difference between a chimp brain and a human brain genetics. In the human some subset of the olfactory neurons have atrophied. Bone structure is different. chimps have more hair. Genes affecting cell division in the neurons. Humans go through more rounds of cell division.
+
+1:30:00 summary
+
+Emphasis on quantity.
+The simpler the constituent Parts, the better.
+More random interactions make more more adaptable Networks. Randomness is good.
+Gradients of Attraction and repulsion.
+Nearest neighbor interactions.
+Generalists work better than specialists.
+
+
+A future generation 
+
+Optimal
+
+Don't need blueprints. Don't need the people who make blueprints.
+
+
+====23. Language====
+https://youtu.be/SIOQgY1tqrU
+
+Universal elements of all languages.
+
+Nim Chimpsky
+
+
+====24. Schizophrenia====
+https://youtu.be/nEnklxGAmak
+
+Genetics of language
+
+FoxP2. A transcription factor.
+
+Pigeon to creole.
+
+All creole languages have the same grammatical structure. Seems to buttress the idea that there is a default, innate human grammar.
+
+
+====25. Individual Differences====
+https://youtu.be/-PpDq1WUtAw
+
+
+

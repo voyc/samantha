@@ -1,0 +1,10 @@
+====== Number Systems ======
+
+== Real Numbers ==
+$\mathbb{R} $
+
+All numbers except for imaginary numbers.
+
+== Imaginary Numbers ==
+
+Square root of a negative number.

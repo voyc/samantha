@@ -21,6 +21,10 @@ WordNet - a lexical database for the English language, http://wordnet.princeton.
 ==== Language Audio ====
 AISHELL-1 - Mandarin, 400 speakers
 
+==== NSA ====
+We know the NSA collects every email, phone call, and text from every USA citizen.  
+And we know this is paid for by the USA taxpayers, and is therefore owned by USA citizens.
+
 ==== Lists ====
 [[Institutions#kaggle]] hosts hundreds of downloadable datasets\\
 https://www.kaggle.com/datasets\\

@@ -1,0 +1,77 @@
+======Notes on Khan Academy Chemistry======
+
+https://www.khanacademy.org/science/chemistry/
+
+==Protons, neutrons, electrons==
+
+**Atomic number** = number of protons in the nucleus.
+
+A carbon atom has six protons in the nucleus.
+
+Carbon-12 has 6 protons and 6 neutrons in the nucleus.
+
+Carbon-14 has 6 protons and 8 neutrons.
+
+Carbon-12 and carbon 14 are **isotopes** of carbon. Isotopes differ by number of neutrons.
+
+**Mass number** = number of protons plus the number of neutrons.
+
+<sup>12</sup><sub>6</sub>C = carbon-12
+
+If the carbon atom is neutral it has 6 electrons orbiting around the nucleus. (The quantum physicists tell us "orbit" is the wrong word.)
+
+An **ion** has an unequal number of protons an electrons. 
+
+An **anion** has a negative charge, more electrons.
+
+A **cation** has a positive charge fewer electrons.
+
+== Mass, weight==
+
+Mass is a measure of how much stuff there is. 
+
+weight is a force. an indication of how much the Earth is pulling on the stuff. If you go into space or onto a different planet your weight will change. Your mass will not.
+
+In physics,
+Mass is measured in grams and kilograms.
+Weight is measured in neutrons. 
+
+In chemistry,
+Atomic mass is measured in atomic mass units (amu), and that is a very small fraction of a gram.  Carbon-12 has an atomic mass of 12 amu's.
+
+Atomic weight is also measured in amu's and is a weighted average of all of the element and its Isotopes on planet Earth.
+
+==Periodic Table of elements== 
+
+[wikipedia. The elements are listed in order by atomic number. Each box contains the atomic number, the symbol, and sometimes the atomic weight. Each row is a period, each column is a group, and color is used for additional grouping.]
+
+==Mole==
+
+Mole = avogadro's number = 6.02 × 10^23
+
+It is a very large number and it relates amu's to grams.
+
+==Ionic compounds==
+
+Potassium chloride. KCl
+
+Group 1. Alkaline metals. Outermost shell has one electron, which they tend to lose, thus becoming a cation with a charge of +1.
+Potassium ion K<sup>1+</sup>
+
+Group 7. Halogens. Outermost shell has seven electrons. Tend to pick up one more, thus becoming an anion with a charge of -1.
+Chlorine Cl<sup>1-</sup> or Chloride.
+
+Attraction between oppositely charged molecules, so they tend to form a compound.
+
+**Electrostatic attraction** Holds atoms together. Holds compounds together.
+
+**Chemical bond** the attraction of two atoms with opposite charges.
+
+**Covalent bond** two atoms share electrons.
+
+
+
+
+
+
+

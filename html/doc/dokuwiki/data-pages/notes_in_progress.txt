@@ -254,3 +254,142 @@ Mimic the brain\\
 Mimic natural selection\\
 \\
 \\
+As of 2016, AlphaGo's algorithm uses a combination of machine learning and tree search techniques, 
+combined with extensive training, both from human and computer play. 
+It uses Monte Carlo tree search, guided by a "value network" and a "policy network," 
+both implemented using deep neural network technology.[2][10] 
+A limited amount of game-specific feature detection pre-processing 
+(for example, to highlight whether a move matches a nakade pattern) 
+is applied to the input before it is sent to the neural networks. 
+from Wikipedia: alphago
+
+In uncharted territory—where one would expect learning to be
+most beneficial—an agent must be able to learn from its own experience.
+
+
+An endless proliferation of 3D environments: 
+In the past couple of years there have been a bunch of new large-scale AI-training environments released ranging from 
+Microsoft's Minecraft-based Malmo to 
+DeepMind's Quake-based 'DeepMind Lab', to the 
+Doom-based VizDoom. 
+
+three types of machine learning:
+supervised
+unsupervised
+reinforcement
+	application
+		robotics
+		game playing
+		operations management in a factory
+	agent in environment
+		reward
+		state
+	action
+		explore (new territory or strategy)
+		exploit (what he already knows)
+	Markov Decision Process
+	goal: maximize reward over time
+	policy: optimize reward over time
+	
+	policy: agent's behavior function
+	value function: how good is each state and/or action
+	model: agent's representation of the environment
+	
+	q-learning
+		r(s,a) immediate reward
+		Q(s,a) values
+
+	features defined by expert
+	deep learning to discover features on its own
+		
+
+https://deepmind.com/blog/deep-reinforcement-learning/
+
+https://en.wikipedia.org/wiki/Markov_decision_process#Reinforcement_learning
+
+Kurzweil, Ray (2005). The Singularity is Near. New York: Penguin Group. ISBN 9780715635612.
+
+Is there some kind of thinking that is not programmed?
+
+--------------
+
+evolutionary algorithm = genetic algorithm
+
+3 parts, loop thru these three steps
+	selection
+	crossover
+	mutation
+
+population
+breeds
+fittist survive
+
+genome - something we want to breed and improve over time
+   multiple genes
+   gene = parameter
+
+   
+selection
+   fitness function decides which genomes can breed
+
+crossover   
+   breeding
+   offspring, new population
+   
+mutation
+   mutate the new population
+   mutation function
+   randomly modifying parameters
+   
+since the 80s
+alternative to back propagation
+alternative to reinforcement learning
+neural network zoom
+"evolution strategies as an alternative to reinforcement learning"
+
+-----------
+
+classification of environments
+
+Deterministicness (deterministic or stochastic or Non-deterministic): An environment is deterministic if the next state is perfectly predictable given knowledge of the previous state and the agent's action.
+or "strategic" it there is one other agent.  like a chess game.
+
+Staticness (static or dynamic): Static environments do not change while the agent deliberates.
+
+Observability (full or partial): A fully observable environment is one in which the agent has access to all information in the environment relevant to its task.
+
+Agency (single or multiple): If there is at least one other agent in the environment, it is a multi-agent environment. Other agents might be apathetic, cooperative, or competitive.
+
+Knowledge (known or unknown): An environment is considered to be "known" if the agent understands the laws that govern the environment's behavior. For example, in chess, the agent would know that when a piece is "taken" it is removed from the game. On a street, the agent might know that when it rains, the streets get slippery.
+
+Episodicness (episodic or sequential): Sequential environments require memory of past actions to determine the next best action. Episodic environments are a series of one-shot actions, and only the current (or recent) percept is relevant. An AI that looks at radiology images to determine if there is a sickness is an example of an episodic environment. One image has nothing to do with the next.
+
+Discreteness (discrete or continuous or ): A discrete environment has fixed locations or time intervals. A continuous environment could be measured quantitatively to any level of precision.
+
+Simulated : a separate program is used to simulate an environment, feed percepts to agents, evaluate performance, etc.
+
+----------------
+
+feed forward NN -input hidden output, two weight matrices between 
+	input times weight, bias, activate
+RNN - for sequential data, like video or audio
+a third weight matrix connects hidden layer back to itself
+
+vanishing gradient problem
+exploding gradient problem
+
+an RNN cell can be replaced with an LSTM cell
+
+
+x * weight plus bias, activate
+
+common activation functions:
+	sigmoid
+	tanH
+	ReLU
+
+RNN's are used for translation and question answer chatbots
+
+a RNN cell remembers it's previous state
+
+blog comments: classification by sentiment: positive negative neutral

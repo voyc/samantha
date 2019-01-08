@@ -1,10 +1,12 @@
 ====== Math ======
 
+  * [[Number Systems]]
   * [[Gallery of Curves]]
-
-
   * [[Algebra]]: the study of generalizations of arithmetic operations  
     * [[Polynomial]]
+    * [[Linear]]
+    * [[Quadratic]]
+    * [[Conic Section]]
     * [[Factoring]]
     * [[Equations and Functions]]
     * [[Exponent]]

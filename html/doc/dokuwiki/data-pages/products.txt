@@ -21,10 +21,13 @@ Google Cloud Organization\\
 but if you want to rent your own infrastructure you will typically be charged by the minute (Google) or hour (Amazon, Microsoft).
 
 ==== Simulators ====
-==== Unity Machine Learning Agents ====
-software to turn games made via the Unity game engine into environments in which to train AI systems.
 
-==== UE4 ====
+3D Learning Enviornment.  For training AI agents.
+
+== Unity Machine Learning Agents ==
+Software to turn games made via the Unity game engine into environments in which to train AI systems.
+
+== UE4 ==
 //Unreal 4// game engine used as simulation for vision training within Unity
 
 ==== APIs, Tools, Frameworks ====
@@ -77,6 +80,11 @@ product released by openai, uses tensorflow
 ==== Kaggle ====
 acquired by google cloud\\
 builds datasets\\
+
+==== Robotics Operating System (ROS) ====
+http://www.ros.org
+Open source api and framework to control robots
+
 
 ==== Proprietary Frameworks ====
 

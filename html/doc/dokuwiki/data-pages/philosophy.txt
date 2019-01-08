@@ -1,5 +1,26 @@
 ====== Philosophy ======
 
+==== Models ====
+
+== Dimensions ==
+
+It feels as though I can willfully move in the three spatial dimensions, so long as I coordinate with the inexorable passage of time.Models
+
+Models
+  * Oneness vs duality
+  * Free will
+  * Delusion, Maya, illusion, dream
+  * projection, mirror
+  * What about Freud and Jung models? Psychology or philosophy?
+  * Freud id, ego, superego 
+  * Freud sexual repression
+  * Natural expression 
+  * Math models
+  * solipsism, non-judgment
+  * Projected, benevolent, abundant 
+  * Nihilist, violent, decaying
+  * 
+
 Music causes emotion
 
 Willingness to rethink
@@ -81,6 +102,11 @@ What is the difference between one and many?  Identity with the whole, oneness\\
 Nothing needs to be done.\\
 Everything is perfect, just the way it is.\\
 
+==== Who Am I? ====
+How a human sees the world.
+
+How an AI sees the world.
+
 ==== Notes   ====
 \\
 different types of memory stored in different locations\\
@@ -159,8 +185,8 @@ People are so stupid, so far off\\
 Sees Warren buffet as hero\\
 Thinks Trump is a good idea\\
 \\
-------------\\
-\\
+See the contradictions, the incongruities, the falsehood and the sorrow of the human state, the need to go beyond.
+— Nisargadatta Maharaj: I Am That
 ==== How to design an AGI   ====
 ==== Perception   ====
 The human has eyes, ears, nose, tongue and skin.  He has tools to augment each of those.  For eyes he has telescopes, microscopes, Xrays, MRIs, infrared, and so on.  \\
@@ -316,3 +342,86 @@ stockmarket prediction\\
 next president\\
 \\
 \\
+==== Artificial Stupidity ====
+  * join scientology
+  * vote Trump
+  * get married
+
+desire, fear, delusion  \\
+Violence is good\\
+How to hypnotize the masses\\
+Media consultant\\
+Artificial human\\
+Artificial consciousness\\
+Types and levels of consciousness\\
+
+As you watch your mind, you discover your self as the watcher. When you stand motionless, only watching, you discover your self as the light behind the watcher. The source of light is dark, unknown is the source of knowledge. That source alone is. Go back to that source and abide there. "I Am That" - pg 188
+
+Jordan Peterson https://youtu.be/4-CcrweUsYg
+
+Two archetypal fears
+  * Social humiliation
+  * Death
+
+---
+
+Human insanities (Is that a judgment?)\\
+Biology: mammal vs human\\
+Biology vs psychology\\
+
+Biology\\
+  - sex desire, male vs female
+  - romance, female captures male for 3 years
+Psychology\\
+  -   Romance, mirroring biology
+  -   one-to-one soulmate for lifetime.
+
+==== Org ====
+Pattern Recognition 3D\\
+Pattern Recognition 4D\\
+Reinforcement Learning\\
+
+==== Solipsism ====
+Solipsism is the philosophical idea that only one's own mind is sure to exist. As an epistemological position, solipsism holds that knowledge of anything outside one's own mind is unsure; the external ... Wikipedia
+
+
+==== Nihilism ====
+
+Usually considered bad.  But that is judgmental.
+
+
+==== Notes ====
+Maslow hierarchy wrong
+Reproduction is paramount, survival is secondary
+
+Pattern: The whole contained within the part.
+Pattern: Lock and key
+
+The amygdala assigns an emotional content to every perception
+
+Scientific Materialism
+Yogic philosophy
+Altered states
+Worldviews
+
+How to talk to AI.  1) Natural language, based on universal grammar.  2) neural link.
+
+Universal Grammar
+Syntactic structures
+
+Semantic conventions - human languages use Semantic conventions
+a universal grammar 
+universal grammar, innate within all humans
+
+
+Innate patterns within humans: story-telling, play-acting, song, dance, drawing, language, 
+
+Additional dimensions.
+Scent
+emotion
+Judgement
+Color
+Texture
+Flavor
+
+If a man has free will, then he must be able to change the past.

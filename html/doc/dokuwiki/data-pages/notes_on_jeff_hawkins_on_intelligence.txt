@@ -1,0 +1,19 @@
+====== Notes on Jeff Hawkins On Intelligence ======
+
+Hierarchical temporal memory, htm
+By company numenta, Jeff Hawkins, who sold palm pilot, and invested it all in numenta. Also wrote book "on intelligence".
+
+Nupic
+Neocortex
+
+https://youtu.be/u-BIsnN-xxM
+
+
+Universal Turing machine
+
+A CPU is just a collection of logic gates.
+
+Ever since Plato, multistep deductive inference has been seen as the pinnacle of human intelligence
+
+Cortex = neocortex = surface of cerebrum
+

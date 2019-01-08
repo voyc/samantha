@@ -1,0 +1,709 @@
+====== Notes on Sapolsky: Genetics ======
+
+[[Notes on Sapolsky Human Behavioral Biology|Back to top]]
+
+==== 4. Molecular Genetics I ====
+https://www.youtube.com/watch?v=_dRXA1_e30o&index=4&list=PL150326949691B199
+
+Molecular Biology:  Genes
+
+genes = molecules = strings of DNA
+
+== Proteins ==
+
+proteins
+  * structurally the most important thing we've got making up cells
+  * hold shapes of cells together
+  * form messengers: hormones, neurotransmitters
+  * enzymes that do all of the most important stuff
+  * etc, etc, etc
+  * workhorses that have cells doing what they're supposed to do
+
+what codes for proteins?
+this is where genes come in
+genes specify proteins
+
+proteins are made of
+amino acids, 20 different ones
+each one has to be coded for with a different DNA sequence
+DNA sequence of 3 letters, 3 nucleatides 
+
+DNA codes for amino acids
+a long string of DNA, coding for a sequence of amino acids = a protein
+actually the string of DNA first codes for an intermediate step called RNA, and then specifies the sequence of amino acids forming the proteins
+
+everything about the function of this is built out of the following sequence
+
+if you know the sequence of DNA, 
+  * you will know the sequence of RNA, 
+  * you will know the amino acid sequence, 
+  * you will know the protein that thus is made, 
+  * you will know the shape of the protein, and 
+  * you will know the function of the protein
+
+everything about protein function is built around shape
+proteins fit together like lock and key
+messenger and receptor
+structural holding together of a cell
+
+20 amino acids have different degrees of being attracted to or repelled by water
+hydrophilic, hydrophobic
+
+enzyme is a type of protein
+enzymes catalyze reactions, cause reactions to occur which would otherwise be rare, accellerate a billion times over the speed with which these reactions happen
+reaction = stick two things together, take one thing and break it apart
+
+an enzyme changes its shape (necessary to do its job)
+channels, channels in which chemicals can flow in or out of cells, channels that open or close in certain circumstances, 
+so, protein not only gives shape and function, but it gives the circumstances where the shape might change in a functionally relevant way
+
+Francis Krick of Watson and Krick:
+the central dogma of how life and information flows is DNA to RNA to protein
+DNA knows all, is all
+this central dogma was discredited in the 1970s
+
+== viruses ==
+
+a virus is a piece of foreign DNA.  it can get into your own DNA and hijack the processes there, and make the cell function for its own parasitic needs.
+
+retro virus is a piece of RNA, an enzyme that can turn RNA back into DNA viral information.
+
+== mutation ==
+
+something changes in the DNA
+classical mutation
+classical gradualist models of evolutionary change
+
+one bit in the DNA sequence is accidentally wrong
+miscopied
+radiation
+a chemical compound in the environment
+
+[note: DNA is in genes, genes are on chromosomes]
+"base pairs"  ?
+"triplets"  ?
+
+classical genetics vs molecular genetics
+
+there are three types of classical mutations: point, deletion, insertion
+if a bit of DNA is analagous to a string of letters, 
+point: one letter is changed to another, may not have consequences
+deletion: one letter is deleted, has drastic consequences because it frame shifts all other letters in the string
+insertion: one letter is inserted, ditto
+
+a mutation changes the efficacy of the protein
+changing the function of one protein at a time
+micro
+
+example
+phenylalonine
+in the body, if too much, toxic
+there is an enzyme that converts phenylalonine to something safer
+a mutation reduces the efficacy of that enzyme, phenylalonine builds up to dangerous levels
+lays waste to the nervous system, rapidly after birth
+disease: phenylkitenurea (PKU)
+
+another example
+male chromosomes, female phenotype
+mutation: damaged androgen receptors
+testes not descended, lots of testosterone but body is not responding to it
+disease: testicular feminization syndrome (TFA)
+long and appalling history of medical intervention
+
+another example
+isolated inbred population
+mutation: damage enzyme that makes testosterone
+low testosterone levels
+female phenotype
+puberty, testosterone levels increase enough to have an effect, the individual goes from female to male
+
+another example
+a neurochemical messenger that decreases anxiety, benzodiazamines
+small differences in the benzodiazamine receptor
+individual differences in levels of anxiety
+
+gradualism
+small changes in efficacy of proteins
+each (single point) mutation makes small changes in levels of testosterone or anxiety and these have a small (1% or 2%) impact on the number of copies of DNA the individual can leave
+
+== example: fox P2 ==
+40:32
+we can trace evolutionary history by looking at the changes in single base pairs
+
+fox P2 is a gene having to do with language or communication
+occurs in many species: birdsong, rat ultrasonic vocalizations, non-human primates
+comparing fox P2 in species shows minor single-base-pair differences between, say, mice and rats, or hawks and elephants
+this allows us to trace history of the many small mutations that lead from rats to humans for example.
+in the last quarter-million years, huge changes occurred in the fox P2 gene in humans
+
+in one experiment, a human fox P2 gene was planted in mice, 
+resulting in more complex communications among the mice
+
+60 different ways of coding for 20 amino acids
+each amino acid can be coded for in 3 ways
+throw in a random mutation
+40 of them will not cause a mutation in an amino acid
+2/3, 66%, no consequence, random expected rate
+
+after an experiment
+if you find 99% of a gene's mutations are consequential, this indicates positive selection
+if you find 99% of a gene's mutations are neutral, this indicates stabilizing selection, negative selection, strong selection to make sure this gene does not change, you do not want to mess with this gene because any change to its function and no copies of your genes are passed on
+
+human fox P2 is a result of positive selection over the last quarter million years
+
+== two factoids ==
+
+you share 50% of your DNA with a sibling
+you share 98% of your DNA with a chimpanzee
+
+genes specify traits, aspects
+
+two different stats
+types of genes
+different versions of particular genes
+
+== gradualism vs punctuated equilibrium ==
+
+another model arrived in 1980s, Gould, marxist
+
+long periods of stasis
+dramatic jumps of change in short periods of time
+punctuated equilibrium
+
+Gould was a paleontologist, not a biologist, he studied fossils
+
+creep vs jerk
+
+modular genes
+editing enzymes
+one gene can generate different types of tissue in different parts of the body
+
+1:10:00
+
+95% of DNA is non-coding
+the instruction booklet
+regulatory sequences
+promoter or repressor
+switches
+transcription factors
+
+
+==== 5. Molecular Genetics II ====
+https://youtu.be/dFILgg9_hrU
+
+gradualism
+punctuated equilibrium
+
+environmental regulation of how DNA expresses
+
+copy number variance, a type of mutation.  Number of copies of a gene.
+
+ 0:49:00
+
+macro changes - 
+Sometimes, change one single base-pair, and you have produced mutations in multiple proteins.  One simple change can create a whole new network.
+
+most of the time, a macro change like this will be bad news.  The organism cannot survive.  This is a stabilizing mechanism for equilibrium. Stabilizing selection against macro changes.
+
+Only once in a while you get lucky with a harmless or beneficial trait.  
+
+selective bottleneck
+examples: cheetahs, hominids
+some cataclysmic environmental event wipes out most of a species.  only 1% survive.  This small group share a trait which was heretofore neutral or harmful, but now it becomes a lifesaver.  The remaining group of organisms are closely-related, highly inbred.
+
+a hormone might stumble its way into existence for which there is no receptor.  10,000 years later, the receptor may stumble its way into existence, so now suddenly the hormone has a function
+
+macro changes - new proteins
+
+micro changes, gradualism, going on and observable now
+
+rats in chicago
+
+resistance to diabetes
+
+Russian silver fox, bred for tameness, 35 generations
+
+antibiotic resistance
+
+==== 6. Behavioral Genetics I ====
+https://www.youtube.com/watch?v=e0WZx7lUOrY
+
+How do you know when a behavior has a genetic component?third approach: Behavior Genetics
+
+the entire field is gibberish
+
+Initial approaches:
+
+look for patterns of shared traits among individuals who have shared genes, and infer relatedness, and infer influences from that
+
+"if you see a trait that is universal in a species, obviously it is genetic, hard-wired, instinctual"  This works for flies, but falls apart when you get to more complicated organisms.
+
+"Here are some behavioral traits that run in families."  Yes, genes run in families, but environment runs in families as well.
+
+Ditto for social groups.   
+
+Twins
+
+Mothers interact with boy babies differently from girl babies within minutes after birth.
+
+28:54
+
+Schizophrenic adoptees in Denmark.  Real parents had schizophrenia, adopted parents did not.  Adopted child is ten times more likely to have schizophrenia than the general population.  This is the first clear indicator of a genetic component to a psychiatric disorder.
+
+Synergism between environment and genetics.
+
+Hereditable: depression, alcoholism, criminality
+
+Problems: pre-natal environment.  
+Solve by looking at the Difference between father vs mother passing on the schizo gene.
+
+Paternity uncertainty.  
+
+Adoptive family placements are non-random.
+
+Identical twins separated at birth.  (adopted into different households.)
+Tom Bouchard, U of Minn, first published with 40 pairs.
+Now we have a twin registry of 200 such pairs.
+
+50% heritability of IQ, introversion/extroversion, degree of aggression.
+
+Problems.  Similar environments due to non-random adoptive placement.
+
+Traits in the abscence of learning. Must be genetic.
+
+Social smiling.  Always starts at same age, even if the baby is blind.
+
+Congenital deafness.  Starting to babble.
+
+Assumption: environment begins at birth.
+Pre-natal environment. 
+
+Rats have litters of up to 12.  They are strung together in the uterus.  Blood flows and therefore hormone levels are shared locally.  
+
+On either side of you, you may have 1 brother 1 sister, 2 brothers, or two sisters.  This effects how soon you develop puberty, and if you're female, how soon your estrogen drops off in later age.
+
+Very young and very old mothers have offspring who go into puberty at an older age.  Probably due to lower estrogen levels in the mother.
+
+If your mother has higher stress levels, Gluco corticoids, you will show: 
+smaller brain
+thinner cortex
+less learning abilities
+more prone to anxiety
+fewer benzodiazopine receptors
+more cognitive decline when you are older
+
+Non-genetic inheritance of traits.  Stress hormone levels in the mother, child develops life-long overexposure to stress hormones, which are then passed to her children.
+
+Dutch hunger winter, 1944.  Germans diverted all food to Germany.
+40,000 people starved.
+Only one winter.
+If you were a 3rd trimester fetus during that winter, you have severe digestive and metabolism disorders.  Diabetes, etc.  19 fold.
+
+Fetal origins of adult disease.
+
+1:11:27
+
+Gender asymetry.  
+Genes come from father and mother 50/50.  Not true.  
+More genes come from the mother.
+1.  All the mitrocondria DNA comes from the mother.
+2.  Imprinted genes.
+3.  Transcription factors.
+
+Mitocondria have their own DNA.
+Perhaps they used to be independent organisms.
+
+Sperm does not have cytoplasm.  DNA only.
+Eggs have mitrocondria.  Sperm don't.
+So all the genes for the mitrocondria come from the mother.
+
+The Eve hypothesis.  Traced through mitrocondrial DNA.
+
+As talked about earlier, imprinted genes, genes which work differently depending on which parent they came from.
+
+The egg has transcription factors.  Sperm don't.
+
+Transcription factors are proteins.
+Some environmental toxins are destroying transcription factors.  This is passed to offspring.  Lamarckian inheritance.  
+
+1:21:00
+
+Genes influence behavior.
+
+Indirect genetic effects.
+
+Introvert/extravert.  Height, appearance.  People who are taller are treated better.  People treated more positively become more extraversion.  The heritability is of the physical traits, which then affects the personality.
+
+In chicks, there is heritability of social rank.  No, its melanism of the feathers.  Color and irridescence of feathers causes chick to be pecked more, leading to submission.
+
+Chicks can peck at grubs at birth, and appears to be heritable.   What is actually heritable is a tendancy to peck at one's toes.
+
+70% heritability of political party affiliation.  The mediating variability is ambiguity tolerance.  Liberals have more of it than conservatives
+
+In rats, aggression is heritability.  Actually, the aggressive strain of rats has a lower threshhold of pain sensitivity.
+
+Epigenitic differences.
+
+Newborn rat.  Pick it up once a day and pet it for three minutes.  It will have a bigger brain, bigger learning abilities, more resistance to neurological insult, lower glucocorticol levels.  The opposite happens if you pick it up, away from mom, for 90 minutes.
+
+What actually happens.  When you return the baby to mom after three minutes, the mom is solicitous of the newly returned baby.  After 90 minutes, she ignores the returned baby.  So it's not the petting, but the change to the mother's behavior.
+
+Neonatal handling.  
+
+What is the normal behavior of rat mothering.
+Licking and grooming.
+
+It is multigenerational.  Daughters pickup the habits of mom.
+
+The licking affects the transcription factors that trigger the genes for making receptors for stress hormones, estrogen, and others.
+
+
+
+
+
+
+
+
+==== 7. Behavioral Genetics II ====
+
+https://www.youtube.com/watch?v=RG5fN6KrDJE
+
+Now.
+Go find the gene.  Bring together Behavioral Genetics with Molecular Genetics.
+
+You know differences in the trait.  Go looking for the gene.
+
+You may or may not have differences in phenotype: eye color, etc.
+
+Get groups of people sharing the trait.
+
+Start with disease.  A family where the disease runs.  Half the people have it.  Blood samples from everyone.  Look for DNA sequences that are different between the groups.  A genetic marker.  Not the exact gene, but a string of genetic material.
+
+Hormone: vasopresin.
+Vasopresin receptor.
+In rodents, there are two different versions of the promoter.  One results in monogamy, the other in polygamy.
+  
+In humans, same thing. 
+Those with the monogamy gene have more stable relationships, are better at recognizing facial expressions, and are less likely to have autism.
+
+BDNF.  Causes a rat amygdala to grow new connections. Two different versions.  
+
+Dopamine.  Dopamine receptor 4.  D4.  Variability.  Pleasure, reward seeking.  In humans, levels of risk-taking, sensation seeking, novelty craving.
+
+NPY, similar to BDNF.  
+
+Chance.
+The third leg.
+Genetics, environment, chance.
+
+Brownian motion.  Molecules oscillate.  Completely random.   
+
+35:25
+
+Mitochondria
+
+When a cell splits, the way the types of mitrochondria split is random.
+
+Ditto for: 
+Transcription factors
+splicing enzymes
+other enzymes
+
+Heritability
+
+Wrong definition: how much this trait is determined by genetics.  "One number. This trait has a 53% heritability."
+This is the wrong interpretation.
+
+Correct definition: How much do genes have to do with the variability around the average.
+
+Heritability measures how much genes affect the variability, not the average.
+
+Experimenters design experiments in a way that removes environmental factors.
+
+Gene environment interaction.  Genes have different effects in different environments.
+
+The number of fingers you have has 0% heritability.  because there is no variability.
+
+==== 8. Recognizing Relatives ====
+https://www.youtube.com/watch?v=P388gUPSq_I
+
+== summary of previous lecture ==
+
+Inherited vs Heritable
+Inherited = a trait is genetically determined
+Heritable = how the variability of a trait is genetically determined
+
+Gene-environment interactions
+
+Different levels of description
+1. Evolution
+2. Genetic
+3. Behavioral
+
+Epigenetics = The way culture and environment affects biology. The way in which environment turns genes on and off.
+
+Classical Behavior Genetics = adoption, twins, studies.  Good for identifying groups, and ruling out some environmental factors.
+
+Modern Behavior Genetics = Marry Classical with Molecular Genetics.
+
+== Significance ==
+
+NYTimes Article:  People from Nepal are better at Chutes and Ladders than people from Belgium.  WHO study.
+
+ask critical questions
+
+How big is the difference?
+
+== First born higher IQ ==
+
+First born has higher IQ.  Why?
+
+Parental investment.
+First-born pushed into tutoring role.
+Intra-uterine effect. Repeated pregnancy, higher stress, immune suppression.
+
+If the first born dies, the second born picks up the first-born IQ.
+
+Up to age 12, latter born has higher IQ.
+At 18, it flips.
+
+Magnitude: 2.3 IQ points.
+
+== How do organisms recognize relatives ==
+Several mechanisms.  In organisms and cells.
+
+Innate recognition exists in rodents, even in the case of cross fostering.
+
+Urine of sibling, urine of stranger, they prefer the sibling's urine.  They prefer urine of full sibling over half-sibling, and so forth.
+
+This has to be so, because as we've already discussed, a brother will sacrifice himself 100% for a brother, 50% for a half-brother, etc.
+
+Olfactory systems. 
+1. Urine must have qualitative difference reflecting the genetic difference.
+2. Organism must have olfactory and brain mechanisms to detect this qualitative difference in urine.
+
+Both of these have been shown experimentally.
+
+== Histocompatability ==
+
+Self, non-self recognition of the immune system.
+Proteins have a unique signature, so the immune system can recognize intruders.
+Some of these proteins are soluble, floating in the saliva and urine, giving a unique signature to the pheromones coming off of you.
+
+When one organism meets another, it can tell: is this organism the same species, gender, sexually mature, healthy, pregnant, whatever.  And also they can tell: is this a relative.
+ 
+Innate olfactory recognition of relatedness: self, full-sibling, half-sibling, cousin, stranger.
+
+Degree of relatedness.  
+
+Oxytocin.
+Vasopresin.
+
+Oxytocin and vasopresin tune up the mother's olfactory system to learn to recognize its newborn.
+
+Hippocampus, learning, neurogenesis
+neural stem cells
+
+In rats, when the female gets pregnant, neurogenesis occurs in her olfactory bulb.  She generates a whole new nerve network, just in time to learn to recognize her newborn.
+
+Is this why the pregnant women report screw olfactory and taste experiences during pregnancy?  Reconstruction.
+
+Endocrine regulation.
+
+Why do you want to recognize your relatives?  Its who you mate with, who you cooperate with, who you try to kill, who you take care of, etc. 
+
+Also, who you pay attention to socially, gossip.  
+
+In one experiment.  Play the voice of number 4 being dominated by the voice of number 27.  Big deal.  Unless they were related.  Then the dominance reversal is ignored.  Because it's just a crazy family.
+
+There are "kin selection" advantages to inbreeding, but disadvantages to inbreeding.  The optimal appears to be third-cousin.  Many species do exactly that.  That's who you mate with.  And you have to know relatedness to do that.
+
+Martha McClintock did an experiment with humans sniffing armpit cotton swabs.  Who is the most appealing?  Third cousins.
+
+It is innate that you will have olfactory receptors than can detect degree of relatedness of an olfactory signature is to your own.
+
+Oxytocin and vasopresin promote the development of those receptors. 
+
+Prolactin makes more neurons in the olfactory system.
+
+== non-innate recognition ==
+
+requires imprinting or learning
+imprint = how an animal learns who its mother is
+
+that the learning occurs at that point is innate
+what is learned is experiential
+
+in various species
+odor, sound of voice, looks, 
+
+Humans do it cognitively.
+
+Baboon males do some statistics to figure out if he is the father.  If he is, he will offer some parental investment.
+
+In sunfish, males usually caretake their young, but in an experiment, a male is made to see another male with his mate, he gets jealous and refuses to caretake the young.
+
+In humans, in the cortex, there is the fusiform cortex, which is good at recognizing faces.  including expressions and degree of relatedness
+
+Mother recognizing the smell of her baby and vice-versa.  Not with Dad.
+
+Newborns can recognize mom's voice, from time in uterus.
+
+Cognition vs innate. 
+
+How do we choose who to mate with.  When raised in a kibbutz, you never marry someone you were raised with up to age six.  Non-rational.
+
+Pseudo kinship. Pseudo speciation. We are malleable as to who we feel related to. Non-rational.
+==== 9. Ethology ====
+
+https://youtu.be/ISVaoLlW104
+
+1 many environments
+2 natural environments
+3 assume you have to translate a language
+
+Get your animal out of the lab.
+Hi
+William James, philosopher
+
+In America, Behaviorism
+John Watson
+BF Skinner
+1 radical environmentalism
+2 reinforcement theory, positive or negative, reward and punishment
+3 universality, all organism, all species
+
+Rats and pigeons
+Numbers
+
+In Europe, 
+Butterfly collecting, variability.
+Ethology. Collecting behaviors in the wild.
+Nico tin bergen, saint
+Conrad Lorenz, nazi scum
+Hugo von Frisch, old
+Gene-environment interactions.
+Interview the animal in his own language.
+
+Enriched environments.
+Put a lab rat in an enriched environment and his cortex grows thicker. But wild rats have an even thicker cortex.
+
+Fixed action patterns.
+Different from instinct. Animals don't have to learn it, but they can learn to do it better.
+Squirrel knows how to crack a nut.
+Fear of dropping into a chasm.
+Monkey is subordinate to dominant aggressive male.
+Infants nurse.
+
+== Adaptive value ==
+
+Ethologist looks at it differently from evolutionist.
+Gulls flip egg shells over so camoflaged side up.
+Bee dancing.
+Axis, direction.
+Time, distance.
+Enthusiasm, nature of food source.
+
+Chicks peck at a red circle on mom's beak.
+
+Recent high tech Experiments.
+Robotic animals.
+Robotic bees that dance.
+
+Auditory induced ovulation in deer.
+
+Tickle rats and they giggle, ultrasonic.
+
+Human female voice goes up during ovulation.
+
+Humans smell fear in sweat, trigger the amygdala, recognize fear in pectures of faces.
+
+Electric fish.
+
+Insects communicate by vibration.
+
+Elephants have pressure sense pad in their feet.  They are communicating this way.
+
+Surrogate mother monkey.  Bonding.
+
+== Neuro ethology ==
+Example
+
+Birdsong. 
+
+Reflex on female hamster. Arching the back in response to pressure during ovulation.  Traced to individual neurons.
+
+John wingfield. Migrating birds. 
+
+Circuitry maps.
+
+What is learning about. Types of learning that break the behaviorist model.
+
+Maternal competence. Monkeys.
+
+Meercats eat scorpions. Mother's teach children to do it.
+
+Tool use in apes. Stick to get ants.
+
+One-trial learning.  Critical period for imprinting to mom. First big thing moving around.  No trial and error.
+
+Prepared learning.  
+
+Pain in GI related to food.
+
+Bees learn smell association easier than shape or color.
+
+Humans are prepared to learn fear of spiders and snakes.
+
+== Cognitive Ethology ==
+Donald Griffen. Bats echolocation. WWII sonar development.
+
+Book: On the question of animal awareness
+
+Self-awareness. Look in mirror. Dogs, no. Elephants and chimps, yes. marmoset monkeys, first no, now yes.
+
+Theory of mind. See below.
+
+Plan for the future.
+
+Flexible cognitive strategies.
+
+Numerosity.
+
+Transitivity.
+
+= Theory of mind ==
+
+There are other individuals. Age 4 or 5. 
+
+Sally Ann test. 
+Tell test subject a story: child has doll named Sally Ann. Child goes to school. Mother puts Sally Ann in the washer and dryer. Child comes home from school. Where does she go to look for Sally Ann?
+
+If test subject has theory of mind, he will say the bedroom because he knows the child in the story does not know about laundry day.
+
+If test subject does not yet have theory of mind, he will say the dryer because he cannot conceive of a mind that does not know everything that he knows.
+
+[Bullshit]
+
+Other experiments.
+
+Chimps. Banana, dominant, screens. Studies show that chimps do theory of mind only in competitive settings, not cooperative.
+
+Birds. Hiding food.
+
+Distinguish between intentional and unintentional behavior.
+
+Dogs know when someone has kicked them vs tripped over them.
+
+
+
+
+
+
+
+
+
+
+
+
+
