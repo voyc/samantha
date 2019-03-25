@@ -1,0 +1,9 @@
+======Physics======
+
+Isaac Newton\\
+Max Planck\\
+Albert Einstein
+
+====References====
+
+"Physics", Khan Academy, [[https://www.khanacademy.org/science/physics/]], Retrieved on 23-Mar-2019. [[Notes on Khan Academy Physics|Notes]]

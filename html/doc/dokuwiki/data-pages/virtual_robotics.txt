@@ -1,0 +1,36 @@
+======Virtual Robotics======
+
+====Game Engine Software====
+
+  * Unreal, visual scripting and C++ or "blueprints" proprietary scripting
+  * Unity, no visual scripting, C# or JavaScript
+
+====Javascript 3D Drawing====
+  * threeJS, open source
+  * BabylonJS, Microsoft
+
+====3D Modeling Software====
+
+  * 3dsmax, by Autodesk, for architecture and engineering, used by: Blizzard, Blur
+  * Maya, also Autodesk, studios: Blizzard, Disney, Weta, Luna, Blur
+  * Cinema4, for movies
+  * Houdini, for movies, unique UI and workflow, used by: Blur, BlueSky
+  * Zbrush, used by: Blizzard, Disney, Weta, Blur, 
+  * Lightwave
+  * Arnold, used by Luna
+  * XSI, used by Animal Logic
+  * Marionette (Pixar proprietary)
+  * Premo (DreamWorks proprietary)
+  * Apollo (DreamWorks proprietary)
+  * Blender, free open source, for gaming
+
+====3D Modeling Terminology====
+
+  * Mesh - the points of the wireframe
+  * Rigging - skeletal mesh for movements. A tool for use by animators.
+  * Material - 
+  * Texture
+  * Skin
+  * Controller
+  * Y-up - cartesian coordinate system with Y-axis on the vertical dimension
+  * Z-up - cartesian coordinate system with Z-axis on the vertical dimension

@@ -1,7 +1,14 @@
 ====== Detail Design ======
 
 
+Traits\\
+Openness\\
+Neuroticism\\
+Extraversion\\
+Conscientious\\
+Agreeableness
 
+IQ (pattern matching)
 
 Lists of tags\\
 Emotions\\

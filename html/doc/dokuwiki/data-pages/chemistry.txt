@@ -1,3 +1,47 @@
 ======Chemistry======
 
-[[Notes on Khan Academy Chemistry]]
+Periodic Table of Elements
+https://www.ptable.com/
+https://docs.google.com/spreadsheets/d/1-i-CU-5BUZndE6IFHtZ-gagMftD691Z9e0o-GWmp0iI/edit?usp=drivesdk
+
+
+Heavy Metals
+Precious Metals
+Nutritional Metals
+Poisons
+Silly Symbols
+Date Discovered, historicity, alchemy
+Named after people
+Named after planets
+Named after places
+Silly names: Unobtanium
+Radioactive Elements
+
+
+
+Atomic Structure, shells, traits, bonds, reactions
+YouTube:AtomicSchool playlist 
+https://www.youtube.com/playlist?list=PLYbDrmR0pxgrTmNsqqSXC-6xrJIkCjpfo
+
+
+Electromagnetic radiation is absorbed or emitted as electrons move out or in among the shells respectively. Electrons in the higher shells have a higher energy level than those in the inner shells.
+
+A radioactive element has an unstable nucleus. the unstable nucleus will Decay by emitting particles until it becomes stable.
+
+Four types of nuclear radiation, defined by the type of particle emitted from the nucleus.
+
+  * Alpha particle, same structure as a helium nucleus.
+  * Beta particle, Electron, formed when a neutron splits into a proton and an electron
+  * Gamma rays, a type of electromagnetic radiation
+  * Neutron
+
+====References====
+
+"Chemistry", Wikipedia, [[https://en.wikipedia.org/wiki/Chemistry]], Retrieved 23-Mar-2019.
+
+"Chemistry", Khan Academy, [[https://www.khanacademy.org/science/chemistry]], Retrieved 23-Mar-2019. [[Notes on Khan Academy Chemistry|Notes]]
+
+Primrose Kitten: "The whole of ATOMIC STRUCTURE in 20 minutes!", [[https://www.youtube.com/watch?v=sYlmoNKypoY]], Retrieved 23-Mar-2019. [[Notes on Primrose Kitten Chemistry|Notes]]
+
+"The History of Atomic Chemistry", Crash Course, [[https://www.youtube.com/watch?v=thnDxFdkzZs]], Retrieved 23-Mar-2019.  [[Notes on Crash Course Chemistry|Notes]]
+

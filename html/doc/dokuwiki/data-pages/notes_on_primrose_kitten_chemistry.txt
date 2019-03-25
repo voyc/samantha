@@ -1,0 +1,73 @@
+====== Notes on Primrose Kitten Chemistry======
+
+Memorize these:
+
+|carbon dioxide|CO<sub>2</sub>|
+|water|H<sub>2</sub>O|
+|oxygen gas|O<sub>2</sub>|
+|hydrogen gas|H<sub>2</sub>|
+|nitrogen gas|N<sub>2</sub>|
+|ammonia|NH<sub>3</sub>|
+|hydrochloric acid|HCl|
+|sulfuric acid|H<sub>2</sub>SO<sub>4</sub>|
+
+Equations
+
+nitrogen gas + hydrogen gas -> ammonia\\
+H<sub>2</sub> + N<sub>2</sub> -> NH<sub>3</sub>\\
+balanced equation: N<sub>2</sub> + 3H<sub>2</sub> -> 2NH<sub>3</sub>\\
+
+methods of separating mixtures
+  * distillation, separate liquids with different boiling points
+  * evaporation, separate liquids from solids
+  * filtration, separate liquids from solids
+  * fractional distillation, separate by different sizes and boiling points
+
+1908-1913: Working under Rutherford, Geiger and Marsden executed the Gold Foil experiments at the University of Manchester.
+Before this, we had plum pudding model of an atom.  Positive and negative charge was distributed uniformly throughout a substance.
+Fired an alpha particle at a gold foil.  Most particles went right through.
+Some were deflected.  Some bounced back.
+From this, they deduced that each atom has a nucleus where all positive charge and most mass is clustered.
+
+1932: Chadwick discovered the existence of neutrons, also working under Rutherford.
+
+Periodic Table\\
+Groups give us number of electrons in the outer shell\\
+Periods give us number of shells\\
+
+Na, sodium has 11 electrons, 2,8,1\\
+The single electron has a tendency to wander off, leaving an ion with 10 electrons.\\
+
+F, florine, has 9 electrons, 2,7\\
+The outer shell is short one electron, so it tends to gain one.\\
+
+Sodium floride 
+
+Elements in group 1 tend to form +1 ions\\
+group 2: +2 ions\\
+group 6: -2 ions\\
+group 7: -1 ions\\
+group 8: stable\\
+
+metals on the left-hand side form positive ions\\
+non-metals, right-hand side, from negative ions\\
+
+1863, 56 known elements, new elements discovered at one per year
+
+1868: Mendeleev developed the first proper periodic table. He saw it in a dream.
+published in textbook <i>Principles of Chemistry</i> (two volumes, 1868–1870)
+  * by mass
+  * left gaps, able to predict missing elements
+  * groups by similar properties
+
+|group 8 or 0|noble gasses|unreactive|full outer shell|increased boiling point as you move down the group|
+|group 1|alkali metals|very reactive|only 1 electron on outer shell|reactivity increases as you move down the group|
+|group 7|halogens|very reactive|7 electrons on outer shell|generally found in diatomic molecules (F<sub>2</sub>, Cl<sub>2</sub>, Br<sub>2</sub>) Florine gas, Chlorine gas, Bromine gas; reactivity decreases as you move down the table, melting points and boiling points increase; more reactive halogens will displace less reactive halogens in a reaction|
+
+transition metals\\
+typical\\ 
+properties: hard, shiny, conductive of heat and electricity\\
+can be used in building bridges, saucepans, wires\\
+copper: blue\\
+iron (ii): green\\
+iron (iii): red/brown\\

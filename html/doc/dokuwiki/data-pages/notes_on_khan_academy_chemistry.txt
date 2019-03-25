@@ -2,9 +2,16 @@
 
 https://www.khanacademy.org/science/chemistry/
 
-==Protons, neutrons, electrons==
+==== Elements and atoms ====
+Periodic Table of Elements
 
-**Atomic number** = number of protons in the nucleus.
+[wikipedia. The elements are listed in order by atomic number. Each box contains the atomic number, the symbol, and sometimes the atomic weight. Each row is a period, each column is a group, and color is used for additional grouping.]
+
+Smallest bit of an Element is an atom.
+
+The atom is made up of Protons, neutrons, electrons
+
+**Atomic number** = number of protons in the nucleus.  Defines the element.
 
 A carbon atom has six protons in the nucleus.
 
@@ -18,6 +25,14 @@ Carbon-12 and carbon 14 are **isotopes** of carbon. Isotopes differ by number of
 
 <sup>12</sup><sub>6</sub>C = carbon-12
 
+== Ions ==
+
+number of electrons != number of protons
+
+has a charge, positive or negative
+
+no longer called an atom.  called an ion.
+
 If the carbon atom is neutral it has 6 electrons orbiting around the nucleus. (The quantum physicists tell us "orbit" is the wrong word.)
 
 An **ion** has an unequal number of protons an electrons. 
@@ -26,52 +41,153 @@ An **anion** has a negative charge, more electrons.
 
 A **cation** has a positive charge fewer electrons.
 
-== Mass, weight==
+==== Atomic Weight and Atomic Mass ====
 
-Mass is a measure of how much stuff there is. 
+Mass is a measure of how much stuff there is. Inertia.  Measured in grams, kilograms.
 
-weight is a force. an indication of how much the Earth is pulling on the stuff. If you go into space or onto a different planet your weight will change. Your mass will not.
+weight is a force. an indication of how much the Earth is pulling on the stuff. Measured in Newtons. **If you go into space or onto a different planet your weight will change; your mass will not.**
 
 In physics,
 Mass is measured in grams and kilograms.
-Weight is measured in neutrons. 
+Weight is measured in newtons. 
 
 In chemistry,
-Atomic mass is measured in atomic mass units (amu), and that is a very small fraction of a gram.  Carbon-12 has an atomic mass of 12 amu's.
+Atomic mass is measured in atomic mass units (amu), and that is a very small fraction of a gram.  Carbon-12 has an atomic mass of 12 amu's. (Carbon-12 is the benchmark by convention.)
 
-Atomic weight is also measured in amu's and is a weighted average of all of the element and its Isotopes on planet Earth.
+Atomic weight is also measured in amu's and is a weighted average of all of the element and its Isotopes on planet Earth.  It is usually very close the the Atomic Mass, but not exactly.
 
-==Periodic Table of elements== 
+One might be inclined to assume that the weight of 1 proton = the weight of 1 neutron = 1 AMU.  But that is incorrect, even though they are close.
 
-[wikipedia. The elements are listed in order by atomic number. Each box contains the atomic number, the symbol, and sometimes the atomic weight. Each row is a period, each column is a group, and color is used for additional grouping.]
+The atomic weight is sometimes included on the Periodic Table of Elements.  
 
-==Mole==
+==== The Mole and Avogadro's Number ====
 
-Mole = avogadro's number = 6.02 × 10^23
+Mole = avogadro's number = 6.02 × 10^23 = the number of atoms in 12g of carbon-12.
 
-It is a very large number and it relates amu's to grams.
+It is a very large number and is used to convert between amu's and grams, like so:
 
-==Ionic compounds==
+  * 1 gram == 1 mole of amu's
+  * 1 mole of carbon-12 == 12 grams
+  * 1 mole of aluminum-27 == 27 grams
+  * 1 mole of iron-56 == 56 grams
+  * 1 mole of silicon-28 == 28 grams
+  * 2 moles of silicon-28 == 56 grams
+
+Side notes on the size of an atom:
+  - A human hair is 1 million carbon atoms across.
+  - An atom is to an apple as an apple is to the earth.
+
+==== Atomic number, mass number, and isotopes ====
+
+The "Bohr" model shows electrons orbiting the nucleus.
+
+An atom of Hydrogen has one proton.  atomic number == 1
+The neutral isotopes of Hydrogen also have one electron.  
+
+Isotopes have differing numbers of neutrons.
+
+Neutral isotopes of Hydrogen:
+  * 0 neutrons, Protium
+  * 1 neutrons, Deuterium
+  * 2 neutrons, Tritium
+
+Z == atomic number == number of protons (subscript)
+A == mass number == number of protons + neutrons (superscript)
+
+Every element is identified in two ways: by atomic number and by symbol.
+
+Every atom is an isotope, and may or may not be an ion.
+
+Symbol example.\\
+<sup>32</sup>S<sup>2-</sup>\\
+S = Sulfur, atomic number 16\\
+16 protons\\
+16 neutrons\\
+18 electrons\\
+
+====Ionic compounds====
 
 Potassium chloride. KCl
 
-Group 1. Alkaline metals. Outermost shell has one electron, which they tend to lose, thus becoming a cation with a charge of +1.
+Group 1, the first column. Alkaline metals. Outermost shell has one electron, which they tend to lose, thus becoming a cation with a charge of +1.
 Potassium ion K<sup>1+</sup>
 
 Group 7. Halogens. Outermost shell has seven electrons. Tend to pick up one more, thus becoming an anion with a charge of -1.
-Chlorine Cl<sup>1-</sup> or Chloride.
+Chlorine Cl<sup>1-</sup> or Chloride.  Instead of saying "Chlorine anion", we say "Chloride".
 
-Attraction between oppositely charged molecules, so they tend to form a compound.
+Attraction between oppositely charged molecules, so they tend to form a compound, such as
+Potassium chloride, KCl.
+
+The naming convention allows you to figure out, the name chloride indicates an anion, which means the potassium has to be an anion.
 
 **Electrostatic attraction** Holds atoms together. Holds compounds together.
 
-**Chemical bond** the attraction of two atoms with opposite charges.
+**Chemical bond** holds together atoms in a compound.
+Two types of chemical bond:
 
-**Covalent bond** two atoms share electrons.
+  * **Ionic bond** electrons are fully transferred between two the oppositely charged atoms.
+
+  * **Covalent bond** two positively charged atoms share one or more electrons.
+
+Potassium chloride is held together by an ionic bond.
+
+====Chemical Formulas====
+
+Chemical formula == molecular formula == a way to represent and describe a molecule.
+
+acetic acid, a common acid found in vinegar, is C<sub>2</sub>H<sub>4</sub>O<sub>2</sub>.
+
+There are also multiple types of structural formulas, which show aspects of the geometry or shape of the molecule.
+
+Examples.
+
+name: Benzene\\
+empirical formula: CH\\
+molecular formula: C<sub>6</sub>H<sub>6</sub>\\
+structural formula: (drawing)\\
+
+name: water\\
+empirical formula: H<sub>2</sub>O\\
+molecular formula: H<sub>2</sub>O\\
+structural formula: (drawing)\\
 
 
+==== Molecules vs Crystals ====
 
+Covalent bond.  Forms a molecule.  Example: H<sub>2</sub> is a single molecule of two hydrogen atoms.  The two electrons are shared between the two atoms.  (You cannot distinguish which electron goes with which atom.)
 
+Ionic bond. Multiple atoms line up together in a crystalline structure.  Individual molecules are not found in nature, so we use the theoretical term //formula unit// instead of molecule.
+Example: table salt, sodium choloride.  Na+Cl-
 
+==== Molecular mass and molecular weight====
+
+Molecular mass
+
+From the molecular formula, add up the numbers of protons and neutrons in the compound molecule.  Assuming each proton and each have a mass of 1 amu.
+
+molecular weight
+
+For more precision, total the atomic weight of all the protons and neutrons in the compound molecule.
+
+==== Naming monatomic ions and ionic compounds ====
+
+== predict the charge of monatomic cations and anions ==
+
+Periodic Table.\\
+Groups : columns\\
+Periods : rows\\
+
+number of valence electrons in the neutral atom = number in the one's place in the group number
+
+Group 18 is the **noble gases**.  The first six are found in nature.\\
+2, helium, found in natural gas\\
+10, neon, found in the air\\
+18, argon, found in the air\\
+36, krypton, found in the air\\
+54, xenon, found in the air\\
+86, radon, radioactive, isolated from radioactive decay of uranium
+118, oganesson, synthetic, first synthesized in 2002\\
+
+Atomic structure of group 18.  The outer shell of valence electrons is full.  Therefore these elements are stable.  Inert.  They do not form anions or cations, and therefore they do combine or react with other elements.
 
 
