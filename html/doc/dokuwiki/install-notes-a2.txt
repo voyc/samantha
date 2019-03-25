@@ -1,0 +1,46 @@
+# The dokuwiki executable is installed in samwiki.
+# The pages, media, and conf files are stored in samantha.
+# Therefore, 
+#    1. the wiki data is version-controlled by the github samantha project, and
+#    2. the dokuwiki executable can be reinstalled, without risking loss of data.
+
+# how to install into a2hosting
+
+# 1. unzip dokuwiki into ~/webprod/samwiki
+
+# 2. point samantha to the wiki
+cd ~/webprod/samantha/samantha/html
+ln -s ~/webprod/samwiki/dokuwiki wiki
+
+# 3. run the dokuwiki install
+http://samantha.voyc.com/wiki/install.php
+# Wiki Name: Samantha
+# Superuser: jhagstrand
+# Real name: John Hagstrand
+# E-Mail: john@hagstrand.com
+# Password: know9
+# once again: know9
+# Initial ACL policy: Public Wiki
+# Allow users to register themselves: no
+# License: Public Domain
+
+# 4. Point wiki pages, media, and conf files back to samantha.
+cd ~/webprod/samwiki/dokuwiki
+ln -s ~/webprod/samantha/samantha/html/doc/dokuwiki/conf/userall.css conf/userall.css
+ln -s ~/webprod/samantha/samantha/html/doc/dokuwiki/conf/entities.local.conf conf/entities.local.conf
+mv data/pages data/pages-orginal
+ln -s ~/webprod/samantha/samantha/html/doc/dokuwiki/data-pages data/pages
+mv data/media data/media-orginal
+ln -s ~/webprod/samantha/samantha/html/doc/dokuwiki/data-media data/media
+
+# 5. delete the install.php file
+
+# 6. Install the mathjax plugin for equations. Test on calculus page.
+cd ~/webprod/samwiki/dokuwiki/lib/plugins/
+wget https://github.com/liffiton/dokuwiki-plugin-mathjax/archive/master.zip
+# unzip and rename folders: lib/plugins/mathjax
+
+# MathJax [http://mathjax.org] parsing of TeX math expressions in wiki pages.
+# Edit equations online here: https://www.codecogs.com/latex/eqneditor.php
+# in mathjax, use \textrm instead of \textup
+
