@@ -1,0 +1,11 @@
+====== Thermodynamics ======
+
+
+==== References ====
+
+Wikipedia, "Thermodynamics", 
+https://en.wikipedia.org/wiki/Thermodynamics, accessed 2019 May.
+
+MIT Open Courseware, //5.60 Thermodynamics and Kinetics//, https://ocw.mit.edu/courses/chemistry/5-60-thermodynamics-kinetics-spring-2008/, accessed 2019 May, [[Notes on MIT 5.60 Thermodynamics and Kinetics|Notes]]
+
+Science Clarified, //Thermodynamics - Real-life Applications//, [[http://www.scienceclarified.com/everyday/Real-Life-Physics-Vol-2/Thermodynamics-Real-life-applications.html#ixzz5qJAvVlUC]], accessed 2019 June, [[Notes on Thermodynamics Real-life Applications|Notes]]

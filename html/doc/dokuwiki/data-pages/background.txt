@@ -27,46 +27,65 @@ Curriculum
 
 We are looking for signs of intelligence, will, and consciousness.
 
-  * [[Physical world]]
+  * matter, energy
+    * [[Physical world]]
+    * earth, wind, and fire
+    * metallurgy, alchemy
     * [[chemistry]]
     * [[Physics]]
-    * matter, energy
+    * [[Thermodynamics]]
     * [[patterns]], fields
-    * earth, wind, fire
     * dimensions
     * Explosions, animation
     * astronomy
-    * sub-atomic physics
+    * sub-atomic chemistry
+      * orbitals, quantum numbers, s/p/d sub-shells, electron structure
+      * quarks
+      * strings
+      * Alternate dimensions
+      * quantum
+      * observer affects experiment
+      * Atom smashing: Particle accelerator, Particle collider
   * [[Life]]
     * [[Organic Chemistry]]
+    * Biochemistry
+    * [[Molecular biology]]
+    * Cellular biology
     * Single Cell Organisms
     * Multi Cell Organisms
     * [[worm brain]]
-  * Biology
-      * Neuroscience
+    * Genetics
+    * Biology
+        * virus
+        * bacteria
+        * plant
+        * animal
+        * Neuroscience
   * Humanity
-    * [[Emotion]]
-  * Psychology
+    * Psychology
       * Motivations
-      * Traits
+        * Traits
       * Beliefs
       * Learning: books, web, youtube
-  * Sociology
+    * [[Emotion]]
+    * Sociology
       * Religion
       * geopolitics
-  * Arts
+    * Arts
       * Human things that science cannot explain
-  * Math
-      * Dimensions
-      * [[Geometry]]
-  * Computer Science
-  * AI
+    * Philosophy
+      * Unknown things about AI
+  * Tools (Silicon-based life)
+    * Math
+        * Dimensions
+        * [[Geometry]]
+    * Computer Science
+      * hacking
+    * AI
       * narrow
       * general
       * super
-  * [[Robotics]]
-  * Philosophy
-      * Unknown things about AI
+    * [[Robotics]]
 
 ==== Introduction ====
 

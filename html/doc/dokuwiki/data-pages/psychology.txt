@@ -118,6 +118,13 @@ Is there some kind of thinking that is not programmed?
 Convergent\\
 Divergent\\
 In the 1950s, the psychologist J. P. Guilford divided creative thought into two categories: convergent thinking and divergent thinking. Convergent thinking, which Guilford defined as the ability to answer questions correctly, is predominantly a display of memory and logic. Divergent thinking, the ability to generate many potential answers from a single problem or question, shows a flair for curiosity, an ability to think “outside the box.” It’s the difference between remembering the capital of Austria and figuring how to start a thriving business in Vienna without knowing a lick of German.
+
+==== Faulty Thinking ====
+
+Alan Turing killed\\
+Heisenberg lionized\\
+
+
 ==== Reasoning ====
 https://en.m.wikipedia.org/wiki/Outline_of_human_intelligence
 

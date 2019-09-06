@@ -45,8 +45,8 @@ The change in acceleration over time is the jerk.
 
 ==Kinematic formulas and projectile motion==
 
-Δx = Displacement
-t = Time interval
-v = Initial velocity
-v = Final velocity
-a = Constant acceleration
+$Δx$ = Displacement\\
+$t$ = Time interval\\
+$v$ = Initial velocity\\
+$v$ = Final velocity\\
+$a$ = Constant acceleration\\

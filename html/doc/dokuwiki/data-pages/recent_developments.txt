@@ -7,6 +7,14 @@ Many of these items reference articles on Cornell's arVix: https://arxiv.org/
 
 ==== News Items ====
 
+== 2019 ==
+
+2019 Jul 11: Google. Massively Multilingual Neural Machine Translation in the Wild: Findings and Challenges
+https://arxiv.org/abs/1907.05019
+
+2019 Apr 5: Google. Develop AI that can learn to prove math theorems.
+https://arxiv.org/abs/1904.03241
+
 == 2018 ==
 
 2018 Sep 14: DeepMind. Meta-learning. Choosing the algorithm.

@@ -2,7 +2,11 @@
 
 https://www.khanacademy.org/science/chemistry/
 
-==== Elements and atoms ====
+We went through this course in 2018-2019.  The structure is totally hosed.  It seems like someone has recently reorganized the topics, without worrying about continuity.  Material is presented out of order.  Much of the material is presented, assuming we know something that has not been presented yet.  For example, in the video "Reactions in Equilibrium", Sal references the video named "Kinetics", which comes much later in the course.  These notes match this hosed 2019 structure.  I'm sure Khan will eventually fix these issues and then the Khan course will no longer match these notes.
+
+==== Atoms, compounds, and ions ====
+
+== Elements and atoms ==
 Periodic Table of Elements
 
 [wikipedia. The elements are listed in order by atomic number. Each box contains the atomic number, the symbol, and sometimes the atomic weight. Each row is a period, each column is a group, and color is used for additional grouping.]
@@ -25,7 +29,7 @@ Carbon-12 and carbon 14 are **isotopes** of carbon. Isotopes differ by number of
 
 <sup>12</sup><sub>6</sub>C = carbon-12
 
-== Ions ==
+== Ions and Compounds ==
 
 number of electrons != number of protons
 
@@ -41,7 +45,7 @@ An **anion** has a negative charge, more electrons.
 
 A **cation** has a positive charge fewer electrons.
 
-==== Atomic Weight and Atomic Mass ====
+== Atomic Weight and Atomic Mass ==
 
 Mass is a measure of how much stuff there is. Inertia.  Measured in grams, kilograms.
 
@@ -60,7 +64,7 @@ One might be inclined to assume that the weight of 1 proton = the weight of 1 ne
 
 The atomic weight is sometimes included on the Periodic Table of Elements.  
 
-==== The Mole and Avogadro's Number ====
+== The Mole and Avogadro's Number ==
 
 Mole = avogadro's number = 6.02 × 10^23 = the number of atoms in 12g of carbon-12.
 
@@ -77,7 +81,7 @@ Side notes on the size of an atom:
   - A human hair is 1 million carbon atoms across.
   - An atom is to an apple as an apple is to the earth.
 
-==== Atomic number, mass number, and isotopes ====
+== Atomic number, mass number, and isotopes ==
 
 The "Bohr" model shows electrons orbiting the nucleus.
 
@@ -105,7 +109,7 @@ S = Sulfur, atomic number 16\\
 16 neutrons\\
 18 electrons\\
 
-====Ionic compounds====
+== Ionic compounds ==
 
 Potassium chloride. KCl
 
@@ -131,7 +135,7 @@ Two types of chemical bond:
 
 Potassium chloride is held together by an ionic bond.
 
-====Chemical Formulas====
+==Chemical Formulas==
 
 Chemical formula == molecular formula == a way to represent and describe a molecule.
 
@@ -152,14 +156,14 @@ molecular formula: H<sub>2</sub>O\\
 structural formula: (drawing)\\
 
 
-==== Molecules vs Crystals ====
+== Molecules vs Crystals ==
 
 Covalent bond.  Forms a molecule.  Example: H<sub>2</sub> is a single molecule of two hydrogen atoms.  The two electrons are shared between the two atoms.  (You cannot distinguish which electron goes with which atom.)
 
 Ionic bond. Multiple atoms line up together in a crystalline structure.  Individual molecules are not found in nature, so we use the theoretical term //formula unit// instead of molecule.
 Example: table salt, sodium choloride.  Na+Cl-
 
-==== Molecular mass and molecular weight====
+== Molecular mass and molecular weight==
 
 Molecular mass
 
@@ -169,9 +173,9 @@ molecular weight
 
 For more precision, total the atomic weight of all the protons and neutrons in the compound molecule.
 
-==== Naming monatomic ions and ionic compounds ====
+== Naming monatomic ions and ionic compounds ==
 
-== predict the charge of monatomic cations and anions ==
+predict the charge of monatomic cations and anions
 
 Periodic Table.\\
 Groups : columns\\
@@ -191,3 +195,341 @@ Group 18 is the **noble gases**.  The first six are found in nature.\\
 Atomic structure of group 18.  The outer shell of valence electrons is full.  Therefore these elements are stable.  Inert.  They do not form anions or cations, and therefore they do combine or react with other elements.
 
 
+==== Chemical reactions and stoichiometry ====
+
+
+
+Reduction/ Oxidation, redox
+
+Dissolution
+Precipitation
+Double replacement
+Single replacement
+Combustion
+
+
+
+
+
+Stoichiometry is the calculation of reactants and products in chemical reactions.
+
+Stoichiometry is founded on the law of conservation of mass where the total mass of the reactants equals the total mass of the products, leading to the insight that the relations among quantities of reactants and products typically form a ratio of positive integers. 
+
+
+
+
+==== Periodic table ====
+
+==== Chemical bonds ====
+
+Covalent
+
+Ionic
+
+Metallic
+==Advanced Chemistry==
+
+biochemistry, electrochemistry, organic chemistry, and inorganic chemistry
+
+==== Electronic structure of atoms ====
+==Ionization energy and electron affinity ==
+How much energy does it take to remove an electron from an atom to create a cation?
+
+Measured in kilojoules per mole.
+
+Nuclear charge. Based on the number of protons in the nucleus. The force of the positive pull on the electron in the outermost shell.
+
+Effective nuclear charge. The electron structure can effectively weaken or strengthen the nuclear charge. 
+
+Electron affinity. How much energy is given off when an electron is added to an atom to create an anion?
+
+Measured in negative kilojoules per mole.
+
+How badly does an atom want an additional electron?
+
+==Electro negativity and Bonding==
+
+The khan video titled //Electro negativity and Bonding// describes some chemical bonding, ionic bonds, covalent bonds,stealing or sharing electrons respectively, creating a positive/negative charge imbalance which evidently holds the molecule together.
+
+
+The Khan video titled //Covalent networks, metallic crystals, and ionic crystals// describes types of bonding, including diamonds from carbon, and salt dissolved in water.
+
+Methane 
+<chem>CH4</chem>
+
+Ammonia $H3$ NH<sub>3</sub>
+
+Water H<sub>2</sub>O
+
+Phosphorus PentaChloride PCl<sub>5</sub>
+
+Sulphur TetraFlorine SF<sub>4</sub>
+
+Chlorine TriFuoride ClF<sub>3</sub>
+
+Tri Iodide I<sub>3</sub><sup>-</sup>
+
+Sulfur hexafluoride SF<sub>6</sub>
+
+Bromine pentafluorine BrF<sub>5</sub>
+
+Xenon tetrafluoride XeF<sub>4</sub>
+
+Hydrochloride HCl
+
+Carbon dioxide CO<sub>2</sub>
+
+Water H<sub>2</sub>O
+
+Carbon tetrachloride CCl<sub>4</sub>
+
+Ethanol C<sub>2</sub>H<sub>6</sub>O
+
+Electron structure
+
+Lewis Dot structure
+
+Valence electrons
+
+Formal charge
+
+Polarity
+
+Molecular geometry: tetrahedal, trigonal pyramidal
+
+VESPR theory, valence shell electron pair repulsion
+
+sp<sub>3</sub> hybridization
+Linus Pauling 
+s/p orbital concept does not always work, so the hybrid orbital is postulated to solve the problem
+
+Sigma bond, head-on overlap
+
+Rotation about the sigma bond
+
+Pi bond
+
+In a double bond, one bond is sigma, and one is pi.
+
+The double Bond is shorter than a sigma bond.
+
+Length or distance inside an atom is measured in armstroms.
+
+
+==== Gases and kinetic molecular theory ====
+==Gas==
+
+A true ideal gas would consist of particles that take up zero volume and do not interact with each other.
+
+Many gases such as nitrogen, oxygen, hydrogen, noble gases, and some heavier gases like carbon dioxide can be treated like ideal gases within reasonable tolerances.
+
+Pressure = force / area
+
+PV = nRT
+
+P = pressure\\
+V = volume\\
+n = number of particles\\
+R = a constant\\
+T = average energy of the particles in the system\\
+
+
+==Dalton's law of partial pressure==
+
+When there are multiple gases in the balloon, say nitrogen and oxygen, each gas contributes a partial pressure. Each molecule acts independently.
+
+The total pressure of a mixture of gases is equal to the sum of the partial pressures of the component gases.
+
+== Vapor pressure==
+
+aka equilibrium vapor pressure.
+
+The pressure of a vapor in contact with its solid or liquid form.
+The equilibrium point. A glass of water in a sealed room. The water evaporates, increasing the vapor pressure. Once the vapor pressure is reached the amount of evaporation equals the amount of condensation.
+
+Pressure is measured in atmospheres or millimeters of mercury.
+
+One atmosphere equals 760 mm of mercury.
+
+The density of water is 0.997 g/mL
+
+Degrees Kelvin equals degrees Celsius + 273
+
+0 degrees Kelvin is absolute zero.
+
+300 Kelvin is room temperature.
+
+Temperature is proportional to the average kinetic energy of the molecules in a system.
+
+Kinetic energy = speed
+
+==Maxwell-Boltzman distribution == 
+
+Graph speed on the x-axis, number of molecules on the y-axis.
+
+Pick one nitrogen molecule in the room right now. Chances are it is moving at 900 mph.
+
+==Van der Waals equation==
+
+Add a correction factor to the ideal gas law, to account for molecular attraction and volume in a real (non-ideal) gas.
+
+
+$$PV = nRT$$
+
+$$\left ( P + \frac{an^{2}}{V^{2}} \right )\left ( V - nb \right ) = nRT$$
+
+
+==== States of matter and intermolecular forces ====
+
+Have you ever wondered how some insects are able to "skate" on the surface of water? We will learn about how intermolecular forces make this possible. We will also cover liquids, solids, mixtures, and phase changes.
+
+==States of matter==
+
+Solid liquid gas plasma
+
+Four types of energy, measured in joules
+
+Heat\\
+Kinetic energy\\
+Potential energy\\
+Enthalpy\\
+
+Joules = force * distance
+
+Enthalpy = "heat content"
+
+Plasma = like gas where electrons have broken free from their molecules. Lightning.
+
+
+joules jewels
+
+density mass volume
+
+intent extent
+
+thermodynamics
+
+matter energy
+
+open-minded gullible
+
+Broad-minded narrow-minded
+
+Open-minded closed-minded
+
+Phase change
+
+Specific heat, heat capacity, specific heat capacity, molar heat capacity
+
+
+==intermolecular forces==
+
+==Salt==
+Sodium chloride NaCl\\
+potassium chloride KCl\\
+Calcium bromide CaBr<sub>2</sub>\\
+
+Made with ions. One cation one anion, left after transferring one electron. Opposite charges attract.
+
+==Surface tension==
+Molecules on the surface can draw more densely together because of the absence of molecules above. Insects can walk on water. A paper clip can float until you press down on it puncturing the surface.
+
+==Capillary action==
+
+Concave meniscus.
+
+Convex meniscus.
+
+Adhesion.
+
+Cohesion.
+
+London dispersion Force.
+
+Branching. Structure of molecule with branching is sperical, therefore having less surface tension, therefore a lower boiling point.
+
+Dipole-dipole interaction.
+
+Lower intermolecular force => lower boiling point.
+
+Boiling point = the temp at which molecules have enough energy to break free of the intermolecular forces holding them together.
+
+Hydrocarbons contain only carbon and hydrogen.
+
+Pentane 5C
+Hexane 6C
+
+Pentane is non-polar. The only intermolecular force is the London dispersion force. Brief transient attractive force.
+
+== Mixtures and solutions ==
+
+Molarity
+
+Suspensions, colloids and solutions
+
+Boiling point elevation and freezing point depression
+
+
+
+==== Chemical equilibrium ====
+
+Many chemical reactions are reversible, and the forward and backward reactions can occur at the same time. When the rate of the forward reaction is equal to the rate of the backward reaction, we call that a dynamic equilibrium. We will learn how equilibrium can be described by the equilibrium constant K, and how different factors than can affect the chemical equilibrium.
+
+$A$, $B$, $C$, and $D$ are chemical formulae of species of molecule.
+
+$a$, $b$, $c$, and $d$ are coefficients as number of moles of each species.
+
+==A one-way reaction==
+
+$$aA + bB \rightarrow cC + dD$$
+
+How much energy is required to make the reaction?  It depends.
+
+//Draw a graph to show the amount of energy (heat) to produce the reaction.//
+
+==A two-way reaction==
+
+$$aA + bB \rightleftharpoons cC + dD$$
+
+In the case of the two-way reaction, there is an amount of energy at which the rate of forward reaction and the rate of backward reaction are equal.  This is the equilibrium point.
+
+== Equilibrium Constant ==
+
+$$K_{eq} = \frac{[C]^{c}[D]^{d}}{[A]^{a}[B]^{b}}$$
+
+$[A]$ is the concentration of chemical A in the solution.
+
+//To understand this section, we must first know how to calculate the concentration.//
+
+
+
+
+==== Acids and bases ====
+
+
+==== Buffers, titrations, and solubility equilibria ====
+
+==== Thermodynamics ====
+
+First law. Energy cannot be created or destroyed. it can only be converted from one form to another.
+
+Energy and work\\
+Heat and temperature\\
+
+Potential\\
+Kinetic\\
+Radiant\\
+Thermal\\
+
+U = internal energy = All the energy in a system
+
+
+==== Redox reactions and electrochemistry ====
+
+==== Kinetics ====
+
+==== Nuclear chemistry ====
+
+
+
+====Alkanes, cycloalkanes, and functional groups====

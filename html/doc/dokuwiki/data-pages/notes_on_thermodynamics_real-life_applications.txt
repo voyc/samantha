@@ -1,0 +1,65 @@
+====== Notes on Thermodynamics Real-life Applications ======
+
+efficiency steam combustion electric
+
+Re: Earth wind & fire, \\
+Until ..., fire was believed to be a fluid form of matter.
+
+==== Transfer of heat ====
+
+Examples:
+
+Ice cube in coffee cup - heat flows naturally from hot to cold.
+
+Air conditioner and Refrigerator - evaporator, compressor, condenser, refrigerant, fan. Heat flows in opposite of natural direction and this requires external energy in the form of electricity.
+
+Transfer of heat, three methods:
+  * Convection
+  * Conduction
+  * Radiation
+
+== Conduction ==
+molecule to molecule
+
+Conduction works well in solids particularly metals. Liquids and non-metallic solids very in their ability to conduct heat but gas is always a poor conductor of heat.
+
+The characteristics that make metal a good conductor of heat also make it a good conductor of electricity.
+
+== Convection== 
+moving hot molecules among cold molecules, in a fluid, gas or liquid. 
+
+Hot air is less dense than cold air.
+
+Hot air rising from the land on a sunny day - natural convection.
+
+Oven - forced convection.
+
+Fridge - forced convection in the opposite direction.
+
+Heart - natural convection. a pump circulates blood which moves excessive heat out to the skin where it moves to sweat which is evaporated.
+
+
+== Radiation ==
+While Convection and conduction involve thermal energy,
+
+Radiation involves electromagnetic energy.
+
+The electromagnetic spectrum includes:
+  * visible light, 
+  * infrared light, 
+  * ultraviolet light, 
+  * x-rays, 
+  * gamma rays, 
+  * radio waves, 
+  * microwaves for TV and radar.
+
+Any glowing object is an example of radiation: The sun, a fire, a light bulb. 
+
+We can see the radiation of visible light. \\
+We can feel as heat the radiation of infrared and ultraviolet light.
+
+
+==== Laws ====
+
+there is no definitive phrasing; instead, there are various versions, all of which say the same thing.
+

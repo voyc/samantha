@@ -1,0 +1,141 @@
+====== Notes on MIT 5.60 Thermodynamics and Kinetics ======
+
+==== Lecture 1. State of a system, 0th law, equation of state ====
+
+https://youtu.be/kLqduWF6GXE
+
+the flow of heat
+
+heat motion
+
+1800's industrial revolution, burning fossil fuels, factories, trains.  
+
+Svante Arrhenius was the first, in the late 1800's, to use basic principles of physical chemistry to calculate estimates of the extent to which increases in atmospheric carbon dioxide increase the Earth's surface temperature.
+
+developed before discovery of atoms and molecules
+
+0. defines temperature T.  common sense law.
+
+1. defines energy U.  Energy conservation. You can break even. Convert heat into work with perfect efficiency. No waste.
+
+2. defines entropy S.  The direction of time.  You can break even at 0 K.  Above 0 K there is always waste.
+
+3. numerical value assigned to entropy S.  You can't get to 0 K.
+
+Definitions
+
+System - the part of the universe we are studying
+
+Surroundings - everything else.  when you are finished defining your system, what is left over is the surroundings.
+
+Boundary - surface between the system and the surroundings, real or imaginary
+
+system can be open, closed, or isolated
+
+open - mass and energy flow through boundary.
+
+isolated - neither mass nor energy can flow through boundary.  
+
+closed - energy can flow through boundary, mass cannot.
+
+
+Examples of systems
+
+human - open
+
+water and ice in glass with a lid - closed
+
+coffee and milk in thermos - isolated
+
+a volume of air in a corner of the room - open
+
+Describe the system 
+
+macroscopic properties, you only need a few variables
+
+  * p = pressure
+  * T = temperature
+  * V = volume
+  * n = number of moles
+  * m = mass
+
+also, not considered in this lecture
+  * magnetic field
+  * magnetic susceptibiity
+  * electric field
+
+homogeneous, like coffee and milk
+
+heterogeneous, like water and ice
+
+equilibrium - the properties do not change in time or space
+
+in equilibrium or not.  If not in equilibrium, it is not possible to describe the system with thermodynamic properties.  Thermodynamics is concerned with systems in equilibrium.
+
+number of components
+
+glass of water - one component, H<sub>2</sub>O, though heterogeneous
+
+cup of latte - many components, though homogeneous
+
+20:40  
+
+Extensive versus intensive properties
+
+Extensive properties change along with the volume of the system. Intensive properties do not.
+
+Extensive: V, m, n
+
+Intensive: T, p, $\frac{V}{n}$ volume per mole
+
+P, T, V, n, m are state variables.
+To fully describe a system in equilibrium you need n and two other variables.
+
+Chemical notation
+
+3 moles of hydrogen gas with a pressure of one bar at a temperature of 100 K\\
+3H<sub>2</sub>(g,1 bar, 100$^{\circ}$C)
+
+5 moles of water + 5 moles of ethanol (100 proof vodka)\\
+5H<sub>2</sub>O (l, 1 bar, 25$^{\circ}$C) + 5CH<sub>3</sub>CH<sub>2</sub>OH (l, 1 bar, 25$^{\circ}$C)
+
+an equilibrium state\\
+3 moles of hydrogen gas, expansion (lower pressure, lower temperature\\
+NOT a reaction\\
+3H<sub>2</sub>(g,5bar,100$^{\circ}$C) = 3H<sub>2</sub>(g,1bar,50$^{\circ}$C)
+
+Path
+
+how to get from one state to the other\\
+lower the pressure, lower the temperature
+
+path can be 
+
+reversible or irreversible
+
+adiabatic - no transfer of heat or mass between system and surroundings, ie, an isolated system
+
+isobaric - constant pressure
+
+isothermal - constant temperature
+
+0th law, the common sense law, define temperature, 
+put two objects together, the hot object A, the cold object B,
+heat flows from the hot object to the cold object,
+leaving a new object AB whose temperature is between that of A and B
+
+[Why does the prof say the 0th law defines temperature?\\
+He describes defining a thermometer, defining a temperature scale between reference points.\\
+But he does not explain "define temperature".]
+
+in the 1800s, there were many temperature scales\\
+originally Farenheit used human body temperature as reference point\\
+common references points: freezing point and boiling point of water\\
+Farenheit and others did not want common folk to have to use negative numbers to describe the weather, so if 32 is the freezing point of water, it is unlikely the weather temperature would ever get below 0
+
+==== Lecture 2. Work, heat, first law ====
+
+yeah
+
+
+
