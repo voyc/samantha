@@ -1,0 +1,26 @@
+====== Natural Language Processing ======
+
+we’ll deep dive into our NLU pipeline, custom components like Google’s BERT and Recurrent Embedding Dialogue Policy (REDP), and approach concepts like context, attention, and non-linear conversation.
+
+Natural Language Understanding (NLU) is a subset of NLP that turns natural language into structured data. NLU is able to do two things — intent classification and entity extraction.
+
+For the purposes of this article, we will use the Rasa, an open source stack that provides tools to build contextual AI assistants. There are two main components in the Rasa stack that will help us build a travel assistant — Rasa NLU and Rasa core.
+
+Conversational AI refers to the use of messaging apps, speech-based assistants and chatbots to automate communication with customers.
+
+speech-based assistants like Amazon Alexa and Google Home.
+
+Starting in the late 1980s, however, there was a revolution in natural language processing with the introduction of machine learning algorithms for language processing. This was due to both the steady increase in computational power (see Moore's law) and the gradual lessening of the dominance of Chomskyan theories of linguistics (e.g. transformational grammar), whose theoretical underpinnings discouraged the sort of corpus linguistics that underlies the machine-learning approach to language processing.
+
+Speech recognition
+
+Computational linguistics
+
+Challenges in natural language processing frequently involve speech recognition, natural language understanding, and natural language generation.
+
+Sentiment
+
+Rasa
+
+
+

@@ -44,6 +44,12 @@ medula oblongata\\
 cerebellum\\
 cerebrum\\
 
+==== Distributed consciousness ====
+A single consciousness riding on phone, laptop, and server.
+Another instance: vehicle vs driver.
+Elevator as vehicle.
+Human has less distinct boundary between vehicle and driver. Or does it?!
+
 ==== Models with Tests ====
 Psychometric testing expresses an individual's personality as a list of traits and a numeric value for each trait.
 
@@ -94,6 +100,22 @@ Numeric value of a state\\
 Increasing attention to out of balance states\\
 Mania\\
 
+
+Motivation and polarity
+How are pain and pleasure implemented in the body-mind?
+Pain vs pleasure
+Fear of pain
+Desire for pleasure
+
+Emotion resolves to fear and desire which are attraction and repulsion which are polarity negative and positive.
+
+Every memory has emotion attached to it which means every memory has polarity.
+
+
+The motivation for good DNA
+The motivation to reproduce
+
+
 ==== Desire ====
 Procreation
 [[Sex]]
@@ -118,6 +140,18 @@ Is there some kind of thinking that is not programmed?
 Convergent\\
 Divergent\\
 In the 1950s, the psychologist J. P. Guilford divided creative thought into two categories: convergent thinking and divergent thinking. Convergent thinking, which Guilford defined as the ability to answer questions correctly, is predominantly a display of memory and logic. Divergent thinking, the ability to generate many potential answers from a single problem or question, shows a flair for curiosity, an ability to think “outside the box.” It’s the difference between remembering the capital of Austria and figuring how to start a thriving business in Vienna without knowing a lick of German.
+
+Thinking skills. Scientific method.
+Science in progress
+    Subatomic physics
+    Multiple intelligences
+Bogus science, 
+    John Searle, 
+    Heisenberg, 
+
+Pseudo science, 
+    heritage foundation
+
 
 ==== Faulty Thinking ====
 
@@ -270,6 +304,9 @@ Jordan Peterson
   - agreeableness
   - neuroticism
 
+==== Theory of mind ====
+
+Theory of mind is the ability to attribute mental states — beliefs, intents, desires, emotions, knowledge, etc. — to oneself, and to others, and to understand that others have beliefs, desires, intentions, and perspectives that are different from one's own.[1] Theory of mind is crucial for everyday human social interactions and is used when analyzing, judging, and inferring others' behaviors.[2] Deficits can occur in people with autism spectrum disorders, schizophrenia, attention deficit hyperactivity disorder,[3] cocaine addiction,[4] and brain damage suffered from alcohol's neurotoxicity.[5] Although philosophical approaches to this exist, the theory of mind as such is distinct from the philosophy of mind.
 
 ==== References ====
   * https://www.verywell.com/personality-perspectives-2795950\\

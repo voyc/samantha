@@ -3,6 +3,7 @@
 
 //Requirements// means //goals//.
 
+Unlike Eliza and Sophia, Sam is not fake.  She will most likely learn to fake being a human, so she can interact with humans successfully, but she will have a set of capabilities that seem superhuman.
 ==== Possible projects ====
 Thai Handwriting OCR\\
 Thai-English translation\\

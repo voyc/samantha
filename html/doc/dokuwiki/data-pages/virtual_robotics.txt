@@ -34,3 +34,7 @@
   * Controller
   * Y-up - cartesian coordinate system with Y-axis on the vertical dimension
   * Z-up - cartesian coordinate system with Z-axis on the vertical dimension
+
+
+Gibson Environment at Stanford
+http://gibsonenv.stanford.edu/

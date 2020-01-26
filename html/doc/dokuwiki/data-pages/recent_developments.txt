@@ -9,6 +9,29 @@ Many of these items reference articles on Cornell's arVix: https://arxiv.org/
 
 == 2019 ==
 
+MuZero from DeepMind, combines all previous programs for Atari, Go, Chess, Space Invaders.  And it learns the games rules itself via reinforcement learning.  AlphaZero, the previously lauded Go champion, was fed the game rules to start.  MuZero gets equally good results, but was never fed the game rules; it learned the rules itself.
+https://arxiv.org/abs/1911.08265
+
+JetBlue replaces passport and boarding pass with facial recognition to board an international aircraft.
+https://twitter.com/mackenzief/status/1118509708673998848
+
+
+Real-time object detection
+YOLO You Only Look Once
+running at 30 FPS
+test dataset: CAM2, the Continuous Analysis of Many CAMeras project, which is built and maintained by Purdue University researchers.
+
+Watch "Engineers Created A New Bionic Arm That Can Grow With You" on YouTube
+https://youtu.be/luHmXHEpF7w
+
+[1812.02071] Vision-Based High Speed Driving with a Deep Dynamic Observer
+https://arxiv.org/abs/1812.02071
+
+[1811.10201] InstaNAS: Instance-aware Neural Architecture Search
+https://arxiv.org/abs/1811.10201
+More recently, we've seen a further push to make such so-called 'neural architecture search' (NAS) systems efficient, and approaches like ENAS (Import AI #82)  and SMASH (Import AI #56) have shown how to take systems that previously required hundreds of GPUs and fit them onto one or two GPUs.
+
+
 2019 Jul 11: Google. Massively Multilingual Neural Machine Translation in the Wild: Findings and Challenges
 https://arxiv.org/abs/1907.05019
 

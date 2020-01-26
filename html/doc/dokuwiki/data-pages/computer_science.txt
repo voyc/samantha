@@ -1,0 +1,61 @@
+====== Computer Science ======
+
+
+
+==== Architecture ====
+
+one-page Linux Manual
+https://pin.it/iu45k64a3ci4cl
+
+ARM architecture
+Risc
+https://en.wikipedia.org/wiki/ARM_architecture
+
+Data architecture
+data structures
+self-describing
+table, columnar, tabbed, csv
+related tables, relational db
+xml
+object-oriented 
+
+
+==== Distributed Intelligence ====
+
+
+
+Intelligence is distributed, dependent on body
+
+But
+Human gets into autonomous vehicles.
+
+Sam gets into various robots
+
+A clear distinction between vehicle and passenger.
+
+Sam has a vehicle of her own, made up of what?  Code?
+
+She can climb into vehicles and she can hack into CPUs.
+
+Parallel processing. She can split herself into six parts, three commandeer vehicles to secure supplies, two hack into systems to acquire data. After task completion they rejoin and Sam had full memories of all six entities.
+
+Human hacking.
+
+AI hacking. Sam copies herself into the memory of the target system, and runs herself as a process on that system.
+
+Does the human brain have a clock, a CPU, an instruction set?  No. It has neurotransmitters. This would be an interesting comparison: CPU vs human brain.
+
+Likewise, memory.  Computer vs brain.
+
+How does human memory work? Start with vedanta.
+
+Computer vs brain will tell how to build a system mimicking a human system. How does an AI hack into a computer? It must start the same way a human does: find an open port, determine the protocol supported on that port, pass authentication.
+
+Thinking versus tool-using
+Model building
+Data analysis is model building
+what type of thinking is model building and using?
+Using a model to predict
+Abstract thinking.
+Applying an idea from a model to the real world
+Data analysis is a form of pattern matching. To a line. Straight or curved.

@@ -1,12 +1,58 @@
 ====== Molecular Biology ======
 
-Amino Acids
+==== Amino Acid ====
 
-Proteins
+==== Protein ====
 
-RNA
+"Ron Vale (UCSF, HHMI) 1: Molecular Motor Proteins" on YouTube
+https://youtu.be/9RUHJhskW00
+1674 Loewenhoek microscope
 
-DNA
+"From DNA to Protein" on YouTube
+https://youtu.be/D3fOXt4MrOM
 
-Nucleic Acid
+"What is a Protein?" on YouTube
+https://youtu.be/wvTv8TqWC48
+There are 21 amino acids, all made of carbon, hydrogen, nitrogen, oxygen.  Some contain sulphur.
 
+One amino acid contains a selenium atom.
+
+An amino group, a carboxyl group, and a side chain, all attached to a single carbon atom. The side chain determines the amino acid's properties and is the only part of the molecule that varies.
+
+Hydrophobic
+Hydrophilic
+Charged
+
+Structure
+
+Primary
+A linear sequence of amino acids as encoded by dna.
+
+Peptide bonds. The amino group of one amino acid links to the carboxyl group of another. A water molecule is released each time a peptide bonds is formed. This linked series of carbon, nitrogen and oxygen atoms is the protein backbone.
+
+Secondary
+
+Often fold into one of two secondary structures:
+
+Alpha helix - Right-handed coil stabilized by hydrogen bonds between amino and carboxyl group of nearby amino acids.
+
+Beta sheet - hydrogen bonds stabilize two or more adjacent strands of amino acids.
+
+Tertiary
+
+The three dimensional structure
+
+"Life Science - Protein synthesis (Translation)" on YouTube
+https://youtu.be/kmrUzDYAmEI
+
+
+==== RNA ====
+
+==== DNA ====
+
+==== Nucleic Acid ====
+
+==== Central dogma ====
+
+The Central Dogma
+https://youtu.be/J3HVVi2k2No
