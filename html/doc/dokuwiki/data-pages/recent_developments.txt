@@ -7,6 +7,15 @@ Many of these items reference articles on Cornell's arVix: https://arxiv.org/
 
 ==== News Items ====
 
+== 2020 ==
+
+A consortium of Chinese universities along with seventeen companies - including Alibaba, Tencent, Baidu, and ByteDance - have developed AIBench, an AI benchmarking suite meant to compete with MLPerf, an AI benchmarking suite predominantly developed by American universities and companies. 
+http://www.benchcouncil.org/AIBench/index.html
+
+Google researchers have trained a chatbot with uncannily good conversational skills. The bot, named Meena, is a 2.6 billion parameter language model trained on 341GB of text data, filtered from public domain social media conversations. Meena uses a seq2seq model (the same sort of technology that powers Google's "Smart Compose" feature in gmail), paired with an Evolved Transformer encoder and decoder - it's interesting to see something like this depend so much on a component developed via neural architecture search.
+https://arxiv.org/abs/2001.09977
+
+
 == 2019 ==
 
 MuZero from DeepMind, combines all previous programs for Atari, Go, Chess, Space Invaders.  And it learns the games rules itself via reinforcement learning.  AlphaZero, the previously lauded Go champion, was fed the game rules to start.  MuZero gets equally good results, but was never fed the game rules; it learned the rules itself.

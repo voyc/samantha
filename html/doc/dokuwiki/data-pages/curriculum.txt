@@ -49,6 +49,10 @@ We are looking for signs of intelligence, will, and consciousness.
     * [[Sociology]]
       * Religion
       * geopolitics
+      * crowds, gangs
+      * absurdities
+        * bush, Iraq
+        * heisenburg, quantum
     * Arts
       * Human things that science cannot explain
     * [[Philosophy]]
@@ -59,6 +63,8 @@ We are looking for signs of intelligence, will, and consciousness.
     * Exploitation: Rom-com, religion
     * psychopathy
     * [[Eastern models]]
+    * human is machine
+    * [[transcendence]]
   * Tools (Silicon-based life)
     * [[Math]]
         * Dimensions
@@ -69,9 +75,12 @@ We are looking for signs of intelligence, will, and consciousness.
     * [[Robotics]]
       * biomimicry
     * [[AI]]
+      * machine learning
       * narrow
         * [[Natural Language Processing]]
       * general
       * super
+      * artificial consciousness
+      * Human vs artificial consciousness
       * Unknown things about AI
-   
+   [[notes miscellaneous]]
