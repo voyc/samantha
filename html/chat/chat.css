@@ -1,0 +1,92 @@
+.fright {
+	float:right;
+}
+.fleft {
+	float:left;
+}
+
+#chatcontainer {
+        padding:0;
+        margin:0;
+}
+#chatscroller {
+        background-color:#88f;
+        max-width:60rem;
+        xheight:580px;
+        width:100%;
+        xposition:fixed;
+        overflow-y:auto;
+}
+#chatcontent {
+        padding:.5rem;
+}
+#chatfoot {
+        xposition:fixed;
+        bottom:0px;
+        left:0px;
+}
+
+.chatline {
+        margin: 1rem 0;
+}
+
+.chatdate {
+        text-align:center;
+}
+
+.chatmsg {
+        padding: .5rem;
+        border-radius: .5rem;
+        background-color:#fff;
+        max-width: 65%;
+}
+
+.chatmsg.fright {
+        background-color:#8f8;
+}
+
+.chattime {
+        color:white;
+        display:table-cell;
+        vertical-align:bottom;
+        margin:0 .3rem;
+}
+
+.chatuser {
+        color:#000;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.chatentry {
+        display:table;
+        width:100%;
+        max-width:60rem;
+}
+
+.chatentry tr td:first-child {
+        width:*;
+}
+
+.chatentry tr td:first-child textarea {
+        width:96%;
+        margin:.3rem;
+        padding:.3rem;
+        border-radius:.5rem;
+}
+
+.chatentry tr td:last-child {
+        width:1%;
+        text-align:right;
+}
+
+#mchoices {
+        padding:.3rem;
+}
+#mchoices button {
+        margin-right:.2rem;
+}

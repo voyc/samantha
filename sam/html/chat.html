@@ -1,14 +1,12 @@
 <!doctype html>
-<!-- index.html -->
+<!-- chat.html -->
+<!-- /home/john/webapps/robots/robots/sam/html/chat.html -->	
 <html>
 	<head>
 		<meta http-equiv=Content-Type content='text/html; charset=UTF-8'>
 		<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
-		<title>Samantha</title>
+		<title>Chat</title>
 		<style>[hidden] {display:none ! important;}</style>
-		<link  href='minimal/normaleyes.css' rel='stylesheet' type='text/css'></link>
-		<link  href='minimal/minimal.css' rel='stylesheet' type='text/css'></link>
-		<link  href='chat/chat.css' rel='stylesheet' type='text/css'></link>
 		<script>
 			voyc = {};
 			window.addEventListener('load', function() {
@@ -21,13 +19,16 @@
 					name = prompt('What is your name?', 'John');
 					voyc.chat.login(name);
 				},200);
+
 			});
 			window.addEventListener('resize', function() {
 				document.getElementById('chatcontainer').style.height = window.innerHeight + 'px';
 				voyc.chat.resize(window.innerHeight);
 			});
+
 		</script>
-		<script src='chat/chat.js'></script>
+		<link  href='css/chat.css' rel='stylesheet' type='text/css'></link>
+		<script src='jslib/chat.js'></script>
 	</head>
 	<body>
 		<div id='chatcontainer'></div>
