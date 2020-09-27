@@ -5,8 +5,9 @@ import asyncio     # websockets is built on asyncio
 import websockets
 import datetime
 
-ip = '127.0.0.1'
-port = 5678
+port = 8080
+ip = '68.66.224.22'
+#ip = '127.0.0.1'
 hostname = 'Sam'
 timeout = datetime.timedelta(seconds=120)
 

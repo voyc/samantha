@@ -9,6 +9,10 @@ voyc.Chat = function() {
 	this.eEntry = {};
 	this.ws = false;
 	this.username = '';
+
+	this.port = 8080
+	this.ip = '68.66.224.22'
+	//this.ip = '127.0.0.1'
 }
 
 voyc.Chat.containertemplate = `
@@ -53,7 +57,10 @@ voyc.Chat.prototype.setup = function(container) {
 
 	voyc.idhost = 0;
 
-	this.ws = new WebSocket("ws://127.0.0.1:5678/");
+	//this.ws = new WebSocket("ws://68.66.224.22:5678/");
+	var addr = 'ws://'+this.ip+':'+this.port+'/';
+	console.log('open connection to '+addr);
+	this.ws = new WebSocket(addr);
 	this.ws.onmessage = function (event) {
 		var a = event.data.split('~')
 		user = a[0];

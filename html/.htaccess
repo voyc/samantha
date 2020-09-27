@@ -1,0 +1,10 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/voyccom/webprod/samantha/samantha"
+PassengerBaseURI "/"
+PassengerPython "/home/voyccom/virtualenv/webprod/samantha/samantha/3.7/bin/python3.7"
+PassengerAppLogFile "/home/voyccom/logs/user/samantha.py.log"
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION BEGIN
+<IfModule Litespeed>
+</IfModule>
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END

@@ -1,0 +1,435 @@
+/* Layout is defined here.   */
+/* See theme/*.css for typography (font, color, border).  */
+
+.hidden { display:none ! important; }
+
+.tright { text-align:right; }
+.tleft { text-align:left; }
+.tcenter { text-align:center; }
+.fleft { float:left; }
+.fright { float:right; }
+.fclear { clear:both; }
+
+.wid10  { width:10rem;}
+.wid20  { width:20rem;}
+.wid30  { width:30rem;}
+.wid40  { width:40rem;}
+.wid50  { width:50rem;}
+.tight  { width:1%; }
+.wid20p { width:20%; }
+.wid40p { width:40%; }
+.wid60p { width:60%; }
+.wid100p{ width:100%; }
+
+.mwid10 {max-width:10rem;}
+.mwid20 {max-width:20rem;}
+.mwid30 {max-width:30rem;}
+.mwid40 {max-width:40rem;}
+.mwid50 {max-width:50rem;}
+.mtight { max-width:1%; }
+.mwid20p { max-width:20%; }
+.mwid40p { max-width:40%; }
+.mwid60p { max-width:60%; }
+.mwid100p { max-width:100%; }
+
+/* default heading sizes */
+h1 { font-size:1.4rem; font-weight:bold;}
+h2 { font-size:2.2rem; font-weight:normal;}
+h3 { font-size:1.0rem; font-weight:bold;}
+h4 { font-size:1.0rem; font-weight:normal; }  /* same as p */
+h5 { font-size:1.0rem; font-weight:normal; font-style:italic; }
+
+/* horizontal spacing */
+p,h1,h2,h3,h4,h5,.horz {
+	padding-left:1rem;
+	padding-right:1rem;
+}
+ul,ol {
+	/* li bullets appear in the padding of the containing ul,ol */
+	margin-left:1rem;
+	margin-right:1rem;
+	padding-left:2rem;
+	padding-right:1rem;
+}
+table.horz {
+	margin-left:1rem;
+	margin-right:1rem;
+}
+table.space {
+	border-collapse:separate;
+	border-spacing:.3rem;
+}
+.indent {
+	margin-left:3rem;
+}
+
+/* vertical spacing */
+p,ul,ol,h1,h2,h3,h4,h5,.vert {
+	margin-top:1rem;
+	margin-bottom:1rem;
+}
+
+/* class narrative */
+.narrative>p, 
+.narrative>ul,
+.narrative>ol {
+	font-family:serif;
+}
+.narrative {
+	max-width:18cm;
+	margin:auto;
+	border-right:1px solid rgb(  0,  0,  0);
+	border-left:1px solid rgb(  0,  0,  0);
+}
+@media screen and (max-width: 18cm) {
+	.narrative {
+		border:0 !important; 
+	}
+}
+@media print {
+	.narrative {
+		border:0 !important; 
+	}
+}
+
+/* class panel */
+.panel { 
+	display:inline-block;
+	vertical-align:top;
+	margin:1rem;
+	border:1px solid rgba(  0,  0,  0,.5);
+	box-shadow:0 1px 2px rgba(  0,  0,  0,.05);
+	background-color:rgb(255,255,255);
+}
+.panel h3 {
+	border-bottom:1px solid rgba(  0,  0,  0,.5);
+	border-top-left-radius:inherit;
+	border-top-right-radius:inherit;
+	padding-top:.3em;
+	padding-bottom:.3em;
+	margin-top:0;
+	font-weight:normal;
+	color:rgb(  0,  0,  0);
+	background-color:rgb(192,192,192);
+	background-image:linear-gradient(to bottom,rgba(255,255,255,.3) 0,rgba(255,255,255,0) 100%);
+}
+
+/* class box */
+.box { 
+	display:inline-block;
+	vertical-align:top;
+	margin:1rem;
+	border:1px solid rgba(  0,  0,  0,.5);
+	box-shadow:0 1px 2px rgba(0,0,0,.05);
+	text-align:center;
+}
+.box h3 {
+	border-bottom:1px solid rgba(  0,  0,  0,.5);
+	border-top-left-radius:inherit;
+	border-top-right-radius:inherit;
+	padding-top:.3em;
+	padding-bottom:.3em;
+	margin-top:0;
+	color:rgb(  0,  0,  0);
+	background-color:rgb(255,255,255);
+}
+
+/* class list */
+.list ul {
+	list-style-type:none;
+	margin-left:0;
+	margin-right:0;
+	padding-left:1rem;
+	padding-right:1rem;
+	line-height:1.3rem;  /* just a little more vertical space */
+}
+.list li {
+	display:block;  /* cancels display:list-item */
+}
+.list table {
+	width:100%;
+}
+.list td {
+	padding:0 1rem;;
+}
+
+/* drag and drop */
+.highlight {   /* set by the Dragger object */
+	border:2px solid red;
+}
+.dragging {   /* set by the Dragger object */
+	position:absolute;
+	border:2px solid dodgerblue;
+	background-color:white;
+}
+[drag] {
+	cursor:pointer;
+}
+li[drag]:before {
+	/* insert drag handle (bullet has been removed by ".list ul" above) */
+	content:'\2225\a0';
+	color:rgb(192,192,192);
+}
+
+/* selectable */
+.list[select] h3,
+.list[select] tr {
+	cursor:pointer;
+}
+.selected {
+	background:linear-gradient(to bottom, rgba(255,215,0,.9), rgba(255,215,  0,.7));
+}
+
+/* class popup */
+.popup { 
+	display:inline-block;
+	border:1px solid gray;
+	box-shadow:4px 4px 2px 0px rgba(0,0,0,.5);
+}
+.popup h3 {
+	border-bottom:1px solid gray;
+	padding-top:.5em;
+	padding-bottom:.5em;
+	margin-top:0;
+}
+
+/* popup positioning */
+.leftnav {
+	background-color:white;
+	position:fixed;
+	top:2rem;
+	margin:0;
+	left:-300px;
+	transition:left .1s;
+}
+.leftnav.open {
+	left:0px;
+}
+.dropdown {
+	position:fixed;
+	top:2rem;
+	right:0;
+	margin:0;
+	overflow:hidden;
+	background-color:white;
+	max-height:0rem;
+	visibility:hidden;
+	transition:max-height 400ms, visibility 0ms 200ms;
+}
+.dropdown.open {
+	max-height:40rem;
+	visibility:visible;
+	transition:max-height 200ms;
+}
+.dropdown.fromheader, .leftnav.fromheader {
+	top:2rem;
+}
+
+/* popup close button */
+.closex {
+	position:absolute;
+	right:0px;
+	font-size:2rem;
+	margin-right:.3rem;
+	cursor:pointer;
+}
+
+/* modal dialog */
+#dialog-msg {
+	color:red;
+}
+.full {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+.smoke {
+	background-color:rgba(  0,  0,  0, .3);
+}
+.centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+#wait {
+	background-color:rgba(  255,  0,  0, .1);
+	width:100%;
+	height:100%;
+}
+#wait icon {
+	color:red;
+	width:3rem;
+	height:3rem;
+	position: absolute;
+	top: calc(50% - 1.5rem);
+	left: calc(50% - 1.5rem);
+}
+.modal {
+	border:1px solid  black;
+	background-color:white;
+	border:1px solid gray;
+	box-shadow:4px 4px 2px 0px rgba(0,0,0,.5);
+}
+.modal h3 {
+	border-bottom:1px solid gray;
+	padding-top:.5em;
+	padding-bottom:.5em;
+	margin-top:0;
+	border-top-left-radius:inherit;
+	border-top-right-radius:inherit;
+}
+
+/* expander */
+.expander {
+	cursor:pointer;
+	margin-top:.2rem;
+	margin-bottom:.2rem;
+}
+.expander:before {
+	content:'\25bc\0a';
+	font-style:normal;
+	
+}
+.expander.collapsed:before {
+	content:'\25ba\0a';
+}
+.expandable { 
+	max-height:100rem;
+	overflow:hidden;
+	transition:max-height 200ms;	
+}
+.expandable.collapsed { 
+	max-height:0cm;
+}
+
+/* toggle button */
+button.down {
+	border:2px inset buttonface;
+}
+
+/* anchor button */
+button.anchor,
+input.anchor[type="button"] {
+	/* remove button styles */
+	background: none;
+	border: none;
+	display: inline;
+	font: inherit;
+	margin: 0;
+	padding: 0;
+	outline: none;
+	outline-offset: 0;
+	/* add anchor styles */
+	color: blue;
+	cursor: pointer;
+	text-decoration: underline;
+	/* add layout styles */
+	margin:4px 2px;
+}
+
+button.anchor[disabled],
+input.anchor[type="button"][disabled] {
+	color:gray;
+	text-decoration: none;
+}
+
+/* figure/figcaption */
+figure {
+	max-width:30rem;
+	border:1px solid lightgray;
+	margin:1rem auto;
+}
+figcaption {
+	text-align:center;
+}
+
+/* header/footer */
+header {
+    height: 2rem;
+	font-size:1.5rem;
+    border-bottom: 1px solid black;
+    background-color: rgb(192,192,192);
+	display:table;
+	padding:0 .3em;
+	width:calc(100% - .6em);  /* subtract the padding */
+}
+@media screen {
+	header.fixed {
+		position:fixed;
+		top:0px;
+		z-index:1;
+	}
+	header.fixed + * {  /* adjacent sibling selector */
+		padding-top:2rem;  /* same height as the header */
+	}
+	a.navlabel {
+		padding-top:2rem;  /* same height as the header */
+		z-index:-1;
+		position:relative;
+	}
+}
+header .group {
+	margin:.4rem;
+	display:table-cell;
+	vertical-align:middle;
+	white-space:nowrap;
+}
+header .bit {
+	display:inline-block;
+	font-size:initial;
+	margin:0 .1em 0 .1em;
+	vertical-align:middle;
+}
+header .hdr {
+	font-size:inherit;
+}
+footer {
+	height:2rem;
+	border-top:1px solid black;
+	background-color:rgb(192,192,192);
+	margin-top: 1rem;
+}
+footer .group {
+	display:table-cell;
+	width:100%;
+}
+footer .ftr {
+	vertical-align:middle;
+	display:inline-block;
+	margin:.3rem;
+}
+footer .voyc {
+	width:4rem;
+}
+footer .git {
+	width:3rem;
+}
+
+/* buttons */
+.btn {
+	color: rgb(  0,  0,  0);
+	background-color: rgb(255,255,255);
+	font-size:.8rem;
+	padding:.2rem .4rem;
+	cursor: pointer;
+	display: inline-block;
+	margin:0;
+	text-align: center;
+	touch-action: manipulation;
+	white-space: nowrap;
+	xbackground-image: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,.8));
+	background-image: linear-gradient(to bottom, rgba(  0,  0,  0,0), rgba(  0,  0,  0,.2));
+	/*
+	border: 2px outset buttonface;
+	-webkit-appearance:button;
+
+	border: 1px solid transparent);
+	box-shadow: rgba(255, 255, 255, 0.14902) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px;
+	border-radius:.1rem;
+	text-shadow: rgba(0, 0, 0, 0.2) 0px -1px 0px;
+	*/
+}
+.ptr { cursor:pointer; }
