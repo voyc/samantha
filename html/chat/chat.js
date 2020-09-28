@@ -36,6 +36,12 @@ voyc.Chat.linetemplate = `
 	</div>
 `;
 
+voyc.Chat.loginblock = `
+	<p>Click here for <a href=wiki/doku.php>Wiki</a></p>
+	<p>Connecting to chat server...<span id=spanconnect class=hidden> Connected</span><span id=spanconnectfail class=hidden> Failed</span></p>
+	<p id=loginline class=hidden>Username: <input id=loginusername/><button id=loginbtn>Login</button><p>
+`;
+
 voyc.Chat.prototype.setup = function(container) {
 	this.chatcontainer = container;
 	this.chatcontainer.innerHTML = voyc.Chat.containertemplate;
@@ -55,10 +61,11 @@ voyc.Chat.prototype.setup = function(container) {
 		}
 	}, false);
 
-	this.displayhard('<button id=loginbtn>Login</button> <a href=wiki>Wiki</a>')
+	this.displayhard(voyc.Chat.loginblock);
+
 	document.getElementById('loginbtn').addEventListener('click', function(e) {
 		voyc.chat.login();
-		e.currentTarget.parentElement.classList.add('hidden');
+		voyc.chat.loginblock.classList.add('hidden');
 	}, false);
 
 	//this.ws = new WebSocket("ws://68.66.224.22:5678/");
@@ -73,12 +80,15 @@ voyc.Chat.prototype.setup = function(container) {
 	};
 	this.ws.onopen = function (event) {
 		console.log('opened');
+		document.getElementById('spanconnect').classList.remove('hidden');
+		document.getElementById('loginline').classList.remove('hidden');
 	};
 	this.ws.onclose = function (event) {
 		console.log('close');
 	};
 	this.ws.onerror = function (event) {
 		console.log('error');
+		document.getElementById('spanconnectfail').classList.remove('hidden');
 	};
 }
 
@@ -88,7 +98,7 @@ voyc.Chat.prototype.resize = function(height) {
 
 voyc.Chat.prototype.login = function() {
 	name = prompt('What is your name?', 'John');
-	this.username = name;	
+	this.username = document.getElementById('loginusername').value;	
 	this.ws.send('login~'+this.username+'~')
 }
 
