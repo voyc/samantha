@@ -17,12 +17,18 @@ voyc.Chat = function() {
 
 voyc.Chat.containertemplate = `
 	<div id='chatscroller'>
-		<div id='chatcontent'></div>
+		<div id='chatcontent'>
+			<div id=loginform>
+				<p>Click here for <a href=wiki/doku.php>Wiki</a></p>
+				<p>Connecting to chat server...<span id=spanconnect class=hidden> Connected</span><span id=spanconnectfail class=hidden> Failed</span></p>
+				<p id=loginline class=hidden>Username: <input id=loginusername></input> <button id=loginbtn>Login</button><p>
+			</div>
+		</div>
 	</div>
 	<div id='chatfoot'>
 		<table id='chatentry' class='chatentry'>
 			<td><textarea id='mmsg'></textarea></td>
-			<td><div id='mchoices'>yes no</div></td>
+			<td><div id='mchoices'></div></td>
 			<td><button id='mbtn'>></button></td>
 		</table>
 	</div>
@@ -34,12 +40,6 @@ voyc.Chat.linetemplate = `
 		<div class='chatmsg f%side%'>%message%</div>
 		<div class='chattime f%side%'>%time%</div>
 	</div>
-`;
-
-voyc.Chat.loginblock = `
-	<p>Click here for <a href=wiki/doku.php>Wiki</a></p>
-	<p>Connecting to chat server...<span id=spanconnect class=hidden> Connected</span><span id=spanconnectfail class=hidden> Failed</span></p>
-	<p id=loginline class=hidden>Username: <input id=loginusername/><button id=loginbtn>Login</button><p>
 `;
 
 voyc.Chat.prototype.setup = function(container) {
@@ -61,11 +61,14 @@ voyc.Chat.prototype.setup = function(container) {
 		}
 	}, false);
 
-	this.displayhard(voyc.Chat.loginblock);
-
 	document.getElementById('loginbtn').addEventListener('click', function(e) {
 		voyc.chat.login();
-		voyc.chat.loginblock.classList.add('hidden');
+	}, false);
+	document.getElementById('loginusername').addEventListener('keydown', function(e) {
+		if (e.keyCode == 13) {
+			document.getElementById('loginbtn').click();
+			e.preventDefault();
+		}
 	}, false);
 
 	//this.ws = new WebSocket("ws://68.66.224.22:5678/");
@@ -82,6 +85,7 @@ voyc.Chat.prototype.setup = function(container) {
 		console.log('opened');
 		document.getElementById('spanconnect').classList.remove('hidden');
 		document.getElementById('loginline').classList.remove('hidden');
+		document.getElementById('loginusername').focus();
 	};
 	this.ws.onclose = function (event) {
 		console.log('close');
@@ -97,13 +101,12 @@ voyc.Chat.prototype.resize = function(height) {
 }
 
 voyc.Chat.prototype.login = function() {
-	name = prompt('What is your name?', 'John');
 	this.username = document.getElementById('loginusername').value;	
 	this.ws.send('login~'+this.username+'~')
+	document.getElementById('loginform').classList.add('hidden');
 }
 
 voyc.Chat.prototype.post = function(message, mchoice) {
-	//this.display(this.username, message, mchoice);
 	msg = 'message~' + this.username + '~' + message
 	this.ws.send(msg)
 }
@@ -112,9 +115,7 @@ voyc.Chat.prototype.displayhard = function(s) {
 	var m = document.createElement('div');
 	m.innerHTML = s;
 	this.chatcontent.appendChild(m);
-
 	this.chatscroller.scrollTop = this.chatscroller.scrollHeight;
-	document.getElementById('mmsg').focus();
 }
 
 voyc.Chat.prototype.display = function(username, message, mchoice) {
