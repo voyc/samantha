@@ -16,11 +16,6 @@
 				voyc.chat.setup(document.getElementById('chatcontainer'));
 				document.getElementById('chatcontainer').style.height = window.innerHeight + 'px';
 				voyc.chat.resize(window.innerHeight);
-
-				setTimeout( function login() {
-					name = prompt('What is your name?', 'John');
-					voyc.chat.login(name);
-				},2000);
 			});
 			window.addEventListener('resize', function() {
 				document.getElementById('chatcontainer').style.height = window.innerHeight + 'px';

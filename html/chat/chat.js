@@ -55,7 +55,11 @@ voyc.Chat.prototype.setup = function(container) {
 		}
 	}, false);
 
-	voyc.idhost = 0;
+	this.displayhard('<button id=loginbtn>Login</button> <a href=wiki>Wiki</a>')
+	document.getElementById('loginbtn').addEventListener('click', function(e) {
+		voyc.chat.login();
+		e.currentTarget.parentElement.classList.add('hidden');
+	}, false);
 
 	//this.ws = new WebSocket("ws://68.66.224.22:5678/");
 	var addr = 'ws://'+this.ip+':'+this.port+'/';
@@ -82,15 +86,25 @@ voyc.Chat.prototype.resize = function(height) {
 	this.chatscroller.style.height = height - document.getElementById('chatfoot').offsetHeight + 'px';
 }
 
-voyc.Chat.prototype.login = function(username) {
-	this.username = username;	
-	this.ws.send('login~'+username+'~')
+voyc.Chat.prototype.login = function() {
+	name = prompt('What is your name?', 'John');
+	this.username = name;	
+	this.ws.send('login~'+this.username+'~')
 }
 
 voyc.Chat.prototype.post = function(message, mchoice) {
 	//this.display(this.username, message, mchoice);
 	msg = 'message~' + this.username + '~' + message
 	this.ws.send(msg)
+}
+
+voyc.Chat.prototype.displayhard = function(s) {
+	var m = document.createElement('div');
+	m.innerHTML = s;
+	this.chatcontent.appendChild(m);
+
+	this.chatscroller.scrollTop = this.chatscroller.scrollHeight;
+	document.getElementById('mmsg').focus();
 }
 
 voyc.Chat.prototype.display = function(username, message, mchoice) {

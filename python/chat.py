@@ -38,7 +38,7 @@ async def serveloop(websocket, path):
 			clients[usr] = websocket
 			reply = f'{hostname}~Welcome, {usr}'	
 			await broadcast(reply)
-			await clients[usr].send(f'{hostname}~Click here for <a href="wiki">wiki</a>.')
+			#await clients[usr].send(f'{hostname}~Click here for <a href="wiki">wiki</a>.')
 		elif cmd == 'logout':
 			del clients[usr]
 			reply = f'{hostname}~Goodbye, {usr}'
