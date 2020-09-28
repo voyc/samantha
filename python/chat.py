@@ -61,6 +61,6 @@ server = websockets.serve(serveloop, ip, port) # create server, wrapping corouti
 event_loop = asyncio.get_event_loop()  # get the scheduler
 event_loop.run_until_complete(server)  # make connection, wrapping server object
 asyncio.ensure_future(wakeup())
-print('serving websockets...')
+print(f'serving websockets on {ip}:{port}...')
 event_loop.run_forever()
 
