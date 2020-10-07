@@ -71,6 +71,7 @@ We are looking for signs of intelligence, will, and consciousness.
         * [[Geometry]]
     * [[Computer Science]]
       * [[Software]]
+        * [[Linux]]
       * hacking
     * [[Robotics]]
       * biomimicry

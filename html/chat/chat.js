@@ -10,7 +10,7 @@ voyc.Chat = function() {
 	this.ws = false;
 	this.username = '';
 
-	this.port = 8080
+	this.port = 50000;  // 49152 to 65535 work on A2 Hosting
 	this.ip = '68.66.224.22'
 	//this.ip = '127.0.0.1'
 }

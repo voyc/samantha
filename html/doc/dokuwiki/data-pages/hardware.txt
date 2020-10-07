@@ -1,0 +1,104 @@
+
+======Hardware======
+====Architecture====
+====Components====
+==Motherboard==
+==CPU==
+==GPU==
+==chipset==
+==Northbridge==
+==Southbridge==
+==Bus==
+==PCI==
+==ICE==
+==keyboard==
+==mouse==
+==display==
+==disk==
+==USB==
+==device==
+==plug==
+==port==
+==APIC==
+==BIOS==
+==CMOS==
+==RAM==
+==Cache==
+L1, L2, L3
+==Clock==
+====Not on the Motherboard====
+==Cooling System (fans)==
+==Power Supply==
+==Ports==
+
+====Variations====
+System on a Chip (SOC)
+System on a Module (SOM)
+Single-Board Computer
+
+Combine CPU, GPU, Northbridge, Southbridge, APIC into a single chip.
+
+Embedded system
+Robotics
+Server
+Laptop
+Real-time (RT)
+
+$sudo lshw -short
+                          system         Swift SF314-57G (0000000000000000)
+/0                        bus            Floris_IL
+/0/0                      memory         128KiB BIOS
+/0/4                      processor      Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+/0/4/6                    memory         128KiB L1 cache
+/0/4/7                    memory         2MiB L2 cache
+/0/4/8                    memory         6MiB L3 cache
+/0/5                      memory         192KiB L1 cache
+/0/f                      memory         8GiB System Memory
+/0/f/0                    memory         4GiB Row of chips LPDDR4 Synchronous 3733 MHz (0.3 ns)
+/0/f/1                    memory         4GiB Row of chips LPDDR4 Synchronous 3733 MHz (0.3 ns)
+/0/100                    bridge         Intel Corporation
+/0/100/2       /dev/fb0   display        Intel Corporation
+/0/100/4                  generic        Intel Corporation
+/0/100/7                  bridge         Ice Lake Thunderbolt 3 PCI Express Root Port #0
+/0/100/8                  generic        Intel Corporation
+/0/100/d                  bus            Ice Lake Thunderbolt 3 USB Controller
+/0/100/d/0     usb1       bus            xHCI Host Controller
+/0/100/d/1     usb2       bus            xHCI Host Controller
+/0/100/d.2                generic        Ice Lake Thunderbolt 3 NHI #0
+/0/100/14                 bus            Ice Lake-LP USB 3.1 xHCI Host Controller
+/0/100/14/0    usb3       bus            xHCI Host Controller
+/0/100/14/0/5             generic        EgisTec Touch Fingerprint Sensor
+/0/100/14/0/6             multimedia     HD WebCam
+/0/100/14/0/a             communication  Bluetooth wireless interface
+/0/100/14/1    usb4       bus            xHCI Host Controller
+/0/100/14.2               memory         RAM memory
+/0/100/14.3    wlp0s20f3  network        Killer Wi-Fi 6 AX1650i 160MHz Wireless Network Adapter (201
+/0/100/15                 bus            Ice Lake-LP Serial IO I2C Controller #0
+/0/100/15.1               bus            Ice Lake-LP Serial IO I2C Controller #1
+/0/100/16                 communication  Management Engine Interface
+/0/100/1c                 bridge         Ice Lake-LP PCI Express Root Port #5
+/0/100/1c/0               display        GP107M [GeForce MX350]
+/0/100/1d                 bridge         Intel Corporation
+/0/100/1d/0               storage        WD Black 2018/PC SN520 NVMe SSD
+/0/100/1e                 communication  Ice Lake-LP Serial IO UART Controller #0
+/0/100/1e.2               bus            Ice Lake-LP Serial IO SPI Controller #0
+/0/100/1f                 bridge         Ice Lake-LP LPC Controller
+/0/100/1f.3               multimedia     Smart Sound Technology Audio Controller
+/0/100/1f.4               bus            Ice Lake-LP SMBus Controller
+/0/100/1f.5               bus            Ice Lake-LP SPI Controller
+/0/1                      system         PnP device PNP0c02
+/0/2                      generic        PnP device INT3f0d
+/0/3                      input          PnP device PNP0303
+/0/6                      system         PnP device PNP0c02
+/0/7                      system         PnP device PNP0c02
+/0/8                      system         PnP device PNP0c02
+/0/9                      system         PnP device PNP0c02
+
+
+column 1, H/W path == bus addresses
+column 2, device
+column 3, class
+column 4, description
+
+row 1 = system
+

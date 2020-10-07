@@ -5,7 +5,7 @@ import asyncio     # websockets is built on asyncio
 import websockets
 import datetime
 
-port = 8080
+port = 50000
 ip = '68.66.224.22'
 #ip = '127.0.0.1'
 hostname = 'Sam'
