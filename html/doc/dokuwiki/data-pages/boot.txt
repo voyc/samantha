@@ -1,0 +1,65 @@
+# Boot 
+
+There are three steps to linux boot.
+  1 BIOS-UEFI Boot
+  1 Kernel Boot
+  1 Userspace startup  
+
+
+Hold down while booting
+  * F2 open UEFI settings
+  * Alt+F10 reset PC
+
+# User space boot 
+
+GUI - settings - about, shows Gnome version 3.36.3
+
+How is gnome started at startup? How can it be optional? GRUB, rcconf, lightdm
+
+https://askubuntu.com/questions/378046/how-to-run-ubuntu-xubuntu-in-a-complete-non-gui-mode
+
+# How to Boot Linux - example judson 
+
+For Jetson Nano
+
+Boot to console by default
+
+Optionally boot to graphical
+
+The disable didn’t work because the Debian ''%%/etc/X11/default-display-manager%%'' logic is winding up overriding it.
+
+In order to make text boot the default under systemd (regardless of which distro, really):
+
+systemctl set-default multi-user.target
+
+To change back to booting to the GUI,
+
+systemctl set-default graphical.target
+
+# Judson examples 
+
+Goals
+
+X boot judson without gui.
+
+X Start gui on judson at will.
+
+X Shutdown gui on judson at will.
+
+Start python webserver on judson at boot.
+
+X Connect to judson webserver from phone.
+
+Start skateboard program at boot.
+
+Connect to Tello at boot.
+
+Let webmon talk to skateboard. Can they share data files?
+
+Judson is normally running in multi-user.target, no GUI
+
+<code>
+$ sudo systemctl isolate graphical.target    # open the GUI
+$ sudo systemctl isolate multi-user.target   # close the GUI
+Ctrl+Alt+F1   # get a tty login screen
+</code>

@@ -1,0 +1,76 @@
+====== Linear Regression ======
+
+Link to [[Regression Analysis]] wiki page.
+
+== Image ==
+For example, here are four (x,y) data points which appear roughly in the shape of a straight line.
+{{ four_data_points.png|Four Data Points}}
+
+
+== Table ==
+
+^ x ^ y ^
+|1|4|
+|3|4|
+|6|7|
+|9|8|
+
+
+==== Equation Inline and Not ====
+
+Write the linear equation as a function of $x$.
+$$f(x) = ax + b$$
+This is the predictor function.  $f(x)$ gives the predicted value of $y$.
+
+
+====== heading 1 (6) ======
+===== heading 2 (5) =====
+==== heading 3 (4) ====
+=== heading 4 (3) ===
+== heading 5 (2) ==
+= heading 6 (1) =
+
+**bold**, //italic//, __underlined__ ''monospaced'', 
+**__//''combined''//__**
+
+sub<sub>23</sub> super <sup>475</sup> <del>deleted</del>
+
+line break\\
+two backslashes
+
+[[https://google.com|external link]]
+[[pagename|wiki page]]
+[[pagename#heading|wiki section]]
+
+^ h 1  ^ h 2    ^ h 3   ^
+| left | center | right |
+| 1.1  | 1.2  | 1.3  |
+| 2.1  | 2.2 span   ||
+| :::  | 3.2  | 3.3  |
+
+  * This is a list
+    * The second item
+  * You may have different levels
+  * Another item
+
+  - This is an ordered list
+  - The second item
+    - You may have different levels
+  - Another item
+
+svg image
+  $ code block
+  two space indent
+or
+<code>
+$ ls -al # html syntax
+</code>
+
+{{wiki:dokuwiki-128.png}}
+{{wiki:dokuwiki-128.png?50}}
+{{wiki:dokuwiki-128.png?200x50}}
+
+{{https://secure.php.net/images/php.gif?200x50}}
+
+Write the linear equation as a function of $x$.
+$$f(x) = ax + b$$

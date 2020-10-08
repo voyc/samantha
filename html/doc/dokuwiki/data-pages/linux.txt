@@ -1,7 +1,16 @@
 ======Linux======
 
+[[sample]]
+
+[[Boot]]
 
 [[Hardware]]
+
+[[terminal]]
+
+[[gnome]]
+
+[[Package Management]]
 
 ====Kernel====
 

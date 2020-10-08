@@ -1,0 +1,17 @@
+
+====== Terminal ======
+
+Copy and Paste in terminal: ctrl+shift+C, ctrl+shift+V
+
+See Terminal - preferences - shortcuts
+
+====== Terminal ======
+
+Terminal, Shell, Console
+
+Session
+
+Tiling splits
+
+Termux, terminal multiplexer
+

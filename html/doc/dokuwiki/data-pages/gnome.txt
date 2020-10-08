@@ -1,0 +1,11 @@
+
+====== Gnome ======
+
+Modifications to gnome 3.36,3
+
+Remove home and trash icons from desktop. They show up in nautilus file explorer.
+
+$ gsettings set org.gnome.shell.extensions.desktop-icons show-trash false
+
+$ gsettings set org.gnome.shell.extensions.desktop-icons show-home false
+

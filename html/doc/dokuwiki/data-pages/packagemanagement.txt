@@ -1,0 +1,7 @@
+
+====== Install software ======
+
+How to install brave for linux.
+
+https://brave.com/linux/
+
