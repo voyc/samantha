@@ -20,6 +20,42 @@
 
 [[directory structure]]
 
+[[Container]]
+
+[[cgroups]]
+
+[[Hardware]]
+
+[[Device]]
+
+[[Notes]]
+
+[[Interrupts]]
+
+[[Disk]]
+
+[[Files]]
+
+[[Linux Software]]   package management, shell, shell programming
+
+[[Network]]
+
+[[Shell Programming]]
+
+[[Terminal]]
+
+[[Process]]
+
+[[Alias]]
+
+[[Command]]
+
+[[Shell]]
+
+[[Startup]]
+
+[[systemd]]
+
 ====== Concept Organization 1 ======
   * boot
   * device

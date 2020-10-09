@@ -1,5 +1,5 @@
 
-====== Distributions ======
+====== Distribution ======
 distro - short for distribution
 
 Which distro am I on?
