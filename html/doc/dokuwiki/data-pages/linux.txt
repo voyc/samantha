@@ -1,5 +1,21 @@
 ======Linux======
 
+How to Use Linux
+https://docs.google.com/document/d/1rEjxnZP07KJYtramx43-rbF07PB1afU3sop5N0O4szs/edit#
+
+How to Use Linux - A. Install Linux
+https://docs.google.com/document/d/1eIWOttMwA1zRFZEEn4ucBztk6dKj3hYZa9-1srZcpRM/edit#heading=h.iic5r02c1j5l
+
+How to Use Linux - B. Install Software
+https://docs.google.com/document/d/1cP4VqP3XCSfCTrvDgHbnNA_cJvyv2Gg7DOGr5Zegt1k/edit#heading=h.iic5r02c1j5l
+
+How to Use Linux - C. Commands
+deleted
+
+How to Use Linux - Notes
+https://docs.google.com/document/d/1OktYxaS10zayaata3V_9Hhi7ToUYuC1NlrKYlcwjfIc/edit#
+
+
 [[Documentation]]  - [[sample]]
 
 [[Boot]]
@@ -55,6 +71,8 @@
 [[Startup]]
 
 [[systemd]]
+
+[[Bus]]
 
 ====== Concept Organization 1 ======
   * boot

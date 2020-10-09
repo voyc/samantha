@@ -1,0 +1,280 @@
+====== Install Linux =======
+source: 
+https://docs.google.com/document/d/1eIWOttMwA1zRFZEEn4ucBztk6dKj3hYZa9-1srZcpRM/edit#heading=h.iic5r02c1j5l
+
+===== Overview ======
+
+Normally the install is done twice.
+
+First-time, we set up a temporary boot disk on DVD or USB stick.  This is to get the OS running on the computer one-time so we can use it to do the permanent install.
+
+Second-time, we set up the OS in its permanent location on the hard disk.
+
+Assume the currently running OS has been booted from a temporary location, like DVD or USB stick.  Now the task is to set up the OS and its boot loader at a permanent location, as follows.
+
+*   setup the ESP partition
+*   copy the boot loader and related files into the ESP
+*   configure the .efi boot settings files in the ESP
+*   setup a partition for the kernel files
+*   copy the kernel files into the OS partition
+*   Configure OS settings files
+*   setup a partition for the swap file 
+
+===== Dual Boot ======
+
+Many computer professionals work with multiple operating systems.  Rather than own separate machines, one for each OS, he may want to install multiple OS’s on one machine.
+
+There are two ways to do this.
+
+1. Multi-booting.
+2. Virtualization.  Boot to one master OS and start a separate Virtual Machine (VM) for each target OS.
+
+A typical computer professional uses Linux for his personal work, but also has to support customers who use Windows.  He may want a dual-boot machine with Linux and Windows.
+
+Here are some issues to consider when dual boot Linux 20 and Windows 10.
+
+UEFI settings
+
+*   Disable windows hibernation.
+*   Disable fast startup.
+*   Disable Secure Boot.
+*   Do not enable compatibility support module (CSM)
+*   Enable the F12 boot menu. 
+
+Disk partitioning
+
+*   MBR, master boot record
+*   Contains partition table and boot loader.
+
+===== Disk Partitioning ======
+
+Windows: Disk Management Tool
+
+Linux: Gparted
+
+EFI system partition (ESP)
+
+
+===== File systems ======
+
+Portability
+
+*   for usb drive shared between devices
+*   For a shared disk on a dual boot machine
+
+https://www.howtogeek.com/73178/what-file-system-should-i-use-for-my-usb-drive/
+
+^                          ^ Win ^ Linux ^ Android ^
+| NTFS (Win new)           |  X  |   X   |         |
+| ExFAT (Win mid)          |  X  |   X   |         |
+| FAT32 (Win old, max 4GB) |  X  |   X   |    X    |
+| Ext2,3,4 (Linux)         |     |   X   |         |
+| HFS+ (Apple old)         |     |   X   |         |
+| APFS (Apple new)         |     |       |         |
+
+
+Filesystems mounted on Judson
+
+^ device         ^  format  ^ used  ^ Mount point                   ^
+| /dev/mmcblk0p1 |   ext4   |  29%  | /                             |
+| /dev/sda1      |   vfat   |  1%   | /media/john/USB20FD           |
+| /dev/sdb1      | fuseblk  |  78%  | /media/john/Seagate Expansion |
+
+
+The mount on /media is a FUSE mount - a userspace filesystem mount. The underlying filesystem being mounted by the FUSE driver could be anything, including filesystems that may not be supported by the kernel. (The Gnome desktop makes use of it for mounting USB keys and other removable media.)
+
+FUSE allows safe mounting of filesystems without granting root access to users. You could alternatively mount a FAT fs (but not exFAT, which is not supported by a kernel module in the way the various older FAT filesystems are) with:
+
+  $ sudo mount -t vfat /dev/sdb1 /mnt/myfs
+
+===== UEFI Settings ======
+
+=== Function Key Mode ===
+
+A toggle in the UEFI settings: Function Key or Media Key
+
+Which is the default, and which requires the Fn key pushed in combination?
+
+(I keep function keys as the default.)
+
+^ Function Key ^ Action (Media) Key        ^
+| F1           | Sleep toggle              |
+| F2           | Airplane mode toggle      |
+| F3           | Dimmer                    |
+| F4           | Brighter                  |
+| F5           | ?                         |
+| F6           | Screen on/off toggle      |
+| F7           | Touchpad toggle           |
+| F8           | Keyboard backlight toggle |
+| F9           | Mute volume               |
+| F10          | Volume down               |
+| F11          | Volume up                 |
+| F12          | NumLock toggle            |
+
+===== Computer Architecture ======
+
+architecture machine OS
+
+Intel x86-based
+
+AMD64 & Intel 64
+
+ARM
+
+ARM with hardware FPU
+
+64bit ARM
+
+MIPS (big endian)
+
+MIPS (little endian)
+
+IBM/Motorola PowerPC
+
+Power Systems
+
+64bit IBM S/390
+
+^ Debian code ^ architecture         ^
+| i386        | Intel x86-based      |
+| amd64       | AMD & Intel 64bit    |
+| armel       | ARM                  |
+| armhf       | ARM + hdw FPU        |
+| arm64       | 64bit ARM            |
+| mips        | MIPS (big endian)    |
+| mipsel      | MIPS (little endian) |
+| powerpc     | IBM/Motorola PowerPC |
+| pppc64el    | Power Systems        |
+| s390x       | 64bit IBM S/390      |
+
+
+==== Partitions ====
+
+Each partition can be formatted with a file system or as a swap disk.
+
+partition type code
+
+
+
+*   0x82 - linux swap partition
+*   0x83 - linux native file system (ext3, ext4, etc)
+*   0x07 - NTFS (Microsoft) filesystem
+*   0xNN - any number of FAT16 and FAT32 (Microsoft) file systems
+
+boot partition, a “primary” partition, mounted at /boot/, contains kernel, initrd, boot loader GRUB
+
+system partition, 
+
+fdisk, provides disk partitioning for Linux, part of the util-linux package
+
+cfdisk - best version if available
+
+fdisk - buggy
+
+sfdisk - for hackers onlly
+
+Device and partition names
+
+/dev/hda  for hard disks (a-p)
+
+/dev/hdb
+
+/dev/sda  for SCSI disks (a-p)
+
+/dev/sdb
+
+Directories such as /boot, /tmp, /usr, /var, or /home can be allocated to separate partitions, each with its own filesystem.
+
+A common configuration is to use three partitions.
+
+
+
+1. One holding the system files, mounted on /, the root directory
+2. One holding user configuration file and data, mounted on /home
+3. A swap partition.
+
+
+==== Disk Formats ====
+
+**ISO image** - a disk image of an optical disk: CD, CD-ROM, DVD, Blu-ray.  Named from ISO 9660, the file system used with CD-ROM, where ISO means International Standards Organization
+
+
+==== BIOS ====
+
+The BIOS is not part of the OS.  It is provided by the manufacturer of the computer, burned into a chip on the motherboard.
+
+The BIOS contains settings, and it also contains the first stage of the Boot process.
+
+
+
+1. POST power-on self-test
+2. Find the MBR master boot record, in partition 0 of the primary disk partition
+3. Read the settings from the CMOS, battery powered memory of internal settings
+4. 
+
+BIOS-mode: BIOS Basic Input Output System
+
+BIOS-mode: UEFI Universal Extended Firmware Interface
+
+The older BIOS is being replaced by the newer UEFI.
+
+Post
+
+Load file systems 
+
+Xctl to boot loader which can be normal file anywhere in the filesystem.
+
+BIOS vs UEFI
+
+BIOS
+
+BIOS Basic Input Output System, legacy firmware created for first IBM PC
+
+POST Power-On Self-Test - first step, prior to boot
+
+EFI Extensible Firmware Interface - Intel created
+
+UEFI Universal EFI - public governed
+
+UEFI firmware - a chip on the motherboard that performs POST and BOOT
+
+ESP EFI System Partition - formatted with UEFI-spec (FAT-based) filesystem, contains boot loaders, kernel images, device drivers, utilities, error logs, .efi config files, used prior to and during boot, for all installed OS’s.
+
+Boot Loaders
+
+GRUB 2 and elilo for Linux. Can access all devices and partitions.  Not limited to ESP.
+
+Windows Boot Manager.
+
+^                    ^ BIOS                                                               ^ UEFI                       ^
+| Chronology         | old                                                                | new                        |
+| Partition table    | DOS partition table                                                | GPT guid partition table   |
+| Max disk size      | 2 TB                                                               | 9.4 ZB zettabytes          |
+| Disk format        |                                                                    |                            |
+| Boot code location | Master Boot Record (MBR) First sector of first partition, max 1 MB | EFI system partition (ESP) |
+| Settings location  | CMOS                                                               | .efi file in the ESP       |
+
+
+==== Boot ====
+
+grub
+
+[https://en.m.wikipedia.org/wiki/GNU_GRUB](https://en.m.wikipedia.org/wiki/GNU_GRUB)
+
+Load kernel modules at boot time
+
+[https://www.cyberciti.biz/faq/linux-how-to-load-a-kernel-module-automatically-at-boot-time/](https://www.cyberciti.biz/faq/linux-how-to-load-a-kernel-module-automatically-at-boot-time/)
+
+Boot loaders
+
+*   NTLDR
+*   LILO
+*   GRUB
+
+Non-bios firmware
+
+*   Open firmware
+*   EFI extensible firmware interface
+
+SATA mode: AHCI
+

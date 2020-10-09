@@ -1,0 +1,21 @@
+
+====== Multiprocessing ======
+
+multiple cores
+
+Process/Thread per CPU
+  $ ps -e | grep migration
+  $ ps -e | grep ksoftirq
+  $ ps -e | grep cpuhp
+  $ ps -e | grep idle_inject
+  $ ps -e | grep kworker (multiple per cpu)
+
+kernel stack running at ring 0
+
+each process has two stacks
+user space stack
+kernel space stack
+
+separation: if the user stack is corrupted, we don’t want the kernel clobbered
+
+

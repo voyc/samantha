@@ -85,3 +85,181 @@ Where do configuration files live?
   * /etc
 
 
+====== Directory Structure ======
+
+Filesystem Hierarchy Standard (FHS)
+
+[https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard)
+
+$ man hier #  show complete list of folders
+
+/ - kernel
+
+/bin - binary executable files
+
+/boot - files used during boot
+
+/dev - hardware devices - not a folder, device and partition names
+
+/etc - configuration files
+
+/tmp - temporary, will be gone at next boot
+
+/usr - duplicate 
+
+/home
+
+/root - for the root user, not /home/root
+
+See more about the /etc folder
+
+[https://www.linuxnix.com/linux-directory-structure-explainedetc-folder/](https://www.linuxnix.com/linux-directory-structure-explainedetc-folder/)
+
+Locations for binary executables and scripts. 
+
+/bin   # in Ubuntu 20, soft link to /usr/bin
+
+/sbin  # in Ubuntu 20, soft link to /usr/sbin
+
+/usr/bin   # 
+
+/usr/sbin  # 
+
+/usr/local/bin  # put my own scripts here
+
+/usr/local/sbin  # put my own root scripts here
+
+sbin - s is for system, for commands that require root privileges
+
+bin - root not required
+
+According to the documentation, /bin and /sbin are for commands that are required before the /usr partition is mounted.  But in Ubuntu 20 on my RacerSwift, they are soft linked to /usr.
+
+The first four - /bin, /sbin, /usr/bin, /usr/sbin - should be populated only by the package manager.  /usr/local/bin and sbin is for files not coming from the package manager.
+
+
+===== Where do executables live? =====
+
+
+<table>
+  <tr>
+   <td><strong>Folder</strong>
+   </td>
+   <td><strong>Who populates</strong>
+   </td>
+   <td><strong>Who uses</strong>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>/bin
+   </td>
+   <td>package manager
+   </td>
+   <td>any user
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>/sbin
+   </td>
+   <td>package manager
+   </td>
+   <td>root
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>/usr/bin
+   </td>
+   <td>package manager
+   </td>
+   <td>any user
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>/usr/sbin
+   </td>
+   <td>package manager
+   </td>
+   <td>root
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>/usr/local/bin
+   </td>
+   <td>any user
+   </td>
+   <td>any user
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>/usr/local/sbin
+   </td>
+   <td>any user
+   </td>
+   <td>root
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>/home/me/.local/bin
+   </td>
+   <td>me
+   </td>
+   <td>me
+   </td>
+   <td>
+   </td>
+  </tr>
+</table>
+
+
+/bin vs /sbin - the s stands for system, used by administrators, require root
+
+/bin and /sbin - for exes called early in the boot, before /usr is mounted
+
+/usr/bin and /usr/sbin - for exes called after /usr is mounted
+
+/usr/local - overrides will not be tampered with during package manager update
+
+Special cases
+
+/lib
+
+/etc/init.d - startup scripts, services
+
+Libraries are also executable?
+
+What are bin, lib, share?
+
+Where do configuration files live?
+
+/etc
+
+Soft links in FHS
+
+/bin -> /usr/bin
+
+/sbin -> /usr/sbin
+
+/lib -> /usr/lib
+
+/lib32 -> /usr/lib32
+
+/lib64 -> /usr/lib64
+
+/libx32 -> /usr/libx32
+
+
+

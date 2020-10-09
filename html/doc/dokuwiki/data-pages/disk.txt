@@ -2,6 +2,7 @@
 ====== Disk, Partition, File System ======
 $ mount # with no parameters, list mounted filesystems
 
+$ mount /dev/sda1 /media/john    # after plugging in the seagate
 
 $ sudo fdisk -l # list partitions
 

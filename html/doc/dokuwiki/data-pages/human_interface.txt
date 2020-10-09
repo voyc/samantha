@@ -1,0 +1,149 @@
+
+====== CLI =====
+
+typewriter = keyboard plus printer.
+
+tele-typewriter = A typewriter operating at a distance.
+
+teletype = tty = abbreviations for tele-typewriter.
+
+The first typewriter printed on single sheets of paper.
+
+Teletype machines and the first printers used a continuous spool of paper.
+
+Modern printers have gone back to single sheets.
+
+console - a teletype used to interact with a computer
+
+terminal - same thing as a console.
+
+shell - 
+
+prompt
+
+chat
+
+webchat
+
+telnet
+
+ssh
+
+Console, Headless.
+
+Picture a server farm with thousands of rack-mounted servers running 24/7 for years on end.
+
+An operator can use ssh to connect to any individual server to monitor and maintain.
+
+Console
+
+Shell
+
+
+
+*   sh, Bourne shell, Steve Bourne
+*   sh, POSIX shell
+*   bash, Bourne Again Shell
+*   ksh, Korn shell, 
+*   zsh
+*   csh, C shell
+*   tcsh
+
+Terminal window. Aka terminal emulator or terminal program. A console within a window. Requires a window manager.
+
+
+
+*   gnome-terminal
+*   konsole
+*   xterm
+*   rxvt
+*   kvt
+*   nxterm
+*   eterm
+
+
+====== GUI ======
+
+
+===== 3 layers =====
+
+1. **X windows**.  aka X11 or X.  Underlying technology for bitmapped display.  Part of the kernel.  Open source.  Originated at MIT in 1984, the same year the Mac appeared.  X uses a client–server model.  An X server accepts client requests for graphical output (windows) and sends back user input (from keyboard, mouse, or touchscreen).
+
+2. **Window manager**.  Requires X windows.  Puts the window decoration around the contents including the buttons to minimize or close. It allows resizing and moving the windows around, and decides which window is on top.
+
+
+
+*   Enlightenment
+*   Gala
+*   Mutter
+*   kwinx
+*   i3
+*   Joe's Window Manager (JWM)
+*   Window Maker
+*   IceWM
+*   Afterstep
+*   FVWW
+*   Fluxbox
+*   TWM
+*   Megacity
+*   Compiz
+
+3. **Desktop environment**.  Requires a window manager.  Gives you an overall user experience. It has the panels, the system menus, the starters, the status applets. It might offer a default file explorer and viewer. It might contain a default editor, terminal program, and emailer, all made to look alike and work together.
+
+
+
+*   Gnome - GNU Network Object Model Environment
+*   KDE -  K Desktop Environment, now renamed Plasma
+*   Pantheon
+*   MATE - a fork of Gnome 2
+*   Cinnamon
+*   Ubuntu Budgie
+*   Xfce
+
+Gnome 2 used Metacity, which has been abandoned in favor of Mutter
+
+Gnome 3 uses Mutter, which began as a fork of Metacity
+
+Gnome 3 Shell is a Metacity plugin
+
+Not everyone is happy with Gnome 3, because it lost many good features of Gnome 2.
+
+Linus Torvalds used Gnome 2, then Xfce, then KDE, and as of 2013 back to Gnome 3 with extensions, particularly [Frippery](https://github.com/wangyr/gnome-shell-extensions/tree/master/Bottom_Panel@rmy.pobox.com/gnome-shell-frippery), and the [Gnome Tweak Tool](https://launchpad.net/gnome-tweak-tool).
+
+Ubuntu uses Gnome 3 by default.
+
+Kubuntu is Ubuntu with KDE
+
+Neon is also Ubuntu with KDE
+
+
+====== The Human Interface ======
+
+
+===== from teletype to chat =====
+
+type at a distance
+
+telegraph system with a modified electric typewriter replacing the morse code key
+
+
+===== Full-Screen Interactive =====
+
+
+```
+top
+info
+man
+
+vi
+emacs
+gedit ?
+ed
+
+line editors
+full screen visual editors
+
+ls 
+```
+
+

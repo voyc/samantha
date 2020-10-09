@@ -327,3 +327,383 @@ nmcli - command-line interface
 
 
 nmtui - text-based user interface
+
+
+===== Boot Targets
+
+$ systemctl get-default   # show boot target
+
+graphical.target
+
+$ systemctl isolate graphical.target   # start a different target right now
+
+$ systemctl set-default graphical.target  # change the boot target
+
+Run Levels
+
+0 system shutdown
+
+1 single user mode, no network, essential services only (maintenance mode)
+
+2 not used
+
+3 multi-user mode
+
+4 not used
+
+5 multi-user mode plus graphical mode login
+
+6 system restart
+
+Run levels are managed by /sbin/init
+
+Run level is defined by a kernel parameter or in the /etc/inittab file.
+
+There are 3 paradigms to manage services in Ubuntu. `System V init`, `upstart` and `systemd`. As of Ubuntu 18.04, it is `systemd`. – [smwikipedia](https://unix.stackexchange.com/users/4061/smwikipedia) [Aug 21 '18 at 6:14](https://unix.stackexchange.com/questions/34405/file-in-ubuntu-equivalent-to-etc-inittab-file-in-redhat#comment844173_34406)
+
+Ubuntu does not use runlevels, nor etc/inittab
+
+SysV init used etc/inittab
+
+In Ubuntu 18, the init binary is soft linked to systemd.
+
+
+```
+$ ls -al /sbin/init
+/sbin/init -> /lib/systemd/systemd
+```
+
+
+init, aka sysvinit, as in System 5 init
+
+Upstart, first introduced in Ubuntu 6 in 2006
+
+systemd, adopted in Ubuntu 15
+
+
+===== Userspace Boot =====
+
+From init, through upstart, to systemd.
+
+For booting, many linux distributions originally used init, aka sysvinit, taken from System V Unix.  Later, many distributions replaced init with upstart, and later still with systemd.
+
+Boot system adoption by distribution release number.
+
+
+<table>
+  <tr>
+   <td>
+   </td>
+   <td>init
+   </td>
+   <td>upstart
+   </td>
+   <td>systemd
+   </td>
+  </tr>
+  <tr>
+   <td>Debian
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>8
+   </td>
+  </tr>
+  <tr>
+   <td>Ubuntu
+   </td>
+   <td>
+   </td>
+   <td>6 (2006)
+   </td>
+   <td>15
+   </td>
+  </tr>
+  <tr>
+   <td>Fedora
+   </td>
+   <td>
+   </td>
+   <td>9
+   </td>
+   <td>15
+   </td>
+  </tr>
+  <tr>
+   <td>openSUSE
+   </td>
+   <td>
+   </td>
+   <td>11
+   </td>
+   <td>12
+   </td>
+  </tr>
+</table>
+
+
+Comparison of init and systemd.
+
+
+<table>
+  <tr>
+   <td>
+   </td>
+   <td>init
+   </td>
+   <td>systemd
+   </td>
+  </tr>
+  <tr>
+   <td>binary
+   </td>
+   <td>/etc/init
+   </td>
+   <td>/lib/systemd/systemd
+   </td>
+  </tr>
+  <tr>
+   <td>states
+   </td>
+   <td>runlevels 0-6
+<p>
+1
+<p>
+3
+<p>
+5
+<p>
+4
+   </td>
+   <td>targets
+<p>
+rescue.target
+<p>
+multi-user.target
+<p>
+graphical.target
+<p>
+<em>custom</em>.target
+   </td>
+  </tr>
+  <tr>
+   <td>config
+   </td>
+   <td>parameters in /etc/inittab file
+   </td>
+   <td>script files in /etc/init and /etc/init.d
+   </td>
+  </tr>
+  <tr>
+   <td>start daemons
+   </td>
+   <td>serial
+   </td>
+   <td>parallel
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Insert command into /etc/rc.local
+   </td>
+   <td>
+   </td>
+  </tr>
+</table>
+
+
+systemd init
+
+Units
+
+
+===== Systemctl =====
+
+$ sudo systemctl poweroff
+
+$ sudo systemctl reboot
+
+$ sudo systemctl rescue
+
+$ systemctl list-unit-files --type=target   # list all targets
+
+$ systemctl get-default   # show current boot target
+
+$ systemctl list-dependencies multi-user.target   # list unit files tied to a target
+
+$ sudo systemctl set-default multi-user.target   # set target for boot
+
+$ sudo systemctl isolate multi-user.target   # activate target right now
+
+
+===== Journalctl =====
+
+Location of unit files, in priority order.
+
+
+```
+/lib/systemd/system    # system default
+/run/systemd/system   # override
+/etc/systemd/system   # override
+```
+
+
+
+===== Start a custom service at boot =====
+
+Add a command into /etc/rc.local.  That probably still words, but a newer more complicated method is to create a unit file that defines a systemd service.
+
+1. Create a script or executable.
+
+
+```
+$ vi myservice.sh
+```
+
+
+2. Copy the script to /usr/bin/ and make it executable.  (Notice that /bin is soft linked to /usr/bin, which means I will be putting my own service in with the system services.)
+
+
+```
+$ sudo cp myservice.sh /usr/bin/myservice.sh
+$ sudo chmod +x /usr/bin/myservice.sh
+```
+
+
+3. Create a unit file to define a systemd service that will manage your script.
+
+[Unit]
+
+Description=Skateboard monitor webservice.
+
+[Service]
+
+Type=simple
+
+ExecStart=/bin//bash /usr/bin/webservice.sh
+
+[Install]
+
+WantedBy=multi-user.target
+
+4.  Copy the unit file to /etc/systemd/system and give it permissions.
+
+
+```
+$ sudo cp myservice.service /etc/systemd/system/myservice.service
+$ sudo chmod 644 /etc/systemd/system/myservice.service
+```
+
+
+5. Test the service.
+
+$ sudo systemctl start myservice
+
+$ sudo systemctl status myservice
+
+$ sudo systemctl stop myservice
+
+6.  Enable the service.  (Put it in the boot sequence.)
+
+$ sudo systemctl enable myservice  # put service into boot sequence  
+
+====== systemd ======
+
+launchd, introduced in macOS replaced initd, crond, and many others.  Services are started when needed and not all at boot.  Makes boot faster.
+
+systemd is a rip-off of launchd, author Lennart Poettering
+
+Startup mechanism
+
+From bootstrap to service handling
+
+From service manager to system manager
+
+systemd started as init system and spiraled out
+
+Daemons are userspace
+
+System level, between kernel and userspace
+
+Despite the controversy, systemd was adopted widely between 2011 and 2015
+
+
+===== Controversy over systemd =====
+
+Source: [https://www.youtube.com/watch?v=o_AIw9bGogo](https://www.youtube.com/watch?v=o_AIw9bGogo)
+
+Complaints
+
+
+
+*   Violates unix philosophy.  What should be separate modules are all folded into one project, making it bloated and monolithic.
+    *   Response: It is still made up of separate binaries.
+*   Lennart Poettering manages the systemd project and he is a jerk
+
+Pros
+
+
+
+*   journald
+*   cgroups, compared as superior to FreeBSD Jails
+*   user-level units, running a daemon as a user instead of root, drop it into a folder and it starts
+*   Message Transport, heavy use of dbus
+*   RPC Framework, remote procedure call
+*   Service Lifecycle
+*   Automation via API
+*   Containers, made possible by cgroups
+*   The system layer, between kernel and user
+*   Consistent device naming
+*   Better log/event/audit handling, binary is ok
+*   A new model of an application, multiple executables in a container
+
+Notes:
+
+
+
+*   Examples of New ways of thinking:  (not systemd specific)
+    *   web api’s
+    *   containers
+*   Debian can run on FreeBSD kernel
+*   Debian was reluctant to adopt systemd
+
+
+===== systemd service =====
+
+sudo service gdm stop  # gdm = Gnome Desktop Manager
+
+sudo service gdm start
+
+
+===== Components =====
+
+init
+
+logind
+
+journald - writes to binary files (controversial)
+
+udev - managing virtual device files
+
+task scheduler - ala cron 
+
+networkd - 
+
+systemctl
+
+hostnamectl
+
+timedatectl
+
+  $ ps -e | grep systemd
+      1 ?        00:01:18 systemd
+    309 ?        00:00:00 systemd-journal
+    342 ?        00:00:01 systemd-udevd
+    725 ?        00:00:01 systemd-resolve
+    727 ?        00:00:00 systemd-timesyn
+    809 ?        00:00:06 systemd-logind
+   1448 ?        00:00:00 systemd
+

@@ -1,4 +1,3 @@
-
 ====== Package Management ======
 
 ===== How to Install software =====
@@ -6,4 +5,109 @@
 How to install brave for linux.
 
 https://brave.com/linux/
+
+====== How to Install Software on Linux ======
+
+Package Management (bad) is the reason Linux Desktop does not get more traction. Valve will build huge statically linked binaries and this may get more usage for Linux desktop.
+
+===== Installing Software =====
+
+Software is a collection of files:  executables and data files.  Data files can be config files and tables.  To install software, you copy the right files into the right place.
+
+1.  Copy files directly.
+
+For example, the `install` command can be used to copy files, and it does this by combining several commands into one to make them easy to use. The `install` command uses the `cp`, `chown`, `chmod`, and `strip` commands.
+
+2.  Build from source.
+
+This is what developers do.  Copy the source code files and run a makefile to compile and link the necessary files and libraries together into the right directories.
+
+3.  Use a Package Manager.
+
+This is described below, after a discussion of dependencies.
+
+==== Dependencies ====
+
+One of the beautiful things about Linux is the way developers work as a community, building on the work of others, instead of reinventing the wheel and duplicating others’ work.  This leads to dependencies among packages.
+
+Each version of each package depends on specific versions of other packages, which also depends on other packages, resulting in a nested string of dependencies.  When you upgrade to a new version of one package, you may end up having to upgrade many other packages.  At any time, your packages may collectively require multiple versions of multiple packages.
+
+This is a complex problem.  Everyone is trying to simplify it.
+
+One solution is to eliminate the dependencies.
+
+*   The Apple iPhone solved the problem by severely limiting a developer’s choices and disallowing the dependencies.  All apps are written in the Objective-C language and all dependent libraries are linked in together in a monolithic executable.  The user buys each app from the Apple Store, and each app is a standalone product with no dependencies.
+*   Android copied that design.  Apps must be written in a version of Java, linked into a single non-dependent executable, and sold in the Android Store.
+*   SNAP is an attempt to bring this type of solution to all Linux distributions.  (See below.)
+
+But this solution is a cop-out and it throws the baby out with the bath water, resulting in duplicated code and inflexible development and deployment.
+
+==== Package Manager ====
+
+aka Package Management System (PMS)
+
+Package management exists to keep track of all the dependencies.  To allow a user to upgrade a software package and automatically upgrade all the dependencies appropriately.
+
+Package managers are specific to each distribution, as shown in the following table.
+^ Distribution          ^ Package description file, lists files and dependencies ^ Basic Package manager, installs only one package ^ Complete PMS, installs dependencies as well ^ External projects ^
+| Debian Ubuntu Mint    | .deb                                                   | dpkg                                             | apt                                         | Aptitude Synaptic |
+| Red Hat Fedora Centos | .rpm                                                   | rpm                                              | yum                                         | dnf               |
+| Arch                  |                                                        |                                                  | Pacman                                      |                   |
+| openSUSE              |                                                        |                                                  | Zypper                                      |                   |
+| Gentoo                |                                                        |                                                  | Portage                                     |                   |
+
+For example, this is how you install the i3 package in different distributions.
+
+  $ sudo yum install i3    ====== CentOS, RHEL ======
+  $ sudo dnf install i3     ====== Fedora ======
+  $ sudo apt install i3     ====== Debian, Ubuntu ======
+
+==== Applications with PMS ====
+
+By the way, note that some applications consider themselves so important they need their own PMS.
+
+^ Application ^ PMS ^
+| Python      | PIP |
+| node.js     | npm |
+
+==== Debian/Ubuntu PMS ====
+
+Advanced Package Tool (APT)
+
+Each package is defined by a .deb file that lists dependencies.
+
+The lowest level command is `dpkg`.
+
+Command `apt-get` and `apt-cache` are built on top of `dpgk`.
+
+The `apt` command duplicates the functionality of `apt-get` and `apt-cache` with a reorganized set of commands and parameters.
+
+Periodic maintenance of all installed software packages.
+
+  $ apt update  ====== update local database from repositories ======
+  $ apt upgrade  ====== upgrade all installed packages to latest version, and install packages introduced as dependencies of the new versions ======
+
+Periodic cleanup.
+
+  $ apt autoremove  ====== removed obsolete unused packages ======
+  $ apt full-upgrade  ====== like upgrade plus autoremove ======
+
+Examine repositories.
+
+  $ apt edit-sources  ====== edit /etc/apt/sources.list (list of repositories) ======
+  $ apt search [searchstring]  ====== search repositories and return list of packagenames ======
+  $ apt show [packagename]  ====== show detailed info from repository ======
+
+Examine local machine.
+
+  $ apt list   ====== list installed packages ======
+
+Install a single package.
+
+  $ apt install [packagename]
+  $ apt reinstall [packagename]  ====== same as install, evidently ======
+  $ apt remove [packagename]   ====== remove binaries, keep config ======
+  $ apt purge [packagename]   ====== remove binaries and config ======
+
+Upgrade a single package?  Cannot.
 
