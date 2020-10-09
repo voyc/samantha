@@ -1,0 +1,118 @@
+
+====== Distributions ======
+distro - short for distribution
+
+Which distro am I on?
+  $ cat /etc/os-release # config file contains distro info
+  $ lsb_release -a # display distro name and version
+  $ hostnamectl # display distro name and version
+
+Why are there so many different distros?  Some contextual history and philosophy may help.
+  * Linux is derived from UNIX.  It is described as “Unix-like”.
+  * Linux brings together a kernel developed by Linus Torvalds, and utilities originally developed by Richard Stallman.
+  * Linux is the progenitor of the open source software movement.
+
+Because Linux is open source, it is easy to make a unique version.
+Get a copy, modify it, and make your own version.
+Therefore, there are dozens of versions.
+They are derived from one another.
+Each derivation has its own personality and purpose, or maybe it just wants to be different.
+Most distros are free of charge but a few are commercial and have a price tag.
+
+An MBA-type would say the market is fragmented.
+
+Personality characteristics of each distro:
+  * Monolithic vs modular
+  * Centralized vs Distributed
+  * Open vs proprietary
+  * Commercial vs free of charge
+  * software license
+    * copyright
+    * copyleft
+    * permissive
+
+Commercial companies can sponsor open source projects, and sometimes release a commercial version.  
+  * Red Hat (owned by IBM) sponsors Fedora and CentOS.  
+  * Canonical sponsors Ubuntu.  
+  * SUSE Software Germany sponsors openSUSE, and also distributes a commercial version named SUSE Enterprise.
+
+The most widely-used distros are commercial and proprietary.
+  * iOS owned by Apple
+  * macOS owned by Apple
+  * Android owned by Google
+
+===== History of Unix Versions =====
+  * 1964 Multics, a time-sharing operating system, a cooperative project led by MIT, plus GE and Bell Labs
+  * 1970 AT&T Unix, created at Bell Labs by Dennis Ritchie and Ken Thompson, both of whom had worked on Multics
+  * Late 1970s AT&T licensed Unix to
+    * U. Berkeley (BSD)
+    * Microsoft (Xenix)
+    * Sun (SunOS/Solaris)
+    * HP (HP-UX)
+    * IBM (AIX)
+  * 1983 System V versions 1,2,3,4, commercial version
+  * 1983 GNU and free software movement are created by Richard Stallman writing the GNU Manifesto
+  * 1985 POSIX becomes an IEEE standard spec for interoperable operating systems.  Richard Stallman coined the term.
+  * 1990 AT&T sold Unix to Novell
+  * 1991 Linux kernel created by Linux Torvalds
+  * 1993 FreeBSD created
+  * 1995 Novell sold Unix to SCO
+  * 1996 SCO passed Unix to The Open Group
+  * 2010 court case confirms Novell still owns the copyrights to Unix
+  * As of 2020, the AT&T-derived Unix market is divided between three System V variants: AIX, HP-UX, Solaris.  Linux and FreeBSD are both described as “Unix-like” systems.
+
+===== History of Linux Distributions =====
+In 1983, Richard Stallman coined the concept “free software”, started the Free Software Foundation (FSF), and started development of a free Unix-like OS named GNU.  The gcc compiler and many other components were completed, but the kernel proved to be difficult, so development “stalled”.
+
+In 1991, Linus Torvalds released the Linux kernel for use on his personal IBM AT 386, and a following developed around it.  
+
+From then, Linux developers adopted many GNU components, and GNU adopted the the Linux kernel.i
+
+Each Linux distro uses the linux kernel, and some variation of the GNU or BSD or AT&T utilities.
+
+==== Derivation Chart ====
+
+**Debian** (1991), perhaps the original GNU/Linux, originally sponsored by Stallman’s FSF
+  * Debian 8 (Jessie) April 2015
+  * Debian 9 (Stretch) June 2017
+  * Debian 10 (Buster) July 2019
+
+Debian -> **Ubuntu** (2004)  sponsored by Canonical, now with Gnome 3
+Debian -> Ubuntu -> **kubuntu** () - Ubuntu with KDE instead of Gnome
+Debian -> Ubuntu -> **Mint** (2006) - choice of GUI: mate, xfce, or cinnamon
+Debian -> Ubuntu -> **elementary OS** (2011) - looks like MacOS
+
+
+**Fedora** (2002) - sponsored by Red Hat, uses Gnome, designed for desktops and laptops
+Fedora -> **Red Hat** (1994) - Commercial, owned by IBM
+Fedora -> **Centos** (2003) - often used by hosting companies
+**arch** - difficult to install
+arch -> **manjaro** - easy to install. right amount of included software
+
+**openSUSE** (1994) - sponsored by SUSE Software
+openSUSE -> **SUSE Enterprise** a commercial version of openSUSE
+
+**Gentoo** - source code distribution only, designed for high performance  
+
+**WSL2** (2020), leading to “Microsoft Proprietary Linux”
+
+^ Distro        ^ derived from           ^ origin ^ corporate sponsor ^ license     ^
+| Debian        |                        | 1991   | none              | Open Source |
+| Ubuntu        | Debian                 | 2004   | Canonical         | Open Source |
+| Mint          | Ubuntu                 | 2006   | none              | Open Source |
+| elementary OS | Ubuntu                 | 2011   | none              | Open Source |
+| Fedora        | Red Hat (historically) | 2002   | Red Hat (IBM)     | Open Source |
+| Red Hat       | Fedora (code base)     | 1994   | Red Hat (IBM)     | Commercial  |
+| Centos        | Fedora                 | 2003   | Red Hat (IBM)     | Open Source |
+| openSUSE      |                        | 2006   | SUSE              | Open Source |
+| SUSE          | openSUSE               | 2000   | SUSE              | Commercial  |
+| Gentoo        |                        | 2002   | none              | Open Source |
+| WSL2          |                        | 2020   | Microsoft         | Proprietary |
+| Android       |                        |        | Google            | Commercial  |
+| iOS           |                        |        | Apple             | Commercial  |
+| MacOS         |                        |        | Apple             | Commercial  |
+
+
+Bottom line:
+Linus Torvalds evidently uses Fedora on his home computers for him and his family.  He specifically says he does NOT use Debian because it is too difficult to install.
+

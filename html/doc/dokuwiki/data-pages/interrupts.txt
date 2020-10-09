@@ -1,0 +1,75 @@
+
+====== Interrupts ======
+Like Event Handling for application software, an Interrupt is an electronic way of letting devices call the CPU on a hardware event.
+
+
+Used by
+        keyboard
+        mouse
+        network card
+        modem
+Other interrupts
+        timer
+        power
+
+
+In robots, there may be many interrupts, and interrupt
+are many hardware devices and interrupt handling will be an important part of the architecture.
+
+
+special purpose distributions
+server
+desktop
+embedded system
+
+===== IRQ =====
+Interrupt ReQuest (IRQ)
+What is interrupted?  The CPU.  
+
+
+
+
+cat /proc/interrupts
+one row for each IRQ
+one column for each CPU, showing the count of interrupts of that IRQ
+
+
+
+
+===== APIC =====
+Programmable Interrupt Controller (PIC)
+Advanced PIC (APIC)
+A PIC is connected to the CPU, via a port and the INTR pin.  
+Devices are connected to the PIC, via an IRQn pin.
+Flow:
+* A device raises an interrupt (voltage) on the PIC’s IRQn pin.
+* The PIC converts the IRQ to a number and writes it to a port, and then raises an interrupt on the CPU’s INTR pin.
+* The CPU reads the number from the port.
+* The CPU handles the interrupt.
+* The CPU signals back an acknowledgement to the PIC, who has been waiting for this completion.
+
+
+top half: the hard IRQ
+bottom half: the soft IRQ
+
+
+hard IRQ vs polling
+mainline kernel vs runtime (RT) kernel
+
+
+interrupt is the device’s way to notify the cpu that it needs attention
+hard vs soft
+level vs edge-triggered, simple, fast EOI
+local vs global
+system vs device
+maskable vs not
+shared vs not
+multiple
+
+
+proc interrupts
+mpstat -A
+
+
+which devices support IRQs?
+ 

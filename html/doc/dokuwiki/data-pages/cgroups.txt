@@ -1,0 +1,28 @@
+
+====== cgroups ======
+short for control groups
+a group of processes
+limits, accounts for, and isolates resource usage of a collection of processes
+
+This allows a program to employ multiple processes, all started, stopped, restarted, and managed as a group.
+
+libcgroup
+cgcreate
+cgexec
+cgclassify
+
+
+Used by, among others:
+  * CoreOS
+  * Docker 
+  * Hadoop 
+  * Jelastic 
+  * Kubernetes 
+  * lmctfy (Let Me Contain That For You) 
+  * LXC (LinuX Containers)
+  * systemd
+  * Mesos and Mesosphere 
+  * HTCondor
+
+cgroupsV2 has been released, adopted by Fedora in late 2019
+

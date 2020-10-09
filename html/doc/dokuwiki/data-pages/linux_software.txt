@@ -1,0 +1,7 @@
+====== Linux Software ======
+  $ cat /proc/cpuinfo
+  $ cat /proc/filesystems
+  $ cat /proc/modules
+  $ lsmod
+
+

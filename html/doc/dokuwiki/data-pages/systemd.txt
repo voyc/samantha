@@ -1,0 +1,329 @@
+
+====== systemd  ======
+A software suite that provides an array of system components.
+
+
+Entomology.  The name systemd:
+* observes the linux convention of naming daemons with a trailing d
+* playing on the concept, System D, an idea popularized by Anthony Bourdain, referring to the ability to adapt, to make do, to be resourceful.
+
+
+Project name, github source, Lennart Poettering, Berlin.
+
+
+Makes use of 
+cgroups
+dbus
+
+
+Adoption
+
+
+ClearLinux uses systemd a lot
+
+
+NOT using systemd:
+* gentoo
+* alpine
+* slackware
+
+
+Components
+
+
+systemd
+	use
+	what it does
+	alternative or legacy
+	init
+	100
+	initialize devices, start services, parallel, fast
+	SysVInit, initd, upstart, rcopen, runit
+	journalctl -xe
+	90
+	logging
+	
+
+	logind
+	80
+	user logins
+	
+
+	udev
+	90
+	devices, standardized
+	fstab
+	networkd
+	0
+	dhcp
+	network manager
+	timesync
+	0
+	
+
+	?
+	timers
+	0
+	scheduler
+	cron
+	resolved
+	0
+	DNS resolver
+	dnsmasq
+	boot loader
+	0
+	uses UEFI
+	grub
+	
+
+replacements for startup shell scripts:
+pm-utils
+inetd
+acpid
+syslog
+watchdog
+cron
+atd
+
+
+
+
+good: standardization, especially of services and devices
+bad: redundant bloat
+
+
+source: https://www.youtube.com/watch?v=r_haLf5mWhE
+
+
+Units
+unit = a thing that is managed by systemd.  Does not have to be a service.  Does not have to be started at boot. 
+
+
+Uses the words service and unit.  A service is a type of unit.
+service vs unit
+
+
+unit file paths
+/lib/systemd/system - for package-installed units, get replaced on package update
+/etc/systemd/system - for administrator-configured units
+/run/systemd/system - for non-persistent runtime modifications
+
+
+unit file name convention: name.type
+examples:
+consul.service
+ssh.socket
+
+
+Service Unit Types
+* simple - for executables which run without daemonising
+* forking - for executables which daemonise themselves
+* oneshot - usually short-lived programs which run to completion and terminate
+* notify - for executables which will notify systemd when they are started and available for work
+
+
+Unit Commands
+$ systemctl enable consul.service # makes it start at boot
+$ systemctl start consul.service
+$ systemctl stop consul.service
+$ systemctl restart consul.service
+$ systemctl status consul.service
+
+
+Unit File Format
+[Unit]
+key=value
+[Service]
+[Install]
+
+
+
+
+When a service starts multiple processes, they are contained within a CGroup.  This allows a service to be started, stopped and restarted, because all of the processes can be started as a group.
+
+
+Common BootStrapping Pattern
+apt install consul # the general purpose options are set in /lib/systemd/system/consul
+apt install consul-bootstrap-aws # platform specifics are set in /etc/systemd/system/consul
+apt install consul-bootstrap-azure
+
+
+Target Units
+replacements for runlevels
+can create our own targets (runlevels)
+a target is reached when all dependent services are started
+
+
+Socket Units
+
+
+python program
+import github.com/coreos/go-systemd/activation
+
+
+Timer Units
+replaces cron
+
+
+resource accounting
+
+
+Unit file types:
+.service
+.socket
+.device
+.mount
+.automount
+.swap
+.target
+.path
+.timer (which can be used as a cron-like job scheduler[54])
+.snapshot
+.slice (used to group and manage processes and resources[55])
+.scope
+
+
+init
+systemctl
+each component has a *ctl file and also daemons and configuration files
+
+
+history
+improvements encompassed by systemd
+not everything has to be started at boot
+those things that are started can be started in parallel.  
+no need to specify the order in which things install.
+no need to wait for one thing to start before the other things are started
+a service with multiple processes, all processes are contained in a CGroup and can be started, stopped and restarted together.
+can specify a service should be restarted after a crash
+
+
+journal
+how do you use this?
+
+
+
+
+
+
+
+
+process
+thread
+task
+job
+cgroup
+
+
+foreground
+background
+terminal-associated
+
+
+
+
+client
+server
+service
+
+
+
+
+john@RacerSwift:~$ service --status-all
+ [ + ]  acpid
+ [ - ]  alsa-utils
+ [ - ]  anacron
+ [ + ]  apparmor
+ [ + ]  apport
+ [ + ]  avahi-daemon
+ [ + ]  bluetooth
+ [ - ]  console-setup.sh
+ [ + ]  cron
+ [ + ]  cups
+ [ + ]  cups-browsed
+ [ + ]  dbus
+ [ + ]  gdm3
+ [ + ]  grub-common
+ [ - ]  hwclock.sh
+ [ + ]  irqbalance
+ [ + ]  kerneloops
+ [ - ]  keyboard-setup.sh
+ [ + ]  kmod
+ [ + ]  network-manager
+ [ + ]  openvpn
+ [ - ]  plymouth
+ [ - ]  plymouth-log
+ [ - ]  pppd-dns
+ [ + ]  procps
+ [ - ]  pulseaudio-enable-autospawn
+ [ - ]  rsync
+ [ + ]  rsyslog
+ [ - ]  saned
+ [ - ]  speech-dispatcher
+ [ - ]  spice-vdagent
+ [ + ]  udev
+ [ + ]  ufw
+ [ + ]  unattended-upgrades
+ [ - ]  uuidd
+ [ + ]  whoopsie
+ [ - ]  x11-common
+
+
+
+
+john@RacerSwift:~$ ps -e|grep systemd
+      1 ?        00:02:35 systemd
+    309 ?        00:00:01 systemd-journal
+    342 ?        00:00:02 systemd-udevd
+    725 ?        00:00:02 systemd-resolve
+    727 ?        00:00:00 systemd-timesyn
+    809 ?        00:00:10 systemd-logind
+   1448 ?        00:00:01 systemd
+
+
+
+
+NetworkManager.service - Network Manager
+     Loaded: loaded (/lib/systemd/system/NetworkManager.service; enabled; vendor preset: enabled)
+     Active: active (running) since Fri 2020-10-02 17:28:18 +07; 1 day 22h ago
+       Docs: man:NetworkManager(8)
+   Main PID: 775 (NetworkManager)
+      Tasks: 4 (limit: 9103)
+     Memory: 18.5M
+     CGroup: /system.slice/NetworkManager.service
+             └─775 /usr/sbin/NetworkManager --no-daemon
+ต.ค. 04 15:28:27 RacerSwift NetworkManager[775]: <info>  [1601800107.2706] device (wlp0s20f3): stat>
+ต.ค. 04 15:28:27 RacerSwift NetworkManager[775]: <info>  [1601800107.2708] device (wlp0s20f3): stat>
+ต.ค. 04 15:28:27 RacerSwift NetworkManager[775]: <info>  [1601800107.2712] manager: NetworkManager >
+ต.ค. 04 15:28:27 RacerSwift NetworkManager[775]: <info>  [1601800107.2728] manager: NetworkManager >
+ต.ค. 04 15:28:27 RacerSwift NetworkManager[775]: <info>  [1601800107.2729] policy: set 'JASMINE' (w>
+ต.ค. 04 15:28:27 RacerSwift NetworkManager[775]: <info>  [1601800107.2734] device (wlp0s20f3): Acti>
+ต.ค. 04 15:28:27 RacerSwift NetworkManager[775]: <info>  [1601800107.7721] manager: NetworkManager >
+ต.ค. 04 15:29:12 RacerSwift NetworkManager[775]: <warn>  [1601800152.1326] dhcp6 (wlp0s20f3): reque>
+ต.ค. 04 15:29:12 RacerSwift NetworkManager[775]: <info>  [1601800152.1327] dhcp6 (wlp0s20f3): state>
+ต.ค. 04 16:09:42 RacerSwift NetworkManager[775]: <info>  [1601802582.7674] agent-manager: agent[c5a>
+~
+~
+
+
+
+
+Kernel interface
+libudev
+NetworkManager
+A software utility that provides a high-level interface for the configuration of the network interfaces.
+
+
+NetworkManager sits on top of libudev and other kernel interfaces and other daemons.
+
+
+Components
+
+
+nm-applet - graphical user interface implemented as GNOME applet
+
+
+nmcli - command-line interface
+
+
+nmtui - text-based user interface

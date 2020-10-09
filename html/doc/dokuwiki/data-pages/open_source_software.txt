@@ -1,0 +1,37 @@
+====== Open Source Software ======
+proprietary software - software that is copyrighted and owned by some person or corporation, like IBM, Microsoft, Apple, etc.
+
+
+free software movement - created by Richard Stallman in 1983
+	GNU Manifesto - written by Richard Stallman in 1985, describing the GNU project
+Free Software Foundation (FSF) - started by Richard Stallman in 1985
+Free and Open Software (FOSS) - 
+Free/Libre and Open Software (FLOSS) - 
+
+
+open source movement - branched off of free software movement in 1998, about the time of source code release of Netscape Navigator.  One stated reason for the change was that the word “free” implies “free of charge” and that concept is terrifying to businessmen who have only known proprietary software.
+	Open Source Initiative (OSI) - for advocacy, education, stewardship of open source
+
+
+Also notable:
+Electronic Freedom Foundation (EFF) - providing legal defense for digital freedoms
+Open Technology Fund (OTF) - a non-profit to protect global internet freedom technologies
+
+
+copyleft - any derivative work must be distributed under the same terms
+GNU General Public License (GPL)
+GPL v2
+GPL v3 
+
+
+permissive software license
+	MIT
+	BSD
+
+
+Linus Torvalds likes the EFF, and does not care for the FSF.
+
+
+The Linux kernel is licensed under GPL v2.  Linus Torvalds does not approve of GPL v3.
+
+

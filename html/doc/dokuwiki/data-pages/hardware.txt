@@ -1,5 +1,15 @@
 
-======Hardware======
+====== Hardware ======
+
+  $ hostname  # show the hostname (computer name)
+  $ hostnamectl  # show or set hostname and other information
+  
+  $ sudo lshw
+  $ lspci
+  $ lsusb
+  $ sudo dmidecode
+
+
 ====Architecture====
 ====Components====
 ==Motherboard==

@@ -1,0 +1,37 @@
+
+====== Files ======
+File Types
+ls -l shows type in the first character of the file permissions column
+- : regular file
+d : directory
+c : character device file
+b : block device file
+s : local socket file
+p : named pipe
+l : symbolic link
+
+
+ls -F appends symbols to filenames
+@ : symbolic link (or that the file has extended attributes)
+* : executable
+= : socket 
+| : named pipe
+> : door
+/ : directory
+Soft link
+ln -s filename linkname
+ln -s /media/john/Seagate\ Expansion\ Drive/ /seagate
+unlink /seagate
+filename wildcards
+# delete all files not in march and not day 1
+rm *.?????[!3]?[!1].*.sql
+
+
+# delete all files not in march and not day 11, 21, or 31
+rm *.?????[!3][!0]?.*.sql
+tree
+draw tree structure of folders
+find
+find . -name *.plugin
+grep
+grep -r "progressive" . 

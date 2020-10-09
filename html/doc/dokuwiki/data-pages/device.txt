@@ -1,0 +1,59 @@
+
+====== Device ======
+A device file is an interface to a device driver.  
+A device file is sometimes called a special file or a device special file.
+The device file allows a program to interact with the device using standard input/output system calls.
+
+Two types of device file:
+* character - serial stream of characters
+* block - fixed size blocks, random access, buffered, example: disk
+
+Most device files are managed as part of a virtual file system mounted at /dev.
+
+Device file is pointer, not container.
+
+size
+device numbers, major and minor
+major driver
+minor instance
+
+
+full
+null
+random
+urandom
+zero
+
+
+ls -li /dev | grep cdrom
+
+
+ls -li /dev | grep tty
+
+
+pts pseudo terminal slave
+a type of tty
+
+
+/dev/pts
+character special file
+
+
+xterm
+
+
+bus 
+        PCI, ISA, EISA
+
+
+
+
+cpu clock, 200 MHz pulses, per second
+system clock, time of day
+time-sharing clock, interrupt cpu as reminder to switch users
+
+
+chipset
+        NorthBridge
+        SouthBridge
+

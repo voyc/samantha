@@ -1,0 +1,31 @@
+
+====== Network ======
+ifconfig
+ping localhost
+Networking
+$ nmcli dev wifi list  # network manager command line interface (nmcli)
+$ nmcli dev wifi connect JASMINE
+$ nmcli dev wifi connect TELLO-591FFC
+$ nmcli connection
+$ sudo nmcli connection modify TELLO-591FFC connection.autoconnect yes
+
+
+ssh
+Replaces rlogin and rsh.
+ssh -p 7822 voyccom@az1-ss8.a2hosting.com
+SFTP
+A protocol to do file transfer over SSH, emulating FTP syntax.
+SCP
+A protocol to do file transfer over SSH, emulating the syntax of rcp in BSD Unix.
+
+
+scp from.txt to.txt
+scp username@host:path/* .
+scp . username@host:path/
+scp -pr -P 22 jhagstrand@web612.webfaction.com:db_archive .
+scp -pr -P 7822 voyccom@az1-ss8.a2hosting.com:webprod/mai/config.ini .
+
+
+-P remote-port
+-p preserve files modification and access times
+-r copy directories recursively

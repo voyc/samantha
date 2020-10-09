@@ -1,0 +1,40 @@
+
+====== Shell Programming ======
+sed
+sed “s/day/night/” <old >new
+sed “s/day/night/; 14 q” <old >new    # chain commands, quit after line 14
+sed -E "s/\{s:([0-9]*)[[:space:],]*l:([0-9]*)[[:space:] ,]*n:([0-9]*).*/\1\t\2\t\3/g" <test.js
+awk
+
+==== Run program in background ====
+$ tar -czf home.tar.gz . &  # append & to run command in background
+or
+$ tar -czf home.tar.gz .
+Ctrl+Z      # stop the job
+$ bg   # then continue the job in the background
+
+
+$ jobs # list jobs running in background
+$ fg  # put a background job back into the foreground
+$ disown -h %1  # separate job from shell 
+$ nohup tar -czf home.tar.gz . &  # run in background and separate it from shell
+$ firefox </dev/null &>/dev/null &
+
+
+export PS1='$ '    # set prompt
+. activate # dot command, run in parent context from within script
+source activate # same as dot command
+==== How to start a program ====
+command
+shell script
+source script
+systemd
+command &
+nohup command &
+
+==== How to stop a program ====
+Signaling
+
+Kill
+
+

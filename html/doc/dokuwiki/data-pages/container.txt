@@ -1,0 +1,14 @@
+
+====== Container ======
+
+A concept in Linux.
+
+separation and isolation, so that one screwup by one user or program cannot affect other parts of the system 
+
+the opposite of integration, sharing, 
+
+[[cgroups]] - kernel
+docker - not part of kernel
+Components
+
+
