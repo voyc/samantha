@@ -1,48 +1,89 @@
 
 ====== Startup ======
-boot, init, from SysV Init to systemd
 
-service --status-all
-ls /etc/init.d
+Historically, the startup system has recently moved from init to systemd.
+
+Ten years ago, most distributions used SysV Init.
+Various distributions developed new and improved init systems.  Ubuntu built Upstart, for example.
+As of 2020, most distributions have switched to systemd, developed at Red Hat.
+It was a long and controversial adoption period, and still today Ubuntu version 20 supports both init and systemd.  So one can find remnants of SysVInit still present, though systemd-init is the primary startup system.
+
+For example, the following are from SysV init:
+  $ service --status-all  # list the startup services
+  $ ls /etc/init.d  # list the scripts to start and manage the services
+
+These have been replaced by systemd
+  $ systemctl
+  $ ls /lib/systemd/system
+
+
+So let's look at the cron service.
+For every script in /etc/init.d, there is a unit file in /lib/systemd/system.
+
+
+  * /etc/init.d/cron -> /lib/systemd/system
+
+With SysV Init you could run the init.d script directly:
+  $ exec /etc/init.d/cron -options
+
+or you could use the service command.
+  $ service cron start
+
+Now in systemd, you use the systemctl command.
+  $ systemctl cron start
+
+
+Other tools
+/lib/lsb/init-functions
+/var/name.pid ?
+
+Configuration files:
+/etc/default/name
+/etc/name/name.conf
 
 ===== Startup Services =====
 
-^ service                             ^ d ^ binary                                        ^ description                                                                                                                                                                             ^ resources                                                         ^
-| acpid                               | y | /usr/sbin/acpid                               | Advanced Configuration and Power Interface.\\ Provide a socket to multiplex kernel ACPI events.                                                                                           |                                                                   |
-| alsa-utils                          | n | /usr/sbin/alsactl                             | audio mixer levels, save and restore at bootup and shutdown                                                                                                                             | /run/alsa /usr/share/alsa/utils.sh /var/lib/alsa/asound.state     |
-| anacron                             | n | /usr/sbin/anacron                             | Anachronistic cron. Not a daemon. Run once at startup to catchup with missed jobs. This script also called by cron.                                                                     |                                                                   |
-| apparmor                            | ? | /lib/apparmor/rc.apparmor.functions           | AppArmor                                                                                                                                                                                | /sys/module/apparmor /rofs/etc/apparmor.d                         |
-| apport                              | ? | /usr/share/apport/apport                      | Automatic Crash Report generation                                                                                                                                                       | uses log_* functions in /lib/lsb/init-functions                   |
-| avahi-daemon                        | y | /usr/sbin/avahi-daemon                        | zeroconf network configuration, when user plugs laptop into network, including DNS service discovery Lennart Poettering 2005 avahi is the name of a lemur in Madagascar copy of bonjour | /etc/default/avahi-daemon                                         |
-| bluetooth                           | y | /sbin/bluetoothd                              | start bluetooth daemons                                                                                                                                                                 | /etc/default/bluetooth                                            |
-| console-setup.sh                    | n | /lib/console-setup/console-setup.sh           | set console font and keymap                                                                                                                                                             |                                                                   |
-| cron                                | d | /usr/sbin/cron                                | cron scheduler                                                                                                                                                                          | /var/run/crond.pid /etc/default/cron /etc/pam.d/cron              |
-| cups                                | d | /usr/sbin/cupsd                               | print spooler and server has web interface at localhost:631                                                                                                                             | /run/cups/                                                        |
-| cups-browsed                        | d | /usr/sbin/cups-browsed                        | make network printers available locally, by browsing bonjour broadcasts                                                                                                                 | /var/run/cups                                                     |
-| dbus                                | d | /usr/sbin/dbus-daemon  /usr/sbin/dbus-uuidgen | interprocess messaging                                                                                                                                                                  | /var/run/dbus /etc/default/dbus                                   |
-| gdm3                                | d | /usr/sbin/gdm3                                | GNOME display manager                                                                                                                                                                   | /var/run/gdm3.pid /usr/share/gdm/generate-config                  |
-| grub-commoplymouth-logn             | n |                                               | record successful boot. If GRUB suspects previous boot was unsuccessful, it displays the boot menu.                                                                                     | /boot/grub/grubenv                                                |
-| hwclock.sh                          | n | /sbin/hwclock                                 | Set and adjust CMOS clock. Sync hardware and system clock time. Run at startup and shutdown.                                                                                            | /etc/default/hwclock /etc/default/rcS                             |
-| irqbalance                          | d | /usr/sbin/irqbalance                          | balance interrupts for SMP systems                                                                                                                                                      | /run/irqbalance.pid /etc/default/irqbalance                       |
-| kerneloops                          | d | /usr/sbin/kerneloops                          | send kernel crash reports to oops.kernel.org                                                                                                                                            | /etc/default/kerneloops /var/run/kerneloops.pid                   |
-| keyboard-setup.sh                   | n | /lib/console-setup/keyboard-setup.sh          | setup the console keyboard layout                                                                                                                                                       |                                                                   |
-| kmod                                | n |                                               | load the kernel modules listed in /etc/modules                                                                                                                                          |                                                                   |
-| network-manager                     | d | /usr/sbin/NetworkManager                      | Automatically switch network connections to the best available connection                                                                                                               | /run/NetworkManager/NetworkManager.pid                            |
-| openvpn                             | d | /usr/sbin/openvpn                             | start openvpn                                                                                                                                                                           | /etc/default/openvpn /etc/openvpn/*.conf /run/openvpn/openvpn.pid |
-| plymouth                            | d | /sbin/plymouthd /bin/plymouth                 | a splash screen running during boot. stopped during after, started at shutdown                                                                                                          | /etc/default/plymouth                                             |
-| plymouth-log                        |   |                                               |                                                                                                                                                                                         |                                                                   |
-| pppd-dns                            |   |                                               |                                                                                                                                                                                         |                                                                   |
-| procps                              |   |                                               |                                                                                                                                                                                         |                                                                   |
-| pulseaudio-enable-autospawn         |   |                                               |                                                                                                                                                                                         |                                                                   |
-| rsync                               |   |                                               |                                                                                                                                                                                         |                                                                   |
-| rsyslog                             |   |                                               |                                                                                                                                                                                         |                                                                   |
-| saned                               |   |                                               |                                                                                                                                                                                         |                                                                   |
-| speech-dispatcher                   |   |                                               |                                                                                                                                                                                         |                                                                   |
-| spice-vdagent                       |   |                                               |                                                                                                                                                                                         |                                                                   |
-| udev                                |   |                                               |                                                                                                                                                                                         |                                                                   |
-| ufw                                 |   |                                               |                                                                                                                                                                                         |                                                                   |
-| unattended-upgrades                 |   |                                               |                                                                                                                                                                                         |                                                                   |
-| uuidd                               |   |                                               |                                                                                                                                                                                         |                                                                   |
-| whoopsie                            |   |                                               |                                                                                                                                                                                         |                                                                   |
-| x11-common                          |   |                                               |                                                                                                                                                                                         |                                                                   |
+Notes
+"zeroconf network configuration, when user plugs laptop into network, including DNS service discovery
+Lennart Poettering 2005
+avahi is the name of a lemur in Madagascar
+copy of bonjour"
 
+^ Name                        ^ Description                                                                                         ^ Run      ^ Files                                                                                                     ^
+| acpid                       | Advanced Configuration and Power Interface. Provide a socket to multiplex kernel ACPI events.       | daemon   | /usr/sbin/acpid                                                                                           |
+| alsa-utils                  | Audio Levels. Save and restore at bootup and shutdown.                                              | run once | /usr/sbin/alsactl\\ /usr/sbin/alsactl\\ /run/alsa\\ /usr/share/alsa/utils.sh\\ /var/lib/alsa/asound.state |
+| anacron                     | Anachronistic cron. Run once at startup to catch up with missed jobs. Also called by cron.          | run once | /usr/sbin/anacron                                                                                         |
+| apparmor                    | AppArmor                                                                                            | ?        | /lib/apparmor/rc.apparmor.functions\\ /sys/module/apparmor\\ /rofs/etc/apparmor.d                         |
+| apport                      | Automatic Crash Report generation                                                                   | ?        | /usr/share/apport/apport\\ /lib/lsb/init-functions                                                        |
+| avahi-daemon                | Zeroconf Network Configuration. Copy of Bonjour.                                                    | daemon   | /usr/sbin/avahi-daemon\\ /etc/default/avahi-daemon                                                        |
+| bluetooth                   | start bluetooth daemons                                                                             | daemon   | /sbin/bluetoothd\\ /etc/default/bluetooth                                                                 |
+| console-setup.sh            | Set console font and keymap.                                                                        | run once | /lib/console-setup/console-setup.sh                                                                       |
+| cron                        | cron scheduler                                                                                      | daemon   | /usr/sbin/cron\\ /var/run/crond.pid\\ /etc/default/cron\\ /etc/pam.d/cron                                 |
+| cups                        | Print Spooler and Server. has web interface at localhost:631                                        | daemon   | /usr/sbin/cupsd\\ /run/cups/                                                                              |
+| cups-browsed                | Make network printers available locally, by browsing Bonjour broadcasts.                            | daemon   | /usr/sbin/cups-browsed\\ /var/run/cups                                                                    |
+| dbus                        | D-Bus. interprocess messaging                                                                       | daemon   | /usr/sbin/dbus-daemon\\ /usr/sbin/dbus-uuidgen\\ /var/run/dbus\\ /etc/default/dbus                        |
+| gdm3                        | GNOME display manager                                                                               | daemon   | /usr/sbin/gdm3\\ /var/run/gdm3.pid\\ /usr/share/gdm/generate-config                                       |
+| grub-commoplymouth-logn     | Record successful boot. If GRUB suspects previous boot was unsuccessful, it displays the boot menu. | run once | /boot/grub/grubenv                                                                                        |
+| hwclock.sh                  | Set and adjust CMOS clock.  Sync hardware and system clock time. Run at startup and shutdown.       | run once | /sbin/hwclock\\ /etc/default/hwclock\\ /etc/default/rcS                                                   |
+| irqbalance                  | Balance interrupts for SMP systems.                                                                 | daemon   | /usr/sbin/irqbalance\\ /run/irqbalance.pid\\ /etc/default/irqbalance                                      |
+| kerneloops                  | Send kernel crash reports to oops.kernel.org.                                                       | daemon   | /usr/sbin/kerneloops\\ /etc/default/kerneloops\\ /var/run/kerneloops.pid                                  |
+| keyboard-setup.sh           | Setup the console keyboard layout.                                                                  | run once | /lib/console-setup/keyboard-setup.sh                                                                      |
+| kmod                        | Load the kernel modules listed in /etc/modules                                                      | run once | /etc/modules                                                                                              |
+| network-manager             | Automatically switch network connections to the best available connection                           | daemon   |                                                                                                           |
+| openvpn                     | start openvpn                                                                                       | daemon   |                                                                                                           |
+| plymouth                    | Boot splash manager.  Show and hide splash screen during boot.                                      | run once | /etc/default/plymouth\\ /lib/lsb/init-functions                                                           |
+| plymouth-log                | Inform plymouth that /var/log is writable.                                                          | run once | /etc/default/plymouth-log\\ /lib/lsb/init-functions                                                       |
+| pppd-dns                    | Restore /etc/resolve.conf if the system crashed before the ppp link was shut down.                  | run once | /lib/lsb/init-functions                                                                                   |
+| procps                      | Process parameters.  Configure kernel parameters from /etc/sysctl.conf.                             | daemon   |                                                                                                           |
+| pulseaudio-enable-autospawn | Enable autospawn for pulseaudio daemon.                                                             | run once |                                                                                                           |
+| rsync                       | Allow fast remote file copy, like RCP.                                                              | daemon   | /usr/bin/rsync\\ /etc/default/rsync\\ /etc/rsyncd.conf\\ /var/run/rsync.pid                               |
+| rsyslog                     | Rocket fast system for logging. Enhanced syslogd.                                                   | daemon   | /usr/sbin/rsyslogd\\ /run/rsyslogd.pid\\ /etc/default/rsyslog\\ /lib/lsb/init-functions                   |
+| saned                       | SANE network scanner server.                                                                        | daemon   | /usr/sbin/saned\\ /etc/default/saned\\ /lib/lsb/init-functions\\ /var/run/saned.pid                       |
+| speech-dispatcher           | Common interface to speech synthesizers.                                                            | daemon   | /usr/bin/speech-dispatcher\\ /run/speech-dispatcher/speech-dispatcher.pid\\ /lib/lsb/init-functions       |
+| spice-vdagent               | Has to do with X-11, Spice Guest.                                                                   | daemon   | /usr/sbin/spice-vdagentd\\ lsb                                                                            |
+| udev                        | Start systemd-udevd.  Hot plug events dispatcher.                                                   | daemon   |                                                                                                           |
+| ufw                         | Start ufw firewall.                                                                                 | daemon   |                                                                                                           |
+| unattended-upgrades         | Unattended package upgrades shutdown.                                                               | daemon   |                                                                                                           |
+| uuidd                       | uuid generation daemon                                                                              | daemon   |                                                                                                           |
+| whoopsie                    | Crash report submission daemon.                                                                     | daemon   |                                                                                                           |
+| x11-common                  | Set up the X server and ICE socket directories.                                                     | run once |                                                                                                           |

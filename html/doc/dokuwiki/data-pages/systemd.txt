@@ -1,26 +1,26 @@
-
 ====== systemd  ======
+
+org
+  * controversy
+  * sysv vs systemd
+  * init vs all other components
+  * how to start a program at boot
+
 A software suite that provides an array of system components.
 
-
 Entomology.  The name systemd:
-* observes the linux convention of naming daemons with a trailing d
-* playing on the concept, System D, an idea popularized by Anthony Bourdain, referring to the ability to adapt, to make do, to be resourceful.
-
+  * observes the linux convention of naming daemons with a trailing d
+  * playing on the concept, System D, an idea popularized by Anthony Bourdain, referring to the ability to adapt, to make do, to be resourceful.
 
 Project name, github source, Lennart Poettering, Berlin.
 
-
 Makes use of 
-cgroups
-dbus
+  * cgroups
+  * dbus
 
-
-Adoption
-
+===== Adoption =====
 
 ClearLinux uses systemd a lot
-
 
 NOT using systemd:
 * gentoo
@@ -28,106 +28,64 @@ NOT using systemd:
 * slackware
 
 
-Components
+===== Components =====
 
-
-systemd
-	use
-	what it does
-	alternative or legacy
-	init
-	100
-	initialize devices, start services, parallel, fast
-	SysVInit, initd, upstart, rcopen, runit
-	journalctl -xe
-	90
-	logging
-	
-
-	logind
-	80
-	user logins
-	
-
-	udev
-	90
-	devices, standardized
-	fstab
-	networkd
-	0
-	dhcp
-	network manager
-	timesync
-	0
-	
-
-	?
-	timers
-	0
-	scheduler
-	cron
-	resolved
-	0
-	DNS resolver
-	dnsmasq
-	boot loader
-	0
-	uses UEFI
-	grub
-	
+^ systemd        ^ use ^ what it does                                       ^ alternative or legacy                   ^
+| init           | 100 | initialize devices, start services, parallel, fast | SysVInit, initd, upstart, rcopen, runit |
+| journalctl -xe | 90  | logging                                            |                                         |
+| logind         | 80  | user logins                                        |                                         |
+| udev           | 90  | devices, standardized                              | fstab                                   |
+| networkd       | 0   | dhcp                                               | network manager                         |
+| timesync       | 0   |                                                    | ?                                       |
+| timers         | 0   | scheduler                                          | cron                                    |
+| resolved       | 0   | DNS resolver                                       | dnsmasq                                 |
+| boot loader    | 0   | uses UEFI                                          | grub                                    |
 
 replacements for startup shell scripts:
-pm-utils
-inetd
-acpid
-syslog
-watchdog
-cron
-atd
+  * pm-utils
+  * inetd
+  * acpid
+  * syslog
+  * watchdog
+  * cron
+  * atd
 
-
-
-
+===== Controversy =====
 good: standardization, especially of services and devices
-bad: redundant bloat
 
+bad: redundant bloat
 
 source: https://www.youtube.com/watch?v=r_haLf5mWhE
 
-
-Units
+===== Units =====
 unit = a thing that is managed by systemd.  Does not have to be a service.  Does not have to be started at boot. 
 
-
 Uses the words service and unit.  A service is a type of unit.
+
 service vs unit
 
-
 unit file paths
-/lib/systemd/system - for package-installed units, get replaced on package update
-/etc/systemd/system - for administrator-configured units
-/run/systemd/system - for non-persistent runtime modifications
-
+  * /lib/systemd/system - for package-installed units, get replaced on package update
+  * /etc/systemd/system - for administrator-configured units
+  * /run/systemd/system - for non-persistent runtime modifications
 
 unit file name convention: name.type
 examples:
-consul.service
-ssh.socket
-
+  * consul.service
+  * ssh.socket
 
 Service Unit Types
-* simple - for executables which run without daemonising
-* forking - for executables which daemonise themselves
-* oneshot - usually short-lived programs which run to completion and terminate
-* notify - for executables which will notify systemd when they are started and available for work
-
+  * simple - for executables which run without daemonising
+  * forking - for executables which daemonise themselves
+  * oneshot - usually short-lived programs which run to completion and terminate
+  * notify - for executables which will notify systemd when they are started and available for work
 
 Unit Commands
-$ systemctl enable consul.service # makes it start at boot
-$ systemctl start consul.service
-$ systemctl stop consul.service
-$ systemctl restart consul.service
-$ systemctl status consul.service
+  $ systemctl enable consul.service # makes it start at boot
+  $ systemctl start consul.service
+  $ systemctl stop consul.service
+  $ systemctl restart consul.service
+  $ systemctl status consul.service
 
 
 Unit File Format
@@ -136,37 +94,27 @@ key=value
 [Service]
 [Install]
 
-
-
-
 When a service starts multiple processes, they are contained within a CGroup.  This allows a service to be started, stopped and restarted, because all of the processes can be started as a group.
 
-
 Common BootStrapping Pattern
-apt install consul # the general purpose options are set in /lib/systemd/system/consul
-apt install consul-bootstrap-aws # platform specifics are set in /etc/systemd/system/consul
-apt install consul-bootstrap-azure
-
+  $ apt install consul # the general purpose options are set in /lib/systemd/system/consul
+  $ apt install consul-bootstrap-aws # platform specifics are set in /etc/systemd/system/consul
+  $ apt install consul-bootstrap-azure
 
 Target Units
-replacements for runlevels
-can create our own targets (runlevels)
-a target is reached when all dependent services are started
-
+  * replacements for runlevels
+  * can create our own targets (runlevels)
+  * a target is reached when all dependent services are started
 
 Socket Units
 
-
 python program
-import github.com/coreos/go-systemd/activation
-
+  * import github.com/coreos/go-systemd/activation
 
 Timer Units
-replaces cron
-
+  * replaces cron
 
 resource accounting
-
 
 Unit file types:
 .service
@@ -182,96 +130,44 @@ Unit file types:
 .slice (used to group and manage processes and resources[55])
 .scope
 
-
 init
-systemctl
-each component has a *ctl file and also daemons and configuration files
-
+  * systemctl
+  * each component has a *ctl file and also daemons and configuration files
 
 history
-improvements encompassed by systemd
-not everything has to be started at boot
-those things that are started can be started in parallel.  
-no need to specify the order in which things install.
-no need to wait for one thing to start before the other things are started
-a service with multiple processes, all processes are contained in a CGroup and can be started, stopped and restarted together.
-can specify a service should be restarted after a crash
-
+  * improvements encompassed by systemd
+  * not everything has to be started at boot
+  * those things that are started can be started in parallel.  
+  * no need to specify the order in which things install.
+  * no need to wait for one thing to start before the other things are started
+  * a service with multiple processes, all processes are contained in a CGroup and can be started, stopped and restarted together.
+  * can specify a service should be restarted after a crash
 
 journal
-how do you use this?
+  * how do you use this?
 
+terms:
+  * process
+  * thread
+  * task
+  * job
+  * cgroup
 
+process running possibilities
+  * foreground
+  * background
+  * terminal-associated
 
+client-server
+  * client
+  * server
+  * service
 
+list all current running services
+  $ service --status-all
 
-
-
-
-process
-thread
-task
-job
-cgroup
-
-
-foreground
-background
-terminal-associated
-
-
-
-
-client
-server
-service
-
-
-
-
-john@RacerSwift:~$ service --status-all
- [ + ]  acpid
- [ - ]  alsa-utils
- [ - ]  anacron
- [ + ]  apparmor
- [ + ]  apport
- [ + ]  avahi-daemon
- [ + ]  bluetooth
- [ - ]  console-setup.sh
- [ + ]  cron
- [ + ]  cups
- [ + ]  cups-browsed
- [ + ]  dbus
- [ + ]  gdm3
- [ + ]  grub-common
- [ - ]  hwclock.sh
- [ + ]  irqbalance
- [ + ]  kerneloops
- [ - ]  keyboard-setup.sh
- [ + ]  kmod
- [ + ]  network-manager
- [ + ]  openvpn
- [ - ]  plymouth
- [ - ]  plymouth-log
- [ - ]  pppd-dns
- [ + ]  procps
- [ - ]  pulseaudio-enable-autospawn
- [ - ]  rsync
- [ + ]  rsyslog
- [ - ]  saned
- [ - ]  speech-dispatcher
- [ - ]  spice-vdagent
- [ + ]  udev
- [ + ]  ufw
- [ + ]  unattended-upgrades
- [ - ]  uuidd
- [ + ]  whoopsie
- [ - ]  x11-common
-
-
-
-
-john@RacerSwift:~$ ps -e|grep systemd
+list all current systemd processes
+  $ ps -e|grep systemd
       1 ?        00:02:35 systemd
     309 ?        00:00:01 systemd-journal
     342 ?        00:00:02 systemd-udevd
@@ -280,42 +176,13 @@ john@RacerSwift:~$ ps -e|grep systemd
     809 ?        00:00:10 systemd-logind
    1448 ?        00:00:01 systemd
 
-
-
-
-NetworkManager.service - Network Manager
-     Loaded: loaded (/lib/systemd/system/NetworkManager.service; enabled; vendor preset: enabled)
-     Active: active (running) since Fri 2020-10-02 17:28:18 +07; 1 day 22h ago
-       Docs: man:NetworkManager(8)
-   Main PID: 775 (NetworkManager)
-      Tasks: 4 (limit: 9103)
-     Memory: 18.5M
-     CGroup: /system.slice/NetworkManager.service
-             └─775 /usr/sbin/NetworkManager --no-daemon
-ต.ค. 04 15:28:27 RacerSwift NetworkManager[775]: <info>  [1601800107.2706] device (wlp0s20f3): stat>
-ต.ค. 04 15:28:27 RacerSwift NetworkManager[775]: <info>  [1601800107.2708] device (wlp0s20f3): stat>
-ต.ค. 04 15:28:27 RacerSwift NetworkManager[775]: <info>  [1601800107.2712] manager: NetworkManager >
-ต.ค. 04 15:28:27 RacerSwift NetworkManager[775]: <info>  [1601800107.2728] manager: NetworkManager >
-ต.ค. 04 15:28:27 RacerSwift NetworkManager[775]: <info>  [1601800107.2729] policy: set 'JASMINE' (w>
-ต.ค. 04 15:28:27 RacerSwift NetworkManager[775]: <info>  [1601800107.2734] device (wlp0s20f3): Acti>
-ต.ค. 04 15:28:27 RacerSwift NetworkManager[775]: <info>  [1601800107.7721] manager: NetworkManager >
-ต.ค. 04 15:29:12 RacerSwift NetworkManager[775]: <warn>  [1601800152.1326] dhcp6 (wlp0s20f3): reque>
-ต.ค. 04 15:29:12 RacerSwift NetworkManager[775]: <info>  [1601800152.1327] dhcp6 (wlp0s20f3): state>
-ต.ค. 04 16:09:42 RacerSwift NetworkManager[775]: <info>  [1601802582.7674] agent-manager: agent[c5a>
-~
-~
-
-
-
-
 Kernel interface
 libudev
+
 NetworkManager
 A software utility that provides a high-level interface for the configuration of the network interfaces.
 
-
 NetworkManager sits on top of libudev and other kernel interfaces and other daemons.
-
 
 Components
 
@@ -331,35 +198,33 @@ nmtui - text-based user interface
 
 ===== Boot Targets
 
-$ systemctl get-default   # show boot target
+  $ systemctl get-default   # show boot target
+  graphical.target
 
-graphical.target
-
-$ systemctl isolate graphical.target   # start a different target right now
-
-$ systemctl set-default graphical.target  # change the boot target
+  $ systemctl isolate graphical.target   # start a different target right now
+  $ systemctl set-default graphical.target  # change the boot target
 
 Run Levels
 
-0 system shutdown
-
-1 single user mode, no network, essential services only (maintenance mode)
-
-2 not used
-
-3 multi-user mode
-
-4 not used
-
-5 multi-user mode plus graphical mode login
-
-6 system restart
+  * 0 system shutdown
+  * 1 single user mode, no network, essential services only (maintenance mode)
+  * 2 not used
+  * 3 multi-user mode
+  * 4 not used
+  * 5 multi-user mode plus graphical mode login
+  * 6 system restart
 
 Run levels are managed by /sbin/init
 
 Run level is defined by a kernel parameter or in the /etc/inittab file.
 
-There are 3 paradigms to manage services in Ubuntu. `System V init`, `upstart` and `systemd`. As of Ubuntu 18.04, it is `systemd`. – [smwikipedia](https://unix.stackexchange.com/users/4061/smwikipedia) [Aug 21 '18 at 6:14](https://unix.stackexchange.com/questions/34405/file-in-ubuntu-equivalent-to-etc-inittab-file-in-redhat#comment844173_34406)
+There are 3 paradigms to manage services in Ubuntu. 
+  * `System V init`, 
+  * `upstart` and 
+  * `systemd`. 
+As of Ubuntu 18.04, it is `systemd`. 
+[smwikipedia](https://unix.stackexchange.com/users/4061/smwikipedia) 
+[Aug 21 '18 at 6:14](https://unix.stackexchange.com/questions/34405/file-in-ubuntu-equivalent-to-etc-inittab-file-in-redhat#comment844173_34406)
 
 Ubuntu does not use runlevels, nor etc/inittab
 
@@ -367,12 +232,8 @@ SysV init used etc/inittab
 
 In Ubuntu 18, the init binary is soft linked to systemd.
 
-
-```
-$ ls -al /sbin/init
-/sbin/init -> /lib/systemd/systemd
-```
-
+  $ ls -al /sbin/init
+  /sbin/init -> /lib/systemd/systemd
 
 init, aka sysvinit, as in System 5 init
 
@@ -380,8 +241,7 @@ Upstart, first introduced in Ubuntu 6 in 2006
 
 systemd, adopted in Ubuntu 15
 
-
-===== Userspace Boot =====
+====== SysV-init vs systemd-init ======
 
 From init, through upstart, to systemd.
 
@@ -389,130 +249,20 @@ For booting, many linux distributions originally used init, aka sysvinit, taken 
 
 Boot system adoption by distribution release number.
 
-
-<table>
-  <tr>
-   <td>
-   </td>
-   <td>init
-   </td>
-   <td>upstart
-   </td>
-   <td>systemd
-   </td>
-  </tr>
-  <tr>
-   <td>Debian
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
-   <td>8
-   </td>
-  </tr>
-  <tr>
-   <td>Ubuntu
-   </td>
-   <td>
-   </td>
-   <td>6 (2006)
-   </td>
-   <td>15
-   </td>
-  </tr>
-  <tr>
-   <td>Fedora
-   </td>
-   <td>
-   </td>
-   <td>9
-   </td>
-   <td>15
-   </td>
-  </tr>
-  <tr>
-   <td>openSUSE
-   </td>
-   <td>
-   </td>
-   <td>11
-   </td>
-   <td>12
-   </td>
-  </tr>
-</table>
+^ distro   ^ init ^ upstart  ^ systemd ^
+| Debian   |      |          | 8       |
+| Ubuntu   |      | 6 (2006) | 15      |
+| Fedora   |      | 9        | 15      |
+| openSUSE |      | 11       | 12      |
 
 
 Comparison of init and systemd.
-
-
-<table>
-  <tr>
-   <td>
-   </td>
-   <td>init
-   </td>
-   <td>systemd
-   </td>
-  </tr>
-  <tr>
-   <td>binary
-   </td>
-   <td>/etc/init
-   </td>
-   <td>/lib/systemd/systemd
-   </td>
-  </tr>
-  <tr>
-   <td>states
-   </td>
-   <td>runlevels 0-6
-<p>
-1
-<p>
-3
-<p>
-5
-<p>
-4
-   </td>
-   <td>targets
-<p>
-rescue.target
-<p>
-multi-user.target
-<p>
-graphical.target
-<p>
-<em>custom</em>.target
-   </td>
-  </tr>
-  <tr>
-   <td>config
-   </td>
-   <td>parameters in /etc/inittab file
-   </td>
-   <td>script files in /etc/init and /etc/init.d
-   </td>
-  </tr>
-  <tr>
-   <td>start daemons
-   </td>
-   <td>serial
-   </td>
-   <td>parallel
-   </td>
-  </tr>
-  <tr>
-   <td>
-   </td>
-   <td>Insert command into /etc/rc.local
-   </td>
-   <td>
-   </td>
-  </tr>
-</table>
+^               ^ init                              ^ systemd                                                                ^
+| binary        | /etc/init                         | /lib/systemd/systemd                                                   |
+| states        | runlevels 0-6 1 3 5 4             | targets rescue.target multi-user.target graphical.target custom.target |
+| config        | parameters in /etc/inittab file   | script files in /etc/init and /etc/init.d                              |
+| start daemons | serial                            | parallel                                                               |
+|               | Insert command into /etc/rc.local |                                                                        |
 
 
 systemd init
@@ -522,93 +272,63 @@ Units
 
 ===== Systemctl =====
 
-$ sudo systemctl poweroff
-
-$ sudo systemctl reboot
-
-$ sudo systemctl rescue
-
-$ systemctl list-unit-files --type=target   # list all targets
-
-$ systemctl get-default   # show current boot target
-
-$ systemctl list-dependencies multi-user.target   # list unit files tied to a target
-
-$ sudo systemctl set-default multi-user.target   # set target for boot
-
-$ sudo systemctl isolate multi-user.target   # activate target right now
-
+  * $ sudo systemctl poweroff
+  * $ sudo systemctl reboot
+  * $ sudo systemctl rescue
+  * $ systemctl list-unit-files --type=target   # list all targets
+  * $ systemctl get-default   # show current boot target
+  * $ systemctl list-dependencies multi-user.target   # list unit files tied to a target
+  * $ sudo systemctl set-default multi-user.target   # set target for boot
+  * $ sudo systemctl isolate multi-user.target   # activate target right now
 
 ===== Journalctl =====
 
 Location of unit files, in priority order.
 
+  * /lib/systemd/system    # system default
+  * /run/systemd/system   # override
+  * /etc/systemd/system   # override
 
-```
-/lib/systemd/system    # system default
-/run/systemd/system   # override
-/etc/systemd/system   # override
-```
+====== Start a program at boot ======
 
-
-
-===== Start a custom service at boot =====
-
-Add a command into /etc/rc.local.  That probably still words, but a newer more complicated method is to create a unit file that defines a systemd service.
+Add a command into /etc/rc.local.  That probably still works, but a newer more complicated method is to create a unit file that defines a systemd service.
 
 1. Create a script or executable.
 
-
-```
-$ vi myservice.sh
-```
-
+  $ vi myservice.sh
 
 2. Copy the script to /usr/bin/ and make it executable.  (Notice that /bin is soft linked to /usr/bin, which means I will be putting my own service in with the system services.)
 
-
-```
-$ sudo cp myservice.sh /usr/bin/myservice.sh
-$ sudo chmod +x /usr/bin/myservice.sh
-```
-
+  $ sudo cp myservice.sh /usr/bin/myservice.sh
+  $ sudo chmod +x /usr/bin/myservice.sh
 
 3. Create a unit file to define a systemd service that will manage your script.
 
-[Unit]
-
-Description=Skateboard monitor webservice.
-
-[Service]
-
-Type=simple
-
-ExecStart=/bin//bash /usr/bin/webservice.sh
-
-[Install]
-
-WantedBy=multi-user.target
+  [Unit]
+  Description=Skateboard monitor webservice.
+  
+  [Service]
+  Type=simple
+  ExecStart=/bin/bash /usr/bin/webservice.sh
+  
+  [Install]
+  WantedBy=multi-user.target
 
 4.  Copy the unit file to /etc/systemd/system and give it permissions.
 
-
-```
-$ sudo cp myservice.service /etc/systemd/system/myservice.service
-$ sudo chmod 644 /etc/systemd/system/myservice.service
-```
+  $ sudo cp myservice.service /etc/systemd/system/myservice.service
+  $ sudo chmod 644 /etc/systemd/system/myservice.service
 
 
 5. Test the service.
 
-$ sudo systemctl start myservice
-
-$ sudo systemctl status myservice
-
-$ sudo systemctl stop myservice
+  $ sudo systemctl start myservice
+  $ sudo systemctl status myservice
+  $ sudo systemctl stop myservice
 
 6.  Enable the service.  (Put it in the boot sequence.)
 
-$ sudo systemctl enable myservice  # put service into boot sequence  
+  $ sudo systemctl enable myservice  # put service into boot sequence  
 
 ====== systemd ======
 
@@ -630,22 +350,17 @@ System level, between kernel and userspace
 
 Despite the controversy, systemd was adopted widely between 2011 and 2015
 
-
 ===== Controversy over systemd =====
 
 Source: [https://www.youtube.com/watch?v=o_AIw9bGogo](https://www.youtube.com/watch?v=o_AIw9bGogo)
 
 Complaints
 
-
-
 *   Violates unix philosophy.  What should be separate modules are all folded into one project, making it bloated and monolithic.
     *   Response: It is still made up of separate binaries.
 *   Lennart Poettering manages the systemd project and he is a jerk
 
 Pros
-
-
 
 *   journald
 *   cgroups, compared as superior to FreeBSD Jails
@@ -662,21 +377,16 @@ Pros
 
 Notes:
 
-
-
 *   Examples of New ways of thinking:  (not systemd specific)
     *   web api’s
     *   containers
 *   Debian can run on FreeBSD kernel
 *   Debian was reluctant to adopt systemd
 
-
 ===== systemd service =====
 
-sudo service gdm stop  # gdm = Gnome Desktop Manager
-
-sudo service gdm start
-
+  $ sudo service gdm stop  # gdm = Gnome Desktop Manager
+  $ sudo service gdm start
 
 ===== Components =====
 

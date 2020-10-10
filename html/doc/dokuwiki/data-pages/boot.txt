@@ -1,16 +1,96 @@
-# Boot 
+====== Boot  ======
 
-There are three steps to linux boot.
-  1 BIOS-UEFI Boot
-  1 Kernel Boot
-  1 Userspace startup  
+There are four steps to linux boot.
+  - BIOS-UEFI Boot
+  - Bootloader
+  - Kernel Boot
+  - Userspace Startup
 
+===== Step 1. BIOS-UEFI Boot =====
 
-Hold down while booting
-  * F2 open UEFI settings
-  * Alt+F10 reset PC
+The BIOS is not part of Linux.  
+It is a chip on the motherboard of the computer.  
+UEFI is the name for the new improved BIOS.
+As of 2020, all new computers are manufactured with UEFI instead of BIOS, but people still tend to use the term BIOS out of habit.
+Here we will use the term BIOS-UEFI.
 
-# User space boot 
+The BIOS-UEFI is a chip with firmware burned into it.
+As soon as your computer receives power, it loads the code from the BIOS-UEFI into the CPU and passes control to it.
+
+The BIOS-UEFI program will do the following.
+  - Power-On System Test (POST)
+  - BIOS-UEFI Settings, read and change if requested
+  - Find and launch the bootloader.
+
+==== Power On System Test (POST) ====
+
+Check for the CPU, check for the L1 Cache memory. 
+
+These are simple tests.  It cannot do more thorough tests for disks and network cards because those things are driven by the operating system, and the operating system isn't running yet.
+
+==== BIOS-UEFI Settings ====
+
+Hold down keys while booting
+  * F2 - open BIOS-UEFI settings
+  * Alt+F10 - reset PC
+  * F12 - show menu of bootloader
+
+Check the keyboard to see if the user is holding down the F2 key.  
+If so, run the BIOS-UEFI Settings code.
+This is menu of seven or eight forms where the user can view and change the settings.
+
+The settings are stored in the CMOS.  
+
+Complimentary Metal Oxide Semiconductor (CMOS).
+The CMOS is powered by a battery so the settings are maintained regardeless of whether the computer is plugged in or not.
+
+Among the settings:
+  * boot disk order.
+  *  
+
+==== Find and Launch the Bootloader ====
+
+The final step for the BIOS-UEFI is to launch the bootloader program.
+Before it can do that it must find it.
+The bootloader is a program file somewhere on a disk.  It might be on a hard disk, a cdrom, or a usb-stick.
+So the BIOS-UEFI must have enough knowledge of the disk, partition, and file system to find the program. 
+And that brings us to the difference between BIOS and UEFI.
+
+==== BIOS vs UEFI ==== 
+In the original BIOS, the bootloader was a maximum 512 bytes long, and it resided in the Master Boot Record (MBR) which was the first sector of a disk.
+The BIOS looks for an MBR on each disk, in an order specified by one of the UEFI settings.
+The first MBR found is loaded into the CPU and executed.
+
+This was limiting to say the least, and manufacturers looked for ways to extend the capabilities to support larger disks and larger bootloaders.
+Intel developed Extensible Firmware Interface (EFI).
+This was take over by an industry group and renamed Universial EFI (UEFI).
+
+===== Step 2. Bootloader =====
+
+In Linux, the bootloader could be called the kernel loader, because that's what it does.  
+It loads the kernel into memory and passes control to it.
+
+The bootloader shipped with Ubuntu and installed by default is a program named Grub.
+Like everything in Linux, there are a dozen other alternative bootloader programs, such as coreboot, Das U-Boot, and LILO. 
+
+The bootloader is shipped and installed with the operating system, but technically it's not part of the operating system.
+A bootloader from one operating system can load a different operating system.
+Oftentimes a Linux bootloader can start Windows, and a Windows bootloader can start Linux.
+This makes dual-boot installations possible.
+
+===== Step 3. Kernel Boot  =====
+
+Once the kernel is running, it runs through its startup scripts, starts its processes.
+
+The last thing it does is pass control to the init process.
+
+===== Step 4. Userspace Startup  =====
+
+The init process starts all of the processes running in userspace.
+
+The complete story is told here: [[Startup]].
+
+====== Notes ======
 
 GUI - settings - about, shows Gnome version 3.36.3
 
@@ -18,7 +98,7 @@ How is gnome started at startup? How can it be optional? GRUB, rcconf, lightdm
 
 https://askubuntu.com/questions/378046/how-to-run-ubuntu-xubuntu-in-a-complete-non-gui-mode
 
-# How to Boot Linux - example judson 
+===== How to Boot Linux - example judson  =====
 
 For Jetson Nano
 
@@ -36,7 +116,7 @@ To change back to booting to the GUI,
 
 systemctl set-default graphical.target
 
-# Judson examples 
+===== Judson examples  =====
 
 Goals
 
@@ -58,8 +138,7 @@ Let webmon talk to skateboard. Can they share data files?
 
 Judson is normally running in multi-user.target, no GUI
 
-<code>
-$ sudo systemctl isolate graphical.target    # open the GUI
-$ sudo systemctl isolate multi-user.target   # close the GUI
-Ctrl+Alt+F1   # get a tty login screen
-</code>
+  $ sudo systemctl isolate graphical.target    ===== open the GUI =====
+  $ sudo systemctl isolate multi-user.target   ===== close the GUI =====
+  Ctrl+Alt+F1   ===== get a tty login screen =====
+

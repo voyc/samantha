@@ -16,7 +16,7 @@ How to Use Linux - Notes
 https://docs.google.com/document/d/1OktYxaS10zayaata3V_9Hhi7ToUYuC1NlrKYlcwjfIc/edit#
 
 
-[[Documentation]]  - [[sample]]
+[[Documentation]]
 
 [[Boot]]
 
@@ -73,6 +73,8 @@ https://docs.google.com/document/d/1OktYxaS10zayaata3V_9Hhi7ToUYuC1NlrKYlcwjfIc/
 [[systemd]]
 
 [[Bus]]
+
+[[Install Linux]]
 
 ====== Concept Organization 1 ======
   * boot
