@@ -1,0 +1,20 @@
+====== tmux ======
+
+glossary
+
+  * screen
+  * session
+  * client
+  * window
+  * pane
+  * detach
+  * attach
+  * buffer
+  * target
+  * window name
+  * window token
+  * window id
+  * window index
+  # session name
+  # pane title
+

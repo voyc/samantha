@@ -76,6 +76,8 @@ https://docs.google.com/document/d/1OktYxaS10zayaata3V_9Hhi7ToUYuC1NlrKYlcwjfIc/
 
 [[Install Linux]]
 
+[[tmux]]
+
 ====== Concept Organization 1 ======
   * boot
   * device
@@ -97,9 +99,9 @@ https://docs.google.com/document/d/1OktYxaS10zayaata3V_9Hhi7ToUYuC1NlrKYlcwjfIc/
     *  binaries
     *  scripts
   * containers
-  * cgroup
-  * snap
-  * docker
+    * cgroup
+    * snap
+    * docker
 
 ====== Concept Organization 2 ======
   * human individuals and groups
@@ -131,17 +133,18 @@ https://docs.google.com/document/d/1OktYxaS10zayaata3V_9Hhi7ToUYuC1NlrKYlcwjfIc/
     * systemd
   * human interface
   * cli
-  * term
-  * shell
+    * term
+    * shell
   * text-based full-screen interactive
-  * tmux
-  * editors
-  * top
-  * man
-  * info        
+    * tmux
+    * editors
+    * top
+    * man
+    * info        
   * gui
     * window manager
     * desktop environment
     * gnome
     * kde
+  * webchat, full circle
 
