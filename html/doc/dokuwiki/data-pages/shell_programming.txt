@@ -1,40 +1,116 @@
-
 ====== Shell Programming ======
+
 sed
-sed “s/day/night/” <old >new
-sed “s/day/night/; 14 q” <old >new    # chain commands, quit after line 14
-sed -E "s/\{s:([0-9]*)[[:space:],]*l:([0-9]*)[[:space:] ,]*n:([0-9]*).*/\1\t\2\t\3/g" <test.js
+  $ sed “s/day/night/” <old >new
+  $ sed “s/day/night/; 14 q” <old >new    # chain commands, quit after line 14
+  $ sed -E "s/\{s:([0-9]*)[[:space:],]*l:([0-9]*)[[:space:] ,]*n:([0-9]*).*/\1\t\2\t\3/g" <test.js
+
 awk
 
 ==== Run program in background ====
-$ tar -czf home.tar.gz . &  # append & to run command in background
+
+  $ tar -czf home.tar.gz . &  # append & to run command in background
 or
-$ tar -czf home.tar.gz .
-Ctrl+Z      # stop the job
-$ bg   # then continue the job in the background
+  $ tar -czf home.tar.gz .
+  Ctrl+Z      # stop the job
+  $ bg   # then continue the job in the background
 
 
-$ jobs # list jobs running in background
-$ fg  # put a background job back into the foreground
-$ disown -h %1  # separate job from shell 
-$ nohup tar -czf home.tar.gz . &  # run in background and separate it from shell
-$ firefox </dev/null &>/dev/null &
+  $ jobs # list jobs running in background
+  $ fg  # put a background job back into the foreground
+  $ disown -h %1  # separate job from shell 
+  $ nohup tar -czf home.tar.gz . &  # run in background and separate it from shell
+  $ firefox </dev/null &>/dev/null &
 
+  $ kill %2  # kill job number 2
+  $ fg %2  # put job 2 in the foreground
+  $ bg %2  # put job 2 in the background 
 
-export PS1='$ '    # set prompt
-. activate # dot command, run in parent context from within script
-source activate # same as dot command
-==== How to start a program ====
-command
-shell script
-source script
-systemd
-command &
-nohup command &
+  $ export PS1='$ '    # set prompt
+  $ . activate # dot command, run in parent context from within script
+  $ source activate # same as dot command
+
+==== Directory Stack ====
+  $ pushd $PWD # push current directory onto the stack
+  $ cd /home/whatever
+  $ popd # return to pushed directory
+
+==== Redirection ====
+  $ cat >newfile.txt                 # redirect stdout, replace file
+  $ cat >>newfile.txt                # redirect stdout, append to file
+  $ cat &newfile.txt                 # redirect stderr, replace file
+  $ cat &>newfile.txt                # redirect stdout and stderr, replace file
+  $ cat &>>newfile.txt               # redirect stdout and stderr, append to file
+  $ cat <myfile.txt                  # redirect stdin
+  $ cat <oldfile.txt >newfile.txt    # copy a file
+
+==== Pipe ====
+  $ ps -e | grep ping                   # redirect stdout of first command to stdin of second command
+  $ ps -e | grep ping | less            # chain pipes
+
+==== chmod ====
+  $ chmod +x ~/.local/bin/myscript.sh   # make a script executable
+
+==== chown ====
+  $ chown root myfile.txt    # change owner of myfile to root
 
 ==== How to stop a program ====
 Signaling
 
 Kill
+
+==== How to start a program ====
+  $ <command>
+  $ bash <command>
+  $ source <command>
+  $ . <command>
+  $ exec <command>
+  $ <command> &
+  $ nohup <command>
+  $ systemd
+
+==== foreground, background, daemon
+
+run in background
+run as background job
+redirect stdout and stderr
+
+  $ disown %1    # suppress SIGHUP and remove from jobs list
+  $ disown -h %1 # suppress SIGHUP 
+
+  $ nohup <command> # suppress SIGHUP when starting command
+
+==== Process State Codes ====
+  $ ps af
+  $ ps ao ppid,pid,pgid,tty,sess,sid,stat,time,command -H
+
+Here are the different values that the s, stat and state output specifiers (header "STAT" or "S") will display to describe the state of a process:
+       D    uninterruptible sleep (usually IO)
+       R    running or runnable (on run queue)
+       S    interruptible sleep (waiting for an event to complete)
+       T    stopped, either by a job control signal or because it is being traced.
+       W    paging (not valid since the 2.6.xx kernel)
+       X    dead (should never be seen)
+       Z    defunct ("zombie") process, terminated but not reaped by its parent.
+
+For BSD formats and when the stat keyword is used, additional characters may be displayed:
+       <    high-priority (not nice to other users)
+       N    low-priority (nice to other users)
+       L    has pages locked into memory (for real-time and custom IO)
+       s    is a session leader
+       l    is multi-threaded (using CLONE_THREAD, like NPTL pthreads do)
+       +    is in the foreground process group.
+
+
+session
+state Ss
+terminal session
+one foreground process
+multiple background processes
+multiple background jobs
+
+disown
+	removed from jobs
+	still owned by the session
 
 
