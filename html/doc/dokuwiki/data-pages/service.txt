@@ -1,0 +1,32 @@
+====== Service ======
+
+The word "service" is used in different ways.
+
+A service is a daemon that is started by systemd-init during startup and can be stopped, restarted, and status checked by an administrator.  The service may come with additional daemons, control programs and configuration files.
+
+In this article we will answer the question: "How to start a program at boot?"
+
+We will walk through four ways to run a program:  foreground, background, daemon, service.
+
+===== Foreground =====
+
+Each terminal session can have only one foreground job.
+
+
+
+
+akachch  f "How to start a background job at boot"
+aka "How to run a program"
+aka "24 ways to start a program"s;dlkfjasdf
+
+  * Foreground, requires user interaction.
+  * Background, no user required.
+  * Daemon is independent of any terminal.
+
+  ctrl-Z - stop the process
+  $ fg # continue process in foreground
+  $ bg # continue process in background
+
+  $ commandname & # start job in the background
+  $ echo $!  # print the PID of the forked process, so you can kill it later
+

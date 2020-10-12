@@ -1,68 +1,48 @@
-
 ====== daemon ======
 
-Daemon is a concept, not a specific thing in Linux.
-
 A daemon is:
-
-
-
-*   a process
-*   running in the background
-*   not associated with a terminal
-*   requires no human interaction
-*   started during startup
-*   runs until shutdown
-*   often named with an ending letter “d”
+  * a process
+  * running in the background
+  * not associated with a terminal
+  * requires no human interaction
+  * started during startup
+  * runs until shutdown
+  * often named with an ending letter “d”
 
 Examples:
-
-
-
-*   sshd
-*   httpd
-*   crond
-*   snapd
-*   cryptd 
+  * sshd
+  * httpd
+  * crond
+  * snapd
+  * cryptd 
 
 List all running daemons:
-
-
   $ ps -C "$(xlsclients | cut -d' ' -f3 | paste - -s -d ',')" --ppid 2 --pid 2 --deselect -o tty,uid,pid,ppid,args | grep ^?
 
 [https://unix.stackexchange.com/questions/175380/how-to-list-all-running-daemons](https://unix.stackexchange.com/questions/175380/how-to-list-all-running-daemons)
 
-
 ===== daemon vs demon =====
 
 Option one, they are equivalent.
-
-	daemon == demon, pronounce both as “dee-mon”.
+  * daemon == demon, pronounce both as “dee-mon”.
 
 Option two, they are different.
-
-	daemon = minor deity in ancient Greek mythology, pronounced as “day-mon”.
-
-demon = evil spirit in Christian lore.
+  * daemon = minor deity in ancient Greek mythology, pronounced as “day-mon”.
+  * demon = evil spirit in Christian lore.
 
 Regardless of spelling, pronunciation, and whether good or evil, it is conceptually an invisible, ever-present agent doing stuff in the background.
 
 It has been claimed that one inspiration for the concept in operating systems came from “Maxwell’s demon”, described by physicist James Maxwell in 1867, a demon that enforces the second law of thermodynamics.
 
-In Linux, it is spelled with an a, and most geeks pronounce it “day-mon”.
-
+In Linux, daemon is spelled with an a, and most geeks pronounce it “day-mon”.
 
 ===== daemon vs server =====
 
 Many daemons are servers, and most servers run as daemons.
-
-
-
 *   daemon - refers to the process, and the way it is running.
 *   server - refers to how the program functions as a component in a client-server architecture.
 
 For example, I could run a server program from my terminal during development and testing, and then put it into production by setting it up to be started automatically at boot and run in the background.  Only in the second case is the server running as a daemon.
-
 
 ===== daemon vs service =====
 
@@ -74,34 +54,8 @@ systemd now uses the term “service” to refer to a collection of resources, o
 
 service is a linux system command, part of init or systemd-init, that can be used to run start and stop init scripts
 
-
   $ type service
-
-
   service is hashed (/usr/sbin/service)
 
 service, newer idea, a collection of daemons
-
-init
-
-System configuration
-
-Service bootstrap
-
-
-====== init ======
-
-init - the original from SystemV Unix, serial-processing, slow boots
-
-upstart - ubuntu-developed more efficient init
-
-openrc - dependency-based, combines aspects of init and systemd
-
-runit - cross-platform: BSD, MacOS, etc
-
-systemd - multi-processing for fast boot, now ubiquitous
-
-note: gentoo has its own init system
-
-As of 2020, init has been replaced by systemd.  See below.
 

@@ -1,7 +1,10 @@
-
 ====== Startup ======
 
-Historically, the startup system has recently moved from init to systemd.
+System configuration
+
+Service bootstrap
+
+Historically, the startup system has recently moved from init to [[systemd]].
 
 Ten years ago, most distributions used SysV Init.
 Various distributions developed new and improved init systems.  Ubuntu built Upstart, for example.
@@ -87,3 +90,20 @@ copy of bonjour"
 | uuidd                       | uuid generation daemon                                                                              | daemon   |                                                                                                           |
 | whoopsie                    | Crash report submission daemon.                                                                     | daemon   |                                                                                                           |
 | x11-common                  | Set up the X server and ICE socket directories.                                                     | run once |                                                                                                           |
+
+====== from init to systemd ======
+
+init - the original from SystemV Unix, serial-processing, slow boots
+
+upstart - ubuntu-developed more efficient init
+
+openrc - dependency-based, combines aspects of init and systemd
+
+runit - cross-platform: BSD, MacOS, etc
+
+systemd - multi-processing for fast boot, now ubiquitous
+
+note: gentoo has its own init system
+
+As of 2020, init has been replaced by systemd.  See below.
+

@@ -12,19 +12,6 @@ All processes have a parent except for the first one, PID 1, usually systemd.
 
 ===== Client and Server =====
 
-===== Foreground, background, daemon =====
-
-  * Foreground, requires user interaction.
-  * Background, no user required.
-  * Daemon is independent of any terminal.
-
-  ctrl-Z - stop the process
-  $ fg # continue process in foreground
-  $ bg # continue process in background
-
-  $ commandname & # start job in the background
-  $ echo $!  # print the PID of the forked process, so you can kill it later
-
 ===== Priority and niceness =====
 
 Each process has a priority and a niceness.
