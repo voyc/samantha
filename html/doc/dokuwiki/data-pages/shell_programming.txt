@@ -69,7 +69,7 @@ Kill
   $ nohup <command>
   $ systemd
 
-==== foreground, background, daemon
+==== foreground, background, daemon ====
 
 run in background
 run as background job
@@ -101,16 +101,10 @@ For BSD formats and when the stat keyword is used, additional characters may be 
        l    is multi-threaded (using CLONE_THREAD, like NPTL pthreads do)
        +    is in the foreground process group.
 
-
-session
-state Ss
-terminal session
-one foreground process
-multiple background processes
-multiple background jobs
-
-disown
-	removed from jobs
-	still owned by the session
-
-
+==== glossary ====
+  * session
+  * state Ss
+  * terminal session
+  * one foreground process
+  * multiple background processes
+  * multiple background jobs

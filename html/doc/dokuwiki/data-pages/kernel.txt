@@ -50,8 +50,27 @@ If kernel release number is 5.4.0-45-generic, then
 The purpose of the kernel is to make the bridge between hardware and software.
 
 Resources, devices, virtual devices
-CPU
-memory
-disk I/O
-network
 
+  * CPU
+  * memory
+  * disk I/O
+  * network
+
+===== Interface =====
+
+kernel API
+https://www.kernel.org/doc/htmldocs/kernel-api/index.html
+
+System Calls
+The Linux API
+cross over from user space to kernel space using software interrupts or traps
+userspace programs call kernel functions
+
+Library Calls
+glibc - the GNU C library
+
+Commands
+Programs the a human user can execute.
+
+reverse, graphic, top level command, bottom level kernel api
+exec, read, kill, cp, ls, sh

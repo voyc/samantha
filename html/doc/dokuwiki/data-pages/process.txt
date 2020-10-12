@@ -1,196 +1,176 @@
-
 ====== Process ======
+
 A process is an instance of a program.
 Any command you give to your Linux machine starts a  new process.
-Process and Thread
-Parent and Child
+
+===== Process and Thread =====
+
+===== Parent and Child =====
 All processes have a parent except for the first one, PID 1, usually systemd.
 
+  $ pstree # prints a tree hierarchy of parent-child processes
 
-$ pstree # prints a tree hierarchy of child processes
-Client and Server
-Foreground, background, daemon
-Foreground, requires user interaction.
-Background, no user required.
-Daemon is independent of any terminal.
+===== Client and Server =====
 
+===== Foreground, background, daemon =====
 
-ctrl-Z - stop the process
-$ fg # continue process in foreground
-$ bg # continue process in background
+  * Foreground, requires user interaction.
+  * Background, no user required.
+  * Daemon is independent of any terminal.
 
+  ctrl-Z - stop the process
+  $ fg # continue process in foreground
+  $ bg # continue process in background
 
-$ commandname & # start job in the background
-$ echo $!  # print the PID of the forked process, so you can kill it later
-Priority and niceness
+  $ commandname & # start job in the background
+  $ echo $!  # print the PID of the forked process, so you can kill it later
+
+===== Priority and niceness =====
+
 Each process has a priority and a niceness.
-* Priority is a value from 0 to 139 assigned by the kernel.  Processes with higher priority get more CPU time.
-* Niceness is a value from -20 to 19 assigned by its user. Niceness means a willingness to accept a lower priority, to step aside and let other processes run.  
-
+  * Priority is a value from 0 to 139 assigned by the kernel.  Processes with higher priority get more CPU time.
+  * Niceness is a value from -20 to 19 assigned by its user. Niceness means a willingness to accept a lower priority, to step aside and let other processes run.  
 
 So priority and niceness have an inverse relationship:
-* high niceness -> lower priority
-* low niceness -> higher priority
-* default niceness of zero -> no effect on priority
-
+  * high niceness -> lower priority
+  * low niceness -> higher priority
+  * default niceness of zero -> no effect on priority
 
 The kernel looks at niceness as a user request or suggestion for more or less priority.
 
-
 Bottom line:  If you want your program to have a higher priority, lower its niceness value.
 
+  $ nice -n <niceness> command # set niceness at program start 
+  $ sudo renice -20 -p <PID>   # change niceness on already running process
 
-$ nice -n <niceness> command # at launch 
-$ sudo renice -20 -p <PID>  # already running process
-Examine processes
-$ ps # Process Status
-$ top # interactive ps, default order by percent CPU utilization
-$ pidof <programname> # find the pid of a running program
+===== Examine processes =====
 
+  $ ps # Process Status
+  $ top # interactive ps, default order by percent CPU utilization
+  $ pidof <programname> # find the pid of a running program
 
 Both ps and top have multiple arguments to control which processes are displayed and which output columns are displayed.  top also has interactive commands like d to change the refresh delay and q to quit.
 
 
-$ ps -e  # all processes
-$ ps -eL  # all threads
-$ ps -a  # all processes associated with a terminal
-$ ps -aT  # all threads associated with a terminal
+  $ ps -e  # all processes
+  $ ps -eL  # all threads
+  $ ps -a  # all processes associated with a terminal
+  $ ps -aT  # all threads associated with a terminal
 
+  $ ps -q 42  # by process id
+  $ ps -T 48706  # show all threads for pid 48706
+  $ echo $!  # print the PID of the process immediately previously invoked
+  $ ps -C python3    # find by name of program
 
-$ ps -q 42  # by process id
-$ ps -T 48706  # show all threads for pid 48706
-echo $!  # print the PID of the process immediately previously invoked
-$ ps -C python3    # find by name of program
-
-
-$ ps -f  # full format
-$ ps -F  # really full format
-$ ps -eo pid,tid,class,rtprio,ni,pri,psr,pcpu,stat,wchan:14,comm # columns
-
+  $ ps -f  # full format
+  $ ps -F  # really full format
+  $ ps -eo pid,tid,class,rtprio,ni,pri,psr,pcpu,stat,wchan:14,comm # columns
 
 Popular output columns of ps and top:
-* PID - process identifier (may be server or client)
-* SPID - server process id
-* PPID - parent process id
-* PR - priority -20 to 20, assigned by system
-* NI - niceness -20 to 19, inverse to priority, assigned by user
-* PSR - processor on multicore CPU, on my 10th gen i5: 0 thru 7
-* USER or UID - username of task owner
-* TTY - TeleTYpe, the controlling terminal
-   * ttyn - a hardwire keyboard/mouse or serial connection
-   * pts/n - a telnet or ssh connection
-* VIRT or SZ or VSZ - virtual memory used, in KB
-* RES or RSS - physical memory used, in KB
-* SHR - shared memory used, in KB
-* %MEM - percent physical memory used
-* S - state
-   * D - uninterruptible sleep
-   * R - running
-   * S - sleeping
-   * T - traced or stopped
-   * Z - zombie
-* STIME - the time when the process started
-* TIME or TIME+ - total cumulative CPU time used so far
-* %CPU or C - percent CPU time utilization
-* COMMAND or CMD - command name used to start the process
-
+  * PID - process identifier (may be server or client)
+  * SPID - server process id
+  * PPID - parent process id
+  * PR - priority -20 to 20, assigned by system
+  * NI - niceness -20 to 19, inverse to priority, assigned by user
+  * PSR - processor on multicore CPU, on my 10th gen i5: 0 thru 7
+  * USER or UID - username of task owner
+  * TTY - TeleTYpe, the controlling terminal
+     * ttyn - a hardwire keyboard/mouse or serial connection
+     * pts/n - a telnet or ssh connection
+  * VIRT or SZ or VSZ - virtual memory used, in KB
+  * RES or RSS - physical memory used, in KB
+  * SHR - shared memory used, in KB
+  * %MEM - percent physical memory used
+  * S - state
+     * D - uninterruptible sleep
+     * R - running
+     * S - sleeping
+     * T - traced or stopped
+     * Z - zombie
+  * STIME - the time when the process started
+  * TIME or TIME+ - total cumulative CPU time used so far
+  * %CPU or C - percent CPU time utilization
+  * COMMAND or CMD - command name used to start the process
 
 A process is a running piece of code.
 Every process has a pid and a parent, because every process is started by a parent, except for the first one, the initd with pid 1.
 
+  $ ps -f 1
+  ppid is 0
+  /lib/systemd/systemd
+  started by the kernel
+  when you boot your machine it 
+  the only thing it does in user space is call systemd
+  the init system
+  that command starts everything else in user space
 
-ps -f 1
-ppid is 0
-/lib/systemd/systemd
-started by the kernel
-when you boot your machine it 
-the only thing it does in user space is call systemd
-the init system
-that command starts everything else in user space
-
-
-fork and exec
-ls -l
+===== fork and exec =====
+  $ ls -l
 the shell forked a child shell process, and then exec the child to ls 
 the copy of itself was replaced by ls
 exec is a command, fork is not
 
+  $  sleep 360
+  ctrl-C  kill  sigint
+  ctrl-Z  suspend  sig
+  $ jobs # list jobs  [1] stopped, job number, not pid 
+  $ ps f # list tasks 3 by pid,  bash, sleep, ps f
+  $ sleep 701 &
+  $ sleep 702 &
+  $ sleep 703 %
+  $ jobs # list the shell’s job table
+  $ jobs # now lists four jobs running, most recently touched job is marked with +
+  $ jobs
+  [1]   Running                 sleep 701 &
+  [2]+  Stopped                 sleep 702
+  [3]-  Stopped                 sleep 703
 
-sleep 360
-ctrl-C  kill  sigint
-ctrl-Z  suspend  sig
-$ jobs # list jobs  [1] stopped, job number, not pid 
-$ ps f # list tasks 3 by pid,  bash, sleep, ps f
-$ sleep 701 &
-$ sleep 702 &
-$ sleep 703 %
-$ jobs # list the shell’s job table
-$ jobs # now lists four jobs running, most recently touched job is marked with +
-$ jobs
-[1]   Running                 sleep 701 &
-[2]+  Stopped                 sleep 702
-[3]-  Stopped                 sleep 703
+  $ ps ax | grep sleep # might be different from jobs, can be executed from another term
+  
+  $ fg %3  # job number 3 to the foreground
+  $ fg # if no job number, fg operates on last accessed job
+  $ bg # if no job number, bg operates on the most recently touched job
 
+  $ kill -l # list all 64 signals by number and name
+   1) SIGHUP
+   2) SIGINT
+   9) SIGKILL
+  15) SIGTERM
+  20) SIGTSTP - T stop, suspend, Ctrl-Z
+  18) SIGCONT - continue, fg or bg
 
-$ ps ax | grep sleep # might be different from jobs, can be executed from another term
+  $ kill -15 <pid> # send SIGTERM # terminate
+  $ kill <pid> # send SIGTERM by default
+  $ kill -2 <pid> # send SIGINT # interrupt
+  $ kill -1 <pid> # send SIGHUP # hang up
+  $ kill -9 <pid> # send SIGKILL # kernel kills the job now, no signal, no  opportunity to cleanup
 
-
-$ fg %3  # job number 3 to the foreground
-$ fg # if no job number, fg operates on last accessed job
-$ bg # if no job number, bg operates on the most recently touched job
-
-
-$ kill -l # list all 64 signals by number and name
- 1) SIGHUP
- 2) SIGINT
- 9) SIGKILL
-15) SIGTERM
-20) SIGTSTP - T stop, suspend, Ctrl-Z
-18) SIGCONT - continue, fg or bg
-
-
-
-
-$ kill -15 <pid> # send SIGTERM # terminate
-$ kill <pid> # send SIGTERM by default
-$ kill -2 <pid> # send SIGINT # interrupt
-$ kill -1 <pid> # send SIGHUP # hang up
-$ kill -9 <pid> # send SIGKILL # kernel kills the job now, no signal, no  opportunity to cleanup
-
-
-$ sleep 900 &
-$ kill -20 # job suspended, same as Ctrl-Z
-$ kill -18 # job continued, same as bg
-
+  $ sleep 900 &
+  $ kill -20 # job suspended, same as Ctrl-Z
+  $ kill -18 # job continued, same as bg
 
 three things that can start a process from the shell
-binary executable
-internal shell command
-shell script
+  * binary executable
+  * internal shell command
+  * shell script
 
-
-exec
-exit
-fork (not a command)
-
-
-a CPU that can process two processes simultaneously
-Intel: hyperthreading
-AMD: multithreading
-
+Hmm
+  * exec
+  * exit
+  * fork (not a command)
 
 multicore multithreading CPU
+a CPU that can process two processes simultaneously
 each core can process two processes
+  * Intel: hyperthreading
+  * AMD: multithreading
 
+Hmm
+  $ ps -a # user processes, created by user, associated with a shell session, tty named
+  $ ps -e # system processes, created by daemons, tty = ?
 
-ps -a # user processes, created by user, associated with a shell session, tty named
-ps -e # system processes, created by daemons, tty = ?
-
-
-disown
-
+$ disown
 
 Recommended Video:
 Youtube, Engineer Man, Linux Processes and the role of init, fork and exec, ps, kill, fg, bg, jobs
-
 

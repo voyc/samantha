@@ -1,113 +1,116 @@
-
 ====== Shell ======
 Command interpreter plus programming language.
 
-Multics Shell, 1965
-Thompson shell, written by Key Thompson at Bell Labs, Unix 1-6, 1971-1975 
+command, executable, binary, Script
 
+Historical Shell
+  * Multics Shell, 1965
+  * Thompson shell, written by Key Thompson at Bell Labs, Unix 1-6, 1971-1975 
 
-sh - Bourne Shell, 1979, Unix 7, written by Steve Bourne at Bell Labs
-bash - Bourne Again SHell, GNU, enhanced Bourne Shell
-ksh - Korn shell, written by David G. Korn at Bell Labs
-csh - C shell, modelled on C language, written by Bill Joy at Berkeley, BSD
-tcsh - enhanced C shell
-zsh - Z shell, backward compatible with bash, default shell in MacOS 10.15
-fish - Friendly Interactive Shell, 2005
-Shell options
-$ shopt  # list all the current shell options
-cmdhist        on
-histappend        on
-promptvars        on
-huponexit        off
-...
-Variables
+Popular Shells Today
+  * sh - Bourne Shell, 1979, Unix 7, written by Steve Bourne at Bell Labs
+  * bash - Bourne Again SHell, GNU, enhanced Bourne Shell
+  * ksh - Korn shell, written by David G. Korn at Bell Labs
+  * csh - C shell, modelled on C language, written by Bill Joy at Berkeley, BSD
+  * tcsh - enhanced C shell
+  * zsh - Z shell, backward compatible with bash, default shell in MacOS 10.15
+  * fish - Friendly Interactive Shell, 2005
+
+Shell Options
+  $ shopt  # list all the current shell options
+  cmdhist        on
+  histappend        on
+  promptvars        on
+  huponexit        off
+
+===== Variables =====
+
 There are two kinds of variables.
-* Environment variables - global
-* Shell variables - specific to the current execution of the current shell
+  * Environment variables - global
+  * Shell variables - specific to the current execution of the current shell
  
-$ env  # list environment variables
-$ set  # list shell variables, including script functions
+  $ env  # list environment variables
+  $ set  # list shell variables, including script functions
 
 
-PATH=/home/john/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-HOME=/home/john
-PWD=/home/john
-PS1=\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$
-SHELL=/bin/bash
-Scripts
+  PATH=/home/john/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+  HOME=/home/john
+  PWD=/home/john
+  PS1=\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$
+  SHELL=/bin/bash
 
+===== Alias =====
 
-Nested Shells
+  $ alias blabber=echo # define an alias
+  $ unalias blabber # remove an alias
+  $ alias # list all command aliases
+  alias egrep='egrep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias grep='grep --color=auto'
+  alias l='ls -CF'
+  alias la='ls -A'
+  alias ll='ls -alF'
+  alias ls='ls --color=auto'
+
+===== Nested Shells =====
+
 On login, the shell specified by environment variable SHELL is executed.  Each execution of a shell program creates a separate context for shell variables.f
 
-
-# on login, you are at level 1
-bash   # nested level 2
-sh     # nested level 3
-bash   # nested level 4
-exit   # nested level 3
-exit   # nested level 2
-exit   # level 1
-exit   # logout
-
+  $ # on login, you are at level 1
+  $ bash   # nested level 2
+  $ sh     # nested level 3
+  $ bash   # nested level 4
+  $ exit   # nested level 3
+  $ exit   # nested level 2
+  $ exit   # level 1
+  $ exit   # logout
 
 When you run a script, you start a shell, which means the script runs at a nested level.
-/bin/bash myscript.sh   # level 2
-
+  $ /bin/bash myscript.sh   # level 2
 
 When you call a script from within a script, you go into deeper nested levels.  Shell variables are set in that nested level and disappear when the script execution ends.
 
-
 To avoid going into nested levels, run the script with the source or dot command.
-$ . ./myscript.sh
-$ source ./myscript.sh  # source is a synonym for . (dot)
-
+  $ . ./myscript.sh
+  $ source ./myscript.sh  # source is a synonym for . (dot)
 
 The dot command does not start a shell, but instead reads the script file and executes the commands within the current shell.  Therefore, shell variables are set in the current shell and thus remain after completion of the script.  Notice also, it is not necessary to make the script file executable.
 
 
 env -i
 set 
-Configuration Files
+
+===== Configuration Files =====
 Environment variables can be system or user.
 
-
 Read at startup.
+
 Read at login.
 
-
 System variables - set by the system during startup
+
 User variables - set by user scripts during login
 
+===== Signals =====
 
+  * SIGHUP - Hang Up, sent to terminal-associated background processes on logout.
+  * SIGINT - ?
 
-
-Signals
-SIGHUP - Hang Up, sent to terminal-associated background processes on logout.
-SIGINT - ?
-
-
-Background Jobs
+===== Background Jobs =====
 $ myserver &   # run as child process to the current bash session
-
 
 Normally this background job is still associated with the terminal, and on logout, the system will send the SIGHUP (hang up) signal to the process which will cause it to terminate.  By normally, we mean when shell option huponexit is set on.
 
-
-$ shopt | grep hupon  
-huponexit on
-
+  $ shopt | grep hupon  
+  huponexit on
 
 Regardless of the setting of huponexit, you can prevent hangup by starting the job with nohup.
 
+  $ nohup <command>  # no hangup signal; continues after logout
 
-$ nohup <command>  # no hangup signal; continues after logout
+  $ kill -SIGHUP <pid>
 
-
-$ kill -SIGHUP <pid>
-
-
-echo $!  # print the PID of the forked process, so you can kill it later
+  echo $!  # print the PID of the forked process, so you can kill it later
 
 
 fork()

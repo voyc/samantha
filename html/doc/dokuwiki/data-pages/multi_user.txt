@@ -1,0 +1,15 @@
+
+
+create new user
+
+two users on judson: john and sam
+
+ssh to judson from racer, two windows, one as john, one as sam
+
+start bash session, start jobs
+
+ps o pid,user
+
+see what pts/0 session id is
+
+

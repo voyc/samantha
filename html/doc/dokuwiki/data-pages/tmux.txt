@@ -18,3 +18,15 @@ glossary
   # session name
   # pane title
 
+  $ tmux
+  $ tmux new
+  Ctrl+B -> % - split window vertically
+  Ctrl+B -> “ - split window horizontally
+  Ctrl+B -> arrow - move cursor to the next window
+
+
+===== screen =====
+
+Ctrl-a
+
+

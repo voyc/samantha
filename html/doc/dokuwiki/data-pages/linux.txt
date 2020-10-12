@@ -22,10 +22,6 @@ https://docs.google.com/document/d/1OktYxaS10zayaata3V_9Hhi7ToUYuC1NlrKYlcwjfIc/
 
 [[Hardware]]
 
-[[terminal]]
-
-[[gnome]]
-
 [[Package Management]]
 
 [[kernel]]
@@ -52,21 +48,18 @@ https://docs.google.com/document/d/1OktYxaS10zayaata3V_9Hhi7ToUYuC1NlrKYlcwjfIc/
 
 [[Files]]
 
-[[Linux Software]]   package management, shell, shell programming
-
 [[Network]]
 
-[[Shell Programming]]
+[[Linux Software]]   package management, shell, shell programming
 
-[[Terminal]]
-
-[[Process]]
-
-[[Alias]]
-
-[[Command]]
+[[Human Interface]]
+  * [[Terminal]]
+  * [[gnome]]
 
 [[Shell]]
+  * [[Shell Programming]]
+  * [[Command]]
+  * [[Process]]
 
 [[Startup]]
 
@@ -77,6 +70,8 @@ https://docs.google.com/document/d/1OktYxaS10zayaata3V_9Hhi7ToUYuC1NlrKYlcwjfIc/
 [[Install Linux]]
 
 [[tmux]]
+
+[[multi_user]]
 
 ====== Concept Organization 1 ======
   * boot

@@ -5,8 +5,6 @@ Copy and Paste in terminal: ctrl+shift+C, ctrl+shift+V
 
 See Terminal - preferences - shortcuts
 
-====== Terminal ======
-
 Terminal, Shell, Console
 
 Session
@@ -15,43 +13,22 @@ Tiling splits
 
 Termux, terminal multiplexer
 
-====== Terminal ======
-teletype - Historically sometime between the telegraph and the fax came the teletype machine.  A teletype machine was a printer combined with an electric typewriter keyboard.  These devices allowed for electric long-distance text communications.
+===== glossary =====
+**teletype** - Historically sometime between the telegraph and the fax came the teletype machine.  A teletype machine was a printer combined with an electric typewriter keyboard.  These devices allowed for electric long-distance text communications.
 
+**tty** - an abbreviation for teletype.
 
-tty - an abbreviation for teletype.
+**console** - The teletype machine happened to be a convenient way for a human to communicate with a computer.  The printer was eventually replaced by an electronic CRT display or monitor.  But the monitor still looked just like a printer, with scrolling lines of user input and program output.
 
+**terminal** -  When multi-user capabilities came about, the operator continued to use the console, and the additional users were each given a terminal.  The console and the terminals were nearly identical, though perhaps you could identify some differences:
+  * One console was hard-wired into the computer and was activated during the boot process.  
+  * Multiple terminals are plugged in via serial cables and come alive when a user logs in.
 
-console - The teletype machine happened to be a convenient way for a human to communicate with a computer.  The printer was eventually replaced by an electronic CRT display or monitor.  But the monitor still looked just like a printer, with scrolling lines of user input and program output.
+**GUI** - The graphical user interface was designed at Xerox PARC and found its way to market in Steve Job’s Macintosh .  Mouse, keyboard, monitor.  Desktop metaphor with icons for folders, documents, printers and trash cans.  Drag and drop.
 
+**terminal emulator** - For many, the GUI is just a fancy covering on the terminal.  If you want to do real work, you’ll do it in a terminal window running in the GUI.
 
-terminal -  When multi-user capabilities came about, the operator continued to use the console, and the additional users were each given a terminal.  The console and the terminals were nearly identical, though perhaps you could identify some differences:
-* One console was hard-wired into the computer and was activated during the boot process.  
-* Multiple terminals are plugged in via serial cables and come alive when a user logs in.
-GUI - The graphical user interface was designed at Xerox PARC and found its way to market in Steve Job’s Macintosh .  Mouse, keyboard, monitor.  Desktop metaphor with icons for folders, documents, printers and trash cans.  Drag and drop.
+**Terminal Multiplexer** - There are two popular terminal multiplexers: tmux and screen.  Both of these programs allow the user to do two things:
+  - Manage multiple terminal sessions in one window without a GUI.
+  - Run terminal sessions in the background, so you can detach and re-attach.
 
-
-terminal emulator - For many, the GUI is just a fancy covering on the terminal.  If you want to do real work, you’ll do it in a terminal window running in the GUI.
-
-
-Terminal Multiplexer
-A terminal multiplexer allows two things:
-1. Manage multiple terminal sessions in one window without a GUI.
-2. Run terminal sessions in the background, so you can detach and re-attach.
-
-
-There are two popular terminal multiplexers:
-1. tmux
-2. screen
-
-
-
-
-$ tmux
-$ tmux new
-Ctrl+B -> % - split window vertically
-Ctrl+B -> “ - split window horizontally
-Ctrl+B -> arrow - move cursor to the next window
-
-
-$ screen
