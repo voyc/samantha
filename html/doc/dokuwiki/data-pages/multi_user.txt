@@ -12,4 +12,33 @@ ps o pid,user
 
 see what pts/0 session id is
 
+===== Root Password =====
+
+In Ubuntu, by default, there is no root password.  Remember, during installation it did not ask you to create a root password.
+
+Therefore you cannot:
+  * login as root
+  * use the "su -" command to become the root user.
+
+Though you can:
+  * use sudo to run a privileged command, with your own password
+
+You can also (though NOT recommended):
+  * $ sudo -i           # run login shell as root
+  * $ sudo -s           # run shell as root
+  * $ sudo bash         # run shell as root
+  * $ sudo passwd root  # set the password for root user
+
+The root user's home directory is /root, not /home/root.
+This is where you find .profile and .bashrc for the root user, should you choose to open a shell as root.
+
+===== User Management =====
+
+  $ adduser   # create a new user
+  $    # create a group
+  $    # add a user to a group
+  $ passwd <user>   # reset the password for a user
+  $                 # reset my own password
+  $                 # add a user to the sudo group
+  $ sudo -s -u sam  # run shell as a different user
 

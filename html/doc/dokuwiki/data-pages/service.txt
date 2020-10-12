@@ -1,5 +1,14 @@
 ====== Service ======
 
+three ways to interact with a service
+directly with the init.d script
+with the service wrapper script
+with the systemctl script
+
+$ sudo /etc/init.d/ssh stop
+$ sudo /etc/init.d/networking restart
+$ sudo systemctl restart ssh
+
 The word "service" is used in different ways.
 
 A service is a daemon that is started by systemd-init during startup and can be stopped, restarted, and status checked by an administrator.  The service may come with additional daemons, control programs and configuration files.
@@ -8,25 +17,105 @@ In this article we will answer the question: "How to start a program at boot?"
 
 We will walk through four ways to run a program:  foreground, background, daemon, service.
 
+
+In the following series, open three shell terminal windows.
+  - Run the commands listed here.
+  - $ tail -f out.txt
+  * $ ps -Hao ppid,pid,user,stat,command  
+
+  $ mkdir work
+  $ cd work
+
 ===== Foreground =====
 
-Each terminal session can have only one foreground job.
+  $ ping google.com
+  $ (press ctl-c)   # cancel (kill) the process
 
+  $ ping google.com >out.txt  # redirect the output 
+  In window 3
+    $ tail -f out.txt
 
+This program is running in the foreground.  
+The terminal window is tied up; you cannot use it as long as this program is running in the program.
+This implies that terminal session can have only one foreground job.
 
+Run ps in the other window and notice you have started two new processes: bash and ping.
 
-akachch  f "How to start a background job at boot"
-aka "How to run a program"
-aka "24 ways to start a program"s;dlkfjasdf
+  $ (press ctl-c)   # cancel (kill) the process
 
-  * Foreground, requires user interaction.
-  * Background, no user required.
-  * Daemon is independent of any terminal.
+Run ps and notice both the bash and ping processes are gone.
 
-  ctrl-Z - stop the process
-  $ fg # continue process in foreground
-  $ bg # continue process in background
+===== Background =====
 
-  $ commandname & # start job in the background
-  $ echo $!  # print the PID of the forked process, so you can kill it later
+  $ ping google.com >out.txt
+  $ (press ctl-z)     # stop (suspend) the process  
 
+Notice the log output has ceased, because this process is suspended.
+In the ps window, both the bash and ping processes are listed with state T for stopped. 
+
+  $ jobs    # list the background jobs for this terminal
+  $ bg %1   # put job 1 into the background
+  $ jobs   
+
+This process is listed as a running job, and it's process is state S.
+
+  $ kill %1    # kill job 1  
+
+  $ ping google.com >out.txt &    # run in the background
+  $ jobs
+  $ (close the terminal window)
+
+When the terminal session is killed, the background jobs are also killed. 
+
+===== Daemon =====
+
+  $ nohup ping google.com >out.txt &    # suppress the Hangup signal 
+  $ jobs
+  $ (close the terminal window)
+
+This time, the program keeps running, even though its associated terminal no longer exists.
+
+Create a shell script with our test command.
+
+  $ echo 'nohup ping google.com >out.txt &' >~/.local/bin/myping.sh 
+  $ chmod +x ~/.local/bin/myping.sh 
+  $ myping.sh    # test it
+
+  $ sudo mv ~/.local/bin/myping.sh /etc/rc.local/
+
+Now it will run at boot as root.
+Executables in this directory are run at boot by root.
+
+This process now meets the qualifications to be considered a daemon.
+  * running in the background
+  * not associated with a terminal
+  * requires no human interaction
+  * started during startup
+
+===== Service =====
+
+Copy the script to a system executable directory.
+  $ sudo cp pingoog.sh /usr/local/bin/
+
+Create a service file.
+  $ sudo cat >/usr/etc/system/system/pingoog.service
+  [Unit]
+  Description=Skateboard monitor webservice.
+  
+  [Service]
+  Type=simple
+  ExecStart=/usr/local/bin/pingoog.sh
+  
+  [Install]
+  WantedBy=multi-user.target graphical.target
+
+Mark the service file executable.
+  $ sudo chmod 644 /etc/systemd/system/pingoog.service
+
+Test your service with systemctl.
+  $ sudo systemctl start pingoog      # start it
+  $ sudo systemctl status pingoog     # show the status
+  $ sudo systemctl stop pingoog       # stop it
+
+Finally, enable it to make it start at boot.
+  $ sudo systemctl enable pingoog     # enable it to start at boot
