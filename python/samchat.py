@@ -37,7 +37,6 @@ async def serveloop(websocket, path):
 			clients[usr] = websocket
 			reply = f'{hostname}~Welcome, {usr}'	
 			await broadcast(reply)
-			#await clients[usr].send(f'{hostname}~Click here for <a href="wiki">wiki</a>.')
 		elif cmd == 'logout':
 			del clients[usr]
 			reply = f'{hostname}~Goodbye, {usr}'
@@ -45,6 +44,9 @@ async def serveloop(websocket, path):
 		elif cmd == 'message':
 			reply = f'{usr}~{msg}'
 			await broadcast(reply)
+			rpl = await process(msg)
+			if rpl:
+				await hostinterject(rpl)
 
 async def wakeup():
 	global recent
@@ -55,6 +57,18 @@ async def wakeup():
 		if diff > timeout:
 			await hostinterject('Are you still here?')
 			recent = now
+
+async def process(msg):
+	reply = ''
+	amsg = await parse(msg)
+	if amsg[0] == 'wiki':
+		reply = f'Click here for <a href="wiki">wiki</a>'
+	elif amsg[0] == 'echo':
+		reply = msg[5:]
+	return reply
+	
+async def parse(s):
+	return s.split()
 
 server = websockets.serve(serveloop, ip, port) # create server, wrapping coroutine
 event_loop = asyncio.get_event_loop()  # get the scheduler

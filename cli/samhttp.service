@@ -1,5 +1,6 @@
 [Unit]
 Description=Samantha http server
+PartOf=samweb.target
 
 [Service]
 Type=simple

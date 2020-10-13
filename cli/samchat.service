@@ -1,5 +1,6 @@
 [Unit]
 Description=Samantha chat server
+PartOf=samweb.target
 
 [Service]
 Type=simple
