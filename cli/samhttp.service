@@ -1,0 +1,9 @@
+[Unit]
+Description=Samantha http server
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/samweb.sh http
+
+[Install]
+WantedBy=samweb.target

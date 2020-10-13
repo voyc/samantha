@@ -1,13 +1,12 @@
-#!/usr/bin/env python
-# chat.py  websockets chat server
+# samchat.py  websockets chat server
 
 import asyncio     # websockets is built on asyncio
 import websockets
 import datetime
 
 port = 50000
-ip = '68.66.224.22'
-#ip = '127.0.0.1'
+ip = '68.66.224.22'  # a2hosting
+ip = '127.0.0.1'     # local, also switch shebang
 hostname = 'Sam'
 timeout = datetime.timedelta(seconds=120)
 

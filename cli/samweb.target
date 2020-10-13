@@ -1,0 +1,6 @@
+[Unit]
+Description=Samantha's http and chat servers
+Wants=samhttp.service samchat.service
+
+[Install]
+WantedBy=graphical.target

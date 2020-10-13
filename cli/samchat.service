@@ -1,0 +1,9 @@
+[Unit]
+Description=Samantha chat server
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/samweb.sh chat 
+
+[Install]
+WantedBy=samweb.target
