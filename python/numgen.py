@@ -1,6 +1,7 @@
 # numgen.py
 
 import re
+import random
 
 word = {
 	'en':[ 
@@ -81,13 +82,17 @@ wordbreak = ' '
 
 
 # generate a random number within constraints and within user's vocabulary
-def numgen(start, end, interval, user):
+def numgen(start=1, end=9999999, interval=1, user=''):
 	a = range(start,end,interval)
 	b = chooseForUser(a,user)
-	return choice(b)
+	return random.choice(b)
+
+def chooseForUser(n,user):
+	return n
 
 # translate and format a number
 def translateNumber(n,language,format):
+	n = int(str(n)[0:7])  # int max 7 digits
 	la = language  # en or th
 	fmt = format   # digit or word
 

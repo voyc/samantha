@@ -68,7 +68,11 @@ async def process(msg):
 	elif amsg[0] == 'echo':
 		reply = msg[5:]
 	elif amsg[0] == 'number':
-		reply = translateNumber(amsg[1],'th','word')
+		if len(amsg) > 1:
+			n = amsg[1]
+		else:
+			n = numgen()
+		reply = translateNumber(n,'th','word')
 	return reply
 	
 async def parse(s):
