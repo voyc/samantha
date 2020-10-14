@@ -4,6 +4,8 @@ import asyncio     # websockets is built on asyncio
 import websockets
 import datetime
 
+from numgen import *
+
 port = 50000
 ip = '68.66.224.22'  # a2hosting
 ip = '127.0.0.1'     # local, also switch shebang
@@ -65,6 +67,8 @@ async def process(msg):
 		reply = f'Click here for <a href="wiki">wiki</a>'
 	elif amsg[0] == 'echo':
 		reply = msg[5:]
+	elif amsg[0] == 'number':
+		reply = translateNumber(amsg[1],'th','word')
 	return reply
 	
 async def parse(s):

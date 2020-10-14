@@ -85,8 +85,6 @@ def numgen(start, end, interval, user):
 	return choice(b)
 
 # translate and format a number
-#	language:, en, th
-#	format: digit, words
 def translateNumber(n,language,format):
 	la = language  # en or th
 	fmt = format   # digit or word
@@ -114,16 +112,18 @@ def translateNumber(n,language,format):
 
 	elif la == 'th':
 		j = 0
-		p = 0
+		q = 0
 		for j in t:
 			if len(s):
 				s += wordbreak
-			p = nd - len(s)
 
 			dig = word[la][int(j)]
-			#mag = magnitude[la][p]
 
-			s += dig
+			q += 1
+			p = nd - q
+			mag = magnitude[la][p]
+
+			s += dig + ' ' + mag
 
 			#// exception: trailing zeros
 			#if (j == 0 && n > 0) {
@@ -145,17 +145,13 @@ def translateNumber(n,language,format):
 			#	dig = 'ยี่';
 			#}
 
-			#s += dig;
-			#if (mag.length) {
-			#	s += wordbreak;
-			#}
-			#s += mag;
 	return s
 
 
-testdata = [0,23,23400,234120,237025074,2350973450298]
+testdata = [0,23,546,9263,23400,234120,2370215]
 for n in testdata:
 	print(translateNumber(n,'en','digit'))
 	print(translateNumber(n,'th','digit'))
 	print(translateNumber(n,'en','word'))
 	print(translateNumber(n,'th','word'))
+	print('-')
