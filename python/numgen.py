@@ -1,5 +1,7 @@
 # numgen.py
 
+import re
+
 word = {
 	'en':[ 
 		'zero',
@@ -111,7 +113,6 @@ def translateNumber(n,language,format):
 			s += word[la][int(j)]
 
 	elif la == 'th':
-		j = 0
 		q = 0
 		for j in t:
 			if len(s):
@@ -123,31 +124,32 @@ def translateNumber(n,language,format):
 			p = nd - q
 			mag = magnitude[la][p]
 
+
+			# exception: trailing and embedded zeros
+			if j == '0' and int(n) > 0:
+				dig = mag = ''
+
+			# exception: leading one
+			if j == '1' and q == 1:
+				dig = ''
+
+			# exception: one, หนึ่ง to เอ็ด
+			if p == 0 and j == '1':
+				dig = 'เอ็ด'
+
+			# exception: teens
+			if p == 1 and j == '1':
+				dig = ''
+
+			# exception: twenties, สอง to ยี่
+			if p == 1 and j == '2':
+				dig = 'ยี่'
+
 			s += dig + ' ' + mag
-
-			#// exception: trailing zeros
-			#if (j == 0 && n > 0) {
-			#	dig = mag = '';
-			#}
-
-			#// exception: one, หนึ่ง to เอ็ด
-			#if (p == 0 && j == 1) {
-			#	dig = 'เอ็ด';
-			#}
-
-			#// exception: teens
-			#if (p == 1 && j == 1) {
-			#	dig = mag = '';
-			#}
-
-			#// exception: twenties, สอง to ยี่
-			#if (p == 1 && j == 2) {
-			#	dig = 'ยี่';
-			#}
-
+			s = re.sub(' +',' ', s).strip()
 	return s
 
-
+# test one
 testdata = [0,23,546,9263,23400,234120,2370215]
 for n in testdata:
 	print(translateNumber(n,'en','digit'))
@@ -155,3 +157,9 @@ for n in testdata:
 	print(translateNumber(n,'en','word'))
 	print(translateNumber(n,'th','word'))
 	print('-')
+
+# test two
+testdata = [10,11,12,20,21,22,31,32,33,100,101,102,111,112,121,1000,1001,1010,1011,1021]
+for n in testdata:
+	s = translateNumber(n, 'th', 'word')
+	print(f'{n} : {s}')
