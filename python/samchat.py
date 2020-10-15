@@ -3,12 +3,15 @@
 import asyncio     # websockets is built on asyncio
 import websockets
 import datetime
+import sys
 
 from numgen import *
 
 port = 50000
 ip = '68.66.224.22'  # a2hosting
-ip = '127.0.0.1'     # local, also switch shebang
+if len(sys.argv) > 1 and sys.argv[1] == 'local':
+	ip = '127.0.0.1'
+
 hostname = 'Sam'
 timeout = datetime.timedelta(seconds=120)
 
