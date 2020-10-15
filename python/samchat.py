@@ -4,12 +4,13 @@ import asyncio     # websockets is built on asyncio
 import websockets
 import datetime
 import sys
+import socket
 
 from numgen import *
 
 port = 50000
 ip = '68.66.224.22'  # a2hosting
-if len(sys.argv) > 1 and sys.argv[1] == 'local':
+if socket.gethostname() == 'RacerSwift':
 	ip = '127.0.0.1'
 
 hostname = 'Sam'
@@ -30,6 +31,31 @@ async def broadcast(msg):
 			await clients[usr].send(msg)
 		except:
 			pass
+
+# todo
+# on login, create a group and user owner
+# on join,  add user to existing group
+# let owner mark his group available for joins, or not
+# or let owner invite a participant
+# or let owner approve each join
+# on message, pass it to the appropriate group, via the user
+#     group has conversation (chathistory), and so group is best to process message
+#
+# createGroup()  keep a list of users, each user has a socket
+# addUserToGroup()
+# broadcast only to members of the group
+# 
+# class User
+#     name
+#     socket
+#     group
+# class Group
+#     owner
+#     users []
+#     invitees []
+#     conversation aka chathistory
+#     process() 
+# separate file for each class?
 
 async def serveloop(websocket, path):
 	global recent

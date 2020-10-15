@@ -4,7 +4,7 @@ PartOf=samweb.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/samweb.sh chat local
+ExecStart=/usr/local/bin/samweb.sh chat
 
 [Install]
 WantedBy=samweb.target
