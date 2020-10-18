@@ -8,6 +8,7 @@ import socket   # used only to find hostname
 import random   # used for generating userid
 
 from numgen import *
+from sengen import *
 
 port = 50000
 ip = '68.66.224.22'  # a2hosting
@@ -95,7 +96,7 @@ class Broca:
 			reply = Message(message.frm,host,s)
 
 		elif verb == 'number':
-			if len(words) > 1:
+			if len(words) > 0:
 				n = words[0]
 			else:
 				n = numgen()
@@ -105,24 +106,23 @@ class Broca:
 		elif verb == 'wiki':
 			reply = Message(message.frm,host,f'Click here for <a href="wiki">wiki</a>')
 
-		else:
-			pass
-
-		return reply
-
-class Grammar:
-	def process(self,username,verb,words):
-		if verb == 'wiki':
-			reply = wiki()
-
-		elif verb == 'echo':
-			pass
-
 		elif verb == 'translate':
-			pass
+			s = translate(' '.join(words))
+			reply = Message(message.frm,host,s)
+
+		elif verb == 'sengen':
+			s = sengen(' '.join(words))
+			reply = Message(message.frm,host,s)
 
 		elif verb == 'drill':
-			pass
+			s = drill(' '.join(words))
+			reply = Message(message.frm,host,s)
+
+		else:
+			s = converse(' '.join(words))
+			reply = Message(message.frm,host,s)
+
+		return reply
 
 class Account:
 	def login(self,uname,pw):
@@ -232,7 +232,6 @@ def findUserByName(name):
 	return r
 
 broca = Broca()
-grammar = Grammar()
 account = Account()
 groupnum = 0
 groups = []
