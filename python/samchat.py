@@ -39,21 +39,24 @@ class User:
 
 class Group:
 	def __init__(self,user):
+		global groupnum
 		self.owner = user
 		user.group = self
-		self.users=[self.owner]
+		self.members=[self.owner]
 		self.invitees=[]
 		self.messages=[]
+		groupnum += 1
+		self.num = groupnum
 		groups.append(self)
 
 	def addUser(self,user): 
-		self.users.append(user)  # add to this group
-		user.group.remove(user)  # remove from previous group
-		self.messages.append[Message(user,'join')]
+		self.members.append(user)  # add to this group
+		user.group.removeUser(user)  # remove from previous group
+		user.group = self
 
 	def removeUser(self,user):
-		self.users.remove(user)  # gc user
-		if len(self.users) == 0:   # if no users in this group
+		self.members.remove(user)  # gc user
+		if len(self.members) == 0:   # if no users in this group
 			groups.remove(self)      # gc group
 
 class Message:
@@ -74,7 +77,7 @@ class Message:
 			for user in users.values():
 				await user.send(s)
 		else:
-			for user in self.group.users:
+			for user in self.group.members:
 				await user.send(s)
 
 class Broca:
@@ -103,7 +106,7 @@ class Broca:
 			reply = Message(message.frm,host,f'Click here for <a href="wiki">wiki</a>')
 
 		else:
-			reply = grammar.process(username,verb,words)
+			pass
 
 		return reply
 
@@ -168,7 +171,37 @@ async def serveloop(websocket, path):
 				await reply.broadcast()
 
 			elif verb == 'leave':		
-				pass
+				oldgroup = user.group
+				bNewOwner = False
+				if oldgroup.owner == user:
+					oldgroup.owner = oldgroup.members[1]
+					bNewOwner = True
+				oldgroup.removeUser(user)
+				bAlone = True if len(oldgroup.members) == 1 else False
+				goodbye = Message(host,user,f'{user.name} has left')
+				await goodbye.broadcast()
+				if bAlone:
+					alone = Message(oldgroup.owner,host,f'We are alone now, {oldgroup.owner.name}')
+					await alone.broadcast()
+				elif bNewOwner:
+					newowner = Message(oldgroup.owner,host,f'{oldgroup.owner} is the new owner')
+					newowner.broadcast()
+
+				newgroup = Group(user)
+				user.group = newgroup
+				alone = Message(user,host,f'We are alone now, {user.name}')
+				await alone.broadcast()
+
+			elif verb == 'status':
+				s = f'{len(groups)} groups<br/>'
+				for group in groups:
+					s += f'{group.num}: {group.owner.name}*'
+					for member in group.members:
+						if member != group.owner:
+							s += f',{member.name}'
+					s += '<br/>'
+				reply = Message(user,host,s)
+				await reply.broadcast()
 
 			else:
 				msgin = Message(host,user,msg)
@@ -201,6 +234,7 @@ def findUserByName(name):
 broca = Broca()
 grammar = Grammar()
 account = Account()
+groupnum = 0
 groups = []
 users ={} 
 host = User(False,'Sam',False)
