@@ -2,17 +2,17 @@
 # expressed using same rewrite conventions of Syntactic Structures
 # but name must be unique
 
-#particle @not > ไม่
+particle @not > ไม่
 particle @polite > [คะ ครับ]
-#noun @personMale > [ผู้ชาย]
-#noun @personFemale > ผู้หญิง
+noun @personMale > [ผู้ชาย]
+noun @personFemale > ผู้หญิง
 noun @person > [คน @personMale @personFemale]
-#adj @adjPersonMale > [หล่อ]
-#adj @adjPersonFemale > [สวย]
-#adj @adjPerson > [สูง เตี้ย ง่วง ตัวใหญ่ ตัวเล็ก สูง เตี้ย อ้วน ผอม เหนื่อย ง่วง เก่ง ขี้เกียจ เมา]
-#sentence @describePersonMale > @personMale {@not} @adjPersonMale {ไหม} {คะ}
-#sentence @describePersonFemale > @personFemale {@not} @adjPersonFemale {ไหม} {คะ}
-#sentence @describePerson > @person {@not} @adjPerson {ไหม} {คะ}
+adj @adjPersonMale > [หล่อ]
+adj @adjPersonFemale > [สวย]
+adj @adjPerson > [สูง เตี้ย ง่วง ตัวใหญ่ ตัวเล็ก สูง เตี้ย อ้วน ผอม เหนื่อย ง่วง เก่ง ขี้เกียจ เมา]
+sentence @describePersonMale > @personMale {@not} @adjPersonMale {ไหม} {คะ}
+sentence @describePersonFemale > @personFemale {@not} @adjPersonFemale {ไหม} {คะ}
+sentence @describePerson > @person {@not} @adjPerson {ไหม} {คะ}
 #sentence @describePersonQA > Q:@person @adjPerson ไหม {@polite} A:{@not} $refer(2) {@polite}
 
 

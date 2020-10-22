@@ -1,4 +1,4 @@
-# grammar.py
+# parse.py
 
 import re
 
