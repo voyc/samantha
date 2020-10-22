@@ -1,0 +1,33 @@
+# Syntactic Structures
+# (currently unused)
+# contains only parts of speech and parts of sentences
+# using the rewrite conventions of Noam Chomsky
+# non-zero id identifies those structures that must be mastered before use
+# parts of speech (pos) = n, v, intj, adj, adv, conj, prep, 
+# sentenceParts = {pos} s v o clause phrase
+# sentenceTypes = declarative, imperative, interogative, exclamative
+
+sentence > clause
+clause > s v o
+clause > s adj
+s > n
+o > n
+sentence > clause conj clause
+n > n v
+n > s v o
+sentence > question
+sentence > imperative
+sentence > expression
+sentence > declarative
+question > declarative questionword
+conversation > Q: question A: answer
+
+n > {person,animal,place,thing}
+n > n owner
+n > n adj
+n > s v o
+n > s v
+n > v o
+thing > {food}
+food > {meat,vegetable,fruit,beverage}
+meat > {หมู ไก่ เป็ด ปลา กุ้ง หอย ปลาหมึก เนื้อ}

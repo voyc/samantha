@@ -1,0 +1,87 @@
+# Semantic Conventions - human-readable text
+# expressed using same rewrite conventions of Syntactic Structures
+# but name must be unique
+
+#particle @not > ไม่
+particle @polite > [คะ ครับ]
+#noun @personMale > [ผู้ชาย]
+#noun @personFemale > ผู้หญิง
+noun @person > [คน @personMale @personFemale]
+#adj @adjPersonMale > [หล่อ]
+#adj @adjPersonFemale > [สวย]
+#adj @adjPerson > [สูง เตี้ย ง่วง ตัวใหญ่ ตัวเล็ก สูง เตี้ย อ้วน ผอม เหนื่อย ง่วง เก่ง ขี้เกียจ เมา]
+#sentence @describePersonMale > @personMale {@not} @adjPersonMale {ไหม} {คะ}
+#sentence @describePersonFemale > @personFemale {@not} @adjPersonFemale {ไหม} {คะ}
+#sentence @describePerson > @person {@not} @adjPerson {ไหม} {คะ}
+#sentence @describePersonQA > Q:@person @adjPerson ไหม {@polite} A:{@not} $refer(2) {@polite}
+
+
+# สูญเสีย....ไป ~ lost 
+
+#expressions deleted from dictionary 4 jun 2020
+# 1501 | 1402 | กี่ชั่วโมง       | How many hours?
+# 1503 | 1404 | คุณรู้ไหม       | Do you know?
+# 1506 | 1407 | ดีไหม         | Is it good?
+# 1508 | 1409 | ไปกันเถอะ     | Let's go.
+# 1512 | 1413 | คุณว่าไหม      | You think so?
+# 1537 | 1438 | เต็มเปี่ยมไปด้วย | filled-with
+# 1539 | 1440 | พวกเราส่วนใหญ่ | most-of-us
+# 1542 | 1443 | อันน่าอัศจรรย์   | amazing
+# 1543 | 1444 | พวกเราหลายคน | many-of-us
+
+#noun @person > [ผู้ชาย ผู้หญิง คน]
+#adj @adjPerson > [สวย หล่อ สูง เตี้ย ง่วง]
+#adj @adjPerson > [ตัวใหญ่,ตัวเล็ก,สูง,เตี้ย,อ้วน,ผอม,เหนื่อย,ง่วง,เก่ง,ขี้เกียจ,เมา]
+#sentence @describePerson > @person @adjPerson
+
+
+#expression @hello > สวัสดี @polite
+#expression @howAreYou > [{คุณ} เป็น อย่าง [อะไร,ไร,ไง] บ้าง,สบาย ดี ไหม] @polite
+#expression @polite > [คะ,ครับ]
+#expression @meToo > [ฉัน,ผม] ด้วย
+#phrase @rent > $number(1000,30000,500) {บาท} ต่อ เดือน
+#phrase @rentDeposit > ค่ามัดจำ $number(1000,30000,500) บาท
+#expr @takeCare > ดูแล ตัวเอง ด้วย
+#expr @seeYouLater > {แล้ว} [เจอ,พบ] กัน [ใหม่,ภาย ใน $number(1,8,1) ชั่วโมง]
+#expr @iGo > กลับ ก่อน นะ
+#expr @iStay > ขับ ปลอดภัย
+#expr @goodLuck > โชค ดี
+#expr @bonVoyage > [เดินทาง ปลอดภัย,เดินทาง โดย ความปลอดภัย]
+#expr @goodWeekend > ขอให้ มี ความสุข [สุดสัปดาห์,วันหยุด สุดสัปดาห์,ใน วันหยุด]
+#expr @goodNight > [{นอนหลับ} ฝัน ดี {ราตรี สวัสดิ์},ราตรี สวัสดิ์]
+#sentence @goodbye > [@seeYouLater,@takeCare,ลา [ก่อน,ละ นะ],ไป [ก่อน,ละ] นะ,@iGo,@iStay,@goodLuck,@bonVoyage,@goodWeekend,@goodNight]
+#phrase @laundry > [การซักรีด,ผ้าเช็ดตัว $number(1,5,1) ผืน,ผ้าปูที่นอน $number(1,5,1) ผืน,ปลอกหมอน $number(1,5,1) ปลอก,ซัก {รีด} [เสื้อ,เสื้อแขนสั้น,เสื้อแขนยาว,กางเกง,กางเกงขาสั้น,กางเกงขายาว] $number(1,5,1) ตัว]
+#expression @happyNewYear > ขอให้ มี ความสุข ใน วัน ขึ้นปีใหม่
+#expression @buyForMonks > ฉัน ซื้อ ส้ม $number(10,20,1) ผล [สำหรับ,เพื่อ] ใส่บาตร
+#noun @personNeutral > [คน,เรา,เขา,คุณ,ญาติ,เด็ก,พี่,น้อง,หลาน,ลูก,อา,น้า]
+#noun @personMale > [ผู้ชาย,พ่อ,พี่ชาย,ลูกชาย,น้องชาย,หลานชาย,อาผู้ชาย,น้าชาย,ปู่,ตา]
+#noun @personFemale > [ผู้หญิง,แม่,พี่สาว,ลูกสาว,น้องสาว,หลานสาว,อาผู้หญิง,น้าสาว,ย่า,ยาย]
+#noun @person > [@personNeutral,@personMale,@personFemale]
+#adj @adjPerson > [ตัวใหญ่,ตัวเล็ก,สูง,เตี้ย,อ้วน,ผอม,เหนื่อย,ง่วง,เก่ง,ขี้เกียจ,เมา]
+#phrase @describePerson > @person @adjPerson
+#sentence @comparePerson > @person @adjPerson กว่า @person
+#phrase @pluralperson > สาว $number(1,10,1) คน
+#phrase @sv1 > สาว ว่า
+#phrase @findobject > หา [สาว,ดาว]
+#phrase @describeNoun > [สาว,ผม] [สวย]
+#phrase @nounColor > [หมา,แมว,หมี,หมวก,ร่ม] @color
+#phrase @animal > [หมา,แมว,หมี,ไก่]
+#phrase @clothing > [ร่ม,หมวก]
+#noun @color > สี [ดำ,แดง]
+#noun @number > $number(1,9,1)
+#sentence @howmany > กี่ [@animal,@clothing]
+#adj @very > [เหมือน]ๆ
+#phrase @skinny [สาว] ผอม
+
+
+# he eats rice RMF high Kข
+# {three,four,six} {black} {dog, cat, umbrella, hat, ant}
+# 	 no, need classifiers for numbers
+# how many [colors, dogs, cats, umbrellas, hats, ant]
+# good, very good
+# wear hat
+# share umbrella
+# [father, mother, older-sibling, doctor]
+# have blessing
+# !apply medicine
+# come to
