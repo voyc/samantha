@@ -10,9 +10,9 @@ noun @person > [คน @personMale @personFemale]
 adj @adjPersonMale > [หล่อ]
 adj @adjPersonFemale > [สวย]
 adj @adjPerson > [สูง เตี้ย ง่วง ตัวใหญ่ ตัวเล็ก สูง เตี้ย อ้วน ผอม เหนื่อย ง่วง เก่ง ขี้เกียจ เมา]
-sentence @describePersonMale > @personMale {@not} @adjPersonMale {ไหม} {คะ}
-sentence @describePersonFemale > @personFemale {@not} @adjPersonFemale {ไหม} {คะ}
-sentence @describePerson > @person {@not} @adjPerson {ไหม} {คะ}
+sentence @describePersonMale > @personMale {@not} @adjPersonMale {ไหม} {@polite}
+sentence @describePersonFemale > @personFemale {@not} @adjPersonFemale {ไหม} {@polite}
+sentence @describePerson > @person {@not} @adjPerson {ไหม} {@polite}
 #sentence @describePersonQA > Q:@person @adjPerson ไหม {@polite} A:{@not} $refer(2) {@polite}
 
 
