@@ -1,7 +1,7 @@
 # tpp.py
 
 import re
-import copy
+import random
 
 scfilename = 'semanticconventions.txt'
 
@@ -9,11 +9,12 @@ class Node:
 	level = 0
 
 	def __init__(self,word,tree=[],expr='',pos='',line=''):
-		self.word = word # $expr, $static, $list, $opt, $name, $num or @name
+		self.word = word  # $expr, $static, $list, $opt, $name, $num or @name
 		self.expr = expr  # used when word is $static, $name, $num
 		self.tree = tree
-		self.pos = pos   # at this time, used only in the root node
+		self.pos = pos    # at this time, used only in the root node
 		self.line = line  # used only on the root, and only for testing
+		self.value = ''   # used temporarily during gensen
 
 	def print(self):
 		def fn(m):
@@ -115,8 +116,8 @@ def parseGrammar(textfilename):
 		expr = re.sub(r'\[', '$list(', expr);
 		expr = re.sub(r'\]', ')', expr);
 	
-		# replace {} with $optional()
-		expr = re.sub(r'\{', '$optional(', expr);
+		# replace {} with $opt()
+		expr = re.sub(r'\{', '$opt(', expr);
 		expr = re.sub(r'\}', ')', expr);
 	
 		expr = f'$expr({expr})'
@@ -167,7 +168,7 @@ collapseNames(semantics)
 collapseNestedLists(semantics)
 printSemantics(semantics)
 
-def gensen(opt):
+def gensen(sc,opt):
 	options = {
 		'count': 1,
 		'pattern': [],
@@ -206,40 +207,35 @@ def gensen(opt):
 
 	# generate sentences from each semantic (name,pos,pat,funcs)
 	sentens = []
-	for name in semantics:
-		if len(options['pattern']) > 0 and name in options['pattern']:
+	for node in sc.values():
+		if len(options['pattern']) > 0 and name not in options['pattern']:
 			continue 
-		pos = semantics[name]['pos']
-		if pos != 'sentence':
+		if node.pos != 'sentence':
 			continue
-		pat = semantics[name]['pat']
-		funcs = semantics[name]['funcs']
-
-		# resolve each function to a single word
-		for f in funcs:
-			sen = pat
-			s = sen[f['pos']:f['pos']+f['close']+1]
-			t = sen[f['pos']+len(f['cmd'])+2:f['pos']+len(f['cmd'])+2+f['close']]
-			f['s'] = s
-			f['t'] = t
-			r = callFunction(f)
-			sen = sen.replace(s,r)
-			#var diff = s.length - r.length;
-			#for (var j=0; j<funcs.length; j++) {
-			#	if (j > i) {
-			#		var t = funcs[j];
-			#		if (t.pos > f.pos) {
-			#			t.pos -= diff;
-			#		if (t.close > f.pos) {
-			#			t.close -= diff;
-			sentens.append(sen)
+		sen = ''
+		def fn(m):
+			nonlocal sen
+			if m.word == '$static':
+				m.value = m.expr
+			elif m.word == '$num':
+				m.value = '4'
+			elif m.word == '$list':
+				nd = random.choice(m.tree)
+				m.value = nd.expr 
+			elif m.word == '$opt':
+				m.value = random.choice(['', m.tree[0].value])
+			if Node.level == 2:
+				sen += ' ' + m.value
+		node.process(fn)
+		sen = ' '.join(sen.split())  # remove extra spaces
+		sentens.append(sen)
 	return sentens
 
-def printSentences():
+def printSentences(sentences):
 	for sen in sentences:
-		print(f'{sen}\n\n')
+		print(sen)
 
-#sentences = gensen({'count':100})
-#printSentences()
+sentences = gensen(semantics, {'count':100})
+printSentences(sentences)
 
 
