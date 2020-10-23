@@ -91,7 +91,7 @@ def chooseForUser(n,user):
 	return n
 
 # translate and format a number
-def translateNumber(n,language,format):
+def translateNumber(n,language='th',format='word'):
 	n = int(str(n)[0:7])  # int max 7 digits
 	la = language  # en or th
 	fmt = format   # digit or word

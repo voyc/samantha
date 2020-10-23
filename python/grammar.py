@@ -1,7 +1,8 @@
-# tpp.py
+# grammar.py
 
 import re
 import random
+from numgen import *
 
 scfilename = 'semanticconventions.txt'
 
@@ -218,7 +219,8 @@ def gensen(sc,opt):
 			if m.word == '$static':
 				m.value = m.expr
 			elif m.word == '$num':
-				m.value = '4'
+				a = m.expr.split(',')
+				m.value = translateNumber(numgen(int(a[0]), int(a[1]), int(a[2])))
 			elif m.word == '$list':
 				nd = random.choice(m.tree)
 				m.value = nd.expr 
