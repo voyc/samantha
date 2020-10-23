@@ -155,16 +155,16 @@ def translateNumber(n,language='th',format='word'):
 	return s
 
 # test one
-testdata = [0,23,546,9263,23400,234120,2370215]
-for n in testdata:
-	print(translateNumber(n,'en','digit'))
-	print(translateNumber(n,'th','digit'))
-	print(translateNumber(n,'en','word'))
-	print(translateNumber(n,'th','word'))
-	print('-')
+#testdata = [0,23,546,9263,23400,234120,2370215]
+#for n in testdata:
+#	print(translateNumber(n,'en','digit'))
+#	print(translateNumber(n,'th','digit'))
+#	print(translateNumber(n,'en','word'))
+#	print(translateNumber(n,'th','word'))
+#	print('-')
 
 # test two
-testdata = [10,11,12,20,21,22,31,32,33,100,101,102,111,112,121,1000,1001,1010,1011,1021]
-for n in testdata:
-	s = translateNumber(n, 'th', 'word')
-	print(f'{n} : {s}')
+#testdata = [10,11,12,20,21,22,31,32,33,100,101,102,111,112,121,1000,1001,1010,1011,1021]
+#for n in testdata:
+#	s = translateNumber(n, 'th', 'word')
+#	print(f'{n} : {s}')

@@ -167,9 +167,9 @@ semantics = parseGrammar(scfilename)
 resolveNames(semantics)
 collapseNames(semantics)
 collapseNestedLists(semantics)
-printSemantics(semantics)
+#printSemantics(semantics)
 
-def gensen(sc,opt):
+def gensen(sc,opt=[]):
 	options = {
 		'count': 1,
 		'pattern': [],
@@ -182,29 +182,6 @@ def gensen(sc,opt):
 	if opt:
 		for key in opt:
 			options[key] = opt[key]
-
-	# input f: pos,close,lvl,cmd,s,t
-	def callFunction(f): 
-		r = ''
-		a = f['t']
-		print(f)
-		print('\n')
-		fname = f['cmd']
-		params = a.split(',')
-		if fname == 'number':
-			pass
-			#args = [];
-			#for (var i=0; i<params.length; i++) {
-			#	args.push(parseInt(params[i]));
-			#r += voyc.genNumber.apply(this, args);
-		elif  fname == 'list':
-			pass
-			#r += this.selectFromList(a);
-		elif fname == 'optional':
-			pass
-			#if (this.target.includes(a) || Math.random() < .5) {
-			#	r += a;
-		return r
 
 	# generate sentences from each semantic (name,pos,pat,funcs)
 	sentens = []
@@ -231,13 +208,19 @@ def gensen(sc,opt):
 		node.process(fn)
 		sen = ' '.join(sen.split())  # remove extra spaces
 		sentens.append(sen)
+
 	return sentens
 
 def printSentences(sentences):
 	for sen in sentences:
 		print(sen)
 
-sentences = gensen(semantics, {'count':100})
-printSentences(sentences)
+#sentences = gensen(semantics, {'count':100})
+#printSentences(sentences)
 
+def sengen(s):
+	sentences = gensen(semantics)
+	return random.choice(sentences)
 
+#s = sengen('')
+#print(s)

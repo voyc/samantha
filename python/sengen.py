@@ -4,8 +4,8 @@
 def converse(s):
 	return 'Huh?'
 
-def sengen(s):
-	return 'You kidding?'
+#def sengen(s):
+#	return engenYou kidding?'
 
 def translate(s):
 	return 'Say what?'
