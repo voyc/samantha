@@ -3,6 +3,9 @@
 import re
 import random
 from numgen import *
+import os 
+
+thispath = os.path.dirname(os.path.realpath(__file__)) + '/'
 
 scfilename = 'semanticconventions.txt'
 
@@ -163,7 +166,7 @@ def printSemantics(sc):
 		node.print()
 
 # semantics is a dictionary of named nodes, each node is a tree
-semantics = parseGrammar(scfilename)
+semantics = parseGrammar(thispath + scfilename)
 resolveNames(semantics)
 collapseNames(semantics)
 collapseNestedLists(semantics)
@@ -199,15 +202,21 @@ def gensen(sc,opt=[]):
 				a = m.expr.split(',')
 				m.value = translateNumber(numgen(int(a[0]), int(a[1]), int(a[2])))
 			elif m.word == '$list':
-				nd = random.choice(m.tree)
+				tlist = list(filter(lambda x: x.expr in options['target'], m.tree))
+				if not len(tlist):
+					tlist = m.tree
+				nd = random.choice(tlist)
 				m.value = nd.expr 
 			elif m.word == '$opt':
 				m.value = random.choice(['', m.tree[0].value])
 			if Node.level == 2:
 				sen += ' ' + m.value
 		node.process(fn)
-		sen = ' '.join(sen.split())  # remove extra spaces
-		sentens.append(sen)
+		a = sen.split()
+		tlist = list(filter(lambda x: x in options['target'], a))
+		if len(tlist) or not options['target']:
+			sen = ' '.join(a)  # remove extra spaces
+			sentens.append(sen)
 
 	return sentens
 
@@ -215,12 +224,16 @@ def printSentences(sentences):
 	for sen in sentences:
 		print(sen)
 
+#sentences = gensen(semantics,{'target':'คะ'})
+#sentences = gensen(semantics,{'target':'ตัวใหญ่'})
+#sentences = gensen(semantics,{'target':'สวย'})
 #sentences = gensen(semantics, {'count':100})
 #printSentences(sentences)
 
 def sengen(s):
-	sentences = gensen(semantics)
+	sentences = gensen(semantics, {'target':s})
 	return random.choice(sentences)
 
-#s = sengen('')
-#print(s)
+s = sengen('คะ')
+print(s)
+
