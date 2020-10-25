@@ -56,12 +56,13 @@ The bootloader is a program file somewhere on a disk.  It might be on a hard dis
 So the BIOS-UEFI must have enough knowledge of the disk, partition, and file system to find the program. 
 And that brings us to the difference between BIOS and UEFI.
 
-==== BIOS vs UEFI ==== 
-In the original BIOS, the bootloader was a maximum 512 bytes long, and it resided in the Master Boot Record (MBR) which was the first sector of a disk.
-The BIOS looks for an MBR on each disk, in an order specified by one of the UEFI settings.
-The first MBR found is loaded into the CPU and executed.
+=== BIOS vs UEFI === 
+In the original BIOS, a boot disk would have a Master Boot Record (MBR) in sector 0.  The MBR was 512 bytes long and it contained some bootstrap code and a partition table that could delineate up to four primary partitions on the disk.  The was enough file system information that the bootstrap code could find the bootloader program on the disk and execute it.
 
-This was limiting to say the least, and manufacturers looked for ways to extend the capabilities to support larger disks and larger bootloaders.
+Disks larger than 2 TB cannot be described by such a small partition table.
+Modern disks have a GUID Partition Table (GPT).
+
+Manufacturers looked for ways to extend the capabilities to support larger disks and larger bootloaders.  
 Intel developed Extensible Firmware Interface (EFI).
 This was take over by an industry group and renamed Universial EFI (UEFI).
 
@@ -80,9 +81,11 @@ This makes dual-boot installations possible.
 
 ===== Step 3. Kernel Boot  =====
 
-Once the kernel is running, it runs through its startup scripts, starts its processes.
+The central part of the kernel is stored as a single image file.  The bootloader copies this image into memory where it will stay permanently.
 
-The last thing it does is pass control to the init process.
+Additionally, there are kernel modules which can be loaded into memory as needed.  The bootloader loads a subset of these kernel modules.
+
+Now the bootloader program passes control to the kernel, and Linux is up and running. The kernel starts up his processes and when ready it passes control to the init process also known as userspace startup.
 
 ===== Step 4. Userspace Startup  =====
 
