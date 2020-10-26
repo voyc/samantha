@@ -1,0 +1,3 @@
+[submodule "minimal"]
+	path = html/minimal
+	url = https://github.com/voyc/minimal

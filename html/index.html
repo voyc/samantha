@@ -7,12 +7,22 @@
 		<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
 		<title>Samantha</title>
 		<style>[hidden] {display:none ! important;}</style>
-		<link  href='minimal/normaleyes.css' rel='stylesheet' type='text/css'></link>
-		<link  href='minimal/minimal.css' rel='stylesheet' type='text/css'></link>
-		<link  href='css/sam.css' rel='stylesheet' type='text/css'></link>
-		<link  href='chat/chatgrid.css' rel='stylesheet' type='text/css'></link>
+		<link href='minimal/normaleyes.css' rel='stylesheet' type='text/css'></link>
+		<link href='minimal/minimal.css' rel='stylesheet' type='text/css'></link>
+		<link href='minimal/theme/mahagony.css' rel='stylesheet' type='text/css'></link>
+		<link href='icon/icon.css' rel='stylesheet' type='text/css'></link>
+		<link href='css/sam.css' rel='stylesheet' type='text/css'></link>
+		<link href='chat/chat.css' rel='stylesheet' type='text/css'></link>
+		<script src="js/namespace.js"></script>
+		<script src='chat/chat.js'></script>
+		<script src='icon/lib/menu.js'></script>
+		<script src='icon/lib/gear.js'></script>
+		<script src='icon/lib/user.js'></script>
+		<script src='icon/lib/spinner.js'></script>
+		<script src='icon/lib/speaker.js'></script>
+		<script src='icon/lib/pencil.js'></script>
+		<script src="js/hist.js"></script> 
 		<script>
-			voyc = {};
 			window.addEventListener('load', function() {
 				voyc.chat = new voyc.Chat();
 				voyc.chat.setup(document.getElementById('chatcontainer'));
@@ -24,7 +34,6 @@
 				//voyc.chat.resize(window.innerHeight);
 			});
 		</script>
-		<script src='chat/chat.js'></script>
 	</head>
 	<body>
 		<div id=page>

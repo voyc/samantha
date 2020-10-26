@@ -1,0 +1,96 @@
+/* Typography (font, color, border) is defined here.   */
+/* See minimal.css for layout.   */
+
+/* font */
+html {
+	font-family: calibri, sans-serif;
+	font-size:13pt;
+}
+.narrative>p, 
+.narrative>ul,
+.narrative>ol {
+	font-family: 'Times New Roman', Times, serif;
+}
+
+/* color
+$wht = 255,255,255                rgb(232,232,241)
+$blk =   0,  0,  0                rgb( 26, 22,  0)
+$red = 178, 34, 34  Firebrick
+$grn =   0,128,128  Teal
+$blu =  25, 25,112  MidnightBlue
+$ylo = 255,215,  0  Gold
+*/
+
+.fwht {color:rgb(255,255,255);}
+.fblk {color:rgb(  0,  0,  0);}
+.fred {color:rgb(178, 34, 34);}
+.fgrn {color:rgb(  0,128,128);}
+.fblu {color:rgb( 25, 25,112);}
+.fylo {color:rgb(255,215,  0);}
+
+.bwht {color:rgb(  0,  0,  0); background-color:rgb(232,232,241);}
+.bblk {color:rgb(255,255,255); background-color:rgb(  0,  0,  0);}
+.bred {color:rgb(255,255,255); background-color:rgb(178, 34, 34);}
+.bgrn {color:rgb(255,255,255); background-color:rgb(  0,128,128);}
+.bblu {color:rgb(255,255,255); background-color:rgb( 25, 25,112);}
+.bylo {color:rgb(  0,  0,  0); background-color:rgb(255,215,  0);}
+
+.accent {color:rgb(178, 34, 34);}
+.urgent {color:rgb(255,215,  0);}
+
+.narrative>h3 { color:rgb(178, 34, 34); }
+.narrative { 
+	border-left: 2px solid rgb(  0,128,128); 
+	border-right:6px solid rgb(178, 34, 34) 
+}
+
+h1 { color:rgb(  0,  0,  0);}
+h2 { color:rgb(  0,128,128);}
+h3 { color:rgb(  0,  0,  0);}
+
+.btn.red { color:rgb(255,255,255); background-color: rgb(178, 34, 34)}
+.btn.grn { color:rgb(255,255,255); background-color: rgb(  0,128,128)}
+.btn.blu { color:rgb(255,255,255); background-color: rgb( 25, 25,112)}
+.btn.ylo { color:rgb(  0,  0,  0); background-color: rgb(255,215,  0)}
+
+.icon { color:rgb( 25, 25,112); }
+
+/* panels */
+.panel { border-radius:.4rem;}
+.panel.red { border-color:rgb(178, 34, 34); background-color:rgb(250,250,252); }
+.panel.red h3 { color:rgb(255,255,255); background-color:rgb(178, 34, 34); border:0; }
+.panel.grn { border-color:rgb(  0,128,128); background-color:rgb(250,250,252); }
+.panel.grn h3 { color:rgb(255,255,255); background-color:rgb(  0,128,128); border:0; }
+.panel.blu { border-color:rgb( 25, 25,112); background-color:rgb(250,250,252); }
+.panel.blu h3 { color:rgb(255,255,255); background-color:rgb( 25, 25,112); border:0; }
+.panel.ylo { border-color:rgb(255,215,  0); background-color:rgb(250,250,252); }
+.panel.ylo h3 { color:rgb(  0,  0,  0); background-color:rgb(255,215,  0); border:0; }
+
+.box { border-radius:.4rem;}
+.box.red { color:rgb(255,255,255); background-color:rgb(178, 34, 34); border-color:rgb(178, 34, 34); }
+.box.red h3 { color:rgb(178, 34, 34); border:0; }
+.box.red a { color:rgb(255,255,255); }
+.box.grn { color:rgb(255,255,255); background-color:rgb(  0,128,128); border-color:rgb(  0,128,128); }
+.box.grn h3 { color:rgb(  0,128,128); border:0; }
+.box.grn a { color:rgb(255,255,255); }
+.box.blu { color:rgb(255,255,255); background-color:rgb( 25, 25,112); border-color:rgb( 25, 25,112); }
+.box.blu h3 { color:rgb( 25, 25,112); border:0; }
+.box.blu a { color:rgb(255,255,255); }
+.box.ylo { color:rgb(  0,  0,  0); background-color:rgb(255,215,  0); border-color:rgb(255,215,  0); }
+.box.ylo h3 { color:rgb(  0,  0,  0); border:0; }
+
+.red .closex {color:rgb(255,255,255);}
+.grn .closex {color:rgb(255,255,255);}
+.blu .closex {color:rgb(255,255,255);}
+
+.selected {
+	background:linear-gradient(to bottom, rgba(255,215,0,.9), rgba(255,215,  0,.7));
+}
+
+.expander { color:rgb( 25, 25,112);}
+
+header {
+	color:rgb( 25, 25,112);
+	background-color:rgb(255,215,  0);
+    border-bottom: 1px solid rgba( 25, 25,112, .2);
+}

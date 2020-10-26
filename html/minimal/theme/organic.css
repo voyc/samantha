@@ -1,0 +1,93 @@
+/* font */
+html {
+	font-family: Tahoma, sans-serif;
+}
+.narrative>p, 
+.narrative>ul,
+.narrative>ol {
+	font-family: Lora, serif;
+}
+
+/* color
+$wht = 255,255,255
+$blk =   0,  0,  0
+$red = 255, 99, 71  Tomato
+$grn =   0,255,127  SpringGreen
+$blu =  70,130,180  SteelBlue
+$ylo = 238,232,170  PaleGoldenrod
+ */
+ 
+.fwht {color:rgb(255,255,255);}
+.fblk {color:rgb(  0,  0,  0);}
+.fred {color:rgb(255, 99, 71);}
+.fgrn {color:rgb(  0,255,127);}
+.fblu {color:rgb( 70,130,180);}
+.fylo {color:rgb(238,232,170);}
+
+.bwht {color:rgb(  0,  0,  0); background-color:rgb(255,255,255);}
+.bblk {color:rgb(255,255,255); background-color:rgb(  0,  0,  0);}
+.bred {color:rgb(255,255,255); background-color:rgb(255, 99, 71);}
+.bgrn {color:rgb(255,255,255); background-color:rgb(  0,255,127);}
+.bblu {color:rgb(255,255,255); background-color:rgb( 70,130,180);}
+.bylo {color:rgb(  0,  0,  0); background-color:rgb(238,232,170);}
+
+.accent {color:rgb(255, 99, 71);}
+.urgent {color:rgb(238,232,170);}
+
+.narrative>h3 { color:rgb(255, 99, 71); }
+.narrative { 
+	border-left: 2px solid rgb(  0,255,127); 
+	border-right:6px solid rgb(255, 99, 71) 
+}
+
+h1 { color:rgb(  0,  0,  0);}
+h2 { color:rgb(  0,255,127);}
+h3 { color:rgb(  0,  0,  0);}
+
+.btn.red { color:rgb(255,255,255); background-color: rgb(255, 99, 71)}
+.btn.grn { color:rgb(255,255,255); background-color: rgb(  0,255,127)}
+.btn.blu { color:rgb(255,255,255); background-color: rgb( 70,130,180)}
+.btn.ylo { color:rgb(  0,  0,  0); background-color: rgb(238,232,170)}
+
+.icon { color:rgb( 70,130,180); }
+
+/* panels */
+
+.panel { border-radius:.4rem;}
+.panel.red { border-color:rgb(255, 99, 71); background-color:rgb(250,250,252); }
+.panel.red h3 { color:rgb(255,255,255); background-color:rgb(255, 99, 71); border:0; }
+.panel.grn { border-color:rgb(  0,255,127); background-color:rgb(250,250,252); }
+.panel.grn h3 { color:rgb(255,255,255); background-color:rgb(  0,255,127); border:0; }
+.panel.blu { border-color:rgb( 70,130,180); background-color:rgb(250,250,252); }
+.panel.blu h3 { color:rgb(255,255,255); background-color:rgb( 70,130,180); border:0; }
+.panel.ylo { border-color:rgb(238,232,170); background-color:rgb(250,250,252); }
+.panel.ylo h3 { color:rgb(  0,  0,  0); background-color:rgb(238,232,170); border:0; }
+
+.box { border-radius:.4rem;}
+.box.red { color:rgb(255,255,255); background-color:rgb(255, 99, 71); border-color:rgb(255, 99, 71); }
+.box.red h3 { color:rgb(255, 99, 71); border:0; }
+.box.red a { color:rgb(255,255,255); }
+.box.grn { color:rgb(255,255,255); background-color:rgb(  0,255,127); border-color:rgb(  0,255,127); }
+.box.grn h3 { color:rgb(  0,255,127); border:0; }
+.box.grn a { color:rgb(255,255,255); }
+.box.blu { color:rgb(255,255,255); background-color:rgb( 70,130,180); border-color:rgb( 70,130,180); }
+.box.blu h3 { color:rgb( 70,130,180); border:0; }
+.box.blu a { color:rgb(255,255,255); }
+.box.ylo { color:rgb(  0,  0,  0); background-color:rgb(238,232,170); border-color:rgb(238,232,170);  }
+.box.ylo h3 { color:rgb(  0,  0,  0); border:0; }
+
+.red .closex {color:rgb(255,255,255);}
+.grn .closex {color:rgb(255,255,255);}
+.blu .closex {color:rgb(255,255,255);}
+
+.selected {
+	background:linear-gradient(to bottom, rgba(255,215,0,.9), rgba(238,232,170,.7));
+}
+
+.expander { color:rgb( 70,130,180);}
+
+header {
+	color:rgb( 70,130,180);
+	background-color:rgb(238,232,170);
+    border-bottom: 1px solid rgba( 70,130,180, .2);
+}

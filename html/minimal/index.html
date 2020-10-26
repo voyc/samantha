@@ -1,0 +1,928 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv=Content-Type content='text/html; charset=UTF-8'>
+		<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
+		<title>Minimal</title>
+		<style>[hidden] {display:none ! important;}</style>
+		
+<?php if (false) { ?>
+		<link  href='normaleyes.css' rel='stylesheet' type='text/css'></link>
+		<link  href='icon/icon.css' rel='stylesheet' type='text/css'></link>
+		<script src='namespace.js'></script>
+		<script src='icon/icon.js'></script>
+		<script src='icon/lib/menu.js'></script>
+		<script src='icon/lib/gear.js'></script>
+		<script src='jslib/utils.js'></script>
+		<script src='jslib/dragger.js'></script>
+		<link  href='minimal.css' rel='stylesheet' type='text/css'></link>
+		<script src='minimal.js'></script>
+<?php } else { ?>
+<!--<remove>
+		<link  href='min.css' rel='stylesheet' type='text/css'></link>
+		<script src='min.js'></script>
+<remove>-->
+<?php } ?>
+
+	</head>
+	<body>
+		<header class='fixed'>
+			<div class='group'>
+				<icon class='bit' type='draw' name='menu' open='leftnav-modeless'></icon>
+				<div class='bit hdr' id='hdrtitle'>Minimal</div>
+			</div>
+			<div class='group tright'>
+				<icon class='bit' type=draw name=gear open='dropdown-modeless'></icon>
+			</div>
+		</header>
+
+		<section class='narrative' id='narrative-section'>
+			<h1>Minimal</h1>
+			<p>Minimal website styles and behaviours, 
+			those we tend to reuse over and over again.
+			A starting point for many of our projects.</p>
+			<p>We use this page to demo and test the styles and attributes
+			in the minimal project.
+			We also keep notes and tips here that we want to remember about css and html.</p>
+			<p>Themes add color, font, and border.  Pick one or none:</p>
+			<p class='tcenter'>
+				<button toggle=theme css='mahagony'>Mahagony</button>
+				<button toggle=theme css='organic' >Organic</button>
+				<button toggle=theme css='google'  >Google</button>
+			</p>
+			<p>Required submodules:</p>
+			<ul>
+				<!-- <li>https://github.com/necolas/normalize.css</li> -->
+				<li>https://github.com/voyc/jslib</li>
+				<li>https://github.com/voyc/icon</li>
+			</ul>
+			<blockquote class='panel red'>
+				<p>Your desires are so complex and contradictory &mdash; no wonder the society you create is also complex and contradictory.
+				<br/><cite class='fright'>&mdash; Nisargadatta Maharshi</cite></p>
+			</blockquote>
+			
+			<!------------------------------------------------------>
+			<h2><a id='appearance' class='navlabel'>Appearance (classes)</a></h2>
+			<p>Appearance is implemented by adding classes to elements.</p>
+			<h3>.panel</h3>
+			<p>A panel has a border around a body with an optional header.</p>
+			<aside class='panel red'>
+				<h3>Panel</h3>
+				<p>The panel contents<br/>complement the narrative.</p>
+			</aside>
+			<aside class='panel blu'>
+				<p>This panel has no header.</p>
+			</aside>
+			<aside class='panel ylo'>
+				<h3>List Panel</h3>
+				<p>Default list</p>
+				<ul>
+					<li>indent</li>
+					<li>bullet</li>
+				</ul>
+			</aside>
+
+			<h3>.box</h3>
+			<p>Similar to a panel with a reversed color scheme.  More drama.  Less readable.</p>
+			<aside class='box grn'>
+				<h3>Box</h3>
+				<p>Sometimes used<br/>for functionality.</p>
+			</aside>
+			<aside class='box blu'>
+				<p>Pow!</p>
+			</aside>
+			<aside class='box ylo'>
+				<p>Box without header.</p>
+			</aside>
+
+			<h3>.list</h3>
+			<p>Add the .list class along with .panel or .box to remove the bullet from the list items.</p>
+			<aside class='panel list ylo fright'>
+				<h3>Panel List</h3>
+				<ul>
+					<li>indent</li>
+					<li>bullet</li>
+				</ul>
+			</aside>
+			<aside class='box list red fright'>
+				<h3>Box List</h3>
+				<ul>
+					<li>indent</li>
+					<li>bullet</li>
+				</ul>
+			</aside>
+			<p>Within a .narrative element, a list looks like this:</p>
+			<ul>
+				<li>indent</li>
+				<li>bullet</li>
+			</ul>
+			<ol>
+				<li>indent</li>
+				<li>bullet</li>
+			</ol>
+
+			<h3>.popup</h3>
+			<p>Add the .popup class along with .panel or .box to add shadow
+			Nice for a dialog or navbar.</p>
+			<aside class='panel popup blu'>
+				<h3>Panel Popup</h3>
+				<p><input type='text' placeholder='Email' ></p>
+				<p><input type='password' placeholder='Password'></p>
+			</aside>
+			<aside class='box popup grn'>
+				<h3>Box Popup</h3>
+				<p><a href='#font'>Fonts</a></p>
+				<p><a href='#color'>Colors</a></p>
+			</aside>
+
+			<h3>.narrative</h3>
+			<p>Usually applied to a section.  Designed for reading longer sections of text.</p>
+			<ul>
+				<li>Serif font.</li>
+				<li>Maximum width of 12 centimeters.</li>
+				<li>Border on wide screens.</li>
+			</ul>
+
+			<h3>.btn</h3>
+			<p>Add the .btn class to a button element.</p>
+			<p>
+				<button>Default</button>
+				<button class='btn wht'>White</button>
+				<button class='btn ylo'>Yellow</button>
+				<button class='btn blu'>Blue</button>
+				<button class='btn grn'>Green</button>
+				<button class='btn red'>Red</button>
+			</p>
+			<p>Or, add the .button class to an anchor.</p>
+			<div class='horz'>
+				<a href='#">Default</a>
+				<a class='btn wht'>White  </a>
+				<a class='btn ylo'>Yellow </a>
+				<a class='btn blu'>Blue   </a>
+				<a class='btn grn'>Green  </a>
+				<a class='btn red'>Red    </a>
+			</div>
+
+			<h3>.anchor</h3>
+			<p>Add the .anchor class to a button element.  In normal usage, we use the anchor to go to another page, and a button to execute some operation on this page.  But sometimes we seem to want the button to look like an anchor.</p>
+			<p>
+				<button>Default</button>
+				<button class='anchor wht'>White</button>
+				<button class='anchor ylo'>Yellow</button>
+				<button class='anchor blu'>Blue</button>
+				<button class='anchor grn'>Green</button>
+				<button class='anchor red'>Red</button>
+			</p>
+
+			<h3>.fixed</h3>
+			<p>Add the .fixed class to the header element, and it will not scroll along with the rest of the body.</p>
+			<p><button toggle fixheader>Fixed Header</button></p>
+			
+			<!------------------------------------------------------>
+			<h2><a id='behaviour' class='navlabel'>Behaviour (attributes)</a></h2>
+			<p>Behaviour is implemented by adding attributes to elements.</p>
+
+			<h3>Initially Hidden</h3>
+			<p class='indent'><code>[initially hidden]</code></p>
+
+			<p>We use the The HTML "hidden" attribute when we want to make sure an element is not visible during startup, while waiting for the stylesheet to load.</p>
+
+			<p>When we combine it with the "initially" attribute, both attributes are removed immediately after successful startup.</p>
+
+			<p> We use this on our modeless dialogs.  
+			Our modeless dialogs each have some css style that hides it from view until it is opened.
+			By adding "initially hidden" we let screen readers know these dialogs are initially hidden,
+			even without the presence of the ccs files.  And we also avoid the flashing effect that can occur if the element is visible while waiting for the stylesheet to load.</p>
+
+			<h3>Show/Hide</h3>
+			<p>We can add the show= attribute to a button to open an element, and add the hide= tag to a close button for that element.</p>
+			<p class='indent'><code>[show=&lt;element-id&gt;]<br/>
+			[hide=&lt;element-id&gt;]</code></p>
+			<p>The operation works by adding and removing the [hidden] attribute to the element.</p>
+			<div class='tcenter'>
+				<button show='yellowbox'>Show</button>
+				<div hidden class='box ylo' style='margin:0' id='yellowbox'>
+					<p>Peek-a-Boo</p>
+				</div>
+				<button hide='yellowbox'>Hide</button>
+			</div>
+			<p></p>
+			<figcaption>Demo 1. Show and Hide an Element</figcaption>
+
+			<h3>Expand/Collapse</h3>
+			<p class='indent'><code>[expand=&lt;element-id&gt;]<br/>
+			[collapse=&lt;element-id&gt;]</code></p>
+			<p>Adding the expand= attribute to an element makes that element a toggle button that expands and collapses the element with the specified id, like this example.</p>
+			<p>The operation works by adding and removing a .closed class.<p>
+			<p>Following is an example.</p>
+			<h5 expand='morecollapse'>Details on [collapse=]</h5>
+			<p hidden id='morecollapse'>The collapse attribute is not needed, because the [expand=] attribute creates a toggle button which does both the expand and the collapse.</p>
+
+			<h3>Open/Close</h3>
+
+			<p class='indent'><code>[open=&lt;element-id&gt;]<br/>
+			[modal open=&lt;element-id&gt;]<br/>
+			[close]</code></p>
+
+			<p>Open and close a dialog box.
+			By default, the dialog is opened as modeless.  Add the [modal] attribute to make it modal.</p>
+
+			<p>LeftNav example.  Using class .leftnav.  <button open='leftnav-modeless'>Left-Nav Modeless</button></p>
+			<p>Dropdown example.  Using class .dropdown.  <button open='dropdown-modeless'>Dropdown Modeless</button></p>
+			<p>Modal example: <button open='login'>Centered Modal</button></p>
+
+			<p>How a modeless dialog works. 
+			The dialog is assigned a class that hides the dialog, 
+			like for example with visibility=hidden or left:-200px.
+			When opened, the "open" class is added that brings the dialog into view, perhaps with a transition.
+			Note also, the dialog is defined with "initially hidden" attributes (see above.)</p>
+			
+			<p>How a modal dialog works.
+			We define a single modal dialog container.
+			Multiple dialog forms are defined in a hidden section of HTML.
+			On open, the specified form is moved into the container with appendChild(),
+			and then the container is made visible.</p>
+
+			<h3>Drag and Drop</h3>
+			<p>Add the drag attribute to any element to make it draggable.
+			Add the drop attribute to any element to make it a drop target.</p>
+			<p class='indent'><code>[drag]</code><br/>
+			<code>[drop]</code></p>
+			<figure>
+				<div style='margin-left:1rem;width:10em;height:1rem;'>
+					<div drag style='color:red;'>Drag Me!</div>
+				</div>
+				<div drop style='margin:1rem;width:20em;height:3em;color:black;background-color:yellow;'>Drop him here!</div>
+				<figcaption>Demo 2. Drag red object onto yellow object.</figcaption>
+			</figure>
+
+			<p>Add the draglist attribute to a ul element to make every item in the list draggable.
+			Add the droplist attribute to a ul element to insert a drop target between each item in the list, thereby making it reorderable.</p>
+			<p class='indent'><code>[draglist]</code><br/>
+			<code>[droplist]</code></p>
+			<figure>
+				<div draglist droplist class='panel list'>
+					<h3>droplist</h3>
+					<ul>
+						<li>b</li>
+						<li>strong</li>
+						<li>em</li>
+						<li>dfn</li>
+						<li>i</li>
+						<li>mark</li>
+						<li>small</li>
+						<li>sub</li>
+						<li>sup</li>
+					</ul>
+				</div>
+
+				<div draglist drop class='panel list'>
+					<h3>draglist</h3>
+					<ul>
+						<li>pre</li>
+						<li>code</li>
+						<li>samp</li>
+						<li>kbd</li>
+						<li>var</li>
+					</ul>
+				</div>
+				<figcaption>Demo 2. Drag line items between list boxes.</figcaption>
+			</figure>
+			
+			<h3>Selectable</h3>
+			<p>Click on a list item to select it.  Click on the header to select the entire list.</p>
+			<p class='indent'><code>[select]</code><br/>
+			<code>[selected]</code></p>
+			<figure>
+				<div select class='panel list blu'>
+					<h3>Gutteral Consonants</h3>
+					<table>
+						<tr id='8430'><td>कमल</td><td class='tcenter'>ka-ma-la</td><td class='tright'>lotus</td></tr>
+						<tr id='8431'><td>खग</td> <td class='tcenter'>kha-ga</td>  <td class='tright'>bird</td></tr>
+						<tr id='8432'><td>गगन</td><td class='tcenter'>ga-ga-na</td><td class='tright'>sky</td></tr>
+						<tr id='8433'><td>घटः</td> <td class='tcenter'>gha-ṭah</td> <td class='tright'>jar</td></tr>
+					</table>
+				</div>
+				<figcaption>Demo 3. Select individual rows or entire table.</figcaption>
+			</figure>
+
+			<h3>Toggle Buttons</h3>
+			<p>Add the toggle attribute to a button element
+			to make it a two-state button.  
+			Use the optional name value to identify a group of buttons.</p>
+			<p class='indent'><code>toggle=&lt;name&gt;</code></p>
+			<p class='tcenter'>
+				<button class='btn red' toggle=demo>Stop</button>
+				<button class='btn grn' toggle=demo>Go</button>
+			</p>
+			<p class='tcenter'>
+				<button class='btn ylo' toggle>Pause</button>
+			</p>
+			
+			<!------------------------------------------------------>
+			<h2><a id='topics' class='navlabel'>Topics</a></h2>
+
+			<h3>Files</h3>
+			<ul>
+				<li>minimal.js - behaviours</li>
+				<li>minimal.css - style classes</li>
+				<li>theme/*.css - additional font, color, border styles</li>
+				<li>minimal.html - demo/test</li>
+				<li>normalize.css - another project on github</li>
+				<li>normaleyes.css - slightly modified version of normalize</li>
+			</ul>
+
+			<h3>Horizontal Space</h3>
+			<p>There are at least two ways to create left and right margins.
+			One way is to put padding on the body or container.  
+			Then you need neither padding or margin on the child hn and p elements within,
+			and you can underline or overline a hn with a border.</p>
+			
+			<p>We have chosen instead to leave the container with margin and padding 0,
+			and we put padding on the children.  This allows us to stretch a heading 
+			all the way across its container, like for the title of a panel, and the header of the body.
+
+			<h3>Vertical Space</h3>
+			<p>We use top and bottom margins
+			to take advantage of the "collapsing" behavior.</p>
+			<p><i>margin collapsing</i>: 
+			Between two adjacent vertical block-level elements, 
+			only the largest of the two margins is honored.
+			The smaller is collapsed to zero.</p>
+
+			<h3>Nested divs</h3>
+			<p>Five years ago it was necessary to use layer upon layer of nested divs
+			to create a desired effect.  This is no longer necessary.
+			Now, with care, it is possible to create elegant and readable html.
+			Nothing missing, nothing extra.</p>
+
+			<h3>Semantic Tags and Custom Tags</h3>
+			<p>HTML5 has added a dozen new versions of the div tag.
+			These "semantic" tags do nothing except give names to things.</p>
+			<p>And if that's not enough, we now have the ability to make up 
+			our own "custom" tags which again add nothing except a name.</p>
+			<p>Should we use these tags?  For now, we have decided to use
+			the semantic tags, but we do not create our own custom tags.  
+			Depending on how the future unfolds, search engines and other
+			screen readers may use these semantic tags consistently, so some of 
+			them may become useful.</p>
+
+			<h3>Reminders</h3>
+			<p><i>inheritance</i>: from parent element to child element
+				<ul>
+					<li>some styles are inherited by default</li>
+					<li>other styles require the "inherit" value</li>
+				</ul>
+			</p>
+			<p><i>cascade</i>: rules for order of precedence when multiple styles apply to one element
+				<ul>
+					<li>later declaration overwrites earlier declaration, c1{} c2{}</li>
+					<li>later assignment overwrites earlier assignment, class='c1 c2'</li>
+					<li>importance: normal vs importance</li>
+					<li>origin: author, user, user-agent</li>
+					<li>specificity: number of selectors</li>
+				</ul>
+			</p>
+			
+			<!------------------------------------------------------>
+			<h2><a id='alternatives' class='navlabel'>Alternatives</a></h2>
+
+			<h3>Attribute vs Class</h3>
+			<p>CSS selectors now allow us to apply styles based on tagname, attribute, or classname.  
+			Both classnames and attributes can be added and removed from an element, so either can be used to dynamically change CSS styling of an element.  
+			So which do we use?</p>
+			<p>As a general rule, we use a classname for appearance, and an attribute for behavior.</p>
+
+			<h3>hidden attribute</h3>
+			<p>Elements are best hidden with the style display:none, because this removes all margins and padding completely from the HTML.</p>
+			<p>For awhile we used a .hidden classname defined as display:none.</p>
+			<p>Now, though, we use the [hidden] attribute instead.
+			This attribute was introduced wth HTML5 and is not yet fully supported [Sep 2015].
+			Normalize.css defines it as display:none.</p>
+
+			<h3>template tag</h3>
+			<p>The template tag is a semantic way to hide content.  
+			Introduced with HTML5 and not yet fully supported [Aug 2015].</p>
+			<p>In some cases we are using this tag, but we add the [hidden] attribute to it.</p>
+
+			<h3>summary/details tags</h3>
+			<p>HTML5 specifies the <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> tags, such that clicking on the <code>&lt;summary&gt;</code> tag 
+			toggles the display of the <code>&lt;details&gt;</code> content like this:</p>
+
+			<details class='horz vert'>
+				<summary>Example Summary/Details</summary>
+				<div class='panel'>
+					<h3>Details</h3>
+					<p>Put details here.</p>
+				</div>
+			</details>
+
+			<details class='horz'>
+				<summary>Outline</summary>
+				<details>
+					<summary>1</summary>
+					<details>
+						<summary>1.1</summary>
+					</details>
+					<details>
+						<summary>1.2</summary>
+					</details>
+					<details>
+						<summary>1.3</summary>
+					</details>
+				</details>
+				<details>
+					<summary>2</summary>
+				</details>
+			</details>
+
+			<p>As of now [Aug 2015], the <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> tags are supported only by Chrome and Android, so we are not using them.
+			Instead we have implemented a similar behaviour with the <code>expand=&lt;element-id&gt;</code> attribute.  
+			Add this attribute to any element to make it a clickable toggle of the element specified as the attribute value.  
+			Another syntax difference is that the expander element must be outside the collapsible element.</p>
+
+			<h3>drag and drop</h3>
+			<p>The HTML5 specification for drag and drop is not yet fully supported [Aug 2015].
+			And so for now we use our own implementation.</p>
+
+			<h3>menu/menuitem</h3>
+			<p>type=list,context or type=popup,toolbar.</p>
+			<p>The menu and menuitem tags are not yet fully speced or supported. [Aug 2015].
+			And so we are not yet using them.</p>
+
+			<h3>datalist</h3>
+			<p>auto-complete, similar to select, used with input tags</p>
+			<p>not recommended: http://stackoverflow.com/questions/6865943/html-form-select-option-vs-datalist-option</p>
+			<p>We are not yet using this tag [Aug 2015].</p>
+
+			<h3>pseudo classes</h3>
+			<p>Reminder: a - link states, pseudo-classes.</p>
+			<ul>
+				<li>a:link</li>
+				<li>a:visited</li>
+				<li>a:hover</li>
+				<li>a:active</li>
+			</ul>
+
+			<!------------------------------------------------------>
+			<h2><a id='font' class='navlabel'>Font</a></h2>
+			<p>The browser makes use of three default fonts, and we copy this scheme.
+			<ul>
+				<li>sans-serif - The default.</li>
+				<li>serif - Used within an element with .narrative class.</li>
+				<li>monospace - Used by the developer tags: pre, code, var, samp</li>
+			</ul>
+
+			<h3>Sans-Serif Fonts</h3>
+			<table class='horz'>
+				<tr style="white-space:nowrap;font-family:sans-serif           ;"><td>sans-serif         </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:Arial                ;"><td>Arial              </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:Helvetica            ;"><td>Helvetica          </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:'Segoe UI'           ;"><td>Segoe UI           </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:calibri              ;"><td>calibri            </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:'Arial Black'        ;"><td>Arial Black        </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:'Comic Sans MS'      ;"><td>Comic Sans MS      </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:cursive              ;"><td>cursive            </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:Impact               ;"><td>Impact             </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:'Lucida Sans Unicode';"><td>Lucida Sans Unicode</td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:Tahoma               ;"><td>Tahoma             </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:'Trebuchet MS'       ;"><td>Trebuchet MS       </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:Verdana              ;"><td>Verdana            </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+			</table>
+
+			<h3>Serif Fonts</h3>
+			<table class='horz'>
+				<tr style="white-space:nowrap;font-family:serif            ;"><td>serif            </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:'Times New Roman';"><td>Times New Roman  </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:Georgia          ;"><td>Georgia          </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:Lora             ;"><td>Lora             </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+			</table>
+
+			<h3>Monospace Fonts</h3>
+			<table class='horz'>
+				<tr style="white-space:nowrap;font-family:monospace       ;"><td>monospace     </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:'Courier New'   ;"><td>Courier New   </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:Courier         ;"><td>Courier       </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:'Lucida Console';"><td>Lucida Console</td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+				<tr style="white-space:nowrap;font-family:Monaco          ;"><td>Monaco        </td><td>1234567890</td><td>abcdefghijklm</td><td>NOPQRSTUVWXYZ</td></tr>
+			</table>
+
+			<h3>Inline Formatting Tags</h3>
+
+			<p>Here are examples of 
+			       <dfn   >dfn</dfn   > 
+			and of <mark  >mark</mark  >
+			and of <em    >em</em    >
+			and of <strong>strong</strong>
+			and of <b     >b</b     >
+			and of <code  >code</code  >
+			and of <kbd   >kbd</kbd   >
+			and of <samp  >samp</samp  >
+			and of <var   >var</var   >.</p>
+
+			<h3>Compare serif vs sans</h3>
+			<p>In Chrome and Firefox, the x-height of the sans-serif font is larger than that of the serif.  
+			In IE, the sans-serif font is more bold.  In Android, both size and weight are the same.</p>
+			<p class='indent'>
+				<span style='font-family:serif'>1234567890</span><span style='font-family:sans-serif'>1234567890</span><br/>
+				<span style='font-family:serif'>abcdefghij</span><span style='font-family:sans-serif'>abcdefghij</span><br/>
+				<span style='font-family:serif'>ABCDEFGHIJ</span><span style='font-family:sans-serif'>ABCDEFGHIJ</span><br/>
+			<p/>
+
+			<a href=http://www.w3schools.com/cssref/css_websafe_fonts.asp>see "Web Safe Font Combinations" at W3 Schools</a><br/>
+			
+			<!------------------------------------------------------>
+			<h2><a id='color' class='navlabel'>Color</h2>
+			<p>We use six colors (b&w + rgb + yellow):</p>
+			<ul>
+				<li><span class='bblk'>black </span></li>
+				<li><span class='bwht'>white </span></li>
+				<li><span class='bred'>red   </span></li>
+				<li><span class='bgrn'>green </span></li>
+				<li><span class='bblu'>blue  </span></li>
+				<li><span class='bylo'>yellow</span></li>
+			</ul>
+			<p>Each theme uses a unique set of hues of these six colors.</p>
+			<p class='tcenter'>
+				<button toggle=theme css='mahagony'>Mahagony</button>
+				<button toggle=theme css='organic' >Organic</button>
+				<button toggle=theme css='google'  >Google</button>
+			</p>
+			<p><a href='http://www.w3schools.com/tags/ref_colorgroups.asp'>see "Color Groups" at W3Schools</a></p>
+			
+			<!------------------------------------------------------>
+			<!------------------------------------------------------>
+			<h2><a id='thoughts' class='navlabel'>Great Thoughts</a></h2>
+			
+			<h3>Information Architecture</h3>
+			
+			<p>As soon as the user arrives at our website, we grab him by the throat and hit him as hard as we can in the solar plexus.
+			Now that we have his attention, quickly, before the police arrive, we lean into his ear and tell him precisely what we want him to do.
+			Direct, honest, concise.</p>
+			
+			<h3>Elegance</h3>  
+			<p>Nothing missing, nothing extra.</p>
+			<ul>
+				<li>Less is more.</li>
+				<li>Smaller is better</li>
+				<li>No libraries</li>
+				<li>No giant images</li>
+				<li>Mobile first</li>
+				<li>Responsive design</li>
+				<li>Form follows function</li>
+			</ul>
+
+			<aside class='panel fright'>
+				<h3>Big Guys</h3>
+				<p>Who are the big guys?</p>
+				<ul>
+					<li>google</li>
+					<li>facebook</li>
+					<li>wikipedia</li>
+					<li>amazon</li>
+					<li>ebay</li>
+				</ul>
+			</aside>
+			<h3>Usability Research</h3>
+			<p>Forget it.  Too expensive.  Just copy the big guys.
+			They have already spent the money on the usability research, so we don't have to.</p>
+
+			<h3>Language of the Internet</h3>
+			<p>Speak to the user in his own language.
+			If we use the same conventions as the big guys,
+			the user already knows how to use our site.</p>
+
+
+			<h3>Readable HTML</h3>
+			<p>Both by humans and machine.</p>
+			<p>No unnecessary nested divs.</p>
+			<p>View source and read the html here to see how to use these classes and attributes.</p>
+			
+			<h3>Artisan HTML</h3>
+			<p>
+				<ul>
+					<li>Readable.  By both human and machine.</li>
+					<li>No unnecessary nested divs.</li>
+					<li>Nothing missing.  Nothing extra.</li>
+					<li>No libraries.</li>
+				</ul>
+			</p>
+
+			<p>Here endeth the narrative section.</p>
+		</section>
+
+		<!------------------------------------------------------>
+
+		<hr/>
+
+		<section id='non-narrative-section'>
+			<p>From here on we use the whole screen width and the default font.</p>
+
+			<aside class='box bred wid20'>
+				<h3>Our Designer Friends</h3>
+				<p>Living in San Francisco with 400 GHz free wifi and a 96" imac.</p>
+			</aside>
+
+			<aside class='box bgrn wid20'>
+				<h3>Our Users</h3>
+				<p>Living in Asia with a 2G cellular connection at 1 USD per GB and a 3" smartphone.</p>
+			</aside>
+
+
+			<div class='panel ylo'><h3>aside Yellow</h3><p>Lorem ipsum dolor sit<br/>amet, consectetur<br/>adipiscing elit, sed<br/>do eiusmod tempor<br/>incididunt ut labore</p></div>
+			<div class='panel blu'><h3>aside Blue</h3><p>Lorem ipsum dolor sit<br/>amet, consectetur<br/>adipiscing elit, sed<br/>do eiusmod tempor<br/>incididunt ut labore</p></div>
+			<div class='panel list'>
+				<h3>Inline Tags</h3>
+				<ul>
+					<li>b</li>
+					<li>strong</li>
+					<li>em</li>
+					<li>dfn</li>
+					<li>i</li>
+					<li>mark</li>
+					<li>small</li>
+					<li>sub</li>
+					<li>sup</li>
+				</ul>
+			</div>
+
+			<div class='panel'>
+				<h3>Developer Tags</h3>
+				<ul>
+					<li>pre</li>
+					<li>code</li>
+					<li>samp</li>
+					<li>kbd</li>
+					<li>var</li>
+				</ul>
+			</div>
+
+			<div class='panel list'>
+				<h3>HTML5 Tags</h3>
+				<ul>
+					<li>article</li>
+					<li>aside</li>
+					<li>figure/figcaption</li>
+					<li>header</li>
+					<li>footer</li>
+					<li>hgroup</li>
+					<li>main</li>
+					<li>menu/menuitem</li>
+					<li>nav</li>
+					<li>section</li>
+					<li>summary/details</li>
+				</ul>
+			</div>
+
+
+
+
+
+			<aside draglist droplist class='panel list'>
+				<h3>Inline</h3>
+				<ul>
+					<li>b</li>
+					<li>strong</li>
+					<li>em</li>
+					<li>i</li>
+					<li>mark</li>
+					<li>small</li>
+					<li>sub</li>
+					<li>sup</li>
+				</ul>
+			</aside>
+			<aside draglist drop class='panel list'>
+				<h3>Developer</h3>
+				<ul>
+					<li>pre</li>
+					<li>code</li>
+					<li>samp</li>
+					<li>kbd</li>
+					<li>var</li>
+				</ul>
+			</aside>
+			<aside class='panel'>
+				<h3>Semantic</h3>
+				<ul>
+					<li>article</li>
+					<li>aside</li>
+					<li>figure/figcaption</li>
+					<li>header</li>
+					<li>footer</li>
+					<li>hgroup</li>
+					<li>main</li>
+					<li>nav</li>
+					<li>section</li>
+				</ul>
+			</aside>
+			<aside class='panel'>
+				<h3>Behavioural</h3>
+				<ul>
+					<li>menu/menuitem</li>
+					<li>dialog</li>
+					<li>summary/details</li>
+					<li>dfn</li>
+					<li>abbr</li>
+				</ul>
+			</aside>
+			<aside class='panel'>
+				<h3>Traditional</h3>
+				<ul>
+					<li>div</li>
+					<li>span</li>
+					<li>h1,h2,h3</li>
+					<li>p</li>
+					<li>ul/ol/li</li>
+					<li>table/tr/td</li>
+					<li>th/col/colgroup</li>
+				</ul>
+			</aside>
+			<aside class='panel'>
+				<h3>Forms</h3>
+				<ul>
+					<li>form</li>
+					<li>fieldset</li>
+					<li>legend</li>
+					<li>input</li>
+					<li>select/option</li>
+				</ul>
+			</aside>
+			<aside class='panel red fright fclear'>
+				<p>This panel has no header.</p>
+			</aside>
+			<aside class='panel red fright fclear'>
+				<h3>List Panel</h3>
+				<p>This panel includes<br/>a list:</p>
+				<ul>
+					<li>mark</li>
+					<li>small</li>
+					<li>sub</li>
+					<li>sup</li>
+				</ul>
+			</aside>
+			<aside draglist class='panel list fleft fclear'>
+				<h3>Drag Panel</h3>
+				<p>This panel has a<br/>list of draggable items:</p>
+				<ul>
+					<li>mark</li>
+					<li>small</li>
+					<li>sub</li>
+					<li>sup</li>
+				</ul>
+			</aside>
+
+			<aside class='panel ylo'>
+				<h3>Panel</h3>
+				<ul>
+					<li>indent</li>
+					<li>bullet</li>
+				</ul>
+			</aside>
+			<aside class='panel list ylo'>
+				<h3>Panel List</h3>
+				<ul>
+					<li>indent</li>
+					<li>bullet</li>
+				</ul>
+			</aside>
+			<aside draglist class='panel list ylo'>
+				<h3>Panel List Drag</h3>
+				<ul>
+					<li>indent</li>
+					<li>bullet</li>
+				</ul>
+			</aside>
+
+			<aside class='box ylo'>
+				<h3>Box</h3>
+				<ul>
+					<li>indent</li>
+					<li>bullet</li>
+				</ul>
+			</aside>
+			<aside class='box list ylo'>
+				<h3>Box List</h3>
+				<ul>
+					<li>indent</li>
+					<li>bullet</li>
+				</ul>
+			</aside>
+			<aside draglist class='box list ylo'>
+				<h3>Box List Drag</h3>
+				<ul>
+					<li>indent</li>
+					<li>bullet</li>
+				</ul>
+			</aside>
+
+			<aside class='panel list grn'>
+				<h3>Colors</h3>
+				<ul>
+					<li>white  </li>
+					<li>black  </li>
+					<li>red    </li>
+					<li>green  </li>
+					<li>blue   </li>
+					<li>yellow </li>
+				</ul>
+			</aside>
+
+			<aside class='panel'>
+				<h3>Transition Visibility</h3>
+				<p>The display style cannot be used in a transition.
+				The visibility style can.</p>
+			</aside>
+
+			<aside class='panel list'>
+				<h3>Dialog</h3>
+				<ul>
+					<li>Appearance - a panel with shadow.  Our .popup class.</li>
+					<li>Position - always on top, near the button that opened it, entirely onscreen.</li>
+					<li>Modal or Modeless</li>
+					<li>Close button
+					<li>Transition - slide out from the left, or dropdown from it's opener button.</li>
+				</ul>
+			</aside>
+
+			<aside class='panel list'>
+				<h3>Separate CSS Capabilities</h3>
+				<ul>
+					<li>Typography &mdash; font, color, line (border)</li>
+					<li>Layout &mdash; position, size, wrap</li>
+					<li>Behavior &mdash; transition, scroll, selection</li>
+				</ul>
+			</aside>
+		</section>
+
+
+		<!---- modeless dialogs ----------------------------------------->
+
+		<nav initially hidden class='panel popup leftnav fromheader blu' id='leftnav-modeless'>
+			<div close class='closex'>&times;</div>
+			<h3>Go To...</h3>
+			<p><a close href='#appearance'>Appearance</a></p>
+			<p><a close href='#behaviour'>Behaviour</a></p>
+			<p><a close href='#topics'>Topics</a></p>
+			<p><a close href='#alternatives'>Alternatives</a></p>
+			<p><a close href='#font'>Font</a></p>
+			<p><a close href='#color'>Color</a></p>
+			<p><a close href='#thoughts'>Great Thoughts</a></p>
+		</nav>
+		<aside initially hidden class='panel popup dropdown fromheader blu' id='dropdown-modeless'>
+			<div close='dropdown-modeless' class='closex'>&times;</div>
+			<h3>Settings</h3>
+			<p>Theme:
+				<button toggle=theme css='mahagony'>Mahagony</button>
+				<button toggle=theme css='organic' >Organic</button>
+				<button toggle=theme css='google'  >Google</button>
+			</p>
+			<p>Header:
+				<button toggle fixheader>Fixed Header</button>
+			<p>
+		</aside>
+
+		<!---- modal dialog container ----------------------------->
+
+		<div hidden id='modalcontainer' class='full smoke'>
+			<div class='centered modal'>
+				<div close class='closex'>&times;</div>
+				<h3 id='modaltitle'>Modal Title</h3>
+				<p id='dialog-msg'>message</p>
+				<div id='dialog'>
+				</div>
+			</div>
+			<div hidden id='wait' class='smoke'>
+				<div id='wait-center' style='margin: auto;'><canvas width='50' height='50' class='spinning'></canvas></div>
+			</div>
+		</div>
+
+		<!---- forms which will be moved to modal dialog container on open ---->
+
+		<div hidden id='offscreen'>
+			<form modal id='login' svc='ua' class='dialog' first='login-email' title='Login to Your Account'>
+				<p><input type='text' name='both' placeholder='Username or Email' initial='empty' required='' pattern='[a-zA-Z0-9\_@.]{6,100}' title='Letters and numbers or @ or period or underscore. Length between 6 and 100.'></p>
+				<p><input type='password' name='pword' placeholder='Password' initial='empty' required='' pattern='[a-zA-Z0-9@&amp;#$%]{8,255}' title='Letters and numbers or @,&amp;,#,$,%. Length between 8 and 255.'></p>
+				<p>
+					<input type='checkbox' name='rmrq' initial='notchecked'>
+					<label for='login-rememberme-cb'>Remember me</label>
+					<input type='button' value='Cancel' class='right anchor' action='cancel' tabindex='-1'>
+					<input type='submit' value='Login' class='right submit'>
+				</p>
+				<p><input type='button' class='anchor' value='Forget your password?' form='forgot'></p>
+			</form>
+		</div>
+
+		<footer>
+			<div class='group'>
+				<a href='http://voyc.com/about' class='ftr voyc'>
+					<svg viewBox="0 0 550 200" xmlns="http://www.w3.org/2000/svg"><defs><mask id="cut-out"><rect id="bg" x="0" y="0" width="100%" height="100%" fill="#fff"/><rect x="0" y="0"   width="600" height="49" fill="#000" /><rect x="0" y="149" width="180" height="29" fill="#000" /><rect x="0" y="180" width="600" height="20" fill="#000" /><path d="M450 88 L520 88 L520 140" fill="#000" /></mask></defs><g stroke="#000" stroke-width="30" fill="none" mask="url(#cut-out)"><path d="M 50 40 L 85 160 M 79 150 L164 30"/><path d="M290 40 L330 149 M290 190 L410 30"/><ellipse cx="217" cy="100" rx="38" ry="36"/><ellipse cx="460" cy="100" rx="38" ry="36"/></g></svg>
+				</a>
+			</div>
+			<div class='group tright'>
+				<a href='https://github.com/voyc/minimal' class='ftr git'>
+					<svg viewBox="0 0 45 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18.53 12.03h-.02c.009 0 .015.01.024.011h.006l-.01-.01zm.004.011c-.093.001-.327.05-.574.05-.78 0-1.05-.36-1.05-.83V8.13h1.59c.09 0 .16-.08.16-.19v-1.7c0-.09-.08-.17-.16-.17h-1.59V3.96c0-.08-.05-.13-.14-.13h-2.16c-.09 0-.14.05-.14.13v2.17s-1.09.27-1.16.28c-.08.02-.13.09-.13.17v1.36c0 .11.08.19.17.19h1.11v3.28c0 2.44 1.7 2.69 2.86 2.69.53 0 1.17-.17 1.27-.22.06-.02.09-.09.09-.16v-1.5a.177.177 0 0 0-.146-.18zm23.696-2.2c0-1.81-.73-2.05-1.5-1.97-.6.04-1.08.34-1.08.34v3.52s.49.34 1.22.36c1.03.03 1.36-.34 1.36-2.25zm2.43-.16c0 3.43-1.11 4.41-3.05 4.41-1.64 0-2.52-.83-2.52-.83s-.04.46-.09.52c-.03.06-.08.08-.14.08h-1.48c-.1 0-.19-.08-.19-.17l.02-11.11c0-.09.08-.17.17-.17h2.13c.09 0 .17.08.17.17v3.77s.82-.53 2.02-.53l-.01-.02c1.2 0 2.97.45 2.97 3.88zm-8.72-3.61H33.84c-.11 0-.17.08-.17.19v5.44s-.55.39-1.3.39-.97-.34-.97-1.09V6.25c0-.09-.08-.17-.17-.17h-2.14c-.09 0-.17.08-.17.17v5.11c0 2.2 1.23 2.75 2.92 2.75 1.39 0 2.52-.77 2.52-.77s.05.39.08.45c.02.05.09.09.16.09h1.34c.11 0 .17-.08.17-.17l.02-7.47c0-.09-.08-.17-.19-.17zm-23.7-.01h-2.13c-.09 0-.17.09-.17.2v7.34c0 .2.13.27.3.27h1.92c.2 0 .25-.09.25-.27V6.23c0-.09-.08-.17-.17-.17zm-1.05-3.38c-.77 0-1.38.61-1.38 1.38 0 .77.61 1.38 1.38 1.38.75 0 1.36-.61 1.36-1.38 0-.77-.61-1.38-1.36-1.38zm16.49-.25h-2.11c-.09 0-.17.08-.17.17v4.09h-3.31V2.6c0-.09-.08-.17-.17-.17h-2.13c-.09 0-.17.08-.17.17v11.11c0 .09.09.17.17.17h2.13c.09 0 .17-.08.17-.17V8.96h3.31l-.02 4.75c0 .09.08.17.17.17h2.13c.09 0 .17-.08.17-.17V2.6c0-.09-.08-.17-.17-.17zM8.81 7.35v5.74c0 .04-.01.11-.06.13 0 0-1.25.89-3.31.89-2.49 0-5.44-.78-5.44-5.92S2.58 1.99 5.1 2c2.18 0 3.06.49 3.2.58.04.05.06.09.06.14L7.94 4.5c0 .09-.09.2-.2.17-.36-.11-.9-.33-2.17-.33-1.47 0-3.05.42-3.05 3.73s1.5 3.7 2.58 3.7c.92 0 1.25-.11 1.25-.11v-2.3H4.88c-.11 0-.19-.08-.19-.17V7.35c0-.09.08-.17.19-.17h3.74c.11 0 .19.08.19.17z"></path></svg>
+				</a>
+			</div>
+		</footer>
+	</body>
+</html>
