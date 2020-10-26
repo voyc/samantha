@@ -36,7 +36,7 @@ footer {
 #chatscroller {
         padding:0;
         margin:0;
-	background:#88f;
+	background:#00f;
         overflow-y:scroll;
 	grid-column-start:2;
 	grid-column-end:3:
