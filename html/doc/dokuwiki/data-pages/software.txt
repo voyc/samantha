@@ -17,3 +17,19 @@
 
 In addition to learning about the human world, Samantha must learn about her own digital world.  Operating systems, distributed processing, networking, programming languages and environments, security hacking, 
 
+
+Two models of computation:
+  * lambda calculus
+    * normalized by Alonzo Church in the 1930's
+    * a formal system in mathematical logic for expressing computation based on function abstraction and application using variable binding and substitution.
+    * Functional languages like Haskell, Lisp, Erlang
+    * namesake Greek letter lambda: **λ** (lower case)
+  * Turing machine
+    * invented by Alan Turing in 1936
+    * state-based
+    * Imperative languages like Fortran, C, Python
+
+More about Alan Turing
+  * Turing Machine - a mathematical model of computation that defines an abstract machine, which manipulates symbols on a strip of tape, according to a table of rules.  A general example of a CPU.
+  * Turing complete - the ability of a system of instructions to simulate a Turing machine.  Nearly all programming languages are Turing complete.
+  * 

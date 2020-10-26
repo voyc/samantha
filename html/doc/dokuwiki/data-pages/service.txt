@@ -1,13 +1,13 @@
 ====== Service ======
 
 three ways to interact with a service
-directly with the init.d script
-with the service wrapper script
-with the systemctl script
+  - directly with the init.d script
+  - with the service wrapper script
+  - with the systemctl script
 
-$ sudo /etc/init.d/ssh stop
-$ sudo /etc/init.d/networking restart
-$ sudo systemctl restart ssh
+  $ sudo /etc/init.d/ssh stop
+  $ sudo /etc/init.d/networking restart
+  $ sudo systemctl restart ssh
 
 The word "service" is used in different ways.
 
@@ -20,8 +20,8 @@ We will walk through four ways to run a program:  foreground, background, daemon
 
 In the following series, open three shell terminal windows.
   - Run the commands listed here.
-  - $ tail -f out.txt
-  * $ ps -Hao ppid,pid,user,stat,command  
+  -  $ tail -f out.txt
+  -  $ ps -Hao ppid,pid,user,stat,command  
 
   $ mkdir work
   $ cd work
@@ -44,6 +44,12 @@ Run ps in the other window and notice you have started two new processes: bash a
   $ (press ctl-c)   # cancel (kill) the process
 
 Run ps and notice both the bash and ping processes are gone.
+
+test table
+
+^ test commands                    ^ Commentary                     |
+| <code>$ sudo cat >out.txt</code> | Create a new file name out.txt |
+| <code>$ (ctl-a)          </code> | Kill the job                   |
 
 ===== Background =====
 
@@ -98,7 +104,7 @@ Copy the script to a system executable directory.
   $ sudo cp pingoog.sh /usr/local/bin/
 
 Create a service file.
-  $ sudo cat >/usr/etc/system/system/pingoog.service
+  $ sudo cat >/etc/systemd/system/pingoog.service
   [Unit]
   Description=Skateboard monitor webservice.
   

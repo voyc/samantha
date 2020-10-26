@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# if no file is specified, look for this files in this order
+DirectoryIndex index.php index.html
+
+# Append .php to each service request.
+RewriteRule ^svc svc.php
