@@ -5,5 +5,5 @@
 	path = html/jslib
 	url = https://github.com/voyc/jslib
 [submodule "icon"]
-	path = icon
+	path = html/icon
 	url = https://github.com/voyc/icon
