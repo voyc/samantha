@@ -7,3 +7,6 @@
 [submodule "icon"]
 	path = html/icon
 	url = https://github.com/voyc/icon
+[submodule "account"]
+	path = php/account
+	url = https://github.com/voyc/account
