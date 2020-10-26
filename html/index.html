@@ -38,8 +38,33 @@
 	</head>
 	<body>
 		<div id=page>
-			<header>header</header>
+			<!---- header ----------------------------->
+			<header>
+				<div class='group'>
+					<icon class='bit' type='draw' name='menu' open='leftnav-dialog'></icon>
+					<div class='bit hdr' id='hdrtitle'>Samantha</div>
+				</div>
+				<div id='headeruser' initially hidden class='group tright'>
+					<div class='bit' id="welcome">
+						<span id="loggedinuser">LoggedInUser</span>
+					</div>
+					<div id='headerlogout' class='bit' id="logoutButton">
+						<button class='anchor' request='logout'>Logout</a>
+					</div>
+					<div id='headerlogin' class='bit' id="loginOrRegister">
+						<button class='anchor' request='login'>Login</button>
+						<button class='anchor' request='register'>Register</button>
+					</div>
+					<icon type='draw' name='user' class='bit' open='user-dialog'></icon>
+				</div>
+				<div id='headergear' class='group tright'>
+					<icon type='draw' name='gear' class='bit' open='settings-dialog'></icon>
+				</div>
+			</header>
+
 			<sidebarleft></sidebarleft>
+
+			<!---- content ----------------------------->
 			<div id='chatscroller'>
 				<div id='chatcontent'>
 					<div id=loginform>
@@ -59,7 +84,10 @@
 					<button id=mbtn>></button>
 				</div>
 			</div>
+
 			<sidebarright></sidebarright>
+
+			<!---- footer ----------------------------->
 			<footer>
 				<div class='group'>
 					<a href='http://voyc.com/about' class='ftr voyc'>
