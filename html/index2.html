@@ -1,5 +1,6 @@
 <!doctype html>
 <!-- index.html -->
+<!-- https://1linelayouts.glitch.me/ new grid layout, 2020 Oct 25 -->
 <html>
 	<head>
 		<meta http-equiv=Content-Type content='text/html; charset=UTF-8'>
@@ -28,23 +29,27 @@
 	<body>
 		<div id=page>
 			<header>header</header>
-
-			<sidebar></sidebar>
-			<div id=chatcontainer>
-				<div id=chatscroller></div>
-				<div id='chatfoot'>
-					<textarea id=mmsg></textarea>
-					<div id=mchoices>
-						<button>Yes</button>
-						<button>No</button>
-					</div>
-					<div id=mbtnwrap>
-						<button id=mbtn>></button>
+			<sidebarleft></sidebarleft>
+			<div id='chatscroller'>
+				<div id='chatcontent'>
+					<div id=loginform>
+						<p>Click here for <a href=wiki/doku.php>Wiki</a></p>
+						<p>Connecting to chat server...<span id=spanconnect class=hidden> Connected</span><span id=spanconnectfail class=hidden> Failed</span></p>
+						<p id=loginline class=hidden>Username: <input id=loginusername></input> <button id=loginbtn>Login</button><p>
 					</div>
 				</div>
 			</div>
-			<sidebar></sidebar>
-
+			<div id='chatfoot'>
+				<textarea id=mmsg></textarea>
+				<div id=mchoices>
+					<button>Yes</button>
+					<button>No</button>
+				</div>
+				<div id=mbtnwrap>
+					<button id=mbtn>></button>
+				</div>
+			</div>
+			<sidebarright></sidebarright>
 			<footer>
 				<div class='group'>
 					<a href='http://voyc.com/about' class='ftr voyc'>

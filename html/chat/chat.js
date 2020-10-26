@@ -46,7 +46,7 @@ voyc.Chat.linetemplate = `
 
 voyc.Chat.prototype.setup = function(container) {
 	this.chatcontainer = container;
-	this.chatcontainer.innerHTML = voyc.Chat.containertemplate;
+	//this.chatcontainer.innerHTML = voyc.Chat.containertemplate;
 	this.chatscroller = document.getElementById('chatscroller');
 	this.chatcontent = document.getElementById('chatcontent');
 

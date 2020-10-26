@@ -1,0 +1,130 @@
+.fright {
+	float:right;
+}
+.fleft {
+	float:left;
+}
+
+body {
+	margin:0;
+	overflow:hidden;
+}
+#page {
+	display:grid;
+	grid-template-columns:1fr minmax(20rem,65rem) 1fr;
+	grid-template-rows:auto 1fr auto auto;
+	height:100vh;
+}
+header {
+	grid-column-start:1;
+	grid-column-end:4;
+	background:gray;
+}
+sidebarleft {
+	grid-row-start:2;
+	grid-row-end:4;
+	grid-column-start:1;
+	grid-column-start:2:
+}
+sidebarright {
+	grid-row-start:2;
+	grid-row-end:4;
+	grid-column-start:3;
+	grid-column-start:4:
+}
+footer {
+	grid-column-start:1;
+	grid-column-end:4;
+	background:gray;
+}
+
+#chatscroller {
+        padding:0;
+        margin:0;
+	background:blue;
+        overflow-y:scroll;
+	grid-column-start:2;
+	grid-column-start:3:
+}
+#chatcontent {
+        padding:.5rem;
+}
+#chatfoot {
+	display:grid;
+	grid-template-columns:1fr auto auto;
+}
+
+.chatline {
+        margin: 1rem 0;
+}
+
+.chatdate {
+        text-align:center;
+}
+
+.chatmsg {
+        padding: .5rem;
+        border-radius: .5rem;
+        background-color:#fff;
+        max-width: 65%;
+}
+
+.chatmsg.fright {
+        background-color:#8f8;
+}
+
+.chattime {
+        color:white;
+        display:table-cell;
+        vertical-align:bottom;
+        margin:0 .3rem;
+}
+
+.chatuser {
+        color:#000;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.chatentry {
+        display:table;
+        width:100%;
+        max-width:60rem;
+}
+
+.chatentry tr td:first-child {
+        width:*;
+}
+
+.chatentry tr td:first-child textarea {
+        width:96%;
+        margin:.3rem;
+        padding:.3rem;
+        border-radius:.5rem;
+}
+
+.chatentry tr td:last-child {
+        width:1%;
+        text-align:right;
+}
+
+#mchoices {
+        padding:.3rem;
+}
+#mchoices button {
+        margin-right:.2rem;
+}
+
+#mmsg {
+	margin:.3rem;
+	padding:.3rem;
+	border-radius:.5rem;
+}
+#mbtn {
+	margin:.3rem;
+}
+

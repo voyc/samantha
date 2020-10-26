@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<style>
+.parent {
+	display: grid;
+	height: 100vh;
+	grid-template: auto 1fr auto / auto 1fr auto;
+}
+
+header {
+	padding: 2rem;
+	grid-column: 1 / 4;
+}
+
+.left-side {
+	grid-column: 1 / 2;
+}
+
+main {
+	background:lightblue;
+	grid-column: 2 / 3;
+}
+
+.right-side {
+	grid-column: 3 / 4;
+}
+
+footer {
+	grid-column: 1 / 4;
+}
+</style>
+</head>
+<body>
+	<div class="parent">
+		<header class="pink section">Header</header>
+		<div class="left-side blue section" contenteditable>Left Sidebar</div>
+		<main class="section coral" contenteditable> Main Content</main>
+		<div class="right-side yellow section" contenteditable>Right Sidebar</div>
+		<footer class="green section">Footer</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<style>
+#container {
+	display:grid;
+	grid-template-columns:auto auto;
+	grid-gap:10px;
+}
+
+#container div {
+	border:1px solid black;
+}
+
+div:first-child {
+	grid-row-start:1;
+	grid-row-end:4;
+}
+
+#page {
+	display:grid;
+	grid-template-columns:auto auto auto;
+}
+header {
+	grid-column-start:1;
+	grid-column-end:4;
+	background:gray;
+}
+main {
+	background:blue;
+}
+footer {
+	grid-column-start:1;
+	grid-column-end:4;
+	background:gray;
+}
+</style>
+
+
+<div id=page>
+	<header>header</header>
+	<sidebar>sidebar</sidebar>
+	<main>main
+		<div id=chat-container>
+			<div id=chat-scroller></div>
+			<div id=chat-footer>
+				<textarea id=chat-input></textarea>
+				<div id=button-area></div>
+				<button id=go></button>
+			</div>
+		</div>
+	</main>
+	<sidebar>sidebar</sidebar>
+	<footer>footer</footer>
+</div>
+
+
+<div id=container>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+<div>6</div>
+</div>
