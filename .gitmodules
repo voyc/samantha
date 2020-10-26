@@ -1,3 +1,6 @@
 [submodule "minimal"]
 	path = html/minimal
 	url = https://github.com/voyc/minimal
+[submodule "jslib"]
+	path = html/jslib
+	url = https://github.com/voyc/jslib
