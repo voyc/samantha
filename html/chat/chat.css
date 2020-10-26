@@ -5,25 +5,53 @@
 	float:left;
 }
 
-#chatcontainer {
+body {
+	margin:0;
+	overflow:hidden;
+}
+#page {
+	display:grid;
+	grid-template-columns:1fr minmax(20rem,65rem) 1fr;
+	grid-template-rows:auto 1fr auto auto;
+	height:100vh;
+}
+header {
+	grid-column-start:1;
+	grid-column-end:4;
+	background:gray;
+}
+sidebarleft {
+	grid-row-start:2;
+	grid-row-end:4;
+	grid-column-start:1;
+	grid-column-start:2:
+}
+sidebarright {
+	grid-row-start:2;
+	grid-row-end:4;
+	grid-column-start:3;
+	grid-column-start:4:
+}
+footer {
+	grid-column-start:1;
+	grid-column-end:4;
+	background:gray;
+}
+
+#chatscroller {
         padding:0;
         margin:0;
-}
-#chatscroller {
-        background-color:#88f;
-        max-width:60rem;
-        xheight:580px;
-        width:100%;
-        xposition:fixed;
-        overflow-y:auto;
+	background:blue;
+        overflow-y:scroll;
+	grid-column-start:2;
+	grid-column-start:3:
 }
 #chatcontent {
         padding:.5rem;
 }
 #chatfoot {
-        xposition:fixed;
-        bottom:0px;
-        left:0px;
+	display:grid;
+	grid-template-columns:1fr auto auto;
 }
 
 .chatline {
@@ -90,3 +118,13 @@
 #mchoices button {
         margin-right:.2rem;
 }
+
+#mmsg {
+	margin:.3rem;
+	padding:.3rem;
+	border-radius:.5rem;
+}
+#mbtn {
+	margin:.3rem;
+}
+
