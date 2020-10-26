@@ -4,3 +4,6 @@
 [submodule "jslib"]
 	path = html/jslib
 	url = https://github.com/voyc/jslib
+[submodule "icon"]
+	path = icon
+	url = https://github.com/voyc/icon
