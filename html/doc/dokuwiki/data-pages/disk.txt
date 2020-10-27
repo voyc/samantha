@@ -1,49 +1,57 @@
-
 ====== Disk, Partition, File System ======
-$ mount # with no parameters, list mounted filesystems
 
-$ mount /dev/sda1 /media/john    # after plugging in the seagate
+===== Disk =====
 
-$ sudo fdisk -l # list partitions
+A disk is a block device.
 
+== fdisk ==
+Used to create partitions on a disk.
+
+  $ sudo fdisk -l # list partitions
 
 Note: In addition to listing disks and partitions, fdisk also lists loop mounts. A loop mount looks like a disk but is in fact a file containing a file system, created by a snap package install.
-$ df -T  # disk filesystem format type
+
+== df ==
+  $ df -T  # disk filesystem format type
+
+== du ==
+  $ du -hs   # disk used total
+  $ du -hs *  # disk used per folder
+  $ du -a /dir/ | sort -n -r | head -n 20 # find largest files
 
 
-$ du -hs   # disk used total
-$ du -hs *  # disk used per folder
-$ du -a /dir/ | sort -n -r | head -n 20 # find largest files
-tar
-$ tar -czvf name-of-archive.tar.gz /path/to/directory-or-file
-$ tar -xvzf name-of-archive.tar.gz
-fdisk
-Used to create partitions on a disk.
-mount 
+===== Mount =====
 Use the mount command to attach (mount) file systems and removable devices such as USB flash drives at a particular mount point in the directory tree.
 
+  $ mount                          # with no parameters, list mounted filesystems
+  $ mount /dev/sda1 /media/john    # mount a partition device to a mount point
+  $ sudo mount /dev/sdb1 /mnt/media
+  $ unmount device_name
+  $ unmount mount_point
 
-Note device_name vs mount point.  Both exist in the directory tree.  Mount point is a directory.
+== device name vs mount point == 
+Both exist in the directory tree.  
 
+device name is /dev/sda1, for example.
 
-$ mount # with no parameters, list mounted filesystems in format as follows
-device_name on directory type filesystem_type (options)
-/dev/sda1 on /media/john/Seagate Expansion Drive type fuseblk (rw,nosuid,nodev,relatime,user_id=0,group_id=0,default_permissions,allow_other,blksize=4096,uhelper=udisks2)
+Mount point is a directory which you create.  For example:
+  * /media/seagate
+  * /mnt/stick128
 
+===== Mount External USB Drive at Boot =====
 
-$ mount [OPTION...] DEVICE_NAME DIRECTORY
-$ sudo mount /dev/sdb1 /mnt/media
-$ unmount device_name
-$ unmount mount_point
+  $ lsusb        # list USB devices
+  $ sudo blkid   # list UUID of all block devices
+  # add line to /etc/fstab:
+  # UUID=4078159978158F32  /media/seagate  ntfs  auto,nosuid,nodev,nofail,x-gvfs-show  0  0 
+  $ sudo mount -a # test the changes to /etc/fstab. Error can cause boot failure.
+  $ sudo systemctl reboot
 
+/dev/sda  is a disk  \\
+/dev/sda1 is a partition on the disk
 
-When I plug in my seagate and usb stick drives, the OS automatically mounts them as follows.
+We mount partitions, not disks.
 
-
-/dev/sda1 on /media/john/Seagate Expansion Drive
-/dev/sdb1 on /media/john/USB20FD
-
-Mount and soft link have similar parameters.
-A disk drive must be mounted once and only once, before you can do an ls.
-A soft link may be done any number of times on any folder or file, but not on a device_name.
-
+== tar ==
+  $ tar -czvf name-of-archive.tar.gz /path/to/directory-or-file
+  $ tar -xvzf name-of-archive.tar.gz
