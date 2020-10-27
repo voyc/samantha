@@ -13,8 +13,14 @@
 		<link href='icon/icon.css' rel='stylesheet' type='text/css'></link>
 		<link href='css/sam.css' rel='stylesheet' type='text/css'></link>
 		<script src="js/namespace.js"></script>
+		<script src="js/samantha.js"></script>
+		<script src="js/view.js"></script>
+		<script src="js/user.js"></script>
+		<script src="js/account.js"></script>
+		<script src="js/accountview.js"></script>
 		<script src="js/hist.js"></script> 
 		<script src='js/chat.js'></script>
+		<script src="js/speech.js"></script>
 		<script src='icon/icon.js'></script>
 		<script src='icon/lib/menu.js'></script>
 		<script src='icon/lib/gear.js'></script>
@@ -22,6 +28,12 @@
 		<script src='icon/lib/spinner.js'></script>
 		<script src='icon/lib/speaker.js'></script>
 		<script src='icon/lib/pencil.js'></script>
+		<script src="minimal/minimal.js"></script>
+		<script src="jslib/observer.js"></script>
+		<script src='jslib/comm.js'></script>
+		<script src="jslib/session.js"></script>
+		<script src='jslib/utils.js'></script>
+		<script src='jslib/dragger.js'></script>
 		<script>
 			window.addEventListener('load', function() {
 				voyc.chat = new voyc.Chat();
@@ -100,6 +112,154 @@
 				</div>
 			</footer>
 		</div>
+
+		<!---- modeless dialogs   ----------------->
+		<nav initially hidden class='panel popup leftnav blu' id='leftnav-dialog'>
+			<div close class='closex'>&times;</div>
+			<h3>Go To...</h3>
+			<p><button close class='anchor' nav='home'     >Home</button></p>
+			<p><button close class='anchor' nav='about'    >About</button></p>
+			<p><button close class='anchor' nav='howto'    >How To</button></p>
+			<p><button close class='anchor' nav='profile'  >User Profile</button></p>
+			<p><button close class='anchor' nav='keyboard' >Keyboard</button></p>
+			<p><button close class='anchor' nav='curriculum'>Curriculum</button></p>
+			<p><button close class='anchor' nav='story'    >Story</button></p>
+			<p><button close class='anchor' nav='editor'   >Editor</button></p>
+		</nav>
+		<aside initially hidden class='panel popup dropdown blu' id='settings-dialog'>
+			<div close class='closex'>&times;</div>
+			<h3>Settings</h3>
+			<p><input type='checkbox' checked/>Global</p>
+			<p><input type='checkbox'        />Universal</p>
+			<p><input type='checkbox'        />Cosmic</p>
+		</aside>
+		<aside initially hidden class='panel popup dropdown blu' id='user-dialog'>
+			<div close class='closex'>&times;</div>
+			<h3>User</h3>
+			<p><button close class='anchor' request='logout'        >Logout</button></p>
+			<p><button close class='anchor' request='forgotpassword'>Forgot Password</button></p>
+			<p><button close class='anchor' request='changeusername'>Change Username</button></p>
+			<p><button close class='anchor' request='changepassword'>Change Password</button></p>
+			<p><button close class='anchor' request='changeemail'   >Change Email</button></p>
+			<p><button close class='anchor' nav='profile'  >User Profile</button></p>
+		</aside>
+
+		<!---- modal dialog container ------------->
+		<div hidden id='modalcontainer' class='full smoke'>
+			<div class='centered modal'>
+				<div close class='closex'>&times;</div>
+				<h3 id='modaltitle'>Modal Title</h3>
+				<p id='dialog-msg'></p>
+				<div id='dialog'>
+				</div>
+				<div hidden id='wait' class='centered'>
+					<icon type=draw name=spinner class='spin'></icon>
+				</div>
+			</div>
+		</div>
+
+		<!---- modal dialog forms ----------------->
+		<div hidden id='offscreen'>
+			<form modal id='login' svc='ua' class='dialog' title='Login to Your Account'>
+				<p><input name='both' type='text' placeholder='Username or Email' autofocus required pattern='[a-zA-Z0-9_@.+]{6,100}' title='Letters and numbers or @ or period or underscore. Length between 6 and 100.'></p>
+				<p><input name='pword' type='password' placeholder='Password' required pattern='[a-zA-Z0-9@&amp;#$%]{8,255}' title='Letters and numbers or @,&amp;,#,$,%. Length between 8 and 255.'></p>
+				<p class='tright'>
+					<input close type='button' value='Cancel' class='anchor' tabindex='-1'>
+					<input type='submit' value='Login' class='submit'>
+				</p>
+				<p><input type='button' class='anchor' value='Forget your password?' open='forgotpassword'/></p>
+			</form>
+			<form modal id='register' svc='ua' class='dialog' title='Register a New Account'>
+				<p><input name='uname' type='text' placeholder='Username' autofocus required pattern='[a-zA-Z0-9_@.+]{6,100}' title='Letters and numbers or @ or period or underscore. Length between 6 and 100.'></p>
+				<p><input name='email' type='text' placeholder='Email' required pattern='[a-zA-Z0-9_@.+]{6,100}' title='Letters and numbers or @ or period or underscore. Length between 6 and 100.'></p>
+				<p><input name='pword' type='password' placeholder='Password' required pattern='[a-zA-Z0-9@&amp;#$%]{8,255}' title='Letters and numbers or @,&amp;,#,$,%. Length between 8 and 255.'></p>
+				<p><input name='pwordc' type='password' placeholder='Confirm Password' required pattern='[a-zA-Z0-9@&amp;#$%]{8,255}' title='Letters and numbers or @,&amp;,#,$,%. Length between 8 and 255.'></p>
+				<p class='tright'>
+					<input close type='button' value='Cancel' class='anchor' tabindex='-1'>
+					<input type='submit' value='Register' class='submit'>
+				</p>
+			</form>
+			<form modal id='verify' svc='ua' class='dialog' title='Verify Registration'>
+				<p>A Temporary Identification Code has been sent to your email address.
+				Enter it here along with your password to complete your registration.</p>
+				<p><input name='tic' type='text' placeholder='Temporary Identification Code' autofocus required pattern='[a-zA-Z0-9]{6}'></p>
+				<p><input name='pword' type='password' placeholder='Password' required pattern='[a-zA-Z0-9@&amp;#$%]{8,255}' title='Letters and numbers or @,&amp;,#,$,%. Length between 8 and 255.'></p>
+				<p class='tright'>
+					<input close type='button' value='Cancel' class='anchor' tabindex='-1'>
+					<input type='submit' value='Verify' class='submit'>
+				</p>
+			</form>
+			<form modal id='verifyemail' svc='ua' class='dialog' title='Verify New Email'>
+				<p>A Temporary Identification Code has been sent to your new email address.
+				Enter it here along with your password to complete your email change.</p>
+				<p><input name='tic' type='text' placeholder='Temporary Identification Code' autofocus required pattern='[a-zA-Z0-9]{6}'></p>
+				<p><input name='pword' type='password' placeholder='Password' required pattern='[a-zA-Z0-9@&amp;#$%]{8,255}' title='Letters and numbers or @,&amp;,#,$,%. Length between 8 and 255.'></p>
+				<p class='tright'>
+					<input close type='button' value='Cancel' class='anchor' tabindex='-1'>
+					<input type='submit' value='Verify' class='submit'>
+				</p>
+			</form>
+			<form modal id='forgotpassword' svc='ua' class='dialog' title='Forgot Password'>
+				<p>You may reset your password.<br/>
+				A Temporary Identification Code will be sent
+				to the email address we have on file for you.</p>
+				<p><input name='both' type='text' placeholder='Username or Email' autofocus required pattern='[a-zA-Z0-9_@.+]{6,100}' title='Letters and numbers or @ or period or underscore. Length between 6 and 100.'></p>
+				<p class='tright'>
+					<input close type='button' value='Cancel' class='anchor' tabindex='-1'>
+					<input type='submit' value='Send Code' class='submit'>
+				</p>
+			</form>
+			<form modal id='resetpassword' svc='ua' class='dialog' title='Reset Password'>
+				<p>A Temporary Identification Code has been sent to your email address.
+				Enter it here along with a new password.</p>
+				<p><input name='tic' type='password' placeholder='Temporary Identification Code' required pattern='[a-zA-Z0-9]{6}'></p>
+				<p><input name='pnew' type='password' placeholder='New Password' required pattern='[a-zA-Z0-9@&amp;#$%]{8,255}' title='Letters and numbers or @,&amp;,#,$,%. Length between 8 and 255.'></p>
+				<p><input name='pnewc' type='password' placeholder='Confirm New Password' required pattern='[a-zA-Z0-9@&amp;#$%]{8,255}' title='Letters and numbers or @,&amp;,#,$,%. Length between 8 and 255.'></p>
+				<p class='tright'>
+					<input close type='button' value='Cancel' class='anchor' tabindex='-1'>
+					<input type='submit' value='Change' class='submit'>
+				</p>
+			</form>
+			<form modal id='changepassword' svc='ua' class='dialog' title='Change Password'>
+				<p><input name='pword' type='password' placeholder='Old Password' required pattern='[a-zA-Z0-9@&amp;#$%]{8,255}' title='Letters and numbers or @,&amp;,#,$,%. Length between 8 and 255.'></p>
+				<p><input name='pnew' type='password' placeholder='New Password' required pattern='[a-zA-Z0-9@&amp;#$%]{8,255}' title='Letters and numbers or @,&amp;,#,$,%. Length between 8 and 255.'></p>
+				<p><input name='pnewc' type='password' placeholder='Confirm New Password' required pattern='[a-zA-Z0-9@&amp;#$%]{8,255}' title='Letters and numbers or @,&amp;,#,$,%. Length between 8 and 255.'></p>
+				<p class='tright'>
+					<input close type='button' value='Cancel' class='anchor' tabindex='-1'>
+					<input type='submit' value='Change' class='submit'>
+				</p>
+			</form>
+			<form modal id='changeusername' svc='ua' class='dialog' title='Change Username'>
+				<p><input name='uname' type='text' placeholder='New Username' autofocus required pattern='[a-zA-Z0-9_@.+]{6,100}' title='Letters and numbers or @ or period or underscore. Length between 6 and 100.'></p>
+				<p><input name='pword' type='password' placeholder='Re-enter Password' required pattern='[a-zA-Z0-9@&amp;#$%]{8,255}' title='Letters and numbers or @,&amp;,#,$,%. Length between 8 and 255.'></p>
+				<p class='tright'>
+					<input close type='button' value='Cancel' class='anchor' tabindex='-1'>
+					<input type='submit' value='Change' class='submit'>
+				</p>
+			</form>
+			<form modal id='changeemail' svc='ua' class='dialog' title='Change Email'>
+				<p><input name='email' type='text' placeholder='New Email' required pattern='[a-zA-Z0-9_@.+]{6,100}' title='Letters and numbers or @ or period or underscore. Length between 6 and 100.'></p>
+				<p><input name='pword' type='password' placeholder='Re-enter Password' required pattern='[a-zA-Z0-9@&amp;#$%]{8,255}' title='Letters and numbers or @,&amp;,#,$,%. Length between 8 and 255.'></p>
+				<p class='tright'>
+					<input close type='button' value='Cancel' class='anchor' tabindex='-1'>
+					<input type='submit' value='Change' class='submit'>
+				</p>
+			</form>
+			<form modal id='acceptparse' svc='ua' class='dialog' title='Accept Parse'>
+				<p><label for='ptranslit'>Translit: <input id='ptranslit' name='ptranslit' type='text'/></label></p>
+				<p><label for='pcomponents'>Components: <input id='pcomponents' name='pcomponents' type='text'/></label></p>
+				<p><label for='pg'>Type: <input id='pg' name='pg' type='text'/></label></p>
+				<p><label for='prules'>Rules: <textarea id='prules' name='prules'></textarea></label></p>
+				<p class='tright'>
+					<input close type='button' value='Cancel' class='anchor' tabindex='-1'/>
+					<input type='submit' value='Accept' class='submit'/>
+				</p>
+			</form>
+			<form modal id='worddetails' svc='ua' class='dialog' title='Dictionary'>
+				<div id='details'></div>
+			</form>
+		</div>
+
 	</body>
 </html>
 
