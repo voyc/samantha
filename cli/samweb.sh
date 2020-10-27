@@ -14,14 +14,3 @@ elif [ $1 == 'chat' ]; then
 else
 	echo 'usage:  samweb.sh [http | chat]'
 fi
-
-# install to systemd
-# sudo ln -s /home/john/webapps/samantha/samantha/cli/samweb.sh /usr/local/bin/samweb.sh
-# sudo ln -s /home/john/webapps/samantha/samantha/cli/samchat.service /lib/systemd/system/samchat.service
-# sudo ln -s /home/john/webapps/samantha/samantha/cli/samhttp.service /lib/systemd/system/samhttp.service
-# sudo ln -s /home/john/webapps/samantha/samantha/cli/samweb.target /lib/systemd/system/samweb.target
-
-# sudo systemctl start samweb
-# sudo systemctl stop samweb
-# sudo systemctl status samweb
-# sudo systemctl enable samweb
