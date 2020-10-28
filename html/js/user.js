@@ -7,6 +7,9 @@
 	May be logged-in or anonymous.
 */
 voyc.User = function() {
+	if (voyc.User._instance) return voyc.User._instance;
+	voyc.User._instance = this;
+
 	this.username = '';
 	this.auth = '';
 	this.access = '';

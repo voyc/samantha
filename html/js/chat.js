@@ -15,26 +15,33 @@ voyc.Chat = function() {
 	if (window.location.origin.indexOf('voyc.com') > -1) {
 		this.ip = '68.66.224.22';
 	}
+
+	this.observer = new voyc.Observer();
+
+	var self = this;
+	this.observer.subscribe('login-received'   ,'user' ,function(note) { self.onLoginReceived   (note);});
+	this.observer.subscribe('relogin-received' ,'user' ,function(note) { self.onLoginReceived   (note);});
+	this.observer.subscribe('logout-received'  ,'user' ,function(note) { self.onLogoutReceived  (note);});
 }
 
-voyc.Chat.containertemplate = `
-	<div id='chatscroller'>
-		<div id='chatcontent'>
-			<div id=loginform>
-				<p>Click here for <a href=wiki/doku.php>Wiki</a></p>
-				<p>Connecting to chat server...<span id=spanconnect class=hidden> Connected</span><span id=spanconnectfail class=hidden> Failed</span></p>
-				<p id=loginline class=hidden>Username: <input id=loginusername></input> <button id=loginbtn>Login</button><p>
-			</div>
-		</div>
-	</div>
-	<div id='chatfoot'>
-		<table id='chatentry' class='chatentry'>
-			<td><textarea id='mmsg'></textarea></td>
-			<td><div id='mchoices'></div></td>
-			<td><button id='mbtn'>></button></td>
-		</table>
-	</div>
-`;
+//voyc.Chat.containertemplate = `
+//	<div id='chatscroller'>
+//		<div id='chatcontent'>
+//			<div id=loginform>
+//				<p>Click here for <a href=wiki/doku.php>Wiki</a></p>
+//				<p>Connecting to chat server...<span id=spanconnect class=hidden> Connected</span><span id=spanconnectfail class=hidden> Failed</span></p>
+//				<p id=loginline class=hidden>Username: <input id=loginusername></input> <button id=loginbtn>Login</button><p>
+//			</div>
+//		</div>
+//	</div>
+//	<div id='chatfoot'>
+//		<table id='chatentry' class='chatentry'>
+//			<td><textarea id='mmsg'></textarea></td>
+//			<td><div id='mchoices'></div></td>
+//			<td><button id='mbtn'>></button></td>
+//		</table>
+//	</div>
+//`;
 
 voyc.Chat.linetemplate = `
 	<div class='chatline clearfix'>
@@ -53,7 +60,7 @@ voyc.Chat.prototype.setup = function(container) {
 	var self = this;
 	document.getElementById('mbtn').addEventListener('click', function(e) {
 		var s = document.getElementById('mmsg').value;
-		voyc.chat.post(s, false)
+		self.post(s, false)
 		document.getElementById('mmsg').value = '';
 	}, false);
 	document.getElementById('mmsg').addEventListener('keydown', function(e) {
@@ -63,15 +70,15 @@ voyc.Chat.prototype.setup = function(container) {
 		}
 	}, false);
 
-	document.getElementById('loginbtn').addEventListener('click', function(e) {
-		voyc.chat.login();
-	}, false);
-	document.getElementById('loginusername').addEventListener('keydown', function(e) {
-		if (e.keyCode == 13) {
-			document.getElementById('loginbtn').click();
-			e.preventDefault();
-		}
-	}, false);
+	//document.getElementById('loginbtn').addEventListener('click', function(e) {
+	//	voyc.chat.login();
+	//}, false);
+	//document.getElementById('loginusername').addEventListener('keydown', function(e) {
+	//	if (e.keyCode == 13) {
+	//		document.getElementById('loginbtn').click();
+	//		e.preventDefault();
+	//	}
+	//}, false);
 
 	//this.ws = new WebSocket("ws://68.66.224.22:5678/");
 	var addr = 'ws://'+this.ip+':'+this.port+'/';
@@ -81,13 +88,13 @@ voyc.Chat.prototype.setup = function(container) {
 		var a = event.data.split('~')
 		user = a[0];
 		message = a[1];
-		voyc.chat.display(user, message, false);
+		self.display(user, message, false);
 	};
 	this.ws.onopen = function (event) {
 		console.log('opened');
-		document.getElementById('spanconnect').classList.remove('hidden');
-		document.getElementById('loginline').classList.remove('hidden');
-		document.getElementById('loginusername').focus();
+		//document.getElementById('spanconnect').classList.remove('hidden');
+		//document.getElementById('loginline').classList.remove('hidden');
+		//document.getElementById('loginusername').focus();
 	};
 	this.ws.onclose = function (event) {
 		console.log('close');
@@ -102,10 +109,15 @@ voyc.Chat.prototype.resize = function(height) {
 	this.chatscroller.style.height = height - document.getElementById('chatfoot').offsetHeight + 'px';
 }
 
-voyc.Chat.prototype.login = function() {
-	this.username = document.getElementById('loginusername').value;	
-	this.ws.send('login~'+this.username+'~')
-	document.getElementById('loginform').classList.add('hidden');
+voyc.Chat.prototype.onLoginReceived = function(note) {
+	this.username = note.payload['uname'];
+	this.ws.send('login~'+this.username+'~'+voyc.getSessionId());
+	//document.getElementById('loginform').classList.add('hidden');
+}
+
+voyc.Chat.prototype.onLogoutReceived = function(note) {
+	this.username = '';
+	this.ws.send('logout~~');
 }
 
 voyc.Chat.prototype.post = function(message, mchoice) {

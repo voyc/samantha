@@ -33,10 +33,14 @@ voyc.Samantha.prototype.setup = function () {
 		voyc.observer.publish(event+'-requested', 'mai', {state});
 	});
 
+	// instantiate chat
+	this.chat = new voyc.Chat();
+	this.chat.setup(document.getElementById('chatcontainer'));
+
 	// attach app events
 	var self = this;
 
-	voyc.observer.publish('setup-complete', 'mai', {});
+	voyc.observer.publish('setup-complete', 'samantha', {});
 	voyc.hist.nav({page:'home'});
 	
 	window.addEventListener('resize', function() {

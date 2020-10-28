@@ -36,8 +36,8 @@
 		<script src='jslib/dragger.js'></script>
 		<script>
 			window.addEventListener('load', function() {
-				voyc.chat = new voyc.Chat();
-				voyc.chat.setup(document.getElementById('chatcontainer'));
+				//voyc.chat = new voyc.Chat();
+				//voyc.chat.setup(document.getElementById('chatcontainer'));
 				//document.getElementById('chatcontainer').style.height = window.innerHeight + 'px';
 				//voyc.chat.resize(window.innerHeight);
 			});
@@ -80,8 +80,6 @@
 				<div id='chatcontent'>
 					<div id=loginform>
 						<p>Click here for <a href=wiki/doku.php>Wiki</a></p>
-						<p>Connecting to chat server...<span id=spanconnect class=hidden> Connected</span><span id=spanconnectfail class=hidden> Failed</span></p>
-						<p id=loginline class=hidden>Username: <input id=loginusername></input> <button id=loginbtn>Login</button><p>
 					</div>
 				</div>
 			</div>
