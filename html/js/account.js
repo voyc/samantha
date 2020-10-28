@@ -23,7 +23,7 @@ voyc.Account = function () {
 
 	this.observer = new voyc.Observer();
 	
-	var url = '/account/svc/';
+	var url = '/account/svc.php';
 	if (window.location.origin == 'file://' || window.location.port == '8080') {
 		url = 'http://samantha.voyc.com/account/svc';  // for local testing
 	}

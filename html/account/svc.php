@@ -1,4 +1,4 @@
 <?php
-include("../svchub.php");
+include("../../php/account/svchub.php");
 svchub();
 ?>
