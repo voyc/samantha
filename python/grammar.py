@@ -4,10 +4,14 @@ import re
 import random
 from numgen import *
 import os 
+from vocab import *
 
 thispath = os.path.dirname(os.path.realpath(__file__)) + '/'
 
 scfilename = 'semanticconventions.txt'
+
+uservocab = UserVocab()
+uservocab.onLogin('xxx')
 
 class Node:
 	level = 0
@@ -204,7 +208,8 @@ def gensen(sc,opt=[]):
 			elif m.word == '$list':
 				tlist = list(filter(lambda x: x.expr in options['target'], m.tree))
 				if not len(tlist):
-					tlist = m.tree
+					tlist = list(filter(lambda x: x.expr in uservocab.list, m.tree))
+					#tlist = m.tree
 				nd = random.choice(tlist)
 				m.value = nd.expr 
 			elif m.word == '$opt':
@@ -214,7 +219,8 @@ def gensen(sc,opt=[]):
 		node.process(fn)
 		a = sen.split()
 		tlist = list(filter(lambda x: x in options['target'], a))
-		if len(tlist) or not options['target']:
+		vlist = list(filter(lambda x: x.expr in uservocab.list, m.tree))
+		if (len(tlist) or not options['target']) and len(vlist) + len(tlist) >= len(a):
 			sen = ' '.join(a)  # remove extra spaces
 			sentens.append(sen)
 
