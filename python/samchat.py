@@ -30,7 +30,7 @@ class User:
 		self.websocket = websocket
 		self.group = False
 		if websocket:
-			users[websocket] = self
+			users[websocket] = self   # todo: delete this, redundant
 
 	def logout(self):
 		account.logout(self.token)
@@ -125,6 +125,7 @@ class Broca:
 
 		return reply
 
+# todo: replace this - real login is taking place via php svc
 class Account:
 	def login(self,uname,pw):
 		token = random.randrange(1000)
