@@ -13,6 +13,52 @@ def application(environ, start_response):
 	print(environ)
 	return [response.encode()]
 
+	# http://wsgi.tutorial.codepoint.net/parsing-the-request-post
+	## the environment variable CONTENT_LENGTH may be empty or missing
+	#try:
+	#	request_body_size = int(environ.get('CONTENT_LENGTH', 0))
+	#except (ValueError):
+	#	request_body_size = 0
+
+	## When the method is POST the variable will be sent
+	## in the HTTP request body which is passed by the WSGI server
+	## in the file like wsgi.input environment variable.
+	#request_body = environ['wsgi.input'].read(request_body_size)
+	#d = parse_qs(request_body)
+
+	##age = d.get('age', [''])[0] # Returns the first age value.
+	##hobbies = d.get('hobbies', []) # Returns a list of hobbies.
+
+	### Always escape user input to avoid script injection
+	##age = escape(age)
+	##hobbies = [escape(hobby) for hobby in hobbies]
+
+	#svc = d.get('svc')[0]
+	#svc = escape(svc)
+
+	#if svc == 'login':
+	#	rc = login(d)
+	#elif svc == 'logout':
+	#	rc = logout(d)
+
+	#
+	#response_body = html % { # Fill the above html template in
+	#	'checked-software': ('', 'checked')['software' in hobbies],
+	#	'checked-tunning': ('', 'checked')['tunning' in hobbies],
+	#	'age': age or 'Empty',
+	#	'hobbies': ', '.join(hobbies or ['No Hobbies?'])
+	#}
+
+	#status = '200 OK'
+
+	#response_headers = [
+	#	('Content-Type', 'text/html'),
+	#	('Content-Length', str(len(response_body)))
+	#]
+
+	#start_response(status, response_headers)
+	#return [response_body]
+
 #environ = {
 #	'REQUEST_URI': '/account/svc/',
 #	'PATH_INFO': '/account/svc/',

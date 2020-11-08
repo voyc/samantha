@@ -14,6 +14,9 @@ for line in sys.stdin:
 	rows = cur.fetchall()
 	if cur.rowcount == 0:
 		sys.stdout.write(line)
+	else:
+		#sys.stdout.write(' '.join(rows))
+		print(rows)
 	cur.close()
 
 conn.close()

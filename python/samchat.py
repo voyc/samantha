@@ -137,6 +137,7 @@ async def serveloop(websocket, path):
 	async for message in websocket:
 		cmd,uname,msg = message.split('~')
 		if cmd == 'login':
+			# deprecated.  We now login thru the web svc.  ??? called from ?
 			pw = msg
 			token = account.login(uname,pw)
 			if (token):

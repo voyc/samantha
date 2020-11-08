@@ -15,10 +15,13 @@ Note: In addition to listing disks and partitions, fdisk also lists loop mounts.
   $ df -T  # disk filesystem format type
 
 == du ==
-  $ du -hs   # disk used total
-  $ du -hs *  # disk used per folder
-  $ du -a /dir/ | sort -n -r | head -n 20 # find largest files
-
+  $ du pub # number of blocks for all subdirectories, summary total at end
+  $ du -a pub # all files, as well as subdirectories
+  $ du -s pub # summary total only
+  $ du -h pub # human-readable number of bytes
+  $ du --exclude="*.txt" pub # shell pattern, not regexp
+  $ du -d 1 pub # depth, 0 is same as -s
+  $ du -a pub | sort -n -r | head -n 20 # find largest files
 
 ===== Mount =====
 Use the mount command to attach (mount) file systems and removable devices such as USB flash drives at a particular mount point in the directory tree.

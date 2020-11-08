@@ -1,0 +1,338 @@
+====== Python ======
+
+===== Modules =====
+
+A module is a file.
+
+For filename mymod.py, the module name is mymod.
+
+A module can be run directly by filename.
+
+A module can be imported by module name.
+
+==== import ====
+
+Importing a module runs that file.
+
+sys.modules - a list of modules already imported with module name and filename.  A module is imported only once.
+
+After running, the variables in that module are available as qualified by module name.
+
+  import mymod
+  print(mymod.x)
+  
+  from mymod import x
+  print(x)
+  
+  from mymod import x as y
+  print(y)
+  
+  from mymod import *
+  print(x)
+
+import
+
+  * find the file by searching sys.path
+  * if the module is already present in sys.modules, ignore
+  * run the file
+  * insert modulename and filename into sys.modules
+  * 
+==== sys.path ====
+Modules are loaded from a directory in the sys.path list.
+
+  import sys
+  print(sys.path)
+  sys.path.append('~/.local/python')  # sys.path is a list
+
+Directories on the path include in order:
+  - The directory from which the current module was loaded.
+  - Python path environment variable
+    * $ export PYTHONPATH='~/.local/python'
+  - Standard libraries directories
+  - The site packages directories
+
+==== standard library ====
+  import random
+  import math
+  import datetime
+  import sys
+  import os
+  import calendar
+  import antigrav
+
+==== Examine a Module ====
+  if __name__ == '__main__':
+    print('run directly')
+  else:  # __name__ == modulename
+    print('run on import')
+  
+  print(antigrav.__file__)  # show the directory and filename of the module
+  dir(antigrav)             # list variables and functions in the module
+  
+===== Iterables and Iterators =====
+
+An **iterable** is an object with an %%__iter__()%% method.
+
+The %%__iter__()%% returns an iterator.
+
+An **iterator** is an object with a %%__next__()%% method, and an %%__iter__()%% method that returns itself.
+
+
+===== Collections =====
+
+==== Native Classes ====
+
+== list ==
+mutable, square brackets
+  a = list(1,2,3)  # constructor for object of class list
+  a = [1,2,3]  # shortcut using square brackets
+
+== tuple  ==
+immutable, parens
+  a = tuple(1,2,3)  # constructor for object of class tuple
+  a = (1,2,3)  # shortcut using parens
+
+== set == 
+no order, no dupes, curly braces
+  a = set(1,2,3,1)  # constructor for object of class set
+  a = set(1,2,3,1)  # shortcut
+  len(set) => 3   # does not accept dupe value
+  a = {}    # does NOT create empty set, creates empty dict
+
+== dict ==
+key value pairs, curly braces
+  a = dict('name'='John', age=32)  # constructor for object of class dict
+  a = {'name'='John', age=32}    # shortcut with curly braces
+
+==== More Collections ====
+
+  from collections import namedtuple  # derived from tuple
+  from dataclasses import dataclass   # derived from dict
+
+
+source: \\ 
+https://www.youtube.com/watch?v=W8KRzm-HUcc\\ 
+https://www.youtube.com/watch?v=daefaLgNkw0
+
+===== Object Identity =====
+Every object has an id.\\ 
+The builtin function id(object) gives up the id.\\ 
+The "is" keyword compares for identical objects.\\ 
+
+  a = [1,2,3]      # create object
+  id(a)            # get its id
+  b = a            # copy pointer to object
+  id(a) == id(b)   # True
+  a is b           # equivalent to above, compares ids
+
+
+===== Comprehensions =====
+
+list, set, dict
+
+Reverse the syntax of a for-loop, when copying a list, set, or dict.
+
+  nums = [1,2,3,4]
+  
+  mylist = []   # for-loop syntax
+  for n in nums:
+    if n%2 == 0:
+      mylist.append(n*n)
+  
+  mylist = [n*n for n in nums: if n%2 == 0]  # comprehension syntax
+
+===== Generators =====
+
+==== Generator Function ====
+
+Like an iterator, but does not build collection in memory.
+
+  def gen_func(nums):
+    for n in nums:
+      yield n*n  # returns to calling loop with next item
+  
+  my_gen = gen_func([1,2,3,4])
+  
+  for i in my_gen:
+    print i   # yield calls back here
+
+
+==== Generator Expression ====
+
+Similar to Comprehension syntax, but with parens, and it does not build collection in memory.
+
+  my_gen = (n*n for n in [1,2,3,4])
+  
+  for i in my_gen:
+    print   
+
+
+===== Functions =====
+
+The following terms are generic programming concepts, not limited to Python.
+
+== First-Class Function ==
+
+A first-class function, like a first-class citizen can be treated the same as any other entity.  It can be:
+  * assigned to a variable
+  * passed as an argument
+  * returned from a function
+
+== Higher Order Function ==
+
+Accepts a function as an argument, or returns a function as output.
+
+== First Order Function ==
+
+Not a higher order function.
+
+== Closure ==
+
+A inner-function returned as output that retains access to variables of it's outer function.
+
+  def outer_func():
+    message = 'Hi'
+    def inner_func():
+      print(message)      # free variable, not defined  in inner function
+    return inner_funcbb   # return a function
+  
+  clo = outer_func()
+  clo()                  # 'Hi', still has access to free variable: message
+  print(clo.__name__)    # 'inner_func'
+
+===== Decorators =====
+
+In decorating a function, we create a wrapper function that adds functionality to that original function.  This can be done with a class, but is usually done with a function.  A decorator function is a closure that takes the original function as an argument, and returns the wrapper function that calls that original function. 
+
+  def decorator_function(original_function):
+    def wrapper_function():
+      return original_function()
+  def display():
+    print('display function ran')
+  decorated_display = decorator_function(display)
+  decorated_display()  # prints the output 'display function ran'
+
+Now the @ syntax.
+  @decorator_function
+  def display():
+    print('display function ran')
+ 
+is equivalent to:
+  def display():
+    print('display function ran')
+  display = decorator_function(display)
+
+Decorators can be stacked.
+
+  from functools import wraps
+  
+  def my_logger(orig_func):
+    import logging
+    logging.basicConfig(filename='{}.log'.format(orig_func.__name__),level=logging.INFO)
+    
+    @wraps(orig_func)
+    def wrapper(*args, **kwargs):
+      logging.info(f'Ran with args: {args}, and kwargs: {kwargs}')
+      return wrapper
+      
+  def my_timer(orig_func):
+    import time
+    
+    @wraps(orig_func)
+    def wrapper(*args,**kwargs):
+      t1 = time.time()
+      result = orig_func(*args, **kwargs)
+      t2 = time.time() - t1
+      print(f'{orig_func.__name__} ran in: {t2} sec'
+      return result
+    return wrapper
+  
+  @my_logger
+  @my_timer
+  def display_info(name,age):
+    print(f'display_info ran with arguments({name}, {age}f')
+  
+  display_info('Hank',30)
+
+source: https://www.youtube.com/watch?v=FsAPt_9Bf3U&t=997s
+
+===== Arguments =====
+
+  function(*args, **kwargs)
+
+
+===== Context =====
+
+keyword with
+
+There have always been amateur programmers who don't know what the fuck they're doing.
+They refuse to check return codes, they forget to close files, they forget to free memory handles...  And instead of taking responsibility, fixing their mistakes and vowing to do better in the future, they point the finger at the language.  Then they jump through hoops trying to fix the language and in the process they fuck things up for the professional programmers who do know what they're doing.
+
+First example, once we had a bunch of amateurs writing unmanageable spaghetti code.  Instead of either training them or firing them, some group of boneheads decided it was the fault of the goto statement.   So they outlawed the goto statement.  That made it more difficult for responsible programmers to work, and we still had those incompetents running around causing trouble.  
+
+Next case, they said "I shouldn't have to check return codes", and came up the the try-catch construct, which is an abomination in any language.  Now, the competent programmers have to check return codes AND catch errors.  Double work.
+
+Other bullshit constructs: 
+  * the Entity Bean in Java, for people who don't understand relational database 
+  * the Promise in Javascript, and believe me if you're not capable of writing asynchronous event-driven code, you're not going to be able to use a Promise either.
+
+And now we come to the case at hand.  Amateurs often forget to release resources.  Instead of admitting a mistake and improving their technique, they blame the language.  "The system should know when I'm finished with that file and close it for me."  Hence, the context manager.
+
+What if this happened in other walks of life?  What if you took your kid to school, and forgot to pick him up?
+
+A competent coder writes like this:
+  f = open('myfile.text', 'w')
+  f.write('I hate stupid people.')
+  f.close()
+  
+The shit-for-brains who can't pay attention long enough to close the file would have us write it like this:
+  with open('myfile.text', 'w') as f:
+    f.write('I hate stupid people.')
+
+The "with" keyword calls upon a context manager.
+
+A context manager can be implemented as a class like this:  
+  class Open_File():
+    def __init__(self, filename, mode):
+      self.filename = filename
+      self.mode = mode
+    def __enter__(self):
+      self.file = open(self.filename, self.mode)
+      return self.file
+    def __exit__(self):
+      self.close()
+
+A context manager can also be implemented as a decorated function like this:
+  from contextlib import contextmanager
+  
+  @contextmanager
+  def open_file(file,mode):
+    f = open(file, mode)
+    yield f
+    f.close()
+
+Prove to yourself the file was closed like this:
+  print(f.closed)
+
+===== Parallel Processing =====
+
+Threads and Processes
+
+  import threading
+  t = threading.**Thread**(target=do_something)
+  t.start()
+  t.join()
+
+  import multiprocessing
+  p = multiprocessing.**Process**(target=do_something, args=[1.5])
+  p.start()
+  process.join()
+
+  import concurrent.futures
+  with concurrent.futures.**Thread**PoolExecutor() as executor:
+        executor.map(do_something, list_of_things)
+        
+  with concurrent.futures.**Process**PoolExecutor() as executor:
+        executor.map(do_something, list_of_things)
+
+source: https://www.youtube.com/watch?v=fKl2JW_qrso&t=1s
