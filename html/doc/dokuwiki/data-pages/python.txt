@@ -1,5 +1,240 @@
 ====== Python ======
 
+===== PIP3 Install =====
+
+==== Local ====
+
+  pip3 install websockets
+
+  ~/.local/lib/python3.8/site-packages/
+
+==== Global ====
+
+  sudo pip3 install websockets
+
+  /usr/local/lib/python3/dist-packages/
+
+As of Oct 2020, on RacerSwift, I have installed these packages, all global.
+
+  * numpy
+  * opencv-python
+  * websockets
+  * python-networkmanager
+  * psutil
+
+As of Oct 2020, on a2hosting, sudo is not available.  All installs are local, within a virtual environment. 
+
+===== Structure =====
+
+module = source code file
+
+package = folder tree of files
+
+Folder and filenames, all lowercase.
+
+Top- level folder of a package
+
+  * Name is name of package
+  * Does not contain source code files
+  * Contains file named __init__.py which may be empty
+
+import module
+
+  * built-in
+  * third party
+  * my own
+
+[https://docs.python-guide.org/writing/structure/](https://docs.python-guide.org/writing/structure/)
+
+Concretely, the import modu statement will look for the proper file, which is modu.py in the same directory as the caller if it exists. If it is not found, the Python interpreter will search for modu.py in the “path” recursively and raise an ImportError exception if it is not found.
+
+import modu
+
+Makes the module's functions available in the module namespace.
+
+from modu import *
+
+Makes the module's functions available in the local namespace of the caller.
+
+Any directory with an __init__.py file is considered a Python package.
+
+===== Versions =====
+
+Python versions are NOT backward compatible.
+
+Python 2.?
+
+Python 3.8
+
+===== Package Management =====
+
+==== PIP ====
+
+Pip Installs Packages (PIP)
+
+Python Package Index (PyPI) hosted by Python Software Foundation
+
+Included by default in Python 3.4 and later.
+
+  $ pip install opencv-python
+  $ pip uninstall opencv-python
+  $ pip --version
+  $ pip help
+  $ pip list
+
+==== apt ====
+
+Installs packages from Ubuntu repositories hosted by Canonical.
+
+Compared to pip, apt supports fewer packages, only one version of each package, sometimes different package names, no support for virtual env.
+
+  $ sudo apt install python-opencv
+
+==== virtualenv ====
+
+A virtual environment creates a local area in which to install python and packages.  This allows multiple versions of python and/or packages on one machine.  A2 hosting uses this to keep shared host customers separate.  This is supported only by pip, not apt.
+
+===== Data Types =====
+
+[https://docs.python.org/3/howto/unicode.html](https://docs.python.org/3/howto/unicode.html)
+
+In python2, type string and byte are identical.
+
+In python3, string and byte and bytearray are different.
+
+Python source code is UTF-8.
+
+By default a quoted string literal is a UTF-8 encoded string.  As in ‘str’.
+
+To declare a byte string, prefix with letter b. As in b’str’.
+
+To convert a string to a byte object:
+
+	bytes = str.encode(‘utf-8’)
+
+To convert a byte object to a string:
+
+	str = bytes.decode(‘utf-8’)
+
+
+===== Run Shell Commands =====
+
+  $ os.system('nmcli dev wifi connect JASMINE')   ===== return 0
+  $ subprocess.run()
+  $ subprocess.check_output()
+
+===== GUI =====
+
+  * tkinterIO	
+  * Qt
+  * WxPython
+  * Remi
+  * PySimpleGUI - wraps tkinter or Qt
+  * PySimpleWx - wraps WxPython
+  * PySimpleGUIWeb - wraps Remi
+
+===== Web Framework =====
+
+Top 3
+  * Django (43%) - full-stack framework
+  * Flask (41%) - micro framework
+  * Tornado (6%)  - micro asynchronous framework
+
+===== Networking =====
+
+sockets
+
+http.server
+
+websockets
+
+===== Concurrency
+
+**Threading** refers to the concept of threading multiple threads of processing through a single CPU.
+
+**Process** vs **thread**.  In OS theory, an executable becomes a process and the programmer can split the processing into multiple threads.  A process can have multiple child threads.   
+
+In Linux, a thread is a type of process.  Threads and processes are both created with the clone() function.   **Task** is the generic term to refer to either a process or a thread.  
+
+**Task switching** is performed by the **scheduler**.
+
+**Context switching** is the sometimes expensive process of swapping memory and registers when preparing to switch from one task to another.
+
+The one OS **scheduler** is used to switch context to a process and to a thread within a process.  The scheduler does preemptive task switching.  Because of the global interpreter lock (GIL), a Python process only runs one thread at a time.  
+
+To write a program that can take advantage of multiple CPU’s and run multiple tasks simultaneously, one must use **multiprocessing**, as opposed to threading.
+
+**threading** - The stock Python threading package uses OS threads and the OS scheduler running in kernel space.  This system uses a preemptive threading model.  This system has heavy context-switching costs and is therefore not scalable; increased numbers of threads slow the system exponentially.
+
+**preemptive threading** - The scheduler interrupts a thread at any time, at any point in its processing.  The Linux kernel scheduler is preemptive.
+
+**cooperative threading** - There is no scheduler preemptively switching between threads.  The programmer voluntarily gives up control at specific points in the code.  Implementations in Linux are custom and running in user space.  These systems usually have low context-switching costs and are scalable to large numbers of threads.
+
+**Asynchronous IO** - A language-independent model describing an implementation of cooperative threading.
+
+**asyncio** - A Python library implementing asynchronous IO.  In asyncio, a thread loop is called a **coroutine**.  Two new Python language keywords were created for use with the asyncio package: **async** and **await**.
+
+**Green-threads, greenlet, tasklets, eventlet, gevent** - Alternative implementations of cooperative threading in Python.
+
+
+<table>
+  <tr>
+   <td><strong>Python library</strong>
+   </td>
+   <td><strong>CPU’s</strong>
+   </td>
+   <td><strong>processes</strong>
+   </td>
+   <td><strong>threads</strong>
+   </td>
+   <td><strong>Speed up:</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>threading
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+   <td>multiple
+   </td>
+   <td>IO-bound tasks
+   </td>
+  </tr>
+  <tr>
+   <td>asyncio
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+   <td>IO-bound tasks
+   </td>
+  </tr>
+  <tr>
+   <td>multiprocessing
+   </td>
+   <td>multiple
+   </td>
+   <td>multiple
+   </td>
+   <td>optional
+   </td>
+   <td>CPU-bound tasks
+   </td>
+  </tr>
+</table>
+
+
+
+===== asyncio =====
+
+A coroutine is defined with async def.  The first coroutine is called with asyncio.run(fn()).  This is the corollary to creating a thread.  The coroutine may call only coroutines and must use the await keyword to do so.  The await keyword gives control up for other virtual threads to run. 
+
+===== Websockets =====
 ===== Modules =====
 
 A module is a file.
