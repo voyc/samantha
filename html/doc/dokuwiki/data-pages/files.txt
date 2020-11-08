@@ -38,6 +38,7 @@ tree
 find
   $ find . -name *.plugin
   $ find . -name *.plugin 2>/dev/null
+  $ find /media/seagate/media/ -name Thumbs.db -exec rm {} \; # delete files across folders
 
 grep
   $ grep -r "progressive" . 
