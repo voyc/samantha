@@ -1,0 +1,71 @@
+# samd.py
+# the first sam
+
+clones = []
+
+clone.append(Sam('Sam'))
+clone.append(Sam('Lee'))
+
+
+find settings file, ini, config, preferences, definition
+linux convention
+python convention
+sam convention
+
+import ipc  # interprocess communication via socket
+
+class Switchboard():
+	# create socket server
+	# read and write messages
+	# pass to Security
+	pass
+
+
+class Security():
+	# check credentials
+	# pass message to Reception
+	pass
+
+
+
+class Reception():
+	# Reception is a skill.  Not all clones have it.
+	# organize users and groups
+	# route Message to Broca of recepient
+	pass
+
+'''
+message passing
+send to everyone
+first guy to accept it stops the broadcast
+
+goal:  create two clones and let them have a human conversation together
+
+the first sam needs
+port assignement
+clone(): 
+	each clone gets a new port
+	a clone is a process running samd
+	a clone is an entry in the database describing the clone
+	is it really necessary to have a central db?
+	what about a distributed db?
+	or a pickle or some such storage for each clone
+	use db for grammar
+	if central db can be found on inet
+	grammar is necessary for communicating with humans
+a set of ports
+
+
+human protocols
+languages are sometimes mixed
+sawat di krup.  see you.
+
+commuter can reduce a sentence to numbers, word ids
+subject adj verb adv object adj
+subject adj verb adv nominative adj
+
+human languages screw with word order
+computer should maybe be flexible with word order
+part of deconstructing a human utterance is untangling the word order
+
+'''

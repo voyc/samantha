@@ -3,9 +3,11 @@ import psycopg2
 import sys
 
 config = configparser.ConfigParser()
-config.read('../../config.ini')
+config.read('../../sam.conf')
 
-conn = psycopg2.connect(f"dbname={config['db']['name']} user={config['db']['user']} password={config['db']['password']} port={config['db']['port']}") 
+connectstring = f"host={config['db']['host']} dbname={config['db']['name']} user={config['db']['user']} password={config['db']['password']} port={config['db']['port']}" 
+print(connectstring)
+conn = psycopg2.connect(connectstring)
 
 for line in sys.stdin:
 	t,e = line.strip().split(';')
