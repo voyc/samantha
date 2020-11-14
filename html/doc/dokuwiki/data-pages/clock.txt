@@ -1,0 +1,5 @@
+====== Clock ======
+
+ntp - a daemon to keep the click synchronized
+
+  $ ntpdate # to contact an ntp server and syncronize the system clock

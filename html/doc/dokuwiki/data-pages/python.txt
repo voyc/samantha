@@ -1,30 +1,364 @@
 ====== Python ======
 
-===== PIP3 Install =====
+===== Versions =====
 
-==== Local ====
+Python 3 is NOT backward compatible with version 2.
 
-  pip3 install websockets
+  * Python 2.7 - release 2010, end of support 2020
+  * Python 3.8 - release 2019-Oct, end of support 2024-Oct 
+  * Python 3.9 - release 2020-Oct, end of support 2025-Oct 
 
-  ~/.local/lib/python3.8/site-packages/
+print
+  * in version 2, print is a statement: print 'hello'
+  * in version 3, print is a function: print('hello')
 
-==== Global ====
+string
+  * in v2, strings are ASCII by default.  Use u'to force unicode' in v2.
+  * in v3, strings are UTF-8 by default
 
-  sudo pip3 install websockets
+division
+  * in v2, 3/2 returns 1.  Use 3.0/2.0 to force float division.
+  * in v3, 3/2 returns 1.5
 
-  /usr/local/lib/python3/dist-packages/
+https://www.appdynamics.com/blog/engineering/the-key-differences-between-python-2-and-python-3/
 
-As of Oct 2020, on RacerSwift, I have installed these packages, all global.
+===== Components =====
 
-  * numpy
-  * opencv-python
-  * websockets
-  * python-networkmanager
-  * psutil
+Physically, python is a set of files on a computer.
+==== Executables ====
 
-As of Oct 2020, on a2hosting, sudo is not available.  All installs are local, within a virtual environment. 
+/usr/bin/python3.8
+  * python - interpreter
+  * pip - package installer
+  * pyclean
+  * pycompile
+
+==== Configuration files ====
+
+/usr/bin/x86_64-linux-gnu-python3.8-config  # an executable script 
+
+/etc/python3/debian_config  # an ini file
+
+
+
+
+
+==== Standard Library ====
+
+  $ /usr/lib/python3.8
+
+==== Installed Packages ====
+
+  $ ls -al /usr/lib/python3/dist-packages
+  $ pip list
+
+==== Installable Packages ====
+
+See https://pypi.org/
+
+  $ pip search
+
+===== Data Types =====
+
+==== String ====
+=== Encoding ===
+https://docs.python.org/3/howto/unicode.html
+
+Strings, bytes, unicode.
+  * In python2, string and byte are identical.
+  * In python3, string and byte and bytearray are different.
+  * Python source code is UTF-8.
+  * By default a quoted string literal is a UTF-8 encoded string.  As in ‘str’.
+
+  bytes = str.encode(‘utf-8’)  # convert a string to a byte object
+  str = bytes.decode(‘utf-8’)  # convert a byte object to a string
+
+=== Formatting ===
+
+  r'raw string'
+  b'byte array'
+  f'formatted string'
+
+==== Mutable vs Immutable ====
+
+  * immutable: integer, string, tuple, set
+  * mutable: list, dict
+  * mutables have methods that change the data: append(), insert(), push(), etc.
+  * when you set a variable to an immutable, you create a new object
+
+  x = 1    # integer is immutable
+  x = 2    # does not change x, creates a new x
+
+  a = [1,2,3]    # list is mutable
+  t = (1,2,3)    # tuple is immutable
+  s = (1,2,3,1)  # set is immutable
+  
+  d = {'a':1, 'b':2}  # dict is mutable
+
+  s = 'a'        # immutable string
+  s += 'b'       # slow, creates new object 
+  l = ['a']      # mutable list
+  l.append('b')  # fast, modifies existing object
+
+==== Collections ====
+
+Collections are objects.
+
+=== Native Classes ===
+
+== list ==
+mutable, square brackets
+  a = list(1,2,3)  # constructor for object of class list
+  a = [1,2,3]  # shortcut using square brackets
+
+== tuple  ==
+immutable, parens
+  a = tuple(1,2,3)  # constructor for object of class tuple
+  a = (1,2,3)  # shortcut using parens
+
+== set == 
+immutable, no order, no dupes, curly braces
+  a = set(1,2,3,1)  # constructor for object of class set
+  a = set(1,2,3,1)  # shortcut
+  len(set) => 3   # does not accept dupe value
+  a = {}    # does NOT create empty set, creates empty dict
+
+== dict ==
+mutable, key value pairs, curly braces
+  a = dict('name'='John', age=32)  # constructor for object of class dict
+  a = {'name'='John', age=32}    # shortcut with curly braces
+
+=== More Collections ===
+
+  from collections import namedtuple  # derived from tuple
+  from dataclasses import dataclass   # derived from dict
+
+source: \\ 
+https://www.youtube.com/watch?v=W8KRzm-HUcc\\ 
+https://www.youtube.com/watch?v=daefaLgNkw0
+
+===== Functions =====
+
+The following terms are generic programming concepts, not limited to Python.
+
+== First-Class Function ==
+
+A first-class function, like a first-class citizen can be treated the same as any other entity.  It can be:
+  * assigned to a variable
+  * passed as an argument
+  * returned from a function
+
+== Higher Order Function ==
+
+Accepts a function as an argument, or returns a function as output.
+
+== First Order Function ==
+
+Not a higher order function.
+
+== Closure ==
+
+A inner-function returned as output that retains access to variables of it's outer function.
+
+  def outer_func():
+    message = 'Hi'
+    def inner_func():
+      print(message)      # free variable, not defined  in inner function
+    return inner_funcbb   # return a function
+  
+  clo = outer_func()
+  clo()                  # 'Hi', still has access to free variable: message
+  print(clo.__name__)    # 'inner_func'
+
+===== Arguments =====
+
+  function(*args, **kwargs)
+
+===== Objects =====
+
+Everything is an object.
+
+Formal OOP can be done using the class keyword, complete with inheritance. 
+
+==== Identity ====
+
+Every object has an id.\\ 
+The builtin function id(object) gives up the id.\\ 
+The "is" keyword compares for identical objects.\\ 
+
+  a = [1,2,3]      # create object
+  id(a)            # get its id
+  b = a            # copy pointer to object
+  id(a) == id(b)   # True
+  a is b           # equivalent to above, compares ids
+
+===== Iterables and Iterators =====
+
+An **iterable** is an object with an %%__iter__()%% method.
+
+The %%__iter__()%% returns an iterator.
+
+An **iterator** is an object with a %%__next__()%% method, and an %%__iter__()%% method that returns itself.
+
+===== Comprehensions =====
+
+Reverse the syntax of a for-loop, when copying a list, set, or dict.
+
+  nums = [1,2,3,4]
+  
+  evens = []   # for-loop syntax
+  for n in nums:
+    if n%2 == 0:
+      evens.append(n*n)
+  
+  evens = [n*n for n in nums: if n%2 == 0]  # comprehension syntax
+
+===== Generators =====
+
+What does a generator generate?  Well, I suppose it generates a kind of pseudo collection.
+
+It allows you to process a bunch of things without physically building a collection in memory. 
+
+It can assume the syntax of a function, or an expression.
+
+==== Generator Function ====
+
+Like an iterator, but does not build collection in memory.
+
+The yield keyword is used to give control to the caller.
+
+  def gen_func(nums):
+    for n in nums:
+      yield n*n  # returns to calling loop with next item
+  
+  my_gen = gen_func([1,2,3,4])
+  
+  for i in my_gen:
+    print i   # yield calls back here
+
+
+==== Generator Expression ====
+
+Similar to Comprehension syntax, but with parens, and it does not build a collection in memory.
+
+  my_gen = (n*n for n in [1,2,3,4])
+  
+  for i in my_gen:
+    print   
+
+
+===== Decorators =====
+
+In decorating a function, we create a wrapper function that adds functionality to that original function.  This can be done with a class, but is usually done with a function.  A decorator function is a closure that takes the original function as an argument, and returns the wrapper function that calls that original function. 
+
+  def decorator_function(original_function):
+    def wrapper_function():
+      return original_function()
+  def display():
+    print('display function ran')
+  decorated_display = decorator_function(display)
+  decorated_display()  # prints the output 'display function ran'
+
+Now the @ syntax.
+  @decorator_function
+  def display():
+    print('display function ran')
+ 
+is equivalent to:
+  def display():
+    print('display function ran')
+  display = decorator_function(display)
+
+Decorators can be stacked.
+
+  from functools import wraps
+  
+  def my_logger(orig_func):
+    import logging
+    logging.basicConfig(filename='{}.log'.format(orig_func.__name__),level=logging.INFO)
+    
+    @wraps(orig_func)
+    def wrapper(*args, **kwargs):
+      logging.info(f'Ran with args: {args}, and kwargs: {kwargs}')
+      return wrapper
+      
+  def my_timer(orig_func):
+    import time
+    
+    @wraps(orig_func)
+    def wrapper(*args,**kwargs):
+      t1 = time.time()
+      result = orig_func(*args, **kwargs)
+      t2 = time.time() - t1
+      print(f'{orig_func.__name__} ran in: {t2} sec'
+      return result
+    return wrapper
+  
+  @my_logger
+  @my_timer
+  def display_info(name,age):
+    print(f'display_info ran with arguments({name}, {age}f')
+  
+  display_info('Hank',30)
+
+source: https://www.youtube.com/watch?v=FsAPt_9Bf3U&t=997s
+
+===== Context Manager =====
+
+keyword with
+
+There have always been amateur programmers who don't know what the fuck they're doing.
+They refuse to check return codes, they forget to close files, they forget to free memory handles...  And instead of taking responsibility, fixing their mistakes and vowing to do better in the future, they point the finger at the language.  Then they jump through hoops trying to fix the language and in the process they fuck things up for the professional programmers who do know what they're doing.
+
+First example, once we had a bunch of amateurs writing unmanageable spaghetti code.  Instead of either training them or firing them, some group of boneheads decided it was the fault of the goto statement.   So they outlawed the goto statement.  That made it more difficult for responsible programmers to work, and we still had those incompetents running around causing trouble.  
+
+Next case, they said "I shouldn't have to check return codes", and came up the the try-catch construct, which is an abomination in any language.  Now, the competent programmers have to check return codes AND catch errors.  Double work.
+
+Other bullshit constructs: 
+  * the Entity Bean in Java, for people who don't understand relational database 
+  * the Promise in Javascript, and believe me if you're not capable of writing asynchronous event-driven code, you're not going to be able to use a Promise either.
+
+And now we come to the case at hand.  Amateurs often forget to release resources.  Instead of admitting a mistake and improving their technique, they blame the language.  "The system should know when I'm finished with that file and close it for me."  Hence, the context manager.
+
+What if this happened in other walks of life?  What if you took your kid to school, and forgot to pick him up?
+
+A competent coder writes like this:
+  f = open('myfile.text', 'w')
+  f.write('I hate stupid people.')
+  f.close()
+  
+The shit-for-brains who can't pay attention long enough to close the file would have us write it like this:
+  with open('myfile.text', 'w') as f:
+    f.write('I hate stupid people.')
+
+The "with" keyword calls upon a context manager.
+
+A context manager can be implemented as a class like this:  
+  class Open_File():
+    def __init__(self, filename, mode):
+      self.filename = filename
+      self.mode = mode
+    def __enter__(self):
+      self.file = open(self.filename, self.mode)
+      return self.file
+    def __exit__(self):
+      self.close()
+
+A context manager can also be implemented as a decorated function like this:
+  from contextlib import contextmanager
+  
+  @contextmanager
+  def open_file(file,mode):
+    f = open(file, mode)
+    yield f
+    f.close()
+
+Prove to yourself the file was closed like this:
+  print(f.closed)
 
 ===== Structure =====
+
+module, package, library, framework, application
 
 module = source code file
 
@@ -44,7 +378,7 @@ import module
   * third party
   * my own
 
-[https://docs.python-guide.org/writing/structure/](https://docs.python-guide.org/writing/structure/)
+source: https://docs.python-guide.org/writing/structure/
 
 Concretely, the import modu statement will look for the proper file, which is modu.py in the same directory as the caller if it exists. If it is not found, the Python interpreter will search for modu.py in the “path” recursively and raise an ImportError exception if it is not found.
 
@@ -58,183 +392,6 @@ Makes the module's functions available in the local namespace of the caller.
 
 Any directory with an __init__.py file is considered a Python package.
 
-===== Versions =====
-
-Python versions are NOT backward compatible.
-
-Python 2.?
-
-Python 3.8
-
-===== Package Management =====
-
-==== PIP ====
-
-Pip Installs Packages (PIP)
-
-Python Package Index (PyPI) hosted by Python Software Foundation
-
-Included by default in Python 3.4 and later.
-
-  $ pip install opencv-python
-  $ pip uninstall opencv-python
-  $ pip --version
-  $ pip help
-  $ pip list
-
-==== apt ====
-
-Installs packages from Ubuntu repositories hosted by Canonical.
-
-Compared to pip, apt supports fewer packages, only one version of each package, sometimes different package names, no support for virtual env.
-
-  $ sudo apt install python-opencv
-
-==== virtualenv ====
-
-A virtual environment creates a local area in which to install python and packages.  This allows multiple versions of python and/or packages on one machine.  A2 hosting uses this to keep shared host customers separate.  This is supported only by pip, not apt.
-
-===== Data Types =====
-
-[https://docs.python.org/3/howto/unicode.html](https://docs.python.org/3/howto/unicode.html)
-
-In python2, type string and byte are identical.
-
-In python3, string and byte and bytearray are different.
-
-Python source code is UTF-8.
-
-By default a quoted string literal is a UTF-8 encoded string.  As in ‘str’.
-
-To declare a byte string, prefix with letter b. As in b’str’.
-
-To convert a string to a byte object:
-
-	bytes = str.encode(‘utf-8’)
-
-To convert a byte object to a string:
-
-	str = bytes.decode(‘utf-8’)
-
-
-===== Run Shell Commands =====
-
-  $ os.system('nmcli dev wifi connect JASMINE')   ===== return 0
-  $ subprocess.run()
-  $ subprocess.check_output()
-
-===== GUI =====
-
-  * tkinterIO	
-  * Qt
-  * WxPython
-  * Remi
-  * PySimpleGUI - wraps tkinter or Qt
-  * PySimpleWx - wraps WxPython
-  * PySimpleGUIWeb - wraps Remi
-
-===== Web Framework =====
-
-Top 3
-  * Django (43%) - full-stack framework
-  * Flask (41%) - micro framework
-  * Tornado (6%)  - micro asynchronous framework
-
-===== Networking =====
-
-sockets
-
-http.server
-
-websockets
-
-===== Concurrency
-
-**Threading** refers to the concept of threading multiple threads of processing through a single CPU.
-
-**Process** vs **thread**.  In OS theory, an executable becomes a process and the programmer can split the processing into multiple threads.  A process can have multiple child threads.   
-
-In Linux, a thread is a type of process.  Threads and processes are both created with the clone() function.   **Task** is the generic term to refer to either a process or a thread.  
-
-**Task switching** is performed by the **scheduler**.
-
-**Context switching** is the sometimes expensive process of swapping memory and registers when preparing to switch from one task to another.
-
-The one OS **scheduler** is used to switch context to a process and to a thread within a process.  The scheduler does preemptive task switching.  Because of the global interpreter lock (GIL), a Python process only runs one thread at a time.  
-
-To write a program that can take advantage of multiple CPU’s and run multiple tasks simultaneously, one must use **multiprocessing**, as opposed to threading.
-
-**threading** - The stock Python threading package uses OS threads and the OS scheduler running in kernel space.  This system uses a preemptive threading model.  This system has heavy context-switching costs and is therefore not scalable; increased numbers of threads slow the system exponentially.
-
-**preemptive threading** - The scheduler interrupts a thread at any time, at any point in its processing.  The Linux kernel scheduler is preemptive.
-
-**cooperative threading** - There is no scheduler preemptively switching between threads.  The programmer voluntarily gives up control at specific points in the code.  Implementations in Linux are custom and running in user space.  These systems usually have low context-switching costs and are scalable to large numbers of threads.
-
-**Asynchronous IO** - A language-independent model describing an implementation of cooperative threading.
-
-**asyncio** - A Python library implementing asynchronous IO.  In asyncio, a thread loop is called a **coroutine**.  Two new Python language keywords were created for use with the asyncio package: **async** and **await**.
-
-**Green-threads, greenlet, tasklets, eventlet, gevent** - Alternative implementations of cooperative threading in Python.
-
-
-<table>
-  <tr>
-   <td><strong>Python library</strong>
-   </td>
-   <td><strong>CPU’s</strong>
-   </td>
-   <td><strong>processes</strong>
-   </td>
-   <td><strong>threads</strong>
-   </td>
-   <td><strong>Speed up:</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>threading
-   </td>
-   <td>1
-   </td>
-   <td>1
-   </td>
-   <td>multiple
-   </td>
-   <td>IO-bound tasks
-   </td>
-  </tr>
-  <tr>
-   <td>asyncio
-   </td>
-   <td>1
-   </td>
-   <td>1
-   </td>
-   <td>1
-   </td>
-   <td>IO-bound tasks
-   </td>
-  </tr>
-  <tr>
-   <td>multiprocessing
-   </td>
-   <td>multiple
-   </td>
-   <td>multiple
-   </td>
-   <td>optional
-   </td>
-   <td>CPU-bound tasks
-   </td>
-  </tr>
-</table>
-
-
-
-===== asyncio =====
-
-A coroutine is defined with async def.  The first coroutine is called with asyncio.run(fn()).  This is the corollary to creating a thread.  The coroutine may call only coroutines and must use the await keyword to do so.  The await keyword gives control up for other virtual threads to run. 
-
-===== Websockets =====
 ===== Modules =====
 
 A module is a file.
@@ -304,252 +461,211 @@ Directories on the path include in order:
   print(antigrav.__file__)  # show the directory and filename of the module
   dir(antigrav)             # list variables and functions in the module
   
-===== Iterables and Iterators =====
+===== Packages =====
 
-An **iterable** is an object with an %%__iter__()%% method.
+A package is a directory of files.
 
-The %%__iter__()%% returns an iterator.
+%%__init__%%.py is an optional file that, if present, is run when the package is imported.
+NOTE.  Much of the online documentation says an %%__init__%%.py file is required to make the directory a package.  That is no longer true as of python version 3.3.
 
-An **iterator** is an object with a %%__next__()%% method, and an %%__iter__()%% method that returns itself.
+Like a module, a package can create a namespace, depending on how it is imported.
 
-
-===== Collections =====
-
-==== Native Classes ====
-
-== list ==
-mutable, square brackets
-  a = list(1,2,3)  # constructor for object of class list
-  a = [1,2,3]  # shortcut using square brackets
-
-== tuple  ==
-immutable, parens
-  a = tuple(1,2,3)  # constructor for object of class tuple
-  a = (1,2,3)  # shortcut using parens
-
-== set == 
-no order, no dupes, curly braces
-  a = set(1,2,3,1)  # constructor for object of class set
-  a = set(1,2,3,1)  # shortcut
-  len(set) => 3   # does not accept dupe value
-  a = {}    # does NOT create empty set, creates empty dict
-
-== dict ==
-key value pairs, curly braces
-  a = dict('name'='John', age=32)  # constructor for object of class dict
-  a = {'name'='John', age=32}    # shortcut with curly braces
-
-==== More Collections ====
-
-  from collections import namedtuple  # derived from tuple
-  from dataclasses import dataclass   # derived from dict
-
-
-source: \\ 
-https://www.youtube.com/watch?v=W8KRzm-HUcc\\ 
-https://www.youtube.com/watch?v=daefaLgNkw0
-
-===== Object Identity =====
-Every object has an id.\\ 
-The builtin function id(object) gives up the id.\\ 
-The "is" keyword compares for identical objects.\\ 
-
-  a = [1,2,3]      # create object
-  id(a)            # get its id
-  b = a            # copy pointer to object
-  id(a) == id(b)   # True
-  a is b           # equivalent to above, compares ids
-
-
-===== Comprehensions =====
-
-list, set, dict
-
-Reverse the syntax of a for-loop, when copying a list, set, or dict.
-
-  nums = [1,2,3,4]
+  import pack.mod
+  pack.mod.func()
   
-  mylist = []   # for-loop syntax
-  for n in nums:
-    if n%2 == 0:
-      mylist.append(n*n)
+  from pack import mod
+  mod.func()
+
+===== Package Management =====
+
+  pip list # all installed packages
+===== PIP3 Install =====
+
+==== Local ====
+
+  pip3 install websockets
+
+  ~/.local/lib/python3.8/site-packages/
+
+==== Global ====
+
+  sudo pip3 install websockets
+
+  /usr/local/lib/python3/dist-packages/
+
+As of Oct 2020, on RacerSwift, I have installed these packages, all global.
+
+  * numpy
+  * opencv-python
+  * websockets
+  * python-networkmanager
+  * psutil
+
+As of Oct 2020, on a2hosting, sudo is not available.  All installs are local, within a virtual environment. 
+
+==== PIP ====
+
+Pip Installs Packages (PIP)
+
+Python Package Index (PyPI) hosted by Python Software Foundation
+
+Included by default in Python 3.4 and later.
+
+  $ pip install opencv-python
+  $ pip uninstall opencv-python
+  $ pip --version
+  $ pip help
+  $ pip list
+
+==== apt ====
+
+Installs packages from Ubuntu repositories hosted by Canonical.
+
+Compared to pip, apt supports fewer packages, only one version of each package, sometimes different package names, no support for virtual env.
+
+  $ sudo apt install python-opencv
+
+==== Virtual Environments ====
+
+Python programmers are not big on //backward compatibility//.  Python version 3 is not compatible with version 2.  Django version 3 is not compatible with version 2.  When you upgrade to new versions, applications importing those packages may break.  So, do you upgrade and rewrite, or stick with your old versions?
+
+You don't have to make that choice.  You can create multiple environments, each with a specific set of python and libraries.  If necessary, you can create a separate environment for every project.
+
+A virtual environment creates a local area in which to install python and packages.  This allows multiple versions of python and/or packages on one machine.  A2 hosting uses this to keep shared host customers separate.
+
+There are three mechanisms for managing virtual environments, described here in chronological order:  virtualenv, venv, pipenv.
+
+=== virtualenv ===
+
+  $ virtualenv myenv1           # create a directory amed myenv1
+  $ source myenv/bin/activate   # sets aliases
+  $ which python                # display path of env is active
+  $ which pip
+  $ pip list                    # immediately after create, pip and setup tools only
+  $ deactivate                  # reset aliases to revert to global python
+  $ rm -rf myenv                # delete the environment
   
-  mylist = [n*n for n in nums: if n%2 == 0]  # comprehension syntax
-
-===== Generators =====
-
-==== Generator Function ====
-
-Like an iterator, but does not build collection in memory.
-
-  def gen_func(nums):
-    for n in nums:
-      yield n*n  # returns to calling loop with next item
+  $ pip freeze --local >requirements.txt
   
-  my_gen = gen_func([1,2,3,4])
   
-  for i in my_gen:
-    print i   # yield calls back here
+=== venv ===
 
+More modern version of virtualenv, part of standard library.  Can NOT be used to install older versions of python.
 
-==== Generator Expression ====
-
-Similar to Comprehension syntax, but with parens, and it does not build collection in memory.
-
-  my_gen = (n*n for n in [1,2,3,4])
+  venv 
   
-  for i in my_gen:
-    print   
 
+=== pipenv ===
 
-===== Functions =====
+Also part of the standard library, collapses venv syntax into pip.
 
-The following terms are generic programming concepts, not limited to Python.
-
-== First-Class Function ==
-
-A first-class function, like a first-class citizen can be treated the same as any other entity.  It can be:
-  * assigned to a variable
-  * passed as an argument
-  * returned from a function
-
-== Higher Order Function ==
-
-Accepts a function as an argument, or returns a function as output.
-
-== First Order Function ==
-
-Not a higher order function.
-
-== Closure ==
-
-A inner-function returned as output that retains access to variables of it's outer function.
-
-  def outer_func():
-    message = 'Hi'
-    def inner_func():
-      print(message)      # free variable, not defined  in inner function
-    return inner_funcbb   # return a function
+  pipenv 
   
-  clo = outer_func()
-  clo()                  # 'Hi', still has access to free variable: message
-  print(clo.__name__)    # 'inner_func'
+===== Capabilities =====
 
-===== Decorators =====
 
-In decorating a function, we create a wrapper function that adds functionality to that original function.  This can be done with a class, but is usually done with a function.  A decorator function is a closure that takes the original function as an argument, and returns the wrapper function that calls that original function. 
+==== CLI ====
+  * argparse - standard library
+  * click
+  * docopt
+  * plac
+  * cliff
+  * cement
+  * fire
 
-  def decorator_function(original_function):
-    def wrapper_function():
-      return original_function()
-  def display():
-    print('display function ran')
-  decorated_display = decorator_function(display)
-  decorated_display()  # prints the output 'display function ran'
+==== repl ==== 
 
-Now the @ syntax.
-  @decorator_function
-  def display():
-    print('display function ran')
- 
-is equivalent to:
-  def display():
-    print('display function ran')
-  display = decorator_function(display)
+REPL stands for Read, Evaluate, Print, Loop. The REPL is how you interact with the Python Interpreter.
 
-Decorators can be stacked.
+Sometimes aka serial terminal.
 
-  from functools import wraps
+  * pyserial
+  * tinycom
+  * GNU Readline - not a python package, but a linux utility
+
+==== Run Shell Commands ====
+
+Your choice of two packages, os and subprocess.
+
+  $ os.system('nmcli dev wifi connect JASMINE')   # return 0
   
-  def my_logger(orig_func):
-    import logging
-    logging.basicConfig(filename='{}.log'.format(orig_func.__name__),level=logging.INFO)
-    
-    @wraps(orig_func)
-    def wrapper(*args, **kwargs):
-      logging.info(f'Ran with args: {args}, and kwargs: {kwargs}')
-      return wrapper
-      
-  def my_timer(orig_func):
-    import time
-    
-    @wraps(orig_func)
-    def wrapper(*args,**kwargs):
-      t1 = time.time()
-      result = orig_func(*args, **kwargs)
-      t2 = time.time() - t1
-      print(f'{orig_func.__name__} ran in: {t2} sec'
-      return result
-    return wrapper
-  
-  @my_logger
-  @my_timer
-  def display_info(name,age):
-    print(f'display_info ran with arguments({name}, {age}f')
-  
-  display_info('Hank',30)
+  $ subprocess.run()
+  $ subprocess.check_output()
 
-source: https://www.youtube.com/watch?v=FsAPt_9Bf3U&t=997s
+==== GUI ====
 
-===== Arguments =====
+  * tkinterIO	
+  * Qt
+  * WxPython
+  * Remi
+  * PySimpleGUI - wraps tkinter or Qt
+  * PySimpleWx - wraps WxPython
+  * PySimpleGUIWeb - wraps Remi
 
-  function(*args, **kwargs)
+==== Web Framework ====
+
+Top 3
+  * Django (43%) - full-stack framework
+  * Flask (41%) - micro framework
+  * Tornado (6%)  - micro asynchronous framework
+
+==== Networking ====
+
+  * sockets - widely-supported multi-platform protocol for IPC
+  * http.server - implements a complete webserver
+  * websockets - defined in html 5, built on asyncio
+
+socket
+
+Two ways to address a socket:
+  * address_family=AFI_UNIX, server_address='50000'              # str:  socket number
+  * address_family=AFI_INET, server_address=('127.0.0.1',8080)   # tuple: (host, port)
+
+The first is restricted to sockets on the same computer.  The second can be used across the network.
+
+A websocket cannot talk directly to a socket because the data packet is framed differently.  A middleman is needed to translate.
 
 
-===== Context =====
+==== Datetime ====
 
-keyword with
+timestamp
 
-There have always been amateur programmers who don't know what the fuck they're doing.
-They refuse to check return codes, they forget to close files, they forget to free memory handles...  And instead of taking responsibility, fixing their mistakes and vowing to do better in the future, they point the finger at the language.  Then they jump through hoops trying to fix the language and in the process they fuck things up for the professional programmers who do know what they're doing.
+  $ import uuid
+  $ uuid.uuid4() # generate a unique id
+===== Concurrency =====
 
-First example, once we had a bunch of amateurs writing unmanageable spaghetti code.  Instead of either training them or firing them, some group of boneheads decided it was the fault of the goto statement.   So they outlawed the goto statement.  That made it more difficult for responsible programmers to work, and we still had those incompetents running around causing trouble.  
+**Threading** refers to the concept of threading multiple threads of processing through a single CPU.
 
-Next case, they said "I shouldn't have to check return codes", and came up the the try-catch construct, which is an abomination in any language.  Now, the competent programmers have to check return codes AND catch errors.  Double work.
+**Process** vs **thread**.  In OS theory, an executable becomes a process and the programmer can split the processing into multiple threads.  A process can have multiple child threads.   
 
-Other bullshit constructs: 
-  * the Entity Bean in Java, for people who don't understand relational database 
-  * the Promise in Javascript, and believe me if you're not capable of writing asynchronous event-driven code, you're not going to be able to use a Promise either.
+In Linux, a thread is a type of process.  Threads and processes are both created with the clone() function.   **Task** is the generic term to refer to either a process or a thread.  
 
-And now we come to the case at hand.  Amateurs often forget to release resources.  Instead of admitting a mistake and improving their technique, they blame the language.  "The system should know when I'm finished with that file and close it for me."  Hence, the context manager.
+**Task switching** is performed by the **scheduler**.
 
-What if this happened in other walks of life?  What if you took your kid to school, and forgot to pick him up?
+**Context switching** is the sometimes expensive process of swapping memory and registers when preparing to switch from one task to another.
 
-A competent coder writes like this:
-  f = open('myfile.text', 'w')
-  f.write('I hate stupid people.')
-  f.close()
-  
-The shit-for-brains who can't pay attention long enough to close the file would have us write it like this:
-  with open('myfile.text', 'w') as f:
-    f.write('I hate stupid people.')
+The one OS **scheduler** is used to switch context to a process and to a thread within a process.  The scheduler does preemptive task switching.  Because of the global interpreter lock (GIL), a Python process only runs one thread at a time.  
 
-The "with" keyword calls upon a context manager.
+To write a program that can take advantage of multiple CPU’s and run multiple tasks simultaneously, one must use **multiprocessing**, as opposed to threading.
 
-A context manager can be implemented as a class like this:  
-  class Open_File():
-    def __init__(self, filename, mode):
-      self.filename = filename
-      self.mode = mode
-    def __enter__(self):
-      self.file = open(self.filename, self.mode)
-      return self.file
-    def __exit__(self):
-      self.close()
+**threading** - The stock Python threading package uses OS threads and the OS scheduler running in kernel space.  This system uses a preemptive threading model.  This system has heavy context-switching costs and is therefore not scalable; increased numbers of threads slow the system exponentially.
 
-A context manager can also be implemented as a decorated function like this:
-  from contextlib import contextmanager
-  
-  @contextmanager
-  def open_file(file,mode):
-    f = open(file, mode)
-    yield f
-    f.close()
+**preemptive threading** - The scheduler interrupts a thread at any time, at any point in its processing.  The Linux kernel scheduler is preemptive.
 
-Prove to yourself the file was closed like this:
-  print(f.closed)
+**cooperative threading** - There is no scheduler preemptively switching between threads.  The programmer voluntarily gives up control at specific points in the code.  Implementations in Linux are custom and running in user space.  These systems usually have low context-switching costs and are scalable to large numbers of threads.
 
-===== Parallel Processing =====
+**Asynchronous IO** - A language-independent model describing an implementation of cooperative threading.
+
+**asyncio** - A Python library implementing asynchronous IO.  In asyncio, a thread loop is called a **coroutine**.  Two new Python language keywords were created for use with the asyncio package: **async** and **await**.
+
+**Green-threads, greenlet, tasklets, eventlet, gevent** - Alternative implementations of cooperative threading in Python.
+
+^ Python library    ^ CPU’s      ^ processes   ^ threads    ^ Speed up:         ^
+| threading         | 1          | 1           | multiple   | IO-bound tasks    |
+| asyncio           | 1          | 1           | 1          | IO-bound tasks    |
+| multiprocessing   | multiple   | multiple    | optional   | CPU-bound tasks   |
+
+==== Parallel Processing ====
 
 Threads and Processes
 
@@ -571,3 +687,16 @@ Threads and Processes
         executor.map(do_something, list_of_things)
 
 source: https://www.youtube.com/watch?v=fKl2JW_qrso&t=1s
+
+==== asyncio ====
+
+The asyncio package simulates threading, with supposedly less overhead.
+
+Along with the package come two new keywords:
+  * async - defines a coroutine
+  * await - calls a coroutine, and yields control to other virtual threads
+
+A coroutine is defined with async def.  The first coroutine is called with asyncio.run(fn()).  This is the corollary to creating a thread.  The coroutine may call only coroutines and must use the await keyword to do so.  The await keyword gives control up for other virtual threads to run. 
+
+NOTE:  Websockets are built on asyncio.
+

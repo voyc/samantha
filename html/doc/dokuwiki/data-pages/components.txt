@@ -1,0 +1,20 @@
+====== Linux Components ======
+
+see [[Directory Structure]]
+==== Configuration files ====
+
+  /etc
+
+==== Kernel ====
+
+==== Kernel Modules ====
+
+==== Executables ====
+
+=== Built-in Commands ===
+
+=== External Commands ===
+
+  * /bin   # system 
+  * /sbin  # user
+

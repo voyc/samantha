@@ -28,3 +28,32 @@ Table Editing:
   - Edit table in a spreadsheet.
   - Copy-Paste into online [[https://www.tablesgenerator.com/markdown_tables|Markdown Table Generator]].
 
+Equation editing
+
+SVG images
+
+UML editing
+  * free (only free versions considered here)
+  * readable textfile
+  * text editing
+  * mouse positioning (none, absolute, limited)
+
+  * Creately - cannot save file
+  * UMLetino - simple XML, no arrow positioning in xml, no undo
+  * PlantText - looks like an old copy of PlantUML
+  * PlantUML - simple text, positioning is automatic, no way to manually position objects
+  * Visual Paradigm - binary file format, unlimited objects
+  * draw.io, diagrams.net - complex xml, positioning, free, unlimited
+
+^ Product         ^ xml ^ readable ^ text editing ^ manual positioning ^ arrow redraw ^
+| UMLetino        | yes | yes      | yes          | yes                | no           |
+| PlantUML        | yes | yes      | yes          | no                 | limited      |
+| Creately        | no  | no       | no           | yes                | limited      |
+| Visual Paradigm | yes | no       | no           | yes                | limited      |
+| draw.io         | yes | no       | no           | yes                | limited      |
+
+
+UML diagrammer: https://www.umletino.com/umletino.html
+
+UML beautifier: https://xmlbeautifier.com/
+

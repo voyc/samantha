@@ -21,5 +21,33 @@ Db of perception, thought, action\\
 Db of memory emotion\\
 Memory of perception feeling thought action\\
 
+===== Component Model =====
 
+samd - daemon, sub-component broca listens on socket
+
+samrepl - backdoor to samd from terminal on samd host
+
+samchat - websockets webchat server
+
+samwsgi - linked into passenger_wsgi.py, to implement ajax calls to sam
+
+One of the skills is "reception".  FirstSam is the receptionist, accepts logins, and routes to proper CloneSam.  No other clone needs the reception skill, unless he is running on a different computer.  Or, like groups, maybe each clone can accept logins, if he is connected to a socket.  All broca's have a socket.  Maybe the reception should be peer to peer, round-robin, to find the correct SamClone.  Do a test with two clones talking to each other.  Who keeps a list of broca sockets.  Each broca has a pointer to the next.  That would mean chaining through all the sockets with each message.
+
+{{:uml_comm_arch.png?400|}}
+
+
+Two socket systems:
+  * The websockets system creates one client socket for each user.
+  * The Receptionist does what?
+
+Can a socket talk to a websocket?
+
+sockets and threading
+
+socketserver.ThreadingUnixStreamServer
+
+use ps -e to find threads for each socket for each user
+
+
+===== Class Diagram =====
 

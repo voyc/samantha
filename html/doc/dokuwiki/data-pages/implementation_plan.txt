@@ -19,3 +19,22 @@ Interface is chat window. with emoticons.\\
 use Unreal engine or pattern to create Plunder
 
 use game Bot Designer pattern for Samantha
+
+===== Clones =====
+
+goal:  two clones have a conversation with each other
+
+create three clones, each with a special skill
+  * Sam - human conversation, translation
+  * Lee - drill
+  * Joshua - drone pilot
+
+Sam and Lee have a conversation with each other.
+
+All three clones can do conversation.
+A clone must have a discrete store of knowledge.
+When one learns a new word, it must be transferred to the others.
+
+SQLLite?
+Pickle?
+
