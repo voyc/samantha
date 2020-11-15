@@ -1,5 +1,4 @@
 # ipc.py
-
 # https://gist.github.com/dankrause/9607475
 
 import socketserver

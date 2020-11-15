@@ -6,41 +6,39 @@ import threading
 import queue
 import time
 import ipc
+import configparser
 
-server_address = ('localhost', 5795) # get this from sam.conf
+config = configparser.ConfigParser()
+config.read('../../sam.conf')
+server_address = (config['samd']['host'], int(config['samd']['port']))
+exit_command = 'q'
 
 def read_kbd_input(inputQueue):
-	print('Ready for keyboard input:')
 	while (True):
 		input_str = input()
 		inputQueue.put(input_str)
 
 def main():
-	EXIT_COMMAND = "q"
 	inputQueue = queue.Queue()
 
 	inputThread = threading.Thread(target=read_kbd_input, args=(inputQueue,), daemon=True)
 	inputThread.start()
+	print(f'Talking to {server_address}...')
 
 	while (True):
 		if (inputQueue.qsize() > 0):
 			input_str = inputQueue.get()
 
-			if (input_str == EXIT_COMMAND):
-				print("Exiting serial terminal.")
+			if (input_str == exit_command):
 				break
 			
-			object = ipc.Message('sam', 'john', input_str)
-			print( f'Send: {object.toString()}')
+			message = ipc.Message('sam', 'john', input_str)
 
 			with ipc.Client(server_address) as client:
-				response = client.send(object)
-			print( f'Received: {response.toString()}')
-
-		# The rest of your program goes here.
+				response = client.send(message)
+				print( f'>>> {response.msg}')
 
 		time.sleep(0.01) 
-	print("End.")
 
 if __name__ == '__main__':
 	main()
