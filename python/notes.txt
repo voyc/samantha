@@ -1,71 +1,85 @@
-# samd.py
-# the first sam
 
-clones = []
+make separate receive thread in samd
 
-clone.append(Sam('Sam'))
-clone.append(Sam('Lee'))
+run samchat, samweb, samcli together
 
+make them all three go thru samd
 
-find settings file, ini, config, preferences, definition
-linux convention
-python convention
-sam convention
+move users and groups from webchat to reception
 
-import ipc  # interprocess communication via socket
-
-class Switchboard():
-	# create socket server
-	# read and write messages
-	# pass to Security
-	pass
-
-
-class Security():
-	# check credentials
-	# pass message to Reception
-	pass
-
-
-
-class Reception():
-	# Reception is a skill.  Not all clones have it.
-	# organize users and groups
-	# route Message to Broca of recepient
-	pass
-
-'''
-message passing
-send to everyone
-first guy to accept it stops the broadcast
+make wsgi stub
+	link it into passenger_wsgi
+	link it into samweb
 
 goal:  create two clones and let them have a human conversation together
 
-the first sam needs
-port assignement
-clone(): 
-	each clone gets a new port
-	a clone is a process running samd
-	a clone is an entry in the database describing the clone
+support clones
+	clones = []
+	clone.append(Sam('Sam'))
+	clone.append(Sam('Lee'))
+
+class User:
+	def __init__(self):
+		self.uuid = ''  # unique id 
+		self.name = ''  # human readable name 
+		self.personality = {}
+		self.memory = {}
+
+	def getuuid(self):
+		pass
+
+	def save(self):
+		# write to database
+		pass
+
+	def restore(self):
+		# read from database
+		pass
+
+class Human(User):
+	def __init__(self):
+		self.vocab = {}
+
+	def isHuman(self):
+		return True
+
+class Clone(User):
+	def __init__(self):
+		self.host =   # ip 
+		self.port =   # unique port assignement
+		self.pid =    # each clone is a daemon process running samd
+
+	def isHuman(self):
+		return False
+
+	def announce(self):
+		# announce my presence to the world
+		pass
+	
+	def getport(self):
+		pass
+
+db
 	is it really necessary to have a central db?
 	what about a distributed db?
-	or a pickle or some such storage for each clone
+
 	use db for grammar
 	if central db can be found on inet
 	grammar is necessary for communicating with humans
-a set of ports
 
+message passing
+	send to everyone
+	first guy to accept it stops the broadcast
 
 human protocols
-languages are sometimes mixed
-sawat di krup.  see you.
+	languages are sometimes mixed
+	sawat di krup.  see you.
 
 commuter can reduce a sentence to numbers, word ids
-subject adj verb adv object adj
-subject adj verb adv nominative adj
+	subject adj verb adv object adj
+	subject adj verb adv nominative adj
 
 human languages screw with word order
-computer should maybe be flexible with word order
-part of deconstructing a human utterance is untangling the word order
+	computer should maybe be flexible with word order
+	part of deconstructing a human utterance is untangling the word order
 
-'''

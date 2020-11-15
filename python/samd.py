@@ -3,31 +3,49 @@
 import ipc
 import configparser
 
-def server_process_request(object):
-	print(f'recv: {object.toString()}')
-	response = ipc.Message(object.frm, object.to, f'echo {object.msg}')
-	print(f'send: {response.toString()}')
-	return response
+switchboard = None
+security = None
+reception = None
 
 class Switchboard():
 	def __init__(self):
+		pass
+
+	def listen(self):
 		config = configparser.ConfigParser()
 		config.read('../../sam.conf')
 		server_address = (config['samd']['host'], int(config['samd']['port']))
 		print(f'Listening on {server_address}')
-		ipc.Server(server_address, server_process_request).serve_forever()
+		ipc.Server(server_address, self.receive).serve_forever()
+
+	def receive(self,message):
+		print(f'recv: {message.toString()}')
+		reply = security.process(message)
+		print(f'send: {reply.toString()}')
+		return reply
 
 class Security():
-	# check credentials
-	# pass message to Reception
-	pass
+	def __init__(self):
+		pass
+
+	def process(self, message):
+		return reception.process(message)
 
 
 class Reception():
+	def __init__(self):
+		pass
+
 	# Reception is a skill.  Not all clones have it.
 	# organize users and groups
 	# route Message to Broca of recepient
-	pass
+
+	def process(self, message):
+		response = ipc.Message(message.frm, message.to, f'echo {message.msg}')
+		return response
 
 if __name__ == '__main__':
 	switchboard = Switchboard()
+	security = Security()
+	reception = Reception()
+	switchboard.listen()  # does not return

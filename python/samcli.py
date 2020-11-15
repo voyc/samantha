@@ -36,7 +36,7 @@ def main():
 
 			with ipc.Client(server_address) as client:
 				response = client.send(message)
-				print( f'>>> {response.msg}')
+				print( f'--> {response.msg}')
 
 		time.sleep(0.01) 
 
