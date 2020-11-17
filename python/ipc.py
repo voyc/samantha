@@ -1,5 +1,9 @@
-# ipc.py
-# https://gist.github.com/dankrause/9607475
+''' 
+ipc.py  socket comm via classes Client and Server
+
+sources: 
+https://gist.github.com/dankrause/9607475
+'''
 
 import socketserver
 import socket
@@ -63,10 +67,28 @@ class Message():
 	def print(self):
 		print( self.toString())
 
-class Server(socketserver.ThreadingUnixStreamServer):
+class Server:
+	def __init__(self, addr, callback):
+		self.addr = addr
+		self.callback = callback
+
+	def listen(self):
+		self.sock = ServerSocket(addrTuple(self.addr), self.callback)
+		self.thread = threading.Thread(target=self._serveLoop, args=(), daemon=True)
+		self.thread.start()
+		self.thread.join()  # blocking
+		print('never gets here')
+
+	def _serveLoop(self):  # thread target
+		self.sock.serve_forever()  # blocking until shutdown()
+
+	def close(self):
+		self.sock.shutdown()     # _serveLoop returns 
+		self.sock.server_close() #  waits for client handles to be released
+		# thread stops
+
+class ServerSocket(socketserver.ThreadingUnixStreamServer):
 	def __init__(self, server_address, callback, bind_and_activate=True):
-		if not callable(callback):
-			callback = lambda x: []
 
 		class IPCHandler(socketserver.BaseRequestHandler):
 			def handle(self):
@@ -80,7 +102,7 @@ class Server(socketserver.ThreadingUnixStreamServer):
 
 		self.address_family = socket.AF_INET
 
-		socketserver.TCPServer.__init__(self, addrTuple(server_address), IPCHandler, bind_and_activate)
+		socketserver.TCPServer.__init__(self, server_address, IPCHandler, bind_and_activate)
 
 class Client:
 	def __init__(self, server_address, callback):

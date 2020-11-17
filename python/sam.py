@@ -31,22 +31,6 @@ class Human(User):
 	def isHuman(self):
 		return True
 
-#class SocketAddr:
-#	def __init__(self, ip, port):
-#		self.ip = str(ip)
-#		self.port = int(port)
-#
-#	@classmethod
-#	def fromString(cls,s):
-#		ip, port = s.split(':')
-#		return cls(ip,port)
-#
-#	def toTuple(self):
-#		return (self.ip, self.port)
-#
-#	def toString(self):
-#		return f'{self.ip}:{self.port}'
-	
 class Sam(User):
 	clones = {}
 
