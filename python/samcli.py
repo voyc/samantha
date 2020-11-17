@@ -3,42 +3,36 @@
 # https://stackoverflow.com/questions/5404068/how-to-read-keyboard-input
 
 import threading
-import queue
 import time
 import ipc
 import configparser
 
+configfilename = '../../samd.conf'
 config = configparser.ConfigParser()
-config.read('../../sam.conf')
-server_address = (config['samd']['host'], int(config['samd']['port']))
+config.read(configfilename)
+
 exit_command = 'q'
 
-def read_kbd_input(inputQueue):
+def keyboardLoop(csock):
 	while (True):
-		input_str = input()
-		inputQueue.put(input_str)
+		s = input()
+		if (s == exit_command):
+			break
+		message = ipc.Message('sam', 'john', s)
+		csock.send(message)
+		time.sleep(0.01) 
+
+def onReceive(message):
+	print( f'--> {message.msg}')
 
 def main():
-	inputQueue = queue.Queue()
+	ssock_addr = config['addr']['sam']
+	csock = ipc.Client(ssock_addr, onReceive)
+	print(f'Talking to {ssock_addr}...')
 
-	inputThread = threading.Thread(target=read_kbd_input, args=(inputQueue,), daemon=True)
-	inputThread.start()
-	print(f'Talking to {server_address}...')
-
-	while (True):
-		if (inputQueue.qsize() > 0):
-			input_str = inputQueue.get()
-
-			if (input_str == exit_command):
-				break
-			
-			message = ipc.Message('sam', 'john', input_str)
-
-			with ipc.Client(server_address) as client:
-				response = client.send(message)
-				print( f'--> {response.msg}')
-
-		time.sleep(0.01) 
+	keyboardThread = threading.Thread(target=keyboardLoop, args=(csock,), daemon=True)
+	keyboardThread.start()
+	keyboardThread.join()
 
 if __name__ == '__main__':
 	main()

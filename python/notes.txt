@@ -83,3 +83,14 @@ human languages screw with word order
 	computer should maybe be flexible with word order
 	part of deconstructing a human utterance is untangling the word order
 
+what if protocols are extended to include regurgitation of stories from local news media?
+
+inter-clone conversation
+	each clone has an address, ip:port, 127.0.0.1:5795
+	each clone has a server socket
+	when one clone wants to talk to another
+		he can create a client socket to do so
+	can a python program use a websocket directly, without the http server?
+		or would he use something like wget?
+
+

@@ -2,29 +2,26 @@
 
 import ipc
 import configparser
+configfilename = '../../samd.conf'
+config = configparser.ConfigParser()
+config.read(configfilename)
 
-switchboard = None
-security = None
-reception = None
-
-class Switchboard():
+class Switchboard:
 	def __init__(self):
-		pass
+		self.ssock_addr = config['addr']['sam']
 
-	def listen(self):
-		config = configparser.ConfigParser()
-		config.read('../../sam.conf')
-		server_address = (config['samd']['host'], int(config['samd']['port']))
-		print(f'Listening on {server_address}')
-		ipc.Server(server_address, self.receive).serve_forever()
-
-	def receive(self,message):
+	def onMessage(self,message):  # callback from server socket
 		print(f'recv: {message.toString()}')
 		reply = security.process(message)
-		print(f'send: {reply.toString()}')
+		if reply:
+			print(f'send: {reply.toString()}')
 		return reply
 
-class Security():
+	def listen(self):
+		print(f'Listening on {self.ssock_addr}')
+		ipc.Server(self.ssock_addr, self.onMessage).serve_forever() # blocking
+
+class Security:
 	def __init__(self):
 		pass
 
@@ -32,7 +29,7 @@ class Security():
 		return reception.process(message)
 
 
-class Reception():
+class Reception:
 	def __init__(self):
 		pass
 
@@ -44,8 +41,12 @@ class Reception():
 		response = ipc.Message(message.frm, message.to, f'echo {message.msg}')
 		return response
 
-if __name__ == '__main__':
+def main():
+	global switchboard, security, reception
 	switchboard = Switchboard()
 	security = Security()
 	reception = Reception()
-	switchboard.listen()  # does not return
+	switchboard.listen()  # blocking 
+	
+if __name__ == '__main__':
+	main()
