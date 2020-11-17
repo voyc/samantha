@@ -1,9 +1,4 @@
-''' 
-ipc.py  socket comm via classes Client and Server
-
-sources: 
-https://gist.github.com/dankrause/9607475
-'''
+''' ipc.py  socket comm via classes Client and Server '''
 
 import socketserver
 import socket
@@ -76,11 +71,12 @@ class Server:
 		self.sock = ServerSocket(addrTuple(self.addr), self.callback)
 		self.thread = threading.Thread(target=self._serveLoop, args=(), daemon=True)
 		self.thread.start()
-		self.thread.join()  # blocking
-		print('never gets here')
 
 	def _serveLoop(self):  # thread target
-		self.sock.serve_forever()  # blocking until shutdown()
+		try:
+			self.sock.serve_forever()  # blocking local thread until shutdown()
+		except KeyboardInterrupt:
+			self.ssock.close()	
 
 	def close(self):
 		self.sock.shutdown()     # _serveLoop returns 

@@ -1,5 +1,5 @@
 '''
-lobby.py, defines classes: Switchboard, Security, Reception
+lobby.py, the Lobby includes Switchboard, Security, Reception
 '''
 import ipc
 
@@ -17,12 +17,10 @@ class Switchboard:
 
 	def listen(self):
 		self.ssock = ipc.Server(self.ssock_addr, self.onMessage)
-		try:
-			print(f'Listening on {self.ssock_addr}')
-			self.ssock.listen()
-		except KeyboardInterrupt:
-			#close the socket and stop the tread
-			self.ssock.close()	
+		self.ssock.listen()  # blocking
+
+	def close(self):
+		self.ssock.close()
 
 class Security:
 	def __init__(self, reception):
@@ -49,4 +47,4 @@ class Lobby:
 		self.reception = Reception()
 		self.security = Security(self.reception)
 		self.switchboard = Switchboard(ssock_addr, self.security)
-		self.switchboard.listen()
+

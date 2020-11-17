@@ -1,10 +1,6 @@
-# sam.py
+''' user.py - define classes User, Human, and Sam '''
 
-import configparser
-
-config = configparser.ConfigParser()
-config.read('../../samd.conf')
-ssock_address = config['addr']['sam']
+import lobby
 
 class User:
 	def __init__(self, name=''):
@@ -51,25 +47,14 @@ class Sam(User):
 		pass
 
 	def listen(self):
-		# open server socket
-		pass
+		self.lobby = lobby.Lobby(self.addr)
+		self.lobby.switchboard.listen();
+		print(f'{self.name} is Listening on {self.ssock_addr}')
 
 	def connect(self, addr):
 		# connect to the server socket of another clone
 		pass
 
-def main():
-	sam = Sam('Sam', 'localhost:5795')
-	lee = Sam('Lee', 'localhost:5796')
-	print(sam.isHuman())
-	print(lee.isHuman())
-	print(sam.name)
-	print(lee.name)
-	print(lee.addr)
-	sam.listen()
-	sock = lee.connect(sam.addr)
-	lee.converse(sock)
-	# shall i clone myself once for every conversation?
+	def join(self):
+		self.lobby.switchboard.ssock.thread.join()
 
-if __name__ == '__main__':
-	main()
