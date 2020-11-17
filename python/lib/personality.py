@@ -1,4 +1,4 @@
-
+''' personality.py   characteristics of a user '''
 
 # personality big five (temperament)
 openness = 0.0           # +1=inventive/curious       -1=consistent/cautious

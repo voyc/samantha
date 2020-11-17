@@ -1,7 +1,7 @@
 ''' user.py - define classes User, Human, and Sam '''
 
-import lobby
-import ipc
+import lib.lobby as lobby
+import lib.ipc as ipc
 
 class User:
 	def __init__(self, name=''):

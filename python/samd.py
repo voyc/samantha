@@ -2,7 +2,7 @@
 samd.py   instantiate the first Sam daemon, usually as a service at boot
 '''
 
-import user
+import lib.user as user
 import configparser
 
 configfilename = '../../samd.conf'

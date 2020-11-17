@@ -2,7 +2,7 @@
 
 import threading
 import time
-import ipc
+import lib.ipc as ipc
 import configparser
 
 configfilename = '../../samd.conf'

@@ -1,7 +1,7 @@
 '''
 lobby.py, the Lobby includes Switchboard, Security, Reception
 '''
-import ipc
+import lib.ipc as ipc
 
 class Switchboard:
 	def __init__(self, ssock_addr, security):
