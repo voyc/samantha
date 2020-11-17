@@ -1,6 +1,7 @@
 ''' user.py - define classes User, Human, and Sam '''
 
 import lobby
+import ipc
 
 class User:
 	def __init__(self, name=''):
@@ -49,11 +50,14 @@ class Sam(User):
 	def listen(self):
 		self.lobby = lobby.Lobby(self.addr)
 		self.lobby.switchboard.listen();
-		print(f'{self.name} is Listening on {self.ssock_addr}')
+		print(f'{self.name} is Listening on {self.addr}')
 
 	def connect(self, addr):
-		# connect to the server socket of another clone
-		pass
+		self.csock = ipc.Client(addr, onReceive)
+
+	def send(self, msg):
+		message = Message('Sam', self.name, msg)
+		self.csock.send(message)
 
 	def join(self):
 		self.lobby.switchboard.ssock.thread.join()

@@ -1,6 +1,4 @@
-#!/usr/bin/python3
-# samcli.py
-# https://stackoverflow.com/questions/5404068/how-to-read-keyboard-input
+''' samcli.py - cli interface to samd '''
 
 import threading
 import time
