@@ -25,7 +25,7 @@ voyc.Account = function () {
 	
 	var url = '/account/svc.php';
 	if (window.location.origin == 'file://' || window.location.port == '8080') {
-		url = 'http://samantha.voyc.com/account/svc';  // for local testing
+		url = 'http://samantha.voyc.com/account/svc.php';  // for local testing
 	}
 	this.comm = new voyc.Comm(url, 'acomm', 2, true);
 
