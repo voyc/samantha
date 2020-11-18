@@ -2,6 +2,8 @@ import configparser
 import psycopg2
 import sys
 
+configfilename = '../../samd.conf'
+
 def getUserByToken(conn,token):
 	return 1
 
@@ -25,8 +27,10 @@ class UserVocab:
 	# onlogin, load user's vocab into memory
 	def onLogin(self,token):
 		config = configparser.ConfigParser()
-		config.read('../../config.ini')
-		conn = psycopg2.connect(f"dbname={config['db']['name']} user={config['db']['user']} password={config['db']['password']} port={config['db']['port']}") 
+		config.read(configfilename)
+		dstr = f"dbname={config['db']['name']} user={config['db']['user']} password={config['db']['password']} host={config['db']['host']} port={config['db']['port']}" 
+		print(dstr)
+		conn = psycopg2.connect(dstr)
 
 		self.userid = getUserByToken(conn, token)
 		self.list = []
@@ -51,7 +55,7 @@ class UserVocab:
 
 uservocab = UserVocab()
 uservocab.onLogin('xyc')
-uservocab.print()
+#uservocab.print()
 
 #        // build array of vocab words
 #        $vocabs = array();

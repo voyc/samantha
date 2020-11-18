@@ -7,9 +7,9 @@ import sys
 import socket   # used only to find hostname
 import random   # used for generating userid
 
-from numgen import *
-from sengen import *
-from grammar import *
+from grammar.numgen import *
+from grammar.sengen import *
+from grammar.grammar import *
 
 port = 50000
 ip = '68.66.224.22'  # a2hosting

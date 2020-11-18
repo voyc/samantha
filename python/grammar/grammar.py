@@ -2,9 +2,9 @@
 
 import re
 import random
-from numgen import *
+from grammar.numgen import *
 import os 
-from vocab import *
+from grammar.vocab import *
 
 thispath = os.path.dirname(os.path.realpath(__file__)) + '/'
 
@@ -240,6 +240,9 @@ def sengen(s):
 	sentences = gensen(semantics, {'target':s})
 	return random.choice(sentences)
 
-s = sengen('คะ')
-print(s)
-
+#def main():
+#	s = sengen('คะ')
+#	print(s)
+#
+#if __name__ == 'main':
+#	main()
