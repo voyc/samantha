@@ -1,5 +1,21 @@
 
-make separate receive thread in samd
+x make separate receive thread in samd
+
+break down samchat: lobby vs chat.  Think.  Where do we want lobby?  Chat or Sam
+	to support cli, it has to be in sam, not chat
+	chat could be a nice standalone server
+	if lobby is in chat, will sam know about the groups?
+	what does sam need to know about the groups?
+	he's going to be conducting a four-way conversation between student, coach, self, and drill sargeant
+
+samd switchboard is a websockets server built on asyncio
+	every incoming message is passed to security 
+	in a concurrent.futures thread pool executor
+	therefore, we don't have to keep using the async/await syntax outside of switchboard
+
+edit samd
+	build webchat code into switchboard, replacing ipc
+	when switchboard calls security, invoke thread pool executor
 
 run samchat, samweb, samcli together
 
