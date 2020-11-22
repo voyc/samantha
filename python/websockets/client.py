@@ -3,7 +3,7 @@ import asyncio
 import websockets
 import queue
 
-addr = 'ws://localhost:8765'
+addr = 'ws://localhost:50001'
 socket = None
 q = queue.SimpleQueue()
 
