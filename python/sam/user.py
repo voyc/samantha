@@ -1,6 +1,5 @@
 ''' user.py - define classes User, Human, and Sam '''
 
-import sam.lobby
 import importlib
 
 class User:
@@ -29,14 +28,14 @@ class Human(User):
 		return True
 
 class Sam(User):
-	clones = {}
-	skills = {}  # dict of name/object pairs
 
-	def __init__(self, name='', addr=''):
+	def __init__(self, name='', addr='', skills=''):
 		super().__init__(name, addr)
+		self.skillnames = skills
 		self.addr = addr
 		self.pid = -1   # each clone is a daemon process running samd
-		Sam.clones[name] = self
+		self.clones = {}
+		self.skills = {}  # dict of name/object pairs
 
 	def isHuman(self):
 		return False
@@ -63,8 +62,8 @@ class Sam(User):
 	def join(self):
 		self.lobby.switchboard.ssock.thread.join()
 
-	def loadSkills(self, names=self.skillnames):
-		for name in names.split(','):
+	def loadSkills(self):
+		for name in self.skillnames.split(','):
 			self.addSkill(name)
 
 	def addSkill(self, name):
@@ -79,7 +78,9 @@ class Skill:
 
 	@staticmethod
 	def load( name):
-		mod = __import__( name )  # importlib.import_module(.name)
+		modname = f'sam.{name}'
+		mod = importlib.import_module(modname)
+
 		kls = getattr(mod, name.title())            
 		obj = kls('localhost:70000')
 		return obj

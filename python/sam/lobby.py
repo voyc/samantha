@@ -1,7 +1,6 @@
 ''' lobby.py, the Lobby includes Switchboard, Security, Reception '''
 
 import sam.comm
-import sam.user
 
 class Switchboard:
 	def __init__(self, ssock_addr, security):
@@ -16,7 +15,7 @@ class Switchboard:
 		return reply
 
 	def listen(self):
-		self.ssock = comm.Server(self.ssock_addr, self.onMessage)
+		self.ssock = sam.comm.Server(self.ssock_addr, self.onMessage)
 		self.ssock.listen()  # blocking
 
 	def close(self):
@@ -39,7 +38,7 @@ class Reception:
 	# route Message to Broca of recepient
 
 	def process(self, message):
-		response = comm.Message(message.frm, message.to, f'echo {message.msg}')
+		response = sam.comm.Message(message.frm, message.to, f'echo {message.msg}')
 		return response
 
 class Lobby(sam.user.Skill):
