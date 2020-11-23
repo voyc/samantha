@@ -1,7 +1,7 @@
-'''
-lobby.py, the Lobby includes Switchboard, Security, Reception
-'''
-import lib.ipc as ipc
+''' lobby.py, the Lobby includes Switchboard, Security, Reception '''
+
+import sam.comm
+import sam.user
 
 class Switchboard:
 	def __init__(self, ssock_addr, security):
@@ -16,7 +16,7 @@ class Switchboard:
 		return reply
 
 	def listen(self):
-		self.ssock = ipc.Server(self.ssock_addr, self.onMessage)
+		self.ssock = comm.Server(self.ssock_addr, self.onMessage)
 		self.ssock.listen()  # blocking
 
 	def close(self):
@@ -39,10 +39,10 @@ class Reception:
 	# route Message to Broca of recepient
 
 	def process(self, message):
-		response = ipc.Message(message.frm, message.to, f'echo {message.msg}')
+		response = comm.Message(message.frm, message.to, f'echo {message.msg}')
 		return response
 
-class Lobby:
+class Lobby(sam.user.Skill):
 	def __init__(self, ssock_addr):
 		self.reception = Reception()
 		self.security = Security(self.reception)

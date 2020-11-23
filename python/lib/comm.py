@@ -15,6 +15,8 @@ def splitAddr(addr):
 	return addr, host, port, uri
 
 class Client:
+	exit_string = 'q'
+
 	def __init__(self):
 		self.socket = None
 		self.q = queue.SimpleQueue()
@@ -43,7 +45,6 @@ class Client:
 
 	async def openSocket(self, uri):
 		self.socket = await websockets.connect(uri)
-		print(self.socket)
 
 	async def closeSocket(self):
 		await self.socket.close()
@@ -83,10 +84,8 @@ class Server:
 		self.threadListen.start()
 
 	def _listen(self):
-		#import pdb; pdb.set_trace()
 		loop = asyncio.new_event_loop()
 		asyncio.set_event_loop(loop)
-		#loop = asyncio.get_running_loop()
 		loop.run_until_complete( websockets.serve(self._onMessage, self.host, self.port))
 		loop.run_forever()  # block threadListen
 
@@ -111,8 +110,9 @@ def test():
 		def echo(websocket, message): return f'echo: {message}'  # one websocket per connection
 		s = Server()
 		s.listen(addr, echo)
+		print(f'listening on {addr}...')
 		s.join()  # blocking
-	elif 'client' in sys.argv:
+	if 'client' in sys.argv:
 		csock = Client()
 		csock.connect(addr)
 		csock.send('hey baby whats happening')
@@ -120,7 +120,7 @@ def test():
 			def _keyboardLoop(csock):
 				while True:
 					s = input()  # blocking threadKeyboard
-					if s == 'q':
+					if s == Client.exit_string:
 						csock.close()
 						break;
 					csock.send(s)

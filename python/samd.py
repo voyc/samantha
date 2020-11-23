@@ -6,12 +6,11 @@ import lib.user as user
 import configparser
 
 configfilename = '../../samd.conf'
-name = 'Sam'
 
 config = configparser.ConfigParser()
 config.read(configfilename)
-addr = config['addr'][name]
+name = config['comm']['name']
+addr = config['comm']['addr']
+skills = config['features']['skills']
 
-sam = user.Sam(name, addr)
-sam.listen()
-sam.join()
+sam = user.Sam(name, addr, skills)

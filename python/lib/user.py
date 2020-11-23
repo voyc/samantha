@@ -1,17 +1,17 @@
 ''' user.py - define classes User, Human, and Sam '''
 
-import lib.lobby as lobby
-import lib.ipc as ipc
+import sam.lobby
+import importlib
 
 class User:
-	def __init__(self, name=''):
-		self.uuid = ''    # unique id 
-		self.name = name  # human readable name 
-		self.personality = {}
+	def __init__(self, name='', addr='', skills=''):
+		self.name = name
+		self.addr = addr
+		self.skillnames = skills
+		self.token = ''
+		self.traits = {}
+		self.feelings = {}
 		self.memory = {}
-
-	def getuuid(self):
-		pass
 
 	def save(self):
 		# write to database
@@ -30,9 +30,10 @@ class Human(User):
 
 class Sam(User):
 	clones = {}
+	skills = {}  # dict of name/object pairs
 
 	def __init__(self, name='', addr=''):
-		super().__init__(name)
+		super().__init__(name, addr)
 		self.addr = addr
 		self.pid = -1   # each clone is a daemon process running samd
 		Sam.clones[name] = self
@@ -48,7 +49,7 @@ class Sam(User):
 		pass
 
 	def listen(self):
-		self.lobby = lobby.Lobby(self.addr)
+		self.lobby = sam.lobby.Lobby(self.addr)
 		self.lobby.switchboard.listen();
 		print(f'{self.name} is Listening on {self.addr}')
 
@@ -62,3 +63,26 @@ class Sam(User):
 	def join(self):
 		self.lobby.switchboard.ssock.thread.join()
 
+	def loadSkills(self, names=self.skillnames):
+		for name in names.split(','):
+			self.addSkill(name)
+
+	def addSkill(self, name):
+		self.skills[name] = Skill.load(name)
+
+class Skill:
+	''' module skill/lobby.py defines class Lobby which implements method execute() '''
+	def __init__(self, name):
+		self.name = name
+		self.classname = name.title()
+		self.load()
+
+	@staticmethod
+	def load( name):
+		mod = __import__( name )  # importlib.import_module(.name)
+		kls = getattr(mod, name.title())            
+		obj = kls('localhost:70000')
+		return obj
+
+	def execute(self, *args, **kwargs):
+		pass

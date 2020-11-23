@@ -1,18 +1,29 @@
 ''' samcli.py - cli interface to samd '''
 
-import asyncio
-import websockets
+import lib.comm as comm
 import configparser
+import threading
 
 configfilename = '../../samd.conf'
 config = configparser.ConfigParser()
 config.read(configfilename)
+addr = config['addr']['Sam']
 
-host = config['chat']['host']
-port = config['chat']['port']
-addr = f'ws://{host}:{port}'
+csock = comm.Client()
+csock.connect(addr)
+print(f'connected to {addr}...')
 
-exit_command = 'q'
+def _keyboardLoop(csock):
+	while True:
+		s = input()  # blocking threadKeyboard
+		if s == comm.Client.exit_string:
+			csock.close()
+			break;
+		csock.send(s)
+threadKeyboard = threading.Thread(target=_keyboardLoop, args=(csock,), daemon=True)
+threadKeyboard.start()
+
+csock.join()
 
 
 class Message():
@@ -39,78 +50,78 @@ class Message():
 	def print(self):
 		print( self.toString())
 
-async def keyboardLoop(uri):
-	while (True):
-		s = input()
-		if (s == exit_command):
-			break
-		message = Message('sam', 'john', s)
-		await websocket.send(message.serialize())
-
-async def socketLoop(uri):
-	while (True):
-		incoming = await websocket.recv()
-		print( incoming)
-
-#class ClientSocket(websockets.connect, websockets.WebSocketClientProtocol):
-#	def __init__():
-#		super()
-class ClientSocket(websockets.connect, websockets.client.WebSocketClientProtocol):
-	def __init__(self) -> websockets.client.WebSocketClientProtocol:
-		websockets.client.WebSocketClientProtocol.__init__(self)
-		super().__init__(addr)
-	
-scheduler = asyncio.get_event_loop()
-#websocket = websockets.WebSocketClientProtocol()
-#websocket = websockets.connect.unix_connect(uri=addr)
-#websocket.connect(addr)
-#websocket = websockets.client.Connect(addr)  # Connect object has no attribute "send"
-
-websocket = ClientSocket()
-#websocket = websockets.client.WebSocketClientProtocol()
-print(websocket.__class__)
-print(dir(websocket))
-print(websocket.state)
-print(websocket.side)
-print(websocket.is_client)
-#print(websocket.path)
-print(websocket.__module__)
-print(websocket.open)
-print(websocket.host)
-print(websocket.port)
-
-
-websocket = websockets.connect(addr)
-print(websocket.__class__)
-print(dir(websocket))
+#async def keyboardLoop(uri):
+#	while (True):
+#		s = input()
+#		if (s == exit_command):
+#			break
+#		message = Message('sam', 'john', s)
+#		await websocket.send(message.serialize())
+#
+#async def socketLoop(uri):
+#	while (True):
+#		incoming = await websocket.recv()
+#		print( incoming)
+#
+##class ClientSocket(websockets.connect, websockets.WebSocketClientProtocol):
+##	def __init__():
+##		super()
+#class ClientSocket(websockets.connect, websockets.client.WebSocketClientProtocol):
+#	def __init__(self) -> websockets.client.WebSocketClientProtocol:
+#		websockets.client.WebSocketClientProtocol.__init__(self)
+#		super().__init__(addr)
+#	
+#scheduler = asyncio.get_event_loop()
+##websocket = websockets.WebSocketClientProtocol()
+##websocket = websockets.connect.unix_connect(uri=addr)
+##websocket.connect(addr)
+##websocket = websockets.client.Connect(addr)  # Connect object has no attribute "send"
+#
+#websocket = ClientSocket()
+##websocket = websockets.client.WebSocketClientProtocol()
+#print(websocket.__class__)
+#print(dir(websocket))
 #print(websocket.state)
-print(websocket.side)
-print(websocket.is_client)
-#print(websocket.path)
-print(websocket.__module__)
-print(websocket.open)
-print(websocket.host)
-print(websocket.port)
-
-
-try:
-	asyncio.ensure_future(keyboardLoop(websocket))
-	#asyncio.ensure_future(socketLoop(websocket))
-	scheduler.run_forever()
-except KeyboardInterrupt:
-	pass
-finally:
-	scheduler.close()
-	websocket.close()
-
-
-async def hello(uri):
-	async with websockets.connect(uri) as websocket:
-		#await websocket.send("Hello world!")
-		message = Message('sam', 'john', 'god damn i hate you')
-		await websocket.send(message.serialize())
-		msg = await websocket.recv()
-		print(msg)
+#print(websocket.side)
+#print(websocket.is_client)
+##print(websocket.path)
+#print(websocket.__module__)
+#print(websocket.open)
+#print(websocket.host)
+#print(websocket.port)
+#
+#
+#websocket = websockets.connect(addr)
+#print(websocket.__class__)
+#print(dir(websocket))
+##print(websocket.state)
+#print(websocket.side)
+#print(websocket.is_client)
+##print(websocket.path)
+#print(websocket.__module__)
+#print(websocket.open)
+#print(websocket.host)
+#print(websocket.port)
+#
+#
+#try:
+#	asyncio.ensure_future(keyboardLoop(websocket))
+#	#asyncio.ensure_future(socketLoop(websocket))
+#	scheduler.run_forever()
+#except KeyboardInterrupt:
+#	pass
+#finally:
+#	scheduler.close()
+#	websocket.close()
+#
+#
+#async def hello(uri):
+#	async with websockets.connect(uri) as websocket:
+#		#await websocket.send("Hello world!")
+#		message = Message('sam', 'john', 'god damn i hate you')
+#		await websocket.send(message.serialize())
+#		msg = await websocket.recv()
+#		print(msg)
 
 #scheduler.run_until_complete(hello(addr))
 
