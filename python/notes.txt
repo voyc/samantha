@@ -1,17 +1,11 @@
+x pass Message object between Client and Server, samd and samcli, use string name for from and to, later replaced with token
+- build out Reception from webchat, users and groups, archive webchat
+- samcli, print proper message when connection fails because server not up
+- reimplement samcli as Human, loading skill connect, wrapping comm.Client, plus keyboard (skill?)
+- implement skill converse
+- implement leed, with skills connect and converse, conversing with samd
+- implement security, account, built into converse: "what is your name?" "do you really want to change your password?"
 
-- samd
-	x use sam.user.Sam
-	x load skill lobby
-	x execute skill lobby
-	x use sam.user.lobby.switchboard.comm.Server
-	- move users and groups from webchat to reception
-	- fold webchat into lobby
-	- delete webchat.py
-
-- samcli
-	x use sam.comm.Client
-	o- use sam.comm.Message
-	- proper message when connection fails because server not up
 
 make wsgi stub
 	link it into passenger_wsgi

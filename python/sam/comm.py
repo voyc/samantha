@@ -6,6 +6,7 @@ import websockets
 import threading
 import queue
 import sys
+import json
 
 def splitAddr(addr):
 	''' has format 52.102.68.4:59205 '''
@@ -21,8 +22,8 @@ class Message():
 		self.msg = msg
 
 	def serialize(self):
-		#return json.dumps(self.__dict__)
-		return f'login~{self.frm}~{self.msg}'
+		return json.dumps(self.__dict__)
+		#return f'login~{self.frm}~{self.msg}'
 
 	#def deserialize(self,data):
 	#	self.__dict__ = json.loads(data)
@@ -34,9 +35,6 @@ class Message():
 
 	def toString(self):
 		return f'to {self.to}, from {self.frm}: {self.msg}'
-
-	def print(self):
-		print( self.toString())
 
 class Client:
 	exit_string = 'q'
@@ -74,26 +72,27 @@ class Client:
 		await self.socket.close()
 		await asyncio.sleep(.1)  # give sendLoop time to exit
 
-	def send(self,s):
-		self.q.put(s)
+	def send(self,m):
+		self.q.put(m)
 
 	async def sendLoop(self):
 		while self.socket.state == 1: # State.OPEN:
 			try:
-				s = self.q.get(block=False)
+				m = self.q.get(block=False)
 			except queue.Empty:
 				await asyncio.sleep(.08)  # like yield
 			else:	
-				await self.socket.send(s)
+				await self.socket.send(m.serialize())
 
 	async def receiveLoop(self):
 		while self.running:
 			try:
-				s = await self.socket.recv()
+				r = await self.socket.recv()
+				m = Message.deserialize(r)
 			except websockets.exceptions.ConnectionClosed:
 				break
 			else:
-				print(s)
+				print(f'--> {m.msg}')
 
 class Server:
 	def init(self):
@@ -119,9 +118,8 @@ class Server:
 	async def _onMessage(self, websocket, path):
 		''' called by websockets.serve on receipt of a message '''
 		async for message in websocket:
-			response = self.callback(websocket, message)
+			response = self.callback( Message.deserialize(message))
 			await self.reply(websocket, response)
 
 	async def reply(self, websocket, response):
-		print(response)
-		await websocket.send(response)
+		await websocket.send(response.serialize())
