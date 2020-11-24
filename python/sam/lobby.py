@@ -2,15 +2,19 @@
 
 import sam.comm
 
-class Lobby(sam.user.Skill):
-	def __init__(self, ssock_addr):
+class Lobby(sam.user.Skill):  # do we want a base class Skill() ?
+	def __init__(self, user):
 		self.reception = Reception()
 		self.security = Security(self.reception)
-		self.switchboard = Switchboard(ssock_addr, self.security)
+		self.switchboard = Switchboard(user.addr, self.security)
+		self.switchboard.listen()
+
+	def join(self):
+		self.switchboard.socket.join()
 
 class Switchboard:
-	def __init__(self, ssock_addr, security):
-		self.ssock_addr = ssock_addr
+	def __init__(self, addr, security):
+		self.addr = addr
 		self.security = security
 
 	def onMessage(self,message):  # callback from server socket
@@ -21,11 +25,12 @@ class Switchboard:
 		return reply
 
 	def listen(self):
-		self.ssock = sam.comm.Server(self.ssock_addr, self.onMessage)
-		self.ssock.listen()  # blocking
+		self.socket = sam.comm.Server()
+		self.socket.listen(self.addr, self.onMessage)  # blocking
+		print(f'switchboard listening on {self.addr}...')
 
 	def close(self):
-		self.ssock.close()
+		self.socket.close()
 
 class Security:
 	def __init__(self, reception):

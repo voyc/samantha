@@ -48,11 +48,6 @@ class Sam(User):
 	def getuniqueport(self):
 		pass
 
-	def listen(self):
-		self.lobby = sam.lobby.Lobby(self.addr)
-		self.lobby.switchboard.listen();
-		print(f'{self.name} is Listening on {self.addr}')
-
 	def connect(self, addr):
 		self.csock = ipc.Client(addr, onReceive)
 
@@ -61,33 +56,29 @@ class Sam(User):
 		self.csock.send(message)
 
 	def join(self):
-		self.lobby.switchboard.ssock.thread.join()
+		''' run join on each skill, block until all threads closed '''
+		for skill in self.skills.values():
+			skill.join()
 
 	def loadSkills(self):
 		for name in self.skillnames.split(','):
 			self.addSkill(name)
 
 	def addSkill(self, name):
-		self.skills[name] = Skill.load(name)
+		self.skills[name] = Skill.load(name, self)
 
 class Skill:
-	''' module skill/lobby.py defines class Lobby which implements method execute() '''
-	def __init__(self, name):
-		self.name = name
-		self.classname = name.title()
-		self.load()
+	''' base class for skill classes '''
+	''' for example: file lobby.py, contains module lobby, which defines class Lobby '''
+	''' currently not used as base class.  using only the static method load() '''
 
 	@staticmethod
-	def load( name):
+	def load( name, user):
 		modname = f'sam.{name}'
-		mod = importlib.import_module(modname)
-
-		kls = getattr(mod, name.title())            
-		obj = kls('localhost:70000')
+		mod = importlib.import_module(modname)  # import module
+		kls = getattr(mod, name.title())        # get class from module
+		obj = kls(user)                         # instantiate object
 		return obj
-
-	def execute(self, *args, **kwargs):
-		pass
 
 class Traits:
 	''' personality traits of a user '''

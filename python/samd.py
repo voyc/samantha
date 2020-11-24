@@ -12,3 +12,7 @@ addr = config['comm']['addr']
 skills = config['features']['skills']
 
 sam = sam.user.Sam(name, addr, skills)
+
+# ...
+
+sam.join() # blocking

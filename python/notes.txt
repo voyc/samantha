@@ -1,17 +1,17 @@
 
 - samd
-	- use sam.user.Sam
-	- load skill lobby
-	- execute skill lobby
-	- use sam.user.lobby.switchboard.comm.Server
+	x use sam.user.Sam
+	x load skill lobby
+	x execute skill lobby
+	x use sam.user.lobby.switchboard.comm.Server
 	- move users and groups from webchat to reception
 	- fold webchat into lobby
 	- delete webchat.py
 
 - samcli
 	x use sam.comm.Client
-	- use sam.comm.Message
-
+	o- use sam.comm.Message
+	- proper message when connection fails because server not up
 
 make wsgi stub
 	link it into passenger_wsgi
