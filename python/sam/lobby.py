@@ -1,6 +1,12 @@
-''' lobby.py, the Lobby includes Switchboard, Security, Reception '''
+''' lobby.py - a skill, managing incoming connections '''
 
 import sam.comm
+
+class Lobby(sam.user.Skill):
+	def __init__(self, ssock_addr):
+		self.reception = Reception()
+		self.security = Security(self.reception)
+		self.switchboard = Switchboard(ssock_addr, self.security)
 
 class Switchboard:
 	def __init__(self, ssock_addr, security):
@@ -40,10 +46,3 @@ class Reception:
 	def process(self, message):
 		response = sam.comm.Message(message.frm, message.to, f'echo {message.msg}')
 		return response
-
-class Lobby(sam.user.Skill):
-	def __init__(self, ssock_addr):
-		self.reception = Reception()
-		self.security = Security(self.reception)
-		self.switchboard = Switchboard(ssock_addr, self.security)
-
