@@ -14,6 +14,30 @@ def splitAddr(addr):
 	uri = f'ws://{host}:{port}'
 	return addr, host, port, uri
 
+class Message():
+	def __init__(self, to='', frm='', msg=''):
+		self.to = to
+		self.frm = frm
+		self.msg = msg
+
+	def serialize(self):
+		#return json.dumps(self.__dict__)
+		return f'login~{self.frm}~{self.msg}'
+
+	#def deserialize(self,data):
+	#	self.__dict__ = json.loads(data)
+
+	@classmethod
+	def deserialize(cls,data):
+		a = json.loads(data)
+		return cls(a['to'], a['frm'], a['msg'])
+
+	def toString(self):
+		return f'to {self.to}, from {self.frm}: {self.msg}'
+
+	def print(self):
+		print( self.toString())
+
 class Client:
 	exit_string = 'q'
 
@@ -101,32 +125,3 @@ class Server:
 	async def reply(self, websocket, response):
 		print(response)
 		await websocket.send(response)
-
-def test():
-	''' test stub '''
-	addr = 'localhost:50001'
-	
-	if 'server' in sys.argv:
-		def echo(websocket, message): return f'echo: {message}'  # one websocket per connection
-		s = Server()
-		s.listen(addr, echo)
-		print(f'listening on {addr}...')
-		s.join()  # blocking
-	if 'client' in sys.argv:
-		csock = Client()
-		csock.connect(addr)
-		csock.send('hey baby whats happening')
-		if 'keyboard' in sys.argv:
-			def _keyboardLoop(csock):
-				while True:
-					s = input()  # blocking threadKeyboard
-					if s == Client.exit_string:
-						csock.close()
-						break;
-					csock.send(s)
-			threadKeyboard = threading.Thread(target=_keyboardLoop, args=(csock,), daemon=True)
-			threadKeyboard.start()
-		csock.join()
-
-if __name__ == '__main__':
-	test()

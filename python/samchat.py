@@ -11,8 +11,7 @@ configfilename = '../../samd.conf'
 config = configparser.ConfigParser()
 config.read(configfilename)
 
-ip = config['chat']['host']
-port = config['chat']['port']
+addr = config['comm']['addr']
 
 hostname = 'Sam'
 timeout = datetime.timedelta(seconds=120)
@@ -240,6 +239,8 @@ groups = []
 users ={} 
 host = User(False,'Sam',False)
 
+ip, port = addr.split(':')
+port = int(port)
 server = websockets.serve(serveloop, ip, port) # create server, wrapping coroutine
 event_loop = asyncio.get_event_loop()  # get the scheduler
 event_loop.run_until_complete(server)  # make connection, wrapping server object

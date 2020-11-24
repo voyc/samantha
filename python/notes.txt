@@ -1,27 +1,17 @@
 
-x make separate receive thread in samd
+- samd
+	- use sam.user.Sam
+	- load skill lobby
+	- execute skill lobby
+	- use sam.user.lobby.switchboard.comm.Server
+	- move users and groups from webchat to reception
+	- fold webchat into lobby
+	- delete webchat.py
 
-break down samchat: lobby vs chat.  Think.  Where do we want lobby?  Chat or Sam
-	to support cli, it has to be in sam, not chat
-	chat could be a nice standalone server
-	if lobby is in chat, will sam know about the groups?
-	what does sam need to know about the groups?
-	he's going to be conducting a four-way conversation between student, coach, self, and drill sargeant
+- samcli
+	x use sam.comm.Client
+	- use sam.comm.Message
 
-samd switchboard is a websockets server built on asyncio
-	every incoming message is passed to security 
-	in a concurrent.futures thread pool executor
-	therefore, we don't have to keep using the async/await syntax outside of switchboard
-
-edit samd
-	build webchat code into switchboard, replacing ipc
-	when switchboard calls security, invoke thread pool executor
-
-run samchat, samweb, samcli together
-
-make them all three go thru samd
-
-move users and groups from webchat to reception
 
 make wsgi stub
 	link it into passenger_wsgi
@@ -33,55 +23,6 @@ support clones
 	clones = []
 	clone.append(Sam('Sam'))
 	clone.append(Sam('Lee'))
-
-class User:
-	def __init__(self):
-		self.uuid = ''  # unique id 
-		self.name = ''  # human readable name 
-		self.personality = {}
-		self.memory = {}
-
-	def getuuid(self):
-		pass
-
-	def save(self):
-		# write to database
-		pass
-
-	def restore(self):
-		# read from database
-		pass
-
-class Human(User):
-	def __init__(self):
-		self.vocab = {}
-
-	def isHuman(self):
-		return True
-
-class Clone(User):
-	def __init__(self):
-		self.host =   # ip 
-		self.port =   # unique port assignement
-		self.pid =    # each clone is a daemon process running samd
-
-	def isHuman(self):
-		return False
-
-	def announce(self):
-		# announce my presence to the world
-		pass
-	
-	def getport(self):
-		pass
-
-db
-	is it really necessary to have a central db?
-	what about a distributed db?
-
-	use db for grammar
-	if central db can be found on inet
-	grammar is necessary for communicating with humans
 
 message passing
 	send to everyone
