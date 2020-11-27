@@ -130,15 +130,22 @@ class Dispatcher:
 	def __init__(self,lobby):
 		self.lobby = lobby
 		self.cmds = {} # cmd string : skill object
+		self.mode = None
 
 	def add(self,cmd,skillobj):
 		self.cmds[cmd] = skillobj # object of a class derived from base.Skill
 
 	def dispatch(self,message):
 		owner = self.lobby.me
-		cmd = message.msg.split(' ')[0]
+		message.mode = self.mode
+		cmd = self.mode
+		if cmd == None:
+			cmd = message.msg.split(' ')[0]
+			if cmd not in owner.cmds:
+				cmd = 'converse'  # default broca.converse()
 		skill = owner.cmds[cmd]
 		methname = getattr(skill, f'cmd_{cmd}')
 		response = methname(message)	
+		self.mode = response.mode
 		return response
 

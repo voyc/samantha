@@ -1,35 +1,8 @@
-Message
-	to
-	frm
-	msg
-
-Message-In
-	toname=''    # to sam unless specific reply to another user in the conversation
-	frmtoken=''  # blank if not logged in
-	msg=''       # msg string
-
-Message-Out
-	toname=''    # an aside, in case of forwarding msg to another user
-	frmtoken=''  # unused
-	frmuser=User instance  # added during security check
-	frmclearance = 0       # added during security check
-	msg=''       # msg string	
-
-Should clearance be added to Message?
-No
-User must include roles: admin, coach, student
-clearance is immediate: logged in, not, offender
-offender may or may not be recorded on user record
-	such as when repeat non-logged in activity detected
-
-
-
-toname is used only in the case of a forward from one user to another
-if toname is present, command should be 'forward'
-what about multiple ais?
-
 
 x pass Message object between Client and Server, samd and samcli, use string name for from and to, later replaced with token
+x complete dispatch
+- add modes: echo, converse, translate, drill
+- add sleep
 - build out Reception from samchat, users and groups, archive samchat
 - samcli, print proper message when connection fails because server not up
 - reimplement samcli as Human, loading skill connect, wrapping comm.Client, plus keyboard (skill?)
@@ -37,6 +10,10 @@ x pass Message object between Client and Server, samd and samcli, use string nam
 - implement leed, with skills connect and converse, conversing with samd
 - implement security, account, built into converse: "what is your name?" "do you really want to change your password?"
 - test with webserver
+- simulate user vs instantiate sam
+- do translate, sengen, numgen
+- drill basic
+- drill language
 
 
 make wsgi stub

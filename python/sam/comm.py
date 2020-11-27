@@ -21,6 +21,7 @@ class Message():
 		self.msg = msg
 		self.toname = ''
 		self.frmtoken = ''
+		self.mode = None
 
 	def serialize(self):
 		return json.dumps(self.__dict__)
@@ -32,6 +33,9 @@ class Message():
 
 	def toString(self):
 		return f'{self.msg}'
+
+	def parse(self):
+		return self.msg.split(' ')
 
 class Client:
 	exit_string = 'q'
