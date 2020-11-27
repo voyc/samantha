@@ -9,8 +9,7 @@ config = configparser.ConfigParser()
 config.read(configfilename)
 addr = config['comm']['addr']
 
-to = 'sam'
-frm = 'john'
+token = ''
 
 csock = sam.comm.Client()
 csock.connect(addr)
@@ -22,7 +21,9 @@ def _keyboardLoop(csock):
 		if s == sam.comm.Client.exit_string:
 			csock.close()
 			break;
-		csock.send(sam.comm.Message(to,frm,s))
+		m = sam.comm.Message(s)
+		m.sendertoken = token
+		csock.send(m)
 
 threadKeyboard = threading.Thread(target=_keyboardLoop, args=(csock,), daemon=True)
 threadKeyboard.start()

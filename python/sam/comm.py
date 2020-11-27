@@ -1,4 +1,4 @@
-''' comm.py - websockets implementation '''
+''' comm.py - communications using websockets '''
 
 import concurrent.futures
 import asyncio
@@ -16,25 +16,22 @@ def splitAddr(addr):
 	return addr, host, port, uri
 
 class Message():
-	def __init__(self, to='', frm='', msg=''):
-		self.to = to
-		self.frm = frm
+	''' object passed between client and server '''
+	def __init__(self, msg='', toname='', frmtoken=''):
 		self.msg = msg
+		self.toname = ''
+		self.frmtoken = ''
 
 	def serialize(self):
 		return json.dumps(self.__dict__)
-		#return f'login~{self.frm}~{self.msg}'
-
-	#def deserialize(self,data):
-	#	self.__dict__ = json.loads(data)
 
 	@classmethod
 	def deserialize(cls,data):
 		a = json.loads(data)
-		return cls(a['to'], a['frm'], a['msg'])
+		return cls(a['msg'], a['toname'], a['frmtoken'], )
 
 	def toString(self):
-		return f'to {self.to}, from {self.frm}: {self.msg}'
+		return f'{self.msg}'
 
 class Client:
 	exit_string = 'q'
@@ -118,7 +115,7 @@ class Server:
 	async def _onMessage(self, websocket, path):
 		''' called by websockets.serve on receipt of a message '''
 		async for message in websocket:
-			response = self.callback( Message.deserialize(message))
+			response = self.callback( websocket, Message.deserialize(message))
 			await self.reply(websocket, response)
 
 	async def reply(self, websocket, response):

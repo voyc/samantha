@@ -1,12 +1,11 @@
 ''' user.py - define classes User, Human, and Sam '''
 
-import importlib
+import sam.base
 
 class User:
-	def __init__(self, name='', addr='', skills=''):
+	def __init__(self, name='', addr=''):
 		self.name = name
 		self.addr = addr
-		self.skillnames = skills
 		self.token = ''
 		self.traits = Traits()
 		self.feelings = Feelings()
@@ -21,7 +20,8 @@ class User:
 		pass
 
 class Human(User):
-	def __init__(self, name=''):
+	def __init__(self, name='', addr=''):
+		super().__init__(name, addr)
 		self.vocab = {}
 
 	def isHuman(self):
@@ -32,10 +32,10 @@ class Sam(User):
 	def __init__(self, name='', addr='', skills=''):
 		super().__init__(name, addr)
 		self.skillnames = skills
-		self.addr = addr
 		self.pid = -1   # each clone is a daemon process running samd
 		self.clones = {}
-		self.skills = {}  # dict of name/object pairs
+		self.skills = {}
+		self.cmds = {}
 		self.loadSkills()
 
 	def isHuman(self):
@@ -65,20 +65,7 @@ class Sam(User):
 			self.addSkill(name)
 
 	def addSkill(self, name):
-		self.skills[name] = Skill.load(name, self)
-
-class Skill:
-	''' base class for skill classes '''
-	''' for example: file lobby.py, contains module lobby, which defines class Lobby '''
-	''' currently not used as base class.  using only the static method load() '''
-
-	@staticmethod
-	def load( name, user):
-		modname = f'sam.{name}'
-		mod = importlib.import_module(modname)  # import module
-		kls = getattr(mod, name.title())        # get class from module
-		obj = kls(user)                         # instantiate object
-		return obj
+		self.skills[name] = sam.base.Skill.load(name, self)
 
 class Traits:
 	''' personality traits of a user '''
