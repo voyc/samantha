@@ -62,7 +62,8 @@ class Sam(User):
 
 	def loadSkills(self):
 		for name in self.skillnames.split(','):
-			self.addSkill(name)
+			if name:
+				self.addSkill(name)
 
 	def addSkill(self, name):
 		self.skills[name] = sam.base.Skill.load(name, self)

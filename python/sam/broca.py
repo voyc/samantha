@@ -2,6 +2,8 @@
 
 import sam.base
 import sam.grammar
+import sam.grammar.grammar
+import sam.grammar.numgen
 import random
 
 class Broca(sam.base.Skill):
@@ -26,3 +28,18 @@ class Broca(sam.base.Skill):
 		s = 'translated'
 		msgout = sam.comm.Message(s)
 		return msgout
+
+	def cmd_number(self,msgin):
+		s =  sam.grammar.numgen.numgen()
+		msgout = sam.comm.Message(s)
+		return msgout
+
+	def cmd_sentence(self,msgin):
+		target = ''
+		a = msgin.msg.split(' ')
+		if len(a) > 1:
+			target = a[1]
+		s =  sam.grammar.grammar.sengen(target)
+		msgout = sam.comm.Message(s)
+		return msgout
+

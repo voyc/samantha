@@ -1,10 +1,10 @@
-# grammar.py
+''' grammar.py - implement thai grammar '''
 
 import re
 import random
-from grammar.numgen import *
+#from grammar.numgen import *
 import os 
-from grammar.vocab import *
+from vocab import *
 
 thispath = os.path.dirname(os.path.realpath(__file__)) + '/'
 
@@ -230,11 +230,11 @@ def printSentences(sentences):
 	for sen in sentences:
 		print(sen)
 
-#sentences = gensen(semantics,{'target':'คะ'})
+sentences = gensen(semantics,{'target':'คะ'})
 #sentences = gensen(semantics,{'target':'ตัวใหญ่'})
 #sentences = gensen(semantics,{'target':'สวย'})
 #sentences = gensen(semantics, {'count':100})
-#printSentences(sentences)
+printSentences(sentences)
 
 def sengen(s):
 	sentences = gensen(semantics, {'target':s})
