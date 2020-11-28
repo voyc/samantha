@@ -2,14 +2,15 @@
 
 import sam.base
 import sam.grammar
-import sam.grammar.grammar
-import sam.grammar.numgen
+import sam.grammar.grammar as grammar
+import sam.grammar.numgen as numgen
 import random
+
 
 class Broca(sam.base.Skill):
 	def __init__(self,owner):
 		super().__init__(owner)
-		#self.grammar = sam.grammar.Grammar()
+		grammar.setupSemantics()
 
 	def cmd_converse(self,msgin):
 		s = random.choice([
@@ -30,16 +31,18 @@ class Broca(sam.base.Skill):
 		return msgout
 
 	def cmd_number(self,msgin):
-		s =  sam.grammar.numgen.numgen()
+		s =  numgen.gen()
 		msgout = sam.comm.Message(s)
 		return msgout
 
 	def cmd_sentence(self,msgin):
 		target = ''
 		a = msgin.msg.split(' ')
+
 		if len(a) > 1:
 			target = a[1]
-		s =  sam.grammar.grammar.sengen(target)
-		msgout = sam.comm.Message(s)
+
+		sen = grammar.sengen('คะ')
+		msgout = sam.comm.Message(sen)
 		return msgout
 

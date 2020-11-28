@@ -53,8 +53,8 @@ class UserVocab:
 		for o in self.list:
 			o.print()
 
-uservocab = UserVocab()
-uservocab.onLogin('xyc')
+#uservocab = UserVocab()
+#uservocab.onLogin('xyc')
 #uservocab.print()
 
 #        // build array of vocab words

@@ -15,7 +15,7 @@ class TestModules(unittest.TestCase):
 		s = sam.user.Sam( 'Lee', 'localhost:7000', 'lobby')
 		self.assertIsInstance(s.skills['lobby'], sam.lobby.Lobby)
 
-	def test_comm(self):
+	def xtest_comm(self):
 		import sam.comm
 		import time
 		addr = 'localhost:50001'
@@ -69,13 +69,31 @@ class TestModules(unittest.TestCase):
 		self.assertEqual( ngen.translate(1011,'th','word'), 'พัน สิบ เอ็ด')
 		self.assertEqual( ngen.translate(1021,'th','word'), 'พัน ยี่ สิบ เอ็ด')
 
-	#def test_grammar_numgen(self):
-		#import sam.grammar.grammar
-		#g = sam.grammar.grammar.Grammar()
-		#g.status()
-		#g.sengen()
-		#g.translate()
-		#g.numbgen()hh
+	def test_grammar_parse(self):
+		import sam.grammar.grammar as grammar
+
+		test1 = 'hoo bloody {[xyc 123 45]} [bafs [x1 s2 x3] $num(1,5,1) fjlk] {@quest} {not} [sa dfj] hah'
+		tree,ndx = grammar.parseExpr(test1)
+		self.assertEqual( ndx, 88)
+
+		test2 = '$expr(hoo bloody $opt($list(xyc 123 45)) $list(bafs $list(x1 s2 x3) $static(at the farm) $num(1,5,1) fjlk) $opt(@quest) $opt(not) $list(sa dfj) hah)'
+		tree,ndx = grammar.parseExpr(test2)
+		self.assertEqual( ndx, 148)
+
+		grammar.setupSemantics()
+		self.assertIsInstance(grammar.semantics['@not'].tree[0], grammar.Node)
+
+	def test_grammar_sengen(self):
+		import sam.grammar.grammar as grammar
+		grammar.setupSemantics()
+		sen = grammar.sengen('คะ')
+		self.assertGreater(len(sen.split(' ')), 0)
+
+	def test_grammar_translate(self):
+		pass
+
+	def test_grammar_vocab(self):
+		pass
 
 if __name__ == '__main__':
 	unittest.main()
