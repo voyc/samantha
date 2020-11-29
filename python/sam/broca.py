@@ -45,4 +45,3 @@ class Broca(sam.base.Skill):
 		sen = grammar.sengen('คะ')
 		msgout = sam.comm.Message(sen)
 		return msgout
-

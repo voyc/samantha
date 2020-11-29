@@ -7,21 +7,5 @@ class Echo(sam.base.Skill, sam.base.Commander):
 		super().__init__(owner)
 
 	def cmd_echo(self,msgin):
-		''' echo mode on or off, when on, echo every msg '''
-		mode = msgin.mode 
-		s = ''
-		a = msgin.parse()
-		if a[0] == 'echo':
-			if a[1] == 'on':
-				mode = 'echo'
-				s = 'echo on'
-			elif a[1] == 'off':
-				mode = None
-				s = 'echo off'
-			else:
-				s = ' '.join(a[1:])
-		else:
-			s = msgin.msg
-		msgout = sam.comm.Message(s)
-		msgout.mode = mode
+		msgout = sam.comm.Message(f'{msgin.msg}')
 		return msgout

@@ -130,22 +130,39 @@ class Dispatcher:
 	def __init__(self,lobby):
 		self.lobby = lobby
 		self.cmds = {} # cmd string : skill object
-		self.mode = None
+		self.cmdmode = None
 
 	def add(self,cmd,skillobj):
 		self.cmds[cmd] = skillobj # object of a class derived from base.Skill
 
-	def dispatch(self,message):
+	def dispatch(self,messagein):
 		owner = self.lobby.me
-		message.mode = self.mode
-		cmd = self.mode
-		if cmd == None:
-			cmd = message.msg.split(' ')[0]
-			if cmd not in owner.cmds:
-				cmd = 'converse'  # default broca.converse()
-		skill = owner.cmds[cmd]
-		methname = getattr(skill, f'cmd_{cmd}')
-		response = methname(message)	
-		self.mode = response.mode
-		return response
 
+		# parse message for incoming command
+		cmdin = None
+		action = None
+		a = messagein.parse()
+		if a[0] in owner.cmds:
+			cmdin = a[0]
+		if len(a) > 1 and a[1] in ['on', 'off']:
+			action = a[1]
+
+		# set or clear command mode, and return
+		if self.cmdmode:
+			if cmdin == self.cmdmode and action == 'off':
+				self.cmdmode = None  # clear command mode
+				return sam.comm.Message(f'{cmdin} {action}')
+		else:
+			if cmdin and action == 'on':
+				self.cmdmode = cmdin  # set command mode
+				return sam.comm.Message(f'{cmdin} {action}')
+			
+		# command precedence: mode, incoming, "converse"
+		cmd = self.cmdmode
+		if not cmd: cmd = cmdin
+		if not cmd: cmd = 'converse'
+
+		skillobj = owner.cmds[cmd] 
+		method = getattr(skillobj, f'cmd_{cmd}')
+		messageout = method(messagein)  # execute the command handler	
+		return messageout
