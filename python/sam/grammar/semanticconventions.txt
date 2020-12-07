@@ -3,7 +3,7 @@
 # pos name > expr
 # pos, part of speech, codes from MIT WordNet
 # name begins with @ and must be unique
-# expr contains words, names, [lists], {optionals} 
+# expr contains words, names, [lists], {optionals}, $function(args)
 
 particle @not > ไม่
 particle @polite > [คะ ครับ]

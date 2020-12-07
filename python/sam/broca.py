@@ -13,14 +13,14 @@ class Broca(sam.base.Skill):
 		grammar.setupSemantics()
 
 	def cmd_converse(self,msgin):
-		s = random.choice([
+		notunderstand = [
 			'What?',
 			'I don''t understand',
 			'Sorry, I don\'t  understand',
 			'Huh?',
 			'What do you mean by that?'
-		])
-
+		]
+		s = random.choice(notunderstand)
 		msgout = sam.comm.Message(s)
 		return msgout
 

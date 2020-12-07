@@ -1,3 +1,50 @@
+identify speakers
+	Sam: sam, 35, f
+	John: human, 58, m
+
+1. Sam, set Subj = you, say 1 of 3 sentences
+	bai nai, verb = go
+2. John, reply I go raan cafe
+
+3. Sam, subj=you, verb=go, where=raan cofe 
+	advs about go
+	adjs about cafe
+	lookup potential next sentence
+	followup questions 
+	switch subj to raan cafe and ask questions about that
+
+root is S
+	s 
+	v
+		to bank	
+			on the corner
+			KBank
+			green
+
+
+programs to support conversation generation 
+
+	goals:
+		choose next sentence: question or answer, based on the conversational grammar	
+			by default, dispatcher calls broca::converse()
+			make broca call congen.gen()  in congen.py
+			new program, maybe fold into grammar.py later
+
+		sleep: convert conversation to memories	
+	prereq:
+		design data structure that can accomodate the sentence construction and allow adv and adj to be added gradually
+		$refer()  back-reference subj, verb, object
+		define speakers by gender, age
+		$pronoun(person=2, gender=m, number=s, age=younger)
+		$date
+		$time
+		$dayofweek
+		$country
+		$city
+		$businessname  $typeof(@businessname)
+		$polite() based on speaker's gender
+		when to add @polite
+
 
 x pass Message object between Client and Server, samd and samcli, use string name for from and to, later replaced with token
 x complete dispatch
