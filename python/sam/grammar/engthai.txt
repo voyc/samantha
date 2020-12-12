@@ -1,0 +1,145 @@
+where are you going?              คุณกำลังจะไปไหน?
+bank                              ธนาคาร
+coffeeshop                        ร้านกาแฟ
+restaurant                        ร้านอาหาร
+salon                             ร้านเสริมสวย
+market                            ตลาด
+mall                              ห้างสรรพสินค้า
+pharmacy                          ร้านขายยา
+cinema                            โรงภาพยนตร์
+doctor                            หมอ
+hospital                          โรงพยาบาล
+clinic                            คลินิก
+dentist                           ทันตแพทย์
+friend's house                    บ้านเพื่อน
+Bangkok                           กรุงเทพมหานคร
+Phuket                            ภูเก็ต
+Koh Samui                         เกาะสมุย
+Krabi                             กระบี่
+Pattaya                           พัทยา
+Hua Hin                           หัวหิน
+Chiang Mai                        เชียงใหม่
+Pai                               ปาย
+Udon Thai                         อุดรธานี
+Sukothai                          สุโขทัย
+Ayutthaya                         อยุธยา
+Why you go to friend's house?     ไปบ้านเพื่อนทำไม?
+to eat                            กิน
+to visit                          ไปเยี่ยมชม
+to pickup food                    ไปรับอาหาร
+to deliver food                   เพื่อส่งอาหาร
+Why you go to Bangkok?            ทำไมคุณถึงไปกรุงเทพ?
+to visit                          ไปเยี่ยมชม
+for vacation                      สำหรับการพักผ่อน
+for business                      สำหรับธุรกิจ
+go to embassy                     ไปที่สถานทูต
+Why you go to bank?               ทำไมคุณไปธนาคาร?
+to get money                      เพื่อรับเงิน
+Why you go to coffeeshop?         ทำไมคุณไปที่ร้านกาแฟ?
+to drink coffee                   ดื่มกาแฟ
+to eat breakfast                  กินอาหารเช้า
+to meet friend                    เพื่อพบเพื่อน
+Why you go to restaurant?         ทำไมคุณไปร้านอาหาร?
+to eat                            กิน
+to meet friend                    เพื่อพบเพื่อน
+Why you go to salon?              ทำไมคุณไปร้านเสริมสวย?
+to wash hair                      การสระผม
+to cut hair                       การตัดผม
+pedicure                          เล็บเท้า
+manicure                          ทำเล็บ
+Why you go to market?             ทำไมคุณไปตลาด?
+to buy food                       เพื่อซื้ออาหาร
+Why you go to mall?               ทำไมคุณไปห้างสรรพสินค้า?
+to shop                           เพื่อซื้อสินค้า
+Why you go to pharmacy?           ทำไมคุณถึงไปร้านขายยา?
+to buy medicine                   ซื้อยา
+Why you go to cinema?             ทำไมคุณไปดูหนัง?
+to watch movie                    เพื่อชมภาพยนตร์
+Why you go to doctor?             ทำไมคุณถึงไปหาหมอ?
+to have checkup                   เพื่อตรวจสุขภาพ
+fix headache                      แก้ปวดหัว
+test for covid                    ทดสอบโควิด
+Why you go to hospital?           ทำไมคุณไปโรงพยาบาล?
+to visit friend                   ไปเยี่ยมเพื่อน
+Why you go to clinic?             ทำไมคุณไปคลินิก?
+to see doctor                     ไปพบแพทย์
+to see dentist                    ไปพบทันตแพทย์
+Why you go to dentist?            ทำไมคุณถึงไปหาหมอฟัน?
+for cleaning                      สำหรับทำความสะอาด
+for filling                       สำหรับการกรอก
+for whitening                     สำหรับการฟอกสีฟัน
+for toothache                     สำหรับอาการปวดฟัน
+for tooth removal                 สำหรับการถอนฟัน
+for braces                        สำหรับการจัดฟัน
+When you go?                      คุณไปเมื่อไหร่?
+this morning                      เช้านี้
+this afternoon                    บ่ายนี้
+this evening                      เย็นนี้
+yesterday                         เมื่อวานนี้
+today                             วันนี้
+tomorrow                          พรุ่งนี้
+last week                         อาทิตย์ที่แล้ว
+this week                         ในสัปดาห์นี้
+next week                         สัปดาห์หน้า
+last month                        เดือนที่แล้ว
+this month                        เดือนนี้
+next month                        เดือนหน้า
+last year                         ปีที่แล้ว
+this year                         ปีนี้
+next year                         ปีหน้า
+How you go to Bangkok?            ไปกรุงเทพทีไร
+train                             รถไฟ
+bus                               รถบัส
+airplane                          เครื่องบิน
+ship                              เรือ
+How you go to bank?               คุณจะไปธนาคารได้อย่างไร?
+walk                              เดิน
+run                               วิ่ง
+car                               รถยนต์
+Grab                              คว้า
+taxi                              แท็กซี่
+bus                               รถบัส
+songtaew                          สองแถว
+tuktuk                            ตุ๊กตุ๊ก
+What are you doing?               คุณกำลังทำอะไร?
+eat rice                          กินข้าว
+cook food                         ทำอาหาร
+brew coffee                       ชงกาแฟ
+brew tea                          ชงชา
+read book                         อ่านหนังสือ
+watch movie                       ดูหนัง
+listen music                      ฟังเพลง
+play video game                   เล่นวีดีโอเกม
+chat online                       แชทออนไลน์
+homework                          การบ้าน
+work on computer                  ทำงานกับคอมพิวเตอร์
+work in garden                    ทำงานในสวน
+Where you eat rice?               กินข้าวที่ไหน
+at home                           ที่บ้าน
+at house of friend                ที่บ้านของเพื่อน
+in the kitchen                    ในห้องครัว
+in the back yard                  ในสนามหลังบ้าน
+Where you read book?              คุณอ่านหนังสือที่ไหน?
+upstairs                          ชั้นบน
+in my bedroom                     ในห้องนอนของฉัน
+in the living room                ในห้องนั่งเล่น
+in the back yard                  ในสนามหลังบ้าน
+Why you eat food?                 ทำไมคุณถึงกินอาหาร?
+i am hungry                       ฉันหิว
+my family is hungry               ครอบครัวของฉันหิว
+Why you brew coffee               ทำไมคุณถึงชงกาแฟ
+to relax                          ผ่อนคลาย
+for my friends                    สำหรับเพื่อน ๆ ของฉัน
+Why you read book?                ทำไมคุณถึงอ่านหนังสือ?
+for fun                           เพื่อความสนุก
+Why you chat online?              ทำไมคุณถึงแชทออนไลน์?
+talk to friends                   พูดกับเพื่อน
+Why you do homework?              ทำไมคุณทำการบ้าน?
+assignment due tomorrow           ครบกำหนดวันพรุ่งนี้
+study for test                    เรียนเพื่อทดสอบ
+Why you work on computer?         ทำไมคุณถึงทำงานกับคอมพิวเตอร์?
+for my job                        สำหรับงานของฉัน
+Why you work in garden?           ทำไมคุณถึงทำงานในสวน?
+too many weeds                    วัชพืชมากเกินไป
+time for harvest                  ถึงเวลาเก็บเกี่ยว
+time for planting                 เวลาปลูก                           

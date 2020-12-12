@@ -1,196 +1,117 @@
-class NotNewException(Exception):
-	pass
-
-class Mind:
-	def __init__(self):
-		self.thots = {}
-
-	def getThot(self,name):
-		thot = None
-		if name in self.thots.keys():
-			thot = self.thots[name]
-		return thot
-	
-	def newThot(self,name='',kind=''):
-		thot = Thot(name,kind)
-		self.setThot(thot)
-		return thot
-
-	def setThot(self,thot):
-		name = thot.name
-		if name in self.thots.keys():
-			raise NotNewException
-		else:
-			self.thots[name] = thot
-
-	def find(self,search):
-		thotnames = []
-		for thot in self.thots.values():
-			if 'kind' in thot.adjs.keys() and thot.adjs['kind'] == search:
-				thotnames.append(thot.name)
-		return thotnames
-
-	def addTendrils(self):
-		for thot in self.thots.values():
-			thot.lookupPossibleThreads()		
-
-	def gen(self):
-		self.addTendrils()
-		# look at the disconnected tendrils of each thought
-		# give each thought a priority
-		# questions
-		# statements: observations worth of comment, stories worth telling
-		# pick the thought with 
-		# previous question, current thot, has a certain priority, just because 
-		# it takes a high threshold for one thot to interrupt another
-
-	def print(self,thot):
-		print(thot.compose())
+''' congen.py '''
+import pdb
+import uuid
+import datetime
 
 class Thot:
-	def __init__(self,name='',kind=''):
-		self.name = name
-		if not self.name:
-			self.name = str(uuid.uuid4())
-		self.adjs = {}
-		if kind:
-			self.adjs['kind'] = kind 
+	mind = Mind()
 
-	def getAdj(self,key):
-		adj = None
-		if key in self.adjs.keys():
-			return self.adjs[key]
-
-	def setAdj(self,key,value):
-		if key in self.adjs.keys():
-			raise NotNewException
-		else:
-			self.adjs[key] = value
-
-	def compose(self):
-		s = self.name
-		for key,value in self.adjs.items():
-			s += ' ' + str(value)
-		return s
-
-	def lookupPossibleThreads(self):
-		pass
+	def __init__(self):
+		self.id = uuid.uuid4()
+		self.attrs = {}
 
 class Entity(Thot):
-	def __init__(self,name,kind=''):
-		super().__init__(name,kind='')
+	def __init__(self,word):
+		super().__init__()
+		self.word = word
+		Thot.mind.entities['word'] = self
 
-	def compose(self):
-		s = self.name
-		for key,value in self.adjs.items():
-			s += ' ' + str(value)
+	def __str__(self):
+		s = f'{self.word}'
+		#for key,value in self.attrs.items():
+		#	s += f' {key.__str__()} {value.__str__()}'
+		return s
+
+	def __repr__(self):
+		s = f'{self.word}'
+		for key,value in self.attrs.items():
+			s += f' {key.__str__()} {value.__str__()}'
 		return s
 
 class Relation(Thot):
-	def __init__(self, subj='', relate='', obj=''):
-		super().__init__(relate,kind='relation')
-		self.subj = subj
-		self.relate = relate 
-		self.obj = obj	
+	def __init__(self, a, link, b):
+		super().__init__()
+		self.a = a
+		self.link = link
+		self.b = b
 
-	def compose(self):
-		s = self.subj.compose()
-		s += self.relate.compose()
-		s += self.obj.compose()
+	def __str__(self):
+		s = f'{self.a.__str__()} {self.link.__str__()} {self.b.__str__()}'
+		for key,value in self.attrs.items():
+			if isinstance(value,Relation):
+				s += f' {key.__str__()}'
+			s += f' {value.__str__()}'
 		return s
 
+class Number(Thot):
+	def __init__(self,value):
+		super().__init__()
+		self.value = value
 
-class Dialectic(Thot):
-	def __init__(self, thesis, antithesis, synthesis):
-		self.thesis = thesis
-		self.antithesis = antithesis
-		self.synthesis = synthesis
+	def __str__(self):
+		return str(self.value)
 
+class Mind:
+	def __init__(self):
+		self.entities = {}
+		self.relations = {}
 
-class Syllogism:
-	''' a conditional Relation: ifthen, therefore, when, before, after '''
-	def __init__(self, a, link, b):
-		self.a    = a
-		self.link = link
-		self.b    = b
+mind = Mind()
+empty = Entity('')  # None
 
-def main():
-	mind = Mind()
-	mind.newThot('category')
-	mind.newThot('noun_category', 'category')
-	mind.newThot('person', 'noun_cateory')
-	mind.newThot('sam', 'person')
-	mind.newThot('father', 'person')
-	mind.newThot('bank', 'businesstype')
-	mind.newThot('Bangkok', 'city')
-	mind.newThot('go','movement')
+age = Entity('age')  # attributes of a person
+gender = Entity('gender')
+man = Entity('man')
+english = Entity('English')  # language, nationality
+thai = Entity('Thai')
 
-	#e1 = Event(john, go, bank)
-	#e2 = Event(father, go, bangkok)
+sam = Entity('Sam')  # persons
+nid = Entity('Nid')
+john = Entity('John')
+host = sam
+guest = john
 
-	mind.newThot('Kasikorn', 'bank')
+chiangmai = Entity('Chiang Mai')  # places
+bangkok = Entity('Bangkok')
 
-	mind.newThot('corner', 'location')
+moon = Entity('moon')  # things
 
-	naiyana = mind.newThot('Naiyana','person')
-	naiyana.setAdj('poss', 'pn')
-	naiyana.setAdj('age', 41)
-	naiyana.setAdj('gender', 'f')
+go_to = Entity('go_to')  # actions
+pay = Entity('pay')
+know = Entity('know')
+learn = Entity('learn')
+rise = Entity('rise')
 
-	mind.newThot('city', 'place')
+ifthen = Entity('if')  # conditional
+when = Entity('when')
+how = Entity('how')
+where = Entity('where')
+why = Entity('why')
 
-	udonthani = mind.newThot('Udon Thani', 'city')
-	udonthani.setAdj('poss', 'pn')
-	udonthani.setAdj('type', 'city')
-	udonthani.setAdj('pop', 130000)
+quickly = Entity('quickly')  # adverb
 
+john.attrs[age] =  Number(43)  # describe a person
+john.attrs[gender] = man
+john.attrs[know] = english
+john.attrs[learn] = thai
 
-	chiangmai = Thot('Chiang Mai', 'city')
-	chiangmai.setAdj('pos', 'pn')
-	chiangmai.setAdj('type', 'city')
-	chiangmai.setAdj('metropop', 1000000)
+johngo = Relation(john, go_to, bangkok)
+nidgo = Relation(nid, go_to, chiangmai)
+johnpay = Relation(john, pay, empty)
+nidgo.attrs[ifthen] = johnpay
+moonrise = Relation(moon, rise, empty)
 
-	john = mind.newThot('john', 'person')
-	#john.setAdj('reside', chiangmai)
+samgo = Relation(host, go_to, empty)
 
-	reside = mind.newThot('reside', 'verb')
-	apartment_building = mind.newThot('apartment_building', 'buildingtype')
-	go_to = mind.newThot('go_to', 'action')
+samgo.attrs[where] = bangkok   # describe an action
+samgo.attrs[how] = quickly
+samgo.attrs[ifthen] = johngo 
+samgo.attrs[when] = moonrise
 
-	johnreside = Relation(john, reside, apartment_building)
-	mind.thots[johnreside.name] = johnreside
-	johnreside.setAdj('when', 2020)
+nidgo.attrs[when] = datetime.datetime.now()
 
+print(repr(john))
+print(str(nidgo))
+print(str(samgo))
 
-	naigo = Relation(naiyana, go_to, chiangmai) 
-	mind.thots[naigo.name] = naigo 
-	week = Entity('week')
-	week.setAdj('what', 'next')
-	naigo.setAdj('when', week)
-	visitjohn = Relation('Naiyana', 'visit', 'John')
-	naigo.setAdj('why', visitjohn)
-
-	print(isinstance(naigo,Thot))
-	print(isinstance(naigo,Relation))
-
-	names = mind.find('person')
-	for name in names:
-		thot = mind.thots[name]
-		print(thot.name)
-	mind.gen()
-
-	mind.print(naigo)
-
-	for thot in mind.thots.values():
-		cls = ''
-		if isinstance(thot, Entity):
-			cls += 'e'
-		if isinstance(thot, Relation):
-			cls += 'r'
-		print(f'{thot.name} : {thot.__class__} : {cls}')
-
-	print('done')
-
-if __name__ == '__main__':
-	main()
-	
+print('done')
