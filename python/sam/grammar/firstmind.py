@@ -5,186 +5,155 @@ import mind
 sammind = mind.Mind()
 mind.Thot.mind = sammind
 
-mind.Entity('empty')
-mind.Entity('typeof')
+mind.Klas('empty')
 
 #Relation(you, go, where)  # 24 places, destinations
-mind.Entity('person')
-mind.Entity('place')
-mind.Entity('thing')
-mind.Entity('action')
-mind.Entity('link')
+mind.Klas('person')
+mind.Klas('place')
+mind.Klas('thing')
+mind.Klas('action')
+mind.Klas('link')
 
-mind.Entity('ownedby', 'link')
-mind.Entity('where', 'link')
-mind.Entity('why', 'link')
-mind.Entity('which', 'link')
-mind.Entity('when', 'link')
-mind.Entity('how', 'link')
-mind.Entity('by', 'link')
+mind.Klas('typeof', 'link')
+mind.Klas('ownedby', 'link')
+mind.Klas('where', 'link')
+mind.Klas('why', 'link')
+mind.Klas('which', 'link')
+mind.Klas('when', 'link')
+mind.Klas('how', 'link')
+mind.Klas('by', 'link')
 
-mind.Entity('this', 'which')
-mind.Entity('next', 'which')
-mind.Entity('last', 'which') # previous
+mind.Klas('this', 'which')
+mind.Klas('next', 'which')
+mind.Klas('last', 'which') # previous
 
-mind.Entity('time_period')
-mind.Entity('week', 'time_period')
-mind.Entity('day', 'time_period')
-mind.Entity('month', 'time_period')
-mind.Entity('year', 'time_period')
+mind.Klas('time_period', 'thing')
+mind.Klas('week', 'time_period')
+mind.Klas('day', 'time_period')
+mind.Klas('month', 'time_period')
+mind.Klas('year', 'time_period')
 
-mind.Entity('now')
-mind.Entity('yesterday')
-mind.Entity('today')
-mind.Entity('tomorrow')
-mind.Entity('morning')
-mind.Entity('afternoon')
-mind.Entity('evening')
+mind.Klas('time', 'thing')
+mind.Klas('now', 'time')
+mind.Klas('yesterday', 'time')
+mind.Klas('today', 'time')
+mind.Klas('tomorrow', 'time')
+mind.Klas('morning', 'time')
+mind.Klas('afternoon', 'time')
+mind.Klas('evening', 'time')
 
-mind.Entity('you', 'person')
-mind.Entity('I', 'person')
-mind.Entity('friend', 'person')
+mind.Klas('you', 'person')
+mind.Klas('I', 'person')
+mind.Klas('friend', 'person')
 
-mind.Entity('Sam', 'person')
-mind.Entity('John', 'person')
-mind.Entity('Naiyana', 'person')
-mind.Entity('Juan', 'person')
-mind.Entity('Joe', 'person')
-mind.Entity('Nui', 'person')
-mind.Entity('Nid', 'person')
+mind.Klas('Sam', 'person')
+mind.Klas('John', 'person')
+mind.Klas('Naiyana', 'person')
+mind.Klas('Juan', 'person')
+mind.Klas('Joe', 'person')
+mind.Klas('Nui', 'person')
+mind.Klas('Nid', 'person')
 
-mind.Entity('city', 'place')
-mind.Entity('island', 'place')
-mind.Entity('businesstype')
-mind.Entity('bank', 'businesstype')
-mind.Entity('coffeeshop', 'businesstype')
-mind.Entity('restaurant', 'businesstype')
-mind.Entity('salon', 'businesstype')
-mind.Entity('market', 'businesstype')
-mind.Entity('mall', 'businesstype')
-mind.Entity('pharmacy', 'businesstype')
-mind.Entity('cinema', 'businesstype')
-mind.Entity('doctor', 'businesstype')
-mind.Entity('hospital', 'businesstype')
-mind.Entity('clinic', 'businesstype')
-mind.Entity('dentist', 'businesstype')
-mind.Entity('embassy', 'businesstype')
-mind.Entity('house', 'place')
-mind.Entity('Bangkok', 'city')
-mind.Entity('Phuket', 'city')
-mind.Entity('Koh_Samui', 'island')
-mind.Entity('Krabi', 'city')
-mind.Entity('Pattaya', 'city')
-mind.Entity('Hua_Hin', 'city')
-mind.Entity('Chiang_Mai', 'city')
-mind.Entity('Pai', 'city')
-mind.Entity('Udon_Thani', 'city')
-mind.Entity('Sukothai', 'city')
-mind.Entity('Ayutthaya', 'city')
+mind.Klas('city', 'place')
+mind.Klas('island', 'place')
+mind.Klas('businesstype', 'thing')
+mind.Klas('bank', 'businesstype')
+mind.Klas('coffeeshop', 'businesstype')
+mind.Klas('restaurant', 'businesstype')
+mind.Klas('salon', 'businesstype')
+mind.Klas('market', 'businesstype')
+mind.Klas('mall', 'businesstype')
+mind.Klas('pharmacy', 'businesstype')
+mind.Klas('cinema', 'businesstype')
+mind.Klas('doctor', 'businesstype')
+mind.Klas('hospital', 'businesstype')
+mind.Klas('clinic', 'businesstype')
+mind.Klas('dentist', 'businesstype')
+mind.Klas('embassy', 'businesstype')
+mind.Klas('house', 'place')
+mind.Klas('Bangkok', 'city')
+mind.Klas('Phuket', 'city')
+mind.Klas('Koh_Samui', 'island')
+mind.Klas('Krabi', 'city')
+mind.Klas('Pattaya', 'city')
+mind.Klas('Hua_Hin', 'city')
+mind.Klas('Chiang_Mai', 'city')
+mind.Klas('Pai', 'city')
+mind.Klas('Udon_Thani', 'city')
+mind.Klas('Sukothai', 'city')
+mind.Klas('Ayutthaya', 'city')
 
-mind.Entity('food', 'thing')
-mind.Entity('vacation')
-mind.Entity('business')
-mind.Entity('money')
-mind.Entity('coffee')
-mind.Entity('breakfast')
-mind.Entity('hair')
-mind.Entity('pedicure')
-mind.Entity('manicure')
-mind.Entity('medicine')
-mind.Entity('movie')
-mind.Entity('checkup')
-mind.Entity('headache')
-mind.Entity('covid')
-mind.Entity('tooth')
-mind.Entity('teeth')
-mind.Entity('filling')
-mind.Entity('whitening')
-mind.Entity('toothache')
-mind.Entity('braces')
+mind.Klas('food', 'thing')
+mind.Klas('vacation', 'thing')
+mind.Klas('business', 'thing')
+mind.Klas('money', 'thing')
+mind.Klas('coffee', 'food')
+mind.Klas('breakfast', 'food')
+mind.Klas('hair', 'thing')
+mind.Klas('pedicure', 'thing')
+mind.Klas('manicure', 'thing')
+mind.Klas('medicine', 'thing')
+mind.Klas('movie', 'thing')
+mind.Klas('checkup', 'thing')
+mind.Klas('headache', 'thing')
+mind.Klas('covid', 'thing')
+mind.Klas('tooth', 'thing')
+mind.Klas('teeth', 'thing')
+mind.Klas('filling', 'thing')
+mind.Klas('whitening', 'thing')
+mind.Klas('toothache', 'thing')
+mind.Klas('braces', 'thing')
 
-mind.Entity('train')
-mind.Entity('bus')
-mind.Entity('airplane')
-mind.Entity('ship')
+mind.Klas('transport', 'thing')
+mind.Klas('train', 'transport')
+mind.Klas('bus', 'transport')
+mind.Klas('airplane', 'transport')
+mind.Klas('ship', 'transport')
 
-mind.Entity('car')
-mind.Entity('Grab')
-mind.Entity('taxi')
-mind.Entity('citybus')
-mind.Entity('songtaew')
-mind.Entity('tuktuk')
-mind.Entity('walk')
-mind.Entity('run')
+mind.Klas('car', 'transport')
+mind.Klas('Grab', 'transport')
+mind.Klas('taxi', 'transport')
+mind.Klas('citybus', 'transport')
+mind.Klas('songtaew', 'transport')
+mind.Klas('tuktuk', 'transport')
+mind.Klas('walk', 'action')
+mind.Klas('run', 'action')
 
-mind.Entity('go', 'action')
-mind.Entity('eat', 'action')
-mind.Entity('visit', 'action')
-mind.Entity('pickup', 'action')
-mind.Entity('deliver', 'action')
-mind.Entity('get', 'action')
-mind.Entity('drink', 'action')
-mind.Entity('meet', 'action')
-mind.Entity('wash', 'action')
-mind.Entity('cut', 'action')
-mind.Entity('buy', 'action')
-mind.Entity('shop', 'action')
-mind.Entity('watch', 'action')
-mind.Entity('fix', 'action')
-mind.Entity('test', 'action')
-mind.Entity('see', 'action')
-mind.Entity('clean', 'action')
-mind.Entity('remove', 'action')
+mind.Klas('go', 'action')
+mind.Klas('eat', 'action')
+mind.Klas('visit', 'action')
+mind.Klas('pickup', 'action')
+mind.Klas('deliver', 'action')
+mind.Klas('get', 'action')
+mind.Klas('drink', 'action')
+mind.Klas('meet', 'action')
+mind.Klas('wash', 'action')
+mind.Klas('cut', 'action')
+mind.Klas('buy', 'action')
+mind.Klas('shop', 'action')
+mind.Klas('watch', 'action')
+mind.Klas('fix', 'action')
+mind.Klas('test', 'action')
+mind.Klas('see', 'action')
+mind.Klas('clean', 'action')
+mind.Klas('remove', 'action')
 
-# 34 reasons why 
+friendhouse = mind.Klas('instance', 'house').modify('ownedby', 'friend')
 
-friendhouse = mind.Entity('instance', 'house')
-friendhouse.modify('ownedby', 'friend')
+mind.Relation('you', 'go', 'empty').modify('where', friendhouse).modify('why', mind.Relation('empty', 'pickup', 'food'))
+mind.Relation('Sam', 'go', 'empty').modify('where', friendhouse).modify('why', mind.Relation('empty', 'deliver', 'food'))
+mind.Relation('John', 'go', 'empty').modify('where', friendhouse).modify('why', mind.Relation('empty', 'eat', 'food'))
+mind.Relation('Naiyana', 'go', 'empty').modify('where', 'Bangkok').modify('why', mind.Relation('empty', 'visit', 'empty'))
+mind.Relation('Sam', 'go', 'empty').modify('where', 'Chiang_Mai').modify('why', 'vacation')
+mind.Relation('John', 'go', 'empty').modify('where', 'Pai').modify('why', mind.Relation('empty', 'go', 'embassy'))
+mind.Relation('Juan', 'go', 'empty').modify('where', 'bank').modify('why', mind.Relation('empty', 'get', 'money'))
 
-yougohouse = mind.Relation('you', 'go', 'empty')
-yougohouse.modify('where', friendhouse)
-yougohouse.modify('why', mind.Relation('empty', 'pickup', 'food'))
-
-samgohouse = mind.Relation('Sam', 'go', 'empty') 
-samgohouse.modify('where', friendhouse)
-samgohouse.modify('why', mind.Relation('empty', 'deliver', 'food'))
-
-johngohouse = mind.Relation('John', 'go', 'empty') 
-johngohouse.modify('where', friendhouse)
-johngohouse.modify('why', mind.Relation('empty', 'eat', 'food'))
-
-naigo = mind.Relation('Naiyana', 'go', 'empty')
-naigo.modify('where', 'Bangkok')
-naigo.modify('why', mind.Relation('empty', 'visit', 'empty'))
-
-samgo = mind.Relation('Sam', 'go', 'empty')
-samgo.modify('where', 'Chiang_Mai')
-samgo.modify('why', 'vacation')
-
-johngo = mind.Relation('John', 'go', 'empty')
-johngo.modify('where', 'Pai')
-johngo.modify('why', mind.Relation('empty', 'go', 'embassy'))
-
-juango = mind.Relation('Juan', 'go', 'empty')
-juango.modify('where', 'bank')
-juango.modify('why', mind.Relation('empty', 'get', 'money'))
-
-work = mind.Relation('John', 'go', 'empty')
-work.modify('where', 'coffeeshop')
-work.modify('why', mind.Relation('empty', 'drink', 'coffee'))
-
-work = mind.Relation('Sam', 'go', 'empty')
-work.modify('where', 'coffeeshop')
-work.modify('why', mind.Relation('empty', 'eat', 'breakfast'))
-
-work = mind.Relation('Juan', 'go', 'empty')
-work.modify('where', 'coffeeshop')
-work.modify('why', mind.Relation('empty', 'meet', 'friend'))
+mind.Relation('John', 'go', 'empty').modify('where', 'coffeeshop').modify('why', mind.Relation('empty', 'drink', 'coffee'))
+mind.Relation('Sam', 'go', 'empty').modify('where', 'coffeeshop').modify('why', mind.Relation('empty', 'eat', 'breakfast'))
+mind.Relation('Juan', 'go', 'empty').modify('where', 'coffeeshop').modify('why', mind.Relation('empty', 'meet', 'friend'))
 
 def work(who, where, whyv, whyo):
-	work = mind.Relation(who, 'go', 'empty')
-	work.modify('where', where)
-	work.modify('why', mind.Relation('empty', whyv, whyo))
+	mind.Relation(who, 'go', 'empty').modify('where', where).modify('why', mind.Relation('empty', whyv, whyo))
 
 work('John', 'restaurant', 'eat', 'food')
 work('Sam', 'restaurant', 'meet', 'friend')
@@ -210,7 +179,7 @@ work('you', 'dentist', 'remove', 'tooth')
 work('I', 'dentist', 'get', 'braces')
 
 def work(who, which, period):
-	mind.Relation(who, 'go', 'empty').modify('when', mind.Entity('instance', period).modify('which', which))
+	mind.Relation(who, 'go', 'empty').modify('when', mind.Klas('instance', period).modify('which', which))
 
 work('Sam', 'this', 'morning') 
 work('Joe', 'this', 'afternoon') 
@@ -253,32 +222,32 @@ def work(who, where, how):
 
 # you do what?
 
-mind.Entity('foodtype')
-mind.Entity('rice', 'foodtype')
-mind.Entity('tea', 'foodtype')
+mind.Klas('foodtype')
+mind.Klas('rice', 'foodtype')
+mind.Klas('tea', 'foodtype')
 
-mind.Entity('book', 'thing')
-mind.Entity('music', 'thing')
-mind.Entity('game', 'thing')
+mind.Klas('book', 'thing')
+mind.Klas('music', 'thing')
+mind.Klas('game', 'thing')
 
-mind.Entity('cook', 'action')
-mind.Entity('brew', 'action')
-mind.Entity('read', 'action')
-mind.Entity('listen', 'action')
-mind.Entity('play', 'action')
-mind.Entity('is', 'action')
-mind.Entity('feel', 'action')
+mind.Klas('cook', 'action')
+mind.Klas('brew', 'action')
+mind.Klas('read', 'action')
+mind.Klas('listen', 'action')
+mind.Klas('play', 'action')
+mind.Klas('is', 'action')
+mind.Klas('feel', 'action')
 
-mind.Entity('feeling')
-mind.Entity('hungry', 'feeling')
+mind.Klas('feeling')
+mind.Klas('hungry', 'feeling')
 
-mind.Entity('kitchen', 'place')
-mind.Entity('backyard', 'place')
-mind.Entity('upstairs', 'place')
-mind.Entity('bedroom', 'place')
-mind.Entity('livingroom', 'place')
+mind.Klas('kitchen', 'place')
+mind.Klas('backyard', 'place')
+mind.Klas('upstairs', 'place')
+mind.Klas('bedroom', 'place')
+mind.Klas('livingroom', 'place')
 
-mind.Entity('family', 'person')
+mind.Klas('family', 'person')
 
 mind.Relation('Sam', 'eat', 'rice')
 mind.Relation('Joe', 'cook', 'food')
@@ -294,8 +263,8 @@ mind.Relation('Joe', 'play', 'game')
 #work on computer
 #work in garden
 
-mind.Relation('Sam', 'eat', 'rice').modify('where', mind.Entity('instance', 'house'))
-mind.Relation('Joe', 'cook', 'food').modify('where', mind.Entity('instance', 'house').modify('ownedby', 'friend'))
+mind.Relation('Sam', 'eat', 'rice').modify('where', mind.Klas('instance', 'house'))
+mind.Relation('Joe', 'cook', 'food').modify('where', mind.Klas('instance', 'house').modify('ownedby', 'friend'))
 mind.Relation('Nid', 'cook', 'food').modify('where', 'kitchen')
 mind.Relation('Joe', 'brew', 'coffee').modify('where', 'backyard')
 
@@ -305,7 +274,11 @@ mind.Relation('Sam', 'watch', 'movie').modify('where', 'livingroom')
 mind.Relation('Nid', 'play', 'game').modify('where', 'backyard')
 
 mind.Relation('Nid', 'eat', 'food').modify('why', mind.Relation('Nid', 'is', 'hungry'))
-test = mind.Relation('Nid', 'eat', 'food').modify('why', mind.Relation(mind.Entity('instance', 'family').modify('ownedby', 'Nid'), 'is', 'hungry'))
+test = mind.Relation('Nid', 'eat', 'food').modify('why', mind.Relation(mind.Klas('instance', 'family').modify('ownedby', 'Nid'), 'is', 'hungry'))
+
+#import pdb; pdb.set_trace()
+print(sammind)
+quit()
 
 #Why you eat food?
 #i am hungry
@@ -334,10 +307,10 @@ test = mind.Relation('Nid', 'eat', 'food').modify('why', mind.Relation(mind.Enti
 #time for planting
 
 
-a = mind.Entity('hoo')
-a1 = mind.Entity('instance', 'hoo')
+a = mind.Klas('hoo')
+a1 = mind.Klas('instance', 'hoo')
 b = mind.Relation(a1.modify('which', 'music'), 'go', 'empty')
-a2 = mind.Entity('instance', 'hoo').modify('why','play')
+a2 = mind.Klas('instance', 'hoo').modify('why','play')
 
 
 ##print(repr(sammind))
@@ -388,6 +361,62 @@ note
 			and it has modifiers that define the class
 			if John owns one, that is an instance, color red deliniates it
 				the class has a name, the instance does not
+
+	option
+		subj:Objek -> link/verb:Objek -> obj:Objek
+		verb:Objek
+			modifier
+				subj Objek
+				obj  Objek
+				why
+				where
+		
+	"object" and "entity" imply a noun		
+	"instance" - can also be a verb or a link.  is that true?
+
+	Joe is a terminal klass
+	Bangkok is a terminal klass, but we need to make an Objek of it in a thot
+
+	the thot is listed as a thot
+		objeks are not listed, but referenced directly within the thot
+
+
+	a relation names up to three parts
+		each of the three can have modifiers
+
+	a klass can have modifiers too
+
+
+	generate grammar
+
+
+
+	common names of persons, Klas?
+	who's who, instances of persons, public
+	friends, instances of persons, private
+
+	proper names
+		persons
+			common names, index of  - klas, not objek
+			who's who - objek, global mind
+			my contacts - objek, private mind
+		places Gazetteer
+			countries
+			provinces
+			cities
+			neighborhoods
+			streets
+		businesses directory
+			business names and type
+
+
+		mind.contacts.print()
+
+mind.gazetteer.toString()
+mind.whoswho.toString() - including my contacts, global phone book
+mind.businessdirectory.toString()
+	Ristr8to
+	
 
 '''
 
