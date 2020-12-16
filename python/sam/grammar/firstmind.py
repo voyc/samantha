@@ -140,20 +140,20 @@ mind.Klas('remove', 'action')
 
 friendhouse = mind.Klas('instance', 'house').modify('ownedby', 'friend')
 
-mind.Relation('you', 'go', 'empty').modify('where', friendhouse).modify('why', mind.Relation('empty', 'pickup', 'food'))
-mind.Relation('Sam', 'go', 'empty').modify('where', friendhouse).modify('why', mind.Relation('empty', 'deliver', 'food'))
-mind.Relation('John', 'go', 'empty').modify('where', friendhouse).modify('why', mind.Relation('empty', 'eat', 'food'))
-mind.Relation('Naiyana', 'go', 'empty').modify('where', 'Bangkok').modify('why', mind.Relation('empty', 'visit', 'empty'))
+mind.Relation('you', 'go', 'empty').modify('where', friendhouse).modify('why', mind.Relation('you', 'pickup', 'food'))
+mind.Relation('Sam', 'go', 'empty').modify('where', friendhouse).modify('why', mind.Relation('Sam', 'deliver', 'food'))
+mind.Relation('John', 'go', 'empty').modify('where', friendhouse).modify('why', mind.Relation('John', 'eat', 'food'))
+mind.Relation('Naiyana', 'go', 'empty').modify('where', 'Bangkok').modify('why', mind.Relation('Naiyana', 'visit', 'empty'))
 mind.Relation('Sam', 'go', 'empty').modify('where', 'Chiang_Mai').modify('why', 'vacation')
-mind.Relation('John', 'go', 'empty').modify('where', 'Pai').modify('why', mind.Relation('empty', 'go', 'embassy'))
-mind.Relation('Juan', 'go', 'empty').modify('where', 'bank').modify('why', mind.Relation('empty', 'get', 'money'))
+mind.Relation('John', 'go', 'empty').modify('where', 'Pai').modify('why', mind.Relation('John', 'go', 'embassy'))
+mind.Relation('Juan', 'go', 'empty').modify('where', 'bank').modify('why', mind.Relation('Juan', 'get', 'money'))
 
-mind.Relation('John', 'go', 'empty').modify('where', 'coffeeshop').modify('why', mind.Relation('empty', 'drink', 'coffee'))
-mind.Relation('Sam', 'go', 'empty').modify('where', 'coffeeshop').modify('why', mind.Relation('empty', 'eat', 'breakfast'))
-mind.Relation('Juan', 'go', 'empty').modify('where', 'coffeeshop').modify('why', mind.Relation('empty', 'meet', 'friend'))
+mind.Relation('John', 'go', 'empty').modify('where', 'coffeeshop').modify('why', mind.Relation('John', 'drink', 'coffee'))
+mind.Relation('Sam', 'go', 'empty').modify('where', 'coffeeshop').modify('why', mind.Relation('Sam', 'eat', 'breakfast'))
+mind.Relation('Juan', 'go', 'empty').modify('where', 'coffeeshop').modify('why', mind.Relation('Juan', 'meet', 'friend'))
 
 def work(who, where, whyv, whyo):
-	mind.Relation(who, 'go', 'empty').modify('where', where).modify('why', mind.Relation('empty', whyv, whyo))
+	mind.Relation(who, 'go', 'empty').modify('where', where).modify('why', mind.Relation(who, whyv, whyo))
 
 work('John', 'restaurant', 'eat', 'food')
 work('Sam', 'restaurant', 'meet', 'friend')
@@ -200,7 +200,7 @@ mind.Relation('Joe', 'go', 'empty').modify('when', 'today')
 mind.Relation('Nid', 'go', 'empty').modify('when', 'tomorrow')
 
 def work(who, where, how):
-	mind.Relation(who, 'go', 'empty').modify('where', where).modify('how', mind.Relation('by', how, 'empty'))
+	mind.Relation(who, 'go', 'empty').modify('where', where).modify('how', how)
 
 work('Nui', 'Bangkok', 'train') 
 work('Nid', 'Chiang_Mai', 'bus') 
@@ -274,11 +274,7 @@ mind.Relation('Sam', 'watch', 'movie').modify('where', 'livingroom')
 mind.Relation('Nid', 'play', 'game').modify('where', 'backyard')
 
 mind.Relation('Nid', 'eat', 'food').modify('why', mind.Relation('Nid', 'is', 'hungry'))
-test = mind.Relation('Nid', 'eat', 'food').modify('why', mind.Relation(mind.Klas('instance', 'family').modify('ownedby', 'Nid'), 'is', 'hungry'))
-
-#import pdb; pdb.set_trace()
-print(sammind)
-quit()
+mind.Relation('Nid', 'cook', 'food').modify('why', mind.Relation(mind.Klas('instance', 'family').modify('ownedby', 'Nid'), 'is', 'hungry'))
 
 #Why you eat food?
 #i am hungry
@@ -306,30 +302,27 @@ quit()
 #time for harvest
 #time for planting
 
+print(sammind)
+import pdb; pdb.set_trace()
+sammind.buildGrammar()
+sammind.displayGrammar()
 
-a = mind.Klas('hoo')
-a1 = mind.Klas('instance', 'hoo')
-b = mind.Relation(a1.modify('which', 'music'), 'go', 'empty')
-a2 = mind.Klas('instance', 'hoo').modify('why','play')
+# you go where: set of possible answers
+person = mind.Thot.entityFromString('person')
+go = mind.Thot.entityFromString('go')
+where = mind.Thot.entityFromString('where')
+alist = sammind.patterns[person][go][where]
 
+#Thot.nextQuestion()
 
-##print(repr(sammind))
-print(str(sammind))
-#
-#print(repr(a))
-#print(repr(a1))
-#print(repr(a2))
+print(alist)
+quit()
+
 
 '''
-goals:
-	discrete complex thoughts, including sub-clauses
-	sub-Relations NOT idendtified separately in mind
-	distinguish classes from instances
+instance vs klass
+	in every relation, make every entity an instance
 
-	option:
-		in every relation, make every entity an instance
-
-note
 	whenever a modify is done to a noun
 		an instance is required
 	every relation is by nature an instance
@@ -362,14 +355,15 @@ note
 			if John owns one, that is an instance, color red deliniates it
 				the class has a name, the instance does not
 
-	option
-		subj:Objek -> link/verb:Objek -> obj:Objek
-		verb:Objek
-			modifier
-				subj Objek
-				obj  Objek
-				why
-				where
+subj verb obj
+	two options
+	subj:Objek -> link/verb:Objek -> obj:Objek
+	verb:Objek
+		modifier
+			subj Objek
+			obj  Objek
+			why
+			where
 		
 	"object" and "entity" imply a noun		
 	"instance" - can also be a verb or a link.  is that true?
@@ -385,11 +379,6 @@ note
 		each of the three can have modifiers
 
 	a klass can have modifiers too
-
-
-	generate grammar
-
-
 
 	common names of persons, Klas?
 	who's who, instances of persons, public
@@ -417,6 +406,143 @@ mind.whoswho.toString() - including my contacts, global phone book
 mind.businessdirectory.toString()
 	Ristr8to
 	
+generate grammar
+	x enumerate relation acces
+	enumerate klass	
+	enumerate klass instance
+	classify enumeration by link
+	
+	loop thru klas, for each
+		list modifiers	
+		sort and count by link
+		list usage as subj, how many times used as subj
+		list usage as obj
+			how many times used as obj of verb
+			how many times used as obj of modifier
+
+
+where you go
+grocery store
+why
+because i am hungry
+
+why
+to buy food
+why
+to eat the food
+why
+because I'm hungry
+where will you eat the food
+at home
+
+go grocery store, buy food, return home, eat food
+why: i hungry
+
+go restaurant, eat food
+why: i hungry
+
+shortcut
+sequential verb phrases, all with implied subject
+
+relation is subject plus verb phrase
+	"empty" -> "implied" for subject
+	"empty" -> "unspecified" for object
+
+relation is phrase: verb, adj, adv
+
+two ways to represent relation:
+	verb: subject and object are modifiers
+	noun: verb phrase is modifier
+
+houn: modifier timestamp is time we first heard about this  modifier
+verb: timestamp is time the action took place
+
+
+Bangkok on the earth
+Bangkok on a map  - map of Bangkok
+model of Bangkok
+photo
+same Bangkok, one real, one representation
+
+Nid, photo of Nid, photo of Nid
+Nid, clone, clone of Nid, Nid is now klas
+all representations "of", until you clone it 
+
+
+vocabulary - semantic hierarchy
+
+syntactic hierarchy
+
+
+
+thoughts can be expressed in a variety of ways
+	verb first, noun first, etc
+	I suppose they could be stored in a variet of ways also
+	so just pick one way and go with it
+	remember Alan Watts saying every noun is an action, a being
+
+a verb timestamp is the time or period of the action (when)
+a noun timestamp is the time i first heard about this attribute
+
+do we want timestamps?  other than the when  modifier?
+yes we want the timestamp and the source(user) of every thot
+though these will not be used in normal conversation, only in self-reflection
+
+verb phrase includes modifiers, including link to object
+noun phrase includes modifiers
+sentence is noun phrase + verb phrase
+a thought can start anywhere: subj or verb, is that true?
+
+duplicate relations
+	must be separate so they can be modified
+	they happen at different times, so are different thoughts and must be recorded
+	therefore, accesscount is never more than 1
+	a relation is like an objek in that sense
+
+scan modifiers
+scan relations
+
+scan modifiers now, then add relations
+
+
+patterns:
+	@person
+		verbs
+			links
+				objects
+
+# patterns is a four-dimensional array
+patterns = [subjek][verb][link][objek] 
+patterns = {}
+patterns['person'] = {}
+patterns['person']['go'] = {}
+patterns['person']['go']['where'] = {}
+
+	def buildGrammar(self):
+		for r in self.relations.values():
+			subjek = self.findLevel1Klas(r.subjek)
+			self.patterns[subjek] = r.verb
+			for mk,mv in r.modifiers.items():
+				if mv.link not in self.patterns[r.subj][r.verb]:
+					self.patterns[r.subj][r.verb][mv.link] = {}
+				if mv.objek not in self.patterns[r.subj][r.verb][mv.link]
+					self.patterns[r.subj][r.verb][mv.link][mv.objek] = {}
+
+	def findLevel1Klas(self,klas):
+		uklas = None
+		self.klastree
+		return uklas
+	
+read thru all relations
+	find the level=1 k
+for each level=1 klas
+	read thru all relations
+	make a list of verbs used with that subj
+	for each of those verbs
+		make a list of modifier.links
+		for each of those:
+			make a list of modifier.objects
+
 
 '''
 

@@ -9,11 +9,14 @@ class Mind:
 		self.klases = {}  # string-keyed Klas objects
 		self.relations = {} # uuid-keyed Relation objects
 		self.klastree = tree.Tree('maximal')
+		self.klastree.accesscount = 0 # cheat
 		self.objeks = {}
+		self.patterns = {}
 
 	def __str__(self):
 		s = 'Klass Tree\n'
-		s += str(self.klastree)
+		#s += str(self.klastree)
+		s += self.printKlasTree()
 
 		s += '\nTop Relations\n'
 		for key,value in self.relations.items():
@@ -32,21 +35,71 @@ class Mind:
 			s += f'{str(value)}\n'
 		return s
 
+	def printKlasTree(self):
+		def fn(m,level):
+			indent = '\t' * (level-1)
+			x = '' if m.isTerminal() else '---'
+			tree.Tree.s += f'{indent} {str(level)} {m.key} {m.accesscount} {x} \n'
+		self.klastree.process(fn, False)
+		return tree.Tree.s
+
+	def buildGrammar(self):
+		'''
+		Ambiguities in language, thought: We are trying to flatten a rounded structure
+		# patterns is a four-dimensional array
+		patterns = [subjek][verb][link][objek] 
+		patterns = {}
+		patterns['person'] = {}
+		patterns['person']['go'] = {}
+		patterns['person']['go']['where'] = {}
+		'''
+
+		for rel in self.relations.values():
+			subjek = self.findLevel2Klas(rel.a)
+			if subjek not in self.patterns:
+				self.patterns[subjek] = {}
+			if rel.link not in self.patterns[subjek]:
+				self.patterns[subjek][rel.link] = {}
+			for mk,mv in rel.modifiers.items():
+				if mk not in self.patterns[subjek][rel.link]:
+					self.patterns[subjek][rel.link][mk] = {}
+				if mv not in self.patterns[subjek][rel.link][mk]:
+					self.patterns[subjek][rel.link][mk][mv] = 'x'
+
+	def findLevel2Klas(self,klas):
+		uklas = klas
+		while uklas.level > 2:
+			uklas = Thot.entityFromString(uklas.pname)
+		return uklas
+	
+	def displayGrammar(self):
+		for subj in self.patterns.keys():
+			print(f'{subj.key}')
+			for link in self.patterns[subj].keys():
+				print(f'{subj.key} {link.key}')
+				for lnk in self.patterns[subj][link].keys():
+					print(f'{subj.key} {link.key} {lnk.key}')
+					for mod in self.patterns[subj][link][lnk].keys():
+						print(f'{subj.key} {link.key} {lnk.key} {mod}')
+
+
 class Thot:
 	mind = Mind()
 
 	def __init__(self):
 		self.modifiers = {}
+		self.accesscount = 0
 
 	def modify(self,link,modifier):
-		link = self.entityFromString(link)
-		modifier = self.entityFromString(modifier)
+		link = Thot.entityFromString(link)
+		modifier = Thot.entityFromString(modifier)
 		self.modifiers[link] = modifier 
-		if isinstance(modifier, Relation):
-			modifier.accesscount += 1
+		link.accesscount += 1
+		modifier.accesscount += 1
 		return self
 
-	def entityFromString(self, param):
+	@staticmethod
+	def entityFromString(param):
 		if isinstance(param, str):
 			param = Thot.mind.klases[param]
 		return param 
@@ -57,11 +110,13 @@ class Klas(tree.Tree, Thot):
 		Thot.__init__(self)
 		self.pname = pname
 		Thot.mind.klases[name] = self
-			
-		Thot.mind.klastree.process(self.store)
+		if name == 'maximal':	
+			import pdb;pdb.set_trace()
+		Thot.mind.klastree.process(self.store,False)
 
-	def store(self,m):
+	def store(self,m,level):
 		if self.pname == m.key:
+			self.level = level+1
 			m.tree.append(self)	
 
 	def __str__(self):
@@ -72,6 +127,9 @@ class Klas(tree.Tree, Thot):
 		for k,v in self.modifiers.items():
 			s += f' {k.__str__()} {v.__str__()}'
 		return s
+
+	def __repr__(self):
+		return self.key
 
 class Objek(Thot):
 	def __init__(self,klas):
@@ -99,9 +157,12 @@ class Relation(Thot):
 		if isinstance(self.b, str):
 			self.b = Thot.mind.klases[self.b]
 
+		#self.a.accesscount += 1
+		#self.link.accesscount += 1
+		#self.b.accesscount += 1
+
 		self.id = ''.join(str(self).split(' ')) + '_' + str(self.ts)
 		Thot.mind.relations[self.id] = self
-		self.accesscount = self.countAccess()
 
 	def countAccess(self):
 		'''
@@ -158,6 +219,16 @@ class Relation(Thot):
 		for key,value in self.modifiers.items():
 			s += f' {str(key)} {str(value)}'
 		return s
+
+	def nextQuestion(self):
+		pass
+		#self.a
+		#self.link
+		#self.b
+		#self.modifiers
+		#for this set of a, link, b, modifiers
+		#	what are the additional modifiers found in use already
+		#	at level 1 of each bit
 
 class Number(Thot):
 	def __init__(self,value):
