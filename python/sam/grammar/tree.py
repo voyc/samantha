@@ -1,42 +1,51 @@
-''' tree.py - implement hierarchy tree '''
+''' tree.py - implement hierarchical tree '''
 
 class Tree:
-	level = 0
-	s = ''
-
-	def __init__(self,key):
-		self.key = key 
-		self.tree = []
-
-	#def print(self):
-	#	def fn(m):
-	#		indent = '\t' * (Tree.level-1)
-	#		x = '' if m.isTerminal() else '---'
-	#		print(indent, Tree.level, m.key, x)
-	#	self.process(fn,False)
-
-	#def __str__(self):
-	#	def fn(m):
-	#		indent = '\t' * (Tree.level-1)
-	#		x = '' if m.isTerminal() else '---'
-	#		Tree.s += f'{indent} {str(Tree.level)} {m.key} {x} \n'
-	#	self.process(fn,False)
-	#	return Tree.s
-		
+	''' base class '''
+	def __init__(self,parent=None):
+		'''
+		The first instance must have parent=None. It is the "root" or "maximal" node.
+		All other instances must specify a parent. 
+		'''
+		self.parent = parent 
+		self.level = 0
+		self.children = []
+		if parent:
+			self.level = parent.level + 1
+			parent.children.append(self)
 
 	def process(self,fn,bubble=True):
-		Tree.level += 1
+		''' Call a callback fn(m) for every node, in either bubble up or trickle down order. '''
 		if not bubble:
-			fn(self, Tree.level)  # trickle down (self first, then tree )
-		for tree in self.tree:
-			tree.process(fn,bubble) # recursive
+			fn(self)  # trickle down (self first, then children )
+		for child in self.children:
+			child.process(fn,bubble) # recursive
 		if bubble:
-			fn(self, Tree.level)  # bubble up (self after tree)
-		Tree.level -= 1
+			fn(self)  # bubble up (self after children)
 
-	def copyBranch(self,frm):
-		#self.tree = copy.deepcopy(frm.tree)
-		self.tree = frm.tree
+	def isLeaf(self):
+		''' Nodes with no children are called "leaf" or "terminal" or "minimal" nodes. '''
+		return len(self.children) <= 0
 
-	def isTerminal(self):
-		return len(self.tree) <= 0
+''' example '''
+if __name__ == '__main__':
+	class Hoo(Tree):
+		def __init__(self, name, parent=None):
+			self.name = name
+			super().__init__(parent)
+		
+	animal = Hoo('animal')
+	dog = Hoo('dog', animal)
+	Hoo('schnauser', dog)
+	Hoo('collie', dog)
+	Hoo('corgi', dog)
+	cat = Hoo('cat', animal)
+	Hoo('persian', cat)
+	Hoo('siamese', cat)
+
+	def fn(m):
+		indent = '\t' * m.level
+		terminal = '|' if m.isLeaf() else '...'
+		print(f'{indent} {m.name} {terminal}')
+		
+	animal.process(fn,False)

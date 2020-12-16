@@ -5,13 +5,21 @@ import tree
 import datetime
 
 class Mind:
+	''' 
+	singleton class defines a mind 
+	contains thots which are klases and relations
+	'''
+	
 	def __init__(self):
 		self.klases = {}  # string-keyed Klas objects
 		self.relations = {} # uuid-keyed Relation objects
-		self.klastree = tree.Tree('maximal')
-		self.klastree.accesscount = 0 # cheat
+		self.klastree = None
 		self.objeks = {}
 		self.patterns = {}
+
+	def setup(self):
+		self.klastree = Klas('root')
+		Thot.mind = self
 
 	def __str__(self):
 		s = 'Klass Tree\n'
@@ -36,12 +44,14 @@ class Mind:
 		return s
 
 	def printKlasTree(self):
-		def fn(m,level):
-			indent = '\t' * (level-1)
-			x = '' if m.isTerminal() else '---'
-			tree.Tree.s += f'{indent} {str(level)} {m.key} {m.accesscount} {x} \n'
+		s = ''
+		def fn(m):
+			nonlocal s
+			indent = '\t' * (m.level)
+			x = '' if m.isLeaf() else '---'
+			s += f'{indent} {str(m.level)} {m} {m.accesscount} {x} \n'
 		self.klastree.process(fn, False)
-		return tree.Tree.s
+		return s
 
 	def buildGrammar(self):
 		'''
@@ -55,7 +65,7 @@ class Mind:
 		'''
 
 		for rel in self.relations.values():
-			subjek = self.findLevel2Klas(rel.a)
+			subjek = self.findBranchKlas(rel.a)
 			if subjek not in self.patterns:
 				self.patterns[subjek] = {}
 			if rel.link not in self.patterns[subjek]:
@@ -66,10 +76,10 @@ class Mind:
 				if mv not in self.patterns[subjek][rel.link][mk]:
 					self.patterns[subjek][rel.link][mk][mv] = 'x'
 
-	def findLevel2Klas(self,klas):
+	def findBranchKlas(self,klas):
 		uklas = klas
-		while uklas.level > 2:
-			uklas = Thot.entityFromString(uklas.pname)
+		while uklas.level > 1:
+			uklas = uklas.parent
 		return uklas
 	
 	def displayGrammar(self):
@@ -91,45 +101,48 @@ class Thot:
 		self.accesscount = 0
 
 	def modify(self,link,modifier):
-		link = Thot.entityFromString(link)
-		modifier = Thot.entityFromString(modifier)
+		link = Thot.efs(link)
+		modifier = Thot.efs(modifier)
 		self.modifiers[link] = modifier 
 		link.accesscount += 1
 		modifier.accesscount += 1
 		return self
 
 	@staticmethod
-	def entityFromString(param):
+	def efs(param): # entity from string
 		if isinstance(param, str):
 			param = Thot.mind.klases[param]
+			if not param:
+				raise KlasNotFoundKlasException
 		return param 
 
 class Klas(tree.Tree, Thot):
-	def __init__(self,name,pname='maximal'):
-		tree.Tree.__init__(self,name)
+	def __init__(self,name,parent=None):
+		self.key = name
+		parent = Thot.efs(parent)
+		if not parent:
+			parent = Thot.mind.klastree
+		tree.Tree.__init__(self,parent)
 		Thot.__init__(self)
-		self.pname = pname
 		Thot.mind.klases[name] = self
-		if name == 'maximal':	
-			import pdb;pdb.set_trace()
-		Thot.mind.klastree.process(self.store,False)
+		#Thot.mind.klastree.process(self.store,False)
 
-	def store(self,m,level):
-		if self.pname == m.key:
-			self.level = level+1
-			m.tree.append(self)	
+	#def store(self,m,level):
+	#	if self.parent.key == m.key:
+	#		self.level = level+1
+	#		m.tree.append(self)	
 
 	def __str__(self):
 		key = self.key
 		if self.key == 'instance':
-			key = f'#{self.pname}'
+			key = f'#{self.parent.key}'
 		s = f'{key}'
 		for k,v in self.modifiers.items():
 			s += f' {k.__str__()} {v.__str__()}'
 		return s
 
-	def __repr__(self):
-		return self.key
+	#def __repr__(self):
+	#	return f'Klas::{self.key}'
 
 class Objek(Thot):
 	def __init__(self,klas):
@@ -140,6 +153,9 @@ class Objek(Thot):
 		Thot.mind.objeks[key] = self
 
 class DupeKlasException(Exception):
+	pass
+
+class KlasFoundException(Exception):
 	pass
 
 class Relation(Thot):

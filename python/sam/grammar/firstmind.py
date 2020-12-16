@@ -3,7 +3,7 @@
 import mind
 
 sammind = mind.Mind()
-mind.Thot.mind = sammind
+sammind.setup()
 
 mind.Klas('empty')
 
@@ -303,14 +303,15 @@ mind.Relation('Nid', 'cook', 'food').modify('why', mind.Relation(mind.Klas('inst
 #time for planting
 
 print(sammind)
-import pdb; pdb.set_trace()
+import pdb;pdb.set_trace()
 sammind.buildGrammar()
 sammind.displayGrammar()
 
 # you go where: set of possible answers
-person = mind.Thot.entityFromString('person')
-go = mind.Thot.entityFromString('go')
-where = mind.Thot.entityFromString('where')
+import pdb;pdb.set_trace()
+person = mind.Thot.efs('person')
+go = mind.Thot.efs('go')
+where = mind.Thot.efs('where')
 alist = sammind.patterns[person][go][where]
 
 #Thot.nextQuestion()
