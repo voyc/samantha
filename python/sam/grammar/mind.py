@@ -4,161 +4,72 @@ import uuid
 import tree
 import datetime
 
-class Mind:
-	''' 
-	singleton class defines a mind 
-	contains thots which are klases and relations
-	'''
-	
-	def __init__(self):
-		self.klases = {}  # string-keyed Klas objects
-		self.relations = {} # uuid-keyed Relation objects
-		self.klastree = None
-		self.objeks = {}
-		self.patterns = {}
+class DupeNodeException(Exception):
+	pass
 
-	def setup(self):
-		self.klastree = Klas('root')
-		Thot.mind = self
+class NodeNotFoundException(Exception):
+	pass
 
-	def __str__(self):
-		s = 'Klass Tree\n'
-		#s += str(self.klastree)
-		s += self.printKlasTree()
-
-		s += '\nTop Relations\n'
-		for key,value in self.relations.items():
-			if value.accesscount <= 0:
-				s += f'{str(value)} : {str(value.accesscount)}\n'
-
-		s += '\nSub Relations\n'
-		for key,value in self.relations.items():
-			if value.accesscount >= 1:
-				s += f'{str(value)} : {str(value.accesscount)}\n'
-
-		s += '\nObjeks\n'
-		for key,value in self.objeks.items():
-			if value.level > 1:
-				continue
-			s += f'{str(value)}\n'
-		return s
-
-	def printKlasTree(self):
-		s = ''
-		def fn(m):
-			nonlocal s
-			indent = '\t' * (m.level)
-			x = '' if m.isLeaf() else '---'
-			s += f'{indent} {str(m.level)} {m} {m.accesscount} {x} \n'
-		self.klastree.process(fn, False)
-		return s
-
-	def buildGrammar(self):
-		'''
-		Ambiguities in language, thought: We are trying to flatten a rounded structure
-		# patterns is a four-dimensional array
-		patterns = [subjek][verb][link][objek] 
-		patterns = {}
-		patterns['person'] = {}
-		patterns['person']['go'] = {}
-		patterns['person']['go']['where'] = {}
-		'''
-
-		for rel in self.relations.values():
-			subjek = self.findBranchKlas(rel.a)
-			if subjek not in self.patterns:
-				self.patterns[subjek] = {}
-			if rel.link not in self.patterns[subjek]:
-				self.patterns[subjek][rel.link] = {}
-			for mk,mv in rel.modifiers.items():
-				if mk not in self.patterns[subjek][rel.link]:
-					self.patterns[subjek][rel.link][mk] = {}
-				if mv not in self.patterns[subjek][rel.link][mk]:
-					self.patterns[subjek][rel.link][mk][mv] = 'x'
-
-	def findBranchKlas(self,klas):
-		uklas = klas
-		while uklas.level > 1:
-			uklas = uklas.parent
-		return uklas
-	
-	def displayGrammar(self):
-		for subj in self.patterns.keys():
-			print(f'{subj.key}')
-			for link in self.patterns[subj].keys():
-				print(f'{subj.key} {link.key}')
-				for lnk in self.patterns[subj][link].keys():
-					print(f'{subj.key} {link.key} {lnk.key}')
-					for mod in self.patterns[subj][link][lnk].keys():
-						print(f'{subj.key} {link.key} {lnk.key} {mod}')
-
+class NoParentException(Exception):
+	pass
 
 class Thot:
-	mind = Mind()
+	''' base class for Node and Relation '''
+	mind = None
 
 	def __init__(self):
 		self.modifiers = {}
 		self.accesscount = 0
 
 	def modify(self,link,modifier):
-		link = Thot.efs(link)
-		modifier = Thot.efs(modifier)
+		link = Thot.nfs(link)
+		modifier = Thot.nfs(modifier)
 		self.modifiers[link] = modifier 
 		link.accesscount += 1
 		modifier.accesscount += 1
 		return self
 
+	def isTop(self):
+		return self.accesscount <= 0
+
 	@staticmethod
-	def efs(param): # entity from string
+	def nfs(param): # node from string
 		if isinstance(param, str):
-			param = Thot.mind.klases[param]
+			param = Thot.mind.nodes[param]
 			if not param:
-				raise KlasNotFoundKlasException
+				raise NodeNotFoundException
 		return param 
 
-class Klas(tree.Tree, Thot):
-	def __init__(self,name,parent=None):
-		self.key = name
-		parent = Thot.efs(parent)
-		if not parent:
-			parent = Thot.mind.klastree
+class Node(tree.Tree, Thot):
+	''' a Node is a word (entity, thing, action, idea), class or object, in the mind '''
+	def __init__(self,word,parent=None):
+		''' word is a string.  parent can be string or object. '''
+		self.word = word
+		parent = Thot.nfs(parent) # convert string to object 
+		if not parent: # first time only, init the tree
+			if Thot.mind.nodetree:
+				raise NoParentException
+			Thot.mind.nodetree = self
 		tree.Tree.__init__(self,parent)
 		Thot.__init__(self)
-		Thot.mind.klases[name] = self
-		#Thot.mind.klastree.process(self.store,False)
-
-	#def store(self,m,level):
-	#	if self.parent.key == m.key:
-	#		self.level = level+1
-	#		m.tree.append(self)	
+		if word != 'instance' and word in Thot.mind.nodes:
+			raise DupeNodeException
+		Thot.mind.nodes[word] = self
 
 	def __str__(self):
-		key = self.key
-		if self.key == 'instance':
-			key = f'#{self.parent.key}'
-		s = f'{key}'
+		word = self.word
+		if self.word == 'instance':
+			word = f'#{self.parent.word}'
+		s = f'{word}'
 		for k,v in self.modifiers.items():
 			s += f' {k.__str__()} {v.__str__()}'
 		return s
 
 	#def __repr__(self):
-	#	return f'Klas::{self.key}'
-
-class Objek(Thot):
-	def __init__(self,klas):
-		Thot.__init__(self,name)
-		self.klas = klass
-		self.ts = str(datetime.datetime.timestamp(datetime.datetime.now()))
-		key = klass + self.ts
-		Thot.mind.objeks[key] = self
-
-class DupeKlasException(Exception):
-	pass
-
-class KlasFoundException(Exception):
-	pass
+	#	return f'Node::{self.word}'
 
 class Relation(Thot):
+	''' a Relation (Race, Link) relates Nodes together '''
 	def __init__(self, a, link, b):
 		super().__init__()
 		self.a = a
@@ -167,11 +78,11 @@ class Relation(Thot):
 		self.ts = datetime.datetime.timestamp(datetime.datetime.now())
 
 		if isinstance(self.a, str):
-			self.a = Thot.mind.klases[self.a]
+			self.a = Thot.mind.nodes[self.a]
 		if isinstance(self.link, str):
-			self.link = Thot.mind.klases[self.link]
+			self.link = Thot.mind.nodes[self.link]
 		if isinstance(self.b, str):
-			self.b = Thot.mind.klases[self.b]
+			self.b = Thot.mind.nodes[self.b]
 
 		#self.a.accesscount += 1
 		#self.link.accesscount += 1
@@ -227,10 +138,10 @@ class Relation(Thot):
 
 	def __str__(self):
 		s = ''
-		if self.a.key != 'empty':
+		if self.a.word != 'empty':
 			s += f'{str(self.a)} '
 		s += f'{str(self.link)}'
-		if self.b.key != 'empty':
+		if self.b.word != 'empty':
 			s += f' {str(self.b)}'
 		for key,value in self.modifiers.items():
 			s += f' {str(key)} {str(value)}'
@@ -253,3 +164,85 @@ class Number(Thot):
 
 	def __str__(self):
 		return str(self.value)
+
+class Mind:
+	''' 
+	singleton class
+	defines a mind 
+	contains thots, which are nodes and relations
+	contains grammar, patterns
+	'''
+	
+	def __init__(self):
+		self.nodes = {}  # string-keyed Node objects
+		self.relations = {} # uuid-keyed Relation objects
+		self.nodetree = None
+		self.patterns = {}
+		Thot.mind = self
+
+	def buildGrammar(self):
+		'''
+		Ambiguities in language, thought: We are trying to flatten a rounded structure
+		# patterns is a four-dimensional array
+		patterns = [subjek][verb][link][objek] 
+		patterns = {}
+		patterns['person'] = {}
+		patterns['person']['go'] = {}
+		patterns['person']['go']['where'] = {}
+		'''
+
+		for rel in self.relations.values():
+			subjek = self.findBranchNode(rel.a)
+			if subjek not in self.patterns:
+				self.patterns[subjek] = {}
+			if rel.link not in self.patterns[subjek]:
+				self.patterns[subjek][rel.link] = {}
+			for mk,mv in rel.modifiers.items():
+				if mk not in self.patterns[subjek][rel.link]:
+					self.patterns[subjek][rel.link][mk] = {}
+				if mv not in self.patterns[subjek][rel.link][mk]:
+					self.patterns[subjek][rel.link][mk][mv] = 'x'
+
+	def findBranchNode(self,node):
+		unode = node
+		while unode.level > 1:
+			unode = unode.parent
+		return unode
+	
+	def dump(self):
+		self.printNodeTree()
+		self.printRelations()
+		self.printGrammar()
+
+	def printNodeTree(self):
+		print('Nodes Tree')
+		def fn(m):
+			indent = '\t' * (m.level)
+			x = '' if m.isLeaf() else '---'
+			print( f'{indent} {str(m.level)} {m} {m.accesscount} {x}')
+		self.nodetree.process(fn, False)
+		return
+
+	def printRelations(self):
+		print('\nTop Relations')
+		for v in self.relations.values():
+			if v.isTop():
+				print( f'{str(v)} : {str(v.accesscount)}')
+
+		print('\nSub Relations')
+		for v in self.relations.values():
+			if not v.isTop():
+				print( f'{str(v)} : {str(v.accesscount)}')
+
+	def printGrammar(self):
+		print('\nGrammar Patterns')
+		for subj in self.patterns.keys():
+			print(f'{subj.word}')
+			for link in self.patterns[subj].keys():
+				print(f'{subj.word} {link.word}')
+				for lnk in self.patterns[subj][link].keys():
+					print(f'{subj.word} {link.word} {lnk.word}')
+					for mod in self.patterns[subj][link][lnk].keys():
+						print(f'{subj.word} {link.word} {lnk.word} {mod}')
+
+
