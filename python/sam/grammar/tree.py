@@ -9,23 +9,23 @@ class Tree:
 		'''
 		self.parent = parent 
 		self.level = 0
-		self.children = []
+		self.child = []
 		if parent:
 			self.level = parent.level + 1
-			parent.children.append(self)
+			parent.child.append(self)
 
 	def process(self,fn,bubble=True):
 		''' Call a callback fn(m) for every branch, in either bubble up or trickle down order. '''
 		if not bubble:
 			fn(self)  # trickle down (self first, then children )
-		for child in self.children:
+		for child in self.child:
 			child.process(fn,bubble) # recursive
 		if bubble:
 			fn(self)  # bubble up (self after children)
 
 	def isLeaf(self):
-		''' A brance with no children is called a "leaf" or "terminal" or "minimal" branch. '''
-		return len(self.children) <= 0
+		''' A branch with no children is called a "leaf" or "terminal" or "minimal" branch. '''
+		return len(self.child) <= 0
 
 ''' example '''
 if __name__ == '__main__':

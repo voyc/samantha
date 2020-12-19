@@ -14,7 +14,7 @@ class NoParentException(Exception):
 	pass
 
 class Thot:
-	''' base class for Node and Relation '''
+	''' base class, add modifiers and accesscount  '''
 	mind = None
 
 	def __init__(self):
@@ -23,7 +23,8 @@ class Thot:
 
 	def modify(self,link,modifier):
 		link = Thot.nfs(link)
-		modifier = Thot.nfs(modifier)
+		if isinstance(modifier,str):
+			modifier = Objek(Thot.nfs(modifier))
 		self.modifiers[link] = modifier 
 		link.accesscount += 1
 		modifier.accesscount += 1
@@ -52,110 +53,59 @@ class Node(tree.Tree, Thot):
 			Thot.mind.nodetree = self
 		tree.Tree.__init__(self,parent)
 		Thot.__init__(self)
-		if word != 'instance' and word in Thot.mind.nodes:
+		if word in Thot.mind.nodes:
 			raise DupeNodeException
 		Thot.mind.nodes[word] = self
 
 	def __str__(self):
-		word = self.word
-		if self.word == 'instance':
-			word = f'#{self.parent.word}'
-		s = f'{word}'
+		return self.word
+
+	def dump(self):
+		print(self.word)
+		print(self.parent.word)
+		print(self.level)
 		for k,v in self.modifiers.items():
-			s += f' {k.__str__()} {v.__str__()}'
-		return s
+			print( f' {k.word} {v.word}')
 
-	#def __repr__(self):
-	#	return f'Node::{self.word}'
-
-class Relation(Thot):
-	''' a Relation (Race, Link) relates Nodes together '''
-	def __init__(self, a, link, b):
-		super().__init__()
-		self.a = a
-		self.link = link
-		self.b = b
+class Objek(Node):
+	''' object, an instance of a Node '''
+	def __init__(self, parent):
+		parent = Thot.nfs(parent) # convert string to object 
+		if not parent:
+			raise NoParentException
+		self.word = parent.word
+		Thot.__init__(self)
 		self.ts = datetime.datetime.timestamp(datetime.datetime.now())
-
-		if isinstance(self.a, str):
-			self.a = Thot.mind.nodes[self.a]
-		if isinstance(self.link, str):
-			self.link = Thot.mind.nodes[self.link]
-		if isinstance(self.b, str):
-			self.b = Thot.mind.nodes[self.b]
-
-		#self.a.accesscount += 1
-		#self.link.accesscount += 1
-		#self.b.accesscount += 1
-
 		self.id = ''.join(str(self).split(' ')) + '_' + str(self.ts)
-		Thot.mind.relations[self.id] = self
-
-	def countAccess(self):
-		'''
-		does this same relation already exist?
-		has this sam relation been used before?
-		if so, what
-
-		separate to top and sub thots
-		find how many times this sub-relation is referenced in thots and modifiers
-		not need level: only main or sub, so we can list separately
-		'''	
-		cnt = 0
-		for k,v in Thot.mind.relations.items():
-			if self == v: continue
-			if self == v.a: cnt += 1
-			if self == v.b: cnt += 1
-			if self == v.link: cnt += 1
-			for w,m in v.modifiers.items():
-				if m == v: cnt+= 1
-		return cnt
-
-	def composeQA(self):
-		'''
-		for a pattern
-			what are valid questions
-			what are valid answers to each question
-		verb modifiers
-		noun modifiers
-		pattern
-			typeof subj, typeof link
-			@person, @action, [who,why,where]
-				answers to who
-				answers to why
-				answers to where
-		find pattern
-			parent
-
-		do all upfront, or on demand?
-		on demand
-
-		for a thot
-			compose questions, as multiple choice (with all answers)
-			prioritize
-		'''
-		pass
+		Thot.mind.objeks[self.id] = self
 
 	def __str__(self):
-		s = ''
-		if self.a.word != 'empty':
-			s += f'{str(self.a)} '
-		s += f'{str(self.link)}'
-		if self.b.word != 'empty':
-			s += f' {str(self.b)}'
-		for key,value in self.modifiers.items():
-			s += f' {str(key)} {str(value)}'
+		s = self.word
+		for k,v in self.modifiers.items():
+			s += f' {str(k)} {str(v)}'
+		return s
+
+class Claws(Thot):
+	''' clause: subjek, verb, {object} '''
+	def __init__(self, subjek, verb, objek=None):
+		super().__init__()
+		self.subjek = Objek(Thot.nfs(subjek))
+		self.verb = Objek(Thot.nfs(verb))
+		self.objek = Objek(Thot.nfs(objek)) if objek else None
+		self.ts = datetime.datetime.timestamp(datetime.datetime.now())
+		self.id = ''.join(str(self).split(' ')) + '_' + str(self.ts)
+		Thot.mind.claws[self.id] = self
+
+	def __str__(self):
+		s = f'{self.subjek} {self.verb}' 
+		if self.objek:
+			s += f' {self.objek}' 
+		for k,v in self.modifiers.items():
+			s += f' {str(k)} {str(v)}'
 		return s
 
 	def nextQuestion(self):
 		pass
-		#self.a
-		#self.link
-		#self.b
-		#self.modifiers
-		#for this set of a, link, b, modifiers
-		#	what are the additional modifiers found in use already
-		#	at level 1 of each bit
 
 class Number(Thot):
 	def __init__(self,value):
@@ -169,39 +119,40 @@ class Mind:
 	''' 
 	singleton class
 	defines a mind 
-	contains thots, which are nodes and relations
+	contains thots, which are nodes, objeks, and claws
 	contains grammar, patterns
 	'''
 	
 	def __init__(self):
 		self.nodes = {}  # string-keyed Node objects
-		self.relations = {} # uuid-keyed Relation objects
+		self.objeks = {}
+		self.claws = {} # uuid-keyed Clause objects
 		self.nodetree = None
 		self.patterns = {}
 		Thot.mind = self
 
 	def buildGrammar(self):
-		'''
-		Ambiguities in language, thought: We are trying to flatten a rounded structure
-		# patterns is a four-dimensional array
-		patterns = [subjek][verb][link][objek] 
-		patterns = {}
-		patterns['person'] = {}
-		patterns['person']['go'] = {}
-		patterns['person']['go']['where'] = {}
-		'''
-
-		for rel in self.relations.values():
-			subjek = self.findBranchNode(rel.a)
+		for claw in self.claws.values():
+			subjek = claw.subjek #self.findBranchNode(Thot.nfs(claw.subjek.word))
 			if subjek not in self.patterns:
 				self.patterns[subjek] = {}
-			if rel.link not in self.patterns[subjek]:
-				self.patterns[subjek][rel.link] = {}
-			for mk,mv in rel.modifiers.items():
-				if mk not in self.patterns[subjek][rel.link]:
-					self.patterns[subjek][rel.link][mk] = {}
-				if mv not in self.patterns[subjek][rel.link][mk]:
-					self.patterns[subjek][rel.link][mk][mv] = 'x'
+
+			link = claw.verb # claw.link.parent #self.findBranchNode(claw.link)
+			if link not in self.patterns[subjek]:
+				self.patterns[subjek][link] = {}
+
+			objek = claw.objek
+			what = Thot.nfs('what')
+			if what not in self.patterns[subjek][link]:
+				self.patterns[subjek][link][what] = {}
+			if objek not in self.patterns[subjek][link][what]:
+				self.patterns[subjek][link][what][objek] = {}
+
+			for mk,mv in claw.modifiers.items():
+				if mk not in self.patterns[subjek][link]:
+					self.patterns[subjek][link][mk] = {}
+				if mv not in self.patterns[subjek][link][mk]:
+					self.patterns[subjek][link][mk][mv] = 'x'
 
 	def findBranchNode(self,node):
 		unode = node
@@ -209,10 +160,12 @@ class Mind:
 			unode = unode.parent
 		return unode
 	
-	def dump(self):
-		self.printNodeTree()
-		self.printRelations()
-		self.printGrammar()
+	def dump(self,detail=False):
+		print(f'Nodes {len(self.nodes)}, Objeks {len(self.objeks)}, Claws {len(self.claws)}, Patterns {len(self.patterns)}\n')
+		if detail:
+			self.printNodeTree()
+			self.printClaws()
+			self.printGrammar()
 
 	def printNodeTree(self):
 		print('Nodes Tree')
@@ -223,14 +176,14 @@ class Mind:
 		self.nodetree.process(fn, False)
 		return
 
-	def printRelations(self):
-		print('\nTop Relations')
-		for v in self.relations.values():
+	def printClaws(self):
+		print('\nTop Claws')
+		for v in self.claws.values():
 			if v.isTop():
 				print( f'{str(v)} : {str(v.accesscount)}')
 
-		print('\nSub Relations')
-		for v in self.relations.values():
+		print('\nSub Claws')
+		for v in self.claws.values():
 			if not v.isTop():
 				print( f'{str(v)} : {str(v.accesscount)}')
 

@@ -14,12 +14,17 @@ mind.Node('link', 'root')
 
 mind.Node('typeof', 'link')
 mind.Node('ownedby', 'link')
-mind.Node('where', 'link')
-mind.Node('why', 'link')
-mind.Node('which', 'link')
-mind.Node('when', 'link')
-mind.Node('how', 'link')
 mind.Node('by', 'link')
+
+
+mind.Node('question', 'link')
+mind.Node('which', 'question') # apply to noun
+
+mind.Node('where', 'question') # apply to verb
+mind.Node('why', 'question')
+mind.Node('when', 'question')  # default "now"
+mind.Node('how', 'question')
+mind.Node('what', 'question')  # applies only to "do"
 
 mind.Node('this', 'which')
 mind.Node('next', 'which')
@@ -43,14 +48,29 @@ mind.Node('evening', 'time')
 mind.Node('you', 'person')
 mind.Node('I', 'person')
 mind.Node('friend', 'person')
+mind.Node('family', 'person')
+
+mind.Node('Nid', 'person')
+mind.Node('Pin', 'person')
+mind.Node('May', 'person')
+mind.Node('Som', 'person')
+mind.Node('Nui', 'person')
+mind.Node('Memi', 'person')
+mind.Node('Fern', 'person')
+mind.Node('Bella', 'person')
+mind.Node('Jenny', 'person')
+mind.Node('Penny', 'person')
+mind.Node('Milky', 'person')
+mind.Node('Donut', 'person')
+mind.Node('Namtip', 'person')
+mind.Node('Tangmo', 'person')
+mind.Node('Chompoo', 'person')
+mind.Node('Naiyana', 'person')
 
 mind.Node('Sam', 'person')
-mind.Node('John', 'person')
-mind.Node('Naiyana', 'person')
-mind.Node('Juan', 'person')
 mind.Node('Joe', 'person')
-mind.Node('Nui', 'person')
-mind.Node('Nid', 'person')
+mind.Node('John', 'person')
+mind.Node('Juan', 'person')
 
 mind.Node('city', 'place')
 mind.Node('island', 'place')
@@ -101,6 +121,7 @@ mind.Node('filling', 'thing')
 mind.Node('whitening', 'thing')
 mind.Node('toothache', 'thing')
 mind.Node('braces', 'thing')
+mind.Node('fun', 'thing')
 
 mind.Node('transport', 'thing')
 mind.Node('train', 'transport')
@@ -116,8 +137,10 @@ mind.Node('songtaew', 'transport')
 mind.Node('tuktuk', 'transport')
 mind.Node('walk', 'action')
 mind.Node('run', 'action')
+mind.Node('do', 'action')
 
 mind.Node('go', 'action')
+mind.Node('come', 'action')
 mind.Node('eat', 'action')
 mind.Node('visit', 'action')
 mind.Node('pickup', 'action')
@@ -136,22 +159,70 @@ mind.Node('see', 'action')
 mind.Node('clean', 'action')
 mind.Node('remove', 'action')
 
-friendhouse = mind.Node('instance', 'house').modify('ownedby', 'friend')
+mind.Node('cook', 'action')
+mind.Node('brew', 'action')
+mind.Node('read', 'action')
+mind.Node('listen', 'action')
+mind.Node('play', 'action')
+mind.Node('is', 'action')
+mind.Node('feel', 'action')
+mind.Node('relax', 'action')
+mind.Node('chat', 'action')
+mind.Node('talk', 'action')
+mind.Node('give', 'action')
+mind.Node('have', 'action')
+mind.Node('study', 'action')
+mind.Node('work', 'action')
 
-mind.Relation('you', 'go', 'empty').modify('where', friendhouse).modify('why', mind.Relation('you', 'pickup', 'food'))
-mind.Relation('Sam', 'go', 'empty').modify('where', friendhouse).modify('why', mind.Relation('Sam', 'deliver', 'food'))
-mind.Relation('John', 'go', 'empty').modify('where', friendhouse).modify('why', mind.Relation('John', 'eat', 'food'))
-mind.Relation('Naiyana', 'go', 'empty').modify('where', 'Bangkok').modify('why', mind.Relation('Naiyana', 'visit', 'empty'))
-mind.Relation('Sam', 'go', 'empty').modify('where', 'Chiang_Mai').modify('why', 'vacation')
-mind.Relation('John', 'go', 'empty').modify('where', 'Pai').modify('why', mind.Relation('John', 'go', 'embassy'))
-mind.Relation('Juan', 'go', 'empty').modify('where', 'bank').modify('why', mind.Relation('Juan', 'get', 'money'))
+mind.Node('animal', 'root')
+mind.Node('cow', 'animal')
 
-mind.Relation('John', 'go', 'empty').modify('where', 'coffeeshop').modify('why', mind.Relation('John', 'drink', 'coffee'))
-mind.Relation('Sam', 'go', 'empty').modify('where', 'coffeeshop').modify('why', mind.Relation('Sam', 'eat', 'breakfast'))
-mind.Relation('Juan', 'go', 'empty').modify('where', 'coffeeshop').modify('why', mind.Relation('Juan', 'meet', 'friend'))
+mind.Node('foodtype', 'root')
+mind.Node('rice', 'foodtype')
+mind.Node('tea', 'foodtype')
 
-def work(who, where, whyv, whyo):
-	mind.Relation(who, 'go', 'empty').modify('where', where).modify('why', mind.Relation(who, whyv, whyo))
+mind.Node('book', 'thing')
+mind.Node('music', 'thing')
+mind.Node('game', 'thing')
+mind.Node('homework', 'thing')
+mind.Node('assignment', 'thing')
+mind.Node('computer', 'thing')
+mind.Node('job', 'thing')
+mind.Node('garden', 'thing')
+mind.Node('weed', 'thing') 
+mind.Node('harvest', 'thing') 
+mind.Node('plant', 'thing') 
+
+mind.Node('due', 'thing') # state, adj
+mind.Node('many', 'thing') # adv 
+mind.Node('howmuch', 'link') # adv 
+mind.Node('too', 'howmuch') # adv 
+
+mind.Node('feeling', 'root')
+mind.Node('hungry', 'feeling')
+
+mind.Node('kitchen', 'place')
+mind.Node('backyard', 'place')
+mind.Node('upstairs', 'place')
+mind.Node('bedroom', 'place')
+mind.Node('livingroom', 'place')
+mind.Node('online', 'place')
+
+friendhouse = mind.Objek('house').modify('ownedby', 'friend')
+mind.Claws('you', 'go').modify('where', friendhouse).modify('why', mind.Claws('you', 'pickup', 'food'))
+mind.Claws('Sam', 'go').modify('where', friendhouse).modify('why', mind.Claws('Sam', 'deliver', 'food'))
+mind.Claws('John', 'go').modify('where', friendhouse).modify('why', mind.Claws('John', 'eat', 'food'))
+mind.Claws('Naiyana', 'go').modify('where', 'Bangkok').modify('why', mind.Claws('Naiyana', 'visit'))
+mind.Claws('Sam', 'go').modify('where', 'Chiang_Mai').modify('why', 'vacation')
+mind.Claws('John', 'go').modify('where', 'Pai').modify('why', mind.Claws('John', 'go', 'embassy'))
+mind.Claws('Juan', 'go').modify('where', 'bank').modify('why', mind.Claws('Juan', 'get', 'money'))
+
+mind.Claws('John', 'go').modify('where', 'coffeeshop').modify('why', mind.Claws('John', 'drink', 'coffee'))
+mind.Claws('Sam', 'go').modify('where', 'coffeeshop').modify('why', mind.Claws('Sam', 'eat', 'breakfast'))
+mind.Claws('Juan', 'go').modify('where', 'coffeeshop').modify('why', mind.Claws('Juan', 'meet', 'friend'))
+
+def work(who, where, whyv, whyo=None):
+	mind.Claws(who, 'go').modify('where', where).modify('why', mind.Claws(who, whyv, whyo))
 
 work('John', 'restaurant', 'eat', 'food')
 work('Sam', 'restaurant', 'meet', 'friend')
@@ -160,7 +231,7 @@ work('Juan', 'salon', 'cut', 'hair')
 work('John', 'salon', 'get', 'pedicure')
 work('Sam', 'salon', 'get', 'manicure')
 work('Sam', 'market', 'buy', 'food')
-work('Naiyana', 'mall', 'shop', 'empty')
+work('Naiyana', 'mall', 'shop')
 work('Juan', 'pharmacy', 'buy', 'medicine')
 work('Juan', 'cinema', 'watch', 'movie')
 work('Sam', 'doctor', 'get', 'checkup')
@@ -177,7 +248,7 @@ work('you', 'dentist', 'remove', 'tooth')
 work('I', 'dentist', 'get', 'braces')
 
 def work(who, which, period):
-	mind.Relation(who, 'go', 'empty').modify('when', mind.Node('instance', period).modify('which', which))
+	mind.Claws(who, 'go').modify('when', mind.Objek(period).modify('which', which))
 
 work('Sam', 'this', 'morning') 
 work('Joe', 'this', 'afternoon') 
@@ -192,13 +263,14 @@ work('Joe', 'last', 'year')
 work('Nid', 'this', 'year') 
 work('Nui', 'next', 'year') 
 
-mind.Relation('Nui', 'go', 'empty').modify('when', 'now')
-mind.Relation('Sam', 'go', 'empty').modify('when', 'yesterday')
-mind.Relation('Joe', 'go', 'empty').modify('when', 'today')
-mind.Relation('Nid', 'go', 'empty').modify('when', 'tomorrow')
+mind.Claws('Nui', 'go').modify('when', 'now')
+mind.Claws('Sam', 'go').modify('when', 'yesterday')
+mind.Claws('Joe', 'go').modify('when', 'today')
+mind.Claws('Nid', 'go').modify('when', 'tomorrow')
 
+# where and how: local vs distant destinations and mode of travel
 def work(who, where, how):
-	mind.Relation(who, 'go', 'empty').modify('where', where).modify('how', how)
+	mind.Claws(who, 'go').modify('where', where).modify('how', how)
 
 work('Nui', 'Bangkok', 'train') 
 work('Nid', 'Chiang_Mai', 'bus') 
@@ -212,104 +284,82 @@ work('Sam', 'salon'     , 'citybus')
 work('Joe', 'market'    , 'songtaew')
 work('Nid', 'mall'      , 'tuktuk')       
                              
-mind.Relation('Sam', 'go', 'empty').modify('where', 'dentist').modify('how', 'run')
-mind.Relation('Joe', 'go', 'empty').modify('where', 'clinic').modify('how', 'walk')
+mind.Claws('Sam', 'go').modify('where', 'dentist').modify('how', 'run')
+mind.Claws('Joe', 'go').modify('where', 'clinic').modify('how', 'walk')
 
 def work(who, where, how):
-	mind.Relation(who, 'go', 'empty').modify('where', where).modify('how', mind.Relation('by', how, 'empty'))
+	mind.Claws(who, 'go').modify('where', where).modify('how', mind.Claws('by', how))
 
 # you do what?
 
-mind.Node('foodtype', 'root')
-mind.Node('rice', 'foodtype')
-mind.Node('tea', 'foodtype')
-
-mind.Node('book', 'thing')
-mind.Node('music', 'thing')
-mind.Node('game', 'thing')
-
-mind.Node('cook', 'action')
-mind.Node('brew', 'action')
-mind.Node('read', 'action')
-mind.Node('listen', 'action')
-mind.Node('play', 'action')
-mind.Node('is', 'action')
-mind.Node('feel', 'action')
-
-mind.Node('feeling', 'root')
-mind.Node('hungry', 'feeling')
-
-mind.Node('kitchen', 'place')
-mind.Node('backyard', 'place')
-mind.Node('upstairs', 'place')
-mind.Node('bedroom', 'place')
-mind.Node('livingroom', 'place')
-
-mind.Node('family', 'person')
-
-mind.Relation('Sam', 'eat', 'rice')
-mind.Relation('Joe', 'cook', 'food')
-mind.Relation('Nid', 'brew', 'coffee')
-mind.Relation('Nui', 'brew', 'tea')
-mind.Relation('Sam', 'read', 'book')
-mind.Relation('Joe', 'watch', 'movie')
-mind.Relation('Nid', 'listen', 'music')
-mind.Relation('Joe', 'play', 'game')
+mind.Claws('Sam', 'eat', 'rice')
+mind.Claws('Joe', 'cook', 'food')
+mind.Claws('Nid', 'brew', 'coffee')
+mind.Claws('Nui', 'brew', 'tea')
+mind.Claws('Sam', 'read', 'book')
+mind.Claws('Joe', 'watch', 'movie')
+mind.Claws('Nid', 'listen', 'music')
+mind.Claws('Joe', 'play', 'game')
 
 #chat online
 #homework
 #work on computer
 #work in garden
 
-mind.Relation('Sam', 'eat', 'rice').modify('where', mind.Node('instance', 'house'))
-mind.Relation('Joe', 'cook', 'food').modify('where', mind.Node('instance', 'house').modify('ownedby', 'friend'))
-mind.Relation('Nid', 'cook', 'food').modify('where', 'kitchen')
-mind.Relation('Joe', 'brew', 'coffee').modify('where', 'backyard')
+mind.Claws('Sam', 'eat', 'rice').modify('where', mind.Objek('house'))
+mind.Claws('Joe', 'cook', 'food').modify('where', mind.Objek('house').modify('ownedby', 'friend'))
+mind.Claws('Nid', 'cook', 'food').modify('where', 'kitchen')
+mind.Claws('Joe', 'brew', 'coffee').modify('where', 'backyard')
 
-mind.Relation('Nid', 'read', 'book').modify('where', 'upstairs')
-mind.Relation('Nui', 'listen', 'music').modify('where', 'bedroom')
-mind.Relation('Sam', 'watch', 'movie').modify('where', 'livingroom')
-mind.Relation('Nid', 'play', 'game').modify('where', 'backyard')
+mind.Claws('Nid', 'read', 'book').modify('where', 'upstairs')
+mind.Claws('Nui', 'listen', 'music').modify('where', 'bedroom')
+mind.Claws('Sam', 'watch', 'movie').modify('where', 'livingroom')
+mind.Claws('Nid', 'play', 'game').modify('where', 'backyard')
 
-mind.Relation('Nid', 'eat', 'food').modify('why', mind.Relation('Nid', 'is', 'hungry'))
-mind.Relation('Nid', 'cook', 'food').modify('why', mind.Relation(mind.Node('instance', 'family').modify('ownedby', 'Nid'), 'is', 'hungry'))
 
-#Why you eat food?
-#i am hungry
-#my family is hungry 
-#
-#Why you brew coffee
-#to relax
-#for my friends
-#
-#Why you read book?
-#for fun
-#
-#Why you chat online?
-#talk to friends
-#
-#Why you do homework?
-#assignment due tomorrow
-#study for test
-#
-#Why you work on computer?
-#for my job 
-#
-#Why you work in garden?
-#too many weeds
-#time for harvest
-#time for planting
+# Why
+mind.Claws('Nid', 'eat', 'food').modify('why', mind.Claws('Nid', 'is', 'hungry'))
+mind.Claws('Nid', 'cook', 'food').modify('why', mind.Claws(mind.Objek('family').modify('ownedby', 'Nid'), 'is', 'hungry'))
+
+mind.Claws('Joe', 'brew', 'coffee').modify('why', mind.Claws('Joe', 'relax'))
+mind.Claws('Joe', 'brew', 'coffee').modify('why', mind.Claws('Joe','give','friend'))
+mind.Claws('Nid', 'read', 'book').modify('why', mind.Claws('Nid', 'have', 'fun'))
+mind.Claws('Penny', 'chat', 'online').modify('why', mind.Claws('Penny', 'talk', 'friend'))
+
+mind.Claws('Bella', 'do', 'homework').modify( 'why', mind.Claws( 'assignment', 'is', 'due').modify('when', 'tomorrow'))
+mind.Claws('Pin', 'do', 'homework').modify( 'why', mind.Claws('Pin', 'study', 'test'))
+mind.Claws('May', 'work').modify( 'where', 'computer').modify( 'why', 'job')
+mind.Claws('Som', 'work').modify( 'where', 'garden').modify( 'why', mind.Claws( 'weed', 'is', mind.Objek('many').modify('howmuch', 'too')))
+mind.Claws('Milky', 'work').modify( 'where', 'garden').modify( 'why', mind.Objek('time').modify('what', 'harvest'))
+mind.Claws('Chompoo', 'work').modify( 'where', 'garden').modify( 'why', mind.Objek('time').modify('what', 'plant'))
 
 sammind.buildGrammar()
-sammind.dump()
 
-# you go where: set of possible answers
-person = mind.Thot.nfs('person')
-go = mind.Thot.nfs('go')
-where = mind.Thot.nfs('where')
-alist = sammind.patterns[person][go][where]
+#import pdb; pdb.set_trace()
+sammind.dump(True
+
+print('\nGenerative Grammar')
 
 #Thot.nextQuestion()
 
-print(alist)
-quit()
+'''
+Joe eat rice this afternoon.
+Joe go to bank with friend when friend arrive.
+
+if... then...
+If you listen to this song, you will be very happy.
+If you listen to this song, I think you will be very happy.
+
+syllogism
+Warm beer is better than nothing. Nothing is better than god.  Therefore, warm beer is better than god.
+
+deductive reasoning
+
+inductive reasoning
+
+classical dialectic: thesis, antithesis, synthesis
+'''
+
+joeeat = mind.Claws('Joe', 'eat', 'rice').modify('when',mind.Objek('afternoon').modify('which','this'))
+print( joeeat)
+
