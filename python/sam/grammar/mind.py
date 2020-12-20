@@ -3,6 +3,7 @@
 import uuid
 import tree
 import datetime
+import translate
 
 class DupeNodeException(Exception):
 	pass
@@ -169,9 +170,10 @@ class Mind:
 	def dump(self,detail=False):
 		print(f'Nodes {len(self.nodes)}, Objeks {len(self.objeks)}, Claws {len(self.claws)}, Patterns {len(self.patterns)}\n')
 		if detail:
-			self.printNodeTree()
-			self.printClaws()
-			self.printGrammar()
+			#self.printNodeTree()
+			self.printTopClaws()
+			#self.printSubClaws()
+			#self.printGrammar()
 
 	def printNodeTree(self):
 		print('Nodes Tree')
@@ -182,12 +184,14 @@ class Mind:
 		self.nodetree.process(fn, False)
 		return
 
-	def printClaws(self):
+	def printTopClaws(self):
+		tlate = translate.Translate()
 		print('\nTop Claws')
 		for v in self.claws.values():
 			if v.isTop():
-				print( f'{str(v)} : {str(v.accesscount)}')
+				print( tlate.getThai(str(v)))
 
+	def printSubClaws(self):
 		print('\nSub Claws')
 		for v in self.claws.values():
 			if not v.isTop():

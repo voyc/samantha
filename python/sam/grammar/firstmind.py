@@ -336,7 +336,7 @@ mind.Claws('Chompoo', 'work').modify( 'where', 'garden').modify( 'why', mind.Obj
 sammind.buildGrammar()
 
 #import pdb; pdb.set_trace()
-sammind.dump(False)
+sammind.dump(True)
 
 cnt = 0
 for k,v in sammind.objeks.items(): 

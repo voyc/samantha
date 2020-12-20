@@ -21,7 +21,8 @@ class Translate:
 		try:
 			thai = self.eng[eng]
 		except:
-			raise TranslateException (f'Cannot find Thai translation for English word: {eng}')
+			#raise TranslateException (f'Cannot find Thai translation for English word: {eng}')
+			print(f'Cannot find Thai translation for English word: {eng}')
 		return thai
 
 	def getEngWord(self,thai):
@@ -213,20 +214,25 @@ class Translate:
 		self.table.append(['online'        ,'ออน']),
 		self.table.append(['talk'          ,'พูด']),
 		self.table.append(['with'          ,'กับ']),
+		self.table.append(['relax'         ,'ผ่อนคลาย']),
+		self.table.append(['give'          ,'ให้']),
 
-'do', 'ทำ'
-'homework',   'การบ้าน'
-assignment due          ครบกำหนดวัน
-assignment due          ครบกำหนดวัน
-assignment due          ครบกำหนดวัน
-study for test                    เรียนเพื่อทดสอบ
-Why you work on computer?         ทำไมคุณถึงทำงานกับคอมพิวเตอร์?
-for my job                        สำหรับงานของฉัน
-Why you work in garden?           ทำไมคุณถึงทำงานในสวน?
-too many weeds                    วัชพืชมากเกินไป
-time for harvest                  ถึงเวลาเก็บเกี่ยว
-time for planting                 เวลาปลูก                           
-
+		self.table.append(['do'            ,'ทำ']),
+		self.table.append(['homework'      ,'การบ้าน']),
+		self.table.append(['assignment'    ,'การมอบหมาย']),
+		self.table.append(['due'           ,'ครบกำหนด']),
+		self.table.append(['homework'      ,'การบ้าน']),
+		self.table.append(['study'         ,'ศึกษา']),
+		self.table.append(['work'          ,'งาน']),
+		self.table.append(['computer'      ,'คอมพิวเตอร์']),
+		self.table.append(['job'           ,'งาน']),
+		self.table.append(['garden'        ,'สวน']),
+		self.table.append(['weed'          ,'วัชพืช']),
+		self.table.append(['many'          ,'มากมาย']),
+		self.table.append(['harvest'       ,'เก็บเกี่ยว']),
+		self.table.append(['plant'         ,'ปลูก']), 
+		self.table.append(['have'          ,'มี']), 
+		self.table.append(['fun'           ,'สนุก']), 
 
 if __name__ == '__main__':
 	tra = Translate()
