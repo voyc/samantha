@@ -13,21 +13,26 @@ class NodeNotFoundException(Exception):
 class NoParentException(Exception):
 	pass
 
+class Modifier:
+	def __init__(self,link,attribute):
+		self.lk = link
+		self.at = attribute
+
 class Thot:
 	''' base class, add modifiers and accesscount  '''
 	mind = None
 
 	def __init__(self):
-		self.modifiers = {}
+		self.modifiers = []
 		self.accesscount = 0
 
-	def modify(self,link,modifier):
+	def modify(self,link,attribute):
 		link = Thot.nfs(link)
-		if isinstance(modifier,str):
-			modifier = Objek(Thot.nfs(modifier))
-		self.modifiers[link] = modifier 
+		if isinstance(attribute,str):
+			attribute = Objek(Thot.nfs(attribute))
+		self.modifiers.append(Modifier(link, attribute))
 		link.accesscount += 1
-		modifier.accesscount += 1
+		attribute.accesscount += 1
 		return self
 
 	def isTop(self):
@@ -64,8 +69,8 @@ class Node(tree.Tree, Thot):
 		print(self.word)
 		print(self.parent.word)
 		print(self.level)
-		for k,v in self.modifiers.items():
-			print( f' {k.word} {v.word}')
+		for m in self.modifiers:
+			print( f' {m.lk.word} {m.at.word}')
 
 class Objek(Node):
 	''' object, an instance of a Node '''
@@ -74,6 +79,7 @@ class Objek(Node):
 		if not parent:
 			raise NoParentException
 		self.word = parent.word
+		self.parent = parent
 		Thot.__init__(self)
 		self.ts = datetime.datetime.timestamp(datetime.datetime.now())
 		self.id = ''.join(str(self).split(' ')) + '_' + str(self.ts)
@@ -81,8 +87,8 @@ class Objek(Node):
 
 	def __str__(self):
 		s = self.word
-		for k,v in self.modifiers.items():
-			s += f' {str(k)} {str(v)}'
+		for m in self.modifiers:
+			s += f' {str(m.lk)} {str(m.at)}'
 		return s
 
 class Claws(Thot):
@@ -100,8 +106,8 @@ class Claws(Thot):
 		s = f'{self.subjek} {self.verb}' 
 		if self.objek:
 			s += f' {self.objek}' 
-		for k,v in self.modifiers.items():
-			s += f' {str(k)} {str(v)}'
+		for m in self.modifiers:
+			s += f' {str(m.lk)} {str(m.at)}'
 		return s
 
 	def nextQuestion(self):
@@ -137,22 +143,22 @@ class Mind:
 			if subjek not in self.patterns:
 				self.patterns[subjek] = {}
 
-			link = claw.verb # claw.link.parent #self.findBranchNode(claw.link)
-			if link not in self.patterns[subjek]:
-				self.patterns[subjek][link] = {}
+			verb = claw.verb # claw.verb.parent #self.findBranchNode(claw.verb)
+			if verb not in self.patterns[subjek]:
+				self.patterns[subjek][verb] = {}
 
 			objek = claw.objek
 			what = Thot.nfs('what')
-			if what not in self.patterns[subjek][link]:
-				self.patterns[subjek][link][what] = {}
-			if objek not in self.patterns[subjek][link][what]:
-				self.patterns[subjek][link][what][objek] = {}
+			if what not in self.patterns[subjek][verb]:
+				self.patterns[subjek][verb][what] = {}
+			if objek not in self.patterns[subjek][verb][what]:
+				self.patterns[subjek][verb][what][objek] = {}
 
-			for mk,mv in claw.modifiers.items():
-				if mk not in self.patterns[subjek][link]:
-					self.patterns[subjek][link][mk] = {}
-				if mv not in self.patterns[subjek][link][mk]:
-					self.patterns[subjek][link][mk][mv] = 'x'
+			for m in claw.modifiers:
+				if m.lk not in self.patterns[subjek][verb]:
+					self.patterns[subjek][verb][m.lk] = {}
+				if m.at not in self.patterns[subjek][verb][m.lk]:
+					self.patterns[subjek][verb][m.lk][m.at] = 'x'
 
 	def findBranchNode(self,node):
 		unode = node

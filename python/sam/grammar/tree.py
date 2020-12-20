@@ -27,6 +27,14 @@ class Tree:
 		''' A branch with no children is called a "leaf" or "terminal" or "minimal" branch. '''
 		return len(self.child) <= 0
 
+	def hasparent(self,parentname):
+		unode = self
+		while unode.level > 0:
+			if unode.word == parentname:
+				return True
+			unode = unode.parent
+		return False
+		
 ''' example '''
 if __name__ == '__main__':
 	class Hoo(Tree):

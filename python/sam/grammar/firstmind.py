@@ -137,8 +137,8 @@ mind.Node('songtaew', 'transport')
 mind.Node('tuktuk', 'transport')
 mind.Node('walk', 'action')
 mind.Node('run', 'action')
-mind.Node('do', 'action')
 
+mind.Node('do', 'action')
 mind.Node('go', 'action')
 mind.Node('come', 'action')
 mind.Node('eat', 'action')
@@ -336,11 +336,16 @@ mind.Claws('Chompoo', 'work').modify( 'where', 'garden').modify( 'why', mind.Obj
 sammind.buildGrammar()
 
 #import pdb; pdb.set_trace()
-sammind.dump(True
+sammind.dump(False)
+
+cnt = 0
+for k,v in sammind.objeks.items(): 
+	cnt += 1 if len(v.modifiers) <= 0 else 0
+print(cnt)
 
 print('\nGenerative Grammar')
 
-#Thot.nextQuestion()
+# Thot.nextQuestion()
 
 '''
 Joe eat rice this afternoon.
@@ -362,4 +367,41 @@ classical dialectic: thesis, antithesis, synthesis
 
 joeeat = mind.Claws('Joe', 'eat', 'rice').modify('when',mind.Objek('afternoon').modify('which','this'))
 print( joeeat)
+
+# you go where?"
+# possible answers:
+# all objeks in modifiers with link place
+# look at all modifiers of all claws with subjek=person and verb=go
+
+# let Objek be Node until modified
+# sleep ?
+#    find objeks that have not been modified, demote them to nodes
+
+print('\nwhere you go?')
+answers = []
+for k,v in sammind.claws.items():
+	node = mind.Thot.nfs(v.verb.word)
+	if not node.hasparent('go'):
+		continue
+	node = mind.Thot.nfs(v.subjek.word)
+	if not node.hasparent('person'):
+		continue
+	for m in v.modifiers:
+		if m.lk.word == 'where':
+			answers.append(m.at.word)
+answers = list(set(answers))
+print(answers)
+
+print('\nwhat you do?')
+answers = []
+for k,v in sammind.claws.items():
+	node = mind.Thot.nfs(v.verb.word)
+	if not node.hasparent('action'):
+		continue
+	node = mind.Thot.nfs(v.subjek.word)
+	if not node.hasparent('person'):
+		continue
+	answers.append(str(v.verb) + ' ' + str(v.objek))
+answers = list(set(answers))
+print(answers)
 
