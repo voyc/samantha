@@ -2,21 +2,30 @@
 
 class TranslateException(Exception):
 	pass
-
-class Translate:
-	def getThai(self,sen):
+'''
+converse
+	question
+	answer
+translate
+	parse
+	generate
+	pronoun (person, gender, number)
+	polite (gender)
+'''
+class TranslateThai:
+	def gen(self,thot):
 		thai = []
 		for each in sen.split(' '):
-			thai.append(self.getThaiWord(each))
+			thai.append(self.genWord(each))
 		return ' '.join(thai)
 
-	def getEng(self,sen):
+	def parse(self,thot):
 		eng = []
 		for each in sen.split(' '):
-			eng.append(self.getEngWord(each))
+			eng.append(self.parseWord(each))
 		return ' '.join(eng)
 
-	def getThaiWord(self,eng):
+	def genWord(self,eng):
 		thai = ''
 		try:
 			thai = self.eng[eng]
@@ -25,7 +34,7 @@ class Translate:
 			print(f'Cannot find Thai translation for English word: {eng}')
 		return thai
 
-	def getEngWord(self,thai):
+	def parseWord(self,thai):
 		eng = ''
 		try:
 			eng = self.thai[thai]

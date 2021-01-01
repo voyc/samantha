@@ -15,6 +15,11 @@ csock = sam.comm.Client()
 csock.connect(addr)
 print(f'connected to {addr}...')
 
+s = 'hello'
+m = sam.comm.Message(s)
+m.sendertoken = token
+csock.send(m)
+
 def _keyboardLoop(csock):
 	while True:
 		s = input()  # blocking threadKeyboard

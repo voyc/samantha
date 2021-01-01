@@ -1,25 +1,11 @@
-''' translate.py '''
+''' langs3.py '''
 
-class TranslateException(Exception):
-	pass
-'''
-converse
-	question
-	answer
-translate
-	parse
-	generate
-	pronoun (person, gender, number)
-	polite (gender)
-'''
-class TranslateThai:
+class S3(sam.language.Language):
 	def gen(self,thot):
-		thai = []
-		for each in sen.split(' '):
-			thai.append(self.genWord(each))
-		return ' '.join(thai)
+		return str(thot)
 
-	def parse(self,thot):
+	def parse(self,sen):
+		''' get parent and pos for each word '''
 		eng = []
 		for each in sen.split(' '):
 			eng.append(self.parseWord(each))

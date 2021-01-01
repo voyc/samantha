@@ -22,6 +22,7 @@ class Message():
 		self.toname = ''
 		self.frmtoken = ''
 		self.mode = None
+		self.thot = None
 
 	def serialize(self):
 		return json.dumps(self.__dict__)

@@ -1,11 +1,13 @@
-''' lobby.py - a skill, managing incoming connections '''
+''' lobby.py - manage incoming connections '''
 
 import sam.comm
 import sam.base
+import sam.language
 
 class Lobby(sam.base.Skill):  # do we want a base class Skill() ?
 	def __init__(self, me):
 		super().__init__(me)
+		self.language = sam.language.Language(self)
 		self.reception = Reception(self)
 		self.security = Security(self)
 		self.dispatcher = Dispatcher(self)
@@ -21,8 +23,8 @@ class Switchboard:
 		self.lobby = lobby
 
 	def onMessage(self,websocket,message):  # callback from server socket
-
-		# unique user identified by websocket, stored in users dict 
+		''' message processing '''
+		# 1. unique user identified by websocket, stored in users dict 
 		if websocket in self.lobby.users.keys():
 			frmuser = self.lobby.users[websocket]
 		else:
@@ -32,12 +34,24 @@ class Switchboard:
 		self.lobby.users[websocket] = frmuser
 		message.frmuser = frmuser
 
+		# 2. security, check token
 		clearance = self.lobby.security.check(message)
 
-		print(f'recv: {message.toString()}') # with cleared flag
-		reply = self.lobby.dispatcher.dispatch(message)
-		if reply:
-			print(f'send: {reply.toString()}')
+		# 3. translate into thot
+		thot = self.lobby.language.parse(message)
+		message.thot = thot
+
+		# 4. broadcast incoming message to group
+		print(f'recv: {message.toString()}')  # change to broadcast
+
+		# 5. disppatch, ie. think and respond
+		newthot = self.lobby.dispatcher.dispatch(message)
+
+		# 6,7. translate and broadcast the response
+		if newthot:
+			sreply = self.lobby.language.generate(newthot)
+			reply = sam.comm.Message(sreply)
+			print(f'send: {reply.toString()}')  # change to broadcast
 		return reply
 
 	def listen(self):

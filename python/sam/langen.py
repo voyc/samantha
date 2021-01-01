@@ -1,18 +1,6 @@
-''' translate.py '''
+''' langen.py '''
 
-class TranslateException(Exception):
-	pass
-'''
-converse
-	question
-	answer
-translate
-	parse
-	generate
-	pronoun (person, gender, number)
-	polite (gender)
-'''
-class TranslateThai:
+class En(sam.language.Language):
 	def gen(self,thot):
 		thai = []
 		for each in sen.split(' '):

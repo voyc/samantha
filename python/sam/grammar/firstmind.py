@@ -316,7 +316,6 @@ mind.Claws('Nui', 'listen', 'music').modify('where', 'bedroom')
 mind.Claws('Sam', 'watch', 'movie').modify('where', 'livingroom')
 mind.Claws('Nid', 'play', 'game').modify('where', 'backyard')
 
-
 # Why
 mind.Claws('Nid', 'eat', 'food').modify('why', mind.Claws('Nid', 'is', 'hungry'))
 mind.Claws('Nid', 'cook', 'food').modify('why', mind.Claws(mind.Objek('family').modify('ownedby', 'Nid'), 'is', 'hungry'))
@@ -338,6 +337,9 @@ sammind.buildGrammar()
 #import pdb; pdb.set_trace()
 sammind.dump(True)
 
+# let Objek be Node until modified
+# sleep ? find objeks that have not been modified, demote them to nodes
+print('\nObjeks with no modifier:')
 cnt = 0
 for k,v in sammind.objeks.items(): 
 	cnt += 1 if len(v.modifiers) <= 0 else 0
@@ -363,6 +365,7 @@ deductive reasoning
 inductive reasoning
 
 classical dialectic: thesis, antithesis, synthesis
+
 '''
 
 joeeat = mind.Claws('Joe', 'eat', 'rice').modify('when',mind.Objek('afternoon').modify('which','this'))
@@ -370,12 +373,6 @@ print( joeeat)
 
 # you go where?"
 # possible answers:
-# all objeks in modifiers with link place
-# look at all modifiers of all claws with subjek=person and verb=go
-
-# let Objek be Node until modified
-# sleep ?
-#    find objeks that have not been modified, demote them to nodes
 
 print('\nwhere you go?')
 answers = []
@@ -404,4 +401,36 @@ for k,v in sammind.claws.items():
 	answers.append(str(v.verb) + ' ' + str(v.objek))
 answers = list(set(answers))
 print(answers)
+
+print('\nConversation')
+
+con = mind.Converse()
+con.setHost('Sam')
+con.setGuest('John')
+
+q = con.initiate()
+print(q)
+
+a = con.respond(q)
+print(a)
+
+
+'''
+algorithm for nextQuestion()
+start
+	previous question was more than one hour ago
+	ask 
+		you go where? 
+		you do what?
+
+parse into subj=you verb=go question=where
+search for possible answers
+pick one
+	matches vocabulary
+	not used in awhile
+
+person questions: 
+person go questions: when, why, how
+
+'''
 

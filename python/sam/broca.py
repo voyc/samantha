@@ -12,6 +12,48 @@ class Broca(sam.base.Skill):
 		super().__init__(owner)
 		grammar.setupSemantics()
 
+	def think(self):
+		'''
+		current thought
+		previous thought
+		priority of open thoughts
+
+		need to
+			answer question
+			ask question
+			make comment
+			protocol
+		need to 
+			initiate
+			respond
+		need to 
+			switch subject
+			switch thot
+
+		save message in memory
+			along with thot?
+		save thots separate from message?
+		save thot, with messages attached
+		message is often a partial thot, maybe just a modifier
+			should the partial be done in translation?
+			is it different between english and thai?
+		
+		John go where?
+		where are you going?
+			bank
+			John go bank
+			I go to bank
+
+		John go
+		John go where
+		John go where bank
+		John go :
+		bank: add to previou
+		
+		
+
+		'''
+
 	def cmd_converse(self,msgin):
 		notunderstand = [
 			'What?',
@@ -22,6 +64,11 @@ class Broca(sam.base.Skill):
 		]
 		s = random.choice(notunderstand)
 		msgout = sam.comm.Message(s)
+
+		s = msgin.thot.subjek.word
+		msgout = sam.comm.Message(s)
+
+		msgout = sam.mind.Claws('Sam', 'go', 'where')
 		return msgout
 
 	def cmd_translate(self,msgin):
