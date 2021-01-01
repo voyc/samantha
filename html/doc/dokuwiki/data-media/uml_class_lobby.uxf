@@ -1,0 +1,65 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLPackage</id><coordinates><x>180</x><y>120</y><w>550</w><h>570</h></coordinates><panel_attributes>lobby</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>250</x><y>300</y><w>140</w><h>190</h></coordinates><panel_attributes>Lobby (Skill)
+--
+me: User
+switchboard: object
+security: object
+reception: object
+dispatcher: object
+--
+init()
+
+--
+cmd_join()
+cmd_leave()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>530</x><y>170</y><w>140</w><h>120</h></coordinates><panel_attributes>Switchboard
+--
+--
+init()
+listen()
+close()
+onMessage()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>530</x><y>400</y><w>140</w><h>80</h></coordinates><panel_attributes>Security
+--
+--
+check(): return clearance</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>290</x><y>560</y><w>140</w><h>110</h></coordinates><panel_attributes>Reception
+--
+groups: list
+--
+join()
+leave()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>210</y><w>170</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+1..1</panel_attributes><additional_attributes>10;120;150;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>530</x><y>500</y><w>140</w><h>110</h></coordinates><panel_attributes>Dispatcher
+--
+groups: list
+--
+dispatch()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>530</x><y>300</y><w>140</w><h>80</h></coordinates><panel_attributes>Translator or Broca
+--
+languages: list
+--
+parse()
+gen()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>330</y><w>170</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+1..1</panel_attributes><additional_attributes>10;30;150;10</additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>380</y><w>170</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+1..1</panel_attributes><additional_attributes>10;10;150;60</additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>460</y><w>170</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+1..1</panel_attributes><additional_attributes>10;10;150;70</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>800</x><y>130</y><w>230</w><h>150</h></coordinates><panel_attributes>samese</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>820</x><y>160</y><w>190</w><h>110</h></coordinates><panel_attributes>Samese (Skill, Language)
+--
+dict: table
+grammar: table
+--
+parse(string): Thot
+gen(Thot): string</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>820</x><y>530</y><w>150</w><h>100</h></coordinates><panel_attributes>English (Skill)
+--
+--
+parse(string): Thot
+gen(Thot): string</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>800</x><y>490</y><w>190</w><h>180</h></coordinates><panel_attributes>english</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>330</y><w>180</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-&gt;&gt;&gt;
+</panel_attributes><additional_attributes>10;10;160;60</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>340</y><w>180</w><h>250</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-&gt;&gt;&gt;
+</panel_attributes><additional_attributes>10;10;160;230</additional_attributes></element><element><id>UMLClass</id><coordinates><x>820</x><y>340</y><w>150</w><h>100</h></coordinates><panel_attributes>Thai (Skill)
+--
+--
+parse(string): Thot
+gen(Thot): string</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>800</x><y>290</y><w>190</w><h>180</h></coordinates><panel_attributes>thai</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>190</y><w>180</w><h>150</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-&gt;&gt;&gt;
+</panel_attributes><additional_attributes>10;130;160;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>20</x><y>20</y><w>200</w><h>40</h></coordinates><panel_attributes>halign=left
+valign=bottom
+lw=0
+fontsize=18
+Lobby Class Diagram</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>480</y><w>60</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+1..1</panel_attributes><additional_attributes>10;10;30;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>220</x><y>30</y><w>200</w><h>30</h></coordinates><panel_attributes>valign=bottom
+halign=left
+lw=0
+uml_class_lobby.uxf (UMLet)</panel_attributes><additional_attributes></additional_attributes></element></diagram>

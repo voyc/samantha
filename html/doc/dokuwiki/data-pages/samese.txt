@@ -1,0 +1,50 @@
+====== Samese ======
+
+language code: s3
+
+The internal language of thought inside Sam's brain.
+
+Nodes and Claws
+
+Claws
+noun and verb can be multiple, joined by conjunction
+
+=== Samese ===
+
+node (word)
+  * one word == one meaning
+    * no synonyms
+    * no word with multiple meanings
+    * no word with multiple parts of speech
+  * no word with multiple meanings or parts of speech
+  * no plural
+  * no tense
+  * no gender
+  * no pronouns
+  * no declensions
+  * no conjugations
+  * no articles
+
+claws (clause)
+  * subjek, verb, optional objek
+  * left to right
+  * adjective modifiers immediately follow nouns
+  * adverb modifiers immediately follow claws
+
+modifier: link + object
+  * no prepositions ?
+
+where
+  * (cat jump) into box
+  * in box
+  * on top of box
+  * over box
+
+question words (links)
+  * what
+  * when
+  * where
+  * how
+  * howlong, how much, how many
+  * whowith
+  * why

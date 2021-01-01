@@ -41,4 +41,7 @@ drawLine(0,height/5,0,height*4/5)fg=black //Parameters (x1, y1, x2, y2)
 drawLine(width,height/5,width,height*4/5)fg=black //Parameters (x1, y1, x2, y2) 
 drawArc(0,height*1/5,width,height*2/5,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
 drawArc(0,height*2/5,width,height*2/5,180,180,true) fg=black //Parameters (x, y, width, height, start, extent, open)
-drawArc(0,height*3/5,width,height*2/5,180,180,true) fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1170</x><y>410</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=&lt;-&gt;</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element></diagram>
+drawArc(0,height*3/5,width,height*2/5,180,180,true) fg=black bg=#222222 //Parameters (x, y, width, height, start, extent, open)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1170</x><y>410</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=&lt;-&gt;</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>20</x><y>650</y><w>200</w><h>30</h></coordinates><panel_attributes>valign=bottom
+halign=left
+lw=0
+UMLetino, uml_comm_arch</panel_attributes><additional_attributes></additional_attributes></element></diagram>

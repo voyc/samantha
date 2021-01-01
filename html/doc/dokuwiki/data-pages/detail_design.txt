@@ -49,5 +49,309 @@ socketserver.ThreadingUnixStreamServer
 use ps -e to find threads for each socket for each user
 
 
-===== Class Diagram =====
+===== User and Skills =====
+
+{{:uml_class_userskill.png?400|}}
+
+
+===== Lobby =====
+
+{{:uml_class_lobby.png?400|}}
+
+===== Converse =====
+
+=== command processing ===
+
+incoming message is an imperative command
+
+command <options> <arguments>
+
+each command has a specific vocabulary and syntax
+
+=== conversation ===
+
+incoming message is a thought, be it statement, question, exclamation, or imperative
+
+thought = vocabulary and syntax
+
+language = thought plus pronunciation and more syntax
+
+=== Samese ===
+
+A pidgin language based on English and Python.
+
+verb with modifiers = command with arguments
+
+the medium of thought
+
+=== Translation ===
+
+parse - translate incoming message into a Samese Thot
+
+generate - translate a Samese Thot into into outgoing message
+
+=== Commands ===
+
+Account (Security):
+
+Reception
+
+===== Boot =====
+
+=== 1. samd.py ===
+
+get name, addr, skillnames from db or config
+
+Instantiate sam.user.Sam()
+
+=== 2. sam/user.py ===
+
+define classes User, Human, Sam
+
+Sam::init() loads the skills, including Lobby
+
+=== 3. sam/lobby.py ===
+
+define classes: Switchboard, Security, Translate, Dispatch, Reception
+
+instantiate one of each
+
+Switchboard::init() 
+  - instantiate sam.comm.Server()
+  = switchboard.listen()
+
+=== 4. sam/comm.py ===
+
+defines classes Message, Server, Client
+
+implements websockets
+
+supports Message-passing between Server and Client sockets
+
+  Sam::boot()
+    Lobby::boot()
+      Switchboard::listen()
+        Server::listen()
+
+=== import, instantiate, init, setup, rebirth, wake ===
+
+security, clearance = admin, allow even when asleep
+if not admin and asleep, dispatch not called
+
+background processes, if any, sleep thot reorg, dreaming
+
+import
+   samd
+      sam/user.py
+         sam/skill.py
+         sam/echo.py
+         sam/lobby.py
+            sam/comm.py
+         sam/mind.py
+
+instantiate and __init__()
+   samd
+      Sam(User)
+          Lobby()
+             Switchboard()
+             Security()
+             Translator()
+             Dispatcher()
+             Reception()
+          Mind()
+          
+setup
+   mind.think()
+
+rebirth
+   lobby.listen()
+
+wake
+   status from sleep to wake (allows dispatch of messages from non-admin users)
+
+sleep vs wake
+sleep
+   mind does reorg of thots and grammar
+   dispatch only of admin-level messages
+wake
+   dispatch all messages
+   turn off background thot reorg
+
+skills
+    mind - cortex is not required, can be added on top
+       if no mind, cannot think, but can run, fight, fuck, eat, battery management
+    lobby: gate, censor
+       if no lobby, cannot communicate
+    translate - always required if lobby, to build thots from strings 
+        multi languages
+    reception - if not present, groups?, allow chat rooms with multiple participants
+    
+===== Login =====
+
+Example of command processing wrapped in conversation.  Input parser must treat these as the same thought.  
+
+  login John x42#pw
+  
+  login username=John password=x42#pw
+  
+  Hi.  My name is John and my password is x42#pw.
+  
+  What is your name?
+     John
+  What is your password?
+     x42#pw
+
+Grammar includes commands, specifically.
+
+
+switchboard
+security: check token: anonymous or logged-in level
+translate parse
+dispatch: assume converse mode by default
+dispatch can call security or account for login, etc.
+
+in translate parse, we match thot to grammar patterns
+this would include imperative commands like login and change password
+
+
+==== Message Processing ====
+
+   Lobby:init()
+      instantiate Switchboard, Security, Reception, Dispatcher
+      call Switchboard::listen()
+         instantiate Server() 
+         call Server::listen() passing switchboard::onMessage() as callback
+      Switchboard::onMessage()
+         store/match user by addr into Lobby::users list
+         call Security::check() to get clearance
+            lookup token in db, translate to clearance, return
+         call Dispatcher::dispatch()
+            parse message-in
+            set/clear command mode "on/off"
+            match command to ?list? 
+            call skill object::cmd_command() associated with this command
+            method optionally returns a reply
+         return to Server with reply Message
+      
+===== Conversational Machine Learning =====
+
+entity, relation
+ambiguities in language = attempts to flatten a rounded shape
+thought may be linear, but is also in the shape of a torus 
+
+noun verb noun
+consonant vowel consonant
+in sanskrit alphabet, vowels are secondary to consonants
+in latin alphabet, vowels are equal to consonants
+
+verb has no meaning without a subject
+differences in grammar explain the differences in thought
+adj before or after noun
+can verb have meaning without subject
+is where and adv or adj
+
+
+noun verb noun
+event = noun verb noun
+thot = verb, subj and obj are modifiers of the verb
+thot = noun (subj),  verb is modifier of the noun
+
+how to string thoughts together?
+is a verb a thought?  yes 
+is a preposition a thought?  yes 
+is an article a thought?  yes 
+
+naiyana comes to chiangmai is a complete thought
+or is it three separate thoughts
+or is it one thought connected to another thought
+
+expats go_from chiangmai to avoid smoke in February
+naiyana come_to chiangmai to visit john next week
+
+entity, relation
+entity a
+relation a, b
+conditional
+
+
+I don't know the word ____.
+What is an equivalent Thai word?
+What is an equivalent English word?
+Does it have a synonym in English?
+What part of speech: noun, verb, adjective, adverb, other?
+Adjective
+What does it describe: size, height, weight, color, other?
+Noun
+What kind of noun?  common noun, proper name
+Designate? person, place, or thing
+hierarchy of types for each pos
+
+
+Human: knows English, learning Thai
+
+recognize()
+        break down into thought
+        break a sentence down into its components and identify each
+generate()
+        communicate a thought
+        compose a sentence
+        ask for more info about the previous thought
+
+current thought
+recent sub-thoughts
+
+bank
+        questions about bank
+friend
+        questions about friend
+
+weight each question with importance, urgency, value
+make a judgement about which question is most important
+
+noun
+        person
+                proper name
+                nick name
+                family relation
+                worker
+                male - not heirarchy
+                female
+                characteristics
+                individual vs class
+        place
+        thing
+                a specific item, or a type of thing
+
+[[Grammar]]
+
+[[Samese]]
+
+
+  comm
+  lobby
+  broca
+  account
+  mind
+
+
+
+Perception:
+  * audio
+  * visual
+  * touch
+  * smell
+  * taste
+  
+Cognition:
+  * visual space
+  * facial recognition
+  * abstract principles of numbers
+  * music
+  * social structures
+  * language
+
+Language
+  * discrete infinity (no longest sentence)
+  * phrases
+  * recursive embedding
 

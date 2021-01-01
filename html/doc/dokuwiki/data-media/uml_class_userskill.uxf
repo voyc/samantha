@@ -1,0 +1,95 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>Relation</id><coordinates><x>470</x><y>310</y><w>110</w><h>80</h></coordinates><panel_attributes>lt=&lt;-
+m1=
+m2=
+inherits</panel_attributes><additional_attributes>90;10;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>510</x><y>130</y><w>140</w><h>190</h></coordinates><panel_attributes>User
+--
+name: str
+addr: str
+traits: object
+memory: object
+feelings: object
+friends: list
+--
+init(): None
+save(): bool
+restore(): json</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>370</y><w>140</w><h>90</h></coordinates><panel_attributes>Human
+--
+vocab: object
+--
+init()
+isHuman(): True</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>310</y><w>120</w><h>80</h></coordinates><panel_attributes>lt=&lt;-
+m1=
+m2=
+inherits</panel_attributes><additional_attributes>10;10;100;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>610</x><y>370</y><w>140</w><h>240</h></coordinates><panel_attributes>Sam
+--
+pid
+clones: list
+skillnames: list
+skills: list
+cmds: list
+--
+init()
+isHuman(): False
+announce()
+getuniqueport()
+connect()
+send()
+join()
+loadskills()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>380</x><y>80</y><w>410</w><h>580</h></coordinates><panel_attributes>user</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>740</x><y>310</y><w>230</w><h>150</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+0..1</panel_attributes><additional_attributes>10;130;210;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>40</y><w>280</w><h>30</h></coordinates><panel_attributes>halign=left
+Class Diagram: User and Skills
+lw=0
+fontsize=18</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>140</y><w>140</w><h>130</h></coordinates><panel_attributes>Traits
+--
+openness = 0.0
+conscientiousness = 0.0
+extroversion = 0.0
+agreeableness = 0.0
+neuroticism = 0.0
+iq = 0.0</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>310</y><w>140</w><h>140</h></coordinates><panel_attributes>Feelings
+--
+anger = 0.0
+disgust = 0.0
+fear = 0.0
+happiness = 0.0
+sadness = 0.0
+surprise = 0.0
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>490</y><w>140</w><h>190</h></coordinates><panel_attributes>Memory
+--
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1010</x><y>100</y><w>140</w><h>100</h></coordinates><panel_attributes>Skill
+--
+me: Sam object
+--
+load()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>230</y><w>350</w><h>290</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+1..1</panel_attributes><additional_attributes>330;10;10;270</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>190</y><w>350</w><h>190</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+1..1</panel_attributes><additional_attributes>330;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>160</y><w>350</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+1..1</panel_attributes><additional_attributes>330;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>950</x><y>280</y><w>140</w><h>100</h></coordinates><panel_attributes>Lobby(Skill)
+--
+--
+cmd_join()
+cmd_leave()
+cmd_login()
+cmd_logout()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>950</x><y>400</y><w>140</w><h>140</h></coordinates><panel_attributes>Broca(Skill)
+--
+me: Sam object
+--
+cmd_converse()
+cmd_translate()
+cmd_number()
+cmd_sentence()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>950</x><y>570</y><w>140</w><h>100</h></coordinates><panel_attributes>TranslateThai(Skill)
+--
+--
+cmd_parse()
+cmd_gen()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1120</x><y>190</y><w>70</w><h>580</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+m1=inherits</panel_attributes><additional_attributes>10;10;10;560</additional_attributes></element><element><id>Relation</id><coordinates><x>1080</x><y>330</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1080</x><y>460</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1080</x><y>740</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>740</x><y>450</y><w>230</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+0..1</panel_attributes><additional_attributes>10;40;210;10</additional_attributes></element><element><id>Relation</id><coordinates><x>740</x><y>530</y><w>230</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+0..1</panel_attributes><additional_attributes>10;10;210;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>950</x><y>700</y><w>140</w><h>100</h></coordinates><panel_attributes>TranslateEnglish(Skill)
+--
+--
+cmd_parse()
+cmd_gen()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1080</x><y>600</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>50;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>750</y><w>180</w><h>30</h></coordinates><panel_attributes>valign=bottom
+halign=left
+uml_class_user.uxf (UMLetino)
+lw=0</panel_attributes><additional_attributes></additional_attributes></element></diagram>

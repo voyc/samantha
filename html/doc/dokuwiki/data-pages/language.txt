@@ -1,0 +1,27 @@
+====== Language ======
+
+Grammar
+
+Noam Chomsky: //Syntactic Structures//, 1952
+
+Online Sentence Parser, Carnegie Mellon University, 2003
+https://www.link.cs.cmu.edu/link/index.html
+
+Wordnet, Princeton University, 2005
+https://wordnet.princeton.edu/
+
+Stanford Parser, 2002-2020
+https://nlp.stanford.edu/software/lex-parser.shtml
+
+relationship of language, communication, thought
+
+Chomsky says language is for thought, only secondarily for communication
+
+Ai2 The Allen Institute for AI, founded by Paul Allen
+https://allenai.org/
+
+The Turing Center, University of Washington
+http://turing.cs.washington.edu/
+
+Open IE, Open Information Extraction, entity-relation
+https://openie.allenai.org/

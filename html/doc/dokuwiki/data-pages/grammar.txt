@@ -1,0 +1,206 @@
+====== Grammar ======
+
+Ambiguities in language: we are trying to flatten a rounded structure
+
+like making a flat map from a globe
+
+===== Multiple trees =====
+Trees as optional connections
+Pos
+Male female
+Height size
+Types of thought, syllogism, dialectic
+
+===== instance vs class =====
+
+in every relation, make every entity an instance
+
+	whenever a modify is done to a noun
+		an instance is required
+	every relation is by nature an instance
+		the nouns in the relation are not instances unless explicitly stated
+
+	a thought can be about a class or about an instance
+
+	family of Nid      typeof family, no name, owned by Nid
+	Jerry              typeof person, named Jerry
+	
+	instance, named, permanent
+	temporary, only for purpose of the current thought
+	can we create temp instances, without putting them in the mind.entities dict?
+
+	any propername is an instance
+		Bangkok, has a population and area, etc
+
+	Ethel's lasagna - is a class, but can have modifiers
+		a dish of Ethel's lasagna is actually an instance
+		is Ethel's lasagna a named entity
+		car
+			petro car
+			electric car
+		These are classes, but could have modifiers, no?
+		in an instance, the modifier delineates the entity
+		in a class, the modifier defines the class
+
+		the Honda EV is a class 
+			and it has modifiers that define the class
+			if John owns one, that is an instance, color red deliniates it
+				the class has a name, the instance does not
+
+===== subj verb obj =====
+
+	two options
+	subj:Objek -> link/verb:Objek -> obj:Objek
+	verb:Objek
+		modifier
+			subj Objek
+			obj  Objek
+			why
+			where
+		
+	"object" and "entity" imply a noun		
+	"instance" - can also be a verb or a link.  is that true?
+
+	Joe is a terminal klass
+	Bangkok is a terminal klass, but we need to make an Objek of it in a thot
+
+	the thot is listed as a thot
+		objeks are not listed, but referenced directly within the thot
+
+
+	a relation names up to three parts
+		each of the three can have modifiers
+
+	a klass can have modifiers too
+
+	common names of persons, Node?
+	who's who, instances of persons, public
+	friends, instances of persons, private
+
+	proper names
+		persons
+			common names, index of  - klas, not objek
+			who's who - objek, global mind
+			my contacts - objek, private mind
+		places Gazetteer
+			countries
+			provinces
+			cities
+			neighborhoods
+			streets
+		businesses directory
+			business names and type
+
+
+		mind.contacts.print()
+
+mind.gazetteer.toString()
+mind.whoswho.toString() - including my contacts, global phone book
+mind.businessdirectory.toString()
+	Ristr8to
+	
+===== generate grammar =====
+
+	x enumerate relation acces
+	enumerate klass	
+	enumerate klass instance
+	classify enumeration by link
+	
+	loop thru klas, for each
+		list modifiers	
+		sort and count by link
+		list usage as subj, how many times used as subj
+		list usage as obj
+			how many times used as obj of verb
+			how many times used as obj of modifier
+
+
+where you go
+grocery store
+why
+because i am hungry
+
+why
+to buy food
+why
+to eat the food
+why
+because I'm hungry
+where will you eat the food
+at home
+
+go grocery store, buy food, return home, eat food
+why: i hungry
+
+go restaurant, eat food
+why: i hungry
+
+shortcut
+sequential verb phrases, all with implied subject
+
+relation is subject plus verb phrase
+	"empty" -> "implied" for subject
+	"empty" -> "unspecified" for object
+
+relation is phrase: verb, adj, adv
+
+two ways to represent relation:
+	verb: subject and object are modifiers
+	noun: verb phrase is modifier
+
+houn: modifier timestamp is time we first heard about this  modifier
+verb: timestamp is time the action took place
+
+
+Bangkok on the earth
+Bangkok on a map  - map of Bangkok
+model of Bangkok
+photo
+same Bangkok, one real, one representation
+
+Nid, photo of Nid, photo of Nid
+Nid, clone, clone of Nid, Nid is now klas
+all representations "of", until you clone it 
+
+
+vocabulary - semantic hierarchy
+
+syntactic hierarchy
+
+
+
+thoughts can be expressed in a variety of ways
+	verb first, noun first, etc
+	I suppose they could be stored in a variet of ways also
+	so just pick one way and go with it
+	remember Alan Watts saying every noun is an action, a being
+
+a verb timestamp is the time or period of the action (when)
+a noun timestamp is the time i first heard about this attribute
+
+do we want timestamps?  other than the when  modifier?
+yes we want the timestamp and the source(user) of every thot
+though these will not be used in normal conversation, only in self-reflection
+
+verb phrase includes modifiers, including link to object
+noun phrase includes modifiers
+sentence is noun phrase + verb phrase
+a thought can start anywhere: subj or verb, is that true?
+
+duplicate relations
+	must be separate so they can be modified
+	they happen at different times, so are different thoughts and must be recorded
+	therefore, accesscount is never more than 1
+	a relation is like an objek in that sense
+
+scan modifiers
+scan relations
+
+scan modifiers now, then add relations
+
+
+patterns:
+	@person
+		verbs
+			links
+				objects
