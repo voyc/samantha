@@ -1,4 +1,4 @@
-# numgen.py
+''' numgen.py - module of functions to generate and translate number '''
 
 import re
 import random
@@ -80,18 +80,26 @@ magnitude = {
 
 wordbreak = ' '
 
-
 # generate a random number within constraints and within user's vocabulary
-def numgen(start=1, end=9999999, interval=1, user=''):
-	a = range(start,end,interval)
+def gen(lo=1, hi=9999999, step=1, user=''):
+	numdiglo = len(str(lo))
+	numdighi = len(str(hi))
+	numdig = numdiglo
+	if numdighi > numdiglo:
+		numdig = random.choice(range(numdiglo,numdighi,1))
+	nlo = max(lo,10**(numdig-1))
+	nhi = min(hi,(10**numdig) - 1)
+	a = range(nlo, nhi+1, step)
 	b = chooseForUser(a,user)
-	return random.choice(b)
+	num = random.choice(b)
+	return num
 
 def chooseForUser(n,user):
+	''' process range against user's vocabulary '''
 	return n
 
 # translate and format a number
-def translateNumber(n,language='th',format='word'):
+def translate(n,language='th',format='word'):
 	n = int(str(n)[0:7])  # int max 7 digits
 	la = language  # en or th
 	fmt = format   # digit or word
@@ -153,18 +161,3 @@ def translateNumber(n,language='th',format='word'):
 			s += dig + ' ' + mag
 			s = re.sub(' +',' ', s).strip()
 	return s
-
-# test one
-#testdata = [0,23,546,9263,23400,234120,2370215]
-#for n in testdata:
-#	print(translateNumber(n,'en','digit'))
-#	print(translateNumber(n,'th','digit'))
-#	print(translateNumber(n,'en','word'))
-#	print(translateNumber(n,'th','word'))
-#	print('-')
-
-# test two
-#testdata = [10,11,12,20,21,22,31,32,33,100,101,102,111,112,121,1000,1001,1010,1011,1021]
-#for n in testdata:
-#	s = translateNumber(n, 'th', 'word')
-#	print(f'{n} : {s}')

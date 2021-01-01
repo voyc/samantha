@@ -1,36 +1,30 @@
 ''' samcli.py - cli interface to samd '''
 
-import threading
-import time
-import lib.ipc as ipc
+import sam.comm
 import configparser
+import threading
 
 configfilename = '../../samd.conf'
 config = configparser.ConfigParser()
 config.read(configfilename)
+addr = config['comm']['addr']
 
-exit_command = 'q'
+token = ''
 
-def keyboardLoop(csock):
-	while (True):
-		s = input()
-		if (s == exit_command):
-			break
-		message = ipc.Message('sam', 'john', s)
-		csock.send(message)
-		time.sleep(0.01) 
+csock = sam.comm.Client()
+csock.connect(addr)
+print(f'connected to {addr}...')
 
-def onReceive(message):
-	print( f'--> {message.msg}')
+def _keyboardLoop(csock):
+	while True:
+		s = input()  # blocking threadKeyboard
+		if s == sam.comm.Client.exit_string:
+			csock.close()
+			break;
+		m = sam.comm.Message(s)
+		m.sendertoken = token
+		csock.send(m)
 
-def main():
-	ssock_addr = config['addr']['sam']
-	csock = ipc.Client(ssock_addr, onReceive)
-	print(f'Talking to {ssock_addr}...')
-
-	keyboardThread = threading.Thread(target=keyboardLoop, args=(csock,), daemon=True)
-	keyboardThread.start()
-	keyboardThread.join()
-
-if __name__ == '__main__':
-	main()
+threadKeyboard = threading.Thread(target=_keyboardLoop, args=(csock,), daemon=True)
+threadKeyboard.start()
+threadKeyboard.join()

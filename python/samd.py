@@ -1,17 +1,18 @@
-'''
-samd.py   instantiate the first Sam daemon, usually as a service at boot
-'''
+''' samd.py - instantiate the first Sam daemon, usually as a service at boot '''
 
-import lib.user as user
+import sam.user
 import configparser
 
 configfilename = '../../samd.conf'
-name = 'Sam'
 
 config = configparser.ConfigParser()
 config.read(configfilename)
-addr = config['addr'][name]
+name = config['comm']['name']
+addr = config['comm']['addr']
+skills = config['features']['skills']
 
-sam = user.Sam(name, addr)
-sam.listen()
-sam.join()
+sam = sam.user.Sam(name, addr, skills)
+
+# ...
+
+sam.join() # blocking

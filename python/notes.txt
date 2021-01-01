@@ -1,11 +1,67 @@
+identify speakers
+	Sam: sam, 35, f
+	John: human, 58, m
 
-make separate receive thread in samd
+1. Sam, set Subj = you, say 1 of 3 sentences
+	bai nai, verb = go
+2. John, reply I go raan cafe
 
-run samchat, samweb, samcli together
+3. Sam, subj=you, verb=go, where=raan cofe 
+	advs about go
+	adjs about cafe
+	lookup potential next sentence
+	followup questions 
+	switch subj to raan cafe and ask questions about that
 
-make them all three go thru samd
+root is S
+	s 
+	v
+		to bank	
+			on the corner
+			KBank
+			green
 
-move users and groups from webchat to reception
+
+programs to support conversation generation 
+
+	goals:
+		choose next sentence: question or answer, based on the conversational grammar	
+			by default, dispatcher calls broca::converse()
+			make broca call congen.gen()  in congen.py
+			new program, maybe fold into grammar.py later
+
+		sleep: convert conversation to memories	
+	prereq:
+		design data structure that can accomodate the sentence construction and allow adv and adj to be added gradually
+		$refer()  back-reference subj, verb, object
+		define speakers by gender, age
+		$pronoun(person=2, gender=m, number=s, age=younger)
+		$date
+		$time
+		$dayofweek
+		$country
+		$city
+		$businessname  $typeof(@businessname)
+		$polite() based on speaker's gender
+		when to add @polite
+
+
+x pass Message object between Client and Server, samd and samcli, use string name for from and to, later replaced with token
+x complete dispatch
+- add modes: echo, converse, translate, drill
+- add sleep
+- build out Reception from samchat, users and groups, archive samchat
+- samcli, print proper message when connection fails because server not up
+- reimplement samcli as Human, loading skill connect, wrapping comm.Client, plus keyboard (skill?)
+- implement skill converse
+- implement leed, with skills connect and converse, conversing with samd
+- implement security, account, built into converse: "what is your name?" "do you really want to change your password?"
+- test with webserver
+- simulate user vs instantiate sam
+- do translate, sengen, numgen
+- drill basic
+- drill language
+
 
 make wsgi stub
 	link it into passenger_wsgi
@@ -17,55 +73,6 @@ support clones
 	clones = []
 	clone.append(Sam('Sam'))
 	clone.append(Sam('Lee'))
-
-class User:
-	def __init__(self):
-		self.uuid = ''  # unique id 
-		self.name = ''  # human readable name 
-		self.personality = {}
-		self.memory = {}
-
-	def getuuid(self):
-		pass
-
-	def save(self):
-		# write to database
-		pass
-
-	def restore(self):
-		# read from database
-		pass
-
-class Human(User):
-	def __init__(self):
-		self.vocab = {}
-
-	def isHuman(self):
-		return True
-
-class Clone(User):
-	def __init__(self):
-		self.host =   # ip 
-		self.port =   # unique port assignement
-		self.pid =    # each clone is a daemon process running samd
-
-	def isHuman(self):
-		return False
-
-	def announce(self):
-		# announce my presence to the world
-		pass
-	
-	def getport(self):
-		pass
-
-db
-	is it really necessary to have a central db?
-	what about a distributed db?
-
-	use db for grammar
-	if central db can be found on inet
-	grammar is necessary for communicating with humans
 
 message passing
 	send to everyone

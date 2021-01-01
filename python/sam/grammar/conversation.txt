@@ -1,0 +1,350 @@
+# conversation.txt - grammar for conversations
+
+# eventually, this should go in the db, because it must be extended and rearranged as part of learning from users' answers
+
+# sentence @describePersonMale > @personMale {@not} @adjPersonMale {ไหม} {@polite}
+
+# starting point, with @person = you
+
+# 1..3
+question @howbe > @person is how?
+question @dowhat > @person do what?
+question @gowhere > @person go where?
+
+question subj=@person verb=go question=where > @person go where?
+answer subj=@person verb=go question=where >  {{@subj} go} [@wheregazetteer, @wherebusinessname, @wherebusinesstype]  
+
+? followup subj=@person verb=go question=where > [why, when, withwhom, how]
+
+answer subj=@person verb=go question=where > [@wheregazetteer, @wherebusinessname, @wherebusinesstype, @wherehouse]  
+noun @gazetteer    > [$country(), $city()]
+noun @businessname > [$usinessname()]
+noun @businesstype > [bank, coffeeshop, restaurant, salon, market, mall, pharmacy, cinema, doctor, hospital, clinic, dentist]
+noun @house        > [house of @person]
+
+answer question=why subj=@person verb=go where=@house      > to [eat, visit, pickup {@object,@person}, deliver {@object,@person}]
+answer question=why subj=@person verb=go where=@gazetteer  > [to visit @person, for vacation]
+answer question=why subj=@person verb=go where=@businessname > [$typeof(@businessname)]
+
+answer question=why subj=@person verb=go where=bank        > to [get money]
+answer question=why subj=@person verb=go where=coffeeshop  > to [drink coffee, eat breakfast, meet frient]
+answer question=why subj=@person verb=go where=restaurant  > to [eat, meet friend]
+answer question=why subj=@person verb=go where=salon       > to [wash hair, cut hair, pedicure, manicure]
+answer question=why subj=@person verb=go where=market      > to [buy food]
+answer question=why subj=@person verb=go where=mall        > to [shop, eat, meet friend]
+answer question=why subj=@person verb=go where=pharmacy    > to [buy medicine]
+answer question=why subj=@person verb=go where=cinema      > to [watch movie]
+answer question=why subj=@person verb=go where=doctor      > to [have checkup, fix headache, test for covid]
+answer question=why subj=@person verb=go where=hospital    > to [visit @person]
+answer question=why subj=@person verb=go where=clinic      > to [see doctor, see dentist]
+answer question=why subj=@person verb=go where=dentist     > for [cleaning, filling, whitening, toothache,  removal]
+...
+
+gazetter, business directory, who's who : nouns in the collective mind
+an object exists in the collective mind and in individual minds
+during sleep the individual mind is uploaded to the collective mind and vice-versa
+
+relationship of noun in collective mind to same noun in individual mind
+relationship of noun in one thot to sam noun in another thot
+
+noun pulled into a thot
+only one copy of person and bank
+a thought contains copy or virtual copy or link to that object
+
+python
+x = obj, x is a reference to obj
+number of open questions on each noun => urgency or interest
+thoughts can ramble from one noun to a referenced noun, depending on interest/urgency, and also on focus trait
+if a person has a high focus, he is less likely to move to a referenced thot, even as the urgency of the referenced thot is higher
+thot vs noun: thot has verbs and connections and syllogisms
+connectors: verbs, prepositions
+thot vs sentence: thot can have multiple clauses
+
+if the sky is clear, the air is hot
+when the sky is clear, the air is hot
+
+sky clear => air hot  : the thought becomes the connetion between the two nouns
+
+when birds fly south  =>  winter will come soon  : connection between two sentences
+
+
+birds
+fly
+birds fly (skill)
+birds migrate south in winter
+birds migrate north in spring
+when you see birds flying south, you can guess winter is coming
+
+when the hammer comes down, the nail is driven into the wood
+you can drive the nail into the wood by bringing the hammer down onto the nail
+
+linking
+	verb
+	is
+	syllogism 
+
+can you draw a thought as a diagram of things and links?
+
+
+
+
+
+
+
+temporarily switch subject, maybe for only one question
+	option, every question, choose subj or any other noun in the structure as subj of next question
+	potentially nested subj switches
+
+s you go where, s v adv?  a tree of adverbs off the verb
+an adverb can have prep and object
+the object is a noun and it can have adj phrases off it
+going to the bank on the corner on Tanon Nimman
+
+John
+    go
+        to the bank
+	    in the mall
+        to get money
+            to pay for school
+	now (timestamp)  future:plan, past:fact
+	with my friend
+	walk
+
+John, bank, mall, money, school, friend, 
+all possible subjects for future questions
+"probing questions", repeating the question with a new subject
+where is the bank, is still asking about the verb go, repeating the question, but switching the subject
+why do you go to the bank -> why do you get money -> why do you pay for school
+which school, where is the school
+which business (of type) - open ended, could respond with name, location, description 
+
+clarify question about object of the preposition, to the bank
+	which bank
+	where is the bank (it)?  near my house, in the mall
+	you like this bank?  yes
+	why you like this bank?  good mobile app
+
+have you done this before?
+when was the last time you went here?
+...
+answer question=when subj=@person verb=go > [@whennow, @whendaypart, @whenday, @whenweek, @whenmonth, @whenyear, @whendayofweek, @whendate, @whentime]
+
+adv @whennow > [now}
+adv @whendaypart > [this morning, this afternoon, this evening]
+adv @whenday > [yesterday, today, tomorrow]
+adv @whenweek > [last week, this week, next week]
+adv @whenmonth > [last month, this month, next month]
+adv @whenyear > [last year, this year, next year]
+adv @whendayofweek > [last $day(), next $day()]
+adv @whendate > [$date()]
+adv @whentime > [$time()]
+
+adv @withwhom > @person
+
+#noun @personNeutral > [คน,เรา,เขา,คุณ,ญาติ,เด็ก,พี่,น้อง,หลาน,ลูก,อา,น้า]
+#noun @personMale > [ผู้ชาย,พ่อ,พี่ชาย,ลูกชาย,น้องชาย,หลานชาย,อาผู้ชาย,น้าชาย,ปู่,ตา]
+#noun @personFemale > [ผู้หญิง,แม่,พี่สาว,ลูกสาว,น้องสาว,หลานสาว,อาผู้หญิง,น้าสาว,ย่า,ยาย]
+noun @pronoun = $pronoun(person=2, gender=m, number=s)
+noun @person > [@personNeutral,@personMale,@personFemale,@pronoun]
+
+answer question=how subj=@person verb=go where=@gazetteer > [train, bus, airplane, ship]
+answer question=how subj=@person verb=go where=@businesstype   > [walk, run, car, Grab, taxi, bus, songtaew, tuktuk]
+
+
+answer subj=@person verb=do question=what > [eat rice, cook food, brew coffee, brew tea, go @where, read book, watch movie, listen music, play video game, chat online, homework, work on computer, work in garden]
+subj-from-obj subj=@person verb=do what=[eat rice, cook food, read book, watch movie, listen music, play video game, work on computer, work in garden]
+followup subj=@person verb=do what=[eat rice, cook food, brew coffee, brew tea, watch movie, listen music, play video game, chat online, homework, work on computer, work in garden] > [withwhom]
+followup subj=@person verb=do what=[eat rice, cook food, brew coffee, brew tea, read book, watch movie, listen music, play video game, chat online, homework, work on computer, work in garden] > [why]
+followup subj=@person verb=do what=[eat rice, cook food, brew coffee, brew tea, read book, watch movie, listen music, play video game, chat online, homework, work on computer] > [where]
+
+answer question=where subj=@person verb=do what=[eat rice, cook food, brew coffee, brew tea] > [at home, at house of @person, in the kitchen, in the back yard]
+answer question=where subj=@person verb=do what=[read book, watch movie, listen music, play video game, chat online, homework, work on computer] > [upstairs, in my bedroom, in the living room, in the back yard]
+answer question=withwhom subj=@person verb=do what=* > [@person, alone]
+
+answer question=why subj=@person verb=do what=[eat rice, cook food] > [i am hungry, my family is hungry] 
+answer question=why subj=@person verb=do what=[brew coffee, brew tea] > [to relax, for my friends]
+answer question=why subj=@person verb=do what=go @where > ?? same as question go where above
+answer question=why subj=@person verb=do what=[read book, watch movie, listen music, play video game] > for fun
+answer question=why subj=@person verb=do what=chat online > [talk to friends]
+answer question=why subj=@person verb=do what=homework > [assignment due tomorrow, study for test]
+answer question=why subj=@person verb=do what=work on computer > [for my job] 
+answer question=why subj=@person verb=do what=work in garden > [too many weeds, time for harvest, time for planting]
+
+
+sabai di mai?
+yes
+no
+why: headache, stomach ache, sad, lonely, angry
+
+how do you feel?
+
+......................
+pronouns: (I, me, he, she, herself, you, it, that, they, each, few, many, who, whoever, whose, someone, everybody, etc.) 
+
+particle @polite > [คะ ครับ]      # depend on gender of speaker
+
+particle @not > ไม่               # can be based on pairs of adjectives
+noun @personMale > [ผู้ชาย]
+noun @personFemale > ผู้หญิง
+noun @person > [คน @personMale @personFemale]
+
+adj @adjPersonMale > [หล่อ]
+adj @adjPersonFemale > [สวย]
+adj @adjPerson > [สูง เตี้ย ง่วง ตัวใหญ่ ตัวเล็ก สูง เตี้ย อ้วน ผอม เหนื่อย ง่วง เก่ง ขี้เกียจ เมา]
+
+sentence @describePersonMale > @personMale {@not} @adjPersonMale {ไหม} {@polite}
+sentence @describePersonFemale > @personFemale {@not} @adjPersonFemale {ไหม} {@polite}
+sentence @describePerson > @person {@not} @adjPerson {ไหม} {@polite}
+#sentence @describePersonQA > Q:@person @adjPerson ไหม {@polite} A:{@not} $refer(2) {@polite}
+
+answer go where, determine distance, determine current location
+distance=far
+ack > that is far
+question > how long will you stay, when you come back
+
+past vs future
+..........................
+
+sentence @buy > ผม อ้าว นม $num(1,5,1) ขงด {@polite}
+buy, sell, rent
+
+where is it, where is she
+near, in, above, below, inside, outside, right, left
+in the garden, in the house, on the roof, in the street
+
+	near my house
+	in the old city
+	west of town
+
+question @wantwhat > @erson want what?
+what's new, what's up, what's happening
+----------------------
+
+data structure to express conversational patterns
+
+to any question, multiple answers
+to any answer, multiple followup questions
+following any answer, a flip back
+
+conversational patterns (as opposed to sentence syntax)
+
+story segment
+	really?  interjection response expected
+yes really       ack
+	wow      interjection stop 
+story segment    coninuation
+
+
+q1
+   a1
+q2    - followup question
+   a2
+q3    - followup to a1 or a2, how to assign priority?
+   a3
+   q4 - flip back, when to flip back?
+a4
+   q5
+a5
+s6    - story
+   k6 - acknowledgement interjection
+
+conversation mode
+	handshake protocols: hello
+	q&a - information gathering
+	story - entertainment or communication, narrative, lecture, explanation, persuasion
+	interjection protocols
+
+	story or lecture first, then q&a
+	stories and q&a interspersed
+	disegagement protocols: goodbye
+
+	handshake protocol can begin a q&a session
+
+	remark - may require ack or not, may invite question
+	remark - a story is a sequence of remarks
+	remark, story, ack, interjection (q or stop), question, answer
+
+conversation among equals
+	balanced
+	questions, answers, stories, interjections, word count, all equal
+	purpose is to share information and understanding
+
+dominance
+	teacher
+		lecture
+		student only asking questions, mostly listening
+	drill
+		coach questions repeatedly
+	team leader
+		leader
+			tells story to explain mission
+			issues specific commands
+			answers questions
+		followers ask questions to clarify orders
+		
+	dressing down
+		boss criticizing and commanding subordinate
+			subordinate only makes submissive acks: yes sir
+	lawyer making a case
+		lawyer tells story
+		one-way q&a, leading questions
+	bully demanding submission
+		i'm right, you're wrong
+		to criticize, prove wrong, belittle, "destroy"
+
+
+for now, focus on balanced conversation
+
+cannot
+	make long dialogs
+
+must
+	use pairs: q/a, statement/response
+	but often the second of the pair is a list of potential responses
+	the dialog unfolds line by line
+
+q&a
+hello protocol
+goodbye protocol
+story
+
+pattern matching
+	incoming question: match to a question in the grammar
+	incoming answer: match to one of the expected responses of the preceding question
+	proceed like a billiards game, looking three moves ahea
+	looking three steps back
+
+1. match to expected response to previous statement/question
+2. match to all statements questions in the grammar
+
+matching algorithm
+	identify subject, verb, object, adv, adj (multiple possibilities)
+	currently not storing pos in grammar
+ 
+instead of attaching optional {polite} to each sentence, develop an algorithm for when to add
+	strip it off before matching
+
+complex sentence structures
+syllogism
+
+-----------------
+data structures, db tables, related to dict
+
+	gazetteer: country, province, city, village, road, street
+	business directory
+	proper names: first, last, nick
+	who's who - famous persons
+
+in vocab, add "desired" words, like local gazetteer, local business listings
+	let user choose from menu and also add new ones
+	vocab = uservocab
+
+during sleep
+	move day's conversations to memory
+	memory structions: 
+		events
+		descriptions, characteristics
+	
+conversation is driven by the need to gather information about the world
+
+see the spreadsheet titled "conversational patterns"

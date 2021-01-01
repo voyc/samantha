@@ -1,0 +1,146 @@
+
+where are you going? - ไป ไหน
+bank - ธนาคาร
+coffeeshop - ร้านกาแฟ
+restaurant - ร้านอาหาร
+salon - 
+market
+mall
+pharmacy
+cinema
+doctor
+hospital
+clinic
+dentist
+friend's house
+Bangkok
+Phuket
+Koh Samui
+Krabi
+Pattaya
+Hua Hin
+Chiang Mai
+Pai
+Udon Thai
+Sukothai
+Ayutthaya
+Why you go to friend's house?
+to eat
+to visit
+to pickup food
+to deliver food
+Why you go to Bangkok?
+to visit
+for vacation
+for business
+go to embassy
+Why you go to bank?
+to get money
+Why you go to coffeeshop?
+to drink coffee 
+to eat breakfast 
+to meet friend
+Why you go to restaurant?
+to eat
+to meet friend
+Why you go to salon?
+to wash hair
+to cut hair
+pedicure
+manicure
+Why you go to market?
+to buy food
+Why you go to mall?
+to shop
+Why you go to pharmacy?
+to buy medicine
+Why you go to cinema?
+to watch movie
+Why you go to doctor?
+to have checkup
+fix headache
+test for covid
+Why you go to hospital?
+to visit friend
+Why you go to clinic?
+to see doctor
+to see dentist
+Why you go to dentist?
+for cleaning
+for filling
+for whitening
+for toothache
+for tooth removal
+for braces
+When you go?
+this morning
+this afternoon
+this evening
+yesterday
+today
+tomorrow
+last week
+this week
+next week
+last month
+this month
+next month
+last year
+this year
+next year
+How you go to Bangkok?
+train
+bus
+airplane
+ship
+How you go to bank?
+walk
+run
+car
+Grab
+taxi
+bus
+songtaew
+tuktuk
+What are you doing?
+eat rice
+cook food
+brew coffee
+brew tea
+read book
+watch movie
+listen music
+play video game
+chat online
+homework
+work on computer
+work in garden
+Where you eat rice?
+at home
+at house of friend 
+in the kitchen
+in the back yard
+Where you read book?
+upstairs
+in my bedroom
+in the living room
+in the back yard
+Why you eat food?
+i am hungry
+my family is hungry 
+Why you brew coffee
+to relax
+for my friends
+Why you read book?
+for fun
+Why you chat online?
+talk to friends
+Why you do homework?
+assignment due tomorrow
+study for test
+Why you work on computer?
+for my job 
+Why you work in garden?
+too many weeds
+time for harvest
+time for planting

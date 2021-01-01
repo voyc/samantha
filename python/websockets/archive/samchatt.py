@@ -4,14 +4,17 @@ import asyncio     # websockets is built on asyncio
 import websockets
 import datetime
 import sys
+import socket   # used only to find hostname
 import random   # used for generating userid
-import configparser
 
-configfilename = '../../samd.conf'
-config = configparser.ConfigParser()
-config.read(configfilename)
+from grammar.numgen import *
+from grammar.sengen import *
+from grammar.grammar import *
 
-addr = config['comm']['addr']
+port = 50000
+ip = '68.66.224.22'  # a2hosting
+if socket.gethostname() == 'RacerSwift':
+	ip = '127.0.0.1'
 
 hostname = 'Sam'
 timeout = datetime.timedelta(seconds=120)
@@ -132,7 +135,6 @@ class Account:
 async def serveloop(websocket, path):
 	print(websocket)
 	async for message in websocket:
-		print(message)
 		cmd,uname,msg = message.split('~')
 		if cmd == 'login':
 			# deprecated.  We now login thru the web svc.  ??? called from ?
@@ -239,8 +241,6 @@ groups = []
 users ={} 
 host = User(False,'Sam',False)
 
-ip, port = addr.split(':')
-port = int(port)
 server = websockets.serve(serveloop, ip, port) # create server, wrapping coroutine
 event_loop = asyncio.get_event_loop()  # get the scheduler
 event_loop.run_until_complete(server)  # make connection, wrapping server object

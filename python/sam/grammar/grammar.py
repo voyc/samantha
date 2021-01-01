@@ -1,17 +1,17 @@
-# grammar.py
+''' grammar.py - implement thai grammar '''
 
 import re
 import random
-from grammar.numgen import *
 import os 
-from grammar.vocab import *
+import sam.grammar.vocab as vocab
+import sam.grammar.numgen as numgen
 
 thispath = os.path.dirname(os.path.realpath(__file__)) + '/'
 
 scfilename = 'semanticconventions.txt'
 
-uservocab = UserVocab()
-uservocab.onLogin('xxx')
+uservocab = vocab.UserVocab()
+#uservocab.onLogin('xxx')
 
 class Node:
 	level = 0
@@ -102,7 +102,9 @@ def parseExpr(expr):
 def parseGrammar(textfilename):
 	# scan the input text file, and build a dictionary of objects, one line => one object
 	sc = {}
-	textlines = open(textfilename,'r').readlines()
+	fh = open(textfilename,'r')
+	textlines = fh.readlines()
+	fh.close()
 	for line in textlines:
 		# skip comments and empty lines
 		w = line.strip()
@@ -165,16 +167,26 @@ def collapseNestedLists(sc):
 	for node in sc.values():
 		node.process(fn)
 
-def printSemantics(sc):
-	for node in sc.values():
-		node.print()
+def status(prnt=False):
+	maxdepth = 0
+	for node in semantics.values():
+		if prnt:
+			node.print()
+		if node.level > maxdepth:
+			maxdepth = node.level	
+	if prnt:
+		print(len(semantics))
+		print(maxdepth)
 
-# semantics is a dictionary of named nodes, each node is a tree
-semantics = parseGrammar(thispath + scfilename)
-resolveNames(semantics)
-collapseNames(semantics)
-collapseNestedLists(semantics)
-#printSemantics(semantics)
+semantics = None
+
+def setupSemantics():
+	''' semantics is a dictionary of named nodes, each node is a tree '''
+	global semantics
+	semantics = parseGrammar(thispath + scfilename)
+	resolveNames(semantics)
+	collapseNames(semantics)
+	collapseNestedLists(semantics)
 
 def gensen(sc,opt=[]):
 	options = {
@@ -204,12 +216,14 @@ def gensen(sc,opt=[]):
 				m.value = m.expr
 			elif m.word == '$num':
 				a = m.expr.split(',')
-				m.value = translateNumber(numgen(int(a[0]), int(a[1]), int(a[2])))
+				n = numgen.gen(int(a[0]), int(a[1]), int(a[2]))
+				m.value = numgen.translate(n)
 			elif m.word == '$list':
 				tlist = list(filter(lambda x: x.expr in options['target'], m.tree))
 				if not len(tlist):
 					tlist = list(filter(lambda x: x.expr in uservocab.list, m.tree))
 					#tlist = m.tree
+				tlist = m.tree
 				nd = random.choice(tlist)
 				m.value = nd.expr 
 			elif m.word == '$opt':
@@ -218,11 +232,11 @@ def gensen(sc,opt=[]):
 				sen += ' ' + m.value
 		node.process(fn)
 		a = sen.split()
-		tlist = list(filter(lambda x: x in options['target'], a))
-		vlist = list(filter(lambda x: x.expr in uservocab.list, m.tree))
-		if (len(tlist) or not options['target']) and len(vlist) + len(tlist) >= len(a):
-			sen = ' '.join(a)  # remove extra spaces
-			sentens.append(sen)
+		#tlist = list(filter(lambda x: x in options['target'], a))
+		#jvlist = [] # list(filter(lambda x: x.expr in uservocab.list, m.tree))
+		#if (len(tlist) or not options['target']) and len(vlist) + len(tlist) >= len(a):
+		sen = ' '.join(a)  # remove extra spaces
+		sentens.append(sen)
 
 	return sentens
 
@@ -234,7 +248,7 @@ def printSentences(sentences):
 #sentences = gensen(semantics,{'target':'ตัวใหญ่'})
 #sentences = gensen(semantics,{'target':'สวย'})
 #sentences = gensen(semantics, {'count':100})
-#printSentences(sentences)
+#rintSentences(sentences)
 
 def sengen(s):
 	sentences = gensen(semantics, {'target':s})
