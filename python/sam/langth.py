@@ -1,48 +1,66 @@
 ''' langth.py '''
 
-class Th(sam.language.Language):
-	def gen(self,thot):
+import sam.base
+
+class Th(sam.base.Language):
+	def __init__(self, me):
+		super().__init__(me)
+
+	def broca(self,thot):
 		thai = []
 		for each in sen.split(' '):
 			thai.append(self.genWord(each))
 		return ' '.join(thai)
 
-	def parse(self,thot):
-		eng = []
-		for each in sen.split(' '):
-			eng.append(self.parseWord(each))
-		return ' '.join(eng)
+	def wernicke(self,message):
+		# translate word for word thai to s3, and match for pos
+		s3 = []
+		pos = []
+		for each in message.msg.split(' '):
+			w = self.parseWord(each)
+			p = me.mind.getPos(w)
+			s3.append(w)
+			pos.append(p)
+		message.s3 = ' '.join(s3)
 
-	def genWord(self,eng):
+		# identify command
+		isCmd = sam.mind.Thot.hasParent('command')
+
+
+		# build claws 
+
+
+	def genWord(self,s3):
 		thai = ''
 		try:
-			thai = self.eng[eng]
+			thai = self.s3[s3]
 		except:
-			#raise TranslateException (f'Cannot find Thai translation for English word: {eng}')
-			print(f'Cannot find Thai translation for English word: {eng}')
+			print(f'Cannot find Thai translation for s3 word: {s3}')
 		return thai
 
 	def parseWord(self,thai):
-		eng = ''
+		s3 = ''
 		try:
-			eng = self.thai[thai]
+			s3 = self.thai[thai]
 		except:
-			raise TranslateException (f'Cannot find English translation for Thai word: {thai}')
-		return eng
+			print(f'Cannot find s3 translation for Thai word: {thai}')
+		return s3
 
 	def setup(self):
 		for row in self.table:
-			self.eng[row[0]] = row[1]
+			self.s3[row[0]] = row[1]
 			self.thai[row[1]] = row[0]
 
 	def __init__(self):
 		self.thai = {}
-		self.eng = {}
+		self.s3 = {}
 		self.table = []
 		self.loadtable()
 		self.setup()
 
 	def loadtable(self):
+		''' thai-s3 translation table '''
+		#                   s3               thai
 		self.table.append(['person'        ,'คน'  ]),             
 		self.table.append(['place'         ,'สถานที่']),
 		self.table.append(['thing'         ,'สิ่ง']),
@@ -230,6 +248,13 @@ class Th(sam.language.Language):
 		self.table.append(['plant'         ,'ปลูก']), 
 		self.table.append(['have'          ,'มี']), 
 		self.table.append(['fun'           ,'สนุก']), 
+
+		self.table.append(['connect'       ,'โยงใย']), 
+		self.table.append(['translate'     ,'แปล']), 
+		self.table.append(['echo'          ,'เลียน']), 
+		self.table.append(['show'          ,'แสดง']), 
+		self.table.append(['search'        ,'ค้นหา']), 
+		self.table.append(['drill'         ,'ฝึก']), 
 
 if __name__ == '__main__':
 	tra = Translate()

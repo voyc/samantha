@@ -3,8 +3,7 @@
 import uuid
 import sam.tree
 import datetime
-import sam.translate
-import sam.mind
+import sam.base
 
 class Converse:
 	def __init__(self):
@@ -41,7 +40,7 @@ class Modifier:
 
 class Thot:
 	''' base class, add modifiers and accesscount  '''
-	mind = None
+	mind = None  # global variable, not class variable
 
 	def __init__(self):
 		self.modifiers = []
@@ -62,26 +61,27 @@ class Thot:
 	@staticmethod
 	def nfs(param): # node from string
 		if isinstance(param, str):
-			param = Thot.mind.nodes[param]
+			param = Mind().nodes[param]
 			if not param:
 				raise NodeNotFoundException
 		return param 
 
 class Node(sam.tree.Tree, Thot):
 	''' a Node is a word (entity, thing, action, idea), class or object, in the mind '''
-	def __init__(self,word,parent=None):
+	def __init__(self,word,pos,parent=None):
 		''' word is a string.  parent can be string or object. '''
 		self.word = word
+		self.pos = pos
 		parent = Thot.nfs(parent) # convert string to object 
 		if not parent: # first time only, init the tree
-			if Thot.mind.nodetree:
+			if Mind().nodetree:
 				raise NoParentException
-			Thot.mind.nodetree = self
+			Mind().nodetree = self
 		sam.tree.Tree.__init__(self,parent)
 		Thot.__init__(self)
-		if word in Thot.mind.nodes:
+		if word in Mind().nodes:
 			raise DupeNodeException
-		Thot.mind.nodes[word] = self
+		Mind().nodes[word] = self
 
 	def __str__(self):
 		return self.word
@@ -104,7 +104,7 @@ class Objek(Node):
 		Thot.__init__(self)
 		self.ts = datetime.datetime.timestamp(datetime.datetime.now())
 		self.id = ''.join(str(self).split(' ')) + '_' + str(self.ts)
-		Thot.mind.objeks[self.id] = self
+		Mind().objeks[self.id] = self
 
 	def __str__(self):
 		s = self.word
@@ -121,7 +121,7 @@ class Claws(Thot):
 		self.objek = Objek(Thot.nfs(objek)) if objek else None
 		self.ts = datetime.datetime.timestamp(datetime.datetime.now())
 		self.id = ''.join(str(self).split(' ')) + '_' + str(self.ts)
-		Thot.mind.claws[self.id] = self
+		Mind().claws[self.id] = self
 
 	def __str__(self):
 		s = f'{self.subjek} {self.verb}' 
@@ -142,7 +142,7 @@ class Number(Thot):
 	def __str__(self):
 		return str(self.value)
 
-class Mind:
+class Mind(sam.base.Singleton):
 	''' 
 	singleton class
 	defines a mind 
@@ -150,12 +150,17 @@ class Mind:
 	contains grammar, patterns
 	'''
 	def __init__(self):
+		if 'nodes' in dir(self): return # init only once
 		self.nodes = {}  # string-keyed Node objects
+		self.nodetree = None
 		self.objeks = {}
 		self.claws = {} # uuid-keyed Clause objects
-		self.nodetree = None
 		self.patterns = {}
-		Thot.mind = self
+
+	def setup(self,me):
+		self.me = me  # the user object, the owner of this mind
+		self.loadDictionary()
+		self.loadMemory()
 
 	def buildGrammar(self):
 		for claw in self.claws.values():
@@ -227,213 +232,217 @@ class Mind:
 					for mod in self.patterns[subj][link][lnk].keys():
 						print(f'{subj.word} {link.word} {lnk.word} {mod}')
 
-	def load(self):
-		#sam= Mind()
+	def loadDictionary(self):
+		''' s3 dictionary '''
+		#     word         pos    parent
+		Node('root'       ,'n'   ,None  )
+		Node('empty'      ,'j'   ,'root')
+		Node('person'     ,'n'   ,'root')
+		Node('place'      ,'n'   ,'root')
+		Node('thing'      ,'n'   ,'root')
+		Node('action'     ,'n'   ,'root')
+		Node('link'       ,'n'   ,'root')
 
-		Node('root')
-		Node('empty', 'root')
-		Node('person', 'root')
-		Node('place', 'root')
-		Node('thing', 'root')
-		Node('action', 'root')
-		Node('link', 'root')
+		Node('typeof'     ,'p'   ,'link')
+		Node('ownedby'    ,'p'   ,'link')
+		Node('by'         ,'p'   ,'link')
 
-		Node('typeof', 'link')
-		Node('ownedby', 'link')
-		Node('by', 'link')
+		Node('question'   ,'n'   ,'link')
+		Node('which'      ,'p'   ,'question') # apply to noun
 
+		Node('where'      ,'p'   ,'question') # apply to verb
+		Node('why'        ,'p'   ,'question')
+		Node('when'       ,'p'   ,'question')  # default "now"
+		Node('how'        ,'p'   ,'question')
+		Node('what'       ,'p'   ,'question')  # applies only to "do"
 
-		Node('question', 'link')
-		Node('which', 'question') # apply to noun
+		Node('this'       ,'j'   ,'which')
+		Node('next'       ,'j'   ,'which')
+		Node('last'       ,'j'   ,'which') # previous
 
-		Node('where', 'question') # apply to verb
-		Node('why', 'question')
-		Node('when', 'question')  # default "now"
-		Node('how', 'question')
-		Node('what', 'question')  # applies only to "do"
+		Node('time_period','n'   ,'thing')
+		Node('week'       ,'n'   ,'time_period')
+		Node('day'        ,'n'   ,'time_period')
+		Node('month'      ,'n'   ,'time_period')
+		Node('year'       ,'n'   ,'time_period')
 
-		Node('this', 'which')
-		Node('next', 'which')
-		Node('last', 'which') # previous
+		Node('time'       ,'n'   ,'thing')
+		Node('now'        ,'a'   ,'time')
+		Node('yesterday'  ,'a'   ,'time')
+		Node('today'      ,'a'   ,'time')
+		Node('tomorrow'   ,'a'   ,'time')
+		Node('morning'    ,'a'   ,'time')
+		Node('afternoon'  ,'a'   ,'time')
+		Node('evening'    ,'a'   ,'time')
 
-		Node('time_period', 'thing')
-		Node('week', 'time_period')
-		Node('day', 'time_period')
-		Node('month', 'time_period')
-		Node('year', 'time_period')
+		Node('you'        ,'p'   ,'person')
+		Node('I'          ,'p'   ,'person')
+		Node('friend'     ,'p'   ,'person')
+		Node('family'     ,'p'   ,'person')
 
-		Node('time', 'thing')
-		Node('now', 'time')
-		Node('yesterday', 'time')
-		Node('today', 'time')
-		Node('tomorrow', 'time')
-		Node('morning', 'time')
-		Node('afternoon', 'time')
-		Node('evening', 'time')
+		Node('Nid'        ,'np'  ,'person')
+		Node('Pin'        ,'np'  ,'person')
+		Node('May'        ,'np'  ,'person')
+		Node('Som'        ,'np'  ,'person')
+		Node('Nui'        ,'np'  ,'person')
+		Node('Memi'       ,'np'  ,'person')
+		Node('Fern'       ,'np'  ,'person')
+		Node('Bella'      ,'np'  ,'person')
+		Node('Jenny'      ,'np'  ,'person')
+		Node('Penny'      ,'np'  ,'person')
+		Node('Milky'      ,'np'  ,'person')
+		Node('Donut'      ,'np'  ,'person')
+		Node('Namtip'     ,'np'  ,'person')
+		Node('Tangmo'     ,'np'  ,'person')
+		Node('Chompoo'    ,'np'  ,'person')
+		Node('Naiyana'    ,'np'  ,'person')
 
-		Node('you', 'person')
-		Node('I', 'person')
-		Node('friend', 'person')
-		Node('family', 'person')
+		Node('Sam'        ,'np'  ,'person')
+		Node('Joe'        ,'np'  ,'person')
+		Node('John'       ,'np'  ,'person')
+		Node('Juan'       ,'np'  ,'person')
 
-		Node('Nid', 'person')
-		Node('Pin', 'person')
-		Node('May', 'person')
-		Node('Som', 'person')
-		Node('Nui', 'person')
-		Node('Memi', 'person')
-		Node('Fern', 'person')
-		Node('Bella', 'person')
-		Node('Jenny', 'person')
-		Node('Penny', 'person')
-		Node('Milky', 'person')
-		Node('Donut', 'person')
-		Node('Namtip', 'person')
-		Node('Tangmo', 'person')
-		Node('Chompoo', 'person')
-		Node('Naiyana', 'person')
+		Node('city'        ,'n'  ,'place')
+		Node('island'      ,'n'  ,'place')
+		Node('house'       ,'n'  ,'place')
+		Node('businesstype','n'  ,'thing')
+		Node('bank'        ,'n'  ,'businesstype')
+		Node('coffeeshop'  ,'n'  ,'businesstype')
+		Node('restaurant'  ,'n'  ,'businesstype')
+		Node('salon'       ,'n'  ,'businesstype')
+		Node('market'      ,'n'  ,'businesstype')
+		Node('mall'        ,'n'  ,'businesstype')
+		Node('pharmacy'    ,'n'  ,'businesstype')
+		Node('cinema'      ,'n'  ,'businesstype')
+		Node('doctor'      ,'n'  ,'businesstype')
+		Node('hospital'    ,'n'  ,'businesstype')
+		Node('clinic'      ,'n'  ,'businesstype')
+		Node('dentist'     ,'n'  ,'businesstype')
+		Node('embassy'     ,'n'  ,'businesstype')
 
-		Node('Sam', 'person')
-		Node('Joe', 'person')
-		Node('John', 'person')
-		Node('Juan', 'person')
+		Node('Bangkok'     ,'np' ,'city')
+		Node('Phuket'      ,'np' ,'city')
+		Node('Koh_Samui'   ,'np' ,'island')
+		Node('Krabi'       ,'np' ,'city')
+		Node('Pattaya'     ,'np' ,'city')
+		Node('Hua_Hin'     ,'np' ,'city')
+		Node('Chiang_Mai'  ,'np' ,'city')
+		Node('Pai'         ,'np' ,'city')
+		Node('Udon_Thani'  ,'np' ,'city')
+		Node('Sukothai'    ,'np' ,'city')
+		Node('Ayutthaya'   ,'np' ,'city')
 
-		Node('city', 'place')
-		Node('island', 'place')
-		Node('businesstype', 'thing')
-		Node('bank', 'businesstype')
-		Node('coffeeshop', 'businesstype')
-		Node('restaurant', 'businesstype')
-		Node('salon', 'businesstype')
-		Node('market', 'businesstype')
-		Node('mall', 'businesstype')
-		Node('pharmacy', 'businesstype')
-		Node('cinema', 'businesstype')
-		Node('doctor', 'businesstype')
-		Node('hospital', 'businesstype')
-		Node('clinic', 'businesstype')
-		Node('dentist', 'businesstype')
-		Node('embassy', 'businesstype')
-		Node('house', 'place')
-		Node('Bangkok', 'city')
-		Node('Phuket', 'city')
-		Node('Koh_Samui', 'island')
-		Node('Krabi', 'city')
-		Node('Pattaya', 'city')
-		Node('Hua_Hin', 'city')
-		Node('Chiang_Mai', 'city')
-		Node('Pai', 'city')
-		Node('Udon_Thani', 'city')
-		Node('Sukothai', 'city')
-		Node('Ayutthaya', 'city')
+		Node('food'        ,'n'  ,'thing')
+		Node('vacation'    ,'n'  ,'thing')
+		Node('business'    ,'n'  ,'thing')
+		Node('money'       ,'n'  ,'thing')
+		Node('coffee'      ,'n'  ,'food')
+		Node('breakfast'   ,'n'  ,'food')
+		Node('hair'        ,'n'  ,'thing')
+		Node('pedicure'    ,'n'  ,'thing')
+		Node('manicure'    ,'n'  ,'thing')
+		Node('medicine'    ,'n'  ,'thing')
+		Node('movie'       ,'n'  ,'thing')
+		Node('checkup'     ,'n'  ,'thing')
+		Node('headache'    ,'n'  ,'thing')
+		Node('covid'       ,'n'  ,'thing')
+		Node('tooth'       ,'n'  ,'thing')
+		Node('teeth'       ,'n'  ,'thing')
+		Node('filling'     ,'n'  ,'thing')
+		Node('whitening'   ,'n'  ,'thing')
+		Node('toothache'   ,'n'  ,'thing')
+		Node('braces'      ,'n'  ,'thing')
+		Node('fun'         ,'n'  ,'thing')
 
-		Node('food', 'thing')
-		Node('vacation', 'thing')
-		Node('business', 'thing')
-		Node('money', 'thing')
-		Node('coffee', 'food')
-		Node('breakfast', 'food')
-		Node('hair', 'thing')
-		Node('pedicure', 'thing')
-		Node('manicure', 'thing')
-		Node('medicine', 'thing')
-		Node('movie', 'thing')
-		Node('checkup', 'thing')
-		Node('headache', 'thing')
-		Node('covid', 'thing')
-		Node('tooth', 'thing')
-		Node('teeth', 'thing')
-		Node('filling', 'thing')
-		Node('whitening', 'thing')
-		Node('toothache', 'thing')
-		Node('braces', 'thing')
-		Node('fun', 'thing')
+		Node('transport'   ,'n'  ,'thing')
+		Node('train'       ,'n'  ,'transport')
+		Node('bus'         ,'n'  ,'transport')
+		Node('airplane'    ,'n'  ,'transport')
+		Node('ship'        ,'n'  ,'transport')
 
-		Node('transport', 'thing')
-		Node('train', 'transport')
-		Node('bus', 'transport')
-		Node('airplane', 'transport')
-		Node('ship', 'transport')
+		Node('Grab'        ,'np' ,'transport')
+		Node('car'         ,'n'  ,'transport')
+		Node('taxi'        ,'n'  ,'transport')
+		Node('citybus'     ,'n'  ,'transport')
+		Node('songtaew'    ,'n'  ,'transport')
+		Node('tuktuk'      ,'n'  ,'transport')
 
-		Node('car', 'transport')
-		Node('Grab', 'transport')
-		Node('taxi', 'transport')
-		Node('citybus', 'transport')
-		Node('songtaew', 'transport')
-		Node('tuktuk', 'transport')
-		Node('walk', 'action')
-		Node('run', 'action')
+		Node('walk'        ,'v'  ,'action')
+		Node('run'         ,'v'  ,'action')
 
-		Node('do', 'action')
-		Node('go', 'action')
-		Node('come', 'action')
-		Node('eat', 'action')
-		Node('visit', 'action')
-		Node('pickup', 'action')
-		Node('deliver', 'action')
-		Node('get', 'action')
-		Node('drink', 'action')
-		Node('meet', 'action')
-		Node('wash', 'action')
-		Node('cut', 'action')
-		Node('buy', 'action')
-		Node('shop', 'action')
-		Node('watch', 'action')
-		Node('fix', 'action')
-		Node('test', 'action')
-		Node('see', 'action')
-		Node('clean', 'action')
-		Node('remove', 'action')
+		Node('do'          ,'v'  ,'action')
+		Node('go'          ,'v'  ,'action')
+		Node('come'        ,'v'  ,'action')
+		Node('eat'         ,'v'  ,'action')
+		Node('visit'       ,'v'  ,'action')
+		Node('pickup'      ,'v'  ,'action')
+		Node('deliver'     ,'v'  ,'action')
+		Node('get'         ,'v'  ,'action')
+		Node('drink'       ,'v'  ,'action')
+		Node('meet'        ,'v'  ,'action')
+		Node('wash'        ,'v'  ,'action')
+		Node('cut'         ,'v'  ,'action')
+		Node('buy'         ,'v'  ,'action')
+		Node('shop'        ,'v'  ,'action')
+		Node('watch'       ,'v'  ,'action')
+		Node('fix'         ,'v'  ,'action')
+		Node('test'        ,'v'  ,'action')
+		Node('see'         ,'v'  ,'action')
+		Node('clean'       ,'v'  ,'action')
+		Node('remove'      ,'v'  ,'action')
 
-		Node('cook', 'action')
-		Node('brew', 'action')
-		Node('read', 'action')
-		Node('listen', 'action')
-		Node('play', 'action')
-		Node('is', 'action')
-		Node('feel', 'action')
-		Node('relax', 'action')
-		Node('chat', 'action')
-		Node('talk', 'action')
-		Node('give', 'action')
-		Node('have', 'action')
-		Node('study', 'action')
-		Node('work', 'action')
+		Node('cook'        ,'v'  ,'action')
+		Node('brew'        ,'v'  ,'action')
+		Node('read'        ,'v'  ,'action')
+		Node('listen'      ,'v'  ,'action')
+		Node('play'        ,'v'  ,'action')
+		Node('is'          ,'v'  ,'action')
+		Node('feel'        ,'v'  ,'action')
+		Node('relax'       ,'v'  ,'action')
+		Node('chat'        ,'v'  ,'action')
+		Node('talk'        ,'v'  ,'action')
+		Node('give'        ,'v'  ,'action')
+		Node('have'        ,'v'  ,'action')
+		Node('study'       ,'v'  ,'action')
+		Node('work'        ,'v'  ,'action')
 
-		Node('animal', 'root')
-		Node('cow', 'animal')
+		Node('animal'      ,'n'  ,'root')
+		Node('cow'         ,'n'  ,'animal')
 
-		Node('foodtype', 'root')
-		Node('rice', 'foodtype')
-		Node('tea', 'foodtype')
+		Node('foodtype'    ,'n'  ,'root')
+		Node('rice'        ,'n'  ,'foodtype')
+		Node('tea'         ,'n'  ,'foodtype')
 
-		Node('book', 'thing')
-		Node('music', 'thing')
-		Node('game', 'thing')
-		Node('homework', 'thing')
-		Node('assignment', 'thing')
-		Node('computer', 'thing')
-		Node('job', 'thing')
-		Node('garden', 'thing')
-		Node('weed', 'thing') 
-		Node('harvest', 'thing') 
-		Node('plant', 'thing') 
+		Node('book'        ,'n'  ,'thing')
+		Node('music'       ,'n'  ,'thing')
+		Node('game'        ,'n'  ,'thing')
+		Node('homework'    ,'n'  ,'thing')
+		Node('assignment'  ,'n'  ,'thing')
+		Node('computer'    ,'n'  ,'thing')
+		Node('job'         ,'n'  ,'thing')
+		Node('garden'      ,'n'  ,'thing')
+		Node('weed'        ,'n'  ,'thing') 
+		Node('harvest'     ,'n'  ,'thing') 
+		Node('plant'       ,'n'  ,'thing') 
 
-		Node('due', 'thing') # state, adj
-		Node('many', 'thing') # adv 
-		Node('howmuch', 'link') # adv 
-		Node('too', 'howmuch') # adv 
+		Node('due'         ,'n'  ,'thing') # state, adj
+		Node('many'        ,'n'  ,'thing') # adv 
+		Node('howmuch'     ,'n'  ,'link') # adv 
+		Node('too'         ,'n'  ,'howmuch') # adv 
 
-		Node('feeling', 'root')
-		Node('hungry', 'feeling')
+		Node('feeling'     ,'n'  ,'root')
+		Node('hungry'      ,'n'  ,'feeling')
 
-		Node('kitchen', 'place')
-		Node('backyard', 'place')
-		Node('upstairs', 'place')
-		Node('bedroom', 'place')
-		Node('livingroom', 'place')
-		Node('online', 'place')
+		Node('kitchen'     ,'n'  ,'place')
+		Node('backyard'    ,'n'  ,'place')
+		Node('upstairs'    ,'n'  ,'place')
+		Node('bedroom'     ,'n'  ,'place')
+		Node('livingroom'  ,'n'  ,'place')
 
+		Node('online'      ,'a'  ,'place')
+
+	def loadMemory(self):
+		''' prelearned thots, included in dna '''
 		friendhouse = Objek('house').modify('ownedby', 'friend')
 		Claws('you', 'go').modify('where', friendhouse).modify('why', Claws('you', 'pickup', 'food'))
 		Claws('Sam', 'go').modify('where', friendhouse).modify('why', Claws('Sam', 'deliver', 'food'))
@@ -509,7 +518,7 @@ class Mind:
 		work('Sam', 'salon'     , 'citybus')     
 		work('Joe', 'market'    , 'songtaew')
 		work('Nid', 'mall'      , 'tuktuk')       
-                             
+			     
 		Claws('Sam', 'go').modify('where', 'dentist').modify('how', 'run')
 		Claws('Joe', 'go').modify('where', 'clinic').modify('how', 'walk')
 

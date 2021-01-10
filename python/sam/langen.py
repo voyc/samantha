@@ -1,15 +1,22 @@
 ''' langen.py '''
 
-class En(sam.language.Language):
-	def gen(self,thot):
+import sam.base
+
+class En(sam.base.Language):
+	def __init__(self, me):
+		super().__init__(me)
+
+	def broca(self,thot):
+		''' generate outgoing sentence from internal thot '''
 		thai = []
 		for each in sen.split(' '):
 			thai.append(self.genWord(each))
 		return ' '.join(thai)
 
-	def parse(self,thot):
+	def wernicke(self,message):
+		''' parse incoming sentence into internal thot ''' 
 		eng = []
-		for each in sen.split(' '):
+		for each in message.msg.split(' '):
 			eng.append(self.parseWord(each))
 		return ' '.join(eng)
 

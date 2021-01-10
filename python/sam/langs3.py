@@ -1,13 +1,21 @@
 ''' langs3.py '''
 
-class S3(sam.language.Language):
-	def gen(self,thot):
+import sam.base
+#import re
+
+class S3(sam.base.Language):
+	def __init__(self, me):
+		super().__init__(me)
+
+	def broca(self,thot):
 		return str(thot)
 
-	def parse(self,sen):
+	def wernicke(self,message):
 		''' get parent and pos for each word '''
 		eng = []
-		for each in sen.split(' '):
+		s = message.msg[1:] # remove s3 prefix
+		#input = re.split(' |:', message.msg)
+		for each in s.split():
 			eng.append(self.parseWord(each))
 		return ' '.join(eng)
 
@@ -25,7 +33,8 @@ class S3(sam.language.Language):
 		try:
 			eng = self.thai[thai]
 		except:
-			raise TranslateException (f'Cannot find English translation for Thai word: {thai}')
+			#raise TranslateException (f'Cannot find English translation for Thai word: {thai}')
+			print (f'Cannot find English translation for Thai word: {thai}')
 		return eng
 
 	def setup(self):
@@ -228,6 +237,8 @@ class S3(sam.language.Language):
 		self.table.append(['plant'         ,'ปลูก']), 
 		self.table.append(['have'          ,'มี']), 
 		self.table.append(['fun'           ,'สนุก']), 
+
+		self.table.append(['hello'         ,'สวัสดี']), 
 
 if __name__ == '__main__':
 	tra = Translate()

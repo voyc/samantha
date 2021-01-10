@@ -1,55 +1,117 @@
 ''' lobby.py - manage incoming connections '''
 
-import sam.comm
-import sam.base
-import sam.language
+import sam.comm  # used by switchboard
+import sam.base  # contains Skill base class
 
-class Lobby(sam.base.Skill):  # do we want a base class Skill() ?
+class Lobby(sam.base.Skill):  # do we want a base class Skill ?
 	def __init__(self, me):
 		super().__init__(me)
-		self.language = sam.language.Language(self)
+		self.translator = Translator(self)
 		self.reception = Reception(self)
 		self.security = Security(self)
 		self.dispatcher = Dispatcher(self)
 		self.switchboard = Switchboard(self)
 		self.switchboard.listen()
-		self.users = {}
+		self.users = {}  # user objects keyed by websocket
+		self.groups = {} # group objects keyed by num
 
 	def join(self):
-		self.switchboard.socket.join()  # obsolete?
+		self.switchboard.socket.join()  # holds daemon open
 
 class Switchboard:
 	def __init__(self, lobby):
 		self.lobby = lobby
 
+	def onConnect(self,websocket,message):
+		''' first time onMessage '''
+
+		# create a user object
+		frmuser = sam.user.User() 
+		frmuser.token = message.frmtoken
+		frmuser.addr = f'{websocket.host}:{websocket.port}'
+
+		# create a group with one host and one user
+		host = self.lobby.me
+		group = self.lobby.reception.newGroup(websocket, frmuser, host)
+
+		# create a conversation
+		conversation = Conversation(group,message)
+
+		# dispatch "connect"
+		# reception: create conversation-group
+		# cortex: initiate conversation, what is your name?
+
+		# dispatcher
+		# priority: mode, incoming, converse
+		# commands must be hard-coded
+		# converse is algorithm, pretend, 
+		# do we followup every command with converse?
+		# join: welcome
+		# login: hello again
+		# translate: done, none
+		# thot verb -> dispatch
+		# dispatch is optional, if message(thot) is imperative
+
+
+		# message must contain: 
+		#    conversation id
+		#    tuser  fuser
+		#    host  guest
+		#    thot
+
+
+
+
+
 	def onMessage(self,websocket,message):  # callback from server socket
 		''' message processing '''
-		# 1. unique user identified by websocket, stored in users dict 
-		if websocket in self.lobby.users.keys():
-			frmuser = self.lobby.users[websocket]
-		else:
-			frmuser = sam.user.Human() 
+		if websocket not in self.lobby.users.keys():
+			# new conversation, message must be "connect" command
+			frmuser = sam.user.User() 
 			frmuser.token = message.frmtoken
 			frmuser.addr = f'{websocket.host}:{websocket.port}'
-		self.lobby.users[websocket] = frmuser
-		message.frmuser = frmuser
+			self.lobby.users[websocket] = frmuser
+		else:
+			frmuser = self.lobby.users[websocket]
+			message.frmuser = frmuser
+			print(f'recv: {message.toString()}')  # change to broadcast
 
-		# 2. security, check token
 		clearance = self.lobby.security.check(message)
+		# note that clearance refers to the incoming user, not the message
 
-		# 3. translate into thot
-		thot = self.lobby.language.parse(message)
-		message.thot = thot
+		message.thot = self.lobby.translator.wernicke(message)
+		# 1.  make wernicke return a thot
+		# 1a.  word-for-word translate
+		# 1b.  match pos
+		# 1c.  hasParent(node) returns bool
+		# 1d.  remove politeness
+		# 1e.  translate pronoun to user object
+		# 1f.  create claws object
+		# 1g.  add modifiers
 
-		# 4. broadcast incoming message to group
-		print(f'recv: {message.toString()}')  # change to broadcast
+		# does the translator return s3 or thot
+		# there may be a preexisting thot
+		# message may be an answer to a question, not a complete thot in itself
+		# fully understanding the incoming message may require access to multiple messages and thots in the current conversation
+		#     pro s3
+		#         word for word translate, word order, build objects
+		#         word order
+		#     pro thot
+		#         no 
+		#         are we duplicating effort in each translator?
+		#
+		# does s3 have a right to exist; why
+		# does dispatch do it's own parse? or use thot
+		# dispatch is getting folded into converse
+		#    it must ask questions to complete command
+		#    once complete, it carries out the command and formulates reply
+		#    1. execute,  2. reply thot,  3.  broca out
 
-		# 5. disppatch, ie. think and respond
-		newthot = self.lobby.dispatcher.dispatch(message)
+		replythot = self.lobby.dispatcher.dispatch(message)
 
 		# 6,7. translate and broadcast the response
-		if newthot:
-			sreply = self.lobby.language.generate(newthot)
+		if replythot:
+			sreply = self.lobby.translator.broca(replythot)
 			reply = sam.comm.Message(sreply)
 			print(f'send: {reply.toString()}')  # change to broadcast
 		return reply
@@ -102,17 +164,25 @@ class Account(sam.base.Commander):
 	def cmd_unregister(self,msgin):
 		return Message(msgin.frm, msgin.to, 'ok')
 
+class Conversation:
+	def __init__(self,group,message):
+		self.group = group
+		self.messages = []
+		self.messages.append(message)
+		
 class Group:
-	def __init__(self,user):
-		global groupnum
+	groupnum = 1
+
+	def __init__(self,user,host):
 		self.owner = user
+		self.host = host
 		user.group = self
 		self.members=[self.owner]
 		self.invitees=[]
 		self.messages=[]
-		groupnum += 1
-		self.num = groupnum
-		groups.append(self)
+		self.conversation = []
+		Group.groupnum += 1
+		self.num = Group.groupnum
 
 	def addUser(self,user): 
 		self.members.append(user)  # add to this group
@@ -124,12 +194,22 @@ class Group:
 		if len(self.members) == 0:   # if no users in this group
 			groups.remove(self)      # gc group
 
-class Reception(sam.base.Skill):
+class Reception(sam.base.Skill,sam.base.Commander):
 	def __init__(self,lobby):
 		self.lobby = lobby
 		super().__init__(self.lobby.me)
-		
 
+	#def newGroup(self,websocket,user,host):
+	#	self.lobby.users[websocket] = user 
+	#	group = Group(user,host)
+	#	self.lobby.groups[group.num] = group
+	#	return group
+
+	def cmd_connect(self,msgin):
+		group = Group(msgin.frmuser,self.lobby.me)
+		self.lobby.groups[group.num] = group
+		return Message(msgin.frm, msgin.to, 'ok')
+		
 	def cmd_join(self,msgin):
 		return Message(msgin.frm, msgin.to, 'ok')
 
@@ -151,8 +231,8 @@ class Dispatcher:
 
 	def dispatch(self,messagein):
 		owner = self.lobby.me
-
 		# parse message for incoming command
+		import pdb;pdb.set_trace()
 		cmdin = None
 		action = None
 		a = messagein.parse()
@@ -178,5 +258,32 @@ class Dispatcher:
 
 		skillobj = owner.cmds[cmd] 
 		method = getattr(skillobj, f'cmd_{cmd}')
+		import pdb;pdb.set_trace()
 		messageout = method(messagein)  # execute the command handler	
 		return messageout
+
+class Translator:
+	'''
+	'''
+	sameseprefix = ':'
+
+	def __init__(self,lobby):
+		self.lobby = lobby
+	
+	def wernicke(self, message):  # samese to thot
+		lang = self.identifyLang(message.msg)
+		s3 = self.lobby.me.languages[lang].wernicke(message)
+		return s3
+
+	def broca(self, thot):  # thot to samese
+		s = str(thot)
+		return s
+
+	def identifyLang(self, s):
+		lang = 'en'
+		firstchar = s[0:1]
+		if firstchar == Translator.sameseprefix:
+			lang = 's3'
+		elif firstchar >= '\u0E00' and firstchar <= '\u0E7F':
+			lang = 'th'
+		return lang	

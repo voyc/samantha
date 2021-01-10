@@ -1,6 +1,7 @@
 ''' user.py - define classes User, Human, and Sam '''
 
 import sam.base
+import sam.mind
 
 class User:
 	def __init__(self, name='', addr=''):
@@ -9,7 +10,8 @@ class User:
 		self.token = ''
 		self.traits = Traits()
 		self.feelings = Feelings()
-		self.memory = Memory() 
+		self.mind = sam.mind.Mind()
+		self.mind.setup(self)
 
 	def save(self):
 		# write to database
@@ -29,14 +31,20 @@ class Human(User):
 
 class Sam(User):
 
-	def __init__(self, name='', addr='', skills=''):
+	def __init__(self, name='', addr='', skills='', languages=''):
 		super().__init__(name, addr)
-		self.skillnames = skills
+
 		self.pid = -1   # each clone is a daemon process running samd
 		self.clones = {}
+
+		self.skillnames = skills
 		self.skills = {}
 		self.cmds = {}
 		self.loadSkills()
+
+		self.languagenames = languages
+		self.languages = {}
+		self.loadLanguages()
 
 	def isHuman(self):
 		return False
@@ -63,10 +71,12 @@ class Sam(User):
 	def loadSkills(self):
 		for name in self.skillnames.split(','):
 			if name:
-				self.addSkill(name)
+				self.skills[name] = sam.base.Skill.load(name, self)
 
-	def addSkill(self, name):
-		self.skills[name] = sam.base.Skill.load(name, self)
+	def loadLanguages(self):
+		for name in self.languagenames.split(','):
+			if name:
+				self.languages[name] = sam.base.Language.load(name, self)	
 
 class Traits:
 	''' personality traits of a user '''

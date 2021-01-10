@@ -15,14 +15,12 @@ def splitAddr(addr):
 	uri = f'ws://{host}:{port}'
 	return addr, host, port, uri
 
-class Message():
+class Message:
 	''' object passed between client and server '''
 	def __init__(self, msg='', toname='', frmtoken=''):
 		self.msg = msg
-		self.toname = ''
-		self.frmtoken = ''
-		self.mode = None
-		self.thot = None
+		self.toname = ''  # optional, used to address specific member of group
+		self.frmtoken = '' # identifies returning user 
 
 	def serialize(self):
 		return json.dumps(self.__dict__)
@@ -36,7 +34,7 @@ class Message():
 		return f'{self.msg}'
 
 	def parse(self):
-		return self.msg.split(' ')
+		return self.msg.split()
 
 class Client:
 	exit_string = 'q'

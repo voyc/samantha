@@ -95,6 +95,25 @@ class TestModules(unittest.TestCase):
 	def test_grammar_vocab(self):
 		pass
 
+	def test_singleton(self):
+		import sam.base
+		
+		class Martha():
+			def __init__(self):
+				self.x = 'xyz'
+		
+		class George(sam.base.Singleton,Martha):
+			def __init__(self):
+				if 'y' in dir(self): return # do init only once
+				super().__init__()
+				self.y = 123
+	
+		sa = George()
+		sa.y = 456
+		sb = George()
+		self.assertEqual( sb.x, 'xyz')
+		self.assertEqual( sb.y, 456)
+
 if __name__ == '__main__':
 	unittest.main()
 

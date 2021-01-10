@@ -4,7 +4,7 @@ import sam.comm
 import configparser
 import threading
 
-configfilename = '../../samd.conf'
+configfilename = '../../samcli.conf'
 config = configparser.ConfigParser()
 config.read(configfilename)
 addr = config['comm']['addr']
@@ -15,7 +15,7 @@ csock = sam.comm.Client()
 csock.connect(addr)
 print(f'connected to {addr}...')
 
-s = 'hello'
+s = 'โยงใย'
 m = sam.comm.Message(s)
 m.sendertoken = token
 csock.send(m)
