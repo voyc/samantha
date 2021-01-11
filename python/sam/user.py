@@ -2,6 +2,7 @@
 
 import sam.base
 import sam.mind
+import os
 
 class User:
 	def __init__(self, name='', addr=''):
@@ -10,8 +11,6 @@ class User:
 		self.token = ''
 		self.traits = Traits()
 		self.feelings = Feelings()
-		self.mind = sam.mind.Mind()
-		self.mind.setup(self)
 
 	def save(self):
 		# write to database
@@ -34,7 +33,7 @@ class Sam(User):
 	def __init__(self, name='', addr='', skills='', languages=''):
 		super().__init__(name, addr)
 
-		self.pid = -1   # each clone is a daemon process running samd
+		self.pid = os.getpid()   # each clone is instantiated inside a daemon process running samd
 		self.clones = {}
 
 		self.skillnames = skills
@@ -45,6 +44,9 @@ class Sam(User):
 		self.languagenames = languages
 		self.languages = {}
 		self.loadLanguages()
+
+		self.mind = sam.mind.Mind()
+		self.mind.setup(self)  # requires separate process because of class variable Singleton._instance
 
 	def isHuman(self):
 		return False

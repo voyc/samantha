@@ -40,16 +40,14 @@ class Modifier:
 
 class Thot:
 	''' base class, add modifiers and accesscount  '''
-	mind = None  # global variable, not class variable
-
 	def __init__(self):
 		self.modifiers = []
 		self.accesscount = 0
 
 	def modify(self,link,attribute):
-		link = Thot.nfs(link)
+		link = Mind().nfs(link)
 		if isinstance(attribute,str):
-			attribute = Objek(Thot.nfs(attribute))
+			attribute = Objek(Mind().nfs(attribute))
 		self.modifiers.append(Modifier(link, attribute))
 		link.accesscount += 1
 		attribute.accesscount += 1
@@ -58,21 +56,13 @@ class Thot:
 	def isTop(self):
 		return self.accesscount <= 0
 
-	@staticmethod
-	def nfs(param): # node from string
-		if isinstance(param, str):
-			param = Mind().nodes[param]
-			if not param:
-				raise NodeNotFoundException
-		return param 
-
 class Node(sam.tree.Tree, Thot):
 	''' a Node is a word (entity, thing, action, idea), class or object, in the mind '''
 	def __init__(self,word,pos,parent=None):
 		''' word is a string.  parent can be string or object. '''
 		self.word = word
 		self.pos = pos
-		parent = Thot.nfs(parent) # convert string to object 
+		parent = Mind().nfs(parent) # convert string to object 
 		if not parent: # first time only, init the tree
 			if Mind().nodetree:
 				raise NoParentException
@@ -96,7 +86,7 @@ class Node(sam.tree.Tree, Thot):
 class Objek(Node):
 	''' object, an instance of a Node '''
 	def __init__(self, parent):
-		parent = Thot.nfs(parent) # convert string to object 
+		parent = Mind().nfs(parent) # convert string to object 
 		if not parent:
 			raise NoParentException
 		self.word = parent.word
@@ -116,9 +106,9 @@ class Claws(Thot):
 	''' clause: subjek, verb, {object} '''
 	def __init__(self, subjek, verb, objek=None):
 		super().__init__()
-		self.subjek = Objek(Thot.nfs(subjek))
-		self.verb = Objek(Thot.nfs(verb))
-		self.objek = Objek(Thot.nfs(objek)) if objek else None
+		self.subjek = Objek(Mind().nfs(subjek))
+		self.verb = Objek(Mind().nfs(verb))
+		self.objek = Objek(Mind().nfs(objek)) if objek else None
 		self.ts = datetime.datetime.timestamp(datetime.datetime.now())
 		self.id = ''.join(str(self).split(' ')) + '_' + str(self.ts)
 		Mind().claws[self.id] = self
@@ -162,9 +152,27 @@ class Mind(sam.base.Singleton):
 		self.loadDictionary()
 		self.loadMemory()
 
+	def getPos(self,w):
+		return self.nodes[w].pos
+
+	def nfs(self,param): # node from string
+		if isinstance(param, str):
+			param = self.nodes[param]
+			if not param:
+				raise NodeNotFoundException
+		return param 
+
+	def hasParent(self,param,match):
+		node = self.nfs(param)
+		while node.word != 'root':
+			node = self.nodes[node.word].parent
+			if node.word == match:
+				return True
+		return False 
+
 	def buildGrammar(self):
 		for claw in self.claws.values():
-			subjek = claw.subjek #self.findBranchNode(Thot.nfs(claw.subjek.word))
+			subjek = claw.subjek #self.findBranchNode(self.nfs(claw.subjek.word))
 			if subjek not in self.patterns:
 				self.patterns[subjek] = {}
 
@@ -173,7 +181,7 @@ class Mind(sam.base.Singleton):
 				self.patterns[subjek][verb] = {}
 
 			objek = claw.objek
-			what = Thot.nfs('what')
+			what = self.nfs('what')
 			if what not in self.patterns[subjek][verb]:
 				self.patterns[subjek][verb][what] = {}
 			if objek not in self.patterns[subjek][verb][what]:
@@ -440,6 +448,9 @@ class Mind(sam.base.Singleton):
 		Node('livingroom'  ,'n'  ,'place')
 
 		Node('online'      ,'a'  ,'place')
+
+		Node('command'     ,'n'  ,'root')
+		Node('connect'     ,'v'  ,'command')
 
 	def loadMemory(self):
 		''' prelearned thots, included in dna '''

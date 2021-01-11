@@ -5,6 +5,11 @@ import sam.base
 class Th(sam.base.Language):
 	def __init__(self, me):
 		super().__init__(me)
+		self.thai = {}
+		self.s3 = {}
+		self.table = []
+		self.loadtable()
+		self.setup()
 
 	def broca(self,thot):
 		thai = []
@@ -18,16 +23,106 @@ class Th(sam.base.Language):
 		pos = []
 		for each in message.msg.split(' '):
 			w = self.parseWord(each)
-			p = me.mind.getPos(w)
+			p = self.me.mind.getPos(w)
 			s3.append(w)
 			pos.append(p)
 		message.s3 = ' '.join(s3)
 
-		# identify command
-		isCmd = sam.mind.Thot.hasParent('command')
-
-
-		# build claws 
+#		# build thot
+#		if first word = n
+#			subjek = first word
+#		else
+#			subjek = empty
+#		next word
+#			if adj
+#				subjek modifier
+#			if link
+#				subjek modifier
+#			if verb
+#				verb 
+#		'''
+#		read s3 string left to right
+#		claws can be nested recursively, as objek of prep or claws
+#		modifiers can be nested recursively
+#		modifiers can be sequential
+#
+#		building nested claws recursively
+#		each clause has its own state
+#		adv, adj single words
+#		adv with prep
+#		modifier can be
+#			single word
+#			prep + objek
+#			modifier objek can be claws
+#		modifiers can be nested recursively
+#		'''
+#
+#		nextWord(word, pos, claws_state, phrase_state)
+#			if claws_state == 'open':
+#				if pos == 'n':
+#					claws.subjek = word
+#					claws_state = 'have_subjek'
+#				elif pos == 'v':
+#					claws.verb = word
+#					claws_state = 'have_verb'
+#				else:
+#					raise Exception
+#
+#			if claws_state == 'have_subjek':
+#				if pos == 'v':
+#					claws.verb = word
+#					claws_state = 'have_verb'
+#				elif pos == 'j':
+#					claws.subjek.modifier(word)
+#				elif hasParent('link'):
+#					phrase_state == 'have_link'
+#				else:
+#					raise Exception
+#				
+#					 
+#		claws = Claws()
+#		p
+#		how many verbs?
+#		one claws for each verb
+#		find subjek for each claws
+#		find objek for each claws, optional
+#		find modifiers
+#
+#		start claws
+#		state
+#			open
+#			have link
+#		claws state
+#			claws have subj
+#			claws have verb
+#			claws have objek
+#		phrase state
+#			have link
+#		k
+#		
+#		have linkk
+#
+#		subjek = 
+#		first word
+#			if n
+#				claws.subj
+#			if v
+#				claws.v
+#
+#				thot = Claws()
+#				modifier
+#		k
+#k
+#		# identify command
+#		#isCmd = sam.mind.Thot.hasParent('command')
+#	
+#		# build thot
+#
+#		# check verb for command
+#		isCmd = self.me.mind.hasParent(message.s3, 'command')
+#
+#
+#		# build claws 
 
 
 	def genWord(self,s3):
@@ -50,13 +145,6 @@ class Th(sam.base.Language):
 		for row in self.table:
 			self.s3[row[0]] = row[1]
 			self.thai[row[1]] = row[0]
-
-	def __init__(self):
-		self.thai = {}
-		self.s3 = {}
-		self.table = []
-		self.loadtable()
-		self.setup()
 
 	def loadtable(self):
 		''' thai-s3 translation table '''

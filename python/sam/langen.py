@@ -5,6 +5,11 @@ import sam.base
 class En(sam.base.Language):
 	def __init__(self, me):
 		super().__init__(me)
+		self.thai = {}
+		self.eng = {}
+		self.table = []
+		self.loadtable()
+		self.setup()
 
 	def broca(self,thot):
 		''' generate outgoing sentence from internal thot '''
@@ -41,13 +46,6 @@ class En(sam.base.Language):
 		for row in self.table:
 			self.eng[row[0]] = row[1]
 			self.thai[row[1]] = row[0]
-
-	def __init__(self):
-		self.thai = {}
-		self.eng = {}
-		self.table = []
-		self.loadtable()
-		self.setup()
 
 	def loadtable(self):
 		self.table.append(['person'        ,'คน'  ]),             

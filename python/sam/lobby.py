@@ -119,7 +119,7 @@ class Switchboard:
 	def listen(self):
 		self.socket = sam.comm.Server()
 		self.socket.listen(self.lobby.me.addr, self.onMessage)
-		print(f'switchboard listening on {self.lobby.me.addr}...')
+		print(f'{self.lobby.me.name} {self.lobby.me.pid} listening on {self.lobby.me.addr}...')
 
 	def close(self):
 		self.socket.close()
@@ -232,7 +232,6 @@ class Dispatcher:
 	def dispatch(self,messagein):
 		owner = self.lobby.me
 		# parse message for incoming command
-		import pdb;pdb.set_trace()
 		cmdin = None
 		action = None
 		a = messagein.parse()
@@ -258,7 +257,6 @@ class Dispatcher:
 
 		skillobj = owner.cmds[cmd] 
 		method = getattr(skillobj, f'cmd_{cmd}')
-		import pdb;pdb.set_trace()
 		messageout = method(messagein)  # execute the command handler	
 		return messageout
 

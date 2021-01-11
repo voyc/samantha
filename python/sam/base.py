@@ -73,7 +73,7 @@ class Language:
 		modname = f'sam.lang{name}'
 		mod = importlib.import_module(modname)  # import module
 		kls = getattr(mod, name.title())        # get class from module
-		obj = kls() # kls(me)                        # instantiate object
+		obj = kls(me)                             # instantiate object
 		return obj
 
 class Singleton:
