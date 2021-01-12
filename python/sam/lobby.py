@@ -13,7 +13,7 @@ class Lobby(sam.base.Skill):  # do we want a base class Skill ?
 		self.switchboard = Switchboard(self)
 		self.switchboard.listen()
 		self.users = {}  # user objects keyed by websocket
-		self.groups = {} # group objects keyed by num
+		self.conversations = {} # conversation objects keyed by num
 
 	def join(self):
 		self.switchboard.socket.join()  # holds daemon open
@@ -22,47 +22,6 @@ class Switchboard:
 	def __init__(self, lobby):
 		self.lobby = lobby
 
-	def onConnect(self,websocket,message):
-		''' first time onMessage '''
-
-		# create a user object
-		frmuser = sam.user.User() 
-		frmuser.token = message.frmtoken
-		frmuser.addr = f'{websocket.host}:{websocket.port}'
-
-		# create a group with one host and one user
-		host = self.lobby.me
-		group = self.lobby.reception.newGroup(websocket, frmuser, host)
-
-		# create a conversation
-		conversation = Conversation(group,message)
-
-		# dispatch "connect"
-		# reception: create conversation-group
-		# cortex: initiate conversation, what is your name?
-
-		# dispatcher
-		# priority: mode, incoming, converse
-		# commands must be hard-coded
-		# converse is algorithm, pretend, 
-		# do we followup every command with converse?
-		# join: welcome
-		# login: hello again
-		# translate: done, none
-		# thot verb -> dispatch
-		# dispatch is optional, if message(thot) is imperative
-
-
-		# message must contain: 
-		#    conversation id
-		#    tuser  fuser
-		#    host  guest
-		#    thot
-
-
-
-
-
 	def onMessage(self,websocket,message):  # callback from server socket
 		''' message processing '''
 		if websocket not in self.lobby.users.keys():
@@ -70,7 +29,9 @@ class Switchboard:
 			frmuser = sam.user.User() 
 			frmuser.token = message.frmtoken
 			frmuser.addr = f'{websocket.host}:{websocket.port}'
+			message.frmuser = frmuser
 			self.lobby.users[websocket] = frmuser
+			self.lobby.reception.addConversation(message)
 		else:
 			frmuser = self.lobby.users[websocket]
 			message.frmuser = frmuser
@@ -80,34 +41,12 @@ class Switchboard:
 		# note that clearance refers to the incoming user, not the message
 
 		message.thot = self.lobby.translator.wernicke(message)
-		# 1.  make wernicke return a thot
-		# 1a.  word-for-word translate
-		# 1b.  match pos
-		# 1c.  hasParent(node) returns bool
-		# 1d.  remove politeness
-		# 1e.  translate pronoun to user object
-		# 1f.  create claws object
-		# 1g.  add modifiers
+		print(message.thot)
 
-		# does the translator return s3 or thot
-		# there may be a preexisting thot
-		# message may be an answer to a question, not a complete thot in itself
-		# fully understanding the incoming message may require access to multiple messages and thots in the current conversation
-		#     pro s3
-		#         word for word translate, word order, build objects
-		#         word order
-		#     pro thot
-		#         no 
-		#         are we duplicating effort in each translator?
-		#
-		# does s3 have a right to exist; why
-		# does dispatch do it's own parse? or use thot
-		# dispatch is getting folded into converse
-		#    it must ask questions to complete command
-		#    once complete, it carries out the command and formulates reply
-		#    1. execute,  2. reply thot,  3.  broca out
+		frmuser.conversation.addMessage(message)
 
-		replythot = self.lobby.dispatcher.dispatch(message)
+		#replythot = self.lobby.dispatcher.dispatch(message)
+		replythot = self.lobby.me.mind.think(frmuser.conversation)
 
 		# 6,7. translate and broadcast the response
 		if replythot:
@@ -165,50 +104,40 @@ class Account(sam.base.Commander):
 		return Message(msgin.frm, msgin.to, 'ok')
 
 class Conversation:
-	def __init__(self,group,message):
-		self.group = group
-		self.messages = []
-		self.messages.append(message)
-		
-class Group:
-	groupnum = 1
+	conversationnum = 1
 
 	def __init__(self,user,host):
-		self.owner = user
-		self.host = host
-		user.group = self
-		self.members=[self.owner]
-		self.invitees=[]
+		self.members=[]
+		self.members.append( host) # [0] = host
+		self.members.append( user) # [1] = owner
+		user.conversation = self
 		self.messages=[]
-		self.conversation = []
-		Group.groupnum += 1
-		self.num = Group.groupnum
+		Conversation.conversationnum += 1
+		self.num = Conversation.conversationnum
+
+	def addMessage(self, message):
+		self.messages.append(message)
 
 	def addUser(self,user): 
-		self.members.append(user)  # add to this group
-		user.group.removeUser(user)  # remove from previous group
-		user.group = self
+		self.members.append(user)  # add to this conversation
+		user.conversation.removeUser(user)  # remove from previous conversation
+		user.conversation = self
 
 	def removeUser(self,user):
 		self.members.remove(user)  # gc user
-		if len(self.members) == 0:   # if no users in this group
-			groups.remove(self)      # gc group
+		if len(self.members) == 0:   # if no users in this conversation
+			conversations.remove(self)      # gc conversation
 
 class Reception(sam.base.Skill,sam.base.Commander):
 	def __init__(self,lobby):
 		self.lobby = lobby
 		super().__init__(self.lobby.me)
 
-	#def newGroup(self,websocket,user,host):
-	#	self.lobby.users[websocket] = user 
-	#	group = Group(user,host)
-	#	self.lobby.groups[group.num] = group
-	#	return group
-
-	def cmd_connect(self,msgin):
-		group = Group(msgin.frmuser,self.lobby.me)
-		self.lobby.groups[group.num] = group
-		return Message(msgin.frm, msgin.to, 'ok')
+	def addConversation(self, msgin):
+		conversation = Conversation(msgin.frmuser,self.lobby.me)
+		conversation.addMessage(msgin)
+		self.lobby.conversations[conversation.num] = conversation
+		return conversation
 		
 	def cmd_join(self,msgin):
 		return Message(msgin.frm, msgin.to, 'ok')

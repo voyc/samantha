@@ -1,6 +1,7 @@
 ''' langth.py '''
 
 import sam.base
+import sam.mind
 
 class Th(sam.base.Language):
 	def __init__(self, me):
@@ -28,102 +29,29 @@ class Th(sam.base.Language):
 			pos.append(p)
 		message.s3 = ' '.join(s3)
 
-#		# build thot
-#		if first word = n
-#			subjek = first word
-#		else
-#			subjek = empty
-#		next word
-#			if adj
-#				subjek modifier
-#			if link
-#				subjek modifier
-#			if verb
-#				verb 
-#		'''
-#		read s3 string left to right
-#		claws can be nested recursively, as objek of prep or claws
-#		modifiers can be nested recursively
-#		modifiers can be sequential
-#
-#		building nested claws recursively
-#		each clause has its own state
-#		adv, adj single words
-#		adv with prep
-#		modifier can be
-#			single word
-#			prep + objek
-#			modifier objek can be claws
-#		modifiers can be nested recursively
-#		'''
-#
-#		nextWord(word, pos, claws_state, phrase_state)
-#			if claws_state == 'open':
-#				if pos == 'n':
-#					claws.subjek = word
-#					claws_state = 'have_subjek'
-#				elif pos == 'v':
-#					claws.verb = word
-#					claws_state = 'have_verb'
-#				else:
-#					raise Exception
-#
-#			if claws_state == 'have_subjek':
-#				if pos == 'v':
-#					claws.verb = word
-#					claws_state = 'have_verb'
-#				elif pos == 'j':
-#					claws.subjek.modifier(word)
-#				elif hasParent('link'):
-#					phrase_state == 'have_link'
-#				else:
-#					raise Exception
-#				
-#					 
-#		claws = Claws()
-#		p
-#		how many verbs?
-#		one claws for each verb
-#		find subjek for each claws
-#		find objek for each claws, optional
-#		find modifiers
-#
-#		start claws
-#		state
-#			open
-#			have link
-#		claws state
-#			claws have subj
-#			claws have verb
-#			claws have objek
-#		phrase state
-#			have link
-#		k
-#		
-#		have linkk
-#
-#		subjek = 
-#		first word
-#			if n
-#				claws.subj
-#			if v
-#				claws.v
-#
-#				thot = Claws()
-#				modifier
-#		k
-#k
-#		# identify command
-#		#isCmd = sam.mind.Thot.hasParent('command')
-#	
-#		# build thot
-#
-#		# check verb for command
-#		isCmd = self.me.mind.hasParent(message.s3, 'command')
-#
-#
-#		# build claws 
+		# build thot
+		claws = sam.mind.Claws()
+		max = len(s3) 
+		for i in range(max): 
+			if pos[i] == 'v':
+				claws.verb = s3[i]
+			elif pos[i] == 'n':
+				if not claws.verb:
+					claws.subjek = s3[i]
+				else:
+					claws.objek = s3[i]
 
+		# remove politeness
+
+		# translate pronoun to user object
+
+		# add modifiers
+
+		# identify command
+		iscmd = self.me.mind.hasParent(claws.verb, 'command')
+		print(iscmd)
+
+		return claws		
 
 	def genWord(self,s3):
 		thai = ''
@@ -184,7 +112,7 @@ class Th(sam.base.Language):
 		self.table.append(['I'             ,'ผม']),
 		self.table.append(['friend'        ,'เพื่อน']),
 		self.table.append(['Sam'           ,'แซม']),
-		self.table.append(['John'          ,'จอห์น']),
+		self.table.append(['John'          ,'จน']),
 		self.table.append(['Naiyana'       ,'นัยนา']),
 		self.table.append(['Juan'          ,'ฆ']),
 		self.table.append(['Joe'           ,'โจ']),
@@ -293,6 +221,7 @@ class Th(sam.base.Language):
 		self.table.append(['bedroom'       ,'ห้องนอน']),
 		self.table.append(['livingroom'    ,'ห้องนั่งเล่น']),
 		self.table.append(['family'        ,'ครอบครัว'         ]),
+		self.table.append(['name'          ,'ชี่อ']),
 		self.table.append(['Nid'           ,'นิด']),
 		self.table.append(['Pin'           ,'พิน']),
 		self.table.append(['May'           ,'เมย์']),
@@ -311,7 +240,7 @@ class Th(sam.base.Language):
 		self.table.append(['Naiyana'       ,'นัยนา']),
 		self.table.append(['Sam'           ,'แซม']),
 		self.table.append(['Joe'           ,'โจ']),                                     
-		self.table.append(['John'          ,'จอห์น']),                                     
+		self.table.append(['John'          ,'จน']),                                     
 		self.table.append(['Juan'          ,'ฆ']),                                     
 		self.table.append(['chat'          ,'แชท']),
 		self.table.append(['online'        ,'ออน']),
@@ -337,7 +266,8 @@ class Th(sam.base.Language):
 		self.table.append(['have'          ,'มี']), 
 		self.table.append(['fun'           ,'สนุก']), 
 
-		self.table.append(['connect'       ,'โยงใย']), 
+		self.table.append(['connect'       ,'โยงใย']),
+		self.table.append(['password'      ,'รหัสผ่าน']),
 		self.table.append(['translate'     ,'แปล']), 
 		self.table.append(['echo'          ,'เลียน']), 
 		self.table.append(['show'          ,'แสดง']), 

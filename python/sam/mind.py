@@ -104,7 +104,7 @@ class Objek(Node):
 
 class Claws(Thot):
 	''' clause: subjek, verb, {object} '''
-	def __init__(self, subjek, verb, objek=None):
+	def __init__(self, subjek='empty', verb='empty', objek=None):
 		super().__init__()
 		self.subjek = Objek(Mind().nfs(subjek))
 		self.verb = Objek(Mind().nfs(verb))
@@ -138,6 +138,7 @@ class Mind(sam.base.Singleton):
 	defines a mind 
 	contains thots, which are nodes, objeks, and claws
 	contains grammar, patterns
+	contains think() method, which implements conversation
 	'''
 	def __init__(self):
 		if 'nodes' in dir(self): return # init only once
@@ -151,6 +152,20 @@ class Mind(sam.base.Singleton):
 		self.me = me  # the user object, the owner of this mind
 		self.loadDictionary()
 		self.loadMemory()
+
+	def think(self, conversation):
+		prevmessage = conversation.messages[-1]
+
+		'''
+		previous message
+		match to grammar patterns
+		find need for name and password
+		'''
+
+		claws = Claws( Objek('name').modify('of', 'you'), 'what')
+		claws = Claws( Objek('password').modify('of', 'you'), 'what')
+
+		return claws
 
 	def getPos(self,w):
 		return self.nodes[w].pos
@@ -252,7 +267,7 @@ class Mind(sam.base.Singleton):
 		Node('link'       ,'n'   ,'root')
 
 		Node('typeof'     ,'p'   ,'link')
-		Node('ownedby'    ,'p'   ,'link')
+		Node('of'         ,'p'   ,'link')
 		Node('by'         ,'p'   ,'link')
 
 		Node('question'   ,'n'   ,'link')
@@ -287,6 +302,8 @@ class Mind(sam.base.Singleton):
 		Node('I'          ,'p'   ,'person')
 		Node('friend'     ,'p'   ,'person')
 		Node('family'     ,'p'   ,'person')
+
+		Node('name'       ,'n'   ,'thing')
 
 		Node('Nid'        ,'np'  ,'person')
 		Node('Pin'        ,'np'  ,'person')
@@ -454,7 +471,7 @@ class Mind(sam.base.Singleton):
 
 	def loadMemory(self):
 		''' prelearned thots, included in dna '''
-		friendhouse = Objek('house').modify('ownedby', 'friend')
+		friendhouse = Objek('house').modify('of', 'friend')
 		Claws('you', 'go').modify('where', friendhouse).modify('why', Claws('you', 'pickup', 'food'))
 		Claws('Sam', 'go').modify('where', friendhouse).modify('why', Claws('Sam', 'deliver', 'food'))
 		Claws('John', 'go').modify('where', friendhouse).modify('why', Claws('John', 'eat', 'food'))
@@ -553,7 +570,7 @@ class Mind(sam.base.Singleton):
 		#work in garden
 
 		Claws('Sam', 'eat', 'rice').modify('where', Objek('house'))
-		Claws('Joe', 'cook', 'food').modify('where', Objek('house').modify('ownedby', 'friend'))
+		Claws('Joe', 'cook', 'food').modify('where', Objek('house').modify('of', 'friend'))
 		Claws('Nid', 'cook', 'food').modify('where', 'kitchen')
 		Claws('Joe', 'brew', 'coffee').modify('where', 'backyard')
 
@@ -563,7 +580,7 @@ class Mind(sam.base.Singleton):
 		Claws('Nid', 'play', 'game').modify('where', 'backyard')
 
 		# Why
-		Claws('Nid', 'cook', 'food').modify('why', Claws(Objek('family').modify('ownedby', 'Nid'), 'is', 'hungry'))
+		Claws('Nid', 'cook', 'food').modify('why', Claws(Objek('family').modify('of', 'Nid'), 'is', 'hungry'))
 
 		Claws('Joe', 'brew', 'coffee').modify('why', Claws('Joe', 'relax'))
 		Claws('Joe', 'brew', 'coffee').modify('why', Claws('Joe','give','friend'))
