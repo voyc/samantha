@@ -10,8 +10,9 @@ class TestModules(unittest.TestCase):
 		s = sam.user.Sam()
 		self.assertEqual(u.name, '')
 
-	def test_user_skill(self):
+	def xtest_user_skill(self):
 		import sam.user
+		# each Sam object must be instantiated in a separate process  !!
 		s = sam.user.Sam( 'Lee', 'localhost:7000', 'lobby')
 		self.assertIsInstance(s.skills['lobby'], sam.lobby.Lobby)
 
@@ -113,6 +114,13 @@ class TestModules(unittest.TestCase):
 		sb = George()
 		self.assertEqual( sb.x, 'xyz')
 		self.assertEqual( sb.y, 456)
+
+	def test_dik(self):
+		import sam.mind
+		dik = sam.mind.Dik()	
+		dik.load()	
+		glos = dik.get('person')
+		self.assertEqual( glos.th, 'คน')
 
 if __name__ == '__main__':
 	unittest.main()

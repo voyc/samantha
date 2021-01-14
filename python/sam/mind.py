@@ -4,39 +4,7 @@ import uuid
 import sam.tree
 import datetime
 import sam.base
-
-class Converse:
-	def __init__(self):
-		self.history = []
-		pass
-
-	def setHost(self,host):
-		self.host = host
-	
-	def setGuest(self,guest):
-		self.guest = guest
-	
-	def initiate(self):
-		gowhere = Claws(self.guest, 'go').modify('where', 'question')
-		return str(gowhere)
-
-	def respond(self,q):
-		s = 'I am fine.'
-		return s
-
-class DupeNodeException(Exception):
-	pass
-
-class NodeNotFoundException(Exception):
-	pass
-
-class NoParentException(Exception):
-	pass
-
-class Modifier:
-	def __init__(self,link,attribute):
-		self.lk = link
-		self.at = attribute
+import sam.dik
 
 class Thot:
 	''' base class, add modifiers and accesscount  '''
@@ -56,6 +24,102 @@ class Thot:
 	def isTop(self):
 		return self.accesscount <= 0
 
+class NoGlosParentException(Exception):
+	pass
+
+class DupeGlosException(Exception):
+	pass
+
+class GlosNotFoundException(Exception):
+	pass
+
+#class Glos(sam.tree.Tree, Thot):
+class Glos(sam.tree.Tree, Thot):
+	''' a Glos is a word (entity, thing, action, idea), class or object, in the mind '''
+	def __init__(self, dik, word, pos, parent, en, th):
+		''' word is a string.  parent can be string or object. '''
+		self.word = word
+		self.pos = pos
+		self.en = en
+		self.th = th
+
+		parent = dik.get(parent) # convert string to object 
+		if not parent: # first time only, init the tree
+			if dik.tree:
+				raise NoGlosParentException
+			dik.tree = self
+
+		sam.tree.Tree.__init__(self,parent) # init parent, level, child
+		Thot.__init__(self)                 # init modifier, accesscount ? needed in dik ?
+
+		if word in dik.glos:
+			raise DupeGlosException
+		dik.glos[word] = self
+
+	def __str__(self):
+		return self.word
+
+	def dump(self):
+		print(self.word)
+		print(self.parent.word)
+		print(self.level)
+		for m in self.modifiers:
+			print( f' {m.lk.word} {m.at.word}')
+
+class Dik:
+	''' s3 dictionary, list of glos, keyed by word '''
+	def __init__(self):
+		self.glos = {}
+		self.tree = None
+		#self.load()
+
+	def get(self, glos): # input param is str or Glos
+		if isinstance(glos, str):
+			try: glos = self.glos[glos]
+			except: glos = None 
+		return glos 
+
+	def addGlos(self, word, pos, parent, en, th):
+		glos = Glos(self, word, pos, parent, en, th)
+
+	def load(self):
+		for x in sam.dik.sdik:
+			#self.addGlos(self, x.word, x.pos, x.parent, x.en, x.th)
+			self.addGlos( x[0], x[1], x[2], x[3], x[4])
+
+#class Converse:
+#	def __init__(self):
+#		self.history = []
+#		pass
+#
+#	def setHost(self,host):
+#		self.host = host
+#	
+#	def setGuest(self,guest):
+#		self.guest = guest
+#	
+#	def initiate(self):
+#		gowhere = Claws(self.guest, 'go').modify('where', 'question')
+#		return str(gowhere)
+#
+#	def respond(self,q):
+#		s = 'I am fine.'
+#		return s
+
+class DupeNodeException(Exception):
+	pass
+
+class NodeNotFoundException(Exception):
+	pass
+
+class NoParentException(Exception):
+	pass
+
+class Modifier:
+	def __init__(self,link,attribute):
+		self.lk = link
+		self.at = attribute
+
 class Node(sam.tree.Tree, Thot):
 	''' a Node is a word (entity, thing, action, idea), class or object, in the mind '''
 	def __init__(self,word,pos,parent=None):
@@ -64,14 +128,14 @@ class Node(sam.tree.Tree, Thot):
 		self.pos = pos
 		parent = Mind().nfs(parent) # convert string to object 
 		if not parent: # first time only, init the tree
-			if Mind().nodetree:
+			if Mind().dik.tree:
 				raise NoParentException
-			Mind().nodetree = self
+			Mind().dik.tree = self
 		sam.tree.Tree.__init__(self,parent)
 		Thot.__init__(self)
-		if word in Mind().nodes:
+		if word in Mind().dik.glos:
 			raise DupeNodeException
-		Mind().nodes[word] = self
+		Mind().dik.glos[word] = self
 
 	def __str__(self):
 		return self.word
@@ -136,21 +200,23 @@ class Mind(sam.base.Singleton):
 	''' 
 	singleton class
 	defines a mind 
-	contains thots, which are nodes, objeks, and claws
+	contains thots, which are dik.glos, objeks, and claws
 	contains grammar, patterns
 	contains think() method, which implements conversation
 	'''
 	def __init__(self):
-		if 'nodes' in dir(self): return # init only once
-		self.nodes = {}  # string-keyed Node objects
-		self.nodetree = None
+		if 'dik' in dir(self): return # init only once
+		#self.nodes = {}  # string-keyed Node objects
+		#self.nodetree = None
+		self.dik = None
 		self.objeks = {}
 		self.claws = {} # uuid-keyed Clause objects
 		self.patterns = {}
 
 	def setup(self,me):
 		self.me = me  # the user object, the owner of this mind
-		self.loadDictionary()
+		self.dik = Dik() 
+		self.dik.load()
 		self.loadMemory()
 
 	def think(self, conversation):
@@ -168,11 +234,11 @@ class Mind(sam.base.Singleton):
 		return claws
 
 	def getPos(self,w):
-		return self.nodes[w].pos
+		return self.dik.glos[w].pos
 
 	def nfs(self,param): # node from string
 		if isinstance(param, str):
-			param = self.nodes[param]
+			param = self.dik.glos[param]
 			if not param:
 				raise NodeNotFoundException
 		return param 
@@ -180,7 +246,7 @@ class Mind(sam.base.Singleton):
 	def hasParent(self,param,match):
 		node = self.nfs(param)
 		while node.word != 'root':
-			node = self.nodes[node.word].parent
+			node = self.dik.glos[node.word].parent
 			if node.word == match:
 				return True
 		return False 
@@ -215,7 +281,7 @@ class Mind(sam.base.Singleton):
 		return unode
 	
 	def dump(self,detail=False):
-		print(f'Nodes {len(self.nodes)}, Objeks {len(self.objeks)}, Claws {len(self.claws)}, Patterns {len(self.patterns)}\n')
+		print(f'Nodes {len(self.dik.glos)}, Objeks {len(self.objeks)}, Claws {len(self.claws)}, Patterns {len(self.patterns)}\n')
 		if detail:
 			#self.printNodeTree()
 			self.printTopClaws()
@@ -228,7 +294,7 @@ class Mind(sam.base.Singleton):
 			indent = '\t' * (m.level)
 			x = '' if m.isLeaf() else '---'
 			print( f'{indent} {str(m.level)} {m} {m.accesscount} {x}')
-		self.nodetree.process(fn, False)
+		self.dik.tree.process(fn, False)
 		return
 
 	def printTopClaws(self):
