@@ -35,13 +35,14 @@ class Switchboard:
 		else:
 			frmuser = self.lobby.users[websocket]
 			message.frmuser = frmuser
-			print(f'recv: {message.toString()}')  # change to broadcast
+
+		print(f'recv: {message.toString()}')  # change to broadcast
 
 		clearance = self.lobby.security.check(message)
 		# note that clearance refers to the incoming user, not the message
 
 		message.thot = self.lobby.translator.wernicke(message)
-		print(message.thot)
+		print(f'thot: {message.thot}')
 
 		frmuser.conversation.addMessage(message)
 

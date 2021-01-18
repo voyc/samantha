@@ -122,6 +122,24 @@ class TestModules(unittest.TestCase):
 		glos = dik.get('person')
 		self.assertEqual( glos.th, 'คน')
 
+	def test_thai(self):
+		import sam.mind
+		mind = sam.mind.Mind()
+		mind.setup(None)
+		import sam.langth
+		langth = sam.langth.Th(mind.dik)
+
+		th = 'คุณไปทีบ้านของเพื่อนของคุณ' # 'you go to house of friend of you'
+		thot = langth.wernicke(th)
+		st = langth.broca(thot)
+		self.assertEqual( st, th)
+
+		th = 'ทำไมคุณทำงานกับคอมพิวเตอร์' # 'why you work on computer'
+		th = 'คุณทำงานกับคอมพิวเตอร์'  # 'you work on computer'
+		thot = langth.wernicke(th)
+		st = langth.broca(thot)
+		self.assertEqual( st, th)
+
 if __name__ == '__main__':
 	unittest.main()
 

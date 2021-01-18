@@ -41,12 +41,12 @@ class Sam(User):
 		self.cmds = {}
 		self.loadSkills()
 
+		self.mind = sam.mind.Mind()
+		self.mind.setup(self)  # requires separate process because of class variable Singleton._instance
+
 		self.languagenames = languages
 		self.languages = {}
 		self.loadLanguages()
-
-		self.mind = sam.mind.Mind()
-		self.mind.setup(self)  # requires separate process because of class variable Singleton._instance
 
 	def isHuman(self):
 		return False
