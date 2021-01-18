@@ -49,33 +49,6 @@ class Commander:
 						cmdname = cmd.split('_')[1]
 						me.cmds[cmdname] = mem
 
-class TranslateException(Exception):
-	pass
-
-class Language:
-	''' base class '''
-	def __init__(self, me):
-		self.me = me
-
-	def wernicke(self, message):
-		''' parse string to thot '''
-		pass
-		# return sam.mind.Thot()
-
-	def broca(self, thot):
-		''' generatee thot to string '''
-		pass
-		# return s
-
-	@staticmethod
-	def load( name, me):
-		''' instantiate a language object '''
-		modname = f'sam.lang{name}'
-		mod = importlib.import_module(modname)  # import module
-		kls = getattr(mod, name.title())        # get class from module
-		obj = kls(me)                             # instantiate object
-		return obj
-
 class Singleton:
 	''' base class, makes derived class a singleton '''
 	_instance = None

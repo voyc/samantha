@@ -126,19 +126,29 @@ class TestModules(unittest.TestCase):
 		import sam.mind
 		mind = sam.mind.Mind()
 		mind.setup(None)
-		import sam.langth
-		langth = sam.langth.Th(mind.dik)
+		import sam.lang
+		lang = sam.lang.Language(None)
+		langth = lang.load('th', mind.dik)
+		def one(th):
+			thot = langth.wernicke(th)
+			st = langth.broca(thot)
+			self.assertEqual( st, th)
+		one('คุณไปทีบ้านของเพื่อนของคุณ') # 'you go to house of friend of you'
+		one('คุณทำงานกับคอมพิวเตอร์')  # 'you work on computer'
 
-		th = 'คุณไปทีบ้านของเพื่อนของคุณ' # 'you go to house of friend of you'
-		thot = langth.wernicke(th)
-		st = langth.broca(thot)
-		self.assertEqual( st, th)
-
-		th = 'ทำไมคุณทำงานกับคอมพิวเตอร์' # 'why you work on computer'
-		th = 'คุณทำงานกับคอมพิวเตอร์'  # 'you work on computer'
-		thot = langth.wernicke(th)
-		st = langth.broca(thot)
-		self.assertEqual( st, th)
+	def test_eng(self):
+		import sam.mind
+		mind = sam.mind.Mind()
+		mind.setup(None)
+		import sam.lang
+		lang = sam.lang.Language(None)
+		langen = lang.load('en', mind.dik)
+		def one(en):
+			thot = langen.wernicke(en)
+			st = langen.broca(thot)
+			self.assertEqual( st, en)
+		one('you go to house of friend of you')
+		one('you work with computer')
 
 if __name__ == '__main__':
 	unittest.main()
