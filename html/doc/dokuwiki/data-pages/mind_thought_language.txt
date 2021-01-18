@@ -1,0 +1,33 @@
+====== Mind, Thought, Language ======
+
+[[Grammar]] - this page is in Project Docs, not Curriculum
+
+
+===== Samese =====
+
+A language created to represent the internal language of the mind.
+
+Language code: s3
+
+Components
+  * words
+  * modifiers
+  * clauses
+
+==== Parse Thai to Samese ====
+
+  read s3 string left to right
+  claws can be nested recursively, as objek of prep or claws
+  modifiers can be nested recursively
+  modifiers can be sequential
+  
+  building nested claws recursively
+  each clause has its own state
+  adv, adj single words
+  adv with prep
+  modifier can be
+    single word
+    prep + objek 
+    modifier objek can be claws
+  modifiers can be nested recursively
+

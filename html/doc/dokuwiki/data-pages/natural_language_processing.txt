@@ -1,6 +1,8 @@
 ====== Natural Language Processing ======
 
-we’ll deep dive into our NLU pipeline, custom components like Google’s BERT and Recurrent Embedding Dialogue Policy (REDP), and approach concepts like context, attention, and non-linear conversation.
+This article is about NLP as studied within the field of AI.  See also [[Language]] for more general information about language as studied in the fields of Psychology and Linguistics.
+
+We’ll deep dive into our NLU pipeline, custom components like Google’s BERT and Recurrent Embedding Dialogue Policy (REDP), and approach concepts like context, attention, and non-linear conversation.
 
 Natural Language Understanding (NLU) is a subset of NLP that turns natural language into structured data. NLU is able to do two things — intent classification and entity extraction.
 
@@ -21,6 +23,53 @@ Challenges in natural language processing frequently involve speech recognition,
 Sentiment
 
 Rasa
+
+=== Terms ===
+
+corpus
+
+tokenize
+
+tag
+
+stemming
+
+lemma
+
+chunking
+
+chinking
+
+
+===== Resources =====
+
+Online Sentence Parser, Carnegie Mellon University, 2003
+https://www.link.cs.cmu.edu/link/index.html
+
+Wordnet, Princeton University, 2005
+https://wordnet.princeton.edu/
+
+Stanford Parser, 2002-2020
+https://nlp.stanford.edu/software/lex-parser.shtml
+
+Ai2 The Allen Institute for AI, founded by Paul Allen
+https://allenai.org/
+
+The Turing Center, University of Washington
+http://turing.cs.washington.edu/
+
+Open IE, Open Information Extraction, entity-relation
+https://openie.allenai.org/
+
+NLTK, Python package for NLP
+
+PyThaiNLP, Python package for NLP in Thai language
+
+Penn Treebank
+
+British National Corpus
+http://www.natcorp.ox.ac.uk/
+
 
 
 

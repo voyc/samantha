@@ -48,6 +48,44 @@ socketserver.ThreadingUnixStreamServer
 
 use ps -e to find threads for each socket for each user
 
+====== User and Mind ======
+
+main article: [[Mind, Thought, Language]]
+
+humans each have vocab and memory (memory?)                                                                      
+                                                                                                         
+each sam clone has memory and access to full dict                                                      
+                                                                                                         
+during sleep, local memories of humans and clones are collected into boss.collective memory            
+                                                                                                         
+boss, collective, updated during sleep                                                                   
+        dick: list,tree  Dick() whoswho, gazeteer, history, fact book                                    
+        lang: en, th, s3  Lang()                                                                         
+        gramr  - Gramr()  collapsed rules derived from thots in conversations                            
+        memri -  Memri()  a list of conversations                                                        
+
+sam
+        skills
+        langs
+        , on wake, downloads mind from collective
+                dick
+                lang
+                memri - ? collective or personal, learned from conversation, pulled from collective
+                gramr
+
+lee, on wake, downloads mind from collective
+        memri
+        skills, can connect, but not listen
+                no lobby, but can converse
+        langs
+
+
+humans and clones are running in separate processes, separate computers
+
+therefore, each clone must have his own copy of dict and lang
+
+on wakeup from sleep
+        each clone reloads dick, memri, gramr
 
 ===== User and Skills =====
 
