@@ -1,5 +1,7 @@
 ====== Molecular Biology ======
 
+[[Virus]]
+
 ==== Amino Acid ====
 
 ==== Protein ====

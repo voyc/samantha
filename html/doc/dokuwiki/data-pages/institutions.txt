@@ -1,22 +1,31 @@
 ====== Institutions ======
 
 ==== DeepMind ====
-Founded by Denis Hassibis in Britain in 2010, bought by Google in 2014.\\
-Mission:\\
-  - develop AGI\\
-  - apply AGI to pressing social issues\\
-300 researchers, based in kings cross London\\
-Reinforcement learning, progress to a goal\\
+
+Founded by Denis Hassibis in Britain in 2010, bought by Google in 2014.
+
+Mission:
+  * develop AGI
+  * apply AGI to pressing social issues
+  * 
+300 researchers, based in kings cross London
+
+Reinforcement learning, progress to a goal
+
 Accomplishments
-  * Created AlphaGo, the first AI to defeat a human at the game of Go\\
-  * Wavenet, human speech\\
-  * Cooling the Google data centers efficiently\\
-  * "Agent"\\
-  * Streams, medical info\\
+  * Created AlphaGo, the first AI to defeat a human at the game of Go
+  * Wavenet, human speech
+  * Cooling the Google data centers efficiently
+  * "Agent"
+  * Streams, medical info
 
 ==== OpenAI ====
-founded by Elon Musk\\
-dedicated to making state-of-the-art AI tools available as open-source\\
+
+2015 Originally founded by Elon Musk, dedicated to making state-of-the-art AI tools available as open-source.
+
+2018 Elon Musk withdrew due to disagreement with changes made in the strategic direction.
+
+2019 Microsoft stepped in as major investor.
 
 ==== NeuraLink ====
 founded by Elon Musk\\

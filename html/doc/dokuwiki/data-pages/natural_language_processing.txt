@@ -2,6 +2,30 @@
 
 This article is about NLP as studied within the field of AI.  See also [[Language]] for more general information about language as studied in the fields of Psychology and Linguistics.
 
+===== Human vs Computer Language =====
+
+Computer languages are orderly and elegant.  One command has one meaning.  Each command has a fixed set of arguments.
+
+Human languages are comparatively messy.  Many words have multiple meanings.  The meanings change from time to time.  New words are invented constantly.  Words can be arranged into sentences in a variety of ways.  There are rules, but they are constantly changing.
+
+===== Conversational NLP =====
+
+If a human wants to use a computer, he has to learn the computer's language.
+
+If a computer wants to interact with a human, it must learn the human's language.
+
+==== Assistant ====
+
+One form of conversational NLP is the virtual assistant.
+
+  * Siri from Apple
+  * Alexa from Amazon
+  * Home from Google
+  * Assistant from Google
+
+
+
+
 We’ll deep dive into our NLU pipeline, custom components like Google’s BERT and Recurrent Embedding Dialogue Policy (REDP), and approach concepts like context, attention, and non-linear conversation.
 
 Natural Language Understanding (NLU) is a subset of NLP that turns natural language into structured data. NLU is able to do two things — intent classification and entity extraction.
@@ -39,6 +63,82 @@ lemma
 chunking
 
 chinking
+
+===== Corpus =====
+
+Treebank, wikipedia
+
+https://en.wikipedia.org/wiki/Treebank 
+
+Most syntactic treebanks annotate variants of either phrase structure (left) or dependency structure (right).
+
+The exploitation of treebank data has been important ever since the first large-scale treebank, The Penn Treebank, was published
+
+However, two main groups can be distinguished: treebanks that annotate phrase structure (for example the Penn Treebank or ICE-GB) and those that annotate dependency structure (for example the Prague Dependency Treebank or the Quranic Arabic Dependency Treebank).
+
+A very long list of treebanks
+
+--
+
+https://en.wikipedia.org/wiki/Interlinear_gloss 
+
+In its simplest form, an interlinear gloss is simply a literal, word-for-word translation of the source text.
+
+--
+
+https://en.wikipedia.org/wiki/Parallel_text 
+
+Rosetta stone
+
+Sentence alignment
+
+--
+
+Corpus of Contemporary American English (COCA)
+
+https://www.english-corpora.org/coca/ 
+
+
+Fourth, you can search for phrases and strings. And because the corpus is optimized for speed, searches for substrings (*ism, un*able) and phrases are very fast, e.g.: got VERB-ed, BUY * ADJ NOUN, "gorgeous" NOUN -- and even high frequency phrases like: from ADJ to ADJ, phrasal verbs, or NOUN NOUN.
+
+--
+
+Non-English, Parallel & Multilingual Corpora
+
+http://martinweisser.org/corpora_site/corpora2.html
+
+--
+
+Word databases, lexicons and n-gram databases from Lexical Computing
+
+https://www.lexicalcomputing.com/lexical-computing/
+
+==== Thai Language Corpus ====
+
+=== Thai National Corpus ===
+
+https://www.researchgate.net/publication/271429101_Thai_National_Corpus
+
+Aroonmanakun, W. 2007.
+
+TNC  web.  http://www.arts.chula.ac.th/~ling/TNC/ [Accessed 2009-04-24]. 
+
+
+
+==== Trie ====
+
+A data structure sometimes used in NLP.
+
+trie - a digital tree
+
+tree - a binary tree
+
+
+===== Tools =====
+
+[[NLTK]], Natural Language Toolkit, a Python package for English language NLP
+
+[[PyThaiNLP]], a Python package for Thai language NLP
 
 
 ===== Resources =====

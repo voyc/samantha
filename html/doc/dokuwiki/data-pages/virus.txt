@@ -1,0 +1,61 @@
+====== Virus ======
+
+Some biologists refuse to dignify the virus as a form of life. 
+  * It has no cell wall. 
+  * It cannot reproduce without a host.
+
+Scientists think that every kind of living organism is probably host to at least one virus!
+
+First described in 1892, a pathogen infecting tobacco plants.  Since then, 6000 viruses have been described.  The virus is the most numerous type of biological entity.
+
+biology > microbiology > virology
+
+We use the term infect and host.  Implying the virus is a parasite.
+
+We could say viruses are found inside every form of life: plants, animals, bacteria,  
+
+The [[virus]] is not included in the list of life forms.
+
+Yet, viruses are found within every life form.  Viruses
+
+We say the virus //infects// a //host//, implying that the virus is always a parasitic infection, despite the fact that every known organism carries at least one type of virus within.
+
+Submicroscopic.  One-hundredth the size of most bacteria.
+
+Viruses are considered by some biologists to be a life form, because they carry genetic material, reproduce, and evolve through natural selection, although they lack the key characteristics, such as cell structure, that are generally considered necessary criteria for life. Because they possess some but not all such qualities, viruses have been described as "organisms at the edge of life",[9] and as self-replicators.
+
+Is the virus alive?
+
+Yes, because it
+  * carries genetic material
+  * reproduces
+  * evolves through natural selection
+
+No, because it
+  * has no cell wall 
+  * cannot reproduce without a host
+
+
+===== Structure =====
+
+When not infecting a cell, the virus exists as a //virion//, an independent particle, consisting of:
+  * genetic material, DNA or RNA
+  * a protein coat, the capsid
+  * (optional) an outside envelope of lipids
+
+Shape can be one of:
+  * helical
+  * icosahedral
+  * more complex
+
+Size: one-hundredth the size of most bacteria.
+
+===== Reproduction =====
+
+Replication
+
+[[genetics#horizontal gene transfer|horizontal gene transfer]]
+
+
+
+

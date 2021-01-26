@@ -15,20 +15,25 @@ Differential equations are equations involving derivatives.\\
 The derivative is, in geometry, the slope of the tangent line of the function at the point of tangency.\\
 
 Here is an animation of the tangent line along a curved line.
-![animated tangent along a curved line](https://upload.wikimedia.org/wikipedia/commons/2/2d/Tangent//function//animation.gif)
+
+{{https://upload.wikimedia.org/wikipedia/commons/2/2d/Tangent_function_animation.gif}}
 
 Here is a similar animation on youtube.  https://www.youtube.com/watch?v=jGJdd0kzZDM
 
 === Notation ===
 
-$$ \textup{when }y = f(x)\newline\newline\textup{slope } = \frac{\textup{change in x}} {\textup{change in y}} = \frac{dx}{dy} = \frac{\Delta x}{\Delta y} = f\prime(x) $$
+$$ \begin{aligned} \text{when }y &= f(x)\\ \\ \text{slope } &= \frac{\text{change in x}} {\text{change in y}} = \frac{dx}{dy} = \frac{\Delta x}{\Delta y} = f\prime(x) \end{aligned}$$
 
-The "dx over dy" notation was invented by Gottfried Leibniz around 1700.  The "f prime" notation was by Lagrange.
+The "dx over dy" notation was invented by Gottfried Leibniz around 1700.  
 
-[[ How to Derive a Derivative]]
+The "f prime" notation was by Lagrange.
+
+[[How to Derive a Derivative]]
+
 === Definition ===
 
 $y$ is a function of $x$.  $y = ƒ(x)$\\
+
 Therefore, an $(x,y)$ point on a graph can also be written as $(x,ƒ(x))$.\\
 The graph below shows two points $(x,ƒ(x))$ and $((x+h),ƒ(x+h))$.\\
 

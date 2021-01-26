@@ -2,12 +2,4 @@
 
 Welcome to the samantha wiki!
 
-Samantha is the philosopher AI.  The artificial philosopher.  An AI with all the psychological traits and philosophical yearnings of any human.   
-
-[[Preface]] - author's note
-
-[[Curriculum]] - all the knowledge a developer needs to work on Samantha, in math, AI, philosophy, psychology
-
-[[Project Documents]] - Development docs.
-
-[[Appendix]]
+[[Curriculum]]

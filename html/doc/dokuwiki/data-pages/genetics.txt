@@ -1,0 +1,48 @@
+====== Genetics =====
+
+gene
+
+chromosome
+
+DNA
+
+RNA
+
+
+
+
+===== Gene Transfer =====
+
+Gene transfer - the transfer of genetic information between organisms.  Can be vertical or horizontal.
+
+Vertical gene transfer is better known as sexual reproduction, from parent to offspring.
+
+Horizontal gene transfer is directly from one organism to another.
+
+==== Sexual Reproduction ====
+
+vertical gene transfer
+
+translation
+
+
+
+
+==== Horizontal Gene Transfer (HGT) ====
+
+aka Lateral Gene Transfer (LGT) 
+
+mechanisms
+  * transformation
+  * transduction
+  * conjugation
+
+
+
+===== Genetic Engineering =====
+
+Gene delivery = artificial HGT
+
+
+
+

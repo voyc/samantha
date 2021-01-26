@@ -1,0 +1,92 @@
+====== PyThaiNLP ======
+
+A Python package for Thai language NLP.
+
+The github page, 
+https://github.com/PyThaiNLP/pythainlp
+
+The project home page, 
+https://www.thainlp.org/
+
+Tutorials, 
+https://www.thainlp.org/pythainlp/tutorials/
+
+Project founder, Wannaphong Phatthiyaphaibun, Khon Kaen University Nong Khai Campus
+https://iam.wannaphong.com/
+
+===== Corpus =====
+
+Word Lists:
+  * countries
+  * provinces
+  * thai_family_names
+  * thai_female_names
+  * thai_male_names
+  * thai_negations
+  * thai_stopwords
+  * thai_syllables
+  * thai_words
+
+
+===== Capabilities =====
+
+util.isthai()
+
+util.countthai()
+
+util.collate()  - sort
+
+util.thai_strftime()  - format date and time in thai formats
+
+util.thai_time() - spellout time as words
+
+sent_tokenize() - split text into sentences, multiple algorithms
+
+word_tokenize() - split text into words, multiple algorithms and dictionaries
+
+dict_trie()  - create a custom dictionary trie for use with word_tokenizei()
+
+subword_tokenize()  - 
+syllable_tokenize()
+tokenize.tcc.segment()
+tokenize.tcc.tcc_pos()
+
+transliterate.romanize()
+transliterate.transliterate()
+
+util.normalize()  - reorder vowels and tone marks, remove spaces, remove repeating vowels, remove dangling characters
+
+util.arabic_digit_to_thai_digit()
+util.thai_digit_to_arabic_digit()
+util.digit_to_text()
+
+Soundex: lk82, metasound, udom83
+
+Spellchecking: Peter Novig's algorithm with word frequency from Thai National Corpus (TNC)
+spell()
+correct()
+Can use custom dictionary.
+
+Thai National Corpus
+Thai Textbook Corpus
+
+pythainlp.corpus.ttc - Thai Textbook Corpus
+
+Part-of-Speech Tagging
+pos_tag()
+pos_tag_sents()
+
+Named-Entity Tagging
+
+Word Vector
+
+Number Spell Out
+
+
+===== Resources =====
+Thai National Corpus 
+https://www.researchgate.net/publication/271429101_Thai_National_Corpus
+
+
+
+

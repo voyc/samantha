@@ -1,5 +1,11 @@
 ====== Life ======
 
+===== Timeline =====
+
+History of the Earth
+https://www.youtube.com/watch?v=Q1OreyX0-fw
+
+
 Raw materials
   * protein
   * nucleic acid
@@ -13,11 +19,24 @@ Single-cell organisms
   * Animal
   * Virus
 
-====Virus====
-Some biologists refuse to dignify the virus as a form of life.
-It has no cell wall.
-And it cannot reproduce without a host.
+Life forms
+  * Archaea
+  * Bacteria
+  * Eukaryote
+    * Animals
+    * Fungi: molds, yeasts, mushrooms
+    * Plants
 
-Scientists think that every kind of living organism is probably host to at least one virus!
+The [[virus]] is not included in the list of life forms.
 
 
+biomolecules (proteins, dna)
+viruses - a gray area between biomolecules and single-cell organisms
+living organisms (bacteria)
+
+Bacteriophage, bacteria, corn, and yeast revealed most of what we know about basic molecular biology of the central dogma, while flies, worms, Arabidopsis, and mice played a similar role in the study of development. 
+
+central dogma
+===== Resources =====
+
+https://en.wikipedia.org/wiki/Outline_of_life_forms

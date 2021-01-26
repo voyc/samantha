@@ -1,5 +1,7 @@
 ====== Least Squares ======
 
+See more complete description in [[Linear Regression]].
+
 A method used in regression analysis.
 
 The goal is to maximize the accuracy of the model, which is to minimize the error of the model.

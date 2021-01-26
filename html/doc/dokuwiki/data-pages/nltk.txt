@@ -1,0 +1,55 @@
+====== NLTK ======
+
+Natural Language Toolkit, a Python package for NLP.
+
+===== Corpus =====
+
+nltk comes with several dozen corpora.
+
+==== Data Structure ====
+
+nltk.download() - is a cli that lets you list and download selected corpora.  On my machine the corpora were downloaded to ~/nltk_data/corpora by default.
+
+nltk.download('gutenberg') - downloaded a file gutenberg.zip and then unzipped it into a new folder ~/nltk_data/corpora/gutenberg.  The file contained multiple .txt files, one for each document.
+
+nltk.corpora.gutenberg.abspaths() - returns a list of full pathnames of the .txt files
+
+nltk.corpora.gutenberg.fileids() - returns a list of filenames of the .txt files
+
+
+
+==== Types ====
+
+There are several types of corpora.  "Type" refers to the format and structure of the data.  
+
+Each type has an associated Reader to give access to the corpora.
+
+The gutenberg corpora is of type PlainText and is accessed via the PlainTextCorpusReader.
+
+PlainText files assume paragraphs are separated by a blank line.
+
+
+The brown corpora is of type Tagged
+
+Plain text
+
+Tagged
+
+Chunked
+
+Parsed
+
+Word Lists and Lexicons
+
+==== Corpus Reader methods ====
+
+nltk.corpora.gutenberg.words() - using default tokenizer
+
+nltk.corpora.gutenberg.sents() - using default tokenizer
+
+
+
+==== Languages ====
+
+English, Spanish, Indian, Japanese languages.
+

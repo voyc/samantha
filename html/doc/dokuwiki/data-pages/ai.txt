@@ -168,7 +168,7 @@ Maze Runner: with optional treasure hunt, obstacles, enemies\\
 ==== Chatbot ====
 Many companies now have some kind of [[Chatbot]] to handle customer service.  Outsourcing to a foreign country was not cheap enough.\\
 
-computer vision and pattern recognition\\
+==== computer vision and pattern recognition ====
 HydraPlus-Net, identifying a pedestrian across multiple security cameras https://arxiv.org/abs/1709.09930\\
 like how the bad guy found the good guy in The Equalizer https://youtu.be/I7BqyJmDvt0\\
 
