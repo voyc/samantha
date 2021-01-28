@@ -84,9 +84,10 @@ Number Spell Out
 
 
 ===== Resources =====
-Thai National Corpus 
+
+paper about the Thai National Corpus \\
+authors: 
+  * Wirote Aroonmanakun, Chulalongkorn University, Bangkok, 1917, 37,000 students
+  * Kachen Tansiri, Kasetsart University, Bangkok, 1943, 86,000 students
+  * Pairit Nittayanuparp, Chulalongkorn University
 https://www.researchgate.net/publication/271429101_Thai_National_Corpus
-
-
-
-

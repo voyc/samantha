@@ -1,5 +1,89 @@
-====== Start ======
+====== Curriculum ======
 
-Welcome to the samantha wiki!
-
-[[Curriculum]]
+  * [[Preface]]
+  * [[Energy and Matter]]
+    * [[Physical world]]
+    * earth, wind, and fire
+    * [[metallurgy]]
+    * [[Chemistry]]
+    * [[Physics]]
+    * [[Thermodynamics]]
+    * [[patterns]], fields
+    * dimensions
+    * Explosions, animation
+    * astronomy
+    * sub-atomic chemistry
+      * orbitals, quantum numbers, s/p/d sub-shells, electron structure
+      * quarks
+      * strings
+      * Alternate dimensions
+      * quantum
+      * observer affects experiment
+      * Atom smashing: Particle accelerator, Particle collider
+    * [[Geography]]
+  * [[Life]]
+    * [[Organic Chemistry]]
+    * [[Biochemistry]]
+    * [[Molecular biology]]
+    * Cellular biology
+    * Single Cell Organisms
+    * Multi Cell Organisms
+    * [[worm brain]]
+    * [[Genetics]]
+    * [[Biology]]
+        * virus
+        * bacteria
+        * plant
+        * animal
+        * [[Neuroscience]]
+  * Humanity
+    * [[Sensation]]
+    * [[Psychology]]
+      * Motivations
+        * Traits
+      * Beliefs
+      * Learning: books, web, youtube
+    * [[Emotion]]
+    * [[Sociology]]
+      * Religion
+      * geopolitics
+      * crowds, gangs
+      * absurdities
+        * bush, Iraq
+        * heisenburg, quantum
+    * Arts
+      * Human things that science cannot explain
+    * [[Philosophy]]
+    * [[Higher States]]
+      * [[Friendship]]
+      * [[Love]]
+      * [[Cosmic consciousness]]
+    * Exploitation: Rom-com, religion
+    * psychopathy
+    * [[Eastern models]]
+    * human is machine
+    * [[transcendence]]
+    * [[language]]
+  * Tools (Silicon-based life)
+    * [[Math]]
+        * Dimensions
+        * [[Geometry]]
+    * [[Computer Science]]
+      * [[Software]]
+        * [[Linux]]
+        * [[Python]]
+        * Blockchain
+      * hacking
+    * [[Robotics]]
+      * biomimicry
+    * [[AI]]
+      * machine learning
+      * narrow
+        * [[Natural Language Processing]]
+      * general
+      * super
+      * artificial consciousness
+      * Human vs artificial consciousness
+      * Unknown things about AI
+  * [[notes miscellaneous]]
+  * [[Appendix]]

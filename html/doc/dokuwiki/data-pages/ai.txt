@@ -1,5 +1,10 @@
 ====== AI ======
 
+Artificial Intelligence is just the application of computers today.  It should not be called intelligence.  It isn't.  It isn't gonna get there.  It isn't even close.  We haven't even thought about making it as smart as the brain of an ant.  We've never thought about building a computer that would say "What should I do today?"  See, that's the difference with the intuition of the human brain that we really haven't gotten close to.
+--Steve Wozniak
+https://www.youtube.com/embed/PhBVRFKVGxU?start=169&end=192
+
+
 ==== Timeline ====
 
 

@@ -36,6 +36,7 @@
         * animal
         * [[Neuroscience]]
   * Humanity
+    * [[Intelligence]]
     * [[Sensation]]
     * [[Psychology]]
       * Motivations
