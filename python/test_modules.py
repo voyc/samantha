@@ -149,6 +149,7 @@ class TestModules(unittest.TestCase):
 			self.assertEqual( st, en)
 		one('you go to house of friend of you')
 		one('you work with computer')
+		one('John go to bank to get money')
 
 if __name__ == '__main__':
 	unittest.main()

@@ -1,0 +1,125 @@
+
+
+====== Sample Dokuwiki Syntax ======
+
+Each page has exactly one h1.\\
+(Except this sample page has two.)
+
+===== Basic Text Formatting h2 =====
+
+**bold**, //italic//, __underlined__ ''monospaced'', 
+**__//''combined''//__**
+
+sub<sub>23</sub> super <sup>475</sup> <del>deleted</del>
+
+line break\\
+two backslashes at eol\\
+or two backslashes+space \\ at eol
+
+===== Links h2 =====
+
+==== External Links h3 ====
+
+[[https://google.com|Google]]
+
+==== Internal Wiki Links h3 ====
+
+Link to [[Regression Analysis]] wiki page.
+
+Link to [[Regression Analysis#Data Fitting|Data Fitting for Regression Analysis]] section.
+
+Every heading creates a section.
+
+===== Media Files h2 =====
+
+==== Images h3 ====
+
+=== External GIF with resizing h4 ===
+
+{{https://secure.php.net/images/php.gif?200x50}}
+
+=== PNG files h4 ===
+
+== PNG with resizing h5 ==
+
+{{four_data_points.png?50}}
+{{four_data_points.png?200x50}}
+{{four_data_points.png?100}}
+
+== PNG float right h5 ==
+For example, here are four (x,y) data points which appear roughly in the shape of a straight line.
+{{ four_data_points.png|Four Data Points}}
+
+== Table ==
+
+^ x ^ y ^
+|1|4|
+|3|4|
+|6|7|
+|9|8|
+
+Insert the CLEAR directive to realign the following heading.
+~CLEAR~
+
+== PNG float left h5 ==
+{{four_data_points.png |Four Data Points }}
+
+^ x ^ y ^
+|1|4|
+|3|4|
+|6|7|
+|9|8|
+
+
+=== SVG ===
+<insert svg image here>
+
+
+=== YouTube ===
+<insert youtube file here>
+===== Equation h2 =====
+
+Write the linear equation inline as a function of $x$.
+$$f(x) = ax + b$$
+This is the predictor function.  $f(x)$ gives the predicted value of $y$.
+
+
+===== Table h2 =====
+
+== Table with alignment, span col, span row ==
+^ h 1       ^  h 2  ^  h 3    ^
+| 1.1       |  1.2  |  1.3    |
+| row span  |  2.2 col span  ||
+| :::       |  3.2  | 3.3     |
+
+===== Lists h2 =====
+
+==== Unordered h3 ====
+  * This is a list
+    * The second item
+  * You may have different levels
+  * Another item
+
+==== Ordered h3 ====
+  - This is an ordered list
+  - The second item
+    - You may have different levels
+  - Another item
+
+===== Code h2 =====
+  $ code block
+  two space indent
+
+or
+
+<code>
+$ ls -al # html syntax
+</code>
+
+====== heading 1 (7-1=6) h1 ======
+===== heading 2 (7-2=5) h2 =====
+==== heading 3 (7-3=4) h3 ====
+=== heading 4 (7-4=3) h4 ===
+== heading 5 (7-5=2) h5 ==
+
+

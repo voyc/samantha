@@ -9,6 +9,7 @@ pos = {
 	'prep': 'preposition', 
 	'intj': 'interjection', 
 	'conj': 'conjunction',
+	'qw'  : 'conjunction',
 }
 
 '''

@@ -69,8 +69,7 @@ class Dik:
 	def __init__(self):
 		self.glos = {}
 		self.tree = None
-		self.postable = ['noun','verb','adv','adj','prep','conj','intj','pron','qw']
-		#self.load()
+		self.postable = ['noun','pron','name','verb','adv','adj','prep','conj','intj','qw']
 
 	def iterate(self, cb):
 		for glos in self.glos.values():
@@ -90,7 +89,6 @@ class Dik:
 
 	def load(self):
 		for x in sam.dik.sdik:
-			#self.addGlos(self, x.word, x.pos, x.parent, x.en, x.th)
 			self.addGlos( x[0], x[1], x[2], x[3], x[4])
 
 	def printTree(self):
