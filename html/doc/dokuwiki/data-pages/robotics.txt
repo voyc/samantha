@@ -1,4 +1,0 @@
-====== Robotics ======
-
-[[Virtual Robotics]]
-

@@ -1,9 +1,0 @@
-====== Samantha Project ======
-
-[[Requirements]]
-
-[[Conceptual Design]] 
-
-[[Detail Design]]
-
-[[Implementation Plan]]

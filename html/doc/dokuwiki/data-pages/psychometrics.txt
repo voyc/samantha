@@ -1,4 +1,0 @@
-====== Psychometrics ======
-
-==== References ====
-open source psychometric tests https://openpsychometrics.org/
