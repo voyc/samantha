@@ -11,7 +11,7 @@
 require_once(dirname(__FILE__).'/../../config.php');
 require_once(dirname(__FILE__).'/../phplib/emailer.php');
 
-$to = 'John <john@hagstrand.com>';
+$to = 'John <john@voyc.com>';
 $addressee = 'คุณจอห์น';
 $polite = 'คะ';
 $greeting = 'สวัสดี';
@@ -28,7 +28,7 @@ $backupStatus = '';
 
 $tsg = 100;  // 100 GB total leased from webfaction
 $diskThreshhold = 80;
-$fs = folderSize("/home/jhagstrand/");
+$fs = folderSize("/home/john/");
 $fsg = round($fs / (1024 * 1024 * 1024));
 $asg = $tsg - $fsg;
 $fsgp = round(($fsg / $tsg) * 100);
